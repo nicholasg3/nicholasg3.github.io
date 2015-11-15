@@ -1,0 +1,76 @@
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Welcome to Equilibrium</title>
+<style type="text/css">
+
+body {
+  background-color:#03C000;
+ margin:0 auto;
+ padding: 0em 4em 4em 4em;
+ border:1em dashed white;
+}
+p{
+
+}
+h2{
+  text-align: center;
+  padding-bottom:2em; 
+}
+
+h2{
+  font-family: 'arial', Georgia, serif;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+<h2 style="color:#ffd"> Equilibrium </h2>
+<p> Hi! Andrew! Thank you for using Equilibrium system. We genuinely care about your well-being and happiness.</p>
+<h3>You are scheduled for an INR blood test tomorrow. Show up for your blood test to earn 2 dollars. Place: 257 Angelistic Street. Angelistic Family. 3rd floor 307. Time: November 16th 3pm.</h3>
+
+<!-- use onsubmit() event to trigger a function called validate1()-->
+<h3>Well done. Our record shows that you successfully completed your blood test on October 20th.</h3>
+<form id="frm1" action="#" onsubmit="alertSchedule()">
+
+  SSN: <input type=number name=zipCode><p>
+
+  Direct my reward for this blood test to: <select name=flavor><p>
+
+      <option value="chocolate" >My account</option>
+      <option value="Vanilla" selected>American Heart Association</option>
+
+      </select>
+      <p>
+
+<p>
+
+<input type="reset" value="Reset">
+</form> 
+
+<hr color="#FFD">
+<button onclick="thankyou()">Confirm</a></button>
+<!-- use external script validate.js-->
+
+<script>
+function alertSchedule() {
+//use innerHTML to write the content of the element with id "character-count" to be
+  alert("Thank you Andrew! You are scheduled for an INR blood test tomorrow. Show up for your blood test to earn 2 dollars. Place: 257 Angelistic Street. Angelistic Family. 3rd floor 307. Time: November 16th 3pm."); 
+}
+function thankyou(){
+  alert("Thank you!");
+}
+//count words when page loads
+window.onload = alertSchedule;
+
+</script>
+</body>
+</html>
+
+
