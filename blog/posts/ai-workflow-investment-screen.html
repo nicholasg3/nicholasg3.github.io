@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A public AI Strategy memo on deciding where AI should enter the operating system of a company.">
+    <meta name="description" content="A selection filter for AI workflow investments: fit, ownership, and control points before tooling spend.">
     <title>The AI Workflow Investment Screen | Blog</title>
     <link rel="stylesheet" href="../styles.css">
   </head>
@@ -19,7 +19,6 @@
       <nav class="nav" aria-label="Primary">
         <a href="../index.html">Blog</a>
         <a href="../index.html#catalogue">Catalogue</a>
-        
       </nav>
     </header>
 
@@ -27,77 +26,80 @@
       <header class="article-header">
         <div class="issue-kicker">Public memo</div>
         <h1>The AI Workflow Investment Screen</h1>
-        <p>Before buying another tool, decide what kind of work you are willing to change.</p>
+        <p>Buy tools only after you decide which work is worth redesigning and who owns the result.</p>
       </header>
 
       <article class="article-body">
-        <p>Most AI plans begin as a list: sales wants account research automated, support wants ticket summaries, finance wants its invoice checks. Left alone the list grows, gets called a roadmap, and becomes a catalogue of anxieties with software attached: tasks nobody has agreed to change, each paired with a tool that promises to do them faster.</p>
+        <p>Companies often treat generative AI spending as a capability race: which model scores highest, which vendor demo looks best, which feature list is longest. The tighter constraint is usually organizational. Gains depend on how well a tool fits the work people actually do, and on who remains accountable after the tool is installed. Information systems research made that point long before large language models. Task-technology fit research in the 1990s showed that performance tracks the match between technology and task, not technical capacity alone. The same logic applies here.</p>
 
-        <p>What follows is a screen for deciding which of those tasks are worth changing, which are better left alone, and where a person has to stay in the loop, before you spend anything on tooling. It starts from one blunt rule:</p>
-        
+        <p>This memo proposes an <strong>investment screen</strong> for AI workflow proposals. The phrase means a selection filter, as in credit screening or investment screening. Before money is spent, each proposal should answer two questions in writing. Is the underlying work worth redesigning? If so, how much of it should an AI system perform? The working rule is narrow:</p>
+
         <blockquote>If the workflow is not worth changing, it is not worth automating.</blockquote>
-        
-        <p>In a real planning meeting that rule quietly gets expensive. Owning the changed process falls to someone specific, who then has to read what the system produces closely enough to catch the answers that are plausible and wrong, and to drop an old habit rather than run it alongside the new tool. A pilot that only adds a step on top of the ones already there hasn't changed the work; it has enlarged it. Skip that reckoning and the cost doesn't vanish, it just lands on whoever inherits the workflow six months later.</p>
-        
-        <h2>Start with automate, assist, or ignore</h2>
-        <p>A simple three-way frame, automate / assist / ignore, earns its keep early. Mostly it gives the room a shared vocabulary before the conversation slides into vendor names.</p>
-        
+
+        <p>What follows turns that rule into a procedure. It defines three labels for machine involvement, four questions to answer before product comparison, and four control points that separate drafting from recommending, acting, and learning. The goal is not delay for its own sake. It is to stop tool purchase from outrunning process design and accountability.</p>
+
+        <h2>Why the screen is needed</h2>
+        <p>The screen is needed because organizations often buy tools before they specify the work. When a firm decides it needs an AI strategy, the first artifact is often a wishlist of tasks people would rather not do by hand. Sales may want faster account research. Support may want help with ticket summaries. Finance may want less manual invoice checking. Details vary by department. The pattern does not: requests are collected, the collection is called a roadmap, and shopping starts before anyone agrees to redesign the work the tools would touch.</p>
+
+        <p>The screen is operational. A changed process needs a named owner, a review step that can catch plausible errors, and a plan to retire the old habit once a pilot is live. Adding a new step without removing an old one only increases workload. Vague ownership pushes that extra work onto whoever inherits the process later.</p>
+
+        <h2>Three labels: automate, assist, ignore</h2>
+        <p>Teams also need shared words for how much control an AI system is allowed over a task. Three labels are enough for a first cut: automate, assist, and ignore. They do not replace the investment screen. They only describe the degree of machine involvement under consideration.</p>
+
         <ul>
-          <li><strong>Automate</strong> when the task is narrow, repeated, reviewable, and cheap to correct.</li>
-          <li><strong>Assist</strong> when the system can prepare the work while a person still owns the judgment.</li>
-          <li><strong>Ignore</strong> when the process is undefined, the data is thin, no one owns it, or an error would be expensive.</li>
+          <li><strong>Automate</strong> means the system does the task end to end; a person intervenes only on exceptions. Use it when the task is narrow, repeated, reviewable after the fact, and cheap to correct.</li>
+          <li><strong>Assist</strong> means the system prepares material (a draft, a shortlist, a retrieved policy) while a person still owns the judgment call.</li>
+          <li><strong>Ignore</strong> means leave the work alone for now. That is the right call when the process is undefined, the data are thin, nobody owns the outcome, or a wrong answer is costly.</li>
         </ul>
-        
-        <p>As a first sort, this holds up well. As a whole strategy it is too forgiving, because almost any project can be relabeled "assist" and made to sound prudent, and nothing about the label costs you anything to apply. What it leaves out is the running cost: the review time, the managerial attention, the trust people have to extend to a draft they did not write. Knowing which of the three buckets a workflow lands in is not the same as knowing whether it earns its place there.</p>
-        
-        <h2>The first screen</h2>
-        <p>Before anyone compares models, four questions are worth asking in plain language. They read as almost too simple, which is roughly why they work: they resist the kind of hedging a feature comparison invites.</p>
-        
+
+        <p>As a first sort, the three labels are useful. As a whole strategy they are too forgiving, because almost any project can be relabeled "assist" and made to sound prudent. Nothing about the label costs anything to apply. What the sort leaves out is the running cost after the label is chosen. Review takes hours and managerial attention, and colleagues still have to trust prose they did not write. Putting a workflow in a bucket is cheaper than showing that the ongoing cost of running it is justified.</p>
+
+        <h2>Four questions in the investment screen</h2>
+        <p>The investment screen is four questions. Answer them in writing before the organization compares foundation-model APIs, evaluates vendor products, or schedules a product demonstration. The automate/assist/ignore labels only describe machine involvement. They do not show that the work is specified well enough to change. These questions do.</p>
+
         <ol>
-          <li><strong>What decision improves?</strong> Name it specifically: which account to pursue, which ticket to escalate, which claim to make, which exception to approve.</li>
-          <li><strong>Does the work repeat?</strong> Repetition is what lets an organization compare outcomes, correct course, and learn something across instances.</li>
-          <li><strong>What does the company know that the model doesn't?</strong> If the honest answer is "nothing," the project may still save time, but it's unlikely to produce an edge.</li>
-          <li><strong>Where does responsibility stay human?</strong> The answer should be concrete enough that someone can act on it without a second meeting.</li>
+          <li><strong>What decision improves?</strong> Name the decision the workflow is supposed to improve (for example: which account to pursue, which ticket to escalate, which claim to file, which exception to approve).</li>
+          <li><strong>Does the work repeat?</strong> If the task does not recur, the organization will have little chance to compare outcomes or correct course across instances.</li>
+          <li><strong>What does the company know that a generic AI tool would not?</strong> If the honest answer is "nothing," the project may still save time, but it is unlikely to produce an advantage over competitors who can buy the same tool.</li>
+          <li><strong>Where does responsibility stay human?</strong> Name the role that signs off, escalates, or is accountable when the output is wrong. The answer should be specific enough that no second meeting is required to interpret it.</li>
         </ol>
-        
-        <p>The point of the screen is to slow the room down before the demo takes over. A demo is engineered to collapse the gap between seeing something work and trusting it. A pilot has the opposite job: rebuild that gap and hold it open long enough to answer who signs off on the output, and what happens the first time the thing is confidently wrong about something that matters.</p>
-        
-        <h2>Where this argument comes from</h2>
-        <p>This is an old information-systems problem in new clothing. Dale Goodhue and Ronald Thompson's research on task-technology fit made the underlying point in the 1990s: performance gains depend on how well a technology matches the task people are actually trying to do, beyond what the technology can do in isolation. The same logic transfers to generative AI without much modification. A powerful model pointed at the wrong task produces expensive theater with very little value.</p>
-        
-        <p>Sebastian Raisch and Sebastian Krakowski add a warning that only shows up once a pilot is running, after the sales pitch is over: automation and augmentation stay entangled over time. A system introduced as an assistant can slowly absorb judgment that nobody ever formally handed it. A system built to automate can turn out to need more supervision than the deck promised. So the honest question is smaller than "replace or empower." It is really this: which specific pieces of judgment are moving out of human hands, and will anyone notice when they do.</p>
-        
-        <p>Mohammad Hossein Jarrahi's work on human-machine symbiosis points the same direction from a different angle. Machines handle analytical processing at scale well; people carry context, tolerance for ambiguity, values, and situational judgment that doesn't reduce well to a prompt. A workflow that names this division explicitly, and then tests whether the division holds once real cases hit it, tends to outperform one that leaves the division implicit.</p>
-        
-        <p>Recent business press has circled the same failure mode from ground level. Harvard Business Review and BetterUp use the term "workslop" for AI-generated material that looks finished while quietly pushing the interpretive work — deciding what it means, whether it's right, what to do next — onto whoever receives it. The label is inelegant, but it names a pattern a workflow screen should catch before it becomes an unremarked feature of how the office operates.</p>
-        
-        <p>Two books are worth having on the shelf here. Ethan Mollick's <em>Co-Intelligence</em> is useful on treating AI as a collaborator with genuinely uneven abilities, a role that sits uneasily between tool and colleague. Mustafa Suleyman's <em>The Coming Wave</em> is useful on containment: the problem of gaining capability without losing the ability to govern it. Read together, they point at the same practical discipline — use the capability, and keep a hand on the boundary around it.</p>
-        
-        <h2>What AI changes</h2>
-        <p>Current models are good enough to matter in ordinary office work. They can draft a document, pull the one relevant passage out of a long one, summarize a messy thread, or run a narrow procedure from start to finish. On a lot of routine tasks that genuinely changes the economics, and at this point that is not really in dispute.</p>
 
-        <p>What is left over after the demo is a management problem wearing a capability costume. Take a sales brief. A model will happily produce one, but the judgment about which kind of customer the company actually wants sits nowhere in that brief and never will. The same gap opens up anywhere real judgment is doing the work. A refund policy summarizes cleanly; knowing when to break it for a furious long-time customer is a different sort of act. Pricing evidence can be assembled in minutes, yet what a given price is supposed to say about the company stays a strategic choice someone has to own. Whether the tool can do the task is usually the easy question. The one that actually decides things is where the tool ends up sitting in the chain of responsibility once it is doing that task every day.</p>
-        
+        <p>Demonstrations and pilots serve different purposes. Both are more useful after the four answers exist. A demonstration shows whether a tool can perform a task under selected conditions. A pilot runs the tool on the organization's own cases long enough to show who approves outputs in practice, and what the organization does when the system is wrong with high confidence on a consequential case.</p>
+
+        <h2>Background: fit, entanglement, and displaced labor</h2>
+        <p>The investment screen is not a new theory. It turns three recurring findings from information technology research into a buying checklist: task-technology fit, the entanglement of automation with augmentation, and the shift of interpretive labor onto recipients.</p>
+
+        <p>Dale Goodhue and Ronald Thompson (1995) established the baseline. Gains depend on how well a technology matches the task people are trying to do, not only on what the technology can do in isolation. For generative AI, a high-benchmark model aimed at an ill-specified workflow mainly produces activity. The screen's first two questions (what decision improves, and whether the work repeats) are fit questions. They come before model comparison because fit is a property of the work process, not of a benchmark table.</p>
+
+        <p>Fit also changes after adoption. Sebastian Raisch and Sebastian Krakowski (2021) show that automation and augmentation stay entangled over time. A system introduced as an assistant can absorb judgment that was never formally transferred. A system introduced to automate can need more supervision than the deployment plan assumed. That is why a one-time label of "assist" or "automate" is not enough, why the screen's fourth question asks where responsibility stays human, and why that answer must remain checkable after launch. Mohammad Hossein Jarrahi (2018) adds the division-of-labor point: machines scale analytical processing; people still supply context, tolerance for ambiguity, values, and situational judgment that do not reduce cleanly to a prompt. Leave that division implicit and the organization rediscovers it as review load.</p>
+
+        <p>That rediscovery has a popular name. Harvard Business Review and BetterUp use "workslop" for AI-generated material that looks finished while shifting interpretive work onto the recipient: what the text means, whether it is correct, what to do next. In fit terms, workslop is a tool-task mismatch that shows up as review work. In Raisch and Krakowski's terms, it is entanglement made routine: the system drafts, and people retake judgment without recording the transfer. The screen is meant to make that labor cost visible before the organization treats it as normal. Ethan Mollick's <em>Co-Intelligence</em> is strongest on day-to-day collaboration with uneven model abilities. Mustafa Suleyman's <em>The Coming Wave</em> is strongest on containment and governance. Both support the same practice: treat capability and control as separate decisions, and only after the work itself is specified.</p>
+
+        <h2>What AI changes in ordinary work</h2>
+        <p>For ordinary office AI, the investment question is where the tool sits in the chain of responsibility once it is used every day. Whether models can draft, retrieve, summarize, or run narrow procedures is largely settled. On many routine tasks they can, and that already changes the cost of those tasks.</p>
+
+        <p>Take a sales brief. A model can produce the brief quickly. The judgment about which kind of customer the company wants is not in that brief; it remains a human decision about pursuit. Refunds and pricing show the same split. Policy text is easy to summarize; deciding when to break policy for a long-time customer is not. Pricing inputs can be assembled quickly, but what a price is meant to signal about the company still has to be owned. Capability is usually easier to establish than accountability. Accountability placement decides whether the tool should be bought and how it should be governed.</p>
+
         <h2>Three ordinary cases</h2>
-        <p>Take account research first. Before a sales call, the team wants the familiar bundle: company news, funding history, product signals, executive changes, likely objections. AI is genuinely useful here, but the trap is the polished brief — ten bullet points, three risks, two suggested openers. It looks like preparation. Often it's public information rearranged into a more confident format.</p>
-        
-        <p>The actual edge comes from what the company already knows and the model doesn't: which triggers have historically led to revenue, which objections reliably kill deals, which impressive-looking accounts never close. That points toward treating account research as assisted work — let the system prepare the brief, but keep the opening question and the pursuit decision with a person who carries that institutional memory.</p>
-        
-        <p>Support policy has a different shape. Many tickets are repeated, bounded, and easy to review after the fact, which is exactly what makes a task suitable for automation. AI can retrieve the policy and draft the reply. The risk concentrates in the exception path — refunds, security, legal exposure, a loyal customer at the edge of losing patience. This work can be automated narrowly, but only if the escalation path is designed before the automation ships, not discovered after the first bad case.</p>
-        
-        <p>Pricing is the harder one, and the one teams are most tempted to hand over. The leverage is obvious and the data looks analytical, which lends the exercise a managerial seriousness it may not have earned. Pricing is also positioning, margin structure, sales motion, procurement friction, and a set of decisions about which customers the company is willing to lose. AI can gather inputs and draft scenarios usefully. Letting it produce the recommendation risks burying a strategic tradeoff inside a table that looks like it settled the question.</p>
-        
-        <h2>The boundary most teams blur</h2>
-        <p>There are at least four different permissions folded into what looks like a single feature: producing an output, recommending an action, taking the action, and learning from how it went. A demo runs them together as one smooth motion. Production pulls them apart again into four separate places where something can go wrong.</p>
+        <p>Three common commercial workflows show how the same screen produces different decisions. Account research is usually <strong>assist</strong>. Support policy lookup can often be <strong>automated narrowly</strong>. Strategic pricing should usually stay <strong>ignore</strong> or assist-only. Each case meets the four questions differently.</p>
 
-        <p>Take a customer refund. There is no harm in drafting the reply, but sending it puts the company's voice on record, issuing the money actually moves it, and then comes the quiet step of adjusting the policy because that refund "worked" — which rewrites the rule for every case after it, and is the one almost nobody watches. By the time the system is executing and learning on its own, a manager's sign-off on the recommendation no longer amounts to much control, and governance has to operate in that space.</p>
-        
-        <div class="article-table-wrap" role="region" aria-label="AI workflow boundary map" tabindex="0">
+        <p>Account research before a sales call needs company news, funding history, product signals, executive changes, and likely objections. AI can assemble public material into a brief. Any real advantage usually comes from proprietary knowledge: which triggers have historically led to revenue, which objections kill deals, which impressive accounts never close. Those judgments should stay with a person who knows that history. The system can prepare the brief. It should not own the pursuit decision.</p>
+
+        <p>For support policy automation, the main risk is the exception path, not the average ticket. Most tickets are repeated, bounded, and easy to check after the fact, so an AI system can retrieve the policy and draft a reply on mainstream work. Exceptions differ in kind. A refund commits money. A security or legal ticket can create liability. A high-value or long-tenure customer often requires judgment about tone and discretion that is not in the policy text. If those cases are not routed to a person before the system answers, the organization finds the failure only after the reply or payment has gone out. Narrow automation is justified only when the mainstream path is automated and the exception path is specified in advance: what counts as an exception, who receives it, and what the system may not do while waiting.</p>
+
+        <p>Strategic pricing fails the screen more often because it is easy to mistake for a calculation problem. Pricing work often involves competitor tables, discount histories, margin math, and scenario spreadsheets. Those materials look like analytical work software handles well, so teams are often tempted to hand the recommendation to a model. The screen focuses on another aspect of pricing. Pricing is also a choice about market position, which customers the company is willing to lose, how sales will sell the number, and what procurement friction the firm will accept. An AI system can gather inputs and draft scenarios for those choices. Letting it produce the recommendation risks treating a strategic tradeoff as if a completed table had already resolved it.</p>
+
+        <h2>Four control points in an AI workflow</h2>
+        <p>An AI workflow usually contains at least four permissions that product demos treat as one feature: producing an output, recommending an action, taking the action, and learning from the outcome. Those are separate control points. Governance fails when an organization approves them with a single decision. A product demonstration can present them as one continuous step. In production they separate again, and each layer can fail on its own.</p>
+
+        <p>A customer refund shows why the four permissions must be governed separately. Drafting a reply is an output decision. Sending the reply places the company's voice on record. Issuing money is execution. Adjusting policy because a refund "worked" is learning: it rewrites the rule for later cases, and it is the step least often watched. If a system executes and learns without explicit controls, a manager's sign-off on a recommendation is weak control. Governance has to cover each permission, not only the draft.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI workflow control points" tabindex="0">
           <table class="article-table">
             <thead>
               <tr>
-                <th>Boundary</th>
-                <th>Executive question</th>
+                <th>Control point</th>
+                <th>Question for the owner</th>
                 <th>Common control</th>
               </tr>
             </thead>
@@ -119,22 +121,22 @@
               </tr>
               <tr>
                 <td>Learning</td>
-                <td>Can the system improve without drifting from doctrine?</td>
+                <td>Can the system improve without changing policy unless a person reviews the change?</td>
                 <td>Feedback cadence, dataset review, kill rule.</td>
               </tr>
             </tbody>
           </table>
         </div>
-        
+
         <h2>Use the label at the end, not the start</h2>
-        <p>After the screen has done its work, automate / assist / ignore moves from tidy taxonomy to an operating choice with consequences attached.</p>
-        
+        <p>Apply automate, assist, or ignore after the four questions are answered, not before. Used that way, the label is an operating choice with consequences for staffing, review, and accountability. It is not a decorative taxonomy on a vendor slide.</p>
+
         <ul>
-          <li><strong>Automate</strong> the repeated work, inside a narrow boundary, with an exception path defined in advance.</li>
+          <li><strong>Automate</strong> the repeated work, inside a narrow scope, with an exception path defined in advance.</li>
           <li><strong>Assist</strong> the valuable work where judgment, taste, risk, or relationship context needs to stay visible to a person.</li>
           <li><strong>Ignore</strong> the work with weak context, unclear ownership, costly failure modes, or no named decision behind it.</li>
         </ul>
-        
+
         <div class="article-table-wrap" role="region" aria-label="Example workflow calls" tabindex="0">
           <table class="article-table">
             <thead>
@@ -163,20 +165,29 @@
             </tbody>
           </table>
         </div>
-        
+
         <h2>A quick test before the pilot</h2>
-        <p>Before approving the next AI pilot, ask the team to produce one paragraph naming five things:</p>
-        
+        <p>A short written test is enough to decide whether a pilot is premature. Before approving the next AI pilot, ask the team for one paragraph that names five things:</p>
+
         <ul>
           <li>the business decision the workflow is meant to improve;</li>
           <li>the person who owns the changed workflow;</li>
-          <li>the boundary between drafting, recommending, and acting;</li>
+          <li>the separation between drafting, recommending, and acting;</li>
           <li>the evidence that would count as a real improvement;</li>
           <li>the condition under which the company will stop.</li>
         </ul>
-        
-        <p>If the team cannot write that paragraph, the tool is probably premature, whatever the demo showed. The delay feels conservative in the room, but in practice it's usually faster than spending a quarter discovering that the company automated a task nobody had actually agreed to change.</p>
-        
+
+        <p>If the team cannot write that paragraph, the tool is probably premature, regardless of what a demonstration showed. Delaying a purchase can feel slow relative to a vendor timeline. In practice it is often faster than spending a quarter learning that the organization automated a task nobody had agreed to redesign.</p>
+
+        <h2>Conclusion</h2>
+        <p>The claim is limited and practical. Generative AI can change the cost of ordinary office work. Whether that change is a good investment depends less on model benchmarks than on three organizational conditions: whether the tool fits the task, whether someone owns the redesigned process, and which permissions the system may exercise. The investment screen checks those conditions before product comparison begins.</p>
+
+        <p>The procedure has three steps. First, answer the four questions in writing: decision, repetition, proprietary knowledge, human responsibility. Second, apply automate, assist, or ignore only after those answers exist. Third, treat output, recommendation, execution, and learning as separate control points, each with an owner and a control. If a team cannot name the decision, the owner, the control points, the success evidence, and the stop condition, a pilot is premature.</p>
+
+        <p>None of this requires a new theory of AI. It requires the same discipline used for other capital decisions: specify the work, assign accountability, and buy the tool only when both are clear. The working rule at the start of the memo is also the right place to stop:</p>
+
+        <blockquote>If the workflow is not worth changing, it is not worth automating.</blockquote>
+
         <section class="source-notes" aria-labelledby="source-notes-title">
           <h2 id="source-notes-title">Source notes</h2>
           <ul>
@@ -196,12 +207,12 @@
       <aside class="article-side" aria-label="Notes">
         <section class="side-card">
           <span class="section-label">Reader Decision</span>
-          <strong>Which workflow earns a pilot?</strong>
+          <strong>Which workflow should get a pilot?</strong>
           <p>Name one proposed AI workflow, then write the paragraph that would justify changing it.</p>
         </section>
         <section class="side-card">
           <span class="section-label">Use This</span>
-          <strong>Make the boundary explicit.</strong>
+          <strong>Name the control points.</strong>
           <p>Separate output, recommendation, execution, and learning before approving an AI workflow.</p>
         </section>
       </aside>
