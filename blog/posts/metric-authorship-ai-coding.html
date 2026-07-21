@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="When studies say managers outperform engineers at agentic coding, check what the metric is actually scoring.">
+    <title>When the metric writes the hero | Blog</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Blog home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Blog</strong>
+          <small>AI Strategy, Fintech, and ASEAN-US Entrepreneurship</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Blog</a>
+        <a href="../index.html#catalogue">Catalogue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Draft · seed #4 · not published</div>
+        <h1>When the metric writes the hero</h1>
+        <p>If "success" at AI coding is scored as task completion, you may be measuring who defines the task.</p>
+      </header>
+
+      <article class="article-body">
+        <p>A finding has been circulating in the agent-coding conversation: in large session logs, managers slightly outperform engineers at getting agentic coding tools to finish work. The claim is flattering to people who write tickets and demoralizing to people who write systems. Before it becomes a hiring or training slogan, ask what the scoreboard is counting.</p>
+
+        <p><strong>The claim of this note:</strong> when "good at AI coding" is operationalized as verifiable completion of defined tasks, the independent variable (skill at using the tool) is partly the same as the dependent variable (skill at defining what counts as done). The metric does not merely measure performance. It selects a kind of hero.</p>
+
+        <h2>What the public story is selling</h2>
+        <p>The public story is simple. Agentic tools reward people who can specify goals, constraints, and acceptance tests. Managers live in that language. Engineers live in implementation detail. Therefore managers win. That story is neat enough to travel. It also matches how many product organizations already want to revalue "product sense" over craft.</p>
+
+        <p>Treat the consensus around the finding carefully. In one capture of reply traffic to the headline claim, dissent was almost absent. Absence of argument is not confirmation. It is often a sign that the frame is self-flattering for the audience that amplifies it.</p>
+
+        <h2>What the metric is actually doing</h2>
+        <p>Completion metrics need a definition of done. Someone has to write the prompt, the ticket, the evaluation harness, or the checklist the agent is scored against. Specification skill is therefore baked into the measurement apparatus. Espeland and Sauder’s work on commensuration is useful here: once a practice is scored, the score reshapes what counts as skill. Goodhart’s law is the short form of the same worry. When a measure becomes a target, it stops being a neutral description.</p>
+
+        <p>In agentic coding, the problem is sharper than usual. The praised skill (setting up the agent to succeed) is close to the scoring skill (defining success). A person who writes a crisp, verifiable task description is both playing the game and designing the rules. A person who works on messy, partially specified systems work may look worse on completion rate even if the work is harder.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="What different metrics reward" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>If you score…</th>
+                <th>You tend to reward…</th>
+                <th>You tend to miss…</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Task completion rate</td>
+                <td>Clear specs, narrow scope, verifiable endpoints</td>
+                <td>Ambiguous systems work, judgment under incomplete requirements</td>
+              </tr>
+              <tr>
+                <td>Time to first green test</td>
+                <td>Speed at scaffolding and tool fluency</td>
+                <td>Design quality, long-horizon maintainability</td>
+              </tr>
+              <tr>
+                <td>Human revision load after the agent</td>
+                <td>Outputs that need little cleanup</td>
+                <td>Whether the task was worth doing</td>
+              </tr>
+              <tr>
+                <td>Incident rate after merge</td>
+                <td>Restraint and review discipline</td>
+                <td>Productivity theater that never ships risk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>A concrete scene</h2>
+        <p>Two people open the same agent. The first pastes a ticket: add a feature flag, wire it to an existing config service, cover it with three integration tests that already exist in the repo. The agent finishes. The second is debugging a race that only appears under production-like load, with partial logs and no agreed definition of "fixed." The agent produces plausible patches that fail on the next run. On a completion dashboard, person one is the hero. Person two looks slow. The dashboard is not lying about completion. It is lying about what kind of work it can see.</p>
+
+        <h2>What would make the claim scientific</h2>
+        <p>To separate "good at agents" from "good at writing the score," a study would need to hold the task definition constant across roles, or measure specification quality as its own variable, or score outcomes that are not written by the same person who uses the tool. Without that separation, manager-outperforms-engineer is partly a finding about who is closer to the metric’s authorship.</p>
+
+        <p>That does not mean managers cannot be excellent agent users. It means the headline is not free evidence for replacing engineering depth with ticket writing. Specification skill is real. So is the craft of work that resists a clean checklist.</p>
+
+        <h2>Closing</h2>
+        <p>Before you reorganize a team around "who is good at AI coding," ask who wrote the definition of good. If the answer is the same people who look best on the scoreboard, you are not only measuring performance. You are watching the metric choose its author.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source notes</h2>
+          <ul>
+            <li>Seed and truth-check notes: retweet-library shortlist item #4 (metric-authorship paradox), 2026-07-21 digest.</li>
+            <li>Wendy Nelson Espeland and Michael Sauder on commensuration and the performativity of rankings (e.g. work on rankings and quantification in organizations).</li>
+            <li>Goodhart’s law: when a measure becomes a target, it ceases to be a good measure.</li>
+            <li>Construct validity: whether the operational score matches the concept you think you are praising.</li>
+            <li>Reply-traffic caveat: near-absence of dissent in one capture is non-observation, not agreement — treat as a signal about amplification, not proof of the underlying result.</li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Notes">
+        <section class="side-card">
+          <span class="section-label">Status</span>
+          <strong>Draft seed</strong>
+          <p>Not linked from the catalogue. Apply detector + Nick pass before publish.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Claim</span>
+          <strong>Metric authorship</strong>
+          <p>Completion scores can reward who defines "done," not only who builds.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Nicholas MacGregor Garcia</span>
+      <a href="../index.html">Back to catalogue</a>
+    </footer>
+  </body>
+</html>

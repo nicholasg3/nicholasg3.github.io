@@ -24,49 +24,27 @@
 
     <main class="article-main">
       <header class="article-header">
-        <div class="issue-kicker">Public memo · Series · Part 1</div>
+        <div class="issue-kicker">Primer · for a general reader</div>
         <h1>The AI Workflow Investment Screen</h1>
-        <p>Buy tools only after you decide which work is worth redesigning and who owns the result.</p>
+        <p>A plain vocabulary for how much an AI system should do in a given piece of work.</p>
       </header>
 
       <article class="article-body">
-        <p>This is Part 1 of a short series on AI workflow investment. Later parts will take counterpoints and elaborations that this memo leaves open. Part 1 states the core procedure only.</p>
+        <p>This is a short primer, written for a general reader. It is not a playbook for how most software organizations actually ship AI. In practice, capability often starts with individual engineers building something that works, then proposing larger integrations upward. The people at the top are rarely sitting with a blank wishlist and a formal "screen." If you already work that way, little here will surprise you.</p>
 
-        <p>Companies often treat generative AI spending as a capability race: which model scores highest, which vendor demo looks best, which feature list is longest. The tighter constraint is usually organizational. Gains depend on how well a tool fits the work people actually do, and on who remains accountable after the tool is installed. Information systems research made that point long before large language models. Task-technology fit research in the 1990s showed that performance tracks the match between technology and task, not technical capacity alone. The same logic applies here.</p>
+        <p>What the piece offers is simple enough to feel almost embarrassing: before treating an AI idea as a serious project, say whether the system should run the work alone, help a person, or be left alone for now. Call those labels <strong>automate</strong>, <strong>assist</strong>, and <strong>ignore</strong>. The rest of the page is vocabulary, a few questions, and examples. Useful, maybe, if the conversation around you is still stuck on model brands and demos.</p>
 
-        <p>This memo proposes an <strong>investment screen</strong> for AI workflow proposals. The phrase means a selection filter, as in credit screening or investment screening. Before money is spent, each proposal should answer two questions in writing. Is the underlying work worth redesigning? If so, how much of it should an AI system perform? The working rule is narrow:</p>
+        <p>The one-line rule is:</p>
 
         <blockquote>If the workflow is not worth changing, it is not worth automating.</blockquote>
 
-        <p>The main practical artifact of this memo is a three-way classification of machine involvement: <strong>automate</strong>, <strong>assist</strong>, or <strong>ignore</strong>. Everything else supports that choice. Four written questions decide whether a label is justified before product comparison. Four control points keep a chosen label from collapsing drafting, recommending, acting, and learning into one unexamined permission. The goal is not delay for its own sake. It is to stop tool purchase from outrunning process design and accountability.</p>
+        <p>That is the whole idea. The sections below unpack it without pretending it is advanced strategy.</p>
 
-        <h2>Why the screen is needed</h2>
-        <p>The screen is needed because organizations often buy tools before they specify the work. Picture a quarterly planning meeting after the third vendor lunch of the month. Someone from sales wants account research automated before calls. Support wants ticket summaries so agents stop retyping the same policy language. Finance wants less hand-checking of invoices. None of those requests is foolish on its own. By the end of the hour they sit on one whiteboard under "AI roadmap," and the open question has already shifted from "which work are we redesigning?" to "which tool should we pilot first?"</p>
-
-        <p>The screen is operational. A changed process needs a named owner, a review step that can catch plausible errors, and a plan to retire the old habit once a pilot is live. Adding a new step without removing an old one only increases workload. Vague ownership pushes that extra work onto whoever inherits the process later, often a manager who was not in the room when the vendor demo looked decisive.</p>
+        <h2>Where the simple confusion shows up</h2>
+        <p>Even when engineers build bottom-up, non-technical conversations often start with a wishlist. Picture a meeting after a vendor lunch. Sales wants account research automated. Support wants ticket summaries. Finance wants less hand-checking of invoices. None of those requests is foolish. By the end of the hour they sit under "AI roadmap," and the talk has shifted from what work changes to which tool to try. The labels below are a way to slow that shift for people who do not live in the codebase.</p>
 
         <h2>Three labels: automate, assist, ignore</h2>
-        <p>The thesis of this memo, in operational form, is that every AI workflow proposal should end with one of three labels: <strong>automate</strong>, <strong>assist</strong>, or <strong>ignore</strong>. Those labels are the shared vocabulary for how much control an AI system is allowed over a task. The investment screen is the test that justifies a label. The control points later in the memo are how a chosen label stays honest after launch.</p>
-
-        <figure class="article-figure" aria-label="Diagram of automate, assist, and ignore">
-          <svg viewBox="0 0 680 160" role="img" aria-labelledby="lab-title lab-desc">
-            <title id="lab-title">Automate, assist, ignore</title>
-            <desc id="lab-desc">Three labels on a continuum from full machine control to leave alone, with assist in the middle.</desc>
-            <rect x="20" y="36" width="190" height="70" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="115" y="66" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#101214">Automate</text>
-            <text x="115" y="88" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">system runs end to end</text>
-            <rect x="245" y="36" width="190" height="70" fill="#dce7e8" stroke="#1f6078" stroke-width="2"/>
-            <text x="340" y="66" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#101214">Assist</text>
-            <text x="340" y="88" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">system prepares; person decides</text>
-            <rect x="470" y="36" width="190" height="70" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="565" y="66" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="16" font-weight="700" fill="#101214">Ignore</text>
-            <text x="565" y="88" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">leave the work alone for now</text>
-            <path d="M40 130 H640" stroke="#cfc8b8" stroke-width="2"/>
-            <text x="40" y="148" font-family="Aptos, Segoe UI, sans-serif" font-size="11" fill="#6d7374">more machine control</text>
-            <text x="640" y="148" text-anchor="end" font-family="Aptos, Segoe UI, sans-serif" font-size="11" fill="#6d7374">leave alone</text>
-          </svg>
-          <figcaption>The takeaway classification. Pick one label per workflow after the four questions below, not before.</figcaption>
-        </figure>
+        <p>This table is the whole product of the primer. For any AI idea, pick one label for how much the system is allowed to do.</p>
 
         <div class="article-table-wrap" role="region" aria-label="Automate, assist, ignore definitions" tabindex="0">
           <table class="article-table">
@@ -97,10 +75,10 @@
           </table>
         </div>
 
-        <p>As a first sort, the three labels are useful. As a whole strategy they are too forgiving, because almost any project can be relabeled "assist" and made to sound prudent. Nothing about the label costs anything to apply. What the sort leaves out is the running cost after the label is chosen. Review takes hours and managerial attention, and colleagues still have to trust prose they did not write. Putting a workflow in a bucket is cheaper than showing that the ongoing cost of running it is justified. That is why the next section is not optional decoration. The four questions are how a team shows a label is justified before money is spent.</p>
+        <p>The labels are easy to misuse. Almost any project can be called "assist" and sound careful. The label itself costs nothing. What it leaves out is the work after you pick one: someone still has to review drafts, spend attention, and trust output they did not write. The questions below are only a checklist for a general reader, not a substitute for how engineers actually validate systems in production.</p>
 
-        <h2>Four questions that justify a label</h2>
-        <p>The four questions are the investment screen proper. Answer them in writing before the organization compares foundation-model APIs, evaluates vendor products, or schedules a product demonstration. Their job is to decide whether automate, assist, or ignore is justified. A label without these answers is only a slogan.</p>
+        <h2>Four questions (optional checklist)</h2>
+        <p>If you want more than a gut feel before you endorse a pilot, answer these in plain language. Engineers will often already know the answers from building the thing. The point of writing them down is shared understanding with people outside the build.</p>
 
         <ol>
           <li><strong>What decision improves?</strong> Name the decision the workflow is supposed to improve (for example: which account to pursue, which ticket to escalate, which claim to file, which exception to approve).</li>
@@ -111,93 +89,8 @@
 
         <p>Demonstrations and pilots serve different purposes. Both are more useful after the four answers exist. A demonstration shows whether a tool can perform a task under selected conditions. A pilot runs the tool on the organization's own cases long enough to show who approves outputs in practice, and what the organization does when the system is wrong with high confidence on a consequential case.</p>
 
-        <h2>Background: fit, entanglement, and displaced labor</h2>
-        <p>The investment screen is not a new theory. It turns three recurring findings from information technology research into a buying checklist: task-technology fit, the entanglement of automation with augmentation, and the shift of interpretive labor onto recipients. The diagrams below are skim aids. Each restates one idea in plain form before the paragraph that uses it.</p>
-
-        <h3>Task-technology fit</h3>
-        <figure class="article-figure" aria-label="Diagram of task-technology fit">
-          <svg viewBox="0 0 680 200" role="img" aria-labelledby="fit-title fit-desc">
-            <title id="fit-title">Task-technology fit</title>
-            <desc id="fit-desc">Task and technology both feed fit; fit leads to performance. Technology alone does not.</desc>
-            <rect x="20" y="28" width="130" height="52" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="85" y="59" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Task</text>
-            <rect x="20" y="112" width="130" height="52" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="85" y="143" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Technology</text>
-            <path d="M150 54 H210" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
-            <path d="M150 138 H210" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
-            <rect x="220" y="70" width="140" height="52" fill="#dce7e8" stroke="#101214" stroke-width="1.5"/>
-            <text x="290" y="101" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Fit</text>
-            <path d="M360 96 H420" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
-            <rect x="430" y="70" width="160" height="52" fill="#fffefa" stroke="#a83228" stroke-width="2"/>
-            <text x="510" y="101" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Performance</text>
-            <path d="M85 164 V184 H510 V148" stroke="#6d7374" stroke-width="1.2" stroke-dasharray="4 3" fill="none"/>
-            <text x="300" y="178" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">Technology alone is not enough</text>
-            <defs>
-              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
-              </marker>
-            </defs>
-          </svg>
-          <figcaption>Goodhue and Thompson (1995): gains track how well a technology matches the task, not the technology in isolation.</figcaption>
-        </figure>
-        <p>Dale Goodhue and Ronald Thompson (1995) established the baseline. Gains depend on how well a technology matches the task people are trying to do, not only on what the technology can do alone. For generative AI, a high-benchmark model aimed at an ill-specified workflow mainly produces activity. The screen's first two questions (what decision improves, and whether the work repeats) are fit questions. They come before model comparison because fit is a property of the work process, not of a benchmark table.</p>
-
-        <h3>Automation and augmentation stay entangled</h3>
-        <figure class="article-figure" aria-label="Diagram of automation-augmentation entanglement over time">
-          <svg viewBox="0 0 680 220" role="img" aria-labelledby="ent-title ent-desc">
-            <title id="ent-title">Entanglement over time</title>
-            <desc id="ent-desc">Assist can absorb judgment later; automate can need more supervision later. Labels drift after launch.</desc>
-            <text x="40" y="28" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#6d7374">At launch</text>
-            <text x="400" y="28" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#6d7374">Later in use</text>
-            <rect x="30" y="48" width="150" height="48" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="105" y="77" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Labeled "assist"</text>
-            <rect x="30" y="130" width="150" height="48" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="105" y="159" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Labeled "automate"</text>
-            <path d="M190 72 C280 72, 320 72, 390 72" stroke="#1f6078" stroke-width="1.8" fill="none" marker-end="url(#arrow2)"/>
-            <path d="M190 154 C280 154, 320 100, 390 100" stroke="#a83228" stroke-width="1.8" fill="none" marker-end="url(#arrow2)"/>
-            <path d="M190 154 C280 154, 320 190, 390 190" stroke="#b48a34" stroke-width="1.8" fill="none" marker-end="url(#arrow2)"/>
-            <rect x="400" y="48" width="240" height="48" fill="#dce7e8" stroke="#101214" stroke-width="1.5"/>
-            <text x="520" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#101214">System absorbs judgment</text>
-            <text x="520" y="88" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">never formally transferred</text>
-            <rect x="400" y="126" width="240" height="48" fill="#fffefa" stroke="#a83228" stroke-width="1.5"/>
-            <text x="520" y="155" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#101214">More supervision than planned</text>
-            <text x="340" y="210" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">Raisch and Krakowski (2021): one-time labels do not stay fixed</text>
-            <defs>
-              <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
-              </marker>
-            </defs>
-          </svg>
-          <figcaption>A system introduced as an assistant can later absorb judgment; a system introduced to automate can later need more human supervision than the plan assumed.</figcaption>
-        </figure>
-        <p>Sebastian Raisch and Sebastian Krakowski (2021) show that automation and augmentation stay entangled over time. That is why a one-time label of "assist" or "automate" is not enough, why the screen's fourth question asks where responsibility stays human, and why that answer must remain checkable after launch. Mohammad Hossein Jarrahi (2018) adds the division-of-labor point: machines scale analytical processing; people still supply context, tolerance for ambiguity, values, and situational judgment that do not reduce cleanly to a prompt. Leave that division implicit and the organization rediscovers it as review load.</p>
-
-        <h3>Displaced interpretive labor ("workslop")</h3>
-        <figure class="article-figure" aria-label="Diagram of displaced interpretive labor">
-          <svg viewBox="0 0 680 180" role="img" aria-labelledby="ws-title ws-desc">
-            <title id="ws-title">Displaced interpretive labor</title>
-            <desc id="ws-desc">AI produces a polished draft; interpretive work moves to the recipient.</desc>
-            <rect x="30" y="40" width="160" height="70" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="110" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">AI draft</text>
-            <text x="110" y="92" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">looks finished</text>
-            <path d="M200 75 H270" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow3)"/>
-            <rect x="280" y="40" width="180" height="70" fill="#dce7e8" stroke="#101214" stroke-width="1.5"/>
-            <text x="370" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Interpretive work</text>
-            <text x="370" y="92" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">meaning · accuracy · next step</text>
-            <path d="M470 75 H540" stroke="#a83228" stroke-width="1.8" fill="none" marker-end="url(#arrow3)"/>
-            <rect x="550" y="40" width="100" height="70" fill="#fffefa" stroke="#a83228" stroke-width="2"/>
-            <text x="600" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Recipient</text>
-            <text x="600" y="92" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">pays the cost</text>
-            <text x="340" y="150" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">HBR / BetterUp "workslop": polished output, displaced review labor</text>
-            <defs>
-              <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
-              </marker>
-            </defs>
-          </svg>
-          <figcaption>The draft can look complete while the hard work (what it means, whether it is right, what to do next) moves to the person who receives it.</figcaption>
-        </figure>
-        <p>Harvard Business Review and BetterUp use "workslop" for that pattern. In fit terms, workslop is a tool-task mismatch that shows up as review work. In Raisch and Krakowski's terms, it is entanglement made routine: the system drafts, and people retake judgment without recording the transfer. The screen is meant to make that labor cost visible before the organization treats it as normal. Ethan Mollick's <em>Co-Intelligence</em> is strongest on day-to-day collaboration with uneven model abilities. Mustafa Suleyman's <em>The Coming Wave</em> is strongest on containment and governance. Both support the same practice: treat capability and control as separate decisions, and only after the work itself is specified.</p>
+        <h2>Where the idea comes from (briefly)</h2>
+        <p>None of this is original management theory. Information systems research has long said that tools help when they match the task (Goodhue and Thompson, 1995). Automation and "helping a person" can blur after launch (Raisch and Krakowski, 2021). When AI drafts look finished, review work often just moves to the next person in the chain (the pattern HBR and BetterUp call "workslop"). The labels above are a plain-language way to keep those points in view. Source notes at the end list the academic and practitioner references if you want them.</p>
 
         <h2>What AI changes in ordinary work</h2>
         <p>For ordinary office AI, the investment question is where the tool sits in the chain of responsibility once it is used every day. Whether models can draft, retrieve, summarize, or run narrow procedures is largely settled. On many routine tasks they can, and that already changes the cost of those tasks.</p>
@@ -215,31 +108,6 @@
 
         <h2>Four control points in an AI workflow</h2>
         <p>An AI workflow usually contains at least four permissions that product demos treat as one feature: producing an output, recommending an action, taking the action, and learning from the outcome. Those are separate control points. Governance fails when an organization approves them with a single decision. A product demonstration can present them as one continuous step. In production they separate again, and each layer can fail on its own.</p>
-
-        <figure class="article-figure" aria-label="Diagram of four control points">
-          <svg viewBox="0 0 680 120" role="img" aria-labelledby="cp-title cp-desc">
-            <title id="cp-title">Four control points</title>
-            <desc id="cp-desc">Output, recommendation, execution, and learning as four separate steps.</desc>
-            <rect x="16" y="30" width="140" height="50" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="86" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">1. Output</text>
-            <path d="M160 55 H188" stroke="#101214" stroke-width="1.5" marker-end="url(#arrow4)"/>
-            <rect x="192" y="30" width="150" height="50" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="267" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">2. Recommend</text>
-            <path d="M346 55 H374" stroke="#101214" stroke-width="1.5" marker-end="url(#arrow4)"/>
-            <rect x="378" y="30" width="130" height="50" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
-            <text x="443" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">3. Execute</text>
-            <path d="M512 55 H540" stroke="#101214" stroke-width="1.5" marker-end="url(#arrow4)"/>
-            <rect x="544" y="30" width="120" height="50" fill="#dce7e8" stroke="#a83228" stroke-width="2"/>
-            <text x="604" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">4. Learn</text>
-            <text x="340" y="105" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">Each step needs its own owner and control, not one approval for the whole chain</text>
-            <defs>
-              <marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
-              </marker>
-            </defs>
-          </svg>
-          <figcaption>Four permissions, four places a workflow can fail. Learning (policy change from outcomes) is the step least often watched.</figcaption>
-        </figure>
 
         <p>Walk a single refund through the chain. Drafting a reply is an output decision. Sending that reply places the company's voice on record with the customer. Issuing money moves cash. Then comes the quiet step that rarely appears on the pilot slide: someone adjusts policy because that refund "worked," and the new rule applies to the next hundred cases. That last step is learning. If a system executes and learns without explicit controls, a manager's sign-off on a recommendation is weak control. Governance has to cover each permission, not only the draft that looked fine in the demo.</p>
 
@@ -328,17 +196,10 @@
 
         <p>If the team cannot write that paragraph, the tool is probably premature, regardless of what a demonstration showed. Delaying a purchase can feel slow relative to a vendor timeline, especially when a pilot is already booked for next sprint. In practice the delay is often cheaper than spending a quarter learning that the organization automated a task nobody had agreed to redesign, then staffing the cleanup.</p>
 
-        <h2>Conclusion</h2>
-        <p>The claim of Part 1 is limited and practical. Generative AI can change the cost of ordinary office work. Whether that change is a good investment depends less on model benchmarks than on three organizational conditions: whether the tool fits the task, whether someone owns the redesigned process, and which permissions the system may exercise. The investment screen checks those conditions before product comparison begins.</p>
-
-        <p>The procedure has three steps. First, answer the four questions in writing: decision, repetition, proprietary knowledge, human responsibility. Second, apply automate, assist, or ignore only after those answers exist. Third, treat output, recommendation, execution, and learning as separate control points, each with an owner and a control. If a team cannot name the decision, the owner, the control points, the success evidence, and the stop condition, a pilot is premature.</p>
-
-        <p>None of this requires a new theory of AI. It requires the same discipline used for other capital decisions: specify the work, assign accountability, and buy the tool only when both are clear. The working rule at the start of the memo is also the right place to pause Part 1:</p>
+        <h2>Closing</h2>
+        <p>If you take one thing from this page, take the table: for a given piece of work, should the system automate, assist, or be ignored? The questions and control points are only ways to keep that choice honest. Engineers building bottom-up will often have already lived the answer. The primer is for everyone else still hearing only model names and demos.</p>
 
         <blockquote>If the workflow is not worth changing, it is not worth automating.</blockquote>
-
-        <h2>What comes next in the series</h2>
-        <p>Part 1 is the screen itself: labels, questions, control points, and a pilot test. It does not settle every objection. Later parts will take counterpoints (where the screen over-filters, under-filters, or misleads) and elaborations (edge cases, sector applications, and further detail). Those pieces will link back here when they are published.</p>
 
         <section class="source-notes" aria-labelledby="source-notes-title">
           <h2 id="source-notes-title">Source notes</h2>
@@ -358,14 +219,14 @@
 
       <aside class="article-side" aria-label="Notes">
         <section class="side-card">
-          <span class="section-label">Series</span>
-          <strong>Part 1 of a series</strong>
-          <p>Later parts will cover counterpoints and elaborations. This part is the core investment screen only.</p>
+          <span class="section-label">Audience</span>
+          <strong>General reader</strong>
+          <p>A basic primer, not a playbook for how engineering teams actually ship AI bottom-up.</p>
         </section>
         <section class="side-card">
-          <span class="section-label">Reader Decision</span>
-          <strong>Which workflow should get a pilot?</strong>
-          <p>Name one proposed AI workflow, then write the paragraph that would justify changing it.</p>
+          <span class="section-label">Takeaway</span>
+          <strong>Automate, assist, or ignore?</strong>
+          <p>Pick one label per workflow. Everything else on this page supports that choice.</p>
         </section>
         <section class="side-card">
           <span class="section-label">Use This</span>
