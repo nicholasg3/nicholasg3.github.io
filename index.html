@@ -1,228 +1,699 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who Stores What? Split Memory Custody in Agentic AI</title>
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --text-secondary: #555;
-            --accent: #2563eb;
-            --border: #e5e5e5;
-            --max-width: 680px;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.65;
-            font-size: 18px;
-            padding: 40px 20px;
-        }
-        article {
-            max-width: var(--max-width);
-            margin: 0 auto;
-        }
-        header {
-            margin-bottom: 48px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--border);
-        }
-        h1 {
-            font-size: 32px;
-            line-height: 1.2;
-            font-weight: 700;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        .meta {
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-        .meta a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-bottom: 1px solid #ccc;
-        }
-        .meta a:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-        }
-        h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-top: 48px;
-            margin-bottom: 20px;
-            letter-spacing: -0.01em;
-        }
-        h3 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-top: 36px;
-            margin-bottom: 16px;
-        }
-        p {
-            margin-bottom: 20px;
-        }
-        strong {
-            font-weight: 600;
-        }
-        ul, ol {
-            margin-bottom: 20px;
-            padding-left: 28px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        blockquote {
-            border-left: 3px solid var(--accent);
-            padding-left: 20px;
-            margin: 28px 0;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid var(--border);
-            margin: 40px 0;
-        }
-        .cta {
-            background: #f8f9fa;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 24px;
-            margin-top: 40px;
-        }
-        .cta h3 {
-            margin-top: 0;
-            font-size: 18px;
-        }
-        .cta a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        .cta a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 60px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-        @media (max-width: 600px) {
-            body { font-size: 17px; padding: 24px 16px; }
-            h1 { font-size: 26px; }
-            h2 { font-size: 21px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nicholas MacGregor Garcia: AI strategy, agent governance, fintech research, and working prototypes.">
+  <title>Nicholas MacGregor Garcia</title>
+  <style>
+    :root {
+      --ink: #18202a;
+      --muted: #5d6875;
+      --paper: #fbfaf7;
+      --panel: #ffffff;
+      --line: #dedbd3;
+      --blue: #255f85;
+      --green: #2c6f62;
+      --gold: #a87926;
+      --rose: #9a4f55;
+      --shadow: 0 18px 55px rgba(20, 28, 38, 0.09);
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--blue);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(222, 219, 211, 0.9);
+      background: rgba(251, 250, 247, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 720;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      padding: 6px 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: currentColor;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(37, 95, 133, 0.13), transparent 38%),
+        linear-gradient(170deg, rgba(44, 111, 98, 0.11), transparent 45%),
+        var(--paper);
+    }
+
+    .hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      min-height: 78vh;
+      padding: 74px 24px 46px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 740;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 680px;
+      margin: 26px 0 0;
+      color: #384250;
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--ink);
+      border-radius: 6px;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 680;
+      font-size: 14px;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: #b9b3a7;
+    }
+
+    .signal-board {
+      display: grid;
+      gap: 14px;
+    }
+
+    .signal {
+      display: grid;
+      grid-template-columns: 58px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid rgba(24, 32, 42, 0.1);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: 0 8px 28px rgba(20, 28, 38, 0.04);
+    }
+
+    .signal-mark {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: 800;
+      background: var(--blue);
+    }
+
+    .signal:nth-child(2) .signal-mark {
+      background: var(--green);
+    }
+
+    .signal:nth-child(3) .signal-mark {
+      background: var(--gold);
+    }
+
+    .signal h2 {
+      margin: 0 0 4px;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .signal p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 68px 24px;
+    }
+
+    .section + .section {
+      border-top: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.7fr) minmax(280px, 1fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.52fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 26px;
+    }
+
+    .feature-main,
+    .feature-side,
+    .item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-main {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 310px;
+    }
+
+    .kicker {
+      color: var(--rose);
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 12px 0 12px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .feature-main p,
+    .item p,
+    .feature-side p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #f1eee7;
+      color: #4b5563;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .feature-side {
+      padding: 24px;
+      display: grid;
+      align-content: space-between;
+      gap: 20px;
+      background: #173042;
+      color: #fff;
+      border-color: #173042;
+    }
+
+    .feature-side p {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .feature-side .link-list a {
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .item {
+      min-height: 245px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: none;
+    }
+
+    .item h3 {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+
+    .item.accent-blue {
+      border-top: 4px solid var(--blue);
+    }
+
+    .item.accent-green {
+      border-top: 4px solid var(--green);
+    }
+
+    .item.accent-gold {
+      border-top: 4px solid var(--gold);
+    }
+
+    .item.accent-rose {
+      border-top: 4px solid var(--rose);
+    }
+
+    .link-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .link-list a,
+    .text-link {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      min-height: 34px;
+      border-bottom: 1px solid rgba(24, 32, 42, 0.22);
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .band {
+      background: #e9eee9;
+      border-block: 1px solid #d5ddd5;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .plain-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plain-list li {
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(24, 32, 42, 0.13);
+    }
+
+    .plain-list strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .plain-list span {
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 24px 42px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner,
+      .section-head,
+      .feature,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding-top: 54px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 3px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .nav,
+      .section,
+      .hero-inner,
+      footer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .signal {
+        grid-template-columns: 46px minmax(0, 1fr);
+      }
+
+      .signal-mark {
+        width: 46px;
+        height: 46px;
+      }
+
+      .feature-main,
+      .feature-side,
+      .item {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-<article>
-    <header>
-        <h1>Who Stores What? Why Split Memory Custody Is One of the Sneakiest Governance Problems in Agentic AI</h1>
-        <p class="meta">By <a href="https://nicholasgarcia.com">Nicholas MacGregor Garcia</a> · June 29, 2026</p>
-    </header>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/">Nicholas MacGregor Garcia</a>
+      <div class="nav-links">
+        <a href="#read">Read</a>
+        <a href="#systems">Systems</a>
+        <a href="#research">Research</a>
+        <a href="#lab">NUS FinTech Lab</a>
+      </div>
+    </nav>
+  </header>
 
-    <p>Enterprise LLM agents have officially left the demo era. They're now running real, long-horizon workflows — remembering customer preferences, correcting errors on the fly, enforcing policies, and getting smarter with every session.</p>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">AI strategy, governance, and applied fintech</p>
+          <h1>Research notes, working papers, and systems for serious AI work.</h1>
+          <p class="lede">A public hub for writing on agentic AI, strategic publishing, fintech experimentation, and the prototypes that turn ideas into usable workflows.</p>
+          <div class="actions">
+            <a class="button" href="#read">Start reading</a>
+            <a class="button secondary" href="mailto:nicholas@nicholasgarcia.com">Contact</a>
+          </div>
+        </div>
 
-    <p>But here's the part nobody puts on the pitch deck: <strong>the experience these agents accumulate lives in three different places, controlled by two different parties who don't fully see what the other is doing.</strong></p>
+        <div class="signal-board" aria-label="Featured work">
+          <a class="signal" href="memory-governance.html">
+            <span class="signal-mark">01</span>
+            <span>
+              <h2>Split Memory Custody</h2>
+              <p>Working paper on agent memory, incentive compatibility, observability, and repair rights.</p>
+            </span>
+          </a>
+          <a class="signal" href="https://github.com/nicholasg3/ai-agents-workspace/tree/main/auto-company/published/strategy-publisher-prototype">
+            <span class="signal-mark">02</span>
+            <span>
+              <h2>Strategic Publishing Platform</h2>
+              <p>An operating system for rigorous, repeatable AI strategy publishing.</p>
+            </span>
+          </a>
+          <a class="signal" href="https://fintechlab.nus.edu.sg/nus-swap/">
+            <span class="signal-mark">03</span>
+            <span>
+              <h2>NUSwap</h2>
+              <p>A simulated trading exchange from NUS FinTech Lab for education and behavioral finance research.</p>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <p>This split custody creates a quiet but expensive phenomenon I call the <strong>memory fork</strong>. Prompts say one thing. Weights do another. Suddenly your agent surprises everyone at the worst possible moment. Teams duplicate effort, debug in the dark, and end up in awkward 3 a.m. conversations about who actually owns the risk.</p>
+    <section class="section" id="read">
+      <div class="section-head">
+        <h2>Read First</h2>
+        <p>The most useful public pieces are now grouped by what a reader is trying to understand: strategy, governance, prototypes, and older experiments.</p>
+      </div>
 
-    <p>In a new formal game-theoretic model, we ask a simple but powerful question: When is this split custody arrangement stable and productive — and when does it quietly collapse into a low-trust trap?</p>
+      <div class="feature">
+        <article class="feature-main">
+          <div>
+            <span class="kicker">Working paper</span>
+            <h3>Who Stores What? Split Memory Custody in Agentic AI</h3>
+            <p>Why prompt rules, retrieval stores, and model weights create governance problems when control and visibility are split across application teams and model vendors.</p>
+          </div>
+          <div>
+            <div class="meta-row">
+              <span class="pill">Agent governance</span>
+              <span class="pill">Game theory</span>
+              <span class="pill">June 2026</span>
+            </div>
+            <div class="link-list">
+              <a href="memory-governance.html">Read the essay</a>
+            </div>
+          </div>
+        </article>
 
-    <p>The answer is more interesting (and more fixable) than you might expect.</p>
+        <aside class="feature-side">
+          <div>
+            <span class="kicker">Live system</span>
+            <h3>AI company memos</h3>
+            <p>Operational notes from the background agent workstream, including strategic-publishing memos and project handoffs.</p>
+          </div>
+          <div class="link-list">
+            <a href="https://github.com/nicholasg3/ai-agents-workspace/blob/main/auto-company/published/MEMO_INDEX.md">Open memo index</a>
+            <a href="https://github.com/nicholasg3/ai-agents-workspace/tree/main/auto-company/published">Browse published artifacts</a>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <h2>The Three Tiers Nobody Talks About Enough</h2>
+    <section class="section" id="systems">
+      <div class="section-head">
+        <h2>Systems And Prototypes</h2>
+        <p>Projects in motion, from publishing workflows to market-research infrastructure. Some are polished public artifacts; others are visible workbenches.</p>
+      </div>
 
-    <p>Modern LLM agents rely on three complementary memory layers:</p>
+      <div class="grid">
+        <article class="item accent-blue">
+          <div>
+            <span class="kicker">Active</span>
+            <h3>Strategic Publishing Platform</h3>
+            <p>A developing stack for producing AI strategy issues with research intake, editorial judgment, critique, packaging, and publication flow.</p>
+          </div>
+          <div class="link-list">
+            <a href="https://github.com/nicholasg3/ai-agents-workspace/tree/main/auto-company/published/strategy-publisher-prototype">Open prototype</a>
+          </div>
+        </article>
 
-    <ul>
-        <li><strong>Prompt rules and playbooks</strong> — fast, fully inspectable, controlled by application teams.</li>
-        <li><strong>External retrieval stores</strong> (RAG caches, episodic databases, checkpointers) — medium inspectability, usually managed by the deployer or platform.</li>
-        <li><strong>Model weights</strong> (fine-tunes, adapters, RLHF updates) — slow, mostly opaque, controlled by the vendor.</li>
-    </ul>
+        <article class="item accent-green">
+          <div>
+            <span class="kicker">Pipeline</span>
+            <h3>AI Secretary</h3>
+            <p>A personal operations layer for updates, async direction, task memory, and human-in-the-loop follow-through.</p>
+          </div>
+          <div class="link-list">
+            <a href="https://github.com/nicholasg3/ai-agents-workspace/blob/main/auto-company/published/MEMO_INDEX.md">See current notes</a>
+          </div>
+        </article>
 
-    <p>Technically elegant. Organizationally messy.</p>
+        <article class="item accent-gold">
+          <div>
+            <span class="kicker">Research track</span>
+            <h3>Trading Strategies Portfolio</h3>
+            <p>A cautious research track for strategy evaluation, simulation, and education-first market analysis.</p>
+          </div>
+          <div class="link-list">
+            <a href="https://fintechlab.nus.edu.sg/nus-swap/">Related: NUSwap</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <p>In practice, custody is split. Application owners govern the inspectable tiers. Vendors control the weights and often observe aggregate usage traces. Neither side has full real-time visibility into the other's memory writes. The result? Prompt-visible rules drift out of sync with weight-encoded behavior. State gets duplicated across layers. Attribution becomes ambiguous. Risk becomes conveniently (or inconveniently) blurred.</p>
+    <section class="section band" id="research">
+      <div class="two-col">
+        <div>
+          <p class="eyebrow">Research Archive</p>
+          <h2>Public work, old and new.</h2>
+        </div>
+        <ul class="plain-list">
+          <li>
+            <a href="memory-governance.html">
+              <strong>Split Memory Custody in Agentic AI</strong>
+              <span>Working paper summary on memory forks, vendor incentives, and repair rights.</span>
+            </a>
+          </li>
+          <li>
+            <a href="index-Equilibrium.html">
+              <strong>Equilibrium</strong>
+              <span>Legacy prototype page preserved as part of the public archive.</span>
+            </a>
+          </li>
+          <li>
+            <a href="sunscore/home.html">
+              <strong>Sunscore</strong>
+              <span>Older financial-inclusion and alternative credit prototype material.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-    <p>You see this pattern play out again and again in GitHub issues and Stack Overflow threads across LangChain, LangGraph, CrewAI, Mem0, and similar frameworks — checkpoint corruption, manual pruning workarounds, rollback headaches, and "who changed what?" debugging sessions.</p>
+    <section class="section" id="lab">
+      <div class="section-head">
+        <h2>NUS FinTech Lab</h2>
+        <p>External lab context for applied fintech, AI, research collaboration, and experimental platforms.</p>
+      </div>
 
-    <h2>The Strategic Game Behind the Fork</h2>
+      <div class="grid">
+        <article class="item accent-green">
+          <div>
+            <span class="kicker">Lab</span>
+            <h3>NUS FinTech Lab</h3>
+            <p>A public entry point for lab projects, events, research themes, and fintech education initiatives at NUS.</p>
+          </div>
+          <div class="link-list">
+            <a href="https://fintechlab.nus.edu.sg/">Visit the lab site</a>
+          </div>
+        </article>
 
-    <p>Technical feasibility gets us part of the way. What we really need is <strong>incentive compatibility</strong> under split custody.</p>
+        <article class="item accent-blue">
+          <div>
+            <span class="kicker">Project</span>
+            <h3>NUSwap</h3>
+            <p>A simulated cryptocurrency trading exchange built for controlled experimentation, student strategy testing, and behavioral finance research.</p>
+          </div>
+          <div class="link-list">
+            <a href="https://fintechlab.nus.edu.sg/nus-swap/">Open NUSwap page</a>
+          </div>
+        </article>
 
-    <p>We model this as a sequential game between two rational players: the <strong>application owner</strong> (who bears task performance and liability risk) and the <strong>model vendor</strong> (who hosts the base model and can fine-tune on usage traces).</p>
+        <article class="item accent-rose">
+          <div>
+            <span class="kicker">Updates</span>
+            <h3>FinTech Lab Projects</h3>
+            <p>A broader index of lab projects and prototypes, including simulated markets and applied fintech systems.</p>
+          </div>
+          <div class="link-list">
+            <a href="https://fintechlab.nus.edu.sg/projects/">Browse projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-    <p>The owner chooses the memory architecture: prompt-only, hybrid, or heavy vendor delegation. The vendor then chooses fine-tuning intensity. Payoffs reflect task success, reconciliation costs, revenue, and liability — all under partial observability.</p>
-
-    <p>We solve it with subgame-perfect equilibrium (full information) and Perfect Bayesian Equilibrium (when fine-tuning on leaked traces is unobserved).</p>
-
-    <h2>The Big Findings — With Real-World Grounding</h2>
-
-    <h3>1. Hybrid memory can win — but only under the right conditions.</h3>
-
-    <p>Even when prompt-only looks cheaper in the short run, hybrid architectures can emerge as a stable equilibrium when deployers bear reactive governance costs and can moderate what the vendor learns (Proposition 1b). There's a clean threshold: hybrid makes sense when governance cost stays below a surplus-to-labor ratio.</p>
-
-    <p><em>In practice:</em> Teams often end up doing manual pruning, guardrail additions, or checkpoint migrations after drift shows up (common in LangGraph and CrewAI issues). When these reactive costs are manageable, hybrid custody pays off — you get vendor improvements without fully surrendering control. When governance labor is cheap enough to moderate aggressive fine-tuning, you get the best of both worlds: improvement without uncontrolled divergence.</p>
-
-    <h3>2. Observability and repair rights are superpower levers.</h3>
-
-    <p>Contractible rights to inspect, roll back, or reconfigure inspectable tiers act as credible off-path threats. When owner liability exceeds vendor liability, these rights discipline aggressive fine-tuning and push the system toward better outcomes (Proposition 2). They also <strong>select</strong> the high-trust equilibrium when hidden fine-tuning would otherwise sustain a pessimistic trap (Proposition 3′).</p>
-
-    <p><em>In practice:</em> Think of episodes where a poisoned checkpoint or stale entity link forces a full process restart because no one had surgical access to the tier. Contractible observability (logging, trace spans, guarded checkpointers) turns these into manageable incidents instead of production fires. Teams that negotiate these rights upfront avoid the "who owns this memory?" blame game later.</p>
-
-    <h3>3. The low-trust trap — and why it's so sneaky (the central result).</h3>
-
-    <p>Under undisclosed fine-tuning on leaked traces, the game admits <strong>two Perfect Bayesian Equilibria</strong> — a high-trust hybrid equilibrium and a low-trust prompt-only trap (Proposition 3).</p>
-
-    <p>The trap isn't driven by bad parameters. It's sustained by self-confirming owner pessimism. Expecting aggressive hidden behavior (e.g., the vendor quietly improving weights on traces the team can't see), the owner sticks with prompt-only to avoid hybrid risk. This removes the observability that would have disciplined the vendor — so the vendor does exploit leaked traces, confirming the owner's pessimism.</p>
-
-    <p><em>In practice:</em> Imagine a team that has been burned by unexplained policy drift before. They default to prompt-only to maintain control, even though hybrid would capture useful vendor improvements. The vendor, seeing less structured feedback, leans harder on whatever traces leak through. Drift worsens. The team's pessimism is validated, and they double down on prompt-only. Everyone loses a bit of capability. Observability rights break this loop by making hidden behavior visible and correctable — turning a belief-driven trap into a manageable, high-trust equilibrium.</p>
-
-    <p>The hopeful part? Contractible observability doesn't just threaten bad behavior — it <strong>selects</strong> the high-trust equilibrium by making pessimistic beliefs irrelevant. You no longer have to trust what you can audit.</p>
-
-    <h2>What Teams and Vendors Should Actually Do</h2>
-
-    <p>Memory governance isn't a routing detail. It's a strategic design problem at the intersection of architecture, contracting, and incentives.</p>
-
-    <p><strong>For application teams and architecture committees:</strong></p>
-    <ul>
-        <li>Assign clear owners per memory tier with explicit reconciliation cadences.</li>
-        <li>Prioritize contractible observability and repair rights in your vendor agreements — these are high-leverage clauses.</li>
-        <li>Lean into hybrid architectures with automation when governance costs sit in the right range. The "improvement without loss of control" regime is achievable when moderation binds; when it doesn't, observability matters even more.</li>
-    </ul>
-
-    <p><strong>For vendors:</strong></p>
-    <ul>
-        <li>Increase transparency on evaluation deltas when traces inform updates. Trust compounds faster than hidden improvements.</li>
-        <li>Offer inspectable adapter layers (customer-visible LoRA checkpoints and similar) to make hybrid custody both technically feasible and attractive.</li>
-    </ul>
-
-    <p>The bigger picture is genuinely exciting. Split memory custody doesn't have to be a permanent source of friction. With thoughtful design and contracting, organizations can move from fragile equilibria to durable, high-trust partnerships that unlock the full potential of agentic AI.</p>
-
-    <h2>Final Thought</h2>
-
-    <p>Agent memory under split custody is a new but representative governance challenge in information systems. The model shows the low-trust trap is not inevitable. The teams and vendors that get observability, repair rights, and tiered permissions right won't just ship more reliable agents — they'll build the kind of resilient, accountable systems that define the next era of enterprise AI.</p>
-
-    <hr>
-
-    <p><em>Formal theory with illustrative traces. Full working paper (proofs + construct-check appendix) available on request.</em></p>
-
-    <div class="cta">
-        <h3>Want the full working paper?</h3>
-        <p>The formal game-theoretic model (subgame-perfect equilibrium, Perfect Bayesian Equilibrium, proof appendix, and construct-check) is available as a PDF. <a href="mailto:nicholas@nicholasgarcia.com?subject=Memory+Governance+Working+Paper">Email me</a> and I'll send it over.</p>
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Nicholas MacGregor Garcia</span>
+      <span><a href="mailto:nicholas@nicholasgarcia.com">nicholas@nicholasgarcia.com</a></span>
     </div>
-
-    <footer>
-        <p>© 2026 Nicholas MacGregor Garcia. Written from Singapore.</p>
-    </footer>
-</article>
+  </footer>
 </body>
 </html>
