@@ -3,679 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nicholas MacGregor Garcia: notes on agentic AI, financial technology, and the institutions that have to live with both.">
+  <meta name="description" content="Nicholas MacGregor Garcia — agentic AI, financial technology, and the institutions that have to absorb both.">
   <title>Nicholas MacGregor Garcia</title>
   <style>
     :root {
-      --ink: #18202a;
-      --muted: #5d6875;
-      --paper: #fbfaf7;
-      --panel: #ffffff;
-      --line: #dedbd3;
-      --blue: #255f85;
-      --green: #2c6f62;
-      --gold: #a87926;
-      --rose: #9a4f55;
-      --shadow: 0 18px 55px rgba(20, 28, 38, 0.09);
-      --max: 1120px;
+      --paper: #f6f4ee;
+      --ink: #191713;
+      --muted: #6b665c;
+      --faint: #928c80;
+      --rule: rgba(25, 23, 19, 0.16);
+      --rule-soft: rgba(25, 23, 19, 0.09);
+      --accent: #8a3324;              /* single restrained oxblood */
+      --serif: "Charter", "Bitstream Charter", "Sitka Text", "Iowan Old Style", "Palatino Linotype", Cambria, Georgia, serif;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --measure: 44rem;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { -webkit-text-size-adjust: 100%; }
 
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.55;
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .wrap {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 28px;
     }
 
-    a:hover {
-      color: var(--blue);
+    a { color: inherit; text-decoration: none; }
+
+    /* ---- Masthead ---- */
+    .masthead {
+      padding: 46px 0 22px;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 14px 28px;
     }
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid rgba(222, 219, 211, 0.9);
-      background: rgba(251, 250, 247, 0.92);
-      backdrop-filter: blur(16px);
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }
 
     .nav {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      font-weight: 720;
-      letter-spacing: 0;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      align-items: center;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.02em;
       color: var(--muted);
-      font-size: 14px;
+      display: flex;
+      gap: 20px;
     }
 
-    .nav-links a {
-      padding: 6px 0;
-      border-bottom: 1px solid transparent;
-    }
+    .nav a { padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color .15s, color .15s; }
+    .nav a:hover { color: var(--ink); border-color: var(--accent); }
 
-    .nav-links a:hover {
-      border-color: currentColor;
-    }
-
-    main {
-      overflow: hidden;
-    }
-
-    .hero {
-      border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(120deg, rgba(37, 95, 133, 0.13), transparent 38%),
-        linear-gradient(170deg, rgba(44, 111, 98, 0.11), transparent 45%),
-        var(--paper);
-    }
-
-    .hero-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      min-height: 78vh;
-      padding: 74px 24px 46px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-      gap: 46px;
-      align-items: center;
-    }
+    /* ---- Hero ---- */
+    .hero { padding: 72px 0 68px; border-bottom: 1px solid var(--rule); }
 
     .eyebrow {
-      margin: 0 0 18px;
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 740;
-      letter-spacing: 0.12em;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 24px;
+      font-weight: 600;
     }
 
     h1 {
-      max-width: 760px;
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6.4vw, 78px);
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: 0;
+      font-weight: 600;
+      font-size: clamp(34px, 5.6vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.012em;
+      max-width: 22ch;
     }
 
     .lede {
-      max-width: 680px;
-      margin: 26px 0 0;
-      color: #384250;
-      font-size: clamp(18px, 2vw, 23px);
+      margin: 30px 0 0;
+      font-size: clamp(19px, 2.1vw, 22px);
+      color: #35322b;
+      max-width: 40ch;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
+    .lede a { border-bottom: 1px solid var(--accent); color: var(--ink); }
+    .lede a:hover { background: rgba(138, 51, 36, 0.08); }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 10px 16px;
-      border: 1px solid var(--ink);
-      border-radius: 6px;
-      background: var(--ink);
-      color: #fff;
-      font-weight: 680;
-      font-size: 14px;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--ink);
-      border-color: #b9b3a7;
-    }
-
-    .signal-board {
-      display: grid;
-      gap: 14px;
-    }
-
-    .signal {
-      display: grid;
-      grid-template-columns: 58px minmax(0, 1fr);
-      gap: 16px;
-      align-items: start;
-      padding: 18px;
-      border: 1px solid rgba(24, 32, 42, 0.1);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.68);
-      box-shadow: 0 8px 28px rgba(20, 28, 38, 0.04);
-    }
-
-    .signal-mark {
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      border-radius: 6px;
-      color: #fff;
-      font-weight: 800;
-      background: var(--blue);
-    }
-
-    .signal:nth-child(2) .signal-mark {
-      background: var(--green);
-    }
-
-    .signal:nth-child(3) .signal-mark {
-      background: var(--gold);
-    }
-
-    .signal h2 {
-      margin: 0 0 4px;
-      font-size: 18px;
-      line-height: 1.2;
-    }
-
-    .signal p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .section {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 68px 24px;
-    }
-
-    .section + .section {
-      border-top: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 0.7fr) minmax(280px, 1fr);
-      gap: 32px;
-      align-items: end;
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .feature {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.52fr);
-      gap: 28px;
-      align-items: stretch;
-      margin-top: 26px;
-    }
-
-    .feature-main,
-    .feature-side,
-    .item {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-    }
-
-    .feature-main {
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 310px;
-    }
+    /* ---- Section scaffolding ---- */
+    section { padding: 60px 0; border-bottom: 1px solid var(--rule); }
 
     .kicker {
-      color: var(--rose);
-      font-size: 13px;
-      font-weight: 760;
-      letter-spacing: 0.12em;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin: 0 0 34px;
+      font-weight: 600;
+    }
+
+    /* ---- Selected work: typographic rows, not cards ---- */
+    .entry {
+      display: grid;
+      grid-template-columns: 8.5rem 1fr;
+      gap: 8px 26px;
+      padding: 22px 0;
+      border-top: 1px solid var(--rule-soft);
+      align-items: baseline;
+    }
+    .entry:first-of-type { border-top: 0; }
+
+    .entry-meta {
+      font-family: var(--sans);
+      font-size: 12.5px;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+      color: var(--faint);
       text-transform: uppercase;
     }
 
-    h3 {
-      margin: 12px 0 12px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(24px, 3vw, 36px);
-      line-height: 1.12;
-      letter-spacing: 0;
+    .entry-title {
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      display: inline;
+      background-image: linear-gradient(var(--accent), var(--accent));
+      background-size: 0% 1px;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size .22s ease;
     }
+    a.entry-link:hover .entry-title { background-size: 100% 1px; }
+    a.entry-link:hover .entry-title { color: var(--accent); }
 
-    .feature-main p,
-    .item p,
-    .feature-side p {
-      color: var(--muted);
-      margin: 0;
-    }
+    .entry-desc { margin: 8px 0 0; color: var(--muted); font-size: 17px; line-height: 1.55; max-width: 46ch; }
 
-    .meta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-    }
+    .entry-arrow { color: var(--faint); font-family: var(--sans); }
+    a.entry-link:hover .entry-arrow { color: var(--accent); }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: #f1eee7;
-      color: #4b5563;
-      font-size: 12px;
-      font-weight: 700;
-    }
+    /* ---- About ---- */
+    .about p { margin: 0 0 18px; max-width: 42ch; }
+    .about p:last-child { margin-bottom: 0; }
+    .about a { border-bottom: 1px solid var(--rule); }
+    .about a:hover { border-color: var(--accent); color: var(--accent); }
 
-    .feature-side {
-      padding: 24px;
-      display: grid;
-      align-content: space-between;
-      gap: 20px;
-      background: #173042;
-      color: #fff;
-      border-color: #173042;
-    }
-
-    .feature-side p {
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .feature-side .link-list a {
-      border-color: rgba(255, 255, 255, 0.25);
-      color: #fff;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .item {
-      min-height: 245px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: none;
-    }
-
-    .item h3 {
-      font-size: 22px;
-      margin-top: 10px;
-    }
-
-    .item.accent-blue {
-      border-top: 4px solid var(--blue);
-    }
-
-    .item.accent-green {
-      border-top: 4px solid var(--green);
-    }
-
-    .item.accent-gold {
-      border-top: 4px solid var(--gold);
-    }
-
-    .item.accent-rose {
-      border-top: 4px solid var(--rose);
-    }
-
-    .link-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .link-list a,
-    .text-link {
-      display: inline-flex;
-      width: fit-content;
-      align-items: center;
-      min-height: 34px;
-      border-bottom: 1px solid rgba(24, 32, 42, 0.22);
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .band {
-      background: #e9eee9;
-      border-block: 1px solid #d5ddd5;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 30px;
-      align-items: start;
-    }
-
-    .plain-list {
-      display: grid;
-      gap: 14px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .plain-list li {
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(24, 32, 42, 0.13);
-    }
-
-    .plain-list strong {
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .plain-list span {
-      color: var(--muted);
-    }
-
+    /* ---- Footer ---- */
     footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 24px 42px;
+      padding: 40px 0 64px;
+      font-family: var(--sans);
+      font-size: 13.5px;
       color: var(--muted);
-      font-size: 14px;
-    }
-
-    .footer-inner {
-      max-width: var(--max);
-      margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 12px;
     }
+    footer a { border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+    footer a:hover { border-color: var(--accent); color: var(--ink); }
 
-    @media (max-width: 860px) {
-      .hero-inner,
-      .section-head,
-      .feature,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-inner {
-        min-height: auto;
-        padding-top: 54px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 3px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .nav,
-      .section,
-      .hero-inner,
-      footer {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .signal {
-        grid-template-columns: 46px minmax(0, 1fr);
-      }
-
-      .signal-mark {
-        width: 46px;
-        height: 46px;
-      }
-
-      .feature-main,
-      .feature-side,
-      .item {
-        padding: 20px;
-      }
+    @media (max-width: 620px) {
+      body { font-size: 18px; }
+      .hero { padding: 52px 0 48px; }
+      .entry { grid-template-columns: 1fr; gap: 6px; }
+      .entry-meta { margin-bottom: 2px; }
+      .masthead { padding-top: 34px; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="/">Nicholas MacGregor Garcia</a>
-      <div class="nav-links">
-        <a href="#read">Read</a>
-        <a href="#workbench">Workbench</a>
-        <a href="#research">Research</a>
-        <a href="#lab">NUS FinTech Lab</a>
-      </div>
-    </nav>
-  </header>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="wordmark" href="/">Nicholas MacGregor Garcia</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="blog/">Blog</a>
+        <a href="#about">About</a>
+        <a href="mailto:nicholas@nicholasgarcia.com">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <p class="eyebrow">Agentic AI, fintech, and institutional design</p>
-          <h1>Notes on systems that remember, trade, decide, and talk back.</h1>
-          <p class="lede">Working papers, field notes, and occasional prototypes by Nicholas MacGregor Garcia.</p>
-          <div class="actions">
-            <a class="button" href="#read">Start reading</a>
-            <a class="button secondary" href="mailto:nicholas@nicholasgarcia.com">Contact</a>
-          </div>
-        </div>
+    <main>
+      <section class="hero" style="border-bottom: 1px solid var(--rule);">
+        <p class="eyebrow">Agentic AI · Financial technology · Institutions</p>
+        <h1>The interesting part is what institutions have to live with.</h1>
+        <p class="lede">I work on agentic AI and financial technology — how these systems actually behave once a firm, a market, or a regulator has to depend on them. Working papers, field notes, and the occasional prototype. <a href="#work">Start with the work ↓</a></p>
+      </section>
 
-        <div class="signal-board" aria-label="Featured work">
-          <a class="signal" href="memory-governance.html">
-            <span class="signal-mark">01</span>
-            <span>
-              <h2>Split Memory Custody</h2>
-              <p>Working paper on agent memory, incentive compatibility, observability, and repair rights.</p>
-            </span>
-          </a>
-          <a class="signal" href="blog/">
-            <span class="signal-mark">02</span>
-            <span>
-              <h2>Blog</h2>
-              <p>AI strategy, fintech, and ASEAN-US entrepreneurship.</p>
-            </span>
-          </a>
-          <a class="signal" href="https://fintechlab.nus.edu.sg/nus-swap/">
-            <span class="signal-mark">03</span>
-            <span>
-              <h2>NUSwap</h2>
-              <p>A simulated trading exchange from NUS FinTech Lab for education and behavioral finance research.</p>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
+      <section id="work">
+        <p class="kicker">Selected work</p>
 
-    <section class="section" id="read">
-      <div class="section-head">
-        <h2>Read First</h2>
-        <p>A short path into the public material, led by the pieces that are most legible outside the workshop.</p>
-      </div>
-
-      <div class="feature">
-        <article class="feature-main">
+        <a class="entry-link entry" href="memory-governance.html">
+          <div class="entry-meta">2026<br>Working paper</div>
           <div>
-            <span class="kicker">Working paper</span>
-            <h3>Who Stores What? Split Memory Custody in Agentic AI</h3>
-            <p>Why prompt rules, retrieval stores, and model weights create governance problems when control and visibility are split across application teams and model vendors.</p>
+            <span class="entry-title">Who Stores What? Split Memory Custody in Agentic AI</span> <span class="entry-arrow">→</span>
+            <p class="entry-desc">What happens to governance when prompt rules, retrieval stores, and model weights end up owned by different parties — and why observability and repair rights matter more than they look.</p>
           </div>
+        </a>
+
+        <a class="entry-link entry" href="blog/">
+          <div class="entry-meta">Ongoing<br>Writing</div>
           <div>
-            <div class="meta-row">
-              <span class="pill">Agent governance</span>
-              <span class="pill">Game theory</span>
-              <span class="pill">June 2026</span>
-            </div>
-            <div class="link-list">
-              <a href="memory-governance.html">Read the essay</a>
-            </div>
+            <span class="entry-title">Blog — AI strategy, fintech, ASEAN–US entrepreneurship</span> <span class="entry-arrow">→</span>
+            <p class="entry-desc">Shorter pieces on where AI actually belongs inside a firm, and what a founder can decide this quarter rather than admire in a demo.</p>
           </div>
-        </article>
+        </a>
 
-        <aside class="feature-side">
+        <a class="entry-link entry" href="https://fintechlab.nus.edu.sg/nus-swap/">
+          <div class="entry-meta">NUS FinTech Lab<br>Project</div>
           <div>
-            <span class="kicker">Background notes</span>
-            <h3>Workshop memos</h3>
-            <p>Short logs from the agent workbench: what changed, what remains open, and what still needs judgment.</p>
+            <span class="entry-title">NUSwap</span> <span class="entry-arrow">↗</span>
+            <p class="entry-desc">A simulated exchange run as a behavioral-finance lab: overconfidence, loss aversion, and the disposition effect observed across student trading contests in Singapore, Brazil, and the United States.</p>
           </div>
-          <div class="link-list">
-            <a href="https://github.com/nicholasg3/ai-agents-workspace/blob/main/auto-company/published/MEMO_INDEX.md">Open memo index</a>
-            <a href="https://github.com/nicholasg3/ai-agents-workspace/tree/main/auto-company/published">Browse published artifacts</a>
-          </div>
-        </aside>
-      </div>
-    </section>
+        </a>
+      </section>
 
-    <section class="section" id="workbench">
-      <div class="section-head">
-        <h2>Current Public Work</h2>
-        <p>Only the material that is ready to be read outside the workshop.</p>
-      </div>
+      <section id="about" class="about">
+        <p class="kicker">About</p>
+        <p>Nicholas MacGregor Garcia writes from Singapore on agentic AI, financial technology, and institutional design — the point where a capable system meets an organization that has to answer for it.</p>
+        <p>Most of the material here is early: papers in progress, notes from building agents, and prototypes kept public while they are still rough. If something is useful or wrong, <a href="mailto:nicholas@nicholasgarcia.com">say so</a>.</p>
+      </section>
+    </main>
 
-      <div class="grid">
-        <article class="item accent-blue">
-          <div>
-            <span class="kicker">Blog</span>
-            <h3>Blog: AI Strategy, Fintech, and ASEAN-US Entrepreneurship</h3>
-            <p>Notes on AI in firms, applied fintech, regional entrepreneurship, and the practical edge between management and automation.</p>
-          </div>
-          <div class="link-list">
-            <a href="blog/">Open the blog catalogue</a>
-          </div>
-        </article>
-
-        <article class="item accent-green">
-          <div>
-            <span class="kicker">Operations</span>
-            <h3>Workshop memos</h3>
-            <p>Public excerpts from background work: brief records of useful changes, open questions, and next steps.</p>
-          </div>
-          <div class="link-list">
-            <a href="https://github.com/nicholasg3/ai-agents-workspace/blob/main/auto-company/published/MEMO_INDEX.md">See current notes</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="section band" id="research">
-      <div class="two-col">
-        <div>
-          <p class="eyebrow">Research Archive</p>
-          <h2>Public work, old and older.</h2>
-        </div>
-        <ul class="plain-list">
-          <li>
-            <a href="memory-governance.html">
-              <strong>Split Memory Custody in Agentic AI</strong>
-              <span>Working paper summary on memory forks, vendor incentives, and repair rights.</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="lab">
-      <div class="section-head">
-        <h2>NUS FinTech Lab</h2>
-        <p>Selected public links from the lab context around applied fintech, AI, and simulated markets.</p>
-      </div>
-
-      <div class="grid">
-        <article class="item accent-green">
-          <div>
-            <span class="kicker">Lab</span>
-            <h3>NUS FinTech Lab</h3>
-            <p>Projects, events, research themes, and fintech education initiatives at NUS.</p>
-          </div>
-          <div class="link-list">
-            <a href="https://fintechlab.nus.edu.sg/">Visit the lab site</a>
-          </div>
-        </article>
-
-        <article class="item accent-blue">
-          <div>
-            <span class="kicker">Project</span>
-            <h3>NUSwap</h3>
-            <p>A simulated cryptocurrency trading exchange built for controlled experimentation, student strategy testing, and behavioral finance research.</p>
-          </div>
-          <div class="link-list">
-            <a href="https://fintechlab.nus.edu.sg/nus-swap/">Open NUSwap page</a>
-          </div>
-        </article>
-
-        <article class="item accent-rose">
-          <div>
-            <span class="kicker">Updates</span>
-            <h3>FinTech Lab Projects</h3>
-            <p>A broader index of lab projects, including simulated markets and applied fintech systems.</p>
-          </div>
-          <div class="link-list">
-            <a href="https://fintechlab.nus.edu.sg/projects/">Browse projects</a>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
+    <footer>
       <span>© 2026 Nicholas MacGregor Garcia</span>
       <span><a href="mailto:nicholas@nicholasgarcia.com">nicholas@nicholasgarcia.com</a></span>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </body>
 </html>
