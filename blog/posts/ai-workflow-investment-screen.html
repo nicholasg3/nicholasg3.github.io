@@ -31,57 +31,59 @@
       </header>
 
       <article class="article-body">
-        <p>The quickest way to make an AI plan sound serious is to give every department a pilot. Sales gets account research. Support gets summarisation. Finance gets invoice checks. Product gets discovery notes. Nobody wants to be the person saying no, so the list grows.</p>
+        <p>The meeting usually begins with a list. A neat list. A responsible list. Sales wants account research. Support wants ticket summaries. Finance wants invoice checks. Product wants customer-interview notes. Someone has seen a demo. Someone else has a vendor deck. Around the table there is that small professional pressure to appear modern, alert, unsentimental about change.</p>
 
-        <p>The list is usually the problem. It lets a company confuse activity with judgment. A pilot is not automatically a strategy because a model is involved, and a workflow is not automatically worth changing because someone can imagine a chatbot sitting inside it.</p>
+        <p>Then the list gets longer. Nobody wants to be the person with the small imagination. Nobody wants to say that the magic box might create a new review queue, a new compliance headache, a new set of half-trusted drafts sitting in Slack at 6:42 p.m. So the company calls the list a roadmap.</p>
 
-        <p>The bottleneck is rarely model access now. It is attention, ownership, review capacity, and tolerance for operational mess. Once a company starts using AI in real work, the hard questions become embarrassingly ordinary. Who checks the output? What happens when it is wrong? Which habit changes? Who is allowed to trust it? What do we stop doing if this works?</p>
+        <p>A roadmap is generous. Often it is just a catalogue of anxieties with software attached.</p>
 
         <blockquote>If the workflow is not worth changing, it is not worth automating.</blockquote>
 
-        <p>That sounds obvious. In practice, it is the sentence that kills half the roadmap.</p>
+        <p>That sentence sounds like common sense. In a real planning session, it is a little bomb under the table. It forces everyone to ask the dull, adult questions. Who owns the changed process? Who reviews the machine's work? What happens when the answer is plausible and wrong? Which old habit disappears if the pilot succeeds?</p>
 
         <h2>Start with automate, assist, or ignore</h2>
-        <p>The automate / assist / ignore frame is still useful. It gives the room a simple vocabulary before everyone disappears into vendor names and feature demos.</p>
+        <p>The automate / assist / ignore frame is useful because it gives the room a common language before the conversation dissolves into vendor names.</p>
 
         <ul>
-          <li><strong>Automate</strong> means the system can complete the task inside a narrow boundary, with clear exception handling and low cost of error.</li>
-          <li><strong>Assist</strong> means the system prepares, drafts, retrieves, compares, or suggests, but a person still owns the judgment and the action.</li>
-          <li><strong>Ignore</strong> means the workflow should stay out of scope for now because the data is weak, the process is confused, the error is costly, or the owner is unclear.</li>
+          <li><strong>Automate</strong> when the task is narrow, repeated, reviewable, and cheap to correct.</li>
+          <li><strong>Assist</strong> when the machine can prepare the work, while a person still owns the judgment.</li>
+          <li><strong>Ignore</strong> when the process is confused, the data is thin, the owner is missing, or the error would be expensive.</li>
         </ul>
 
-        <p>That first sort is helpful, but it is not enough by itself. A team can label too many things "assist" and still end up with a pile of half-adopted tools. The next question is whether the workflow deserves to be changed at all.</p>
+        <p>As a first sort, this is good. As a whole strategy, it is too forgiving. A team can call almost anything "assist" and feel prudent. The label sounds modest. The implementation still consumes attention, review time, trust, and managerial patience.</p>
 
         <h2>The first screen</h2>
-        <p>I would not begin with model choice. I would begin with four questions, asked in plain language.</p>
+        <p>Before model choice, ask four plain questions. They are almost embarrassingly simple, which is why they work.</p>
 
         <ol>
-          <li><strong>What decision gets better?</strong> Not "productivity". Not "efficiency". Name the decision: which account to pursue, which ticket to escalate, which claim to make, which exception to approve.</li>
-          <li><strong>Is the work repeated enough to learn from?</strong> One-off executive judgment is usually a bad first target. Repeated work with a visible review path is much easier to improve.</li>
-          <li><strong>Does the company have context a generic model lacks?</strong> If not, the project may still save time, but it is probably not a strategic asset.</li>
-          <li><strong>Where does human responsibility remain?</strong> The answer should be specific enough that someone could use it on a Tuesday morning.</li>
+          <li><strong>What decision improves?</strong> Name it. Which account to pursue. Which ticket to escalate. Which claim to make. Which exception to approve.</li>
+          <li><strong>Does the work repeat?</strong> Repetition gives the company a chance to compare, correct, and learn.</li>
+          <li><strong>What does the company know that the model does not?</strong> If the answer is "nothing", the project may still save time. It will rarely create an edge.</li>
+          <li><strong>Where does responsibility stay human?</strong> The answer should be clear enough for someone to use on an ordinary Tuesday morning.</li>
         </ol>
 
-        <p>This is not a grand framework. It is a way to slow the room down before the demo takes over.</p>
+        <p>The point is to slow the room down before the demo takes over. Demos are built to collapse distance. A serious pilot restores distance: between draft and decision, suggestion and action, confidence and accountability.</p>
 
         <h2>What AI changes</h2>
-        <p>Current models are good enough to matter. They can draft, classify, retrieve, summarise, compare documents, call tools, and carry out narrow multi-step procedures. In many white-collar workflows, that is already enough to change the economics of the task.</p>
+        <p>Current models are good enough to matter. They draft, classify, retrieve, summarise, compare documents, call tools, and carry out narrow procedures. In a lot of office work, that changes the economics of the task.</p>
 
-        <p>But they do not remove the management problem. A model can prepare a sales brief. It cannot decide what kind of customer the company wants. It can summarise a refund policy. It cannot decide when keeping a furious customer is worth bending the rule. It can assemble pricing evidence. It cannot decide what a price is meant to say about the company.</p>
+        <p>The management problem survives the demo. A model can prepare a sales brief. It cannot decide what kind of customer the company wants. It can summarise a refund policy. It cannot decide when keeping a furious customer is worth bending the rule. It can assemble pricing evidence. It cannot decide what a price is meant to say about the company.</p>
 
-        <p>So the useful question is not "Can AI do this?" Often it can do some version of it. The useful question is: where, exactly, should it sit in the chain of responsibility?</p>
+        <p>"Can AI do this?" is often the soft question. The harder question is where the system sits in the chain of responsibility.</p>
 
         <h2>Three ordinary cases</h2>
-        <p>Take account research. Before a sales call, a team wants company news, funding history, product signals, executive changes, and likely objections. AI can help. But a generic brief full of visible facts is not the prize. The real edge is joining those facts to the company's own memory: which triggers have actually led to revenue, which objections matter, which accounts look impressive but never close. That is an assisted workflow, not an autonomous one.</p>
+        <p>Start with account research. Before a sales call, the team wants the usual bundle: company news, funding history, product signals, executive changes, likely objections. AI is useful here. The trap is the handsome brief. Ten bullet points. Three risks. Two suggested openers. It looks like preparation. Sometimes it is merely visible information in a better suit.</p>
 
-        <p>Support policy is different. Many tickets are repeated, bounded, and reviewable. AI can retrieve the policy and draft the answer. But the exception path matters more than the first answer. Refund discretion, security issues, legal exposure, and angry high-value customers should not be smoothed over by a fluent paragraph. This can be automated narrowly, if escalation is designed first.</p>
+        <p>The edge comes from the company's own memory: which triggers have led to revenue, which objections kill deals, which impressive-looking accounts never close. That makes account research an assisted workflow. Let the system prepare the brief. Keep the opening question and the pursuit decision with a person.</p>
 
-        <p>Pricing is different again. It is tempting because the leverage is obvious. But pricing is not just analysis. It is positioning, margin, sales motion, procurement friction, and willingness to lose certain customers. AI can collect inputs and draft scenarios. It should not be treated as the owner of the recommendation unless the company is comfortable hiding a strategic sacrifice inside a spreadsheet-shaped answer.</p>
+        <p>Support policy has a different shape. Many tickets are repeated, bounded, and reviewable. AI can retrieve the policy and draft the answer. The danger lives in the exception path: refunds, security, legal exposure, loyal customers on the edge of fury. This work can be automated narrowly, if escalation is designed first.</p>
+
+        <p>Pricing is the seductive one. The leverage is obvious. The data feels analytical. The spreadsheet glows with managerial seriousness. Yet pricing is also positioning, margin, sales motion, procurement friction, and willingness to lose certain customers. AI can collect inputs and draft scenarios. Handing it the recommendation risks hiding a strategic sacrifice inside a tidy table.</p>
 
         <h2>The boundary most teams blur</h2>
-        <p>There are at least four separate permissions: produce an output, recommend an action, execute the action, and learn from the result. Demos make these look like one smooth path. They are not.</p>
+        <p>There are at least four separate permissions: produce an output, recommend an action, execute the action, and learn from the result. Demos make these look like one smooth path. Operations turns them back into separate risks.</p>
 
-        <p>Drafting a customer reply is one risk. Sending it is another. Applying a refund is another. Updating future policy because the refund "worked" is another again. Most AI governance problems start when those boundaries are left implicit.</p>
+        <p>Drafting a customer reply is one thing. Sending it is another. Applying a refund is another. Updating future policy because the refund "worked" is another again. The boundary is where governance begins.</p>
 
         <div class="article-table-wrap" role="region" aria-label="AI workflow boundary map" tabindex="0">
           <table class="article-table">
@@ -117,13 +119,13 @@
           </table>
         </div>
 
-        <h2>Use the label only after the questions</h2>
-        <p>Once the workflow has passed through the screen, the original labels become more useful because they are tied to an actual operating boundary.</p>
+        <h2>Use the label at the end</h2>
+        <p>After the screen, automate / assist / ignore becomes more than a tidy taxonomy. It becomes an operating choice.</p>
 
         <ul>
-          <li><strong>Automate</strong> when the work is repeated, bounded, low-harm, easy to review, and owned by someone with authority to change the process.</li>
-          <li><strong>Assist</strong> when the workflow has high value but judgment, taste, risk, or relationship context must remain explicit.</li>
-          <li><strong>Ignore</strong> when there is weak context advantage, poor adoption path, expensive error, or no named business decision.</li>
+          <li><strong>Automate</strong> the repeated work with a narrow boundary and a clear exception path.</li>
+          <li><strong>Assist</strong> the valuable work where judgment, taste, risk, or relationship context should remain visible.</li>
+          <li><strong>Ignore</strong> the work with weak context, vague ownership, costly errors, or no named decision.</li>
         </ul>
 
         <div class="article-table-wrap" role="region" aria-label="Example workflow calls" tabindex="0">

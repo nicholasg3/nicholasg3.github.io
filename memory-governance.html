@@ -128,7 +128,7 @@
         <p class="meta">By <a href="https://nicholasgarcia.com">Nicholas MacGregor Garcia</a> · June 29, 2026</p>
     </header>
 
-    <p>Enterprise LLM agents have officially left the demo era. They're now running real, long-horizon workflows — remembering customer preferences, correcting errors on the fly, enforcing policies, and getting smarter with every session.</p>
+    <p>Enterprise large language model agents have officially left the demo era. They're now running real, long-horizon workflows — remembering customer preferences, correcting errors on the fly, enforcing policies, and getting smarter with every session.</p>
 
     <p>But here's the part nobody puts on the pitch deck: <strong>the experience these agents accumulate lives in three different places, controlled by two different parties who don't fully see what the other is doing.</strong></p>
 
@@ -140,11 +140,11 @@
 
     <h2>The Three Tiers Nobody Talks About Enough</h2>
 
-    <p>Modern LLM agents rely on three complementary memory layers:</p>
+    <p>Modern language-model agents rely on three complementary memory layers:</p>
 
     <ul>
         <li><strong>Prompt rules and playbooks</strong> — fast, fully inspectable, controlled by application teams.</li>
-        <li><strong>External retrieval stores</strong> (RAG caches, episodic databases, checkpointers) — medium inspectability, usually managed by the deployer or platform.</li>
+        <li><strong>External retrieval stores</strong> (retrieval-augmented generation caches, episodic databases, checkpointers) — medium inspectability, usually managed by the deployer or platform.</li>
         <li><strong>Model weights</strong> (fine-tunes, adapters, RLHF updates) — slow, mostly opaque, controlled by the vendor.</li>
     </ul>
 
@@ -176,7 +176,7 @@
 
     <p>Contractible rights to inspect, roll back, or reconfigure inspectable tiers act as credible off-path threats. When owner liability exceeds vendor liability, these rights discipline aggressive fine-tuning and push the system toward better outcomes (Proposition 2). They also <strong>select</strong> the high-trust equilibrium when hidden fine-tuning would otherwise sustain a pessimistic trap (Proposition 3′).</p>
 
-    <p><em>In practice:</em> Think of episodes where a poisoned checkpoint or stale entity link forces a full process restart because no one had surgical access to the tier. Contractible observability (logging, trace spans, guarded checkpointers) turns these into manageable incidents instead of production fires. Teams that negotiate these rights upfront avoid the "who owns this memory?" blame game later.</p>
+    <p><em>In practice:</em> Think of episodes where a poisoned checkpoint or stale entity link forces a full process restart because no one had surgical access to the tier. Contractible observability (logging, trace spans, guarded checkpointers) turns production fires into manageable incidents. Teams that negotiate these rights upfront avoid the "who owns this memory?" blame game later.</p>
 
     <h3>3. The low-trust trap — and why it's so sneaky (the central result).</h3>
 
