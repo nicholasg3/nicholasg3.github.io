@@ -69,13 +69,92 @@
         <p>Demonstrations and pilots serve different purposes. Both are more useful after the four answers exist. A demonstration shows whether a tool can perform a task under selected conditions. A pilot runs the tool on the organization's own cases long enough to show who approves outputs in practice, and what the organization does when the system is wrong with high confidence on a consequential case.</p>
 
         <h2>Background: fit, entanglement, and displaced labor</h2>
-        <p>The investment screen is not a new theory. It turns three recurring findings from information technology research into a buying checklist: task-technology fit, the entanglement of automation with augmentation, and the shift of interpretive labor onto recipients.</p>
+        <p>The investment screen is not a new theory. It turns three recurring findings from information technology research into a buying checklist: task-technology fit, the entanglement of automation with augmentation, and the shift of interpretive labor onto recipients. The diagrams below are skim aids. Each restates one idea in plain form before the paragraph that uses it.</p>
 
-        <p>Dale Goodhue and Ronald Thompson (1995) established the baseline. Gains depend on how well a technology matches the task people are trying to do, not only on what the technology can do in isolation. For generative AI, a high-benchmark model aimed at an ill-specified workflow mainly produces activity. The screen's first two questions (what decision improves, and whether the work repeats) are fit questions. They come before model comparison because fit is a property of the work process, not of a benchmark table.</p>
+        <h3>Task-technology fit</h3>
+        <figure class="article-figure" aria-label="Diagram of task-technology fit">
+          <svg viewBox="0 0 680 200" role="img" aria-labelledby="fit-title fit-desc">
+            <title id="fit-title">Task-technology fit</title>
+            <desc id="fit-desc">Task and technology both feed fit; fit leads to performance. Technology alone does not.</desc>
+            <rect x="20" y="28" width="130" height="52" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="85" y="59" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Task</text>
+            <rect x="20" y="112" width="130" height="52" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="85" y="143" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Technology</text>
+            <path d="M150 54 H210" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+            <path d="M150 138 H210" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+            <rect x="220" y="70" width="140" height="52" fill="#dce7e8" stroke="#101214" stroke-width="1.5"/>
+            <text x="290" y="101" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Fit</text>
+            <path d="M360 96 H420" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+            <rect x="430" y="70" width="160" height="52" fill="#fffefa" stroke="#a83228" stroke-width="2"/>
+            <text x="510" y="101" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="15" fill="#101214">Performance</text>
+            <path d="M85 164 V184 H510 V148" stroke="#6d7374" stroke-width="1.2" stroke-dasharray="4 3" fill="none"/>
+            <text x="300" y="178" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">Technology alone is not enough</text>
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>Goodhue and Thompson (1995): gains track how well a technology matches the task, not the technology in isolation.</figcaption>
+        </figure>
+        <p>Dale Goodhue and Ronald Thompson (1995) established the baseline. Gains depend on how well a technology matches the task people are trying to do, not only on what the technology can do alone. For generative AI, a high-benchmark model aimed at an ill-specified workflow mainly produces activity. The screen's first two questions (what decision improves, and whether the work repeats) are fit questions. They come before model comparison because fit is a property of the work process, not of a benchmark table.</p>
 
-        <p>Fit also changes after adoption. Sebastian Raisch and Sebastian Krakowski (2021) show that automation and augmentation stay entangled over time. A system introduced as an assistant can absorb judgment that was never formally transferred. A system introduced to automate can need more supervision than the deployment plan assumed. That is why a one-time label of "assist" or "automate" is not enough, why the screen's fourth question asks where responsibility stays human, and why that answer must remain checkable after launch. Mohammad Hossein Jarrahi (2018) adds the division-of-labor point: machines scale analytical processing; people still supply context, tolerance for ambiguity, values, and situational judgment that do not reduce cleanly to a prompt. Leave that division implicit and the organization rediscovers it as review load.</p>
+        <h3>Automation and augmentation stay entangled</h3>
+        <figure class="article-figure" aria-label="Diagram of automation-augmentation entanglement over time">
+          <svg viewBox="0 0 680 220" role="img" aria-labelledby="ent-title ent-desc">
+            <title id="ent-title">Entanglement over time</title>
+            <desc id="ent-desc">Assist can absorb judgment later; automate can need more supervision later. Labels drift after launch.</desc>
+            <text x="40" y="28" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#6d7374">At launch</text>
+            <text x="400" y="28" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#6d7374">Later in use</text>
+            <rect x="30" y="48" width="150" height="48" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="105" y="77" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Labeled "assist"</text>
+            <rect x="30" y="130" width="150" height="48" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="105" y="159" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Labeled "automate"</text>
+            <path d="M190 72 C280 72, 320 72, 390 72" stroke="#1f6078" stroke-width="1.8" fill="none" marker-end="url(#arrow2)"/>
+            <path d="M190 154 C280 154, 320 100, 390 100" stroke="#a83228" stroke-width="1.8" fill="none" marker-end="url(#arrow2)"/>
+            <path d="M190 154 C280 154, 320 190, 390 190" stroke="#b48a34" stroke-width="1.8" fill="none" marker-end="url(#arrow2)"/>
+            <rect x="400" y="48" width="240" height="48" fill="#dce7e8" stroke="#101214" stroke-width="1.5"/>
+            <text x="520" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#101214">System absorbs judgment</text>
+            <text x="520" y="88" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">never formally transferred</text>
+            <rect x="400" y="126" width="240" height="48" fill="#fffefa" stroke="#a83228" stroke-width="1.5"/>
+            <text x="520" y="155" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="13" fill="#101214">More supervision than planned</text>
+            <text x="340" y="210" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">Raisch and Krakowski (2021): one-time labels do not stay fixed</text>
+            <defs>
+              <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>A system introduced as an assistant can later absorb judgment; a system introduced to automate can later need more human supervision than the plan assumed.</figcaption>
+        </figure>
+        <p>Sebastian Raisch and Sebastian Krakowski (2021) show that automation and augmentation stay entangled over time. That is why a one-time label of "assist" or "automate" is not enough, why the screen's fourth question asks where responsibility stays human, and why that answer must remain checkable after launch. Mohammad Hossein Jarrahi (2018) adds the division-of-labor point: machines scale analytical processing; people still supply context, tolerance for ambiguity, values, and situational judgment that do not reduce cleanly to a prompt. Leave that division implicit and the organization rediscovers it as review load.</p>
 
-        <p>That rediscovery has a popular name. Harvard Business Review and BetterUp use "workslop" for AI-generated material that looks finished while shifting interpretive work onto the recipient: what the text means, whether it is correct, what to do next. In fit terms, workslop is a tool-task mismatch that shows up as review work. In Raisch and Krakowski's terms, it is entanglement made routine: the system drafts, and people retake judgment without recording the transfer. The screen is meant to make that labor cost visible before the organization treats it as normal. Ethan Mollick's <em>Co-Intelligence</em> is strongest on day-to-day collaboration with uneven model abilities. Mustafa Suleyman's <em>The Coming Wave</em> is strongest on containment and governance. Both support the same practice: treat capability and control as separate decisions, and only after the work itself is specified.</p>
+        <h3>Displaced interpretive labor ("workslop")</h3>
+        <figure class="article-figure" aria-label="Diagram of displaced interpretive labor">
+          <svg viewBox="0 0 680 180" role="img" aria-labelledby="ws-title ws-desc">
+            <title id="ws-title">Displaced interpretive labor</title>
+            <desc id="ws-desc">AI produces a polished draft; interpretive work moves to the recipient.</desc>
+            <rect x="30" y="40" width="160" height="70" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="110" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">AI draft</text>
+            <text x="110" y="92" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">looks finished</text>
+            <path d="M200 75 H270" stroke="#101214" stroke-width="1.5" fill="none" marker-end="url(#arrow3)"/>
+            <rect x="280" y="40" width="180" height="70" fill="#dce7e8" stroke="#101214" stroke-width="1.5"/>
+            <text x="370" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Interpretive work</text>
+            <text x="370" y="92" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">meaning · accuracy · next step</text>
+            <path d="M470 75 H540" stroke="#a83228" stroke-width="1.8" fill="none" marker-end="url(#arrow3)"/>
+            <rect x="550" y="40" width="100" height="70" fill="#fffefa" stroke="#a83228" stroke-width="2"/>
+            <text x="600" y="70" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">Recipient</text>
+            <text x="600" y="92" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">pays the cost</text>
+            <text x="340" y="150" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">HBR / BetterUp "workslop": polished output, displaced review labor</text>
+            <defs>
+              <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>The draft can look complete while the hard work (what it means, whether it is right, what to do next) moves to the person who receives it.</figcaption>
+        </figure>
+        <p>Harvard Business Review and BetterUp use "workslop" for that pattern. In fit terms, workslop is a tool-task mismatch that shows up as review work. In Raisch and Krakowski's terms, it is entanglement made routine: the system drafts, and people retake judgment without recording the transfer. The screen is meant to make that labor cost visible before the organization treats it as normal. Ethan Mollick's <em>Co-Intelligence</em> is strongest on day-to-day collaboration with uneven model abilities. Mustafa Suleyman's <em>The Coming Wave</em> is strongest on containment and governance. Both support the same practice: treat capability and control as separate decisions, and only after the work itself is specified.</p>
 
         <h2>What AI changes in ordinary work</h2>
         <p>For ordinary office AI, the investment question is where the tool sits in the chain of responsibility once it is used every day. Whether models can draft, retrieve, summarize, or run narrow procedures is largely settled. On many routine tasks they can, and that already changes the cost of those tasks.</p>
@@ -93,6 +172,31 @@
 
         <h2>Four control points in an AI workflow</h2>
         <p>An AI workflow usually contains at least four permissions that product demos treat as one feature: producing an output, recommending an action, taking the action, and learning from the outcome. Those are separate control points. Governance fails when an organization approves them with a single decision. A product demonstration can present them as one continuous step. In production they separate again, and each layer can fail on its own.</p>
+
+        <figure class="article-figure" aria-label="Diagram of four control points">
+          <svg viewBox="0 0 680 120" role="img" aria-labelledby="cp-title cp-desc">
+            <title id="cp-title">Four control points</title>
+            <desc id="cp-desc">Output, recommendation, execution, and learning as four separate steps.</desc>
+            <rect x="16" y="30" width="140" height="50" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="86" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">1. Output</text>
+            <path d="M160 55 H188" stroke="#101214" stroke-width="1.5" marker-end="url(#arrow4)"/>
+            <rect x="192" y="30" width="150" height="50" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="267" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">2. Recommend</text>
+            <path d="M346 55 H374" stroke="#101214" stroke-width="1.5" marker-end="url(#arrow4)"/>
+            <rect x="378" y="30" width="130" height="50" fill="#fffefa" stroke="#101214" stroke-width="1.5"/>
+            <text x="443" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">3. Execute</text>
+            <path d="M512 55 H540" stroke="#101214" stroke-width="1.5" marker-end="url(#arrow4)"/>
+            <rect x="544" y="30" width="120" height="50" fill="#dce7e8" stroke="#a83228" stroke-width="2"/>
+            <text x="604" y="60" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="14" fill="#101214">4. Learn</text>
+            <text x="340" y="105" text-anchor="middle" font-family="Aptos, Segoe UI, sans-serif" font-size="12" fill="#6d7374">Each step needs its own owner and control, not one approval for the whole chain</text>
+            <defs>
+              <marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#101214"/>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption>Four permissions, four places a workflow can fail. Learning (policy change from outcomes) is the step least often watched.</figcaption>
+        </figure>
 
         <p>A customer refund shows why the four permissions must be governed separately. Drafting a reply is an output decision. Sending the reply places the company's voice on record. Issuing money is execution. Adjusting policy because a refund "worked" is learning: it rewrites the rule for later cases, and it is the step least often watched. If a system executes and learns without explicit controls, a manager's sign-off on a recommendation is weak control. Governance has to cover each permission, not only the draft.</p>
 

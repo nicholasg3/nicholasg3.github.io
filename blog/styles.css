@@ -465,6 +465,33 @@ h2 {
   border-bottom: 0;
 }
 
+/* Editorial diagrams for skimming theory / process sections */
+.article-figure {
+  margin: 28px 0 36px;
+  padding: 18px 16px 14px;
+  background: var(--sheet);
+  border: 1px solid var(--ink);
+  box-shadow: 6px 6px 0 rgba(31, 96, 120, 0.14);
+}
+
+.article-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.article-figure figcaption {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: "Aptos", "Segoe UI", Verdana, sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
 .worksheet-preview {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
