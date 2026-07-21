@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Blog catalogue by Nicholas MacGregor Garcia on AI strategy, fintech, and ASEAN-US entrepreneurship.">
+    <title>Blog: AI Strategy, Fintech, and ASEAN-US Entrepreneurship</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .catalogue-hero {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 84px 24px 42px;
+      }
+
+      .catalogue-hero h1 {
+        max-width: 860px;
+        font-size: clamp(3rem, 7vw, 6.2rem);
+        line-height: 0.92;
+        overflow-wrap: anywhere;
+      }
+
+      .catalogue-hero p {
+        max-width: 720px;
+      }
+
+      .tagbar {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 0 24px 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .tag-button {
+        min-height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--paper);
+        color: var(--muted);
+        padding: 6px 12px;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .tag-button[aria-pressed="true"] {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: #fff;
+      }
+
+      .catalogue {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 24px 24px 84px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .post-row {
+        display: grid;
+        grid-template-columns: 150px minmax(0, 1fr) 190px;
+        gap: 26px;
+        align-items: start;
+        padding: 24px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .post-row:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .post-meta {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .post-row h2 {
+        margin: 0 0 8px;
+        font-size: clamp(26px, 3.4vw, 42px);
+      }
+
+      .post-row p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .post-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+
+      .post-tags span {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 9px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .empty-state {
+        display: none;
+        border-top: 1px solid var(--line);
+        padding: 28px 0;
+        color: var(--muted);
+      }
+
+      .empty-state.visible {
+        display: block;
+      }
+
+      @media (max-width: 760px) {
+        .catalogue-hero {
+          padding-top: 54px;
+        }
+
+        .catalogue-hero h1 {
+          font-size: clamp(2.25rem, 10.5vw, 3rem);
+          line-height: 0.98;
+          overflow-wrap: normal;
+        }
+
+        .post-row {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .post-tags {
+          justify-content: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Nicholas MacGregor Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas MacGregor Garcia</strong>
+          <small>AI Strategy, Fintech, and ASEAN-US Entrepreneurship</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Home</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="../memory-governance.html">Working paper</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="catalogue-hero">
+        <div class="issue-kicker">Blog</div>
+        <h1>AI Strategy, Fintech, and ASEAN-US Entrepreneurship</h1>
+        <p class="hero-copy">A catalogue of public notes and essays on where AI belongs in organizations, how fintech systems are built and governed, and what founders can actually decide this quarter.</p>
+      </section>
+
+      <div class="tagbar" aria-label="Filter posts by tag">
+        <button class="tag-button" type="button" data-tag="all" aria-pressed="true">All</button>
+        <button class="tag-button" type="button" data-tag="AI Strategy" aria-pressed="false">AI Strategy</button>
+        <button class="tag-button" type="button" data-tag="Governance" aria-pressed="false">Governance</button>
+        <button class="tag-button" type="button" data-tag="Founders" aria-pressed="false">Founders</button>
+        <button class="tag-button" type="button" data-tag="Fintech" aria-pressed="false">Fintech</button>
+        <button class="tag-button" type="button" data-tag="Working Paper" aria-pressed="false">Working Paper</button>
+      </div>
+
+      <section class="catalogue" id="catalogue" aria-label="Blog catalogue">
+        <article class="post-row" data-tags="AI Strategy,Governance,Founders">
+          <div class="post-meta">Issue 002<br>July 2026</div>
+          <div>
+            <h2><a href="posts/ai-workflow-investment-screen.html">The AI Workflow Investment Screen</a></h2>
+            <p>Most AI pilots fail before the model is chosen. The first decision is where AI should be allowed to enter the operating system of the company.</p>
+          </div>
+          <div class="post-tags" aria-label="Tags">
+            <span>AI Strategy</span>
+            <span>Governance</span>
+            <span>Founders</span>
+          </div>
+        </article>
+
+        <article class="post-row" data-tags="AI Strategy,Founders">
+          <div class="post-meta">Issue 001<br>July 2026</div>
+          <div>
+            <h2><a href="posts/ai-strategy-doctrine-before-tools.html">AI Strategy Starts With Doctrine Before Tools</a></h2>
+            <p>The easiest AI strategy to sell is a list of tools. It is also the easiest to outdate.</p>
+          </div>
+          <div class="post-tags" aria-label="Tags">
+            <span>AI Strategy</span>
+            <span>Founders</span>
+          </div>
+        </article>
+
+        <article class="post-row" data-tags="AI Strategy,Governance,Working Paper">
+          <div class="post-meta">Working paper<br>June 2026</div>
+          <div>
+            <h2><a href="../memory-governance.html">Who Stores What? Split Memory Custody in Agentic AI</a></h2>
+            <p>A working paper summary on memory forks, vendor incentives, observability, and repair rights.</p>
+          </div>
+          <div class="post-tags" aria-label="Tags">
+            <span>AI Strategy</span>
+            <span>Governance</span>
+            <span>Working Paper</span>
+          </div>
+        </article>
+
+        <article class="post-row" data-tags="Fintech,ASEAN-US">
+          <div class="post-meta">External<br>NUS FinTech Lab</div>
+          <div>
+            <h2><a href="https://fintechlab.nus.edu.sg/nus-swap/">NUSwap: Simulated Trading Exchange</a></h2>
+            <p>A lab project using a simulated cryptocurrency exchange for controlled experimentation, student strategy testing, and behavioral finance research.</p>
+          </div>
+          <div class="post-tags" aria-label="Tags">
+            <span>Fintech</span>
+            <span>ASEAN-US</span>
+          </div>
+        </article>
+
+        <p class="empty-state" role="status">No posts match that tag yet.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Nicholas MacGregor Garcia</span>
+      <a href="../index.html">Home</a>
+    </footer>
+
+    <script>
+      const buttons = document.querySelectorAll(".tag-button");
+      const posts = document.querySelectorAll(".post-row");
+      const empty = document.querySelector(".empty-state");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const tag = button.dataset.tag;
+          let visibleCount = 0;
+
+          buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+
+          posts.forEach((post) => {
+            const tags = post.dataset.tags.split(",");
+            const visible = tag === "all" || tags.includes(tag);
+            post.hidden = !visible;
+            if (visible) visibleCount += 1;
+          });
+
+          empty.classList.toggle("visible", visibleCount === 0);
+        });
+      });
+    </script>
+  </body>
+</html>
