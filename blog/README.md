@@ -8,8 +8,8 @@ This directory is the local source artifact for Nick's requested public blog/new
 
 ## Included Pages
 
-- `index.html`: public publication homepage and issue index
-- `launch-bundle.html`: curated eight-article launch reading path
+- `index.html`: public publication homepage and issue index (primary front door)
+- `launch-bundle.html`: **retired tombstone** (redirects to index; no offer chrome; Nick take-down 2026-07-25)
 - `posts/ai-strategy-doctrine-before-tools.html`: first public AI Strategy essay
 - `posts/ai-workflow-investment-screen.html`: second public AI Strategy essay, `The AI Pilot Trap`
 - `posts/ai-vendor-warning-label.html`: third public AI Strategy essay, `The AI Vendor's Warning Label`
