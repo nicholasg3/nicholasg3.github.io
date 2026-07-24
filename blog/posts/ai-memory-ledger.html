@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public AI Strategy memo on managing AI memory, personalization, and persistent context as an operating ledger.">
+    <title>The AI Memory Ledger | Strategy Publisher</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../index.html#doctrine">Doctrine</a>
+        <a href="../index.html#paid-note">$19 note</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Public memo / Issue 024</div>
+        <h1>The AI Memory Ledger</h1>
+        <p>AI memory is useful because it makes software less forgetful. It is dangerous for the same reason. Once an assistant remembers people, projects, preferences, and past work, context becomes infrastructure.</p>
+      </header>
+
+      <article class="article-body">
+        <p>The first wave of enterprise AI was judged by answers. The next wave will be judged by inherited context. Chat systems, office copilots, coding assistants, and team agents are beginning to carry memory across sessions: personal preferences, role details, project facts, client patterns, file context, meeting habits, and prior instructions. The sales pitch is obvious. Workers should not need to re-explain the company every morning.</p>
+
+        <p>That convenience changes the control problem. A prompt is temporary. A memory is a standing assumption. It may shape future drafts, recommendations, summaries, code changes, customer replies, research paths, and prioritization calls long after the original conversation is forgotten. For a company, that makes memory less like chat history and more like a lightweight operating database.</p>
+
+        <p>The question is not whether AI systems should remember. Some should. The question is what kind of memory belongs in which workflow, who approved it, how it can be inspected, and when it should expire.</p>
+
+        <blockquote>The strategic mistake is treating memory as personalization when it has become policy.</blockquote>
+
+        <h2>The New Persistence Layer</h2>
+        <p>OpenAI's ChatGPT memory controls describe two forms of persistence: saved memories and references to past conversations. Microsoft 365 Copilot Memory similarly frames remembered details as context that helps future responses stay aligned with a user's work. Anthropic's Claude memory announcement emphasizes professional context, team processes, client needs, project details, and work patterns. Google Gemini's privacy materials describe a broad set of inputs that may be shared with Gemini, including prompts, files, screens, browser page content, and imported chats.</p>
+
+        <p>These are not identical products. Their enterprise controls, defaults, admin settings, retention rules, and training policies differ. But they point in the same direction. The assistant is becoming a system that carries context forward.</p>
+
+        <p>That turns memory into a management layer. A company now has to decide which remembered facts are helpful, which are sensitive, which are stale, which are wrong, and which create a record that legal, security, compliance, or management may later care about. "The assistant remembered it" is not a governance model.</p>
+
+        <h2>The Ledger</h2>
+        <p>A useful AI memory ledger separates persistent context by operating risk, not by product menu.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI memory ledger" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Memory Class</th>
+                <th>Useful For</th>
+                <th>Control Test</th>
+                <th>False Positive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Preference memory</td>
+                <td>Tone, format, recurring presentation style, coding conventions.</td>
+                <td>Would the user be comfortable seeing this memory written on a team profile card?</td>
+                <td>Letting taste become a hidden rule that blocks better judgment.</td>
+              </tr>
+              <tr>
+                <td>Role memory</td>
+                <td>Job responsibilities, domain context, recurring work patterns.</td>
+                <td>Is the remembered role current, bounded, and visible to the user?</td>
+                <td>Assuming a person still owns a process after a reorg, client change, or handoff.</td>
+              </tr>
+              <tr>
+                <td>Project memory</td>
+                <td>Long-running initiatives, client context, product constraints, strategic choices.</td>
+                <td>Is this memory tied to an owner, source, date, and review trigger?</td>
+                <td>Carrying yesterday's decision into tomorrow's work after the facts changed.</td>
+              </tr>
+              <tr>
+                <td>Sensitive memory</td>
+                <td>Legal, HR, health, customer, security, regulated, or confidential facts.</td>
+                <td>Should this be remembered at all, or should it stay inside a controlled system of record?</td>
+                <td>Confusing access permission for retention permission.</td>
+              </tr>
+              <tr>
+                <td>Institutional memory</td>
+                <td>Repeatable process doctrine, approved boilerplate, escalation rules, customer promises.</td>
+                <td>Can the company audit, update, and revoke the memory centrally?</td>
+                <td>Letting each employee's assistant evolve a different version of company policy.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Why Memory Is Not Just History</h2>
+        <p>Chat history is evidence. Memory is instruction. That distinction matters. A transcript can be searched later. A memory can actively shape the next answer without the user noticing. If a system remembers that a manager "prefers aggressive sales language," that preference may seep into renewal emails, partner notes, hiring copy, and escalation drafts. If it remembers that a client "does not like long implementation timelines," it may bias future planning toward optimistic schedules.</p>
+
+        <p>This is why memory needs provenance. Who supplied the remembered fact? Was it inferred or explicitly saved? Is it personal, team-wide, project-specific, or enterprise-wide? Is it still true? Which workflows may use it? Can the user see it before it affects output? Can an admin disable it? Can a reviewer reconstruct why a draft took a particular stance?</p>
+
+        <p>Without those answers, memory becomes a soft form of automation. It does not click the final button, but it bends the work before a human reviews it.</p>
+
+        <h2>The Personalization Trap</h2>
+        <p>Vendors understandably describe memory as a productivity feature. Users save time because the assistant knows their style, job, preferences, and current projects. That is real value. It is also the trap. The better personalization feels, the less visible it becomes.</p>
+
+        <p>In consumer software, invisible personalization can be acceptable if controls are clear and harm is limited. In company workflows, invisible personalization can conflict with policy. A partner memo should follow the firm's doctrine, not one consultant's accumulated assistant memory. A support reply should reflect approved customer policy, not the habits of whoever trained the assistant most. A security review should inherit the current threat model, not a stale project note from six months ago.</p>
+
+        <p>The organization therefore needs separate lanes for personal memory, team memory, and official memory. Personal memory can hold preferences. Team memory can hold shared working context. Official memory should be treated like policy: sourced, dated, approved, change-controlled, and easy to revoke.</p>
+
+        <h2>The Privacy Boundary</h2>
+        <p>Memory also changes privacy because the relevant question shifts from "what did the user share once?" to "what does the system keep using?" Google, Microsoft, OpenAI, and Anthropic all give users some form of control, but the details matter. Controls that are adequate for an individual may not be enough for a firm with client confidentiality, regulated data, employee information, litigation holds, or cross-border restrictions.</p>
+
+        <p>A simple boundary helps. Some facts may be used in a session but not remembered. Some may be remembered by the individual but not shared across a team. Some may be held in a sanctioned knowledge base but not in a model's personalization layer. Some should not enter an assistant at all.</p>
+
+        <p>That boundary should be practical rather than theatrical. Most companies do not need a philosophy seminar about privacy. They need a table that says which data classes may be remembered, by whom, in which tool, for how long, with which review path, and under whose authority.</p>
+
+        <h2>The Governance Test</h2>
+        <p>NIST's AI Risk Management Framework remains useful here because memory is a textbook case of governing, mapping, measuring, and managing. Before enabling persistent memory for serious work, executives should ask for seven controls.</p>
+
+        <ol>
+          <li>Can users inspect what the assistant remembers?</li>
+          <li>Can users delete, correct, or disable memory without losing normal access?</li>
+          <li>Can admins define which groups, tools, or data classes may use memory?</li>
+          <li>Can memory be scoped to a user, team, project, or official workspace?</li>
+          <li>Can sensitive categories be blocked from persistent memory?</li>
+          <li>Can reviewers see when memory materially influenced an output?</li>
+          <li>Can stale memories expire, be reviewed, or be revoked after role and project changes?</li>
+        </ol>
+
+        <p>The point is not to slow every assistant interaction. The point is to prevent convenience from quietly becoming shadow policy. A memory feature that cannot be inspected, corrected, scoped, or expired should not be used for consequential work.</p>
+
+        <h2>The Executive Move</h2>
+        <p>Do not ask the AI team whether memory is on. Ask for a memory ledger across the ten workflows where persistent context would matter most. For each workflow, require the memory class, source, scope, owner, review date, sensitive-data boundary, user control, admin control, and deletion path.</p>
+
+        <p>Then look for imbalance. If everything is personal memory, the company is creating fragmented policy. If everything is official memory, it may be over-centralizing useful working context. If sensitive facts can be remembered because they were once accessible, access has been confused with retention. If there is no expiry rule, the company is building future decisions on a pile of old assumptions.</p>
+
+        <p>The best AI operators will use memory deliberately. They will let assistants remember low-risk preferences, preserve project context where continuity matters, move official doctrine into governed knowledge systems, and keep sensitive facts out of persistent personalization unless there is a clear authority and audit path.</p>
+
+        <p>That is the memory doctrine: remember less by default, remember better by design, and never let yesterday's context become tomorrow's hidden policy.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://openai.com/index/memory-and-new-controls-for-chatgpt/">OpenAI, "Memory and new controls for ChatGPT"</a></li>
+            <li><a href="https://help.openai.com/en/articles/8265053-what-is-chatgpt-enterprise">OpenAI Help Center, "What is ChatGPT Enterprise?"</a></li>
+            <li><a href="https://claude.com/blog/memory">Anthropic, "Bringing memory to teams"</a></li>
+            <li><a href="https://support.microsoft.com/en-us/microsoft-365-copilot/manage-copilot-memory-in-microsoft-365-copilot">Microsoft Support, "Manage Copilot Memory in Microsoft 365 Copilot"</a></li>
+            <li><a href="https://support.google.com/gemini/answer/13594961">Google, "Gemini Apps Privacy Hub"</a></li>
+            <li><a href="https://developer.android.com/studio/gemini/privacy-notice">Google, "Gemini Privacy Notice" for Android Studio</a></li>
+            <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST, AI Risk Management Framework and Generative AI Profile</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Which AI memories should persist, and under whose authority?</strong>
+          <p>Inventory the workflows where remembered context can shape future drafts, decisions, summaries, code, or customer actions.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>AI assistants are moving from chat logs to persistent work context.</strong>
+          <p>The buyer advantage is no longer just access to better models; it is disciplined control over the context those models inherit.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">$19 Paid Note</span>
+          <strong>The memory governance worksheet.</strong>
+          <p>Potential paid layer: memory inventory, data-class boundary, user/admin control checklist, expiry schedule, and review template.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher by Auto Company</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

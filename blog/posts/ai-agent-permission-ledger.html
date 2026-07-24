@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public Strategy Publisher memo on why agentic AI needs a permission ledger before agents act across business systems.">
+    <title>The AI Agent Permission Ledger | Strategy Publisher</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../launch-bundle.html">Launch Bundle</a>
+        <a href="../index.html#doctrine">Doctrine</a>
+        <a href="../index.html#paid-note">$19 note</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Public memo / Issue 017</div>
+        <h1>The AI Agent Permission Ledger</h1>
+        <p>Agentic AI turns access into strategy. Before an agent can read, decide, write, spend, message, or change a system, executives need a ledger that names the owner, the permission, the evidence trail, and the stop rule.</p>
+      </header>
+
+      <article class="article-body">
+        <p>The old software permission question was mostly administrative. Which user can open which system? Which application can call which API? Which administrator can approve a change?</p>
+
+        <p>Agentic AI makes that question strategic. An agent is not just a passive account. It can reason across context, call tools, produce artifacts, trigger workflows, ask other systems for data, and sometimes take action faster than a manager can inspect the chain. Give it too little access and it remains a demo. Give it too much and the company has created an invisible operator with borrowed authority.</p>
+
+        <p>This is why the next AI control surface is not the prompt. It is the permission ledger.</p>
+
+        <blockquote>An agent should never have more authority than the business decision it is allowed to improve.</blockquote>
+
+        <p>NIST's 2026 summary of responses on AI agent security is useful because it treats agent adoption as a security and trust problem, not merely as a productivity wave. Respondents broadly agreed that AI agents introduce novel threats and that existing cybersecurity practices still matter but need adaptation. McKinsey's 2026 work on agentic infrastructure reaches the same operating conclusion from the CTO side: agent-ready infrastructure needs clear digital identity, ownership, logging, auditability, policy enforcement, and supervisory mechanisms that can pause or override automated behavior.</p>
+
+        <p>That is the executive issue. Agentic AI does not fail only by hallucinating. It can fail by doing an allowed thing at the wrong time, for the wrong reason, with the wrong data, at the wrong scale.</p>
+
+        <h2>The Account Is Not The Actor</h2>
+        <p>Human access control assumes a person sits behind the account. Even when the permission model is messy, a reviewer can ask who clicked, who approved, who knew the customer, who understood the exception, or who should have escalated.</p>
+
+        <p>Agents blur that trail. A sales agent may use a human's CRM access. A finance agent may inherit spreadsheet permissions. A support agent may draft from policy, retrieve account status, and prepare refund language. A coding agent may read repositories, run tests, open pull requests, and call third-party tools. In each case, the access belongs to systems and people, but the acting pattern belongs to the agent.</p>
+
+        <p>If the company cannot separate the account from the actor, it cannot answer the first audit question: was this a human decision, an AI recommendation, an AI execution, or a machine step approved by a named human?</p>
+
+        <h2>The Six Permission Lines</h2>
+        <p>A practical agent ledger begins with six lines. They are plain because they have to survive procurement, engineering, legal, security, finance, and operating review.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI agent permission ledger" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Permission Line</th>
+                <th>Executive Question</th>
+                <th>Failure Pattern</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Read</td>
+                <td>What data can the agent see, and which sources are out of bounds?</td>
+                <td>The agent quietly joins customer, employee, financial, and private strategy context because retrieval felt harmless.</td>
+              </tr>
+              <tr>
+                <td>Reason</td>
+                <td>What assumptions, rankings, or classifications can the agent produce?</td>
+                <td>A score looks objective even though the source mix, objective function, or confidence threshold was never approved.</td>
+              </tr>
+              <tr>
+                <td>Write</td>
+                <td>Where can the agent create or update records?</td>
+                <td>Drafts become operating memory before anyone confirms they are accurate, sourced, and accountable.</td>
+              </tr>
+              <tr>
+                <td>Spend</td>
+                <td>What cost can the agent incur through inference, tools, credits, refunds, or external services?</td>
+                <td>A useful workflow becomes a budget leak because loops, context, and tool calls were not capped.</td>
+              </tr>
+              <tr>
+                <td>Message</td>
+                <td>Who can the agent contact, and under whose authority?</td>
+                <td>A machine sends a plausible but unauthorized promise to a customer, partner, candidate, regulator, or employee.</td>
+              </tr>
+              <tr>
+                <td>Change</td>
+                <td>Which systems, policies, code, configurations, or workflows can the agent alter?</td>
+                <td>A reversible-looking action becomes high impact when it fans out across production, finance, security, or customer trust.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>This is not a technical checklist masquerading as strategy. It is the capital-allocation map for autonomy. Each permission line changes the amount of trust the business is placing in the system.</p>
+
+        <h2>The Agent Security Market Is Sending A Clear Signal</h2>
+        <p>OWASP's agentic AI security work is valuable because it gives names to risks that operators can otherwise feel but not govern. Its guidance flags prompt injection, tool abuse, privilege escalation, data exfiltration, memory poisoning, goal hijacking, excessive autonomy, high-impact action abuse, approval manipulation, cascading failures, wallet denial, sensitive-data exposure, and supply-chain compromise.</p>
+
+        <p>The list is long, but the executive lesson is compact: agents collapse application risk, identity risk, data risk, operating risk, and cost risk into one delegated workflow.</p>
+
+        <p>That is why the ledger has to be owned above a single team. Security can define controls. Engineering can implement scopes and logs. Legal can define unacceptable external commitments. Finance can define cost thresholds. Business owners can define the task and the escalation rule. But no one function can decide the whole permission boundary alone, because the boundary is the product of all those risks.</p>
+
+        <h2>Four Named Controls</h2>
+        <p>The permission ledger should force four controls before any agent moves from pilot to production.</p>
+
+        <h3>1. A named human owner</h3>
+        <p>Every agent needs an owner who is responsible for the business outcome and the harm model. "The AI team" is not enough. The owner should know what the agent is allowed to optimize, what it must never do, and when it has to stop.</p>
+
+        <h3>2. Scoped credentials</h3>
+        <p>An agent should not inherit broad human authority by default. It should receive the narrowest workable permission set for the task: read-only where possible, write-limited where needed, approval-gated for sensitive steps, time-bound for risky experiments, and separate from personal user accounts.</p>
+
+        <h3>3. Audit-grade logs</h3>
+        <p>The company should be able to reconstruct what the agent saw, what it inferred, what tool it called, what it changed, which human approved the high-impact step, and what result followed. If the log cannot explain the workflow, the system is not ready for production trust.</p>
+
+        <h3>4. A kill right</h3>
+        <p>Supervisory control is not symbolic. There must be a practical way to pause, disable, roll back, or downscope an agent when cost spikes, data exposure, behavior drift, policy conflict, or customer-impacting error appears. A stop rule that requires a committee meeting is not a stop rule.</p>
+
+        <h2>The Buyer Question</h2>
+        <p>Enterprise buyers should ask vendors for the permission ledger before they ask for another demo.</p>
+
+        <p>The demo shows what the agent can do on a sunny path. The ledger shows whether the company can live with what the agent is allowed to do on a bad day. Can the buyer restrict tool use by role, data class, workflow, geography, customer segment, or action type? Can it see which agent touched which system? Can it require human approval for high-impact steps? Can it separate draft, recommendation, execution, and learning? Can it revoke a permission without breaking unrelated work?</p>
+
+        <p>Those questions sound slower than innovation theatre. In reality they speed adoption because they let the buyer say yes to narrow autonomy instead of no to an unknowable system.</p>
+
+        <h2>The Founder Version</h2>
+        <p>Small companies need this even more because their informal permissions are usually worse. A founder may have access to everything. The first agent may run from the founder's laptop, email account, API key, or admin console. That feels efficient until the agent touches a customer, updates a CRM record, creates a support promise, spends credits, or exposes a private memo.</p>
+
+        <p>The founder version of the ledger can fit on one page:</p>
+
+        <ol>
+          <li>What business decision does this agent improve?</li>
+          <li>What is the narrowest data it needs?</li>
+          <li>What actions can it take without approval?</li>
+          <li>What actions require explicit approval?</li>
+          <li>What cost ceiling stops the workflow?</li>
+          <li>What customer, legal, security, or finance event forces escalation?</li>
+          <li>Who can revoke the agent's access today?</li>
+        </ol>
+
+        <p>If those answers are missing, the company should keep the agent in assist mode. Let it draft, classify, search, summarize, or prepare options. Do not let it execute across systems until the permission boundary is real.</p>
+
+        <h2>Autonomy Has A Balance Sheet</h2>
+        <p>The useful way to think about agent permission is not fear. It is leverage with accounting.</p>
+
+        <p>A well-scoped agent can reduce response time, remove handoff friction, improve service consistency, monitor signals continuously, and give expert teams more room for judgment. But every unit of autonomy has a balance sheet. It consumes data access, inference budget, tool authority, human review capacity, and institutional trust.</p>
+
+        <p>The permission ledger is how the company decides whether that balance sheet is worth carrying.</p>
+
+        <h2>The Executive Test</h2>
+        <p>Before expanding an agent's access, require seven answers.</p>
+
+        <ol>
+          <li>Who owns the agent's business outcome and harm model?</li>
+          <li>Which read, reason, write, spend, message, and change permissions does it have?</li>
+          <li>Which permissions are temporary, scoped, approval-gated, or prohibited?</li>
+          <li>What audit trail proves what the agent saw, inferred, called, changed, and escalated?</li>
+          <li>What cost, error, data, customer, or security event triggers a stop?</li>
+          <li>Who can revoke access immediately?</li>
+          <li>What business decision improves enough to justify the remaining risk?</li>
+        </ol>
+
+        <p>If the seventh answer is weak, the other six should not be waived. They should force a smaller pilot.</p>
+
+        <p>Agentic AI will not wait for perfect governance. It will enter through support queues, sales workflows, coding tools, finance analysis, security operations, and personal productivity habits. The companies that move fastest will not be the ones that give every agent blanket access. They will be the ones that know exactly where permission creates leverage, where it creates liability, and where the machine must hand authority back.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://www.nist.gov/publications/summary-analysis-responses-request-information-regarding-security-considerations-ai">NIST / CAISI, "Summary Analysis of Responses to the Request for Information Regarding Security Considerations for AI Agents"</a></li>
+            <li><a href="https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/reimagining-tech-infrastructure-for-and-with-agentic-ai">McKinsey, "Reimagining tech infrastructure for (and with) agentic AI"</a></li>
+            <li><a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era">McKinsey, "State of AI trust in 2026: Shifting to the agentic era"</a></li>
+            <li><a href="https://genai.owasp.org/2025/12/09/owasp-genai-security-project-releases-top-10-risks-and-mitigations-for-agentic-ai-security/">OWASP GenAI Security Project, "Top 10 Risks and Mitigations for Agentic AI Security"</a></li>
+            <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html">OWASP, "AI Agent Security Cheat Sheet"</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Which permission line expands first?</strong>
+          <p>Pick one agent workflow and decide whether it is allowed to read, reason, write, spend, message, or change before scaling the pilot.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>Agent controls are becoming board controls.</strong>
+          <p>NIST, OWASP, and McKinsey signals all point toward identity, governance, logging, approval, and lifecycle control as prerequisites for scaled autonomy.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">$19 Paid Note</span>
+          <strong>The permission ledger worksheet.</strong>
+          <p>Potential paid layer: agent inventory, scoped-permission table, approval gates, audit evidence checklist, and revocation runbook.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher by Auto Company</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

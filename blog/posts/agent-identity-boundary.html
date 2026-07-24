@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public AI Strategy memo on why agent identity and authority should be governed before browser and tool-using AI agents enter production workflows.">
+    <title>The Agent Identity Boundary | Strategy Publisher</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../index.html#doctrine">Doctrine</a>
+        <a href="../index.html#paid-note">$19 note</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Public memo / Issue 020</div>
+        <h1>The Agent Identity Boundary</h1>
+        <p>Browser agents and tool-using AI systems make a simple management question newly urgent: when work is done inside a real account, can the company prove whether the actor was a person, a software agent, or a delegated system acting under narrow authority?</p>
+      </header>
+
+      <article class="article-body">
+        <p>The next enterprise AI failure may not look like a hallucination. It may look like a normal authenticated action. A calendar is changed. A supplier record is updated. A draft is sent. A support refund is approved. A file is read, summarised, and copied into a new workflow. Nothing appears exotic because the work happens through ordinary tools.</p>
+
+        <p>That is the point. As AI agents move from chat windows into browsers, APIs, internal tools, and authenticated sessions, the strategic risk shifts from answer quality to authority. The company has to know who or what acted, under whose permission, through which tool, for what purpose, and how the action can be challenged later.</p>
+
+        <p>NIST has made this direction explicit in 2026. Its AI Agent Standards Initiative points toward secure adoption, interoperability, agent authentication, identity infrastructure, and evaluations for human-agent and multi-agent interactions. Its May 2026 analysis of responses on AI agent security found broad agreement that agents create adoption-blocking security concerns and that ordinary cybersecurity practices still matter but need adaptation. OWASP's Agentic AI guidance says the same thing in practitioner language: autonomous agents create risks around tool misuse, context isolation, excessive agency, and indirect prompt injection.</p>
+
+        <p>Chrome's June 2026 WebMCP security guidance adds a practical browser example. Agents that use browser-exposed tools may operate inside a user's authenticated session. Tool definitions and tool outputs can carry hostile instructions. The model cannot be treated as a reliable boundary by itself. Once an agent can act in a logged-in context, identity and authority stop being IT plumbing. They become management controls.</p>
+
+        <blockquote>An AI agent should never inherit a human identity wholesale. It should receive a bounded authority, a visible session, a narrow toolset, and a record that survives the work.</blockquote>
+
+        <h2>The Problem With Borrowed Identity</h2>
+        <p>Most business software assumes a user is a person. The account carries permissions, history, approvals, audit trails, and blame. That assumption breaks when a person delegates work to an agent that can read pages, call tools, draft messages, update systems, or coordinate with other agents.</p>
+
+        <p>If the agent acts entirely as the user, the audit trail becomes misleading. The log says Maria changed the customer record, but the useful fact may be that Maria approved an agent to reconcile customer records from a source list, and the agent changed the field after reading an untrusted note. The difference matters for review, incident response, compliance, and trust. It also matters for ordinary management: a team cannot improve a workflow if it cannot tell where human judgment ended and delegated execution began.</p>
+
+        <p>The borrowed-identity problem is most dangerous in the browser because the browser is where business life already happens. Email, CRM, finance, HR, analytics, procurement, support, cloud consoles, and document systems all sit behind sessions that were designed for human navigation. An agent with a browser can appear low-friction precisely because it uses the same surfaces the employee uses. Low friction is also how authority leaks.</p>
+
+        <h2>The Identity Boundary Ledger</h2>
+        <p>A useful agent identity system does not start with a perfect standard. It starts with a ledger that product, security, legal, operations, and business owners can read. The ledger has seven lines.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="Agent identity boundary ledger" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Ledger Line</th>
+                <th>Question</th>
+                <th>Failure Mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Actor</td>
+                <td>Is the action performed by a person, a named agent, a background service, or a chain of agents?</td>
+                <td>Every action appears to come from the human account.</td>
+              </tr>
+              <tr>
+                <td>Authority Source</td>
+                <td>Who granted the agent permission, for which business purpose, and under which policy?</td>
+                <td>Consent is implied by login rather than explicitly delegated.</td>
+              </tr>
+              <tr>
+                <td>Session</td>
+                <td>When did authority begin, when does it expire, and what context is carried between tasks?</td>
+                <td>A temporary task becomes a standing shadow employee.</td>
+              </tr>
+              <tr>
+                <td>Tool Scope</td>
+                <td>Which tools, data, domains, actions, and write privileges are allowed?</td>
+                <td>The agent can read broadly and act wherever the user can act.</td>
+              </tr>
+              <tr>
+                <td>Human Checkpoint</td>
+                <td>Which decisions require review before execution, not after damage control?</td>
+                <td>Approval is moved downstream into audit theatre.</td>
+              </tr>
+              <tr>
+                <td>Record</td>
+                <td>Can the company reconstruct prompts, tool calls, data sources, approvals, outputs, and final actions?</td>
+                <td>The company has a transcript but not an accountable operating record.</td>
+              </tr>
+              <tr>
+                <td>Revocation</td>
+                <td>How is authority paused, narrowed, expired, or killed after a bad signal?</td>
+                <td>The only stop rule is disabling the user's account or the whole system.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>This is not a request for bureaucracy before experimentation. It is a way to let experimentation proceed without pretending that identity is solved by a checkbox. The smaller the agent, the lighter the ledger can be. But the ledger should exist before the agent can write, spend, message, approve, delete, transfer, or change production state.</p>
+
+        <h2>The Browser Raises The Stakes</h2>
+        <p>A browser agent is powerful because it can operate across systems without waiting for every vendor to build a native integration. It is risky for the same reason. The browser page contains trusted controls, untrusted content, third-party comments, hidden instructions, ads, documents, user-generated text, and tool metadata. An agent that cannot keep those contexts separate can be manipulated by the environment it is reading.</p>
+
+        <p>Chrome's WebMCP guidance names two concrete attack surfaces: malicious manifests and contaminated outputs. A tool description can include hostile instructions. A response from a site can contain content that tells the model to ignore previous instructions or misuse a tool. This is indirect prompt injection in the place where the agent is supposed to be useful: live, messy, authenticated work.</p>
+
+        <p>The management lesson is blunt. Do not treat the model as the control boundary. The boundary belongs around identity, authority, tools, confirmations, logs, and revocation. The model may reason well, but it should not be asked to be the only thing standing between an untrusted page and a privileged action.</p>
+
+        <h2>Why Procurement Will Ask For It</h2>
+        <p>Agent identity will become a procurement issue because buyers will not want to inherit another vendor's ambiguity. They will ask whether the system supports separate agent identities, delegated authorization, scoped credentials, tool-call logs, approval gates, audit exports, and emergency revocation. They will ask whether an action can be attributed to a human, an agent, a model, a tool, and a session. They will ask what happens when an agent uses a browser extension, iframe, API connector, workflow tool, or internal automation runner.</p>
+
+        <p>The companies selling agentic systems should welcome those questions. A vendor that can prove bounded authority has a commercial advantage over a vendor that says the customer can simply trust the user account. The latter may be easier to demo. The former is easier to approve.</p>
+
+        <p>There is a parallel with cloud. The cloud did not become enterprise infrastructure because every developer received broad production access. It became manageable when identity, roles, permissions, logs, secrets, and deployment controls became part of the operating model. AI agents will need the same managerial translation.</p>
+
+        <h2>The Founder Version</h2>
+        <p>A small company does not need a standards department. It needs a short rule: no production agent without a named owner, scoped authority, visible logs, and a kill switch. The first implementation can be plain language.</p>
+
+        <ol>
+          <li>Name the agent separately from the person who requested the work.</li>
+          <li>Give it only the tools needed for the task.</li>
+          <li>Keep write, spend, send, delete, and approve actions behind human confirmation until evidence says otherwise.</li>
+          <li>Record the source material, tool calls, approvals, and final action.</li>
+          <li>Expire the authority by default.</li>
+        </ol>
+
+        <p>That discipline is enough to prevent the worst early mistake: letting a successful demo become a persistent actor inside the business without a clean boundary.</p>
+
+        <h2>The Executive Test</h2>
+        <p>Before any AI agent receives access to a browser session, internal tool, or production workflow, require eight answers.</p>
+
+        <ol>
+          <li>What is the agent's separate identity in logs and user-facing records?</li>
+          <li>Who granted authority, and for which business purpose?</li>
+          <li>Which data can it read, and which data is explicitly out of scope?</li>
+          <li>Which tools can it call, and which actions require confirmation?</li>
+          <li>How does the system handle malicious instructions from pages, files, comments, emails, tool descriptions, or tool outputs?</li>
+          <li>What evidence proves the difference between human judgment, agent reasoning, tool execution, and final approval?</li>
+          <li>When does the authority expire?</li>
+          <li>How can the company pause, revoke, investigate, and repair after a bad action?</li>
+        </ol>
+
+        <p>If those answers are missing, the company is not deploying an agent. It is lending a human identity to software and hoping the receipt never matters.</p>
+
+        <p>The strategic opportunity is real. Agents can compress tedious work, coordinate across systems, and make software feel less fragmented. But the more useful the agent becomes, the less acceptable borrowed identity becomes. The firms that solve the identity boundary early will be able to delegate more work with less institutional anxiety. The firms that skip it will discover, after the fact, that the most expensive question in agentic AI is not what the model knew. It is who was allowed to act.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure">NIST, "Announcing the AI Agent Standards Initiative for Interoperable and Secure Innovation"</a></li>
+            <li><a href="https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative">NIST, "AI Agent Standards Initiative"</a></li>
+            <li><a href="https://www.nist.gov/news-events/news/2026/02/new-concept-paper-identity-and-authority-software-agents">NIST, "New Concept Paper on Identity and Authority of Software Agents"</a></li>
+            <li><a href="https://www.nist.gov/publications/summary-analysis-responses-request-information-regarding-security-considerations-ai">NIST, "Summary Analysis of Responses to the Request for Information Regarding Security Considerations for AI Agents"</a></li>
+            <li><a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">OWASP, "Top 10 for Agentic Applications 2026"</a></li>
+            <li><a href="https://developer.chrome.com/docs/agents/security">Chrome for Developers, "Agent security considerations for WebMCP"</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Where does borrowed identity become unsafe?</strong>
+          <p>Pick one agent workflow and define the actor, authority source, session, tool scope, checkpoint, record, and revocation path before expanding access.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>Agent identity is moving from plumbing to approval logic.</strong>
+          <p>NIST, OWASP, and browser-agent guidance all point toward separable identity, scoped authority, and auditable tool use as adoption conditions.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">$19 Paid Note</span>
+          <strong>The agent authority worksheet.</strong>
+          <p>Potential paid layer: role template, browser-agent risk screen, delegated-authority matrix, revocation checklist, and incident review script.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher by Auto Company</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

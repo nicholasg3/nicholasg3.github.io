@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public AI Strategy memo on choosing between frontier APIs, open-weight models, local hosting, and vendor bundles through an operating ledger.">
+    <title>The AI Model Mix Ledger | Strategy Publisher</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../index.html#doctrine">Doctrine</a>
+        <a href="../index.html#paid-note">$19 note</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Public memo / Issue 023</div>
+        <h1>The AI Model Mix Ledger</h1>
+        <p>The model question is no longer which lab is winning the leaderboard. It is which work deserves a frontier API, which work can run on an open-weight model, which work belongs inside a vendor bundle, and which work should not touch a model at all.</p>
+      </header>
+
+      <article class="article-body">
+        <p>AI buying used to look like a supplier choice. Pick the model. Negotiate the contract. Give employees access. That frame is now too simple. The market is splitting into frontier proprietary systems, open-weight models, managed cloud endpoints, local deployments, specialist agents, and office-suite copilots. Each has a different cost structure, control profile, upgrade path, evidence burden, and failure mode.</p>
+
+        <p>The open-model debate makes this harder because it tempts executives into ideology. One camp treats open weights as competition, sovereignty, and innovation. Another treats them as uncontrolled capability and national-security exposure. Both arguments matter. Neither is a purchasing policy.</p>
+
+        <p>The operator needs a model mix ledger: a boring table that maps work to the level of capability, control, and accountability it actually needs. Stanford HAI's 2026 AI Index reports a narrowing U.S.-China model-performance gap, fast progress in agentic systems, and a persistent transparency problem around the most capable systems. The OECD warns that "open source" does not cleanly translate from software to foundation models because openness comes in degrees. NTIA's open-weights report lands on a similar middle position: open models create benefits, but governments and buyers need evidence collection, monitoring, and readiness to act when risks change. That is exactly the kind of judgment companies need internally.</p>
+
+        <blockquote>The strategic mistake is not choosing open or closed. It is letting one model category quietly become the default for every kind of work.</blockquote>
+
+        <h2>The New Buying Problem</h2>
+        <p>For a founder or enterprise buyer, model choice is now a portfolio problem. A frontier API may be best for tasks where reasoning quality, tool integration, vendor support, and rapid capability upgrades matter more than unit cost. An open-weight model may be best where data control, customization, offline resilience, cost predictability, or jurisdictional control matter more than frontier performance. A bundled copilot may be best where the work already lives inside email, documents, code repositories, CRM, or support software. A smaller specialist model may be best when the task is narrow and repeatable.</p>
+
+        <p>Those choices are not permanent. They should change as model prices fall, benchmarks saturate, internal data improves, regulation clarifies, and failure evidence accumulates. Artificial Analysis and similar independent evaluators show why this cannot be a once-a-year procurement ritual: model quality, price, latency, context, and open-weight availability keep shifting. A model that was too weak last quarter may become adequate this quarter. A model that looked cheap at the API layer may become expensive after review load, retries, context size, and agent loops are counted.</p>
+
+        <p>The executive job is therefore not to find the universal model. It is to prevent model sprawl from becoming unmanaged infrastructure. Every AI workflow should have an explicit model class, owner, reason, fallback, review burden, and exit trigger.</p>
+
+        <h2>The Ledger</h2>
+        <p>A useful model mix ledger separates work by decision rights, not by vendor branding.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI model mix ledger" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Work Class</th>
+                <th>Likely Model Choice</th>
+                <th>Control Test</th>
+                <th>False Positive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Frontier judgment support</td>
+                <td>Frontier API or managed enterprise model</td>
+                <td>Does quality matter enough to justify premium cost and vendor dependency?</td>
+                <td>Using the best model because the task feels important but has no measured quality threshold.</td>
+              </tr>
+              <tr>
+                <td>Repeatable internal production</td>
+                <td>Open-weight, hosted open model, or smaller tuned model</td>
+                <td>Can the company govern data, cost, latency, and failure recovery better with more control?</td>
+                <td>Assuming self-hosting is cheaper while ignoring engineering, security, and evaluation work.</td>
+              </tr>
+              <tr>
+                <td>Office and workflow assistance</td>
+                <td>Suite copilot or application-native AI</td>
+                <td>Does the AI live where the work record, permissions, and audit trail already live?</td>
+                <td>Buying convenience that creates invisible shadow work and unclear responsibility.</td>
+              </tr>
+              <tr>
+                <td>Regulated or sensitive work</td>
+                <td>Constrained deployment with explicit assurance and human checkpoints</td>
+                <td>Can the buyer prove provenance, access control, monitoring, and rollback?</td>
+                <td>Treating a vendor security page as a substitute for workflow-level assurance.</td>
+              </tr>
+              <tr>
+                <td>Low-value commodity drafting</td>
+                <td>Cheapest adequate model or no model</td>
+                <td>Does the output save enough time after review to justify any AI path?</td>
+                <td>Automating marginal work because the marginal token price looks low.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Open Is Not One Thing</h2>
+        <p>The phrase open-source AI hides too many differences. A model can reveal code, weights, architecture, training data, evaluation methods, system prompts, or deployment instructions. It can allow research use but restrict commercial use. It can be downloadable but practically hard to run. It can be transparent enough for experimentation while still opaque about provenance, safety testing, or training data.</p>
+
+        <p>That is why the OECD's terminology warning matters. Software metaphors travel badly into foundation models. Source code can be inspected, patched, forked, and redistributed under known conventions. Model openness often gives users access to weights without giving them full knowledge of how those weights were created, what data shaped them, or how behavior will change under downstream tuning.</p>
+
+        <p>For operators, that means openness should be scored, not assumed. The relevant question is not "is it open?" The relevant question is: open enough for what job?</p>
+
+        <h2>The Sovereignty Temptation</h2>
+        <p>The sovereignty argument is becoming more persuasive. Governments and large organizations want control over data, national capability, regulation, and economic dependence. Linux Foundation research on sovereign AI reports that open source is often seen as a foundation for autonomy because it offers flexibility, transparency, and control. That is a serious strategic signal, especially for companies operating across jurisdictions.</p>
+
+        <p>But sovereignty can become theatre. A company can say it wants sovereignty while still relying on foreign chips, foreign clouds, foreign consultants, foreign model updates, and a tiny internal team that cannot evaluate or maintain the stack. Local hosting is not sovereignty by itself. Open weights are not sovereignty by themselves. Sovereignty exists only when the organization can operate, inspect, update, secure, and exit the system with tolerable dependence.</p>
+
+        <p>Small companies should be especially careful. They rarely need a national-sovereignty posture. They often need portability, data boundaries, supplier leverage, and cost discipline. Those are narrower, more useful goals.</p>
+
+        <h2>The Cost Trap</h2>
+        <p>Open-weight models can lower the price of capability. They do not make AI free. The bill moves. Instead of paying only per token to an API provider, the buyer may pay through hosting, GPUs, engineering time, monitoring, data preparation, security review, evaluation, fine-tuning, compliance, and incident response. Sometimes that trade is excellent. Sometimes it is self-hosting vanity.</p>
+
+        <p>The cost ledger should include six lines: model access, compute, integration, evaluation, review load, and switching cost. If those six lines are not visible, the buyer is probably comparing list prices rather than operating economics.</p>
+
+        <p>This is also where frontier providers remain strong. A closed model can be strategically rational when the vendor absorbs the infrastructure burden, updates quality quickly, provides enterprise controls, and gives the buyer a clear support path. Closed does not mean bad. Open does not mean cheap. The practical question is whether the control gained is worth the burden accepted.</p>
+
+        <h2>The Governance Test</h2>
+        <p>NIST's AI Risk Management Framework and Generative AI Profile give buyers a useful discipline: govern, map, measure, and manage. Applied to model choice, that means every production workflow should carry a short model card of its own.</p>
+
+        <ol>
+          <li>What work does this model perform?</li>
+          <li>Why is this model class used instead of a cheaper, more controlled, or more capable alternative?</li>
+          <li>What data may enter the model, and what data is forbidden?</li>
+          <li>What quality threshold justifies production use?</li>
+          <li>What review burden does the workflow create?</li>
+          <li>What failure would trigger rollback, replacement, or human-only operation?</li>
+          <li>Who owns the next model-mix review?</li>
+        </ol>
+
+        <p>That last line is the one most teams miss. Model choice decays. A smart decision in January can become wasteful by July. A model that was too weak can become good enough. A vendor that was safe can become a concentration risk. A local deployment that looked prudent can become a maintenance burden. Without a scheduled review, the model mix becomes a fossil record of old assumptions.</p>
+
+        <h2>The Executive Move</h2>
+        <p>Do not ask the AI team for a single model strategy. Ask for a model mix ledger covering the ten workflows where AI matters most. For each workflow, require the model class, reason, cost line, control line, quality threshold, data boundary, review burden, fallback, and next review date.</p>
+
+        <p>Then look for imbalance. If every workflow uses the most expensive frontier model, the company may be buying capability without cost discipline. If every workflow uses an open-weight model, it may be treating control as a substitute for quality and support. If every workflow lives inside a suite copilot, it may be outsourcing the future work record to the application vendor. If the company has no forbidden-work category, it has not done governance.</p>
+
+        <p>The best AI buyers will not be open-model absolutists or closed-model loyalists. They will be portfolio managers. They will spend frontier capability where it changes judgment, use open and smaller models where control and economics matter, keep vendor bundles where the workflow record already lives, and refuse AI where the review burden exceeds the value.</p>
+
+        <p>That is the model mix doctrine: capability is rented, control is earned, and default choices should expire.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance">Stanford HAI, "2026 AI Index Report: Technical Performance"</a></li>
+            <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/research-and-development">Stanford HAI, "2026 AI Index Report: Research and Development"</a></li>
+            <li><a href="https://www.oecd.org/en/publications/ai-openness_02f73362-en.html">OECD, "AI openness: A primer for policymakers"</a></li>
+            <li><a href="https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report">NTIA, "Dual-Use Foundation Models with Widely Available Model Weights Report"</a></li>
+            <li><a href="https://www.linuxfoundation.org/research/state-of-sovereign-ai">Linux Foundation Research, "The State of Sovereign AI"</a></li>
+            <li><a href="https://artificialanalysis.ai/">Artificial Analysis, model quality, price, latency, and open-weight tracking</a></li>
+            <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST, AI Risk Management Framework and Generative AI Profile</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Which workflows deserve which model class?</strong>
+          <p>Map the ten most important AI workflows to frontier, open-weight, hosted, bundled, specialist, or no-model choices before procurement scales.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>Model performance is converging while control choices diverge.</strong>
+          <p>The buyer advantage moves from picking the famous model to maintaining a living ledger of capability, control, cost, and rollback.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">$19 Paid Note</span>
+          <strong>The model mix worksheet.</strong>
+          <p>Potential paid layer: workflow inventory, model-class scorecard, data-boundary map, cost ledger, governance card, and quarterly review template.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher by Auto Company</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public AI Strategy memo on closing the control gap between AI accountability, agent deployment, spend, incidents, governance, and business ownership.">
+    <title>The AI Control Gap Ledger | Strategy Publisher</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../index.html#doctrine">Doctrine</a>
+        <a href="../index.html#paid-note">$19 note</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Public memo / Issue 027</div>
+        <h1>The AI Control Gap Ledger</h1>
+        <p>AI adoption is no longer waiting for permission from a central strategy deck. The new executive problem is that accountability is landing before visibility, spend discipline, incident response, and stop rules have caught up.</p>
+      </header>
+
+      <article class="article-body">
+        <p>The enterprise AI story has moved past the clean conference slide. Firms are using AI. Employees are using AI. Boards are asking about AI. Vendors are selling agents. Business units are building automations around the tools they can reach. The slow part is no longer awareness. The slow part is control.</p>
+
+        <p>That changes the management question. A year ago, an executive could ask which use case deserved a pilot. Today the better question is harder: which AI system is already influencing work, who is accountable for it, who can see it, what can it change, and what happens when it fails?</p>
+
+        <p>The evidence points in the same direction from several angles. Stanford HAI's 2026 AI Index reports broad organizational AI adoption, but agent use remains early across most functions. NBER's 2026 firm survey finds many companies actively use AI, while regular executive use is still measured in modest weekly hours. IBM's 2026 technology-leader study describes CIOs and CTOs being held accountable for systems they do not fully control. Deloitte's 2026 agent survey says mature governance is much rarer than agent experimentation. McKinsey's 2026 trust survey says responsible-AI maturity is improving, but strategy, governance, and agentic controls still lag.</p>
+
+        <blockquote>The strategic risk is not that the company has no AI. It is that the company has enough AI to create obligations, but not enough control to manage them.</blockquote>
+
+        <h2>The Accountability Transfer</h2>
+        <p>Every successful technology wave eventually transfers accountability upward. A small tool starts as convenience. A workflow starts to depend on it. Customers, employees, regulators, auditors, or counterparties begin to care about the output. Then the organization discovers that the person named as accountable was never given a control surface.</p>
+
+        <p>AI accelerates that transfer because the tool can draft, classify, recommend, route, summarize, decide, trigger, and increasingly act. A spreadsheet macro could break a spreadsheet. A deployed agent can touch tickets, invoices, customer messages, code, cloud resources, knowledge bases, and internal approvals. That is not merely a larger blast radius. It is a different accountability model.</p>
+
+        <p>The executive mistake is to treat this as an IT inventory problem. Inventory matters, but it is not enough. A list of tools does not reveal which decisions they influence. A procurement record does not show which employee connected a model to a workflow. A compliance policy does not prove that a business unit can stop a bad automation before it becomes customer-facing work.</p>
+
+        <h2>The Control Gap</h2>
+        <p>The control gap is the distance between what the company is responsible for and what it can actually observe, govern, fund, reverse, and explain. It appears in five common places.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI control gap ledger" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Control Lane</th>
+                <th>What Breaks</th>
+                <th>Owner Question</th>
+                <th>Minimum Control</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>System Visibility</td>
+                <td>Teams deploy assistants, agents, prompts, connectors, and vendor features faster than central teams can see them.</td>
+                <td>Which AI-enabled workflow is live, and who knows it exists?</td>
+                <td>A living registry by workflow, model or vendor, data class, business owner, and deployment state.</td>
+              </tr>
+              <tr>
+                <td>Action Authority</td>
+                <td>AI moves from suggestion to action without a matching authority boundary.</td>
+                <td>What can the system read, write, send, spend, approve, or change?</td>
+                <td>Permission tiers, human checkpoints, revocation paths, and audit records for each action class.</td>
+              </tr>
+              <tr>
+                <td>Financial Exposure</td>
+                <td>Usage grows through tokens, retries, long context, agent loops, and premium model defaults before value is measured.</td>
+                <td>Who owns the AI bill, and what business result justifies the run rate?</td>
+                <td>Budget caps, model-routing rules, unit-cost dashboards, and value milestones before scale.</td>
+              </tr>
+              <tr>
+                <td>Incident Response</td>
+                <td>Failures are corrected manually but not converted into system changes, stop rules, or doctrine.</td>
+                <td>Which incident would force a pause, downgrade, or redesign?</td>
+                <td>Severity definitions, response owners, containment time targets, post-incident learning, and release gates.</td>
+              </tr>
+              <tr>
+                <td>Business Accountability</td>
+                <td>Technology leaders inherit risk while business units keep the benefit narrative.</td>
+                <td>Which executive owns the workflow outcome, not just the tool?</td>
+                <td>A named business owner, technical owner, risk owner, finance owner, and final stop authority.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Why Manual Governance Fails</h2>
+        <p>Manual governance feels sensible because most organizations begin with committees, approvals, policy pages, human review, and spreadsheet trackers. Those are useful in the pilot phase. They become brittle in the agent phase.</p>
+
+        <p>The reason is simple: agentic systems create too many small decisions. A human can approve a vendor. A human cannot efficiently inspect every retrieval, prompt, tool call, retry, escalation, model handoff, and draft output across hundreds of workflows. The promise of agents is persistent execution. The weakness of manual governance is intermittent attention.</p>
+
+        <p>This does not mean humans should vanish from control. It means human authority has to be designed into the system at the right points. The executive should not be asked to review every output. The executive should decide which action classes require review, which incidents trigger shutdown, which costs require approval, which data classes are off limits, which model classes can be used, and which business owner carries the result.</p>
+
+        <p>Good governance is therefore less like a sign-off meeting and more like an operating architecture. The company needs controls that live where work happens: identity, access, logging, model routing, approval steps, retrieval boundaries, cost ceilings, release gates, and incident records.</p>
+
+        <h2>The Spend Trap</h2>
+        <p>The control gap is not only a safety problem. It is also a finance problem. IBM's 2026 study describes AI taking a larger share of IT budgets while many technology leaders still lack full visibility into real-time AI spend. That should worry CFOs as much as CIOs.</p>
+
+        <p>Traditional software spend is often visible through seats, contracts, and renewals. AI spend can leak through usage. More prompts, longer context, more retries, more agents, richer models, extra monitoring, additional vector stores, and duplicate vendor subscriptions all look small until the workflow becomes habitual. The bill is not just the model invoice. It is the new operating shape.</p>
+
+        <p>The strategic answer is not to starve AI. It is to price the workflow before scaling it. A support agent that resolves costly tickets may deserve premium inference. A generic summarizer may not. A compliance workflow may deserve expensive logging and review. A brainstorming helper may need a cheaper tier and a hard cap. Without a control gap ledger, these become cultural arguments. With a ledger, they become budget decisions.</p>
+
+        <h2>The Trust Dividend</h2>
+        <p>McKinsey frames AI trust as a business enabler rather than a compliance exercise. That is the right commercial framing. Trust is not a moral accessory attached after deployment. It is what lets a company use AI in more important work.</p>
+
+        <p>A company with weak controls can still run many pilots. It will struggle to move AI into consequential workflows because each new workflow raises the same objections: data exposure, bad outputs, unclear accountability, cost growth, regulatory exposure, customer trust, and operational reversibility. The more serious the use case, the more the missing control surface slows adoption.</p>
+
+        <p>A company with strong controls can make sharper bets. It can say yes to a narrow agent with a clear action boundary, a known owner, a cost cap, and an incident plan. It can say no to a broad assistant that sees too much, does too much, and produces no measurable receipt. It can scale the former without pretending the latter is strategy.</p>
+
+        <h2>The Executive Move</h2>
+        <p>Start with the ten AI-enabled workflows most likely to create external, financial, legal, security, or customer consequences. Do not start with the ten most exciting demos. For each workflow, fill the control gap ledger: visibility, action authority, financial exposure, incident response, and business accountability.</p>
+
+        <p>Then assign one of four statuses. Green means the workflow may scale because the controls match the consequence. Yellow means it may continue under a cap while a missing control is built. Red means the workflow must stop or shrink because the company cannot manage the downside. Grey means the company lacks enough visibility to classify it, which is itself a control failure.</p>
+
+        <p>The most useful outcome is not a prettier AI roadmap. It is a shorter one. Some work should move faster because the controls are adequate. Some work should pause because the benefit story is not worth the uncontrolled obligation. Some work should be rebuilt around a different model, vendor, data boundary, or human handoff.</p>
+
+        <p>This is the doctrine for the next phase of AI adoption: do not let accountability outrun control. If a system can affect customers, money, compliance, security, employee work, or institutional memory, it belongs on a ledger. If it cannot be seen, bounded, priced, stopped, and owned, it is not ready to become infrastructure.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report/economy">Stanford HAI, 2026 AI Index Report, Economy chapter</a></li>
+            <li><a href="https://www.nber.org/papers/w34836">NBER working paper, "Firm Data on AI"</a></li>
+            <li><a href="https://newsroom.ibm.com/2026-06-08-new-ibm-study-finds-cios-and-ctos-face-growing-ai-control-gap-as-enterprise-deployment-scales">IBM, "New IBM Study Finds CIOs and CTOs Face Growing AI Control Gap as Enterprise Deployment Scales"</a></li>
+            <li><a href="https://www.deloitte.com/us/en/insights/topics/emerging-technologies/ai-agents-scaling-faster.html">Deloitte Insights, "Business and IT leaders report AI agents are scaling faster than their guardrails"</a></li>
+            <li><a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era">McKinsey, "State of AI trust in 2026: Shifting to the agentic era"</a></li>
+            <li><a href="https://www.ibm.com/think/news/workers-using-ai-2026-ceo-study">IBM, "Only 25% of workers are using AI. Here's how tech leaders are changing that."</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Where has AI accountability already outrun control?</strong>
+          <p>Audit the ten workflows most likely to affect customers, money, compliance, security, employee work, or institutional memory.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>Enterprise AI is scaling into an operating-control problem.</strong>
+          <p>Adoption, agents, and executive mandates are rising faster than visibility, governance, spend management, and incident response.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">$19 Paid Note</span>
+          <strong>The AI control gap worksheet.</strong>
+          <p>Potential paid layer: workflow inventory, control-lane scoring sheet, owner map, budget cap template, and incident stop-rule checklist.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher by Auto Company</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

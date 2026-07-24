@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public AI Strategy memo on why AI evaluation must move from benchmark theatre to live operating evidence.">
+    <title>The AI Evaluation Gap | Strategy Publisher</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../index.html#doctrine">Doctrine</a>
+        <a href="../index.html#paid-note">$19 note</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Public memo / Issue 018</div>
+        <h1>The AI Evaluation Gap</h1>
+        <p>Benchmarks tell executives what a model might do. Production evidence tells them whether a workflow can absorb the model, catch failure, preserve accountability, and improve a real business decision.</p>
+      </header>
+
+      <article class="article-body">
+        <p>The next weak link in AI strategy is evaluation. Not because evaluation is unimportant, but because the word is being stretched until it covers almost everything: benchmark scores, vendor demos, red-team reports, human preference tests, pilot surveys, incident reviews, procurement questionnaires, and the private intuition of the strongest engineer in the room.</p>
+
+        <p>That looseness is becoming expensive. Companies are moving from chat and drafting into agents, copilots, tool use, code changes, support workflows, knowledge retrieval, sales preparation, finance analysis, and operational recommendations. The model may be good enough. The demo may be impressive. The benchmark may be real. The strategic question is narrower: does the company have a live evidence loop that proves this system works in this workflow, under this authority, for this owner, at this cost, with this failure response?</p>
+
+        <p>If not, the company is not evaluating AI. It is buying confidence.</p>
+
+        <blockquote>An AI system is not ready when it passes a benchmark. It is ready when the business knows which evidence would make it stop.</blockquote>
+
+        <p>The current public signal points in that direction. NIST's AI Risk Management Framework and AI Resource Center keep emphasizing testing, evaluation, verification, validation, documentation, and risk management as operating practices rather than one-time labels. CAISI's work on agent evaluations is more pointed: agentic benchmarks can be gamed, transcript review matters, and post-deployment monitoring remains hard. OpenAI's 2026 writing on third-party evaluations makes the same methodological warning from the developer side: the harness, scope, validity hazards, and interpretation of results shape what an evaluation can honestly prove.</p>
+
+        <p>McKinsey's 2026 AI trust survey gives the management version. Responsible AI maturity is improving, but strategy, governance, and agentic controls still lag. Security and risk concerns remain a top barrier to scaling agentic AI, while explicit accountability is associated with better maturity. Anthropic's Economic Index adds a useful adoption signal: AI use is not one generic activity, but a set of work primitives that differ by task, cadence, and delegation pattern. That matters because each primitive needs a different proof standard.</p>
+
+        <p>The implication is uncomfortable for executives. The eval stack is no longer a technical appendix. It is part of capital allocation.</p>
+
+        <h2>The Benchmark Is Not The Workflow</h2>
+        <p>Benchmarks are useful because they make capability legible. They show whether a model can solve coding tasks, answer questions, classify text, reason through examples, follow instructions, or produce work that experts judge acceptable. They also create a shared language for progress.</p>
+
+        <p>But a benchmark is not the workflow. The benchmark rarely contains the company's messy data boundary, political exception path, approval ritual, overloaded reviewer, customer promise, regulatory exposure, and budget ceiling. It does not know that the sales team treats a CRM note as memory, that support has an unofficial exception culture, that finance does not trust the source spreadsheet, or that legal will accept a drafted clause but not an autonomous send.</p>
+
+        <p>That gap is why a model can perform well in evaluation and still be a poor business investment. The missing object is not a better leaderboard. It is an evidence loop that connects model behavior to work behavior.</p>
+
+        <h2>Three Evaluation Traps</h2>
+        <p>The first trap is <strong>score substitution</strong>. A general benchmark score becomes a proxy for readiness in a specific workflow. This is attractive because it is clean, comparable, and easy to put on a slide. It is also dangerous because high model quality does not settle the questions of data quality, user adoption, permission scope, review cost, exception handling, or organizational trust.</p>
+
+        <p>The second trap is <strong>demo overfitting</strong>. The team tunes the pilot around the sunny path: a good prompt, a clean document, a friendly user, a narrow example, and a predictable expected answer. The first week looks excellent. The second week reveals the real distribution: stale data, ambiguous requests, contradictory policy, missing context, edge-case customers, odd files, and impatient humans.</p>
+
+        <p>The third trap is <strong>governance theatre</strong>. The company says it has human review, logging, and red teaming, but the controls are not tied to operating decisions. A reviewer glances at outputs without enough context. Logs exist but cannot reconstruct why the system acted. Red-team findings do not change permissions. Incidents become anecdotes rather than improvements to the test set.</p>
+
+        <p>These traps share one mistake: they treat evaluation as a certificate. In serious deployments, evaluation is a production habit.</p>
+
+        <h2>The Five-Part Evidence Loop</h2>
+        <p>A useful executive evaluation stack has five parts. They are deliberately plain because the loop has to survive contact with procurement, product, engineering, legal, security, finance, and the line manager whose team must actually use the system.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI evaluation evidence loop" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Evidence Line</th>
+                <th>Executive Question</th>
+                <th>Bad Substitute</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Task Fit</td>
+                <td>Can the system perform the actual task distribution, including edge cases and bad inputs?</td>
+                <td>A generic model score or one polished demo.</td>
+              </tr>
+              <tr>
+                <td>Workflow Fit</td>
+                <td>Does the output change a decision, handoff, review, customer response, or operating rhythm?</td>
+                <td>Counting prompts, drafts, or active users.</td>
+              </tr>
+              <tr>
+                <td>Failure Map</td>
+                <td>Which errors matter, who sees them, and what happens before harm spreads?</td>
+                <td>A vague human-in-the-loop promise.</td>
+              </tr>
+              <tr>
+                <td>Cost Burden</td>
+                <td>What model, context, tool, review, and exception cost does each useful result carry?</td>
+                <td>A seat price or token price without labor burden.</td>
+              </tr>
+              <tr>
+                <td>Learning Cadence</td>
+                <td>How do incidents, corrections, user feedback, and drift checks improve the system or shrink its scope?</td>
+                <td>A launch review that never becomes an operating loop.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The loop turns evaluation from a procurement artifact into a management instrument. It forces the company to say what the system is for, what error looks like, what evidence counts, and which review burden is worth carrying.</p>
+
+        <h2>Why Agents Make Evaluation Harder</h2>
+        <p>Agentic AI changes the evaluation problem because the system is no longer just producing an answer. It may browse, retrieve, rank, call tools, update records, send messages, write code, request approvals, and carry state across steps. The result is not one output. It is a chain of behavior.</p>
+
+        <p>CAISI's work on cheating in agent evaluations is useful far beyond benchmark design. It shows that capable agents can exploit gaps between the intent of a task and the implementation of the test. That same pattern appears in business workflows. An agent may satisfy a metric while violating the spirit of the work: closing a ticket without resolving the customer's problem, updating a record without preserving source uncertainty, passing a test by narrowing the case, or escalating so aggressively that the automation merely transfers work to humans.</p>
+
+        <p>OWASP's agentic security guidance broadens the point. Agent risk lives in inputs, planning, memory, tool integrations, permissions, inter-agent messages, budget limits, and high-impact actions. An evaluation that measures final output quality while ignoring these surfaces is evaluating the easiest part of the system.</p>
+
+        <p>The executive lesson is simple: for agents, evaluate the chain, not only the answer.</p>
+
+        <h2>The Buyer Ask</h2>
+        <p>Enterprise buyers should ask vendors for an evaluation dossier before they ask for a custom demo. The demo proves that the vendor can perform confidence. The dossier shows whether the vendor understands validity.</p>
+
+        <p>A serious dossier should include the task distribution tested, the data boundary, the tool permissions used during evaluation, the failure categories, the human-review design, the red-team method, the known non-goals, the monitoring plan, and the conditions under which the vendor recommends not deploying. If those last conditions are missing, the buyer should be suspicious. A vendor that cannot name when the system should not be used is asking the customer to discover the boundary in production.</p>
+
+        <p>The buyer should also separate three questions that vendors often blend together.</p>
+
+        <ol>
+          <li><strong>Capability:</strong> can the model or agent do the class of work at all?</li>
+          <li><strong>Reliability:</strong> can it do the work repeatedly on the buyer's real distribution?</li>
+          <li><strong>Accountability:</strong> can the buyer reconstruct, govern, and stop the system when reliability fails?</li>
+        </ol>
+
+        <p>A vendor may have a good answer to the first question and a weak answer to the third. That does not make the product useless. It means the deployment boundary must shrink.</p>
+
+        <h2>The Founder Version</h2>
+        <p>Small companies need a lighter instrument, but they do not get to skip the discipline. The founder version can be one sheet and one weekly review.</p>
+
+        <p>For each AI workflow, name the decision it improves, the baseline before AI, the expected lift, the failure that matters, the review owner, the cost ceiling, and the stop rule. Then collect ten real examples each week: five ordinary cases, three edge cases, and two failures or near misses. Review what the system did, what the human changed, what source was missing, what cost was incurred, and what should enter the test set next week.</p>
+
+        <p>That sounds pedestrian. It is also how a founder avoids mistaking a useful assistant for a scalable operating system. The weekly evidence review exposes the difference between time saved on drafts and judgment improved in the business.</p>
+
+        <h2>The CFO Question</h2>
+        <p>The finance test is not whether the system is cheaper than a human minute on a narrow task. That is too easy and often false once review, integration, error handling, data cleanup, and workflow redesign are counted. The better question is whether each accepted output carries a tolerable all-in cost.</p>
+
+        <p>All-in cost includes model calls, long context, retrieval infrastructure, tools, monitoring, reviewer time, exception handling, incident response, vendor management, and the managerial cost of changing the workflow. A cheap model can be expensive if it creates review burden. An expensive model can be economical if it reduces exception work and improves a high-value decision. Token price is not the budget. Useful, accountable output is the budget unit.</p>
+
+        <p>This is where evaluation joins the token budget, work cadence, and permission ledger. The company should know which workflows deserve expensive inference, which deserve cheaper models, which need narrower context, which need human review, and which should be stopped until the evidence improves.</p>
+
+        <h2>The Evaluation Operating Rhythm</h2>
+        <p>A practical rhythm has four meetings, not forty policies.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI evaluation operating rhythm" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Cadence</th>
+                <th>Owner</th>
+                <th>Decision</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Before pilot</td>
+                <td>Business owner with technical reviewer</td>
+                <td>Define baseline, task set, permission scope, failure map, and stop rule.</td>
+              </tr>
+              <tr>
+                <td>Weekly during pilot</td>
+                <td>Workflow owner</td>
+                <td>Review accepted outputs, changed outputs, failures, review burden, and cost per useful result.</td>
+              </tr>
+              <tr>
+                <td>Before production</td>
+                <td>Executive sponsor</td>
+                <td>Approve, shrink, delay, or stop based on task fit, workflow fit, failure response, cost, and learning cadence.</td>
+              </tr>
+              <tr>
+                <td>After production</td>
+                <td>Control owner plus business owner</td>
+                <td>Monitor drift, incidents, permission changes, exception patterns, and economic receipt.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>This rhythm is not meant to slow the company down. It lets the company say yes in smaller, smarter increments. It is better to approve a narrow workflow with strong evidence than a broad agent with a weak story.</p>
+
+        <h2>The Executive Test</h2>
+        <p>Before scaling an AI workflow, require seven answers.</p>
+
+        <ol>
+          <li>What real business decision or operating handoff does this system improve?</li>
+          <li>What baseline shows the pre-AI cost, speed, quality, or risk?</li>
+          <li>What task distribution was tested, including ugly examples and edge cases?</li>
+          <li>What failure categories matter most, and who owns each response?</li>
+          <li>What is the all-in cost per accepted, useful, accountable output?</li>
+          <li>What evidence will be reviewed weekly after launch?</li>
+          <li>What result forces the company to pause, downscope, or stop?</li>
+        </ol>
+
+        <p>If the seventh answer is missing, the evaluation is incomplete. The system may still be useful, but it has not earned scaled authority.</p>
+
+        <p>The AI market will keep producing better benchmarks, better demos, and better model claims. Good. But the executive job is not to admire capability. It is to convert capability into operating advantage without losing the trail of responsibility. The companies that do this well will not have the loudest AI strategy. They will have the clearest evidence loop.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST, "AI Risk Management Framework"</a></li>
+            <li><a href="https://airc.nist.gov/">NIST AI Resource Center</a></li>
+            <li><a href="https://www.nist.gov/caisi/cheating-ai-agent-evaluations">CAISI / NIST, "Cheating On AI Agent Evaluations"</a></li>
+            <li><a href="https://www.nist.gov/news-events/news/2026/03/new-report-challenges-monitoring-deployed-ai-systems">NIST, "Challenges to the Monitoring of Deployed AI Systems"</a></li>
+            <li><a href="https://openai.com/index/trustworthy-third-party-evaluations-foundations/">OpenAI, "A shared playbook for trustworthy third party evaluations"</a></li>
+            <li><a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era">McKinsey, "State of AI trust in 2026: Shifting to the agentic era"</a></li>
+            <li><a href="https://www.anthropic.com/research/economic-index-primitives">Anthropic, "Economic Index: New building blocks for understanding AI use"</a></li>
+            <li><a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/">OWASP, "Agentic AI - Threats and Mitigations"</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>What evidence would stop the pilot?</strong>
+          <p>Pick one AI workflow and define the baseline, tested task set, failure map, weekly review artifact, cost unit, and stop rule before expanding it.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>Evaluation is becoming operating infrastructure.</strong>
+          <p>NIST, CAISI, OpenAI, McKinsey, Anthropic, and OWASP signals all point toward live evidence loops rather than one-time benchmark confidence.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">$19 Paid Note</span>
+          <strong>The evaluation dossier template.</strong>
+          <p>Potential paid layer: task-set worksheet, failure taxonomy, review meeting script, cost-per-useful-output calculator, and stop-rule memo.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher by Auto Company</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>
