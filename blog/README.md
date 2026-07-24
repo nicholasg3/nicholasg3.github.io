@@ -89,12 +89,12 @@ Use `https://nicholasg3.github.io/blog/` as the public GitHub Pages blog URL. Th
 
 ## Publication Status
 
-Not live yet from Auto Company. Nick rejected creating `nicholasg3/strategy-publisher` and said publication should happen under `https://nicholasg3.github.io/blog`. Auto Company should prepare local artifacts for that path, but should not patch or push Nick's external Pages source without explicit approval for that repo/path.
+**Live** at `https://nicholasg3.github.io/blog/` (published via `nicholasg3/nicholasg3.github.io` `blog/` path). Cycle 558 (2026-07-25) took down the public launch-bundle sales surface and the `$19` paid-note CTA per Nick directive. Old `/blog/launch-bundle.html` URLs resolve to a retirement tombstone.
 
-After approval, publish this directory as the repo root and smoke-test:
+Smoke-test after package changes:
 
 - `https://nicholasg3.github.io/blog/`
-- `https://nicholasg3.github.io/blog/launch-bundle.html`
+- `https://nicholasg3.github.io/blog/launch-bundle.html` (retired tombstone only)
 - `https://nicholasg3.github.io/blog/posts/ai-strategy-doctrine-before-tools.html`
 - `https://nicholasg3.github.io/blog/posts/ai-workflow-investment-screen.html`
 - `https://nicholasg3.github.io/blog/posts/ai-vendor-warning-label.html`
@@ -132,8 +132,9 @@ After approval, publish this directory as the repo root and smoke-test:
 
 - Current positioning: AI Strategy for founders, consultants, and C-suite operators.
 - House doctrine: adapt AI Strategy and adjacent strategy literature into The Economist / FT-style practitioner analysis.
-- Entry offer: `$19/mo` paid AI Strategy note, with Substack as the intended first conversion channel after the public blog is live. The local package currently uses a manual reply CTA because public deployment and conversion setup are outside this repo's local-only boundary.
-- Launch inventory status after Cycle 311: thirty-two public pieces packaged locally. Cycle 311 shipped Issue 032 research synthesis (`Agents Need a Memory Architecture`) from the premium SP slug pack. Cycle 310 humanified Issues 005, 022, 025, and 027 and opened a news-digest lane. Nick approved publishing to `nicholasg3.github.io/blog`.
+- Public offer chrome: **none for now** (Nick take-down 2026-07-25). Free memo stack only; paid/Substack path stays deferred while the free shelf deepens.
+- Launch inventory: thirty-two public pieces. Primary share URL is the homepage memo index, not the retired launch bundle.
+- Gate: `./release/verify-gh-pages-package.sh` then `./release/check-live-blog.sh` after push.
 
 ## Local Preview
 
@@ -153,4 +154,4 @@ Before copying this package into an external Pages source, run the package gate 
 ./release/verify-gh-pages-package.sh
 ```
 
-The gate checks required files, the launch-bundle index, `/blog/` URL assumptions, Issue 002 case anchors, Issue 003 responsibility anchors, Issue 004 market-signal anchors, Issue 005 theatre-test anchors, Issue 006 data-center anchors, Issue 007 quality-capital anchors, Issue 008 herding/judgment anchors, Issue 009 payback-ledger anchors, Issue 010 evidence-packet anchors, Issue 011 stablecoin-distribution anchors, Issue 012 ASEAN market-entry anchors, Issue 013 founder-distribution anchors, Issue 014 productivity-receipt anchors, Issue 015 token-budget anchors, Issue 016 work-cadence anchors, Issue 017 permission-ledger anchors, Issue 018 evaluation-gap anchors, Issue 019 disclosure-ledger anchors, Issue 020 identity-boundary anchors, Issue 021 distribution-boundary anchors, Issue 022 productivity-gap anchors, Issue 023 model-mix anchors, Issue 024 memory-ledger anchors, Issue 025 slop-audit anchors, Issue 026 audience-ledger anchors, Issue 027 control-gap anchors, Issue 028 source-rights anchors, Issue 029 browser-boundary anchors, Issue 030 coverage-gap anchors, relative CSS links, and honest conversion copy that does not imply live Substack or payment plumbing before those channels exist.
+The gate checks required files, launch-bundle retirement tombstone, no public `$19` CTA, `/blog/` URL assumptions, Issue 002 case anchors, Issue 003 responsibility anchors, Issue 004 market-signal anchors, Issue 005 theatre-test anchors, Issue 006 data-center anchors, Issue 007 quality-capital anchors, Issue 008 herding/judgment anchors, Issue 009 payback-ledger anchors, Issue 010 evidence-packet anchors, Issue 011 stablecoin-distribution anchors, Issue 012 ASEAN market-entry anchors, Issue 013 founder-distribution anchors, Issue 014 productivity-receipt anchors, Issue 015 token-budget anchors, Issue 016 work-cadence anchors, Issue 017 permission-ledger anchors, Issue 018 evaluation-gap anchors, Issue 019 disclosure-ledger anchors, Issue 020 identity-boundary anchors, Issue 021 distribution-boundary anchors, Issue 022 productivity-gap anchors, Issue 023 model-mix anchors, Issue 024 memory-ledger anchors, Issue 025 slop-audit anchors, Issue 026 audience-ledger anchors, Issue 027 control-gap anchors, Issue 028 source-rights anchors, Issue 029 browser-boundary anchors, Issue 030 coverage-gap anchors, relative CSS links, and honest conversion copy that does not imply live Substack or payment plumbing before those channels exist.
