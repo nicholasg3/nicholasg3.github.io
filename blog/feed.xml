@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Strategy Publisher</title>
+    <link>https://nicholasg3.github.io/blog/</link>
+    <description>Strategy briefing for founders, consultants, and C-suite operators.</description>
+    <language>en-us</language>
+    <item>
+      <title>Agents Need a Memory Architecture</title>
+      <link>https://nicholasg3.github.io/blog/posts/agents-need-memory-architecture.html</link>
+      <guid>strategy-publisher-issue-032-agents-need-memory-architecture</guid>
+      <pubDate>Fri, 24 Jul 2026 14:00:00 GMT</pubDate>
+      <description>Research synthesis: production agents store experience in prompt rules and model weights that drift apart. Field analysis of 1,990 public discussions yields a three-episode memory architecture process.</description>
+    </item>
+    <item>
+      <title>The AI Disclosure Clock</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-disclosure-clock.html</link>
+      <guid>strategy-publisher-issue-031-ai-disclosure-clock</guid>
+      <pubDate>Thu, 24 Jul 2026 13:40:00 GMT</pubDate>
+      <description>News digest: EU AI Act Article 50 transparency duties apply 2 August 2026; Commission guidelines of 20 July make disclosure a two-week operator deadline.</description>
+    </item>
+    <item>
+      <title>The AI Coverage Gap</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-coverage-gap.html</link>
+      <guid>strategy-publisher-issue-030-ai-coverage-gap</guid>
+      <pubDate>Thu, 23 Jul 2026 11:20:00 GMT</pubDate>
+      <description>Generative AI insurance exclusions turn residual risk into an operator ledger: exposure class, policy line, exclusion surface, residual owner, control evidence, and stop rule.</description>
+    </item>
+    <item>
+      <title>The AI Browser Boundary</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-browser-boundary.html</link>
+      <guid>strategy-publisher-issue-029-ai-browser-boundary</guid>
+      <pubDate>Thu, 23 Jul 2026 10:50:00 GMT</pubDate>
+      <description>Agentic browsers turn a reading surface into an execution surface: session privilege, instruction channels, tool reach, data boundaries, work classes, and incident paths.</description>
+    </item>
+    <item>
+      <title>The AI Source Rights Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-source-rights-ledger.html</link>
+      <guid>strategy-publisher-issue-028-ai-source-rights-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 12:45:00 GMT</pubDate>
+      <description>AI search is unbundling the old crawler bargain into access, citation, answer, training, payment, and relationship rights.</description>
+    </item>
+    <item>
+      <title>The AI Control Gap Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-control-gap-ledger.html</link>
+      <guid>strategy-publisher-issue-027-ai-control-gap-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 12:30:00 GMT</pubDate>
+      <description>Enterprise AI accountability is outrunning visibility, action authority, financial exposure, incident response, and business ownership.</description>
+    </item>
+    <item>
+      <title>The AI Audience Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-audience-ledger.html</link>
+      <guid>strategy-publisher-issue-026-ai-audience-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 12:10:00 GMT</pubDate>
+      <description>AI search turns founder publishing into an audience ledger: crawl access, answer presence, referral quality, owned relationships, conversion rights, and proof loops.</description>
+    </item>
+    <item>
+      <title>The AI Slop Audit</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-slop-audit.html</link>
+      <guid>strategy-publisher-issue-025-ai-slop-audit</guid>
+      <pubDate>Wed, 22 Jul 2026 11:50:00 GMT</pubDate>
+      <description>AI-assisted work should be audited for accuracy, specificity, judgment, review burden, and learning before generated volume is mistaken for operating leverage.</description>
+    </item>
+    <item>
+      <title>The AI Memory Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-memory-ledger.html</link>
+      <guid>strategy-publisher-issue-024-ai-memory-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 11:35:00 GMT</pubDate>
+      <description>AI memory should be governed through a ledger of preference, role, project, sensitive, and institutional context before persistent personalization becomes hidden policy.</description>
+    </item>
+    <item>
+      <title>The AI Model Mix Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-model-mix-ledger.html</link>
+      <guid>strategy-publisher-issue-023-ai-model-mix-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 11:25:00 GMT</pubDate>
+      <description>AI buying should be managed through a ledger of frontier APIs, open-weight models, hosted models, vendor bundles, specialist models, and no-model boundaries.</description>
+    </item>
+    <item>
+      <title>The AI Productivity Gap</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-productivity-gap.html</link>
+      <guid>strategy-publisher-issue-022-ai-productivity-gap</guid>
+      <pubDate>Wed, 22 Jul 2026 11:05:00 GMT</pubDate>
+      <description>AI productivity should be judged through a ledger of adoption, daily use, workflow redesign, measurement, learning, and capital discipline.</description>
+    </item>
+    <item>
+      <title>The AI Distribution Boundary</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-distribution-boundary.html</link>
+      <guid>strategy-publisher-issue-021-ai-distribution-boundary</guid>
+      <pubDate>Wed, 22 Jul 2026 10:20:00 GMT</pubDate>
+      <description>AI search, workplace agents, and browser agents should be managed as a distribution boundary: discovery, evidence, action, context, relationship, conversion, and feedback.</description>
+    </item>
+    <item>
+      <title>The Agent Identity Boundary</title>
+      <link>https://nicholasg3.github.io/blog/posts/agent-identity-boundary.html</link>
+      <guid>strategy-publisher-issue-020-agent-identity-boundary</guid>
+      <pubDate>Wed, 22 Jul 2026 10:10:00 GMT</pubDate>
+      <description>AI agents should be governed through an identity boundary: actor, authority source, session, tool scope, human checkpoint, record, and revocation.</description>
+    </item>
+    <item>
+      <title>The AI Disclosure Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-disclosure-ledger.html</link>
+      <guid>strategy-publisher-issue-019-ai-disclosure-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 09:50:00 GMT</pubDate>
+      <description>AI transparency should be managed as a disclosure ledger: surface, audience, origin, control, and evidence.</description>
+    </item>
+    <item>
+      <title>The AI Evaluation Gap</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-evaluation-gap.html</link>
+      <guid>strategy-publisher-issue-018-ai-evaluation-gap</guid>
+      <pubDate>Wed, 22 Jul 2026 09:30:00 GMT</pubDate>
+      <description>AI evaluation should become a live evidence loop: task fit, workflow fit, failure map, cost burden, and learning cadence.</description>
+    </item>
+    <item>
+      <title>The AI Agent Permission Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-agent-permission-ledger.html</link>
+      <guid>strategy-publisher-issue-017-ai-agent-permission-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 09:10:00 GMT</pubDate>
+      <description>Agentic AI should be governed through a permission ledger: read, reason, write, spend, message, change, owner, audit trail, and stop rule.</description>
+    </item>
+    <item>
+      <title>The AI Work Cadence</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-work-cadence.html</link>
+      <guid>strategy-publisher-issue-016-ai-work-cadence</guid>
+      <pubDate>Wed, 22 Jul 2026 08:52:00 GMT</pubDate>
+      <description>AI adoption should be governed as a work cadence: artifact, rhythm, handoff, review burden, and job redesign.</description>
+    </item>
+    <item>
+      <title>The AI Token Budget</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-token-budget.html</link>
+      <guid>strategy-publisher-issue-015-ai-token-budget</guid>
+      <pubDate>Wed, 22 Jul 2026 08:36:00 GMT</pubDate>
+      <description>Inference should be governed as a token budget: model tier, context budget, agent loop, value class, and owner.</description>
+    </item>
+    <item>
+      <title>The AI Productivity Receipt</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-productivity-receipt.html</link>
+      <guid>strategy-publisher-issue-014-ai-productivity-receipt</guid>
+      <pubDate>Wed, 22 Jul 2026 08:18:00 GMT</pubDate>
+      <description>AI benchmark gains should become business commitments only after the company can show task, workflow, economic, and trust receipts.</description>
+    </item>
+    <item>
+      <title>The Founder Distribution Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/founder-distribution-ledger.html</link>
+      <guid>strategy-publisher-issue-013-founder-distribution-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 08:02:00 GMT</pubDate>
+      <description>Founder publishing should be managed as a distribution ledger: public shelf, relationship rail, conversion right, and proof loop.</description>
+    </item>
+    <item>
+      <title>The ASEAN Market-Entry Test</title>
+      <link>https://nicholasg3.github.io/blog/posts/asean-market-entry-test.html</link>
+      <guid>strategy-publisher-issue-012-asean-market-entry-test</guid>
+      <pubDate>Wed, 22 Jul 2026 07:35:00 GMT</pubDate>
+      <description>ASEAN digital integration should be treated as a market-entry test: first buyer, operating reuse, trust bridge, regulatory drag, and regional option value.</description>
+    </item>
+    <item>
+      <title>The Stablecoin Distribution Test</title>
+      <link>https://nicholasg3.github.io/blog/posts/stablecoin-distribution-test.html</link>
+      <guid>strategy-publisher-issue-011-stablecoin-distribution-test</guid>
+      <pubDate>Wed, 22 Jul 2026 07:20:00 GMT</pubDate>
+      <description>Stablecoin payments should be judged as a distribution test: buyer access, settlement value, product fit, and operating control.</description>
+    </item>
+    <item>
+      <title>The AI Evidence Packet</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-evidence-packet.html</link>
+      <guid>strategy-publisher-issue-010-ai-evidence-packet</guid>
+      <pubDate>Wed, 22 Jul 2026 07:00:00 GMT</pubDate>
+      <description>AI procurement should move from demo judgment to evidence judgment before agents, copilots, and automation layers enter production workflows.</description>
+    </item>
+    <item>
+      <title>The AI Payback Ledger</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-payback-ledger.html</link>
+      <guid>strategy-publisher-issue-009-ai-payback-ledger</guid>
+      <pubDate>Wed, 22 Jul 2026 06:41:00 GMT</pubDate>
+      <description>AI capex should be judged by asset, obligation, payback owner, proof milestone, and stop rule before spending scales.</description>
+    </item>
+    <item>
+      <title>The AI Herding Problem</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-herding-problem.html</link>
+      <guid>strategy-publisher-issue-008-ai-herding-problem</guid>
+      <pubDate>Wed, 22 Jul 2026 06:12:00 GMT</pubDate>
+      <description>When AI makes analysis cheap and crowded, executives need a clear doctrine for which strategic decisions remain human-owned.</description>
+    </item>
+    <item>
+      <title>The AI Quality Test</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-quality-test.html</link>
+      <guid>strategy-publisher-issue-007-ai-quality-test</guid>
+      <pubDate>Wed, 22 Jul 2026 05:50:00 GMT</pubDate>
+      <description>AI spending should be judged as quality capital, a learning option, or theme exposure before funding expands.</description>
+    </item>
+    <item>
+      <title>The AI Data-Center Veto</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-data-center-veto.html</link>
+      <guid>strategy-publisher-issue-006-ai-data-center-veto</guid>
+      <pubDate>Wed, 22 Jul 2026 05:34:00 GMT</pubDate>
+      <description>Power, permitting, water, ratepayer politics, and capital discipline are becoming board-level constraints on AI strategy.</description>
+    </item>
+    <item>
+      <title>The AI Strategy Theatre Test</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-strategy-theatre-test.html</link>
+      <guid>strategy-publisher-issue-005-ai-strategy-theatre-test</guid>
+      <pubDate>Wed, 22 Jul 2026 05:02:00 GMT</pubDate>
+      <description>A five-part executive screen for separating strategic AI workflow change from demos, activity metrics, and unmanaged theatre.</description>
+    </item>
+    <item>
+      <title>The AI Management Layer Is Arriving</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-management-layer.html</link>
+      <guid>strategy-publisher-issue-004-ai-management-layer</guid>
+      <pubDate>Wed, 22 Jul 2026 04:50:00 GMT</pubDate>
+      <description>Enterprise AI is being folded into managed work, agent registries, observability logs, provenance rules, licensing, and transparency obligations.</description>
+    </item>
+    <item>
+      <title>The AI Vendor's Warning Label</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-vendor-warning-label.html</link>
+      <guid>strategy-publisher-issue-003-ai-vendor-warning-label</guid>
+      <pubDate>Wed, 22 Jul 2026 00:20:00 GMT</pubDate>
+      <description>Agent-security guidance is becoming the AI industry's shared-responsibility model: a practical safety manual today and a future control record after the first serious incident.</description>
+    </item>
+    <item>
+      <title>The AI Pilot Trap</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-workflow-investment-screen.html</link>
+      <guid>strategy-publisher-issue-002-ai-workflow-investment-screen</guid>
+      <pubDate>Tue, 21 Jul 2026 09:45:00 GMT</pubDate>
+      <description>Companies are not short of AI use cases. They are short of managerial judgment about where autonomy should enter the business and where it should stop.</description>
+    </item>
+    <item>
+      <title>AI Strategy Starts With Doctrine Before Tools</title>
+      <link>https://nicholasg3.github.io/blog/posts/ai-strategy-doctrine-before-tools.html</link>
+      <guid>strategy-publisher-issue-001-ai-strategy-doctrine-before-tools</guid>
+      <pubDate>Tue, 21 Jul 2026 09:22:00 GMT</pubDate>
+      <description>Founders do not have an AI tooling problem first. They have a doctrine problem.</description>
+    </item>
+  </channel>
+</rss>
