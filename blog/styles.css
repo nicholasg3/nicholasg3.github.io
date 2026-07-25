@@ -129,6 +129,7 @@ main {
 .hero {
   min-height: min(720px, calc(100vh - 76px));
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-content: center;
   padding: 56px 0 38px;
   border-bottom: 3px solid var(--ink);
@@ -137,6 +138,7 @@ main {
 .bundle-hero {
   min-height: min(640px, calc(100vh - 76px));
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-content: center;
   padding: 54px 0 36px;
   border-bottom: 3px solid var(--ink);
@@ -807,7 +809,7 @@ h2 {
   .paid-note,
   .article-main,
   .worksheet-preview {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .masthead-grid article {
@@ -829,7 +831,7 @@ h2 {
   }
 
   .map-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .article-side {
@@ -856,7 +858,7 @@ h2 {
   }
 
   .path-item {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
   }
 
