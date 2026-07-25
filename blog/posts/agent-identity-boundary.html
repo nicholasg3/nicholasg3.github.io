@@ -19,6 +19,7 @@
       <nav class="nav" aria-label="Primary">
         <a href="../index.html#latest">Latest</a>
         <a href="../feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">nicholasg3.github.io</a>
       </nav>
     </header>
 
@@ -31,13 +32,13 @@
       </header>
 
       <article class="article-body">
-        <p>The next enterprise AI failure may not look like a hallucination. It may look like a normal authenticated action. A calendar is changed. A supplier record is updated. A draft is sent. A support refund is approved. A file is read, summarised, and copied into a new workflow. Nothing appears exotic because the work happens through ordinary tools.</p>
+        <p>The next enterprise AI failure may appear as an ordinary change to a calendar or an update to a supplier record. A draft email might be sent, a refund approved, or a file read and summarized before being copied into another workflow. The actions look routine because they run through familiar tools.</p>
 
-        <p>That is the point. As AI agents move from chat windows into browsers, APIs, internal tools, and authenticated sessions, the strategic risk shifts from answer quality to authority. The company has to know who or what acted, under whose permission, through which tool, for what purpose, and how the action can be challenged later.</p>
+        <p>That outcome is the real concern. As AI agents shift from chat windows into browsers, APIs, internal tools, and authenticated sessions, the main risk moves from answer quality to authority. A company must be able to trace who or what acted, under whose permission, through which tool, for what purpose, and how the action can be reviewed later.</p>
 
-        <p>NIST has made this direction explicit in 2026. Its AI Agent Standards Initiative points toward secure adoption, interoperability, agent authentication, identity infrastructure, and evaluations for human-agent and multi-agent interactions. Its May 2026 analysis of responses on AI agent security found broad agreement that agents create adoption-blocking security concerns and that ordinary cybersecurity practices still matter but need adaptation. OWASP's Agentic AI guidance says the same thing in practitioner language: autonomous agents create risks around tool misuse, context isolation, excessive agency, and indirect prompt injection.</p>
+        <p>The National Institute of Standards and Technology (NIST) has made this direction explicit in its 2026 AI Agent Standards Initiative. The work points toward secure adoption, interoperability, agent authentication, identity infrastructure, and evaluations for human-agent and multi-agent interactions. A May 2026 analysis of responses on AI agent security found broad agreement that agents create adoption-blocking security concerns and that ordinary cybersecurity practices still matter but need adaptation. The Open Web Application Security Project (OWASP) guidance on agentic AI states the same point in practitioner language: autonomous agents create risks around tool misuse, context isolation, excessive agency, and indirect prompt injection.</p>
 
-        <p>Chrome's June 2026 WebMCP security guidance adds a practical browser example. Agents that use browser-exposed tools may operate inside a user's authenticated session. Tool definitions and tool outputs can carry hostile instructions. The model cannot be treated as a reliable boundary by itself. Once an agent can act in a logged-in context, identity and authority stop being IT plumbing. They become management controls.</p>
+        <p>Chrome's June 2026 WebMCP security guidance adds a practical browser example. Agents that use browser-exposed tools may operate inside a user's authenticated session. Tool definitions and tool outputs can carry hostile instructions. The model cannot be treated as a reliable boundary by itself. Once an agent can act in a logged-in context, identity and authority stop being IT plumbing and become management controls.</p>
 
         <blockquote>An AI agent should never inherit a human identity wholesale. It should receive a bounded authority, a visible session, a narrow toolset, and a record that survives the work.</blockquote>
 
@@ -46,7 +47,7 @@
 
         <p>If the agent acts entirely as the user, the audit trail becomes misleading. The log says Maria changed the customer record, but the useful fact may be that Maria approved an agent to reconcile customer records from a source list, and the agent changed the field after reading an untrusted note. The difference matters for review, incident response, compliance, and trust. It also matters for ordinary management: a team cannot improve a workflow if it cannot tell where human judgment ended and delegated execution began.</p>
 
-        <p>The borrowed-identity problem is most dangerous in the browser because the browser is where business life already happens. Email, CRM, finance, HR, analytics, procurement, support, cloud consoles, and document systems all sit behind sessions that were designed for human navigation. An agent with a browser can appear low-friction precisely because it uses the same surfaces the employee uses. Low friction is also how authority leaks.</p>
+        <p>The borrowed-identity problem is most dangerous in the browser because the browser is where business life already happens. Email, customer relationship management (CRM), finance, HR, analytics, procurement, support, cloud consoles, and document systems all sit behind sessions that were designed for human use. An agent with a browser can appear low-friction precisely because it uses the same surfaces the employee uses. Low friction is also how authority leaks.</p>
 
         <h2>The Identity Boundary Ledger</h2>
         <p>A useful agent identity system does not start with a perfect standard. It starts with a ledger that product, security, legal, operations, and business owners can read. The ledger has seven lines.</p>
