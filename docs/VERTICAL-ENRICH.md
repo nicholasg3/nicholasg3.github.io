@@ -97,7 +97,7 @@ memo that says so** — or refuse to draft.
 - Ornamental hub links that never appear as load-bearing evidence in the prose
 - **Second-person coaching** (“you should,” “put this table in your growth review,” “operating rule:”) — report in **AP-like third person**: what operators measure, what the data show, how the split appears at work
 
-**Voice:** closer to an **AP feature** than a strategy memo barked at the reader. Attribute numbers. Prefer “according to / shows / ranks” over imperatives.
+**Voice:** closer to an **AP feature** than a strategy memo barked at the reader. Attribute numbers. Prefer “according to / shows / ranks” over imperatives. Prefer **continuous prose** over many short H2 stubs (a feature can run with no body subheads, or one or two only).
 
 **Writer routing:** public essay body → **Grok**. Research/brief → any agent.
 
