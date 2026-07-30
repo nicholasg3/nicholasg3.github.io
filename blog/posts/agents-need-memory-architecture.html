@@ -28,34 +28,34 @@
         <div class="issue-kicker">Research synthesis / Issue 032 · 24 July 2026</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=memory">Memory</a><a class="tag-chip" href="../index.html#topic=agents">Agents</a><a class="tag-chip" href="../index.html#topic=research">Research</a></div>
         <h1>Agents Need a Memory Architecture</h1>
-        <p>Production agents store experience in two places that evolve on different clocks: human-editable prompt rules and model parameters. Field discourse shows teams build both, own neither together, and discover the split only after customers do.</p>
+        <p>Production agents store experience in prompt rules and model parameters that move on different clocks. Field discourse shows teams build both stores, assign joint ownership to neither, and learn the split after customers see broken behaviour.</p>
       </header>
 
       <article class="article-body">
-        <p>Large language model agents are leaving the demo stage. Founders and operators now ask them to retain customer history, tool results, policy exceptions, and multi-step plans across sessions. That demand forces a design choice still often treated as an implementation detail: <strong>where the agent remembers</strong>. Ownership of each store, and conflict handling when those stores disagree, follows from that first decision.</p>
+        <p>Large language model agents now retain customer history, tool results, policy exceptions, and multi-step plans across sessions. That demand forces a design choice teams still treat as implementation detail: <strong>where the agent remembers</strong>. Ownership of each store, and a rule for conflict when stores disagree, follows from that first choice.</p>
 
-        <p>This piece is a research synthesis, not another free-stack ledger checklist. It compresses a field study of public practitioner discourse into an operating argument. Issue 024, <em>The AI Memory Ledger</em>, remains the product-memory control checklist. This issue answers a prior question: how memory problems form before any ledger can help.</p>
+        <p>This research synthesis compresses a field study of public practitioner discourse into an operating argument. Issue 024, <em>The AI Memory Ledger</em>, remains the product-memory control checklist. This issue sits one step earlier: how memory problems form before any ledger can help.</p>
 
         <blockquote>Experience written only to prompts and weights will diverge. Architecture is the decision about how that writing is owned.</blockquote>
 
         <h2>What We Studied</h2>
-        <p>In a single archival harvest (28 June 2026), this study collected 1,990 public rows about production agent memory across thirteen channels: engineering blogs, standards material, practitioner newsletters, Reddit, Hacker News, Stack Overflow, YouTube, arXiv, conference notes, and related streams. Relevance screening produced 100 coded deployment incidents. Thirty-five Tier-1 practitioner threads received focused coding, supported by 106 deep-fetched quotes and 244 analytic memos. The method is constructivist grounded theory on digital field talk, not a census of enterprise deployments.</p>
+        <p>In a single archival harvest (28 June 2026), this study collected 1,990 public rows about production agent memory across thirteen channels, including engineering blogs, standards material, practitioner newsletters, Reddit, Hacker News, Stack Overflow, YouTube, arXiv, and conference notes. Relevance screening produced 100 coded deployment incidents. Thirty-five Tier-1 practitioner threads received focused coding, supported by 106 deep-fetched quotes and 244 analytic memos. The method is constructivist grounded theory on digital field talk. It is a field sample of public discourse, not a census of enterprise deployments.</p>
 
-        <p>That limit matters. Public forums over-index on builders who report friction. They under-represent regulated industries that keep failure private. The synthesis is still useful because the same sequence appears across frameworks, cloud agents, and custom stacks: multi-step work creates retention pressure; teams answer with parallel stores; coherence fails under release velocity.</p>
+        <p>That limit matters. Public forums over-index on builders who report friction and under-represent regulated industries that keep failure private. The synthesis is still useful because the same sequence appears across frameworks, cloud agents, and custom stacks. Multi-step work creates retention pressure. Teams answer with parallel stores. Coherence fails under release velocity.</p>
 
         <h2>The Memory Fork</h2>
-        <p>Two storage modes dominate production talk.</p>
+        <p>Production talk concentrates on two storage modes.</p>
 
         <p><strong>Prompt-layer memory</strong> is human-readable. Rules, system instructions, retrieved chunks, and session summaries live in repositories, prompt registries, or vector stores that product teams can edit. A billing agent that must always request an account number first is usually a rule in this layer.</p>
 
         <p><strong>Weight-layer memory</strong> is statistical. Fine-tunes, preference training, and distilled trajectories bake patterns into parameters owned by machine-learning pipelines with slower release cycles. The same agent may "know" billing habits without any sentence a compliance officer can open in git.</p>
 
-        <p>Both layers are legitimate. The failure mode is treating them as unrelated engineering surfaces. Prompt owners ship weekly. Model owners ship quarterly. Neither team owns the question of whether the rule still matches the weight. When behaviour breaks, debugging becomes archaeology across two clocks.</p>
+        <p>Both layers are legitimate. Failure begins when they sit as unrelated engineering surfaces. Prompt owners ship weekly. Model owners ship quarterly. Neither team owns whether the rule still matches the weight. When behaviour breaks, debugging becomes archaeology across two clocks.</p>
 
-        <p>Recent technical work on joint learning of experiential rules and policies, and on co-failure ceilings for multi-model routing, frames the same split from the research side. Field discourse rarely uses those papers. It builds the split anyway, under names like session attributes, long-term memory servers, and context engineering.</p>
+        <p>Recent technical work on joint learning of experiential rules and policies, and on co-failure ceilings for multi-model routing, frames the same split from the research side. Field discourse rarely cites those papers. It builds the split anyway under names such as session attributes, long-term memory servers, and context engineering.</p>
 
         <h2>Three Episodes From the Field</h2>
-        <p>Coding and constant comparison produced a three-episode process. The episodes are analytic patterns, not a mandatory corporate lifecycle. Operators can use them as a diagnostic sequence.</p>
+        <p>Coding and constant comparison produced a three-episode process. The episodes are analytic patterns operators can use as a diagnostic sequence. They are not a mandatory corporate lifecycle.</p>
 
         <div class="article-table-wrap" role="region" aria-label="Three-episode memory process" tabindex="0">
           <table class="article-table">
@@ -91,23 +91,23 @@
         </div>
 
         <h3>Episode 1: Multi-step work demands memory</h3>
-        <p>Practitioners stop asking for a single clever prompt once the job includes planning, tool calls, and multi-session continuity. Reddit threads on production frameworks repeatedly request "multi-step reasoning, tool calls, and memory," and describe planning loops that orchestrate retrieval, tools, and persistent context. The business translation is simple. If the agent must finish work that a human would log in a ticket system, the agent needs state that survives a browser tab.</p>
+        <p>Practitioners drop the single clever prompt once the job includes planning, tool calls, and multi-session continuity. Reddit threads on production frameworks repeatedly request "multi-step reasoning, tool calls, and memory," and describe planning loops that orchestrate retrieval, tools, and persistent context. The business translation is simple. If the agent must finish work that a human would log in a ticket system, the agent needs state that survives a browser tab.</p>
 
         <h3>Episode 2: Parallel systems without joint ownership</h3>
-        <p>The next move is additive infrastructure. Teams add session attributes on cloud agents, middle layers between clients and vector databases, dashboards for memory read and write history, and separate fine-tune pipelines for "how we usually handle this." Stack Overflow answers for session attributes treat conversation history as a parameter bag. Engineering posts treat long-running work as a context-preservation problem. None of those solutions is wrong. Together they create three or four memory surfaces with no architecture review.</p>
+        <p>The next move is additive infrastructure. Teams add session attributes on cloud agents, middle layers between clients and vector databases, dashboards for memory read and write history, and separate fine-tune pipelines for "how we usually handle this." Stack Overflow answers for session attributes treat conversation history as a parameter bag. Engineering posts treat long-running work as a context-preservation problem. Each piece can be sound. Together they create several memory surfaces with no architecture review.</p>
 
         <h3>Episode 3: Drift under production stress</h3>
-        <p>When LangGraph-style agents or custom fleets scale, builders report walls around session persistence, per-user memory, and scoped context. Practitioner blogs reframe the work as context engineering and urge product managers to own episodic, semantic, and procedural layers. The field is loud on tooling and quiet on institutional reconciliation: who resolves a conflict when a prompt rule forbids a refund path that a fine-tuned policy still proposes?</p>
+        <p>When LangGraph-style agents or custom fleets scale, builders report walls around session persistence, per-user memory, and scoped context. Practitioner blogs reframe the work as context engineering and urge product managers to own episodic, semantic, and procedural layers. The field invests heavily in tooling. It invests little in institutional reconciliation: the named role that resolves a conflict when a prompt rule forbids a refund path that a fine-tuned policy still proposes.</p>
 
-        <p>That silence is the strategic finding. Public discourse optimises persistence and observability first. Governance ownership arrives later, often after a customer-visible incident.</p>
+        <p>That gap is the strategic finding. Public discourse optimises persistence and observability first. Governance ownership arrives later, often after a customer-visible incident.</p>
 
         <h2>Two Mechanisms</h2>
-        <p><strong>Experience retention pressure.</strong> Production agents accumulate interaction histories, tool results, and exceptions that demos discard. Retention is not optional once the workflow spans days.</p>
+        <p><strong>Experience retention pressure.</strong> Production agents accumulate interaction histories, tool results, and exceptions that demos discard. Once a workflow spans days, retention becomes a design requirement.</p>
 
         <p><strong>Storage system mismatch.</strong> Human-editable rules and slower parameter updates have different owners, release cadences, and audit trails. Session caches and vector stores sit between them as temporary glue. Without a reconciliation policy, glue becomes the product.</p>
 
         <h2>What Operators Should Change</h2>
-        <p>Use the research as a procurement and architecture screen before another memory product lands in the stack.</p>
+        <p>Use the research as a procurement and architecture screen before another memory product lands in the stack. The table below states pass and fail signals for each row.</p>
 
         <div class="article-table-wrap" role="region" aria-label="Memory architecture screen" tabindex="0">
           <table class="article-table">
@@ -153,16 +153,16 @@
           </table>
         </div>
 
-        <p>Procurement questions follow the same map. Ask vendors which memories are prompt-editable, which are parameter-bound, who can inspect them, and how conflict is resolved. Performance demos without that answer are incomplete for multi-step work.</p>
+        <p>Procurement follows the same map. Require vendors to separate prompt-editable memories from parameter-bound ones, name the inspection path, and document conflict resolution. A performance demo that skips those answers is incomplete for multi-step work.</p>
 
         <h2>Relation to the Free Stack</h2>
-        <p>Issue 024's memory ledger asks what may be remembered about people and work, with inspection and expiry. Issue 017's permission ledger asks what agents may do. Issue 018's evaluation gap asks how quality is measured when demos lie. This synthesis sits underneath those checklists: if stores already diverge, every later control operates on an unstable base.</p>
+        <p>Issue 024's memory ledger covers what may be remembered about people and work, with inspection and expiry. Issue 017's permission ledger covers what agents may do. Issue 018's evaluation gap covers quality measurement when demos lie. This synthesis sits underneath those checklists: once stores diverge, every later control sits on an unstable base.</p>
 
         <h2>Limits</h2>
-        <p>The harvest is a single-month snapshot of English-language public discourse. Episodes are interpretive patterns from constant comparison, not frequency counts of every industry. Academic papers on rule-weight coupling and multi-model routing serve as technical context, not as independent field validation. Longitudinal studies inside regulated firms remain the next evidence tier.</p>
+        <p>The harvest is a single-month snapshot of English-language public discourse. Episodes are interpretive patterns from constant comparison rather than frequency counts of every industry. Academic papers on rule-weight coupling and multi-model routing serve as technical context. They are not independent field validation. Longitudinal studies inside regulated firms remain the next evidence tier.</p>
 
         <h2>Close</h2>
-        <p>Agents that do real work will remember. The strategic question is whether that memory is an architecture with owners and reconciliation rules, or an accidental pile of prompts, vectors, and weights. Field talk already shows the pile. Operators who map stores, assign ownership, and set a stop rule before Episode 3 reach customers will spend less time reconstructing behaviour they never designed.</p>
+        <p>Agents that do real work will remember. Treat that memory as an architecture with owners and reconciliation rules. Field talk already shows the alternative: an accidental pile of prompts, vectors, and weights. Operators who map stores, assign ownership, and set a stop rule before Episode 3 reaches customers spend less time reconstructing behaviour they never designed.</p>
 
         <section class="source-notes" aria-labelledby="source-notes-title">
           <h2 id="source-notes-title">Source Notes</h2>
@@ -179,7 +179,7 @@
       <aside class="article-side" aria-label="Issue notes">
         <section class="side-card">
           <span class="section-label">Reader Decision</span>
-          <strong>Which memory stores does the agent write, and who owns reconciliation when they disagree?</strong>
+          <strong>Name every memory store the agent writes, and name the owner of reconciliation.</strong>
           <p>Map prompt rules, caches, vectors, and weights before the next multi-step agent ships.</p>
         </section>
         <section class="side-card">
