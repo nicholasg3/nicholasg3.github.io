@@ -135,6 +135,14 @@ def promote(html: str, *, kicker: str, keep_noindex: bool) -> str:
     # styles path: staging posts often use ../../styles.css or ../styles.css
     # leave as-is if already correct for destination; caller may fix
 
+    # Remove staging asides entirely (live posts often have different side cards)
+    html = re.sub(
+        r'\s*<aside class="article-side"[^>]*>[\s\S]*?</aside>\s*',
+        "\n",
+        html,
+        flags=re.I,
+    )
+
     # nav / brand leftovers
     html = re.sub(
         r'aria-label="Staging home"',
