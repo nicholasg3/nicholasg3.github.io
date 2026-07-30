@@ -43,12 +43,22 @@
 - That every SEA country matches Indonesia (Singapore and Philippines differ sharply).
 - That English media is “bad” — only that it is a **biased sample of demand**.
 
+## Real case used in draft (not invented)
+
+| Case | What it establishes | Source |
+|------|---------------------|--------|
+| GrabChat (Oct 2016) | Driver–rider language mismatch was common enough to ship in-app translation | Wikipedia Grab Holdings summary of product history |
+| Grab–Uber SEA deal (Mar 2018) | Regional operator absorbed global brand’s SEA ops; Grab press stressed localized services | Grab official press release |
+
+Do **not** reintroduce composite companies (e.g. “Laras Pay”). Prefer Grab primary product blogs when found; Wikipedia is secondary for GrabChat.
+
 ## Retrieval gaps
 
 - Live BPS table for language spoken at home returned HTTP 403 from this environment; prefer BPS when re-grounding with browser access.
 - Ethnologue deep pages blocked (403); language-count claims should cite Ethnologue via a dated secondary or wait for browser access — **do not invent language counts**.
 - Tech in Asia “about” body content was thin in retrieval; treat as existence proof of English regional media, not as a mission-statement quote.
 - No single public dataset maps “founder podcast language” to GMV by language.
+- GrabChat contemporary press URLs often 404/paywalled; upgrade Wikipedia cite when a durable Grab primary is found.
 
 ## Source test (must pass)
 

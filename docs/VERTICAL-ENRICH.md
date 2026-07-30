@@ -105,7 +105,7 @@ memo that says so** — or refuse to draft.
 - Optional **blockquote** thesis (one)
 - **A few** H2s (about 3–5), each with real paragraphs under them — not one-sentence stubs
 - Optional **table** when it forces a comparison
-- Optional **composite case** anecdote (label composite in Source notes)
+- Optional **real case** anecdote with primary/canonical links (no invented companies; if evidence is thin, skip the anecdote)
 - **aside** with `Reader Decision` + `Market Signal` side-cards when it fits
 - Source notes
 
