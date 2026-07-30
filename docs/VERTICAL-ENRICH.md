@@ -95,7 +95,9 @@ memo that says so** — or refuse to draft.
 - Stacked not-X-but-Y / “That is not a vibe complaint…” hedging
 - Meta lines: “The particular claim is narrow,” “This draft intentionally…”
 - Ornamental hub links that never appear as load-bearing evidence in the prose
-- **Second-person coaching** (“you should,” “put this table in your growth review,” “operating rule:”) — report in **AP-like third person**: what operators measure, what the data show, how the split appears at work
+- **Second-person coaching** (“you should,” “put this table in your growth review,” “operating rule:”) — report in **AP-like third person**: what the data show, how firms and customers behave
+- **“Operators” / “operator” as generic subject** — AI-coded. Prefer concrete actors: banks, founders, firms, companies, regulators, customers, merchants, boards, teams
+- Same ban class: “space,” “landscape,” “leverage” as verb fluff, “robust,” “seamless,” fake “most teams”
 
 **Voice:** closer to an **AP feature** than a strategy memo barked at the reader. Attribute numbers. Prefer “according to / shows / ranks” over second-person coaching.
 
@@ -111,17 +113,36 @@ memo that says so** — or refuse to draft.
 
 **Writer routing:** public essay body → **Grok**. Research/brief → any agent.
 
+### 4b. Prose rewrite pass (**mandatory — fixed step**)
+
+Nick (2026-07-31): first-pass generation from research agents is usually stiff.
+A **second pass that rewrites existing prose** (not regenerating from a seed)
+is what lands in readable AP/Grok voice.
+
+**Never mark a piece done after step 4 alone.** Always run 4b.
+
+**How to rewrite (do not invent):**
+
+1. Open the existing HTML. Keep every load-bearing fact, number, named institution, URL, table row, and real case.
+2. Rewrite **paragraph prose only**: openings, H2 body text, blockquote if needed, close. Tighten sentences. Cut AI cadence (reversals, meta hedges, coach imperatives).
+3. Prefer short active sentences, attributed numbers, continuous flow under few H2s.
+4. Do **not** add invented companies or new uncited claims.
+5. Do **not** strip Source notes or side cards; you may polish their wording.
+6. Model voice: `us-asean-china/staging/posts/english-language-founder-media-vs-local-language-c.html` after its rewrite passes + live memos above.
+
+**Label:** after 4b, status may stay `enriched-draft` but note `prose_rewrite: 2026-07-31` in ground brief or seed quality_note.
+
 ### 5. Status labels (honest)
 
 | Status | Meaning |
 |--------|---------|
 | `queued` / `seed` / `queued-pattern` | Idea only |
 | `grounded` | `ground/<slug>.md` exists with claim-linked primaries |
-| `enriched-draft` | Full essay + body-integrated sources + Source notes that pass the “supports:” test |
+| `enriched-draft` | Full essay + body-integrated sources + Source notes that pass the “supports:” test **and** step 4b prose rewrite |
 | `thin-outline` | **Debt.** Outline only. Do not promote. |
 | `ready-for-nick` | Detector optional; Nick review next |
 
-Never set `enriched-draft` without steps 2–4.
+Never set `enriched-draft` without steps 2–4 **and 4b**.
 
 ### 6. Gate before promote
 

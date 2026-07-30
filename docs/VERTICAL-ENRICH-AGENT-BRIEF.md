@@ -47,7 +47,7 @@ Overwrite `{vertical}/staging/posts/{slug}.html`.
 
 **Word count:** body roughly 900–1400 words (excluding source notes).
 
-**Banned:** inventing companies; hub-only sources; “What this is not claiming”; stacked not-X-but-Y; second-person coaching (“you should”); meta “particular claim is narrow”; ornamental ASEAN/Statista homes.
+**Banned:** inventing companies; hub-only sources; “What this is not claiming”; stacked not-X-but-Y; second-person coaching (“you should”); meta “particular claim is narrow”; ornamental ASEAN/Statista homes; **generic “operators” / “operator”** (name the real actor: bank, founder, firm, customer, regulator).
 
 **Voice:** AP feature + default Grok. Attribute numbers (“according to DataReportal…”, “the Fed said…”).
 
@@ -77,10 +77,23 @@ If seed tweet exists, optional line under deck: `<p><a href="...">Seed tweet</a>
 
 - [ ] `ground/{slug}.md` exists
 - [ ] HTML full rewrite, sources body-integrated
+- [ ] **Step 4b prose rewrite** applied (second pass on existing body — not first-gen only)
 - [ ] No invented anecdote
 - [ ] Side cards present
 - [ ] ≥3 load-bearing primary/canonical links that appear in body
 
+## Prose-rewrite-only mode (when parent assigns rewrite pass)
+
+If the task is **rewrite existing prose only**:
+
+1. Read current `{vertical}/staging/posts/{slug}.html`
+2. Read model: `us-asean-china/staging/posts/english-language-founder-media-vs-local-language-c.html`
+3. Rewrite body paragraphs for AP/Grok voice; **preserve all facts, numbers, links, cases, tables, source notes**
+4. Do not research new claims unless fixing a broken sentence
+5. Do not invent companies
+6. Keep structure (H2s, blockquote, side cards) unless merging one-line stub headings into real sections
+
 ## Return to parent
 
 List each slug: `DONE` or `BLOCKED (reason)`. Note strongest primary used per piece.
+For rewrite-only: `REWRITTEN` per slug.

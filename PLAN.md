@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~02:30 SGT |
-| **Last commit focus** | Fleet full rewrite: 30/30 fintech + 30/30 us-asean-china grounded drafts |
+| **Last updated** | 2026-07-31 ~02:41 SGT |
+| **Last commit focus** | Step 4b prose rewrite fleet + ban generic “operators” |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -222,6 +222,14 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 ---
 
 ## Session log (append-only)
+
+### 2026-07-31 (night+3) — mandatory prose rewrite pass
+
+**Nick:** first-gen text is stiff; rewrite of existing prose is good. Fixed step **4b** in VERTICAL-ENRICH.
+
+**Also ban:** generic “operators” as subject (AI-coded). Name banks, founders, firms, customers, regulators.
+
+**Done:** fleet prose rewrite of all 60 staging posts; residual “operator” only as technical terms (port operator, PSE system operator, mobile-operator channel).
 
 ### 2026-07-31 (night+2) — fleet full rewrite (8 subagents)
 
