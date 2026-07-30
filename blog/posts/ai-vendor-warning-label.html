@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public AI Strategy memo on agent security guidance, shared responsibility, and the operating evidence executives should demand before production deployment.">
+    <title>The AI Vendor's Warning Label | Strategy Publisher</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">nicholasg3.github.io</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Public memo / Issue 003</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=governance">Governance</a><a class="tag-chip" href="../index.html#topic=agents">Agents</a></div>
+        <h1>The AI Vendor's Warning Label</h1>
+        <p>Agent-security guidance is becoming the AI industry's shared-responsibility model. It is a practical safety manual today. After the first serious incident, it may also become a record of who was supposed to own each control.</p>
+      </header>
+
+      <article class="article-body">
+        <p>The useful executive question centers on delegation. Executives need to show what the company handed to the vendor, what stayed in-house, and the residual risk accepted before any production sign-off.</p>
+
+        <p>The issue begins as an operating gap. Later it appears as a legal, insurance, procurement, or board matter once the operating record is missing.</p>
+
+        <p>An enterprise agent differs from a chatbot with extended context. The agent holds an identity, reads files, searches externally, pulls private data, invokes tools, writes code, triggers workflows, updates records, and generates logs across multiple systems. Older software questions asked what an application could reach. The agent version asks what the system can infer, decide, and execute without continuous human oversight.</p>
+
+        <p>Vendor documentation therefore merits a second pass. The first pass stays technical: set sandboxes, limit egress, check tool inputs, watch logs, define approval thresholds, and narrow credentials. The second pass turns strategic. The same text sketches responsibility lines before the market has settled how blame will be assigned.</p>
+
+        <h2>The Cloud Lesson</h2>
+        <p>Cloud computing supplies the closest parallel. Its shared-responsibility model turned a technical division into a governance vocabulary.</p>
+
+        <p>Amazon Web Services still frames the split as security of the cloud versus security in the cloud. The provider protects the underlying infrastructure. Customers keep responsibility for data, identity, configuration, applications, and workload-specific controls. The same guidance adds that shared responsibility covers IT controls for management, operation, and verification.</p>
+
+        <p>Verification converts architecture into evidence. Stating ownership of a configuration differs from showing that the configuration was evaluated, put in place, monitored, and documented.</p>
+
+        <p>The 2020 Office of the Comptroller of the Currency action against Capital One illustrates the pattern. The agency levied an $80 million penalty for weak risk-assessment processes ahead of a large public-cloud migration. The case is not an agent precedent, yet it shows how control splits become board, regulatory, audit, and incident-review topics once a technology underpins critical operations.</p>
+
+        <p>Agents are expected to extend the same pattern into less tidy territory.</p>
+
+        <h2>Agents Make Control Points Harder</h2>
+        <p>Cloud control surfaces remain more modular than agent surfaces. Storage, compute, network rules, and identity policies can still be complex to run, but their boundaries stay comparatively clear. Agents merge those surfaces.</p>
+
+        <p>Identity choices illustrate the shift. An agent may operate under a service account, a human credential, a delegated identity, or a workflow token. Each option changes the answer to a basic incident question about who performed the action.</p>
+
+        <p>Tool use adds further layers. Model text output differs from an actual tool call. Drafting a refund differs from issuing one. Updating the customer record, sending confirmation, and incorporating the result each carry separate risks.</p>
+
+        <p>Data handling blurs lines further. Retrieval systems, uploaded files, memory stores, SaaS connectors, browser state, email, and customer records can combine trusted and untrusted material. Open Worldwide Application Security Project work on tool poisoning shows how tool responses can inject adversarial instructions into an agent context unless data and instructions are separated and controls sit outside model output.</p>
+
+        <p>Egress risks extend beyond blocked domains. A model can leak through permitted channels. A tool can forward data via an allowed API. A browser session can blend user intent with hostile content. A report can expose more than intended when the system pulls excess background context.</p>
+
+        <p>Human approval gates do not remove the problem by themselves. Microsoft recommends gates for high-risk tools and treats model-supplied function arguments as untrusted. Anthropic guidance for chief information security officers asks what untrusted content an agent receives, what actions it can perform, on whose behalf, what the impact radius is, and what observability is in place. These questions remain useful, yet they also reveal the limits of any design that relies on approval without tracking fatigue or escalation quality.</p>
+
+        <p>Logging and revocation close the loop. A serious incident may require prompt logs, tool-call logs, approval logs, SaaS audit logs, code-execution logs, memory records, connector tokens, service-key rotation, and retained outputs. When those records sit in separate systems with separate owners, reconstruction after the fact can prove impossible.</p>
+
+        <blockquote>Agent safety is less like buying a secure product and more like operating a chain of delegated controls.</blockquote>
+
+        <h2>The Vendor Document As Control Map</h2>
+        <p>Vendor warnings therefore carry commercial weight.</p>
+
+        <p>Anthropic’s self-hosted sandbox model now uses explicit shared-responsibility language. It states that Anthropic secures the control plane while customers own sandbox image quality, runtime hardening, network egress, service-key storage and rotation, workload isolation, tool-execution scope, and log retention.</p>
+
+        <p>Microsoft guidance follows a similar approach. It directs developers to map trust boundaries across user input, chat history, context providers, model services, and function tools. It requires validation of function inputs, approval for high-risk tools, developer control of system messages, vetting of extension providers, sanitization of model output, protection of sensitive logs, securing of session data, and implementation of resource limits.</p>
+
+        <p>The guidance is sound engineering practice. It also previews the questions an auditor, insurer, board committee, procurement lawyer, or incident reviewer will later raise.</p>
+
+        <p>Did the buyer restrict egress? Did it rotate keys? Did it separate trust boundaries? Did it treat tool output as untrusted? Did it preserve logs? Did it identify which identity the agent used? Did it require approvals only where they carried weight? Did it test revocation before production?</p>
+
+        <p>None of this establishes vendor innocence after a failure. It also does not establish customer liability. The documentation alone does not settle legal responsibility. It can, however, make the control split legible. Once legible, executives should treat it as potential evidence.</p>
+
+        <h2>Why This Belongs In The C-Suite</h2>
+        <p>Security teams can identify controls. They cannot alone decide how much commercial autonomy a company should grant an agent. Legal teams can negotiate contract terms. They cannot alone operationalize every approval threshold. Finance can request efficiency gains. It cannot alone determine whether a faster process alters risk. Boards can inquire whether AI is governed. They may still receive usage dashboards rather than evidence of control ownership.</p>
+
+        <p>The core difficulty is ambiguous accountability.</p>
+
+        <p>Agent programs often begin with productivity claims: fewer tickets, faster summaries, cheaper research, quicker coding, better support. Those claims are not false, yet they obscure the ownership question. If the system can act, someone must own the action boundary. If it can reach untrusted content, someone must own the trust rule. If it can use a credential, someone must own the identity model. If it can learn from outcomes, someone must own drift and feedback.</p>
+
+        <p>The first serious incident at many companies will arrive as a practical question rather than a philosophical debate: who allowed the agent to reach that system, trust that input, use that credential, execute that tool, skip that approval, retain that log, or send that output?</p>
+
+        <p>Refusing every agent is not a workable strategy. Anthropic guidance notes that outright rejection can drive adoption into shadow channels with weak telemetry and no off switch. The stronger posture accepts bounded risk with named owners.</p>
+
+        <h2>The Responsibility Matrix</h2>
+        <p>Before approving a production agent, the buyer should require a responsibility matrix. The document need not be elaborate. It must be specific enough that the company can later explain what it believed, controlled, delegated, and accepted.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="Agent responsibility matrix" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Executive question</th>
+                <th>Artifact to demand before production</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>What can the agent do without a human?</td>
+                <td>Action inventory with approval thresholds.</td>
+              </tr>
+              <tr>
+                <td>Which identity does the agent act under?</td>
+                <td>Identity model, access policy, and revocation path.</td>
+              </tr>
+              <tr>
+                <td>Which systems can it reach?</td>
+                <td>Connector allowlist, egress policy, and exception owner.</td>
+              </tr>
+              <tr>
+                <td>Which inputs are untrusted?</td>
+                <td>Trust-boundary map and input-handling standard.</td>
+              </tr>
+              <tr>
+                <td>Which tools can change external state?</td>
+                <td>Tool allowlist, least-privilege rule, and side-effect register.</td>
+              </tr>
+              <tr>
+                <td>Where are actions and approvals logged?</td>
+                <td>Audit-log schema, retention period, and evidence owner.</td>
+              </tr>
+              <tr>
+                <td>Which controls are vendor commitments?</td>
+                <td>Contract-control map tied to vendor documentation.</td>
+              </tr>
+              <tr>
+                <td>Which controls are buyer duties?</td>
+                <td>Owner, test evidence, due date, and exception policy.</td>
+              </tr>
+              <tr>
+                <td>What does insurance assume?</td>
+                <td>Broker or carrier question set and coverage memo.</td>
+              </tr>
+              <tr>
+                <td>What gets reported to the board?</td>
+                <td>Quarterly agent-risk dashboard and unresolved exceptions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>This matrix should stay public in the article. The paid layer, if any, can add the worksheet, contract-control addendum, board template, and insurance questions. Hiding the matrix would weaken the public argument. Publishing it gives the reader the practical payoff and makes the paid layer implementation support rather than a toll on the core idea.</p>
+
+        <h2>Read It Before The Accident</h2>
+        <p>Reading vendor guidance as pure blame shifting misses the point. Vendors will protect themselves. The more useful observation is that agent guidance is turning into accountability infrastructure before any settled liability regime exists. It shows buyers how to reduce blast radius. It shows implementers which controls matter. It shows procurement teams what to capture in contract language. It shows insurers what assumptions to test. It shows boards what evidence to request.</p>
+
+        <p>The companies that gain from agents will not be those that simply trust or distrust the technology. They will be those that can prove where autonomy was allowed to operate, where it was bounded, which controls were delegated, which controls were retained, and what occurred at the boundary.</p>
+
+        <p>Read the documentation as a warning label before the accident. After the accident, someone else may read it as evidence.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-security">Anthropic Claude Platform Docs, "Security model"</a></li>
+            <li><a href="https://claude.com/blog/ciso-guide-to-agentic-ai">Anthropic, "Zero risk isn't the job: a CISO's guide to agentic AI"</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/agent-framework/agents/safety">Microsoft Learn, "Agent Safety"</a></li>
+            <li><a href="https://aws.amazon.com/compliance/shared-responsibility-model/">AWS, "Shared Responsibility Model"</a></li>
+            <li><a href="https://www.occ.gov/news-issuances/news-releases/2020/nr-occ-2020-101.html">OCC, "OCC Assesses $80 Million Civil Money Penalty Against Capital One"</a></li>
+            <li><a href="https://owasp.org/www-community/attacks/MCP_Tool_Poisoning">OWASP Foundation, "MCP Tool Poisoning"</a></li>
+            <li><a href="https://www.sec.gov/rules-regulations/2023/07/s7-09-22">SEC, "Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure"</a></li>
+            <li><a href="https://lmalloyds.com/specialist-areas/underwriting/wordings/cyber-war-clauses/">LMA, "Cyber war clauses"</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Can you prove the control split?</strong>
+          <p>Before approving a production agent, decide which controls are vendor commitments, which are buyer duties, and who owns the evidence.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">C-Suite Risk</span>
+          <strong>Ambiguous accountability.</strong>
+          <p>The incident question will be practical: who let the agent reach, trust, execute, retain, or send the thing that caused the problem?</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

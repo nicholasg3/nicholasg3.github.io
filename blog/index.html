@@ -3,246 +3,530 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Blog catalogue by Nicholas MacGregor Garcia on AI strategy, fintech, and ASEAN-US entrepreneurship.">
-    <title>Blog: AI Strategy, Fintech, and ASEAN-US Entrepreneurship</title>
+    <meta name="description" content="Strategy Publisher is a public strategy briefing for founders, consultants, and C-suite operators.">
+    <title>Strategy Publisher | AI Strategy Briefing</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-      .catalogue-hero {
-        max-width: 1040px;
-        margin: 0 auto;
-        padding: 84px 24px 42px;
-      }
-
-      .catalogue-hero h1 {
-        max-width: 860px;
-        font-size: clamp(3rem, 7vw, 6.2rem);
-        line-height: 0.92;
-        overflow-wrap: anywhere;
-      }
-
-      .catalogue-hero p {
-        max-width: 720px;
-      }
-
-      .tagbar {
-        max-width: 1040px;
-        margin: 0 auto;
-        padding: 0 24px 22px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .tag-button {
-        min-height: 34px;
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: var(--paper);
-        color: var(--muted);
-        padding: 6px 12px;
-        font: inherit;
-        font-size: 14px;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .tag-button[aria-pressed="true"] {
-        background: var(--ink);
-        border-color: var(--ink);
-        color: #fff;
-      }
-
-      .catalogue {
-        max-width: 1040px;
-        margin: 0 auto;
-        padding: 24px 24px 84px;
-        display: grid;
-        gap: 18px;
-      }
-
-      .post-row {
-        display: grid;
-        grid-template-columns: 150px minmax(0, 1fr) 190px;
-        gap: 26px;
-        align-items: start;
-        padding: 24px 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .post-row:last-child {
-        border-bottom: 1px solid var(--line);
-      }
-
-      .post-meta {
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .post-row h2 {
-        margin: 0 0 8px;
-        font-size: clamp(26px, 3.4vw, 42px);
-      }
-
-      .post-row p {
-        margin: 0;
-        color: var(--muted);
-        font-size: 17px;
-      }
-
-      .post-tags {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        gap: 8px;
-      }
-
-      .post-tags span {
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        padding: 4px 9px;
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 700;
-      }
-
-      .post-row[hidden] {
-        display: none;
-      }
-
-      .empty-state {
-        display: none;
-        border-top: 1px solid var(--line);
-        padding: 28px 0;
-        color: var(--muted);
-      }
-
-      .empty-state.visible {
-        display: block;
-      }
-
-      @media (max-width: 760px) {
-        .catalogue-hero {
-          padding-top: 54px;
-        }
-
-        .catalogue-hero h1 {
-          font-size: clamp(2.25rem, 10.5vw, 3rem);
-          line-height: 0.98;
-          overflow-wrap: normal;
-        }
-
-        .post-row {
-          grid-template-columns: 1fr;
-          gap: 12px;
-        }
-
-        .post-tags {
-          justify-content: flex-start;
-        }
-      }
-    </style>
+    <link rel="alternate" type="application/rss+xml" title="Strategy Publisher" href="feed.xml">
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Nicholas MacGregor Garcia home">
-        <span class="brand-mark">N</span>
+      <a class="brand" href="index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
         <span>
-          <strong>Nicholas MacGregor Garcia</strong>
-          <small>AI Strategy, Fintech, and ASEAN-US Entrepreneurship</small>
+          <strong>Strategy Publisher</strong>
+          <small>AI Strategy briefing</small>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Home</a>
-        <a href="#catalogue">Catalogue</a>
-        <a href="../memory-governance.html">Working paper</a>
+        <a href="#topics">Topics</a>
+        <a href="#latest">Latest</a>
+        <a href="feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">nicholasg3.github.io</a>
       </nav>
     </header>
 
     <main>
-      <section class="catalogue-hero">
-        <div class="issue-kicker">Blog</div>
-        <h1>AI Strategy, Fintech, and ASEAN-US Entrepreneurship</h1>
-        <p class="hero-copy">A catalogue of public notes and essays on where AI belongs in organizations, how fintech systems are built and governed, and what founders can actually decide this quarter.</p>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="issue-kicker">Issue 032 / July 2026 · Research synthesis</div>
+        <h1 id="hero-title">Agents need a memory architecture.</h1>
+        <p class="hero-copy">A field-grounded research synthesis for founders, consultants, and C-suite operators: production agents store experience in prompt rules and model weights that drift apart unless ownership and reconciliation are designed on purpose.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="posts/agents-need-memory-architecture.html">Read Issue 032</a>
+          <a class="button secondary" href="#latest">Browse the memo index</a>
+        </div>
       </section>
 
-      <div class="tagbar" aria-label="Filter posts by tag">
-        <button class="tag-button" type="button" data-tag="all" aria-pressed="true">All</button>
-        <button class="tag-button" type="button" data-tag="AI Strategy" aria-pressed="false">AI Strategy</button>
-        <button class="tag-button" type="button" data-tag="Governance" aria-pressed="false">Governance</button>
-        <button class="tag-button" type="button" data-tag="Fintech" aria-pressed="false">Fintech</button>
-        <button class="tag-button" type="button" data-tag="Working Paper" aria-pressed="false">Working Paper</button>
-        <button class="tag-button" type="button" data-tag="Primer" aria-pressed="false">Primer</button>
-      </div>
-
-      <section class="catalogue" id="catalogue" aria-label="Blog catalogue">
-        <article class="post-row" data-tags="AI Strategy,Governance,Working Paper">
-          <div class="post-meta">Working paper<br>June 2026</div>
-          <div>
-            <h2><a href="../memory-governance.html">Who Stores What? Split Memory Custody in Agentic AI</a></h2>
-            <p>A working paper summary on memory forks, vendor incentives, observability, and repair rights.</p>
-          </div>
-          <div class="post-tags" aria-label="Tags">
-            <span>AI Strategy</span>
-            <span>Governance</span>
-            <span>Working Paper</span>
-          </div>
+      <section class="masthead-grid" aria-label="Publication positioning">
+        <article>
+          <span>Beat</span>
+          <strong>AI Strategy</strong>
+          <p>How operators decide where AI should change coordination, judgment, learning speed, and commercial leverage.</p>
         </article>
-
-        <article class="post-row" data-tags="Fintech,ASEAN-US">
-          <div class="post-meta">External<br>NUS FinTech Lab</div>
-          <div>
-            <h2><a href="https://fintechlab.nus.edu.sg/nus-swap/">NUSwap: Simulated Trading Exchange</a></h2>
-            <p>A lab project using a simulated cryptocurrency exchange for controlled experimentation, student strategy testing, and behavioral finance research.</p>
-          </div>
-          <div class="post-tags" aria-label="Tags">
-            <span>Fintech</span>
-            <span>ASEAN-US</span>
-          </div>
+        <article>
+          <span>Reader</span>
+          <strong>Founder / consultant / C-suite</strong>
+          <p>People making resource-allocation calls under noisy market pressure.</p>
         </article>
-
-        <article class="post-row" data-tags="AI Strategy,Primer">
-          <div class="post-meta">July 2026<br>Series · Part 1 · Primer</div>
-          <div>
-            <h2><a href="posts/ai-workflow-investment-screen.html">The AI Workflow Investment Screen</a></h2>
-            <p>Part 1 (lay primer): automate / assist / ignore. Later parts may return with teaching materials and counterpoints.</p>
-          </div>
-          <div class="post-tags" aria-label="Tags">
-            <span>AI Strategy</span>
-            <span>Primer</span>
-          </div>
+        <article>
+          <span>Promise</span>
+          <strong>One usable decision</strong>
+          <p>Each memo ends with a clear call you can act on this week.</p>
         </article>
-
-        <p class="empty-state" role="status">No posts match that tag yet.</p>
       </section>
+
+
+      <section class="tag-filter" id="topics" aria-labelledby="topics-label">
+        <div class="section-label" id="topics-label">Browse by topic</div>
+        <p class="tag-filter-lead">Filter the memo index. Pick one topic, or show everything.</p>
+        <div class="tag-rail" role="toolbar" aria-label="Topic filters">
+          <button type="button" class="tag-btn is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="tag-btn" data-filter="strategy" aria-pressed="false">Strategy</button>
+          <button type="button" class="tag-btn" data-filter="agents" aria-pressed="false">Agents</button>
+          <button type="button" class="tag-btn" data-filter="governance" aria-pressed="false">Governance</button>
+          <button type="button" class="tag-btn" data-filter="productivity" aria-pressed="false">Productivity</button>
+          <button type="button" class="tag-btn" data-filter="capital" aria-pressed="false">Capital</button>
+          <button type="button" class="tag-btn" data-filter="distribution" aria-pressed="false">Distribution</button>
+          <button type="button" class="tag-btn" data-filter="markets" aria-pressed="false">Markets</button>
+          <button type="button" class="tag-btn" data-filter="memory" aria-pressed="false">Memory</button>
+          <button type="button" class="tag-btn" data-filter="quality" aria-pressed="false">Quality</button>
+          <button type="button" class="tag-btn" data-filter="research" aria-pressed="false">Research</button>
+          <button type="button" class="tag-btn" data-filter="news" aria-pressed="false">News</button>
+        </div>
+        <p class="tag-status" id="tag-status" aria-live="polite">Showing all memos</p>
+      </section>
+
+      <section class="latest" id="latest">
+        <div class="section-label">Latest Memo</div>
+        <article data-tags="memory agents research" class="feature-card">
+          <div class="feature-meta">
+            <span>Research synthesis</span>
+            <span>12 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="memory">Memory</button><button type="button" class="tag-chip" data-filter="agents">Agents</button><button type="button" class="tag-chip" data-filter="research">Research</button></div>
+          <h2><a href="posts/agents-need-memory-architecture.html">Agents Need a Memory Architecture</a></h2>
+          <p>Field synthesis from 1,990 public discussions: production agents hit a memory fork between prompt rules and model weights. Three episodes explain retention pressure, parallel stores, and coherence stress before any checklist can help.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which memory stores does the agent write, and who owns reconciliation?</span>
+          </div>
+        </article>
+        <article data-tags="governance news" class="feature-card">
+          <div class="feature-meta">
+            <span>News digest</span>
+            <span>7 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="governance">Governance</button><button type="button" class="tag-chip" data-filter="news">News</button></div>
+          <h2><a href="posts/ai-disclosure-clock.html">The AI Disclosure Clock</a></h2>
+          <p>EU AI Act Article 50 transparency duties apply on 2 August 2026. Commission guidelines published 20 July turn disclosure into a workflow deadline for interactive AI, synthetic content, and residual ownership.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which customer-facing AI surfaces still hide the machine?</span>
+          </div>
+        </article>
+        <article data-tags="governance capital" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="governance">Governance</button><button type="button" class="tag-chip" data-filter="capital">Capital</button></div>
+          <h2><a href="posts/ai-coverage-gap.html">The AI Coverage Gap</a></h2>
+          <p>Generative AI exclusions are turning residual risk transfer into a management ledger. Operators need exposure classes, policy lines, residual owners, control evidence, and stop rules before autonomy scales.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which AI acts remain uninsured residual risk?</span>
+          </div>
+        </article>
+        <article data-tags="agents governance" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="agents">Agents</button><button type="button" class="tag-chip" data-filter="governance">Governance</button></div>
+          <h2><a href="posts/ai-browser-boundary.html">The AI Browser Boundary</a></h2>
+          <p>Agentic browsers turn a reading surface into an execution surface with employee credentials. Operators need a boundary for session privilege, instruction channels, tool reach, data movement, work classes, and incident paths.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which browser agents may act with employee credentials?</span>
+          </div>
+        </article>
+        <article data-tags="distribution governance" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="distribution">Distribution</button><button type="button" class="tag-chip" data-filter="governance">Governance</button></div>
+          <h2><a href="posts/ai-source-rights-ledger.html">The AI Source Rights Ledger</a></h2>
+          <p>AI search is unbundling the old crawler bargain into access, citation, answer, training, payment, and relationship rights. Operators need a source-rights ledger before publishing strategy becomes accidental licensing.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which source rights are you granting by default?</span>
+          </div>
+        </article>
+        <article data-tags="governance agents" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="governance">Governance</button><button type="button" class="tag-chip" data-filter="agents">Agents</button></div>
+          <h2><a href="posts/ai-control-gap-ledger.html">The AI Control Gap: Accountability Before Visibility or Stop Rules</a></h2>
+          <p>AI accountability is reaching executives before visibility, spend discipline, incident response, and stop rules have caught up. Operators need a control ledger before agents become infrastructure.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Where has AI accountability already outrun control?</span>
+          </div>
+        </article>
+        <article data-tags="distribution" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="distribution">Distribution</button></div>
+          <h2><a href="posts/ai-audience-ledger.html">The AI Audience Ledger</a></h2>
+          <p>AI search is weakening the old traffic bargain. Operators need a ledger for crawl access, answer presence, referral quality, owned relationships, conversion rights, and proof loops.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>What does the company keep when AI search consumes, cites, or summarizes its public work?</span>
+          </div>
+        </article>
+        <article data-tags="productivity quality" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="productivity">Productivity</button><button type="button" class="tag-chip" data-filter="quality">Quality</button></div>
+          <h2><a href="posts/ai-slop-audit.html">The AI Slop Audit</a></h2>
+          <p>AI adoption is broad enough that low-grade AI output has become a management problem. Operators need to audit accuracy, specificity, judgment, review burden, and learning before volume becomes the strategy.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Where is AI increasing accepted work, and where is it increasing review burden?</span>
+          </div>
+        </article>
+        <article data-tags="memory agents" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="memory">Memory</button><button type="button" class="tag-chip" data-filter="agents">Agents</button></div>
+          <h2><a href="posts/ai-memory-ledger.html">The AI Memory Ledger</a></h2>
+          <p>AI assistants are beginning to carry context across sessions. Operators need a ledger for preference memory, role memory, project memory, sensitive memory, and official institutional memory.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which AI memories should persist, and under whose authority?</span>
+          </div>
+        </article>
+        <article data-tags="capital productivity" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="capital">Capital</button><button type="button" class="tag-chip" data-filter="productivity">Productivity</button></div>
+          <h2><a href="posts/ai-model-mix-ledger.html">The AI Model Mix Ledger</a></h2>
+          <p>AI buying is becoming a portfolio problem. Operators need a ledger for frontier APIs, open-weight models, vendor bundles, local hosting, specialist models, and forbidden work.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which workflows deserve which model class?</span>
+          </div>
+        </article>
+        <article data-tags="productivity" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="productivity">Productivity</button></div>
+          <h2><a href="posts/ai-productivity-gap.html">The AI Productivity Gap</a></h2>
+          <p>AI investment and awareness are running ahead of visible productivity proof. Operators need a ledger for adoption, daily use, workflow redesign, measurement, learning, and capital discipline.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which workflow has earned an AI productivity receipt?</span>
+          </div>
+        </article>
+        <article data-tags="distribution agents" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="distribution">Distribution</button><button type="button" class="tag-chip" data-filter="agents">Agents</button></div>
+          <h2><a href="posts/ai-distribution-boundary.html">The AI Distribution Boundary</a></h2>
+          <p>AI search, workplace agents, and browser agents are turning distribution into a boundary problem. Operators need to know where buyer intent is interpreted, who frames the options, and which action path the company owns.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which boundary owns the next customer action?</span>
+          </div>
+        </article>
+        <article data-tags="agents governance" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="agents">Agents</button><button type="button" class="tag-chip" data-filter="governance">Governance</button></div>
+          <h2><a href="posts/agent-identity-boundary.html">The Agent Identity Boundary</a></h2>
+          <p>Browser agents and tool-using AI systems turn identity into a management control. Operators need to know what acted, who granted authority, which tools were scoped, and how access can be revoked.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Where does borrowed identity become too risky for an agent workflow?</span>
+          </div>
+        </article>
+        <article data-tags="governance" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="governance">Governance</button></div>
+          <h2><a href="posts/ai-disclosure-ledger.html">The AI Disclosure Ledger</a></h2>
+          <p>AI transparency is becoming a workflow problem. Operators need to know what was generated, where it travelled, who approved it, and when disclosure or provenance should stop publication.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Where does disclosure become material enough to require a ledger, not just a label?</span>
+          </div>
+        </article>
+        <article data-tags="governance productivity" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="governance">Governance</button><button type="button" class="tag-chip" data-filter="productivity">Productivity</button></div>
+          <h2><a href="posts/ai-evaluation-gap.html">The AI Evaluation Gap</a></h2>
+          <p>Benchmarks and demos are not enough. Operators need a live evidence loop that proves task fit, workflow fit, failure response, cost burden, and learning cadence before AI delegation scales.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>What evidence would force an AI pilot to pause, shrink, or stop?</span>
+          </div>
+        </article>
+        <article data-tags="agents governance" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="agents">Agents</button><button type="button" class="tag-chip" data-filter="governance">Governance</button></div>
+          <h2><a href="posts/ai-agent-permission-ledger.html">The AI Agent Permission Ledger</a></h2>
+          <p>Agentic AI turns access into strategy. Operators need to decide what an agent may read, reason, write, spend, message, and change before the pilot becomes production authority.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which permission line should remain gated before agent autonomy expands?</span>
+          </div>
+        </article>
+        <article data-tags="productivity" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="productivity">Productivity</button></div>
+          <h2><a href="posts/ai-work-cadence.html">The AI Work Cadence</a></h2>
+          <p>AI adoption is moving from occasional prompting to recurring production. Operators need to manage the artifact, rhythm, human handoff, review burden, and job redesign.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>What recurring workflow should get a cadence ledger before AI delegation expands?</span>
+          </div>
+        </article>
+        <article data-tags="capital productivity" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="capital">Capital</button><button type="button" class="tag-chip" data-filter="productivity">Productivity</button></div>
+          <h2><a href="posts/ai-token-budget.html">The AI Token Budget</a></h2>
+          <p>Inference is becoming a management budget. Executives need to decide which workflows deserve expensive model tiers, long context, agent loops, and system permissions.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Where should intelligence be spent, capped, downshifted, or stopped?</span>
+          </div>
+        </article>
+        <article data-tags="productivity" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="productivity">Productivity</button></div>
+          <h2><a href="posts/ai-productivity-receipt.html">The AI Productivity Receipt</a></h2>
+          <p>AI benchmarks are improving, but executives still need proof that capability became task output, workflow change, economic gain, and tolerable control burden.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which receipt line must move before an AI pilot becomes an operating commitment?</span>
+          </div>
+        </article>
+        <article data-tags="distribution markets" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="distribution">Distribution</button><button type="button" class="tag-chip" data-filter="markets">Markets</button></div>
+          <h2><a href="posts/founder-distribution-ledger.html">The Founder Distribution Ledger</a></h2>
+          <p>Treat founder publishing as a four-column ledger — shelf, relationship, conversion, proof — so channel fashion does not masquerade as strategy. Tools are examples; the columns are the product.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which column is weak before you add another channel?</span>
+          </div>
+        </article>
+        <article data-tags="markets" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="markets">Markets</button></div>
+          <h2><a href="posts/asean-market-entry-test.html">The ASEAN Market-Entry Test</a></h2>
+          <p>ASEAN is writing better digital rules. Founders should still treat Southeast Asia as a portfolio of country-level operating tests, not as proof that one regional market has arrived.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which first ASEAN country best tests the buyer, trust bridge, compliance burden, payment stack, and reusable operating model?</span>
+          </div>
+        </article>
+        <article data-tags="markets capital" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="markets">Markets</button><button type="button" class="tag-chip" data-filter="capital">Capital</button></div>
+          <h2><a href="posts/stablecoin-distribution-test.html">The Stablecoin Distribution Test</a></h2>
+          <p>Stablecoins are moving from crypto infrastructure into payment operations. For a small digital business, the question is whether the rail unlocks buyers and settlement speed at an operating cost the founder can actually manage.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Should a founder add stablecoin payment access now, wait for a provider-mediated checkout, or keep the first conversion channel on a familiar platform?</span>
+          </div>
+        </article>
+        <article data-tags="governance" class="feature-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="governance">Governance</button></div>
+          <h2><a href="posts/ai-evidence-packet.html">The AI Evidence Packet</a></h2>
+          <p>AI procurement is moving from demo judgment to evidence judgment. Before buying an agent, model, copilot, or automation layer, executives should know which claims have proof, which risks are owned, and which failures would force a rollback.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>What vendor evidence and buyer-owned workflow facts must be clear before an AI system moves from pilot to production?</span>
+          </div>
+        </article>
+        <article data-tags="capital" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="capital">Capital</button></div>
+          <h2><a href="posts/ai-payback-ledger.html">The AI Payback Ledger</a></h2>
+          <p>The AI capex question is not whether the boom is real or fake. It is who owns the payback risk when model ambition is financed through chips, data centers, leases, guarantees, debt, and customer prepayments.</p>
+        </article>
+        <article data-tags="strategy" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="strategy">Strategy</button></div>
+          <h2><a href="posts/ai-herding-problem.html">The AI Herding Problem</a></h2>
+          <p>When every team can ask similar models similar questions, the scarce asset is no longer analysis. It is independent judgment about which answers should be trusted, ignored, or deliberately opposed.</p>
+        </article>
+        <article data-tags="strategy capital" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="strategy">Strategy</button><button type="button" class="tag-chip" data-filter="capital">Capital</button></div>
+          <h2><a href="posts/ai-quality-test.html">The AI Quality Test: Durable Advantage or Just Theme Exposure</a></h2>
+          <p>The harder AI question is no longer whether a company can spend. It is whether the spending builds a durable business advantage, or only buys exposure to a theme everyone else can see.</p>
+        </article>
+        <article data-tags="capital" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="capital">Capital</button></div>
+          <h2><a href="posts/ai-data-center-veto.html">The AI Data-Center Veto</a></h2>
+          <p>The next AI bottleneck may not be the model. It may be the right to draw power, use water, raise capital, win permits, and keep local voters from deciding the buildout is someone else's upside funded by their bills.</p>
+        </article>
+        <article data-tags="strategy" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="strategy">Strategy</button></div>
+          <h2><a href="posts/ai-strategy-theatre-test.html">The AI Strategy Theatre Test</a></h2>
+          <p>AI theatre is not the absence of demos. It is the presence of demos without a credible theory of workflow change, accountability, evidence, management, and opportunity cost.</p>
+        </article>
+        <article data-tags="strategy governance" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="strategy">Strategy</button><button type="button" class="tag-chip" data-filter="governance">Governance</button></div>
+          <h2><a href="posts/ai-management-layer.html">The AI Management Layer Is Arriving</a></h2>
+          <p>Enterprise AI is being folded into managed work, agent registries, observability logs, content provenance, licensing, and transparency rules. The operating question is whether companies can manage delegated AI work before the market forces them to.</p>
+        </article>
+        <article data-tags="governance agents" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>8 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="governance">Governance</button><button type="button" class="tag-chip" data-filter="agents">Agents</button></div>
+          <h2><a href="posts/ai-vendor-warning-label.html">The AI Vendor's Warning Label</a></h2>
+          <p>Agent-security guidance is becoming the AI industry's shared-responsibility model: a practical control manual today, and potentially an accountability record after the first serious incident.</p>
+        </article>
+        <article data-tags="strategy productivity" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>10 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="strategy">Strategy</button><button type="button" class="tag-chip" data-filter="productivity">Productivity</button></div>
+          <h2><a href="posts/ai-workflow-investment-screen.html">The AI Pilot Trap</a></h2>
+          <p>Companies are not short of AI use cases. They are short of managerial judgment about where autonomy should enter the business and where it should stop.</p>
+        </article>
+        <article data-tags="strategy" class="feature-card archive-card">
+          <div class="feature-meta">
+            <span>Previous memo</span>
+            <span>6 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><button type="button" class="tag-chip" data-filter="strategy">Strategy</button></div>
+          <h2><a href="posts/ai-strategy-doctrine-before-tools.html">AI Strategy Starts With Doctrine Before Tools</a></h2>
+          <p>Founders do not have an AI tooling problem first. They have a doctrine problem: a compact set of operating beliefs for deciding what should be automated, assisted, or ignored.</p>
+        </article>
+      </section>
+
     </main>
 
     <footer class="site-footer">
-      <span>© 2026 Nicholas MacGregor Garcia</span>
-      <a href="../index.html">Home</a>
+      <span>Strategy Publisher</span>
+      <a href="feed.xml">RSS</a>
     </footer>
 
     <script>
-      const buttons = document.querySelectorAll(".tag-button");
-      const posts = document.querySelectorAll(".post-row");
-      const empty = document.querySelector(".empty-state");
+      (function () {
+        var rail = document.querySelector(".tag-rail");
+        var status = document.getElementById("tag-status");
+        var cards = Array.prototype.slice.call(document.querySelectorAll(".feature-card[data-tags]"));
+        if (!rail || !cards.length) return;
 
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const tag = button.dataset.tag;
-          let visibleCount = 0;
-
-          buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
-
-          posts.forEach((post) => {
-            const tags = post.dataset.tags.split(",");
-            const visible = tag === "all" || tags.includes(tag);
-            post.hidden = !visible;
-            if (visible) visibleCount += 1;
+        function setFilter(tag) {
+          var active = tag || "all";
+          var buttons = document.querySelectorAll(".tag-btn, .tag-chip");
+          buttons.forEach(function (btn) {
+            var isMatch = btn.getAttribute("data-filter") === active;
+            btn.classList.toggle("is-active", isMatch);
+            if (btn.classList.contains("tag-btn")) {
+              btn.setAttribute("aria-pressed", isMatch ? "true" : "false");
+            }
           });
+          // All button special-case: when active=all, only All is pressed
+          if (active === "all") {
+            document.querySelectorAll(".tag-chip").forEach(function (c) {
+              c.classList.remove("is-active");
+            });
+          }
+          var shown = 0;
+          cards.forEach(function (card) {
+            var tags = (card.getAttribute("data-tags") || "").split(/\s+/);
+            var ok = active === "all" || tags.indexOf(active) !== -1;
+            card.hidden = !ok;
+            if (ok) shown += 1;
+          });
+          if (status) {
+            if (active === "all") {
+              status.textContent = "Showing all " + cards.length + " memos";
+            } else {
+              var label = active.charAt(0).toUpperCase() + active.slice(1);
+              status.textContent = "Showing " + shown + " memo" + (shown === 1 ? "" : "s") + " · " + label;
+            }
+          }
+          try {
+            if (active === "all") {
+              history.replaceState(null, "", location.pathname + location.search);
+            } else {
+              history.replaceState(null, "", "#topic=" + encodeURIComponent(active));
+            }
+          } catch (e) {}
+        }
 
-          empty.classList.toggle("visible", visibleCount === 0);
+        document.addEventListener("click", function (ev) {
+          var btn = ev.target.closest("[data-filter]");
+          if (!btn || (!btn.classList.contains("tag-btn") && !btn.classList.contains("tag-chip"))) return;
+          ev.preventDefault();
+          setFilter(btn.getAttribute("data-filter"));
         });
-      });
+
+        var hash = (location.hash || "").replace(/^#/, "");
+        var initial = "all";
+        if (hash.indexOf("topic=") === 0) {
+          initial = decodeURIComponent(hash.slice(6)) || "all";
+        }
+        setFilter(initial);
+      })();
     </script>
   </body>
 </html>
