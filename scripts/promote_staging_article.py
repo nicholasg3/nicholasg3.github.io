@@ -135,6 +135,38 @@ def promote(html: str, *, kicker: str, keep_noindex: bool) -> str:
     # styles path: staging posts often use ../../styles.css or ../styles.css
     # leave as-is if already correct for destination; caller may fix
 
+    # nav / brand leftovers
+    html = re.sub(
+        r'aria-label="Staging home"',
+        'aria-label="Blog home"',
+        html,
+        flags=re.I,
+    )
+    html = re.sub(
+        r'<a href="[^"]*">Staging index</a>',
+        '<a href="../index.html">Blog</a>',
+        html,
+        flags=re.I,
+    )
+    html = re.sub(
+        r'<a href="[^"]*ideas-queue\.html">Ideas queue</a>\s*',
+        '',
+        html,
+        flags=re.I,
+    )
+    html = re.sub(
+        r'<a href="[^"]*">Back to staging</a>',
+        '<a href="../index.html">Back to index</a>',
+        html,
+        flags=re.I,
+    )
+    html = re.sub(
+        r'Private draft|private staging|Staging draft',
+        'Strategy Publisher',
+        html,
+        flags=re.I,
+    )
+
     html = re.sub(r"\n{3,}", "\n\n", html)
     return html
 
