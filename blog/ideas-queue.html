@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Private publishing ideas queue.">
+    <title>Ideas queue · private</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      .gate, .queue-wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 24px 96px;
+      }
+      .gate-card {
+        max-width: 420px;
+        margin: 72px auto 0;
+        padding: 28px 24px;
+        background: var(--sheet);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+      .gate-card h1 {
+        margin: 0 0 8px;
+        font-size: 1.6rem;
+        line-height: 1.15;
+      }
+      .gate-card p {
+        color: var(--muted);
+        margin: 0 0 18px;
+      }
+      .gate-card label {
+        display: block;
+        font-size: 0.85rem;
+        color: var(--graphite);
+        margin-bottom: 6px;
+      }
+      .gate-card input[type="password"] {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        background: #fff;
+        font: inherit;
+        margin-bottom: 14px;
+      }
+      .gate-card button,
+      .toolbar button {
+        min-height: 40px;
+        padding: 8px 14px;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: #fff;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .gate-card button.secondary,
+      .toolbar button.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+      .gate-error {
+        color: var(--crimson);
+        font-size: 0.9rem;
+        min-height: 1.2em;
+        margin: 0 0 8px;
+      }
+      .queue-header h1 {
+        margin: 0 0 8px;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        line-height: 1.05;
+      }
+      .queue-meta {
+        color: var(--muted);
+        margin: 0 0 18px;
+      }
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 0 22px;
+        align-items: center;
+      }
+      .toolbar input[type="search"] {
+        flex: 1 1 220px;
+        min-width: 180px;
+        padding: 9px 12px;
+        border: 1px solid var(--line);
+        background: var(--sheet);
+        font: inherit;
+      }
+      .status-chip {
+        display: inline-block;
+        padding: 2px 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .status-draft { background: #fff3d6; border-color: #e0c36a; }
+      .status-queued { background: var(--mist); }
+      .status-hold { background: #f0ece4; }
+      .status-watch { background: #eef6f2; }
+      .status-skill-seed { background: #f4eef8; }
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        background: var(--sheet);
+      }
+      table.ideas {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+      table.ideas th,
+      table.ideas td {
+        border-bottom: 1px solid var(--line);
+        padding: 12px 12px;
+        vertical-align: top;
+        text-align: left;
+      }
+      table.ideas th {
+        background: #f0ebe0;
+        font-size: 0.8rem;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+      table.ideas tr:last-child td { border-bottom: 0; }
+      table.ideas a {
+        color: var(--blue);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .muted { color: var(--muted); }
+      .notes {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .notes ul { padding-left: 1.2em; }
+      .hidden { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Strategy Publisher home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Strategy Publisher</strong>
+          <small>Private queue</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Blog</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="gate" class="gate" aria-labelledby="gate-title">
+        <div class="gate-card">
+          <h1 id="gate-title">Ideas queue</h1>
+          <p>Password-protected view of the ranked publishing / retweet ideas database.</p>
+          <p class="gate-error" id="gate-error" role="status"></p>
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" autofocus>
+          <button type="button" id="unlock-btn">Unlock</button>
+        </div>
+      </section>
+
+      <section id="queue" class="queue-wrap hidden" aria-labelledby="queue-title">
+        <div class="queue-header">
+          <div class="issue-kicker">Private · auto-refreshed JSON</div>
+          <h1 id="queue-title">Publishing ideas queue</h1>
+          <p class="queue-meta" id="queue-meta">Loading…</p>
+        </div>
+        <div class="toolbar">
+          <input id="filter" type="search" placeholder="Filter ideas, status, source…" aria-label="Filter ideas">
+          <button type="button" class="secondary" id="reload-btn">Reload data</button>
+          <button type="button" class="secondary" id="lock-btn">Lock</button>
+        </div>
+        <div class="table-wrap" role="region" aria-label="Ideas table" tabindex="0">
+          <table class="ideas">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Idea</th>
+                <th>Status</th>
+                <th>Source</th>
+                <th>Tweet</th>
+                <th>Enriched</th>
+                <th>Analyzed / draft</th>
+              </tr>
+            </thead>
+            <tbody id="ideas-body"></tbody>
+          </table>
+        </div>
+        <div class="notes">
+          <strong>Notes</strong>
+          <ul id="notes-list"></ul>
+          <p class="muted">GitHub Pages cannot do real server authentication. This page uses a client-side password check. Do not put secrets more sensitive than an internal backlog here.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Strategy Publisher · private</span>
+      <a href="index.html">Blog</a>
+    </footer>
+
+    <script>
+      // SHA-256 of the password string (UTF-8). Change with:
+      //   python3 -c "import hashlib; print(hashlib.sha256(b'YOUR_PASSWORD').hexdigest())"
+      // Default password (change after first login if desired): nick-blog-queue
+      const PASSWORD_SHA256 = "e40dceae9fb12e8d5fd84e216df8741e8752ed3c3ea57c8e448eb17572763be6";
+      const SESSION_KEY = "sp-ideas-queue-auth-v1";
+      const DATA_URL = "data/ideas-queue.json";
+
+      const gate = document.getElementById("gate");
+      const queue = document.getElementById("queue");
+      const gateError = document.getElementById("gate-error");
+      const passwordInput = document.getElementById("password");
+      const ideasBody = document.getElementById("ideas-body");
+      const queueMeta = document.getElementById("queue-meta");
+      const notesList = document.getElementById("notes-list");
+      const filterInput = document.getElementById("filter");
+
+      let ideasCache = [];
+
+      async function sha256Hex(text) {
+        const data = new TextEncoder().encode(text);
+        const buf = await crypto.subtle.digest("SHA-256", data);
+        return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+      }
+
+      function isAuthed() {
+        return sessionStorage.getItem(SESSION_KEY) === "1";
+      }
+
+      function setAuthed(ok) {
+        if (ok) sessionStorage.setItem(SESSION_KEY, "1");
+        else sessionStorage.removeItem(SESSION_KEY);
+      }
+
+      function showQueue(show) {
+        gate.classList.toggle("hidden", show);
+        queue.classList.toggle("hidden", !show);
+      }
+
+      function shortPath(p) {
+        if (!p) return "";
+        const parts = p.split(/[/\\]/);
+        return parts.slice(-2).join("/");
+      }
+
+      function linkList(urls, labelFn) {
+        if (!urls || !urls.length) return '<span class="muted">—</span>';
+        return urls.map((u, i) => {
+          const label = labelFn ? labelFn(u, i) : (i === 0 ? "tweet" : `tweet ${i + 1}`);
+          const href = u.startsWith("http") ? u : "#";
+          if (!u.startsWith("http")) {
+            return `<span class="muted" title="${u}">${shortPath(u)}</span>`;
+          }
+          return `<a href="${u}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+        }).join("<br>");
+      }
+
+      function statusClass(status) {
+        const s = (status || "").toLowerCase().replace(/\s+/g, "-");
+        return `status-chip status-${s}`;
+      }
+
+      function renderIdeas(ideas) {
+        const q = (filterInput.value || "").trim().toLowerCase();
+        const rows = ideas.filter(item => {
+          if (!q) return true;
+          const blob = [
+            item.rank, item.idea, item.status, item.source,
+            ...(item.tweet_urls || []),
+            ...(item.enriched || []),
+            ...(item.analyzed || []),
+            item.draft_post || ""
+          ].join(" ").toLowerCase();
+          return blob.includes(q);
+        });
+
+        ideasBody.innerHTML = rows.map(item => {
+          const tweets = linkList(item.tweet_urls || [], (_, i) => i === 0 ? "open" : `open ${i + 1}`);
+          const enriched = (item.enriched && item.enriched.length)
+            ? item.enriched.map(p => `<span class="muted" title="${p}">${shortPath(p)}</span>`).join("<br>")
+            : '<span class="muted">—</span>';
+          const analyzedBits = [];
+          (item.analyzed || []).forEach(p => {
+            analyzedBits.push(`<span class="muted" title="${p}">${shortPath(p)}</span>`);
+          });
+          if (item.draft_post) {
+            analyzedBits.push(`<a href="${item.draft_post}">draft post</a>`);
+          }
+          const analyzed = analyzedBits.length ? analyzedBits.join("<br>") : '<span class="muted">—</span>';
+          return `<tr>
+            <td>${item.rank}</td>
+            <td>${escapeHtml(item.idea || "")}</td>
+            <td><span class="${statusClass(item.status)}">${escapeHtml(item.status || "")}</span></td>
+            <td>${escapeHtml(item.source || "")}</td>
+            <td>${tweets}</td>
+            <td>${enriched}</td>
+            <td>${analyzed}</td>
+          </tr>`;
+        }).join("");
+      }
+
+      function escapeHtml(s) {
+        return String(s)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;");
+      }
+
+      async function loadData() {
+        queueMeta.textContent = "Loading…";
+        const res = await fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) throw new Error("Could not load ideas-queue.json (" + res.status + ")");
+        const data = await res.json();
+        ideasCache = data.ideas || [];
+        const when = data.generated_at ? new Date(data.generated_at).toLocaleString() : "unknown";
+        queueMeta.textContent = `${data.count || ideasCache.length} ideas · generated ${when}`;
+        notesList.innerHTML = (data.notes || []).map(n => `<li>${escapeHtml(n)}</li>`).join("");
+        if (data.scanned_libraries && data.scanned_libraries.length) {
+          notesList.innerHTML += `<li>Scanned libraries: ${data.scanned_libraries.map(escapeHtml).join("; ")}</li>`;
+        }
+        renderIdeas(ideasCache);
+      }
+
+      async function tryUnlock() {
+        gateError.textContent = "";
+        const hex = await sha256Hex(passwordInput.value || "");
+        if (hex !== PASSWORD_SHA256) {
+          gateError.textContent = "Wrong password.";
+          return;
+        }
+        setAuthed(true);
+        showQueue(true);
+        try {
+          await loadData();
+        } catch (err) {
+          queueMeta.textContent = String(err.message || err);
+        }
+      }
+
+      document.getElementById("unlock-btn").addEventListener("click", tryUnlock);
+      passwordInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") tryUnlock();
+      });
+      document.getElementById("lock-btn").addEventListener("click", () => {
+        setAuthed(false);
+        passwordInput.value = "";
+        showQueue(false);
+        passwordInput.focus();
+      });
+      document.getElementById("reload-btn").addEventListener("click", () => {
+        loadData().catch(err => { queueMeta.textContent = String(err.message || err); });
+      });
+      filterInput.addEventListener("input", () => renderIdeas(ideasCache));
+
+      (async function boot() {
+        if (!isAuthed()) return;
+        showQueue(true);
+        try { await loadData(); }
+        catch (err) { queueMeta.textContent = String(err.message || err); }
+      })();
+    </script>
+  </body>
+</html>

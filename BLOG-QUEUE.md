@@ -5,6 +5,17 @@ Last updated: 2026-07-31
 Tracking for open writing work. Site deploys from `master` (GitHub Pages).
 Issues for this site live on `nicholasg3/ai-agents-workspace` (this repo has issues disabled).
 
+## Private live ideas database
+
+- **Page (password-gated):** https://nicholasg3.github.io/blog/ideas-queue.html
+- **Default password:** `nick-blog-queue` (change hash in `blog/ideas-queue.html`)
+- **Data:** `blog/data/ideas-queue.json` (rebuilt by `scripts/build_ideas_queue.py`)
+- **Auto-update:** `.github/workflows/ideas-queue.yml` daily + on builder changes
+- Optional secret `WORKSPACE_REPO_TOKEN` (read access to `ai-agents-workspace`) attaches enriched/analyzed paths from the retweet library
+
+GitHub Pages has no real server auth. This is a client-side password gate for an internal backlog, not high-security secrets.
+
+
 ## Process (per post)
 
 1. Pick seed from shortlist / active seeds
