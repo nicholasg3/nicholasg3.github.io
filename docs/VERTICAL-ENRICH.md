@@ -97,7 +97,17 @@ memo that says so** — or refuse to draft.
 - Ornamental hub links that never appear as load-bearing evidence in the prose
 - **Second-person coaching** (“you should,” “put this table in your growth review,” “operating rule:”) — report in **AP-like third person**: what operators measure, what the data show, how the split appears at work
 
-**Voice:** closer to an **AP feature** than a strategy memo barked at the reader. Attribute numbers. Prefer “according to / shows / ranks” over imperatives. Prefer **continuous prose** over many short H2 stubs (a feature can run with no body subheads, or one or two only).
+**Voice:** closer to an **AP feature** than a strategy memo barked at the reader. Attribute numbers. Prefer “according to / shows / ranks” over second-person coaching.
+
+**Structure (balance — match live memos like `ai-coverage-gap.html`):**
+
+- Continuous opening paragraphs (not a heading per idea)
+- Optional **blockquote** thesis (one)
+- **A few** H2s (about 3–5), each with real paragraphs under them — not one-sentence stubs
+- Optional **table** when it forces a comparison
+- Optional **composite case** anecdote (label composite in Source notes)
+- **aside** with `Reader Decision` + `Market Signal` side-cards when it fits
+- Source notes
 
 **Writer routing:** public essay body → **Grok**. Research/brief → any agent.
 
