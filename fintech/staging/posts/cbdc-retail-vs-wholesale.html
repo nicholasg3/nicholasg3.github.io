@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Retail CBDC debates privacy and public money access. Wholesale CBDC debates settlement finality among institutions. Collapsing them into one &amp;quot;digital curre">
-  <title>Retail CBDC and wholesale CBDC solve different problems | Fintech staging</title>
+  <meta name="description" content="Retail CBDC and wholesale CBDC solve different problems. Privacy and cash complementarity dominate retail design. Settlement finality among institutions dominates wholesale.">
+  <title>Retail CBDC and wholesale CBDC are different jobs | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,34 +15,108 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #8 · not public</div>
-      <h1>Retail CBDC and wholesale CBDC solve different problems</h1>
-      <p>Retail CBDC debates privacy and public money access. Wholesale CBDC debates settlement finality among institutions. Collapsing them into one &amp;quot;digital currency&amp;quot; story confuses product design and politics.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #8 · not public</div>
+      <h1>Retail CBDC and wholesale CBDC are different jobs</h1>
+      <p>Retail CBDC debates privacy, public access, and cash. Wholesale CBDC debates settlement among institutions. Collapsing them into one “CBDC” argument produces false fights.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Central bank digital currency is not one product. Retail CBDC is a claim ordinary people might hold on the central bank or through intermediaries. Wholesale CBDC is a settlement asset for banks and other eligible institutions.</p>
-      <p>Those designs share cryptography and ledgers in marketing decks. They do not share the same political economy, privacy tradeoffs, or balance-sheet consequences.</p>
-      <h2>What BIS materials actually separate</h2>
-      <p>BIS work on CBDCs consistently distinguishes retail and wholesale use cases, and often emphasizes the two-tier model where private intermediaries still face the public.</p>
-      <p>When a founder or investor says &quot;CBDC will replace banks/stablecoins/cards,&quot; ask which CBDC. Wholesale settlement improvements do not automatically imply retail wallet competition.</p>
-      <h2>Why the distinction matters for builders</h2>
-      <p>Retail designs raise questions about identity, offline payments, holding limits, and disintermediation risk for deposits. Wholesale designs raise questions about atomic settlement, cross-border corridors, and who sits in the RTGS club.</p>
-      <p>Stablecoin and tokenized-deposit products compete more directly with pieces of these designs than with &quot;money&quot; as an abstraction. Map the liability, not the logo.</p>
-      <h2>What to do</h2>
-      <p>In product strategy docs, never write &quot;CBDC risk&quot; as a single line. Split: retail public money, wholesale settlement, and private tokenized liabilities.</p>
-      <p>Read central-bank pilots for the design choices (intermediated vs direct, holding caps, programmability limits), not for launch date theater.</p>
+      <p>BASEL — “CBDC” is a short label for at least two design problems. One is whether the public should hold a digital claim on the central bank for everyday payments. The other is whether financial institutions should settle with each other on new wholesale central-bank money rails. Both may use cryptography, tokens, or distributed ledgers. They do not share the same users, the same privacy fight, or the same failure modes.</p>
+
+      <p>In October 2020 a group of central banks published <a href="https://www.bis.org/publ/othp33.htm">Central bank digital currencies: foundational principles and core features</a> with the Bank for International Settlements. The contributors were the Bank of Canada, the European Central Bank, the Bank of Japan, Sveriges Riksbank, the Swiss National Bank, the Bank of England, the Board of Governors of the Federal Reserve System, and the BIS. The report focuses on a <strong>general-purpose</strong> CBDC — one that can be used by the public for day-to-day payments — and distinguishes that object from CBDCs restricted to wholesale, financial-market payments.</p>
+
+      <blockquote>Retail CBDC is a public-money design problem. Wholesale CBDC is a settlement-infrastructure design problem. Shared branding does not make them one product.</blockquote>
+
+      <h2>What the foundational report actually prioritizes</h2>
+      <p>The group’s common motivation for exploring general-purpose CBDC, according to the report, is use as a means of payment. Central banks already issue cash to the public as a public good and say they will continue providing cash as long as demand remains. A CBDC would be a complementary central-bank money for the public in a digital environment. Before issuance, authorities would need confidence that a CBDC would not compromise monetary or financial stability and that it could coexist with and complement existing forms of money while promoting innovation and efficiency.</p>
+
+      <p>Those principles are easy to skip in public argument. They are the report’s gate. A retail CBDC that destabilizes bank funding, or that tries to replace commercial-bank money overnight, fails the group’s own tests even if the cryptography works. A retail CBDC that cannot coexist with cash and deposits as a complementary instrument is not the product the report describes. The principles are conservative by design. They treat public digital central-bank money as an instrument that must fit inside monetary and financial stability mandates.</p>
+
+      <h2>Retail: endpoints, privacy, and cash</h2>
+      <p>Retail systems face a scale of endpoints that wholesale systems do not. The 2020 report notes that the number of endpoints in a general-purpose CBDC system would be significantly larger than those of current wholesale central-bank systems. That is not a minor engineering footnote. It drives identity, wallet UX, offline capability, fraud, customer support, and privacy design. A system meant for households inherits the politics of household data.</p>
+
+      <p>Privacy sits mostly on this side of the ledger. Cash is bearer and peer-to-peer. Account-based digital money leaves records. A retail CBDC that is fully transparent to the state will be argued as surveillance infrastructure. A retail CBDC that is fully opaque will be argued as a gift to illicit finance. Intermediate designs — tiered anonymity, holding limits, intermediaries that know the customer while the central bank sees less — are attempts to navigate that tradeoff. Wholesale systems among identified institutions do not face the same street-level privacy politics even when message confidentiality still matters.</p>
+
+      <p>A BIS payments primer in the March 2020 Quarterly Review makes the retail/wholesale split ordinary rather than exotic. <a href="https://www.bis.org/publ/qtrpdf/r_qt2003f.htm">Payment systems come in many shapes</a>, and a first distinguishing feature is whether the system is built for retail payments — typically lower value, high volume, consumer and business purchases — or wholesale payments among financial institutions. CBDC design inherits that taxonomy. Calling both objects “CBDC” without the adjective is like calling Fedwire and a coffee-card balance the same product because both are electronic.</p>
+
+      <h2>Wholesale: settlement finality among institutions</h2>
+      <p>Wholesale CBDC work is closer to the modernization of real-time gross settlement and the settlement asset used by banks and financial-market infrastructures. The users are regulated institutions. The jobs are delivery-versus-payment, payment-versus-payment, liquidity management, and atomic settlement of tokenized deposits or securities. Privacy debates here sound different: confidentiality of positions and messages, not the civil-liberties profile of grocery payments.</p>
+
+      <p>Failure modes differ too. A wholesale outage is a market-infrastructure incident. A retail outage is a mass-payments and political-trust incident. Wholesale adoption depends on banks, FMIs, and legal finality. Retail adoption depends on households, merchants, wallet providers, and whether commercial banks remain the front end in a two-tier model. Many central banks exploring both tracks keep them in separate workstreams for that reason.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Retail versus wholesale CBDC" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Retail / general-purpose</th>
+              <th>Wholesale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primary users</td>
+              <td>Households, merchants, non-financial firms</td>
+              <td>Banks and financial-market participants</td>
+            </tr>
+            <tr>
+              <td>Core job</td>
+              <td>Day-to-day payments; cash complement</td>
+              <td>Interbank and FMI settlement</td>
+            </tr>
+            <tr>
+              <td>Dominant public fight</td>
+              <td>Privacy, inclusion, bank disintermediation</td>
+              <td>Finality, liquidity, legal design, interoperability</td>
+            </tr>
+            <tr>
+              <td>Endpoint scale</td>
+              <td>Very large</td>
+              <td>Smaller, permissioned set</td>
+            </tr>
+            <tr>
+              <td>Stability test (group report)</td>
+              <td>Must not harm monetary/financial stability; coexist with cash and existing money</td>
+              <td>Must strengthen safe settlement without new systemic gaps</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How mixed debates go wrong</h2>
+      <p>Public commentary often imports a retail fear into a wholesale pilot, or a wholesale efficiency claim into a retail political fight. A successful wholesale experiment in atomic settlement does not answer whether households will hold a central-bank wallet. A retail privacy design does not settle how tokenized bonds move against central-bank money between dealers. Operators and journalists who keep the adjective — retail or wholesale — avoid that category error.</p>
+
+      <p>Two-tier banking remains the quiet hinge. Most general-purpose CBDC explorations by major central banks assume private-sector intermediaries still provide customer face, compliance, and services while the central bank provides the settlement asset or claim. That design tries to gain public digital money without forcing every household to bank directly at the central bank. Wholesale work, by contrast, is already a world of intermediaries. The design question is the form of the settlement asset among them.</p>
+
+      <h2>Separate scoreboards</h2>
+      <p>The useful reading practice is two scoreboards. On the retail board: access, privacy design, cash complementarity, holding limits, offline use, and effects on bank deposits. On the wholesale board: legal finality, operating hours, cross-border bridges, liquidity-saving features, and integration with tokenized securities or deposits. Shared technology demos can inform both. They do not merge the policy problems.</p>
+
+      <p>The 2020 multi-central-bank report remains a clean primary because it refuses glamour. It defines general-purpose CBDC, separates it from wholesale use, and sets stability and coexistence as entry conditions. Later pilots should be read against those lines. When a headline says only “CBDC,” the first clarifying question is still the old payments question: retail or wholesale? The answer decides which debate is even relevant.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.bis.org/publ/othp33.htm">BIS — Central bank digital currencies: foundational principles and core features</a>: Core institutional CBDC design report (group of central banks).</li>
-            <li><a href="https://www.bis.org/about/bisih/topics/cbdc.htm">BIS Innovation Hub — CBDC topics</a>: Ongoing wholesale/retail experiment catalogue.</li>
-            <li><a href="https://www.federalreserve.gov/publications/files/money-and-payments-20220120.pdf">Federal Reserve — Money and Payments: The U.S. Dollar in the Age of Digital Transformation (Jan 2022)</a>: US policy discussion paper on CBDC design questions.</li>
-            <li><a href="https://www.imf.org/en/Topics/fintech/central-bank-digital-currency/virtual-handbook">IMF — CBDC Virtual Handbook</a>: Cross-country survey framing; use as secondary to national bank primaries.</li>
+          <li><a href="https://www.bis.org/publ/othp33.htm">BIS — Central bank digital currencies: foundational principles and core features (9 Oct 2020)</a>: Multi-central-bank report defining general-purpose CBDC versus wholesale; foundational principles on stability, coexistence, innovation/efficiency.</li>
+          <li><a href="https://www.bis.org/publ/othp33.pdf">Same report (PDF)</a>: Full text for design discussion including endpoint scale of general-purpose systems.</li>
+          <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2003f.htm">BIS Quarterly Review — Payments go (or stay?) local (2020 feature)</a>: Primer distinguishing retail versus wholesale payment systems as a first design feature.</li>
+          <li><a href="../ground/cbdc-retail-vs-wholesale.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Which CBDC scoreboard is in use?</strong>
+        <p>Score retail designs on privacy, cash, and public access. Score wholesale designs on settlement finality and institutional plumbing. Do not mix the metrics.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Major central banks already split the object.</strong>
+        <p>The 2020 BIS group report treats general-purpose public CBDC as distinct from wholesale financial-market CBDC and gates issuance on stability and coexistence.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

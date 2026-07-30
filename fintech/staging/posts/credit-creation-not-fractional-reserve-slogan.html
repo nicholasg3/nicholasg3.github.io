@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Public debate still explains banking with a 20th-century reserve-ratio metaphor. Modern constraints are capital, liquidity, funding, and supervision. Teaching t">
-  <title>Banks create credit. &amp;quot;Fractional reserves&amp;quot; is the wrong slogan. | Fintech staging</title>
+  <meta name="description" content="Banks create deposits by making loans. The classroom fractional-reserve multiplier is a poor map of modern credit constraints.">
+  <title>Credit creation, not the fractional-reserve slogan | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,34 +15,107 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #12 · not public</div>
-      <h1>Banks create credit. &amp;quot;Fractional reserves&amp;quot; is the wrong slogan.</h1>
-      <p>Public debate still explains banking with a 20th-century reserve-ratio metaphor. Modern constraints are capital, liquidity, funding, and supervision. Teaching the wrong model produces the wrong fintech products.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #12 · not public</div>
+      <h1>Credit creation, not the fractional-reserve slogan</h1>
+      <p>Public education still multiplies deposits by a reserve ratio. Central banks describe a different machine: loans create deposits, and capital, liquidity, and policy bind the volume.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>A common internet explanation says banks lend out depositors' cash under a fractional reserve ratio. That story is incomplete for modern banking systems and actively misleading for product design.</p>
-      <p>In practice, loans create deposits subject to capital, liquidity, risk management, and funding constraints. Reserve requirements can be zero without making credit free.</p>
-      <h2>Why the slogan persists</h2>
-      <p>Fractional-reserve language is sticky because it feels mechanical and visual. It also fits political stories about &quot;money printing by private banks.&quot;</p>
-      <p>Central bank educational materials — notably the Bank of England's money-creation explainers — have publicly corrected the simplified multiplier story for a general audience.</p>
-      <h2>Fintech consequences</h2>
-      <p>If you design neobank, lending, or stablecoin products on the slogan model, you will mis-price capital and liquidity. You will also misread why supervisors care about HQLA, NSFR, and credit risk models more than classroom reserve ratios.</p>
-      <p>This pairs with the zero-reserve-requirements memo: legal reserve ratios and credit constraints are different objects.</p>
-      <h2>What to do</h2>
-      <p>In founder education and investor memos, replace &quot;fractional reserve&quot; with the constraints you actually manage: capital ratios, liquidity coverage, deposit beta, and asset quality.</p>
-      <p>When someone cites reserve requirements as the binding limit on US bank credit, send them to Fed primary pages and capital rules, not a textbook cartoon.</p>
+      <p>LONDON — Explain banking at a dinner table and the fractional-reserve story still arrives first. Savers deposit cash. Banks keep a fraction in the vault. They lend the rest. That loan becomes another deposit somewhere. Money multiplies. The story is tidy. It is also a poor map of how most money appears in modern economies.</p>
+
+      <p>In March 2014, the Bank of England published <a href="https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy">“Money creation in the modern economy”</a> by Michael McLeay, Amar Radia, and Ryland Thomas in its <em>Quarterly Bulletin</em>. The article states the core fact in plain English: most money takes the form of bank deposits, and the principal way those deposits are created is commercial banks making loans. When a bank grants a loan, it simultaneously credits the borrower’s deposit account. New money appears with the loan, not because a prior saver’s cash was physically handed across the counter.</p>
+
+      <blockquote>Banks do not wait for a jar of deposits to “lend out.” Lending creates deposits — within constraints that are not the classroom reserve ratio.</blockquote>
+
+      <h2>Two misconceptions the BoE named</h2>
+      <p>The Bank of England article rejects two popular pictures. First, banks are not pure intermediaries that only reallocate existing deposits from savers to borrowers. Second, they do not simply “multiply up” central bank money through a mechanical money multiplier driven by reserve requirements. In the modern sterling system the authors describe, reserves are used for settlement and for meeting regulatory liquidity needs; they are not the daily throttle that school diagrams imply. The quantity of broad money depends on banks’ willingness to lend and on borrowers’ demand, interacting with monetary policy — especially the policy rate — and with prudential rules.</p>
+
+      <p>That framing matters for fintech rhetoric. Founders still say “banks lend your deposits” as if deposits were pre-funded inventory. Marketplace lenders that do not take deposits sometimes claim they are more “real” because every loan is matched to an investor. Matching investors to loans can be a sound business. It is a different liability design from a bank that creates deposit money when it underwrites credit. Conflating the two confuses public education and product comparison.</p>
+
+      <h2>When the reserve ratio went to zero</h2>
+      <p>If the classroom model were the binding constraint, setting reserve requirements to zero would abolish limits on bank lending. U.S. experience shows otherwise. On 15 March 2020, the Federal Reserve announced that it would reduce reserve requirement ratios to zero percent effective 26 March 2020, in an ample-reserves operating framework (<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315b.htm">Fed press release</a>). The Board’s <a href="https://www.federalreserve.gov/monetarypolicy/reservereq.htm">reserve requirements page</a> still records that all depository institutions face a zero ratio on net transaction accounts and other categories listed there.</p>
+
+      <p>The same March 2020 package stressed that banks had large capital and liquidity buffers and that supervisors expected those buffers to support lending. In other words, officials treated capital, liquidity coverage, funding markets, and risk appetite as the operative constraints — not a required reserve percentage. Zero required reserves changed a legal ratio. They did not repeal Basel-style capital rules, liquidity coverage ratios, stress testing, or the fact that bad loans destroy equity.</p>
+
+      <h2>What actually binds credit</h2>
+      <div class="article-table-wrap" role="region" aria-label="Credit constraints" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Constraint</th>
+              <th>What it does</th>
+              <th>Classroom slogan misses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Capital ratios</td>
+              <td>Limits leverage relative to risk-weighted assets and equity</td>
+              <td>Treats vault cash fraction as the only brake</td>
+            </tr>
+            <tr>
+              <td>Liquidity rules (e.g. LCR)</td>
+              <td>Forces high-quality liquid assets against stressed outflows</td>
+              <td>Ignores runnable liabilities and HQLA demand</td>
+            </tr>
+            <tr>
+              <td>Funding costs</td>
+              <td>Wholesale and deposit pricing discipline loan rates</td>
+              <td>Assumes free “excess” deposits always exist</td>
+            </tr>
+            <tr>
+              <td>Credit risk appetite</td>
+              <td>Underwriting standards and expected losses</td>
+              <td>Assumes every eligible borrower is funded</td>
+            </tr>
+            <tr>
+              <td>Monetary policy rate</td>
+              <td>Shifts demand for loans and banks’ margins</td>
+              <td>Stops the story at a fixed multiplier</td>
+            </tr>
+            <tr>
+              <td>Required reserves (US post-2020)</td>
+              <td>Set to 0% — not the binding credit throttle</td>
+              <td>Still taught as the central control knob</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Why the slogan survives</h2>
+      <p>The fractional-reserve slogan survives because it is easy to draw and because reserves once played a larger role in operating frameworks. It also flatters certain political stories: that banks “create money from nothing” with no limits, or that only a 100% reserve rule can restore honesty. The BoE account is less cinematic. Banks create deposit money when they lend, and they destroy it when loans are repaid. Limits are real, but they run through solvency, liquidity, regulation, and the policy rate — not through a simple vault fraction on a whiteboard.</p>
+
+      <p>For fintech operators, the clean distinction is liability design. A deposit-taking bank that extends credit is in the money-creation business as the BoE describes it, and lives under banking supervision. A non-bank lender funded by warehouse lines, ABS, or equity is in the credit business without creating bank deposits at origination in the same way. Both can fail. They fail under different run dynamics and different public backstops. Educating customers — and boards — with the 20th-century slogan makes those differences harder to price.</p>
+
+      <p>Journalists and crypto educators often reach for the multiplier when they want a villain or a magic trick. The BoE and Fed materials support a calmer sentence set. Banks create deposits with loans. They face real constraints. Those constraints changed when required reserves went to zero, but they did not vanish. Anyone building credit products — bank or non-bank — still needs a funding and capital story that survives a cycle, not a diagram of coins in a drawer.</p>
+
+      <p>The useful update is short enough for a product memo. Deposits are mostly bank liabilities created with loans. Reserve requirements in the United States are currently zero and are not the story of why credit expands or contracts. Capital, liquidity, funding, underwriting, and monetary policy are. Public education that still multiplies coins in a vault is teaching a museum exhibit, not the operating system of bank money.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy">Bank of England — Money creation in the modern economy (Q1 2014)</a>: Canonical public explainer correcting simplistic money-multiplier teaching.</li>
-            <li><a href="https://www.federalreserve.gov/monetarypolicy/reservereq.htm">Federal Reserve — Reserve requirements</a>: Primary page for US reserve requirement policy (including reduction to zero).</li>
-            <li><a href="https://www.bis.org/bcbs/">Basel Committee on Banking Supervision</a>: Primary home for capital and liquidity standard framework.</li>
-            <li><a href="https://nicholasg3.github.io/fintech/staging/posts/zero-reserve-requirements.html">Related staging draft — Zero reserve requirements are not free money</a>: Companion memo on reserve ratios vs credit constraints.</li>
+          <li><a href="https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy">Bank of England — Money creation in the modern economy (Quarterly Bulletin 2014 Q1)</a>: Supports loan-creates-deposit account and rejection of pure intermediation and simple multiplier misconceptions.</li>
+          <li><a href="https://www.bankofengland.co.uk/-/media/boe/files/quarterly-bulletin/2014/money-creation-in-the-modern-economy">BoE PDF — Money creation in the modern economy</a>: Supports primary text of the same article for citation stability.</li>
+          <li><a href="https://www.federalreserve.gov/monetarypolicy/reservereq.htm">Federal Reserve — Reserve Requirements</a>: Supports zero reserve requirement ratios effective 26 March 2020.</li>
+          <li><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315b.htm">Federal Reserve press release (15 Mar 2020)</a>: Supports zero RR decision in ample-reserves framework and emphasis on capital/liquidity buffers for lending.</li>
+          <li><a href="../ground/credit-creation-not-fractional-reserve-slogan.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Score capital, liquidity, and underwriting — not a vault ratio.</strong>
+        <p>When comparing bank and non-bank credit products, map liability design and prudential constraints instead of teaching a classroom multiplier.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Zero required reserves did not abolish credit limits.</strong>
+        <p>U.S. reserve ratios are 0% since 2020. Lending still runs into capital, LCR-style liquidity, funding costs, and risk appetite.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

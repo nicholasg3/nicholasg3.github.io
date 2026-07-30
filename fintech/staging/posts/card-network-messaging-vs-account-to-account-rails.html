@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="A checkout button can hide whether you are on card messaging with dispute rights or account-to-account finality. Those are different products.">
+  <meta name="description" content="Card rails and account-to-account rails price different liability models. Fee tables hide dispute rights, finality, and who eats fraud.">
   <title>Cards and A2A rails price different liability models | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
@@ -15,33 +15,109 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #24 · not public</div>
+      <div class="issue-kicker">Staging · enriched draft · queue #24 · not public</div>
       <h1>Cards and A2A rails price different liability models</h1>
-      <p>A checkout button can hide whether you are on card messaging with dispute rights or account-to-account finality. Those are different products.</p>
+      <p>A checkout button can hide whether money moves on card messaging with dispute rights or on account-to-account finality. Those are different products.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Cards and account-to-account rails are not interchangeable pipes. Messaging, dispute rights, economics, and authentication differ.</p>
-      <p>Product teams that treat &quot;pay buttons&quot; as one abstraction rediscover those differences in fraud and chargeback season.</p>
-      <h2>How to ground it</h2>
-      <p>Network rulebooks and realtime payment operator docs describe authorization, clearing, settlement, and exception handling differently.</p>
-      <p>FedNow and other A2A systems optimize for speed and finality; cards embed consumer dispute paths that merchants price as risk.</p>
-      <h2>Operator consequences</h2>
-      <p>Moving volume from cards to A2A can cut fees and increase irrevocable scam loss. The unit economics must include both.</p>
-      <h2>What to do</h2>
-      <p>Choose rails by liability model and user segment, not only by basis points.</p>
-      <p>Instrument success rate, fraud rate, and dispute rate per rail separately.</p>
+      <p>WASHINGTON — At the merchant screen, payment methods often collapse into one row of logos. The customer sees speed and brand. The operator sees basis points. The law and the network rulebooks see something else: who can reverse a payment, how long an exception can live, and which statute governs an unauthorized debit or a goods-not-received fight.</p>
+
+      <p>Card networks grew as messaging and risk-allocation systems as much as as funding systems. Account-to-account rails — including the Federal Reserve’s FedNow Service and other push-payment systems — grew to move balances between deposit accounts with speed and, for many use cases, near-final settlement. Treating those stacks as interchangeable pipes is a common product error. The fee table is only one column of the design sheet.</p>
+
+      <blockquote>Rail choice is liability choice. Interchange and scheme fees price a dispute product as well as acceptance.</blockquote>
+
+      <h2>What FedNow is built to do</h2>
+      <p>The Federal Reserve describes the <a href="https://www.frbservices.org/financial-services/fednow/about.html">FedNow Service</a> as instant payment infrastructure for eligible depository institutions. Through participating institutions, businesses and individuals can send and receive payments in real time, every day of the year. Recipients, the Fed’s about page states, have full access to funds immediately. The initial release supported use cases that include account-to-account transfers and bill pay.</p>
+
+      <p>That design is a credit-push model among financial institutions. It is not a consumer card network. Fraud controls, payment inquiry tools, and participant rules matter, but the economic product is fast movement of deposit money with immediate availability. Legal analyses of FedNow liability stress the same structural point: FedNow payments are pushed from the sender’s account to the recipient’s account, in the same family as ACH credits and wires, not card presentments that sit in a multi-party authorization-clearing-settlement chain with chargeback reason codes.</p>
+
+      <p>Davis Wright Tremaine’s <a href="https://www.dwt.com/blogs/financial-services-law-advisor/2023/12/fednow-liability-ach-and-a-4th-circuit-appeal">2023 note on FedNow liability allocation</a> walks through the split that operators actually meet. Business-to-business traffic often sits under Uniform Commercial Code Article 4A. Consumer electronic fund transfers sit under the Electronic Fund Transfer Act and Regulation E. Network language that a transfer is “final” does not, by itself, erase unauthorized-EFT analysis for consumer accounts. The <a href="https://www.consumerfinance.gov/compliance/compliance-resources/deposit-accounts-resources/electronic-fund-transfers/electronic-fund-transfers-faqs/">CFPB’s Electronic Fund Transfers FAQs</a> make a related point for P2P and private network rules: finality wording in network rules does not alone decide whether a fraudster-initiated transfer is an unauthorized EFT under Regulation E.</p>
+
+      <h2>What card rails sell besides acceptance</h2>
+      <p>Credit cards sit under a different federal stack. Regulation Z implements the Truth in Lending Act for open-end consumer credit. Under <a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/13">12 C.F.R. § 1026.13</a>, creditors must follow billing-error resolution procedures when a consumer sends a timely written notice. Covered billing errors include transactions for goods or services that the consumer did not accept or that were not delivered as agreed. The creditor must acknowledge and investigate on statutory timelines. Until resolution, the consumer may withhold the disputed amount under the conditions the rule sets out.</p>
+
+      <p>A Federal Reserve Bank of Philadelphia <a href="https://www.philadelphiafed.org/-/media/frbp/assets/consumer-finance/discussion-papers/consumerprotectionpaper_creditanddebitcard.pdf">discussion paper on consumer protections for credit and debit cards</a> summarizes the hierarchy that product teams rediscover in dispute season. Credit card users benefit from a federal scheme that limits liability for unauthorized use, allows certain merchant-related claims and defenses against the issuer under stated conditions, and requires prompt investigation of billing errors. Network chargeback procedures sit on top of or beside that statute. Merchants experience the stack as residuals, representment fights, and monitoring programs. Consumers experience it as “I disputed the charge.”</p>
+
+      <p>Debit cards and ACH paths often lean more on Regulation E than on Regulation Z’s credit-dispute machinery. The same Philadelphia Fed paper notes that federal protection is not uniform across payment instruments. Operators who migrate volume from cards to A2A to save interchange can also migrate out of a dispute product their customers had learned to expect — or into a different unauthorized-use regime that still binds the account-holding institution under Reg E while leaving the merchant with less chargeback symmetry.</p>
+
+      <h2>Two scoreboards for one checkout</h2>
+      <p>Teams that instrument rails only on authorization rate and scheme cost miss the second scoreboard: exception rate, time-to-funds, and residual loss after fraud and disputes.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Rail comparison" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Card network path</th>
+              <th>A2A / instant push path</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primary consumer statutes (US retail)</td>
+              <td>Reg Z billing errors and claims/defenses for credit; Reg E for many debit EFTs</td>
+              <td>Reg E for consumer EFTs; UCC 4A often for commercial credit transfers</td>
+            </tr>
+            <tr>
+              <td>Exception product</td>
+              <td>Chargebacks and network dispute codes; issuer investigation clocks</td>
+              <td>Recall/return tools vary; speed reduces natural delay that once caught fraud</td>
+            </tr>
+            <tr>
+              <td>Funds availability</td>
+              <td>Issuer credit / delayed merchant settlement in classic four-party models</td>
+              <td>FedNow: recipient access to funds immediately per Fed description</td>
+            </tr>
+            <tr>
+              <td>What fees often buy</td>
+              <td>Acceptance brand + risk allocation + dispute infrastructure</td>
+              <td>Low variable cost + speed + deposit finality features</td>
+            </tr>
+            <tr>
+              <td>Where unit economics break</td>
+              <td>High MDR with low chargeback rates can still clear</td>
+              <td>Low fees with high authorized push-payment scam loss may not</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>When product maps collapse both rows into “pay button success rate,” growth reviews overstate the gain from A2A migration. The useful comparison is total loss after fees, fraud, disputes, support load, and failed reconciliation — by rail and by customer segment. High-trust B2B bill pay is not the same liability surface as first-time consumer checkout to an unknown payee.</p>
+
+      <h2>How the split shows up in operations</h2>
+      <p>Issuers and networks trained a generation of cardholders to open a dispute for non-delivery. A2A products that market “instant” without teaching finality create support tickets that read like chargeback requests on a rail that does not run the same merchant presentment chain. Treasury teams that book A2A savings as pure interchange reduction omit the cost of stronger confirmation-of-payee tools, velocity limits, and delayed release for high-risk corridors.</p>
+
+      <p>Regulators and banks already treat authorized push-payment fraud as a distinct problem on faster rails. The legal sources above do not invent a new US APP reimbursement statute by themselves. They do establish that consumer protection is rail-specific and that private network finality is not a complete substitute for EFTA analysis. For commercial traffic, Article 4A’s allocation of unauthorized and misdescription losses is another contract-shaped world entirely.</p>
+
+      <p>Card messaging and A2A rails will keep coexisting at checkout. The operator decision is which liability product each segment is buying. Fee basis points are the sticker. Dispute rights, unauthorized-use caps, settlement finality, and residual fraud ownership are the specification.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.frbservices.org/financial-services/fednow">FedNow</a>: US A2A realtime service primary.</li>
-            <li><a href="https://www.federalreserve.gov/paymentsystems.htm">Federal Reserve Payment Systems</a>: Broader US payments context.</li>
-            <li><a href="https://www.bis.org/cpmi/">BIS CPMI</a>: Cross-country payment system comparisons.</li>
-            <li><a href="https://www.emvco.com/">EMVCo</a>: Card payment technical standards hub.</li>
+          <li><a href="https://www.frbservices.org/financial-services/fednow/about.html">Federal Reserve Financial Services — About the FedNow Service</a>: Instant FI infrastructure; immediate funds availability for recipients; A2A and bill-pay among baseline use cases.</li>
+          <li><a href="https://www.consumerfinance.gov/rules-policy/regulations/1026/13">CFPB — Regulation Z § 1026.13 Billing error resolution</a>: Statutory credit-card billing-error process and timelines for consumer open-end credit.</li>
+          <li><a href="https://www.consumerfinance.gov/compliance/compliance-resources/deposit-accounts-resources/electronic-fund-transfers/electronic-fund-transfers-faqs/">CFPB — Electronic Fund Transfers FAQs</a>: Reg E unauthorized EFT analysis; network finality rules do not alone rewrite that analysis for consumer accounts.</li>
+          <li><a href="https://www.dwt.com/blogs/financial-services-law-advisor/2023/12/fednow-liability-ach-and-a-4th-circuit-appeal">Davis Wright Tremaine — FedNow liability allocation (Dec 2023)</a>: FedNow as credit-push; UCC 4A vs EFTA/Reg E coverage split.</li>
+          <li><a href="https://www.philadelphiafed.org/-/media/frbp/assets/consumer-finance/discussion-papers/consumerprotectionpaper_creditanddebitcard.pdf">Federal Reserve Bank of Philadelphia — consumer protection paper on credit and debit cards</a>: Stronger federal dispute/unauthorized-use stack for credit cards relative to some other instruments; network chargebacks in the mix.</li>
+          <li><a href="../ground/card-network-messaging-vs-account-to-account-rails.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome. Not legal advice.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Score rails on liability, not only MDR.</strong>
+        <p>Split success, fraud, dispute, and residual loss by card versus A2A. Price confirmation tools and delayed release into any “savings” from leaving card rails.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Instant A2A is a different product from cards.</strong>
+        <p>FedNow and peer push rails sell speed and deposit movement. Cards sell acceptance plus a statutory and network dispute stack that merchants already price as risk.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

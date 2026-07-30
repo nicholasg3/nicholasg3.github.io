@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Banking-as-a-service and sponsor-bank models are often pitched as API access. The scarce asset is usually the bank&#x27;s charter, balance sheet, and regulatory rela">
-  <title>Bank–fintech deals sell distribution, not just sponsorship | Fintech staging</title>
+  <meta name="description" content="Bank–fintech partnerships rent the regulatory perimeter and the UX layer to each other. Supervisors still treat the bank as accountable.">
+  <title>Bank–fintech partnership is distribution rent | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,34 +15,110 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #16 · not public</div>
-      <h1>Bank–fintech deals sell distribution, not just sponsorship</h1>
-      <p>Banking-as-a-service and sponsor-bank models are often pitched as API access. The scarce asset is usually the bank&#x27;s charter, balance sheet, and regulatory relationships — rented distribution of public trust.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #16 · not public</div>
+      <h1>Bank–fintech partnership is distribution rent</h1>
+      <p>Sponsor banks rent charter, insurance branding, and balance-sheet access. Fintechs rent UX and customer acquisition. Neither side fully owns the customer — and supervisors say the bank still owns the risk.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>A fintech can look like a bank to users while a chartered institution holds deposits or issues cards. That split enables speed. It also creates dependency and supervisory concentration risk.</p>
-      <p>When many fintechs share a few sponsor banks, operational or enforcement problems become sector events.</p>
-      <h2>What supervisors emphasize</h2>
-      <p>Third-party risk management, BSA/AML ownership, and clarity on which entity is the bank. Guidance evolves; read current OCC/Fed/FDIC materials rather than 2019 blog posts.</p>
-      <p>If your growth plan assumes infinite sponsor capacity, you are underwriting a market that has already shown constraints.</p>
-      <h2>Commercial reality</h2>
-      <p>Banks charge for risk and compliance load, not only for core API calls. Fintechs that treat the bank as a dumb pipe get repriced or exited.</p>
-      <p>Diversifying sponsors is operationally hard and still wise past a certain scale.</p>
-      <h2>What to do</h2>
-      <p>In partnership memos, price regulatory rent explicitly: capital, compliance headcount, audit rights, and termination clauses.</p>
-      <p>Build a wind-down plan that protects customers if the sponsor relationship ends.</p>
+      <p>WASHINGTON — The modern consumer finance app often looks like a single brand. Behind the glass, a bank holds deposits or issues cards while a technology firm runs marketing, onboarding, and support. The industry calls the structure a partnership or banking-as-a-service. Economically it is a rent swap. Each side leases a scarce asset the other cannot cheaply build.</p>
+
+      <p>U.S. federal banking agencies have spent the mid-2020s writing that structure into supervisory English. In June 2023, the OCC, Federal Reserve, and FDIC issued final <a href="https://www.occ.gov/news-issuances/bulletins/2023/bulletin-2023-17.html">Interagency Guidance on Third-Party Relationships: Risk Management</a> (OCC Bulletin 2023-17). The guidance covers business arrangements with third parties generally and explicitly notes novel fintech structures. It does not treat outsourcing of customer contact as outsourcing of accountability.</p>
+
+      <blockquote>The bank rents the perimeter. The fintech rents distribution. Supervisors still knock on the bank’s door.</blockquote>
+
+      <h2>What each side is leasing</h2>
+      <p>The bank’s scarce assets are legal and institutional: a charter or membership path into payment systems, deposit insurance branding, compliance programs, and sometimes balance-sheet capacity. The fintech’s scarce assets are commercial: mobile UX, performance marketing, vertical software distribution, and speed of product iteration. Contracts then split economics — interchange share, deposit-rate spread, program fees, minimums — while brand surfaces usually favor the fintech in the consumer’s hand and the bank in the account agreement’s fine print.</p>
+
+      <p>That split is why “who owns the customer” is the wrong first question. Ownership is layered. The fintech may own the push notification. The bank owns many legal duties when the product is a bank deposit or bank credit. When something breaks — fraud, misleading marketing, BSA failures, operational outage — the agencies’ third-party framework expects the banking organization to have assessed, contracted, monitored, and exited the relationship with the same seriousness it would apply to other critical vendors.</p>
+
+      <h2>Deposit delivery made the rent explicit</h2>
+      <p>In July 2024, the same three agencies issued a <a href="https://www.occ.treas.gov/news-issuances/news-releases/2024/nr-ia-2024-85a.pdf">Joint Statement on Banks’ Arrangements with Third Parties to Deliver Bank Deposit Products and Services</a>. The statement focuses on arrangements where a nonbank markets, distributes, or facilitates bank deposit products to end users. Banks may pursue deposits, revenue, geography, or technology this way. The agencies flag risk-management and compliance issues when the customer relationship is mediated by someone who is not the bank.</p>
+
+      <p>The same day, the agencies released a <a href="https://www.occ.gov/news-issuances/bulletins/2024/bulletin-2024-21.html">request for information on bank-fintech arrangements</a> (OCC Bulletin 2024-21), seeking industry detail on how these programs work and how risk is managed. That RFI is itself evidence: supervisors see a large market structure, not a handful of quirky pilots. They are still mapping the rent.</p>
+
+      <h2>Where the structure breaks</h2>
+      <div class="article-table-wrap" role="region" aria-label="Rent layers" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Typical bank contribution</th>
+              <th>Typical fintech contribution</th>
+              <th>Failure mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>License / perimeter</td>
+              <td>Charter, deposit insurance context, payment access</td>
+              <td>None (or MTL for adjacent activity)</td>
+              <td>Bank concentration; program exit stranding users</td>
+            </tr>
+            <tr>
+              <td>Balance sheet</td>
+              <td>Deposits, card receivables, liquidity</td>
+              <td>Occasionally credit risk share</td>
+              <td>Rapid deposit inflows without bank controls</td>
+            </tr>
+            <tr>
+              <td>Customer acquisition</td>
+              <td>Limited brand reach in niche verticals</td>
+              <td>Paid growth, partnerships, app UX</td>
+              <td>Misaligned incentives on quality of customers</td>
+            </tr>
+            <tr>
+              <td>Compliance operations</td>
+              <td>Ultimate BSA/AML and consumer compliance duty</td>
+              <td>Day-to-day KYC tooling and marketing copy</td>
+              <td>Nested third parties; bank loses line of sight</td>
+            </tr>
+            <tr>
+              <td>Complaint / brand</td>
+              <td>Legal account of record</td>
+              <td>Support chat the customer actually uses</td>
+              <td>Ping-pong when losses hit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Rent is not ownership</h2>
+      <p>Fintechs that treat the sponsor bank as a commodity API eventually rediscover switching costs: migration of ledgers, card BINs, compliance files, and deposit portfolios is slow and political. Banks that treat fintech partners as pure fee income eventually rediscover supervisory concentration risk when one program is a large share of deposits or operational dependency. Both sides can earn rents for years. Neither has purchased immunity from the other side’s failure.</p>
+
+      <p>The interagency guidance’s practical message is boring on purpose. Inventory third parties. Risk-rate them. Contract for audit rights, data, and exit. Monitor nested relationships when a fintech uses further vendors. Do not assume a glossy app moves the duty off the bank’s books. For product teams, the matching message is commercial: price the partnership as rent for specific scarce assets, measure who controls retention, and plan for the day the other side’s rent goes up — or the agency exam cycle shortens the lease.</p>
+
+      <p>History rhymes with earlier third-party models: affinity cards, white-label deposits, and merchant-branded products all rented bank licenses to nonbank distribution. What is new is the software-defined scale and the speed at which a single fintech program can gather deposits or card accounts across many states. That scale is exactly why the 2023 guidance and 2024 deposit statement exist. Concentration and nested vendors turn a marketing partnership into a safety-and-soundness topic.</p>
+
+      <p>Boards on both sides can run a simple rent audit quarterly. What fee does the bank earn per active account, and is it compensation for risk or a race to the bottom? What CAC does the fintech pay, and who owns retention if the bank ends the program? Which party’s name appears on the account agreement, the FDIC legend where applicable, and the complaint log? If those answers are fuzzy, the partnership is under-specified relative to what examiners will ask.</p>
+
+      <p>Bank–fintech distribution will continue because the scarcity is real. Charters and insurance trust are hard to replicate. Mobile distribution and vertical software are hard for many community banks to build alone. The durable analysis is not romance about “ecosystems.” It is a rent ledger: who pays whom for perimeter, for attention, and for residual risk when the customer complains. Supervisory texts from 2023–2024 already write residual risk next to the bank’s name.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.occ.gov/">OCC</a>: Primary for national bank third-party and fintech partnership supervision themes.</li>
-            <li><a href="https://www.federalreserve.gov/supervisionreg.htm">Federal Reserve Supervision</a>: Bank holding company / state member bank supervisory context.</li>
-            <li><a href="https://www.fdic.gov/">FDIC</a>: Deposit insurance and bank supervision context for partner banks.</li>
-            <li><a href="https://www.bis.org/bcbs/publ/d328.htm">Basel Committee — Principles for sound management of operational risk / third-party themes</a>: International supervisory vocabulary for third-party risk.</li>
+          <li><a href="https://www.occ.gov/news-issuances/bulletins/2023/bulletin-2023-17.html">OCC Bulletin 2023-17 — Interagency Guidance on Third-Party Relationships (6 Jun 2023)</a>: Supports bank duty to manage third-party/fintech relationship risk under joint agency guidance.</li>
+          <li><a href="https://www.federalreserve.gov/frrs/guidance/interagency-guidance-on-third-party-relationships.htm">Federal Reserve — Interagency Guidance on Third-Party Relationships</a>: Supports Fed republication of the same principles-based third-party framework.</li>
+          <li><a href="https://www.occ.treas.gov/news-issuances/news-releases/2024/nr-ia-2024-85a.pdf">Joint Statement — Banks’ arrangements with third parties to deliver bank deposit products (25 Jul 2024 PDF)</a>: Supports supervisory focus on nonbank marketing/distribution of bank deposits.</li>
+          <li><a href="https://www.occ.gov/news-issuances/bulletins/2024/bulletin-2024-21.html">OCC Bulletin 2024-21 — Bank-Fintech Arrangements RFI (25 Jul 2024)</a>: Supports agencies’ ongoing information-gathering on bank-fintech distribution structures.</li>
+          <li><a href="../ground/bank-fintech-partnership-as-distribution-rent.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Price the rent, plan the exit.</strong>
+        <p>Separate perimeter fees, CAC, and residual compliance risk. Assume exam pressure and program migration costs before volume scales.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Agencies treat BaaS-style deposits as third-party risk, not branding.</strong>
+        <p>2023 third-party guidance plus 2024 deposit joint statement and RFI put bank accountability next to fintech distribution.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

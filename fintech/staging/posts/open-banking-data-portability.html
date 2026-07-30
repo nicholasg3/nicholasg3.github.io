@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Forced account-data portability is not a neutral API story. It reallocates distribution power between banks, fintechs, and aggregators — and turns &amp;quot;who own">
-  <title>Open banking rewrites who owns the customer relationship | Fintech staging</title>
+  <meta name="description" content="Open banking reallocates distribution power: the bank keeps the account of record while authorized third parties compete for the relationship.">
+  <title>Open banking is a customer-ownership fight | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,34 +15,103 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #10 · not public</div>
-      <h1>Open banking rewrites who owns the customer relationship</h1>
-      <p>Forced account-data portability is not a neutral API story. It reallocates distribution power between banks, fintechs, and aggregators — and turns &amp;quot;who owns the customer&amp;quot; into a contract and liability fight.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #10 · not public</div>
+      <h1>Open banking is a customer-ownership fight</h1>
+      <p>Forced data portability does not abolish the bank account. It reopens who controls the interface, the advice layer, and the next product the customer buys.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Open banking and financial data-rights rules force account-holding institutions to share customer-permissioned data with third parties. That changes who can underwrite, pitch, and switch products without owning the deposit account.</p>
-      <p>The technical story is APIs. The business story is distribution rent and complaint ownership when data is wrong or access is abused.</p>
-      <h2>Jurisdiction is the product boundary</h2>
-      <p>UK Open Banking, EU PSD2/PSR trajectories, and US personal financial data rights rules are related but not interchangeable. Consent, liability, screen-scraping phase-outs, and fee debates differ.</p>
-      <p>A &quot;global open banking strategy&quot; that ignores those differences is a branding exercise. Build country-by-country permission and liability maps.</p>
-      <h2>Who owns the complaint</h2>
-      <p>When a fintech uses bank-sourced data to open credit or move money, customers still experience a single brand. Supervisors and courts care which legal entity failed which duty.</p>
-      <p>Contracts that only cover API uptime and ignore error handling, re-auth, and fraud dispute paths create silent product risk.</p>
-      <h2>What to do</h2>
-      <p>For every open-banking feature, write: data categories used, legal basis, retention, who faces the customer on errors, and what happens when consent is revoked mid-flow.</p>
-      <p>Treat bank partners as infrastructure suppliers with political constraints, not as passive pipes.</p>
+      <p>WASHINGTON — For a decade, U.S. fintechs often reached bank data through screen scraping and bilateral contracts. That stack put technical risk on the consumer password and commercial leverage on the bank’s willingness to keep the pipe open. Section 1033 of the Consumer Financial Protection Act sat mostly dormant. On 22 October 2024, the Consumer Financial Protection Bureau (CFPB) finalized a rule meant to activate personal financial data rights as enforceable infrastructure.</p>
+
+      <p>The <a href="https://www.consumerfinance.gov/rules-policy/final-rules/required-rulemaking-on-personal-financial-data-rights/">Required Rulemaking on Personal Financial Data Rights</a> requires banks, credit unions, and other covered data providers to make consumers’ covered data available, upon request, to consumers and authorized third parties in a secure electronic form. It also defines obligations for third parties that receive that data, including limits on collection, use, and retention. The Bureau’s <a href="https://www.consumerfinance.gov/archive/newsroom/cfpb-finalizes-personal-financial-data-rights-rule-to-boost-competition-protect-privacy-and-give-families-more-choice-in-financial-services/">same-day press release</a> framed the policy goal as competition and switching: consumers should be able to move data associated with bank accounts, credit cards, mobile wallets, and payment apps toward providers with better rates or service — without paying the incumbent for the handoff.</p>
+
+      <blockquote>Portability reallocates distribution power. It does not settle who owns the customer.</blockquote>
+
+      <h2>Two layers of “ownership”</h2>
+      <p>In ordinary speech, “owning the customer” mixes three different facts: who holds the legal account of record, who the consumer sees every day, and who earns the next sale. Open banking separates those facts on purpose. The data provider still runs the deposit or card relationship under banking and consumer-protection law. The authorized third party may run budgeting, lending offers, payment initiation, or switching tools with permissioned data. The consumer sits in between with a revocation right that both sides must honor if the rule works as designed.</p>
+
+      <p>That split is why banks and fintechs talk past each other. Banks hear forced free API access and rising fraud and liability risk on their rails. Fintechs hear a statutory right to compete on product without renegotiating scraping access every quarter. Both are describing the same multi-sided structure. Regulators are not awarding a mascot. They are rewriting who may touch the data exhaust of an account — and under which duties.</p>
+
+      <h2>What the rule actually forces</h2>
+      <p>The final rule is not a slogan about “open finance.” It is a developer-interface and authorization regime. Data providers must support reliable electronic access. Third parties must meet authorization conditions and privacy constraints. Industry standards bodies may gain a role in consensus technical standards under Bureau recognition paths described in the rule materials. The <a href="https://files.consumerfinance.gov/f/documents/cfpb_executive-summary-of-the-personal-financial-rights-rule-final_2024-10.pdf">Bureau’s executive summary of the final rule</a> restates the core duty: upon request, make covered data available to the consumer or an authorized third party.</p>
+
+      <p>Commercial consequences follow. Aggregators and app brands that previously lived on brittle credentials gain a compliance path — and new compliance costs. Large banks gain obligations to build and maintain interfaces at scale. Smaller institutions face fixed costs of access programs that may push them toward vendors. None of that is abstract. It shows up in roadmap budgets, vendor contracts, and who pays for fraud monitoring when a permissioned app misbehaves.</p>
+
+      <h2>Customer ownership becomes a contract fight</h2>
+      <p>Once portability is mandatory, the fight moves to the fine print operators already know from Europe’s PSD2 era and from U.S. bank–fintech partnerships: who is responsible when a data-powered payment goes wrong; how long a third party may retain data after a consumer revokes; whether the bank may still market its own products into the same session; how screen design steers the consumer toward or away from authorization. “Who owns the customer” becomes a stack of contracts and liability allocations, not a brand claim on a pitch deck.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Ownership layers" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Often still with bank / data provider</th>
+              <th>Often captured by authorized third party</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Legal account</td>
+              <td>Deposit or card of record; core ledger</td>
+              <td>None — unless the consumer fully switches institutions</td>
+            </tr>
+            <tr>
+              <td>Daily UX</td>
+              <td>Legacy mobile banking</td>
+              <td>Budgeting, advice, multi-account dashboards</td>
+            </tr>
+            <tr>
+              <td>Next product sale</td>
+              <td>Cross-sell inside the bank app</td>
+              <td>Lending, investing, bill-pay offers using permissioned data</td>
+            </tr>
+            <tr>
+              <td>Complaint duty</td>
+              <td>Regulated provider of the account</td>
+              <td>App-level support; disputes over who caused the error</td>
+            </tr>
+            <tr>
+              <td>Data retention after revoke</td>
+              <td>Provider stops interface access</td>
+              <td>Must delete or limit use under third-party duties</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Political risk is part of the product</h2>
+      <p>Implementation calendars for large rules rarely survive first contact with courts and elections. The CFPB later opened a <a href="https://www.consumerfinance.gov/rules-policy/rules-under-development/personal-financial-data-rights-reconsideration/">Personal Financial Data Rights reconsideration</a> track, signaling that open-banking issues in the rule remain contested. Operators that treated the October 2024 final rule as a fixed engineering deadline learned a familiar lesson: regulatory forced interoperability is a product environment, not a shipped standard. Teams still build interfaces and authorization flows. They also keep political and litigation scenarios on the same roadmap as API versioning.</p>
+
+      <p>European and UK open-banking programs already showed the industrial pattern: forced APIs create an aggregator industry, new consent UX, and multi-year fights over premium APIs versus free access. The U.S. rule is not a copy-paste of PSD2, but the commercial grammar is familiar. Whoever controls the authorization screen and the ongoing data refresh cadence influences which product the consumer sees next. That is distribution power with a legal wrapper.</p>
+
+      <p>The durable commercial fact is simpler than the litigation docket. Account data is a distribution asset. When law forces that asset to move at the consumer’s direction, fintechs can compete for attention and for the next product without owning the balance sheet. Banks can still win on trust, price, and the account of record — but not by locking the data exhaust as a private moat. Customer ownership becomes a measured split across ledger, interface, and liability, updated each time the consumer re-authorizes or revokes.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.consumerfinance.gov/rules-policy/final-rules/required-rulemaking-on-personal-financial-data-rights/">CFPB — Personal Financial Data Rights (Section 1033) final rule hub</a>: US primary hub for required personal financial data rights rulemaking.</li>
-            <li><a href="https://www.openbanking.org.uk/">Open Banking Limited (UK)</a>: UK open banking implementation entity; standards and ecosystem context.</li>
-            <li><a href="https://www.bankofengland.co.uk/prudential-regulation">Bank of England / PRA materials (context)</a>: UK prudential context; pair with FCA open-banking materials for full picture.</li>
-            <li><a href="https://www.ecb.europa.eu/press/intro/html/index.en.html">European payments regulation context (ECB hub)</a>: Start point; prefer EU Commission PSD2/PSR primary texts when citing legal obligations.</li>
+          <li><a href="https://www.consumerfinance.gov/rules-policy/final-rules/required-rulemaking-on-personal-financial-data-rights/">CFPB — Required Rulemaking on Personal Financial Data Rights (final rule page)</a>: Supports the duty of data providers to share covered data with consumers and authorized third parties and third-party obligations.</li>
+          <li><a href="https://www.consumerfinance.gov/archive/newsroom/cfpb-finalizes-personal-financial-data-rights-rule-to-boost-competition-protect-privacy-and-give-families-more-choice-in-financial-services/">CFPB press release (22 Oct 2024)</a>: Supports finalization date, §1033 activation framing, free transfer at consumer direction, and product categories named in public messaging.</li>
+          <li><a href="https://files.consumerfinance.gov/f/documents/cfpb_executive-summary-of-the-personal-financial-rights-rule-final_2024-10.pdf">CFPB — Executive summary of the Personal Financial Data Rights Rule (Oct 2024 PDF)</a>: Supports covered-data availability to consumer or authorized third party upon request.</li>
+          <li><a href="https://www.consumerfinance.gov/rules-policy/rules-under-development/personal-financial-data-rights-reconsideration/">CFPB — Personal Financial Data Rights Reconsideration</a>: Supports that the rule’s open-banking design remained subject to later agency reconsideration.</li>
+          <li><a href="https://www.consumerfinance.gov/personal-financial-data-rights/">CFPB — Personal financial data rights hub</a>: Supports ongoing Bureau framing of the October 2024 final rule’s core requirements.</li>
+          <li><a href="../ground/open-banking-data-portability.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Map three owners, not one brand.</strong>
+        <p>Separate account-of-record duty, interface attention, and next-product economics. Portability moves the last two even when the ledger stays put.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>§1033 turns data exhaust into contested infrastructure.</strong>
+        <p>The 2024 final rule forces electronic access for authorized third parties. Reconsideration risk remains, but the competitive logic of permissioned APIs is now mainstream U.S. policy vocabulary.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

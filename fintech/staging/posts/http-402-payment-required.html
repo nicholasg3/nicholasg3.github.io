@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="HTTP 402 Payment Required still exists in the protocol. The fact that online commerce mostly ignores it is a story about path dependence in payment infrastructu">
-  <title>The web reserved a payment code in 1991. We still bolt money on later. | Fintech staging</title>
+  <meta name="description" content="HTTP 402 Payment Required remains reserved for future use in the living HTTP standard. Payments still clear through layers outside the core web protocol.">
+  <title>HTTP 402 is still a vacant lot | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,39 +15,104 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #4 · not public</div>
-      <h1>The web reserved a payment code in 1991. We still bolt money on later.</h1>
-      <p>HTTP 402 Payment Required still exists in the protocol. The fact that online commerce mostly ignores it is a story about path dependence in payment infrastructure.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #4 · not public</div>
+      <h1>HTTP 402 is still a vacant lot</h1>
+      <p>The web reserved a payment status code long ago. Decades later, money still clears outside the core protocol. That gap is why wallets and processors intermediate online value.</p>
       <p><a href="https://x.com/0xSammy/status/2034334738853285899" rel="noopener noreferrer">Seed tweet</a></p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>HTTP defined status code 402 as “Payment Required.” It remains reserved for future use in current HTTP semantics. That is not a conspiracy. It is a fossil of an unfinished internet money design.</p>
-      <p>Every checkout that redirects to a processor, every wallet popup, every card form is evidence that value transfer never became a first-class browser primitive the way hyperlinks did.</p>
+      <p>The web can say that a page is missing. It can say that credentials failed. It can say that a server understood a request and still refuses it. It still has no standard, widely implemented way to say, inside the protocol itself, that a resource costs money and here is how to pay. The number for that sentence has existed for years. The sentence never became infrastructure.</p>
+
+      <p>In the current HTTP semantics specification, <a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-402-payment-required">RFC 9110 section 15.5.3</a> defines status code 402 with a single operative line: “The 402 (Payment Required) status code is reserved for future use.” That is the whole normative story. Neighboring codes in the same document receive full behavioral treatment. 401 explains authentication challenges. 403 explains refusal. 404 explains absence. 402 remains a labeled empty lot on a street where every other address has a building.</p>
+
+      <blockquote>A reserved status code is not a payment rail. The internet’s money layer grew in the application stack instead.</blockquote>
+
       <h2>What the standard actually says</h2>
-      <p>RFC 9110 documents 402 Payment Required and notes it is reserved for future use. The protocol left a door. Industry did not walk through it in a standardized way.</p>
-      <p>Instead, payments evolved as application-layer products: card networks, banks, processors, and later wallets and crypto rails. Those products optimized for risk, chargebacks, identity, and regulation — problems a bare status code never solved.</p>
-      <h2>Why the fossil matters now</h2>
-      <p>Agentic commerce and machine-to-machine payments revive the old dream: machines that can request and settle value without a human filling a form. The protocol gap becomes a product opportunity again.</p>
-      <p>But the hard problems remain authorization, dispute, fraud, sanctions, and who is the customer of record. A 402 response does not answer those. Fintech founders who market “native internet money” without an authorization model are selling nostalgia for a missing standard.</p>
-      <h2>What to do</h2>
-      <p>If you design agentic payments, write the authorization and revocation path before the protocol romance. Who can spend, on what limits, with what audit trail, and how a human stops it.</p>
-      <p>Use 402 as a teaching artifact for path dependence — not as proof that a simple header will replace Visa.</p>
+      <p>RFC 9110 is not an obscure draft. It is the June 2022 Internet Standard for HTTP semantics, published on the RFC Editor site and used as the reference for modern HTTP behavior. When that document keeps 402 as reserved, it is not an oversight hidden in an appendix. It is an explicit choice to leave the code unused at the protocol-semantics layer while the rest of the client-error space is specified for production.</p>
+
+      <p>The reservation is older than RFC 9110. Early HTTP culture treated 402 as a placeholder for a future digital-cash or micropayment world that many engineers expected to arrive with the commercial web. Browsers, servers, and intermediaries optimized for other problems: caching, authentication, identity cookies, TLS, and later app-store and API economies. Payment instruments matured in parallel as hosted checkout pages, card networks, direct debits, and mobile wallets. None of those systems needed a standardized 402 handshake to process a charge. They needed merchant accounts, tokens, redirects, and risk engines.</p>
+
+      <h2>Where payments actually live</h2>
+      <p>Online payments clear through stacks that sit above raw HTTP status codes. A typical card checkout returns ordinary 200 and 3xx responses while the money moves inside a processor’s API and a network’s authorization messages. A wallet pay button opens an app or a scripted sheet, not a protocol-native 402 challenge understood by every browser the same way. Subscription paywalls often return 200 with HTML, or 403 for gated APIs, and handle billing in a separate billing service. The money path is real. It is just not the path the reserved code imagined.</p>
+
+      <p>That architecture has consequences. Every merchant inherits processor pricing, chargeback regimes, geographic restrictions, and integration work. Every new money instrument — including stablecoins and agentic payments — must plug into the same application-layer patterns or invent yet another wallet dance. Advocates of internet-native money often rediscover 402 because the number looks like a missing primitive. The standards text answers them coldly: the primitive was reserved, not shipped.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="HTTP client errors versus payments" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>RFC 9110 role</th>
+              <th>What production systems do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>401 Unauthorized</td>
+              <td>Authentication required / failed</td>
+              <td>Login walls, API keys, OAuth challenges</td>
+            </tr>
+            <tr>
+              <td>402 Payment Required</td>
+              <td>Reserved for future use</td>
+              <td>Rarely used as a real payment handshake</td>
+            </tr>
+            <tr>
+              <td>403 Forbidden</td>
+              <td>Understood but refused</td>
+              <td>Entitlements, sanctions blocks, policy denials</td>
+            </tr>
+            <tr>
+              <td>404 Not Found</td>
+              <td>No current representation</td>
+              <td>Missing pages and resources</td>
+            </tr>
+            <tr>
+              <td>Payment result (non-status)</td>
+              <td>Outside HTTP semantics</td>
+              <td>Processor APIs, wallet sheets, redirects, webhooks</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Path dependence, not a conspiracy</h2>
+      <p>It is tempting to narrate 402 as a suppressed feature. The simpler history is path dependence. Card networks, banks, and later platform billers already solved enough of the commercial problem that browser vendors had little pressure to standardize a protocol-level purse. Micropayment experiments in the 1990s and 2000s largely failed on UX, cognitive overhead, and business model grounds, not because a status code was missing from a table. When the commercial web standardized anything about money, it standardized TLS, cookies, and later payment-request APIs and platform billing — still application and browser features, not a universal 402 economy.</p>
+
+      <p>Newer movements around machine-payable APIs, lightning invoices, stablecoin headers, or HTTP-native credits sometimes reoccupy the 402 number as a local convention. Local convention is not the standard. Until RFC-level semantics and major client behavior agree, a 402 response remains a custom signal between parties who already share a payment scheme. Interoperability still depends on the scheme, not on the integer.</p>
+
+      <h2>What operators should take from the empty lot</h2>
+      <p>For product teams, the lesson is diagnostic. If a design assumes that “the web” will one day collect money as natively as it fetches HTML, the living standard does not support that assumption. Money will continue to require an explicit commercial stack: identity, risk, dispute rights, settlement timing, and regulatory perimeter. Protocol romance does not remove those costs.</p>
+
+      <p>For protocol designers, 402 is a warning about reservation without a coalition. Holding a code open for “future use” across decades can become a museum label. The successful client-error codes shipped with clear client and server behavior that implementers needed immediately. Payment required a business network, not only a status line.</p>
+
+      <p>Fintech teams that rediscover 402 during agentic-commerce or API-monetization work should still underwrite the commercial stack. A machine-readable price challenge is useful only if identity, refunds, chargebacks or their substitutes, tax treatment, and settlement finality are specified among the parties. The status integer can signal “pay first.” It cannot, by itself, create a clearing system, a dispute process, or a regulated issuer of balances.</p>
+
+      <p>HTTP 402 remains reserved for future use in RFC 9110. The commercial internet did not wait. It built payments in wallets, processors, and platform stores. That is why every online charge still feels like an app feature rather than a native property of the request. The vacant lot is still on the map. The city grew around it.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-402-payment-required">RFC 9110 — HTTP Semantics, §15.5.3 402 Payment Required</a>: Primary protocol source.</li>
-            <li><a href="https://httpwg.org/specs/rfc9110.html#status.402">HTTP Working Group HTML rendering of RFC 9110 status 402</a>: Canonical readable form of the same standard.</li>
-            <li><a href="https://x.com/0xSammy/status/2034334738853285899">Seed tweet (0xSammy), reposted by @yahoolovesyou</a>: Discourse seed; historical narrative must be checked against RFC text.</li>
+          <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-402-payment-required">RFC 9110 — HTTP Semantics, §15.5.3 402 Payment Required</a>: Normative statement that 402 is reserved for future use; primary load-bearing source for the claim.</li>
+          <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110 — full document</a>: Context for neighboring client-error codes (401, 403, 404) that are fully specified for production behavior.</li>
+          <li><a href="https://x.com/0xSammy/status/2034334738853285899">Seed tweet</a>: Discourse seed on 402 as a missing internet money primitive.</li>
+          <li><a href="../ground/http-402-payment-required.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>Enriched staging draft. Not legal or investment advice. Promote only after Nick sign-off.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
-    <aside class="article-side" aria-label="Staging">
+
+    <aside class="article-side" aria-label="Issue notes">
       <section class="side-card">
-        <span class="section-label">Gate</span>
-        <strong>Sources before promotion.</strong>
-        <p>This piece was written only after primary/canonical links were attached. Gaps are marked in the notes.</p>
+        <span class="section-label">Reader Decision</span>
+        <strong>Is the design waiting for a protocol that the standard still reserves?</strong>
+        <p>Treat 402 as a vacant lot unless clients and RFCs define a real handshake. Budget for processors, wallets, or a bespoke scheme instead.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Payments standardized outside HTTP status codes.</strong>
+        <p>RFC 9110 still marks 402 reserved. Card, wallet, and platform billing stacks filled the commercial gap in the application layer.</p>
       </section>
     </aside>
   </main>

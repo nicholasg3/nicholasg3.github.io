@@ -1,6 +1,6 @@
 {
   "vertical": "fintech",
-  "generated_at": "2026-07-30T17:32:27.418228+00:00",
+  "generated_at": "2026-07-30T18:29:38.695003+00:00",
   "password_note": "nick-verticals (shared)",
   "harvest": {
     "source": "@yahoolovesyou mode=all pages=10 (mixed personal feed, not curator)",
@@ -13,7 +13,7 @@
       "id": "zero-reserve-requirements",
       "idea": "US banks at 0% reserve requirements since March 2020 — what that does and does not mean",
       "thesis": "Zero required reserves changed the legal reserve ratio; it did not abolish credit constraints. The public debate confuses reserve requirements with capital, liquidity, and supervisory limits.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/BTCBreadMan/status/1945874943385743832"
       ],
@@ -22,14 +22,14 @@
       "theory": "Credit creation banking / endogenous money; distinguish reserve requirements from capital & LCR",
       "vertical": "fintech",
       "from_harvest": true,
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 2,
       "id": "stablecoin-privacy-traceability",
       "idea": "Stablecoins as transparent ledgers: privacy nightmare or compliance feature?",
       "thesis": "Retail stablecoin rails make transaction graphs more legible to counterparties and analysts than cash. Whether that is a bug or a feature depends on the institutional use case.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/StakeWithPride/status/1935094759401603212"
       ],
@@ -37,14 +37,14 @@
       "theory": "Payment transparency vs financial privacy; surveillance capitalism meets rails",
       "vertical": "fintech",
       "from_harvest": true,
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 3,
       "id": "paypal-stablecoin-distribution",
       "idea": "PayPal stablecoin distribution across many countries — wallet power as market entry",
       "thesis": "Incumbent wallet distribution can move stablecoin access faster than crypto-native apps, but licensing and redemption design still decide whether the product is money or marketing.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/FinanceLancelot/status/2033871023016124512"
       ],
@@ -52,14 +52,14 @@
       "theory": "Two-sided platforms; distribution advantage vs regulatory perimeter",
       "vertical": "fintech",
       "from_harvest": true,
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 4,
       "id": "http-402-payment-required",
       "idea": "HTTP 402 'Payment Required' as a native internet money primitive that never shipped",
       "thesis": "The web reserved a payment status code in 1991; three decades later payments still sit outside the protocol. That gap explains why wallets and processors intermediate every online transaction.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/0xSammy/status/2034334738853285899"
       ],
@@ -67,14 +67,14 @@
       "theory": "Protocol design and path dependence in payment infrastructure",
       "vertical": "fintech",
       "from_harvest": true,
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 5,
       "id": "swift-as-sanctions-rail",
       "idea": "SWIFT access as a foreign-policy instrument, not just a messaging utility",
       "thesis": "Threats to cut payment messaging access convert financial infrastructure into a geopolitical lever. Operators in small states must treat rail dependency as political risk.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/KitKlarenberg/status/1945822612002599224"
       ],
@@ -83,316 +83,316 @@
       "vertical": "fintech",
       "from_harvest": true,
       "note": "Seed tweet is partisan; ground in SWIFT/sanctions primary history, not the tweet's tone.",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 6,
       "id": "mas-payments-licensing",
       "idea": "MAS licensing as a trust bridge for regional fintech",
       "thesis": "Singapore licensing is often used as a credibility signal for regional expansion — but it is not a passport.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": null,
       "vertical": "fintech",
       "from_harvest": false,
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 7,
       "id": "cross-border-remittance-cost",
       "idea": "Remittance cost compression and who captures the spread",
       "thesis": "Lower advertised FX fees hide spread and float; the real unit economics sit in corridor control.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://remittanceprices.worldbank.org/",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Two-sided platforms; payment corridor economics; information asymmetry on FX",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 8,
       "id": "cbdc-retail-vs-wholesale",
       "idea": "Retail CBDC vs wholesale settlement: different problems",
       "thesis": "Retail CBDC debates privacy; wholesale CBDC debates settlement finality among institutions.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.bis.org/publ/othp33.htm",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Public money hierarchy; payment system design; two-tier banking",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 9,
       "id": "stablecoin-reserves-attestation",
       "idea": "Reserve attestation quality as the real stablecoin product",
       "thesis": "The token is easy; the reserve, redemption, and attestation regime is the product.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.dfs.ny.gov/",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Bank-run theory applied to money-like liabilities; disclosure as product quality",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 10,
       "id": "open-banking-data-portability",
       "idea": "Open banking as forced data portability — who owns the customer?",
       "thesis": "APIs reallocate distribution power between banks and fintechs; customer ownership becomes a contract fight.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.consumerfinance.gov/rules-policy/final-rules/required-rulemaking-on-personal-financial-data-rights/",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Data portability; multi-sided platforms; regulatory forced interoperability",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 11,
       "id": "agentic-payments-authorization",
       "idea": "When AI agents can pay: authorization design before autonomy",
       "thesis": "Agentic commerce fails first on authority and revocation, not model IQ.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.federalreserve.gov/paymentsystems.htm",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Principal–agent problem; payment authorization; least privilege",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 12,
       "id": "credit-creation-not-fractional-reserve-slogan",
       "idea": "Credit creation banking vs the fractional-reserve slogan",
       "thesis": "Public education still uses 20th-century metaphors for 21st-century bank funding.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Endogenous money; credit creation; Basel capital/liquidity",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 13,
       "id": "idle-asset-escheat-crypto",
       "idea": "Idle crypto escheat / seizure rules on exchanges",
       "thesis": "State unclaimed-property regimes meet exchange custody — a boring legal risk with balance-sheet teeth.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.unclaimed.org/",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Property law; custody risk; institutional isomorphism",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 14,
       "id": "cashless-policy-mexico-tolls",
       "idea": "Cashless mandates at physical points of sale",
       "thesis": "Forcing digital payment at tolls/gas stations is financial inclusion rhetoric with surveillance and outage risk.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.banxico.org.mx/",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Payments as infrastructure; financial inclusion vs coercion; resilience",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 15,
       "id": "venture-subsidy-fintech-unit-econ",
       "idea": "Fintech unit economics under cheap capital",
       "thesis": "Many efficient rails only clear while customer acquisition and float are subsidized.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": "https://www.bis.org/publ/qtrpdf/r_qt2109c.htm",
       "vertical": "fintech",
       "from_harvest": false,
       "theory": "Unit economics; predatory pricing vs learning; two-sided markets",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 16,
       "id": "bank-fintech-partnership-as-distribution-rent",
       "idea": "Bank-fintech partnership as distribution rent",
       "thesis": "Sponsor banks rent regulatory perimeter and trust; fintechs rent distribution and UX.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.occ.gov/",
       "theory": "Regulatory perimeter; two-sided platforms; rent vs ownership",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 17,
       "id": "embedded-finance-who-owns-the-customer-complaint",
       "idea": "Embedded finance: who owns the customer complaint?",
       "thesis": "Embedded finance splits UX unity from legal duty; complaint routing is the real design problem.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.consumerfinance.gov/",
       "theory": "Principal–agent; regulatory perimeter; platform liability",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 18,
       "id": "bnpl-credit-quality-through-the-cycle",
       "idea": "BNPL credit quality through the cycle",
       "thesis": "BNPL is consumer credit with checkout UX; cycle risk is the product risk.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.consumerfinance.gov/",
       "theory": "Consumer credit cycles; behavioral pricing",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 19,
       "id": "realtime-payments-and-fraud-acceleration",
       "idea": "Realtime payments and fraud acceleration",
       "thesis": "Realtime rails remove delay that used to function as a silent fraud brake.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.frbservices.org/financial-services/fednow",
       "theory": "Payment finality vs dispute rights; authorized push payment fraud",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 20,
       "id": "merchant-acquiring-concentration-risk",
       "idea": "Merchant acquiring concentration risk",
       "thesis": "Acquirer/network concentration is a first-class operational risk for digital commerce.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.bis.org/cpmi/",
       "theory": "Payment networks; counterparty concentration",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 21,
       "id": "on-chain-fx-vs-traditional-nostro-networks",
       "idea": "On-chain FX vs traditional nostro networks",
       "thesis": "On-chain FX speed does not erase nostro, liquidity, and last-mile cash constraints.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.bis.org/cpmi/publ/d173.htm",
       "theory": "Correspondent banking; liquidity fragmentation; payment chains",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 22,
       "id": "tokenized-deposits-vs-stablecoins-liability-design",
       "idea": "Tokenized deposits vs stablecoins (liability design)",
       "thesis": "Liability design — not chain choice — separates tokenized deposits from stablecoins.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.bis.org/publ/qtrpdf/r_qt2112b.htm",
       "theory": "Money hierarchy; bank vs non-bank liabilities",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 23,
       "id": "travel-rule-aml-for-vasps-as-market-structure",
       "idea": "Travel rule / AML for VASPs as market structure",
       "thesis": "Travel Rule / AML for VASPs reallocates counterparty access and vendor power.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.fatf-gafi.org/",
       "theory": "AML as non-tariff barrier; network effects in compliance",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 24,
       "id": "card-network-messaging-vs-account-to-account-rails",
       "idea": "Card network messaging vs account-to-account rails",
       "thesis": "Rail choice is liability choice, not only fee choice.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.frbservices.org/financial-services/fednow",
       "theory": "Payment system design; consumer protection",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 25,
       "id": "fintech-failure-resolution-and-ring-fencing",
       "idea": "Fintech failure resolution and ring-fencing",
       "thesis": "Without ring-fencing and resolution plans, fintech failure becomes a political event.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.financialstabilityboard.org/",
       "theory": "Resolution regimes; bankruptcy remoteness; consumer protection",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 26,
       "id": "data-localization-vs-regional-payment-platforms",
       "idea": "Data localization vs regional payment platforms",
       "thesis": "Data localization forces multi-region payment architecture.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.pdpc.gov.sg/",
       "theory": "Data sovereignty; platform architecture",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 27,
       "id": "insurance-for-smart-contract-oracle-failure",
       "idea": "Insurance for smart-contract / oracle failure",
       "thesis": "Insurance for protocol failure needs explicit trigger design; most policies are imperfect maps.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.iaisweb.org/",
       "theory": "Insurance basis risk; operational risk",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 28,
       "id": "market-structure-after-zero-commissions-equities-c",
       "idea": "Market structure after zero commissions (equities→crypto)",
       "thesis": "Zero-commission brokerage is a revenue-stack redesign with policy risk.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.sec.gov/marketstructure",
       "theory": "Market microstructure; two-sided platforms",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 29,
       "id": "sovereign-wealth-as-lp-into-fintech-platforms",
       "idea": "Sovereign wealth as LP into fintech platforms",
       "thesis": "SWF capital is strategic capital with political externalities.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.ifswf.org/",
       "theory": "State capitalism; political risk",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     },
     {
       "rank": 30,
       "id": "climate-risk-disclosure-in-bank-books-fintech-angl",
       "idea": "Climate risk disclosure in bank books (fintech angle)",
       "thesis": "Climate risk disclosure becomes a fintech data and credit-access constraint through banks.",
-      "status": "thin-outline",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "fintech",
       "primary_url": "https://www.fsb-tcfd.org/",
       "theory": "Climate finance; supervisory disclosure",
-      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
+      "quality_note": "Full rewrite 2026-07-31 fleet: ground brief + body-integrated sources + side cards"
     }
   ],
   "notes": [
@@ -400,5 +400,5 @@
     "yahoolovesyou is personal/mixed; original posters proposed as canonical candidates.",
     "Dedicated curator accounts TBD per vertical."
   ],
-  "quality_debt": "2026-07-31: all 30 seeds demoted from enriched-draft to thin-outline. Nick correctly flagged sources as non-supporting and articles as too thin. Pipeline required: (1) enrich.md retrieval dossier when seed is from harvest, (2) blog-review ground brief with claim-linked primaries, (3) full essay, (4) Source notes that support body sentences — not institutional home pages."
+  "quality_debt": "Fleet rewrite 2026-07-31; spot-check before promote. Prior thin-outline debt retired for rewritten files."
 }

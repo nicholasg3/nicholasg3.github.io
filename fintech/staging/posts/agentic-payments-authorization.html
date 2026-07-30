@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="When software agents can initiate payments, the hard design problem is who authorized what, for how long, with what limits, and how you revoke it. Model capabil">
-  <title>Agentic payments fail on authority first, not model IQ | Fintech staging</title>
+  <meta name="description" content="Agentic commerce fails first on authority, spend caps, merchant limits, and revocation — not on model IQ.">
+  <title>Agentic payments fail on authorization first | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,34 +15,106 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #11 · not public</div>
-      <h1>Agentic payments fail on authority first, not model IQ</h1>
-      <p>When software agents can initiate payments, the hard design problem is who authorized what, for how long, with what limits, and how you revoke it. Model capability is secondary to mandate design.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #11 · not public</div>
+      <h1>Agentic payments fail on authorization first</h1>
+      <p>When software agents can spend, the scarce design is not model IQ. It is who may pay, for what, up to how much, and how the human revokes the key.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Product teams are racing to let AI agents shop, book, and pay. The demos emphasize autonomy. Production systems will be judged on whether a human principal can bound and reverse machine spending.</p>
-      <p>If you cannot answer who is the merchant of record, who holds the mandate, and how a bad agent is frozen in minutes, you do not have agentic payments. You have a demo with a card-on-file.</p>
-      <h2>Authorization is the product surface</h2>
-      <p>Card networks and banks already have language for tokens, mandates, and recurring payments. Agentic flows will reuse those primitives under new UX names.</p>
-      <p>Design for: spend caps, category limits, time bounds, dual control for large amounts, immutable audit logs, and one-click revocation that actually propagates to processors.</p>
-      <h2>Fraud and dispute shape the economics</h2>
-      <p>Faster autonomous checkout without stronger authentication just accelerates authorized push-payment fraud patterns. Liability allocation between user, agent vendor, merchant, and issuer will decide which products can scale.</p>
-      <p>Regulators will not care that the agent was &quot;smart.&quot; They will care whether consent was meaningful and whether consumers can recover funds under existing payment rules.</p>
-      <h2>What to do</h2>
-      <p>Before shipping agent checkout, write the mandate object: principal identity, agent identity, merchant scope, amount rules, expiry, and revocation channel.</p>
-      <p>Instrument every agent payment like a privileged API call: least privilege by default, human-in-the-loop thresholds, and post-hoc forensic export.</p>
+      <p>SAN FRANCISCO — Product demos of “AI that shops for you” still center on language models that browse, compare, and click. Payment networks are building a different layer. They treat the agent as a new initiator of card and account payments that must prove authority the way a cardholder or corporate T&amp;E program already does — with limits, categories, authentication, tokens, and a kill switch.</p>
+
+      <p>Visa’s public framing is explicit. <a href="https://www.visa.com/en-us/solutions/intelligent-commerce">Visa Intelligent Commerce</a> is described as a portfolio for agentic commerce: embedding payment credentials, controls, authentication, and protections into automated buying so agents, issuers, merchants, and developers can transact with defined trust boundaries. The network’s pitch is not that the model is smart. The pitch is that instructions and credentials can be loaded into rails that already know how to authorize, tokenize, and dispute.</p>
+
+      <blockquote>Agentic commerce is a principal–agent problem with a checkout button. Authorization design is the product.</blockquote>
+
+      <h2>What “authorized” must mean</h2>
+      <p>In classic e-commerce, the human is present at click. In agentic flows, the human may be offline while software selects a merchant, amount, and shipping address. Merchants and issuers then need answers that demos skip: Is this bot a permissioned buyer or an attacker? Which card token may it use? Is the amount inside a pre-set cap? Is the merchant category allowed? Does this purchase require a real-time human ping? Can the user revoke the agent without reissuing every credential in the household?</p>
+
+      <p>Those questions are familiar from corporate cards and virtual card numbers. Agentic payments recycle least-privilege design: grant the minimum power for the task, bind it to time and category, and log every use for dispute. Visa materials and partner coverage describe user-set dollar limits, merchant-category guardrails, and approval prompts that load into VisaNet-style authorization paths, with tokenization producing limited-use credentials rather than raw permanent card numbers.</p>
+
+      <h2>Networks shipping the control plane</h2>
+      <p>In December 2025, Visa said partners were completing secure AI-initiated transactions and that more than 100 partners were engaged, with sandbox and closed-beta activity among agent enablers (<a href="https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx">Visa investor news</a>). Separately, Visa and Amazon Web Services announced listing Intelligent Commerce capabilities in AWS Marketplace and publishing blueprints for agentic retail and travel workflows, emphasizing authentication, agentic tokenization, personalization data, and user intent capture (<a href="https://press.aboutamazon.com/aws/2025/12/visa-and-aws-enable-next-generation-agentic-commerce-capabilities">AWS press release</a>). The commercial message is consistent: developers should not invent payment authority from scratch inside a chat agent.</p>
+
+      <p>Other schemes are racing similar packaging. The strategic pattern matters more than any single brand. Card networks already intermediate trust between issuers and merchants. Agent platforms that want scale will route spend through rails that can answer liability questions when an agent over-orders, a prompt is hijacked, or a merchant ships goods the human did not want. Model quality without that rail is a support queue.</p>
+
+      <h2>Where pilots still break</h2>
+      <p>Authorization design fails in predictable places even when the demo succeeds.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Authorization failure modes" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Control</th>
+              <th>What it is meant to stop</th>
+              <th>How it fails in practice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Spend cap</td>
+              <td>Runaway multi-purchase sessions</td>
+              <td>Cap set per transaction while agent places many small orders</td>
+            </tr>
+            <tr>
+              <td>Merchant category</td>
+              <td>Out-of-policy sellers</td>
+              <td>MCC too coarse; marketplace sellers share a category</td>
+            </tr>
+            <tr>
+              <td>Step-up approval</td>
+              <td>Surprise high-risk buys</td>
+              <td>Approval fatigue; user auto-approves in the chat UI</td>
+            </tr>
+            <tr>
+              <td>Token lifecycle</td>
+              <td>Credential theft and replay</td>
+              <td>Long-lived agent tokens stored in logs or third-party memory</td>
+            </tr>
+            <tr>
+              <td>Revocation</td>
+              <td>Former employee / shared household agent</td>
+              <td>No single place to kill all delegated instructions</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Dispute rights complicate the story further. Card networks evolved chargeback language for human-present and human-not-present card-not-present cases. Agent-initiated commerce sits between them. Until issuers, networks, and merchants share clear codes for “agent exceeded instruction” versus “user authorized the agent but regrets the purchase,” operating losses will land in whichever party has weaker contracts. That allocation is part of authorization design, not a later legal cleanup.</p>
+
+      <h2>Autonomy is the wrong first milestone</h2>
+      <p>Teams that lead with model autonomy often under-invest in the boring stack: instruction capture, cryptographic binding of agent identity, token minting, real-time policy checks, audit logs, and human revoke paths. Networks building Intelligent Commerce-style products are betting that those controls are what enterprises and issuers will buy. The agent that can reason about products is commodity. The agent that can spend inside a policy envelope that finance and fraud teams accept is the scarce good.</p>
+
+      <p>For issuers, the practical program looks like commercial card controls extended to software principals. For merchants, it looks like signals that distinguish good agents from scrapers — and refunds when the signal was wrong. For agent platforms, it looks like refusing to hold raw PANs and instead integrating network tokens with explicit instruction objects. Intelligence still matters for shopping quality. Settlement still fails first when nobody can prove the agent was allowed to pay.</p>
+
+      <p>Corporate travel and expense programs already prove the pattern at human scale: virtual cards, merchant locks, per-trip budgets, and manager approval. Agentic payments are that stack with a model choosing the itinerary. The organizations that already run policy engines for employees are closer to production than consumer chat apps that treat the card number as a secret pasted into a prompt. The consumer case will still matter for retail. It will inherit the same control vocabulary issuers already trust.</p>
+
+      <p>The near-term market will also sort standards. Some agent frameworks will speak network-native instruction objects. Others will invent private wallets that settle later. Until dispute codes and liability tables mature, finance teams will prefer agents that close the loop on Visa- or scheme-mediated authorization rather than opaque off-network rails. Model IQ will keep improving. Authority design is what decides whether that IQ is allowed to spend.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.federalreserve.gov/paymentsystems.htm">Federal Reserve — Payment Systems</a>: US payments infrastructure primary hub (FedNow, settlement context).</li>
-            <li><a href="https://www.bis.org/cpmi/">BIS Committee on Payments and Market Infrastructures</a>: Institutional home for payment system standards and cross-border work.</li>
-            <li><a href="https://www.nist.gov/identity-access-management">NIST — Identity and access management</a>: Authorization/least-privilege design vocabulary useful for agent mandates.</li>
-            <li><a href="https://www.w3.org/TR/secure-payment-confirmation/">W3C — Secure Payment Confirmation</a>: Web payment authentication primitive; relevant when agents operate in browser contexts.</li>
+          <li><a href="https://www.visa.com/en-us/solutions/intelligent-commerce">Visa — Intelligent Commerce</a>: Supports Visa’s product framing of credentials, controls, authentication, and protections for AI-initiated transactions.</li>
+          <li><a href="https://investor.visa.com/news/news-details/2025/Visa-and-Partners-Complete-Secure-AI-Transactions-Setting-the-Stage-for-Mainstream-Adoption-in-2026/default.aspx">Visa investor news — partners complete secure AI transactions (18 Dec 2025)</a>: Supports partner/sandbox pilot activity and mainstream-adoption positioning for agentic payments.</li>
+          <li><a href="https://press.aboutamazon.com/aws/2025/12/visa-and-aws-enable-next-generation-agentic-commerce-capabilities">AWS press — Visa and AWS agentic commerce (1 Dec 2025)</a>: Supports Marketplace listing and blueprints emphasizing authentication, tokenization, and intent capture.</li>
+          <li><a href="https://www.pymnts.com/visa/2025/visa-powers-ai-shopping-agents-with-intelligent-commerce-payment-rails/">PYMNTS — Visa Intelligent Commerce coverage (30 Apr 2025)</a>: Supports public description of authentication, payment instructions, and spend/merchant guardrails.</li>
+          <li><a href="../ground/agentic-payments-authorization.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Ship the revoke path before the demo agent.</strong>
+        <p>Define caps, categories, step-up rules, token TTL, and a single place to kill delegated spend before measuring agent conversion rates.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Networks are productizing agent authority.</strong>
+        <p>Visa Intelligent Commerce and cloud blueprints treat authorization plumbing as the scarce layer between chat agents and settlement.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

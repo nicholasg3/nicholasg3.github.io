@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Issuing a token is easy. The product is what backs it, who can redeem, how often someone attests, and what happens in a run. Treat attestation quality as the co">
+  <meta name="description" content="For payment stablecoins, the product is reserve quality, redemption rights, and attestation scope — not the token ticker.">
   <title>The stablecoin product is the reserve regime | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
@@ -15,34 +15,107 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #9 · not public</div>
+      <div class="issue-kicker">Staging · enriched draft · queue #9 · not public</div>
       <h1>The stablecoin product is the reserve regime</h1>
-      <p>Issuing a token is easy. The product is what backs it, who can redeem, how often someone attests, and what happens in a run. Treat attestation quality as the core feature, not a compliance afterthought.</p>
+      <p>Issuing a token is easy. Markets reprice the liability when reserve access or redemption quality fails — even when the homepage says fully backed.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Most stablecoin pitch decks lead with chain, yield, and integrations. Those matter only after users believe the liability is money-like under stress.</p>
-      <p>Reserve composition, segregation, redemption rights, and attestation cadence are the product features that survive a risk-off week. Everything else is distribution.</p>
-      <h2>What &amp;quot;attestation&amp;quot; is not</h2>
-      <p>An attestation is not a full audit of all risks. It is a time-stamped statement about reserve holdings under a defined scope. Scope, independence, lag, and whether it covers liabilities as well as assets all change the information value.</p>
-      <p>Marketing language that says &quot;fully backed&quot; without linking to the actual report and the legal entity that redeems is incomplete product disclosure.</p>
-      <h2>Run dynamics still apply</h2>
-      <p>Money-like liabilities face first-mover incentives when confidence drops. If redemption is gated, delayed, or only available to large counterparties, retail holders discover they held a different product than the homepage implied.</p>
-      <p>Compare not only asset mix (cash, T-bills, other) but who has contractual claim priority and in which jurisdiction.</p>
-      <h2>What to do</h2>
-      <p>If you issue or integrate a stablecoin, maintain a living memo: reserve assets, custodian, attestation firm, report lag, redemption eligibility, and insolvency treatment hypotheses.</p>
-      <p>If you cannot fill those fields from primary documents, you do not understand the product well enough to put customer funds on it.</p>
+      <p>NEW YORK — Stablecoin decks still lead with chain, yield, and integrations. Those features matter after users and integrators believe the liability stays money-like under stress. The harder product is quieter: what sits in reserve, who holds it, who can redeem at par, how often an independent accountant attests, and what happens when a custodian bank fails mid-weekend.</p>
+
+      <p>Supervisors have already drawn that line in plain language. On 8 June 2022, the New York State Department of Financial Services published <a href="https://www.dfs.ny.gov/industry_guidance/industry_letters/il20220608_issuance_stablecoins">guidance on the issuance of U.S. dollar-backed stablecoins</a> for entities under DFS virtual-currency or limited-purpose trust oversight. The letter organizes expectations around redeemability, reserve assets, and attestations. Marketing that stops at “fully backed” without those three layers is incomplete product disclosure.</p>
+
+      <blockquote>The token is distribution. The reserve, redemption path, and attestation regime are the product.</blockquote>
+
+      <h2>What an attestation actually says</h2>
+      <p>An attestation is not a full audit of every risk the issuer faces. It is a time-stamped examination of management’s assertions under a defined scope. The <a href="https://www.dfs.ny.gov/reports_and_publications/press_releases/pr202206081">DFS press release accompanying the guidance</a> stressed monthly examination by an independent U.S.-licensed CPA applying American Institute of Certified Public Accountants (AICPA) attestation standards. The CPA’s work typically covers whether reserve fair value meets outstanding stablecoin units as of report dates, and whether reserve conditions supervisors set are met — not whether every banking counterpart will open on Monday.</p>
+
+      <p>Circle’s public transparency materials make the same distinction from the issuer side. On its <a href="https://www.circle.com/transparency">Transparency &amp; Stability</a> page, Circle states that a Big Four firm provides monthly third-party assurance that the value of USDC reserves is greater than USDC in circulation, prepared to AICPA standards, alongside weekly reserve disclosure and mint/burn flows. That cadence is a product feature. Lag, scope, random-day sampling, and whether liabilities as well as assets are reconciled all change the information value of the PDF.</p>
+
+      <h2>When “backed” still depegs</h2>
+      <p>March 2023 showed why reserve <em>composition and access</em> matter as much as a monthly letter. After Silicon Valley Bank failed, Circle disclosed that about <strong>$3.3 billion</strong> of USDC reserves — roughly <strong>8 percent</strong> of then-total reserves near a <strong>$40 billion</strong> book — sat at the failed bank. Secondary-market USDC traded below $1 as redemption pressure rose. A Federal Reserve Board staff <a href="https://www.federalreserve.gov/econres/notes/feds-notes/in-the-shadow-of-bank-run-lessons-from-the-silicon-valley-bank-failure-and-its-impact-on-stablecoins-20251217.html">FEDS Note</a> reconstructs the sequence: public acknowledgment of trapped uninsured deposits, solvency concerns relative to Circle’s equity, and a surge in primary-market redemptions. Circle later said, after the joint federal announcement that SVB depositors would be made whole, that the $3.3 billion would be available when banks reopened and that USDC remained redeemable one-for-one in the company’s framing (<a href="https://www.circle.com/pressroom/3-3-billion-of-usdc-reserve-risk-removed-dollar-de-peg-closes">Circle press room, 13 March 2023</a>).</p>
+
+      <p>The episode did not prove that monthly attestations are useless. It proved they are incomplete without continuous understanding of where cash sits, which deposits are uninsured, and how fast par redemption works when a banking day is closed. Integrators who only stored the latest examination PDF learned that reserve quality is a living system, not a checkbox.</p>
+
+      <h2>Design without redeemable reserves</h2>
+      <p>Algorithmic designs make the reserve product even clearer by failure. In May 2022, TerraUSD (UST) lost its dollar peg and, with LUNA, collapsed as an ecosystem. The <a href="https://www.congress.gov/crs_external_products/IN/PDF/IN11928/IN11928.1.pdf">Congressional Research Service brief on algorithmic stablecoins and the TerraUSD crash</a> described a dual-token arbitrage mechanism without the cash-and-Treasury reserve stack DFS later codified for supervised USD coins. A <a href="https://www.richmondfed.org/publications/research/economic_brief/2022/eb_22-24">Richmond Fed Economic Brief</a> walked through how the algorithmic defense broke under selling pressure. Whatever the white paper claimed, markets discovered there was no reliable path to liquid par assets at scale. That is a product design outcome, not a branding failure.</p>
+
+      <h2>A comparison operators already use</h2>
+      <p>Teams that integrate or hold large stablecoin balances usually score more than ticker liquidity.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Reserve product checklist" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Useful signal</th>
+              <th>Where it misleads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Reserve mix</td>
+              <td>Cash, T-bills, reverse repo, fund holdings with named custodians</td>
+              <td>“Cash equivalents” that hide uninsured bank concentration</td>
+            </tr>
+            <tr>
+              <td>Segregation</td>
+              <td>Assets held for holders, apart from issuer operating cash</td>
+              <td>Legal entity maze with no clear insolvency story</td>
+            </tr>
+            <tr>
+              <td>Attestation cadence</td>
+              <td>Monthly AICPA exam + public report lag under 30 days</td>
+              <td>Annual marketing deck with no engagement letter visibility</td>
+            </tr>
+            <tr>
+              <td>Redemption rights</td>
+              <td>Who can redeem at par, cutoffs, fees, jurisdiction</td>
+              <td>Retail secondary market liquidity mistaken for primary par claim</td>
+            </tr>
+            <tr>
+              <td>Banking day risk</td>
+              <td>Multiple SIIs, known deposit insurance limits, weekend ops plan</td>
+              <td>Assuming “backed” means continuous access through any bank failure</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>DFS guidance effectively scores several of those rows for New York-supervised issuers. Circle’s transparency stack scores frequency and public PDFs for USDC. Neither row set removes run dynamics. Money-like liabilities still face first-mover incentives when confidence drops. If redemption is gated, delayed, or limited to large counterparties, smaller holders discover they held a different product than the landing page implied.</p>
+
+      <p>Issuers compete on that disclosure stack the way money-market funds compete on holdings reports. Weekly reserve pages, named custodians, and AICPA examination PDFs are not ornamental trust theater when redemption desks and market makers use them. They are incomplete when they ignore bank-concentration and weekend access. Federal frameworks for payment stablecoins may add another layer of reserve and disclosure rules over time; the product lesson from DFS guidance, Circle’s transparency program, Terra’s failure, and the SVB week remains stable either way.</p>
+
+      <p>The practical read for payment platforms, treasurers, and wallet brands is narrow. Chain choice and yield wrappers are secondary until reserve composition, segregation, attestation scope, and contractual redemption are documented from primaries. When those fields cannot be filled, the operator does not understand the product well enough to treat it as cash. When they can be filled, the operator still monitors bank concentration and report lag — because March 2023 showed that markets price the reserve path in real time.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.dfs.ny.gov/industry_guidance/industry_letters/il20220608_issuance_stablecoins">NYDFS — Guidance on the Issuance of U.S. Dollar-Backed Stablecoins (8 Jun 2022)</a>: US state supervisory primary on reserves, redemption, and attestations for DFS-regulated issuers.</li>
-            <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2112b.htm">BIS — Stablecoins: risks, potential and regulation</a>: Institutional frame for run risk, reserves, and payment-system implications.</li>
-            <li><a href="https://www.federalreserve.gov/publications/files/money-and-payments-20220120.pdf">Federal Reserve — Money and Payments (Jan 2022)</a>: Policy discussion of private digital money and run/stability issues.</li>
-            <li><a href="https://www.iosco.org/">IOSCO</a>: Market-integrity and crypto-asset policy publications hub; open the current crypto recommendations PDF from iosco.org rather than a brittle deep link.</li>
+          <li><a href="https://www.dfs.ny.gov/industry_guidance/industry_letters/il20220608_issuance_stablecoins">NYDFS — Guidance on the Issuance of U.S. Dollar-Backed Stablecoins (8 Jun 2022)</a>: Supports redeemability, reserve, and monthly attestation expectations for DFS-supervised USD stablecoins.</li>
+          <li><a href="https://www.dfs.ny.gov/reports_and_publications/press_releases/pr202206081">NYDFS press release — Superintendent Harris announces stablecoin guidance (8 Jun 2022)</a>: Supports monthly independent CPA / AICPA attestation framing.</li>
+          <li><a href="https://www.circle.com/transparency">Circle — Transparency &amp; Stability</a>: Supports monthly third-party assurance that USDC reserves ≥ circulation and weekly reserve disclosure.</li>
+          <li><a href="https://www.circle.com/pressroom/3-3-billion-of-usdc-reserve-risk-removed-dollar-de-peg-closes">Circle press room — $3.3B USDC reserve risk removed (13 Mar 2023)</a>: Supports $3.3B (~8%) SVB deposit figure and post-announcement redeemability claim.</li>
+          <li><a href="https://www.federalreserve.gov/econres/notes/feds-notes/in-the-shadow-of-bank-run-lessons-from-the-silicon-valley-bank-failure-and-its-impact-on-stablecoins-20251217.html">Federal Reserve FEDS Note — SVB failure and stablecoins</a>: Supports run/redemption dynamics after Circle’s SVB reserve disclosure.</li>
+          <li><a href="https://www.congress.gov/crs_external_products/IN/PDF/IN11928/IN11928.1.pdf">CRS — Algorithmic Stablecoins and the TerraUSD Crash (16 May 2022)</a>: Supports UST/LUNA dual-token design and May 2022 depeg facts used as contrast case.</li>
+          <li><a href="https://www.richmondfed.org/publications/research/economic_brief/2022/eb_22-24">Richmond Fed Economic Brief — Why Stablecoins Fail (Terra)</a>: Supports algorithmic defense failure narrative for UST.</li>
+          <li><a href="../ground/stablecoin-reserves-attestation.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Score the reserve path, not the ticker.</strong>
+        <p>Before integrating a payment stablecoin, fill reserve mix, custodian, attestation firm and lag, redemption eligibility, and bank-concentration hypotheses from primary documents.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Attestation quality is competing product design.</strong>
+        <p>DFS-style monthly AICPA exams and public reserve pages are becoming table stakes. Markets still reprice when reserve access fails between report dates.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

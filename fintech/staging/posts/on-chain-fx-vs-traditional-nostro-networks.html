@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Atomic swaps and stablecoin corridors can move value quickly between wallets. Most real economy FX still settles through bank correspondent networks, liquidity ">
-  <title>On-chain FX still meets nostro reality | Fintech staging</title>
+  <meta name="description" content="On-chain FX experiments can speed token matching and settlement. They do not erase nostro liquidity, corridor thinning, or last-mile cash constraints.">
+  <title>On-chain FX speed does not erase the nostro chain | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,34 +15,106 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #21 · not public</div>
-      <h1>On-chain FX still meets nostro reality</h1>
-      <p>Atomic swaps and stablecoin corridors can move value quickly between wallets. Most real economy FX still settles through bank correspondent networks, liquidity providers, and local payout rails. Bridge design is the product.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #21 · not public</div>
+      <h1>On-chain FX speed does not erase the nostro chain</h1>
+      <p>Experiments in tokenized FX can match and settle legs atomically. Cross-border money still needs liquidity in specific currencies, correspondent access, and a last mile into cash or bank balances.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Crypto-native FX demos show wallet-to-wallet conversion in seconds. Corporate and retail payouts still need local currency in a bank or cash-out network.</p>
-      <p>The hard product is the bridge: who provides liquidity, who takes FX risk, and which license covers the conversion.</p>
-      <h2>Traditional stack</h2>
-      <p>Nostro/vostro accounts, CLS for eligible currencies, and correspondent chains remain the institutional backbone for much cross-border settlement.</p>
-      <p>CPMI work on cross-border payments documents frictions that pure ledger transfers do not automatically solve: compliance, operating hours, and weak market infrastructure in some corridors.</p>
-      <h2>Where on-chain helps</h2>
-      <p>Treasury netting between crypto-native firms, certain remittance prefunding patterns, and always-on transfer between already-funded wallets.</p>
-      <p>Help is not the same as replacing the banking system for payroll taxes and supplier invoices in local currency.</p>
-      <h2>What to do</h2>
-      <p>Map each corridor as: on-chain segment + off-ramp entity + local license + liquidity provider. Missing any box means you do not have FX payments; you have a trading feature.</p>
-      <p>Price liquidity and compliance as COGS, not as surprises.</p>
+      <p>BASEL — Foreign exchange is the world’s largest financial market. The Bank for International Settlements’ Innovation Hub, describing Project Mariana, put turnover near <strong>$7.5 trillion</strong> a day. Most of that market still clears through traditional plumbing: dealers, CLS for eligible pairs, and correspondent banks that hold nostro accounts in foreign currencies so customers can pay abroad.</p>
+
+      <p>On-chain narratives promise a cleaner diagram. Two tokens swap. Settlement is atomic. Messaging and movement collapse into one ledger event. Wholesale CBDC pilots and private stablecoin venues both sell versions of that story. The diagram is real inside the experiment’s walls. Outside those walls, the nostro network and its thinning corridors still decide who can deliver spendable money in another country on Tuesday afternoon.</p>
+
+      <blockquote>On-chain FX speed does not erase nostro balances, corridor concentration, or last-mile cash constraints.</blockquote>
+
+      <h2>What Mariana actually demonstrated</h2>
+      <p><a href="https://www.bis.org/publ/othp75.htm">Project Mariana</a>, published 28 September 2023, was a collaboration among the BIS Innovation Hub, the Bank of France, the Monetary Authority of Singapore, and the Swiss National Bank. The proof of concept tested automated market-makers for cross-border trading and settlement of <em>hypothetical</em> euro, Singapore dollar, and Swiss franc wholesale CBDCs. The project borrowed ideas from decentralized finance and used a public blockchain design to test a transnational interbank FX market in wCBDC form.</p>
+
+      <p>The institutions were explicit about limits. Mariana was experimental. It did not signal that any participating central bank would issue a CBDC or endorse DeFi or a particular technology stack. Technical feasibility of AMM-style matching and settlement among simulated institutions is a useful research result. It is not a production replacement for dealer markets, CLS, or correspondent chains that move real customer funds today.</p>
+
+      <h2>What the correspondent network is doing meanwhile</h2>
+      <p>Cross-border payments still lean on correspondent banking: one bank holds deposits for another and provides payment services so respondents can reach foreign systems. The Committee on Payments and Market Infrastructures has documented a multi-year retreat in that network even as payment volumes rose. In CPMI commentaries based on SWIFT message data, active correspondent relationships and corridors declined through the 2010s — on the order of roughly <strong>20 percent</strong> fewer active relationships over a seven-year window in earlier releases, with later BIS communications citing about a <strong>29 percent</strong> decline in relationships over a decade while volume and value of cross-border payments rose sharply.</p>
+
+      <p>The <a href="https://www.bis.org/publ/qtrpdf/r_qt2003g.htm">March 2020 BIS Quarterly Review article</a> by Rice, von Peter, and Boar examined drivers of that retreat: profitability, compliance cost, and risk appetite. When correspondent chains shorten, remaining corridors become more important. Liquidity concentrates. Some countries and currencies get harder and more expensive to reach. The G20 cross-border payments roadmap, including the CPMI’s <a href="https://www.bis.org/cpmi/publ/d193.htm">building blocks report</a>, treats those frictions — cost, speed, access, transparency — as policy priorities precisely because the traditional network is strained.</p>
+
+      <p>On-chain FX between two tokens can improve the middle of a corridor when both ends already hold the right liabilities on the same platform. It does not automatically create a nostro balance in a third-country commercial bank, a licensed cash-out partner, or a retail wallet that locals actually use. Last-mile cash and local bank credit remain binding constraints.</p>
+
+      <h2>Two ledgers, one customer outcome</h2>
+      <p>Operators comparing on-chain FX to traditional chains are really comparing packages of risk:</p>
+
+      <div class="article-table-wrap" role="region" aria-label="FX path comparison" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Traditional nostro / correspondent</th>
+              <th>On-chain / wCBDC experiment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Settlement asset</td>
+              <td>Bank deposits, sometimes CB money via RTGS</td>
+              <td>Tokens / wCBDC on a ledger design</td>
+            </tr>
+            <tr>
+              <td>Speed inside the path</td>
+              <td>Hours to days across multi-hop chains</td>
+              <td>Can be near-instant if both legs are on-platform</td>
+            </tr>
+            <tr>
+              <td>Liquidity constraint</td>
+              <td>Nostro balances and credit lines per currency</td>
+              <td>Pool depth, inventory, and off-ramp liquidity</td>
+            </tr>
+            <tr>
+              <td>Access constraint</td>
+              <td>Who still maintains the corridor</td>
+              <td>Who is admitted to the platform and wallet</td>
+            </tr>
+            <tr>
+              <td>Last mile</td>
+              <td>Local bank account or cash</td>
+              <td>Still usually a bank or cash agent</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Private stablecoin FX venues already intermediate large crypto-market flows. Those markets prove that continuous automated market-making can price pairs when inventory is deep. They do not prove that a corporate treasury can pay a supplier’s domestic account in an emerging-market currency without touching a correspondent, a local PSP, or a cash-out partner. The token leg can be fast while the fiat leg remains the old problem.</p>
+
+      <p>Wholesale CBDC experiments like Mariana explore whether central bank money on programmable rails could rebuild interbank FX with atomic settlement. Even in that world, banks would still need inventory management, AML controls, and connections to retail payment systems. The nostro concept — holding balances where payments must land — reappears as token inventory, channel credit, or prefunded positions under another name.</p>
+
+      <p>Speed is real. Atomicity is real. The customer outcome is still delivery of usable funds in a specific place. Until on-chain paths own that last mile at scale, traditional correspondent networks remain the binding topology for most cross-border value. Demos change the research agenda. Corridor economics still set the bill.</p>
+
+      <p>Treasury teams comparing a blockchain FX pitch to a bank’s cross-border product should demand a corridor-level scorecard. Time to match is one cell. Time to spendable local funds is another. Pre-funding and inventory cost sit beside the advertised spread. Sanctions screening and Travel Rule data still attach wherever regulated intermediaries touch the flow. An AMM can clear a token pair in seconds while the corporate’s accounts payable still waits on a local receiving bank that never joined the pilot. Mariana’s success as a proof of concept does not rewrite that operations list. It shows what settlement could look like among admitted institutions holding wCBDC. Most commercial corridors still run on nostros, messages, and patience.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.bis.org/cpmi/publ/d173.htm">BIS CPMI — Cross-border retail payments</a>: Primary institutional diagnosis of cross-border payment frictions.</li>
-            <li><a href="https://www.bis.org/cpmi/">BIS CPMI hub</a>: Ongoing cross-border payments programme materials.</li>
-            <li><a href="https://www.swift.com/">SWIFT</a>: Messaging network context for correspondent banking workflows.</li>
-            <li><a href="https://www.cls-group.com/">CLS</a>: Institutional FX settlement system context for eligible currencies.</li>
+          <li><a href="https://www.bis.org/publ/othp75.htm">BIS — Project Mariana: cross-border exchange of wholesale CBDCs using AMMs (28 Sep 2023)</a>: Supports $7.5T/day FX framing, AMM PoC for hypothetical EUR/SGD/CHF wCBDCs, and experimental status with BdF, MAS, SNB.</li>
+          <li><a href="https://www.bis.org/about/bisih/topics/cbdc/mariana.htm">BIS Innovation Hub — Project Mariana project page</a>: Confirms partners and successful test of hypothetical wholesale CBDC trading/settlement.</li>
+          <li><a href="https://www.bis.org/cpmi/publ/d193.htm">CPMI — Enhancing cross-border payments: building blocks of a global roadmap (Jul 2020)</a>: Supports G20/CPMI framing of cross-border frictions and reform building blocks.</li>
+          <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2003g.htm">Rice, von Peter, Boar — On the global retreat of correspondent banks (BIS QR, Mar 2020)</a>: Supports analysis of correspondent banking decline drivers and consequences.</li>
+          <li><a href="https://www.bis.org/cpmi/paysysinfo/corr_bank_data/corr_bank_data_commentary_2008.htm">CPMI — Correspondent banking data commentary</a>: Supports ongoing monitoring of fewer active relationships/corridors alongside payment activity.</li>
+          <li><a href="../ground/on-chain-fx-vs-traditional-nostro-networks.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Score the full corridor, not the swap.</strong>
+        <p>Separate on-platform token speed from nostro depth, off-ramp capacity, and time-to-usable local funds. Price the slowest binding leg.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Correspondent chains thinned while volumes rose.</strong>
+        <p>CPMI/BIS data show fewer active relationships over the 2010s even as cross-border payment activity grew — liquidity and access concentrate in remaining corridors.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

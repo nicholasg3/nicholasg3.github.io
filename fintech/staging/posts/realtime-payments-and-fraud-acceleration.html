@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Instant settlement is a user benefit and a fraud acceleration. When push payments clear in seconds, recall windows shrink. Product design must put controls befo">
+  <meta name="description" content="Instant settlement is a user benefit and a fraud acceleration. APP scams exploit authorized push payments when recall windows shrink to zero.">
   <title>Realtime payments compress fraud response time to zero | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
@@ -15,34 +15,106 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #19 · not public</div>
+      <div class="issue-kicker">Staging · enriched draft · queue #19 · not public</div>
       <h1>Realtime payments compress fraud response time to zero</h1>
-      <p>Instant settlement is a user benefit and a fraud acceleration. When push payments clear in seconds, recall windows shrink. Product design must put controls before the send button, not after the loss.</p>
+      <p>Instant settlement is a user benefit and a fraud acceleration. When push payments clear in seconds, recall windows shrink. Controls have to sit before the send button, not after the loss.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Batch and card systems often built delay and chargeback paths into the product. Realtime account-to-account rails optimize for speed and finality.</p>
-      <p>Fraudsters optimize for the same speed. Social-engineering scams that convince a user to authorize a push payment are especially hard to reverse.</p>
-      <h2>What operators must redesign</h2>
-      <p>Velocity limits, beneficiary confirmation, cooling-off for first-time payees, step-up authentication, and mule-account detection — in-flow, not only post-hoc SAR filing.</p>
-      <p>Customer support scripts matter as much as ML models. People under scam pressure need friction that is understandable.</p>
-      <h2>Policy and rail context</h2>
-      <p>FedNow materials and other RTP operator docs describe participation, settlement, and service features. They do not eliminate the need for bank-level fraud programs.</p>
-      <p>Compare consumer protection regimes carefully: card chargebacks are not a universal template for A2A push payments.</p>
-      <h2>What to do</h2>
-      <p>Before launching realtime send, write the fraud budget as a first-class P&amp;L line and the control list as a launch gate.</p>
-      <p>Measure time-to-freeze and recovery rate, not only payment success rate.</p>
+      <p>KANSAS CITY — Batch systems and card networks built delay into the product. A wire could be stopped. A card charge could be disputed. A ACH debit could reverse. Those frictions were not marketed as fraud controls. They functioned as ones. Realtime account-to-account rails optimize for the opposite: 24x7 availability, immediate funds, and settlement that is hard or impossible to unwind.</p>
+
+      <p>Fraudsters optimize for the same properties. The design problem is not only stolen credentials. It is social engineering that convinces a customer to authorize a payment to a mule account. Once the push is authorized and final, the money is often gone before the first support ticket opens.</p>
+
+      <blockquote>Realtime rails remove delay that used to function as a silent fraud brake. Authorized push payment scams are the residual risk.</blockquote>
+
+      <h2>APP scams on fast rails</h2>
+      <p>In a November 2024 <a href="https://www.kansascityfed.org/research/payments-system-research-briefings/combating-authorized-push-payment-scams-in-fast-payment-systems/">Payments System Research Briefing</a>, Federal Reserve Bank of Kansas City economist Ying Lei Toh defines authorized push payment (APP) scams as cases where fraudsters manipulate individuals into authorizing their institution to push funds to accounts the fraudsters control. Fast payments offer around-the-clock service and instant or near-instant availability. For most systems, interbank settlement is irrevocable once funds land. That package is attractive to legitimate users. It is also attractive to organized scam operations that set up mule accounts, execute deception, and launder proceeds in minutes.</p>
+
+      <p>US consumer protection law, the briefing notes, generally protects consumers when a payment is <em>unauthorized</em>. APP scams are often treated as authorized. The customer said yes. Recovery is then a commercial goodwill or investigation problem, not a statutory chargeback right. Card networks’ dispute rails are not a universal template for account-to-account push payments.</p>
+
+      <p>The scale is already visible on US person-to-person rails. The Kansas City Fed briefing cites a July 2024 U.S. Senate Permanent Subcommittee on Investigations staff report: in 2023, customers at the three largest banks participating in Zelle disputed more than <strong>$206 million</strong> worth of Zelle transactions as scams, and scam victims bore more than <strong>80 percent</strong> of the losses. That is one network and one year. It is enough to show who pays when authorization is the fraud vector.</p>
+
+      <h2>The UK forced the liability redesign</h2>
+      <p>The United Kingdom treated APP loss allocation as market structure, not only consumer education. The Payment Systems Regulator required reimbursement for Faster Payments APP scams. In policy statement <a href="https://www.psr.org.uk/publications/policy-statements/ps247-faster-payments-app-scams-reimbursement-requirement-confirming-the-maximum-level-of-reimbursement/">PS24/7</a>, the PSR confirmed that from <strong>7 October 2024</strong>, payment service providers must reimburse victims of Faster Payments APP scams up to <strong>£85,000</strong> per claim. At that cap, the PSR estimated <strong>99.8 percent</strong> of Faster Payments APP scams by volume and <strong>90 percent</strong> by value would be fully reimbursed when in scope. Sending and receiving PSPs broadly share the cost. Gross negligence and first-party fraud carve-outs remain, but the default flipped: the system absorbs most retail APP losses so firms invest in prevention.</p>
+
+      <p>That is a different equilibrium from “educate the customer and hope.” Confirmation of Payee, velocity limits, mule detection, and warning screens become cost-of-doing-business when reimbursement is mandatory. Firms that only measured payment success rates discover a new P&amp;L line for fraud reimbursement and a new launch gate for controls.</p>
+
+      <h2>FedNow and the US control problem</h2>
+      <p>The Federal Reserve’s <a href="https://www.frbservices.org/financial-services/fednow">FedNow Service</a> is a 24x7x365 instant payments service with real-time gross settlement among participants. Speed and finality are design goals. Fraud management remains primarily a participant responsibility, with the network adding tools over time. Federal Reserve Financial Services has described work on network intelligence and exploration of payee name verification to help combat APP fraud. Those tools matter. They do not convert US law into a UK-style mandatory reimbursement regime overnight.</p>
+
+      <p>Operators launching realtime send therefore face a product choice set that batch ACH never forced into the same second:</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Controls before finality" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Control</th>
+              <th>When it fires</th>
+              <th>What it buys</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Payee name verification / CoP</td>
+              <td>Before send</td>
+              <td>Catches many impersonation mismatches</td>
+            </tr>
+            <tr>
+              <td>First-time payee cooling-off</td>
+              <td>Before send</td>
+              <td>Trades speed for a short fraud window</td>
+            </tr>
+            <tr>
+              <td>Velocity and amount limits</td>
+              <td>Before send</td>
+              <td>Caps loss given scam success</td>
+            </tr>
+            <tr>
+              <td>Mule-account detection (receive side)</td>
+              <td>Onboarding and receive</td>
+              <td>Shrinks cash-out inventory for scammers</td>
+            </tr>
+            <tr>
+              <td>Post-send recall</td>
+              <td>After finality</td>
+              <td>Often fails; secondary at best</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The Kansas City Fed briefing maps the scam life cycle into set-up, execution, and laundering. Banks can harden identity checks and mule education at set-up. Sending institutions can warn and verify at execution. Receiving institutions and operators can freeze and share intelligence at laundering. FPS operators see network-wide flows that single banks do not. Cost-benefit still applies: every control adds latency or operational cost. The alternative is a silent subsidy from scam victims, as the Zelle loss split showed.</p>
+
+      <p>Realtime payments will keep expanding because cash-flow speed is real value. The fraud budget is part of that product. Success rate without time-to-freeze, recovery rate, and APP loss share is a partial scoreboard. Delay used to hide that fact. Instant rails publish it.</p>
+
+      <p>Product teams that launch “send money in seconds” without a published control list are not finished. Confirmation of payee, first-time payee delays, amount caps, and mule-account monitoring all trade a little speed for a smaller loss tail. The UK reimbursement rule prices that trade into PSP economics. US institutions that still leave most authorized-push losses with customers face a different political and franchise risk: adoption can stall if households decide instant rails are where savings vanish. Either path forces the same engineering conclusion. Finality without pre-send friction is a fraud product as much as a payments product.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.frbservices.org/financial-services/fednow">Federal Reserve Financial Services — FedNow</a>: US realtime payments service primary.</li>
-            <li><a href="https://www.federalreserve.gov/paymentsystems/fednow_about.htm">Federal Reserve — About FedNow</a>: Policy/about page for the service.</li>
-            <li><a href="https://www.bis.org/cpmi/publ/d207.htm">BIS CPMI — Interlinking payment systems / cross-border (related CPMI work)</a>: Institutional payments infrastructure context; confirm exact paper when citing.</li>
-            <li><a href="https://www.consumerfinance.gov/">CFPB</a>: US consumer protection context for payment scams and disclosures.</li>
+          <li><a href="https://www.kansascityfed.org/research/payments-system-research-briefings/combating-authorized-push-payment-scams-in-fast-payment-systems/">Federal Reserve Bank of Kansas City — Combating Authorized Push Payment Scams in Fast Payment Systems (15 Nov 2024)</a>: Defines APP scams, irrevocability, limited US liability protection for authorized scams, and cites Zelle $206M / &gt;80% victim loss figures from Senate PSI 2024.</li>
+          <li><a href="https://www.hsgac.senate.gov/wp-content/uploads/2024.7.23-PSI-Majority-Staff-Report-on-Zelle.pdf">U.S. Senate PSI — Majority Staff Report on Zelle (23 Jul 2024)</a>: Primary for the 2023 Zelle scam dispute and loss-bearing figures cited in the KC Fed briefing.</li>
+          <li><a href="https://www.psr.org.uk/publications/policy-statements/ps247-faster-payments-app-scams-reimbursement-requirement-confirming-the-maximum-level-of-reimbursement/">UK PSR — PS24/7 Faster Payments APP scams reimbursement (Oct 2024)</a>: Supports 7 Oct 2024 start, £85,000 maximum, and 99.8% volume / 90% value coverage estimates.</li>
+          <li><a href="https://www.frbservices.org/financial-services/fednow">Federal Reserve Financial Services — FedNow Service</a>: Primary institutional page for the US instant payments service design.</li>
+          <li><a href="https://www.frbservices.org/news/press-releases/042326-fednow-network-intelligence-api-empowers-participants-payments-confidence">FRB Services — FedNow network intelligence API (23 Apr 2026)</a>: Supports Fed exploration of network fraud tools and payee name verification for APP fraud.</li>
+          <li><a href="../ground/realtime-payments-and-fraud-acceleration.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Budget fraud before go-live on instant send.</strong>
+        <p>Treat APP loss, time-to-freeze, and recovery rate as launch gates. Do not score only payment success rate.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Liability design is moving ahead of US rails.</strong>
+        <p>The UK’s £85,000 FPS reimbursement rule prices prevention into PSP P&amp;Ls. US APP victims still often bear authorized-push losses.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

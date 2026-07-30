@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Zero retail trading commissions changed market structure and incentive conflicts. The fee did not disappear; it moved.">
-  <title>Zero commissions relocated the bill, not deleted it | Fintech staging</title>
+  <meta name="description" content="Zero-commission brokerage is a revenue-stack redesign with payment for order flow and policy risk. Free is not the same as no cost.">
+  <title>Zero commissions redesigned the brokerage stack | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,33 +15,102 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #28 · not public</div>
-      <h1>Zero commissions relocated the bill, not deleted it</h1>
-      <p>Zero retail trading commissions changed market structure and incentive conflicts. The fee did not disappear; it moved.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #28 · not public</div>
+      <h1>Zero commissions redesigned the brokerage stack</h1>
+      <p>Retail apps that charge nothing per equity trade still monetize order flow, balance, and attachment products. That redesign carries conflict and policy risk.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Zero retail commissions did not make trading free. Revenue moved to payment for order flow, securities lending, interest on cash, and premium services.</p>
-      <p>Crypto and neobroker products repeating the zero-fee story should expect the same structural questions.</p>
-      <h2>How to ground it</h2>
-      <p>SEC market-structure materials and broker disclosures are the primary places to ground PFOF and best-execution debates.</p>
-      <p>Do not treat a marketing fee of $0 as proof of aligned incentives.</p>
-      <h2>Operator consequences</h2>
-      <p>When rates fall or regulation changes a revenue leg, platforms reprice users. Product strategy needs multiple revenue pillars.</p>
-      <h2>What to do</h2>
-      <p>In diligence, rebuild the revenue stack line by line. Ask which line is policy-sensitive.</p>
-      <p>If you copy zero-commission UX into new asset classes, copy the conflict-disclosure discipline too.</p>
+      <p>NEW YORK — “Commission-free” became the default label on US retail brokerage apps within a few competitive seasons. Ticket charges that once funded branch networks and call centers fell toward zero for online equity trades. The customer interface got simpler. The revenue stack got more complex. Order flow was sold. Cash was swept. Margin, options, securities lending, and later crypto rails filled the contribution margin that commissions left behind.</p>
+
+      <p>The US Securities and Exchange Commission staff put that structure on the public record after the January 2021 meme-stock episode. The <a href="https://www.sec.gov/files/staff-report-equity-options-market-struction-conditions-early-2021.pdf">Staff Report on Equity and Options Market Structure Conditions in Early 2021</a> (14 October 2021) is not a rule. It is a staff examination of GameStop-era trading against the market structure that individual investors actually use. Its introduction states a distinction operators still under-teach: the difference between “free” and “no commissions.”</p>
+
+      <blockquote>Zero commission is a price of zero on one line item. It is not a proof that the trade has no cost or that the broker has no conflicting incentive.</blockquote>
+
+      <h2>What the staff report fixed in view</h2>
+      <p>SEC staff described how individual investors place orders with retail broker-dealers, how those orders are routed to trading centers — exchanges, alternative trading systems, or off-exchange market makers — and how a small set of off-exchange market makers trade profitably with retail order flow. Those market makers negotiate for the right to that flow. Payment for order flow (PFOF) is the cash expression of that bargain. Staff noted that PFOF creates incentives with regard to the end customer whose order flow is sold, and that falling or eliminated commissions may change how often some investors trade, especially when digital engagement practices sit on top of the app.</p>
+
+      <p>The report’s market-structure section places those facts next to best-execution duties and to FINRA’s concurrent warnings. FINRA Regulatory Notice 21-23, cited by staff, addresses firms that provide or receive payment for order flow and internalization and the conflicts those arrangements can create. The policy question is not only whether a $0 commission line exists. It is whether routing decisions that fund the free app remain consistent with obtaining best execution for the customer.</p>
+
+      <h2>The 2019 cascade was a business-model event</h2>
+      <p>Staff recount that many brokers eliminated trading commissions and lowered or eliminated account minimums. Robinhood Financial popularized zero-commission stock trading for a broad retail audience. Competitors followed with their own $0 online equity commission moves. The report’s footnotes point to the press trail: Interactive Brokers’ IBKR Lite, TD Ameritrade, E*Trade, Ally Invest, Charles Schwab, Fidelity, and others announced commission cuts in the late-2010s competitive wave. That cascade was not charity. It was a recognition that retail order flow and adjacent balances were valuable enough to subsidize the ticket price to zero.</p>
+
+      <p>Once the ticket is free, growth metrics shift. Accounts, funded accounts, daily average revenue trades, and attachment of options or crypto become the scoreboard. Unit economics move into net interest on cash, securities lending, PFOF, and premium products. Crypto trading inside the same app is a later chapter of the same redesign: free or low-friction UX funded by spreads, order-flow-like wholesaling, or other balance-sheet yields. The equities report does not regulate crypto venues. It does document the retail-broker incentive pattern that crypto-attached apps inherit.</p>
+
+      <h2>Why meme-stock stress mattered for market structure</h2>
+      <p>GameStop and peer names in January 2021 stressed clearing, capital, and temporary trading restrictions at some retail brokers. Staff analyze short interest, options activity, exchange-traded fund effects, and the role of off-exchange market makers. For this memo the useful extract is simpler. A market structure built on high retail participation, mobile engagement, and zero commissions can move prices and operational risk quickly. Free tickets increase the option value of frequent trading. They do not remove National Securities Clearing Corporation margin calls or the need for broker capital when volatility spikes.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Revenue stack after zero commissions" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Stack element</th>
+              <th>What it replaces or adds</th>
+              <th>Policy / conflict surface</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Payment for order flow</td>
+              <td>Ticket commission income</td>
+              <td>Routing vs best execution; PFOF transparency</td>
+            </tr>
+            <tr>
+              <td>Net interest / cash sweeps</td>
+              <td>Idle customer cash yield</td>
+              <td>Rate disclosure; fiduciary-like expectations</td>
+            </tr>
+            <tr>
+              <td>Securities lending</td>
+              <td>Yield on fully paid shares</td>
+              <td>Customer consent and revenue share</td>
+            </tr>
+            <tr>
+              <td>Options and complex products</td>
+              <td>Higher revenue per engaged user</td>
+              <td>Suitability, gamification, losses in stress</td>
+            </tr>
+            <tr>
+              <td>Crypto / other attachments</td>
+              <td>New vertical monetization</td>
+              <td>Separate venue rules; same free-app UX habits</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Policy risk is part of the product roadmap</h2>
+      <p>Because PFOF and zero commissions are structural, they attract structural rulemaking risk. Staff reports, enforcement on best execution, and later Commission proposals on market structure all sit in the same file. Operators that treat $0 commissions as a permanent natural law underprice the chance that order-routing economics change by rule. Operators that treat PFOF as pure free money underprice the customer-communication cost when “free trading” is re-explained as “your order was sold.”</p>
+
+      <p>Product and compliance teams that ship the free ticket in new markets often copy the US app chrome without copying the US disclosure stack. Order-routing reports, PFOF descriptions, and best-execution reviews are not optional chrome in the US. In markets that never had ticket commissions, the same two-sided economics can arrive as “spread only” crypto or CFD apps with even thinner public explanation of who buys the flow. The equities staff report remains a useful primary because it names the conflict in plain language on a regulated stock market, not only on a crypto venue marketing page.</p>
+
+      <p>The durable fintech lesson is accounting, not nostalgia for five-dollar tickets. Retail brokerage after zero commissions is a two-sided platform. One side is the individual investor who sees free trades. The other side is the wholesaler, lender, or balance-sheet user who pays for access to flow or balances. SEC staff told the public to mind the difference between free and no commissions. That sentence is still the right opening line for any product review that ships a zero-dollar equity ticket — and for any crypto or tokenized-asset app that copies the same growth motion.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.sec.gov/">SEC</a>: US market structure and broker-dealer primary.</li>
-            <li><a href="https://www.sec.gov/marketstructure">SEC Market Structure</a>: Market structure data/materials hub.</li>
-            <li><a href="https://www.finra.org/">FINRA</a>: Broker-dealer conduct and disclosure context.</li>
-            <li><a href="https://www.bis.org/">BIS</a>: Cross-border market structure secondary.</li>
+          <li><a href="https://www.sec.gov/files/staff-report-equity-options-market-struction-conditions-early-2021.pdf">SEC staff — Equity and Options Market Structure Conditions in Early 2021 (14 Oct 2021)</a>: Primary for zero commissions, PFOF incentives, retail order segmentation, and GME-era structure; “free” vs “no commissions.”</li>
+          <li><a href="https://www.sec.gov/marketstructure">SEC — Market structure resource page</a>: Institutional context for ongoing equity market structure work beyond the 2021 staff report.</li>
+          <li>FINRA Regulatory Notice 21-23 (cited in staff report): PFOF and internalization conflicts for member firms.</li>
+          <li>Broker $0 commission press releases footnoted in the staff report (Schwab, Fidelity, TD Ameritrade, E*Trade, Interactive Brokers, Ally, Webull, among others): Document the 2019 industry cascade.</li>
+          <li><a href="../ground/market-structure-after-zero-commissions-equities-c.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Not investment advice. Staff reports are not Commission rules.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Which line items fund the $0 ticket?</strong>
+        <p>If PFOF, net interest, and attachments are not explicit in the unit-economics pack, the free trade is an unexamined cross-subsidy.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Zero commission is market structure, not a promotion.</strong>
+        <p>SEC staff tied eliminated commissions to PFOF incentives and retail flow segmentation after the 2021 meme-stock stress.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

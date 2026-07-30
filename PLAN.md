@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~01:40 SGT |
-| **Last commit focus** | Admit thin-outline debt; demote 59/60 “enriched” fakes; ship VERTICAL-ENRICH bar + 1 real rewrite |
+| **Last updated** | 2026-07-31 ~02:30 SGT |
+| **Last commit focus** | Fleet full rewrite: 30/30 fintech + 30/30 us-asean-china grounded drafts |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -68,11 +68,10 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 ### P0 — multi-vertical enrichment (current priority)
 
-1. **Quality over volume.** Follow `docs/VERTICAL-ENRICH.md` (copies retweet `enrich.md` + blog-review ground). One real memo > thirty outlines.
-2. **Honest counts (2026-07-31 night):** fintech 30 `thin-outline`; us-asean-china 29 `thin-outline` + **1** true `enriched-draft` (`english-language-founder-media-vs-local-language-c` after rewrite).
-3. Next: pick Nick-priority seeds; write `ground/<slug>.md` first; only then full essay; Source notes must pass “supports which sentence?”
-4. Grow canonical sources from harvest **after** enrich dossiers exist.
-5. Do **not** re-label thin outlines as enriched; do **not** promote without Nick.
+1. **Fleet rewrite done (2026-07-31):** fintech **30/30** + us-asean-china **30/30** `enriched-draft` with `ground/*.md`, side cards, body sources, ~900–1100 body words (mechanical bar).
+2. **Nick review next:** spot-check quality; flag pieces that still feel thin or hub-linked; free-style polish only on flagged slugs.
+3. Do **not** promote without Nick; seed-tweet chrome stays staging-only.
+4. Grow curator accounts / continuous harvest after review.
 
 ### P0b — AI process integrity (deferred by Nick)
 
@@ -223,6 +222,21 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 ---
 
 ## Session log (append-only)
+
+### 2026-07-31 (night+2) — fleet full rewrite (8 subagents)
+
+**Done:** Parallel rewrite of all remaining thin-outline stubs under `docs/VERTICAL-ENRICH.md` + model piece (English founder media).
+
+| Vertical | Ground briefs | HTML posts | Status |
+|----------|---------------|------------|--------|
+| Fintech | 30 | 30 | `enriched-draft` |
+| US–ASEAN–China | 30 | 30 | `enriched-draft` |
+
+**Process:** 8 Grok subagents × ~7–8 slugs; each wrote `ground/{slug}.md` + full HTML (AP/Grok third person, blockquote, H2s, table, Reader Decision + Market Signal, body-integrated primaries). No invented companies per brief.
+
+**Mechanical bar (all pass):** body ≥700 words (actual ~900–1100), side cards, source notes, ground file.
+
+**Still true:** Nick spot-check before any promote; some primaries may need browser verification (bot blocks); AI blog staging still deferred.
 
 ### 2026-07-31 (night+1) — quality correction (Nick review)
 

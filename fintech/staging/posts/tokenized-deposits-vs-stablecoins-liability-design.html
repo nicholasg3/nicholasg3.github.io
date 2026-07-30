@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Both can move on shared ledgers. One is typically a bank deposit claim. The other is usually an issuer liability backed by reserves under a non-bank perimeter. ">
-  <title>Tokenized deposits and stablecoins are different liabilities | Fintech staging</title>
+  <meta name="description" content="Tokenized deposits and stablecoins can share ledger software. Liability design — bank deposit claim versus bearer instrument on reserves — is what separates them.">
+  <title>Liability design separates tokenized deposits from stablecoins | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,34 +15,102 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #22 · not public</div>
-      <h1>Tokenized deposits and stablecoins are different liabilities</h1>
-      <p>Both can move on shared ledgers. One is typically a bank deposit claim. The other is usually an issuer liability backed by reserves under a non-bank perimeter. Confusing the UX for the balance sheet is how bad products get built.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #22 · not public</div>
+      <h1>Liability design separates tokenized deposits from stablecoins</h1>
+      <p>Both can be tokens on a programmable ledger. One is usually a bank deposit claim that settles toward central bank money. The other is often a bearer instrument backed by a reserve portfolio. Chain choice is secondary.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Tokenization can put different claims on similar rails. The legal claim is the product: who owes you, under what insolvency regime, and how redemption works.</p>
-      <p>Calling everything &quot;on-chain dollars&quot; erases the distinction supervisors care about.</p>
-      <h2>Deposit vs reserve-backed token</h2>
-      <p>A tokenized deposit remains a bank deposit if the structure preserves that claim — with deposit insurance rules and bank resolution regimes applying as designed.</p>
-      <p>A fiat stablecoin is usually a claim on an issuer or trust structure holding reserves. Run dynamics and supervisory tools differ.</p>
-      <h2>Why builders blur them</h2>
-      <p>Shared wallets and 24/7 transfer UX make the instruments feel identical to users. That is exactly when disclosure and naming matter.</p>
-      <p>Treasury and risk teams should not share models across instruments without adjusting for claim type.</p>
-      <h2>What to do</h2>
-      <p>In architecture docs, label instruments by liability type first, chain second.</p>
-      <p>In customer UX, do not imply deposit insurance on non-deposits. That error is both product and regulatory risk.</p>
+      <p>BASEL — Product sheets blur the categories. “On-chain money.” “Tokenized cash.” “Digital dollars.” The marketing stack converges on speed, programmability, and 24x7 transfer. The balance-sheet stack does not. A tokenized deposit and a payment stablecoin can look similar in a wallet UI and still sit in different places in the hierarchy of money.</p>
+
+      <p>That difference is not aesthetic. It decides who the holder has a claim on, what happens in a run, whether par exchange with other money is automatic, and which supervisors own the failure. Liability design is the product. The ledger is the messaging layer.</p>
+
+      <blockquote>Liability design — not chain choice — separates tokenized deposits from stablecoins.</blockquote>
+
+      <h2>What Garratt and Shin made precise</h2>
+      <p>In April 2023, Rodney Garratt and Hyun Song Shin published BIS Bulletin No. 73, <a href="https://www.bis.org/publ/bisbull73.htm"><em>Stablecoins versus tokenised deposits: implications for the singleness of money</em></a>. Their key takeaways are blunt. Private tokenised monies that circulate as bearer instruments, like many stablecoins, may trade away from par relative to each other and to bank money, violating the “singleness of money” — the idea that different forms of the unit of account exchange one-for-one in ordinary payments. Tokenised deposits that do not circulate as free-floating bearer instruments, but instead settle in central bank money through the banking system, are more conducive to that singleness.</p>
+
+      <p>In both models, the authors note, private tokens can represent liabilities of an issuer with a claim to redeem at par in the sovereign unit of account. The transfer process differs. In the stablecoin-like model, the token moves as a digital bearer instrument; possession and transfer mechanics do more of the work. In the tokenised-deposit model, transfers update claims on regulated institutions and ultimately settle in central bank money the way commercial bank money already does. Programmability can attach to either design. Singleness does not automatically follow from a shared smart-contract language.</p>
+
+      <h2>Why the distinction survives the next product cycle</h2>
+      <p>The Bank for International Settlements returned to the theme in its 2025 Annual Economic Report chapter on the next-generation monetary system. In <a href="https://www.bis.org/publ/arpdf/ar2025e3.htm">Chapter III</a>, the BIS argues that stablecoins offer some promise for tokenisation use cases but fall short as the mainstay of the monetary system when tested against three attributes: singleness, elasticity, and integrity. Programmability, access, and pseudonymity features do not rescue a design that cannot reliably stay at par, expand with credit demand, or meet integrity standards expected of core money.</p>
+
+      <p>Tokenized deposits, when they remain deposits of supervised banks, inherit a different stack: prudential capital and liquidity rules, deposit insurance up to statutory limits in many jurisdictions, and access — for the bank — to central bank facilities that stabilize commercial bank money. The holder’s claim is on the bank. The bank’s settlement asset toward other banks is still central bank money. Stablecoin holders typically have a claim on an issuer (or a reserve structure) that is not the same as an insured deposit at a commercial bank, even when reserves sit in bank accounts or Treasuries. That is narrow-banking territory in economic function: money-like liabilities backed by safe assets, outside full credit-creating bank balance sheets.</p>
+
+      <p>The Federal Reserve Bank of New York’s staff report <a href="https://www.newyorkfed.org/research/staff_reports/sr1179.html">“Stablecoins vs. Tokenized Deposits: The Narrow Banking Debate Revisited”</a> (2026) models exactly that tradeoff: stablecoins backed by safe assets versus banks issuing deposits (traditional and tokenized) against mixed portfolios. Policy choice among allowing only tokenized deposits, only stablecoins, or both depends on regulatory cost and risk-shifting incentives. The paper’s existence is itself evidence that official-sector research treats the split as monetary architecture, not branding.</p>
+
+      <h2>A practical comparison operators actually use</h2>
+      <div class="article-table-wrap" role="region" aria-label="Liability comparison" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Tokenized deposit (typical design)</th>
+              <th>Payment stablecoin (typical design)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Who owes the holder?</td>
+              <td>Supervised bank</td>
+              <td>Issuer / reserve arrangement</td>
+            </tr>
+            <tr>
+              <td>What is the core asset story?</td>
+              <td>Bank balance sheet; credit creation possible</td>
+              <td>Segregated reserves (cash, T-bills, etc.)</td>
+            </tr>
+            <tr>
+              <td>How does transfer preserve singleness?</td>
+              <td>Account update + settlement in CB money</td>
+              <td>Bearer transfer; par is a market + redemption promise</td>
+            </tr>
+            <tr>
+              <td>Run dynamics</td>
+              <td>Bank run tools, deposit insurance, LOLR (for the bank)</td>
+              <td>Reserve quality, redemption gates, issuer solvency</td>
+            </tr>
+            <tr>
+              <td>What the chain decides</td>
+              <td>Messaging, programmability, operating hours</td>
+              <td>Same — not the legal claim</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Design variants matter. The Financial Stability Board’s October 2024 note on tokenisation risks warns that if a “tokenised deposit” is structured as a transferable bearer-like claim that does not update the issuer’s books the way a deposit transfer should, it can inherit stablecoin-like singleness problems. Labeling is not liability. Supervisors will look through the token to the claim.</p>
+
+      <p>Product teams that treat “tokenized deposit versus stablecoin” as a pure technology choice will mis-price capital, compliance, and redemption risk. Teams that start from the liability and work outward — who is the obligor, what settles the transfer, what happens at 3 a.m. on a stress day — will pick a chain later, if at all. The ledger can be shared. The money hierarchy does not collapse because the interface is the same.</p>
+
+      <p>For banks, tokenized deposits are a way to offer programmability without ceding the deposit franchise to non-bank issuers. For stablecoin issuers, the product is portable digital cash with reserve transparency as the quality signal. Both can settle trades, pay invoices, or move collateral on a chain. Only one sits inside the two-tier banking system by default. Supervisors writing rules for “cryptoasset exposures” and “stablecoin arrangements” keep rediscovering that fork. So should credit committees and product boards. If two instruments share a wallet screen but not a liability, they do not share a risk model.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2112b.htm">BIS — Stablecoins: risks, potential and regulation</a>: Stablecoin liability and run framing.</li>
-            <li><a href="https://www.bis.org/publ/othp88.htm">BIS — Blueprints / tokenisation related publications hub entry</a>: Use BIS tokenisation papers for deposit token discussions; confirm exact title on bis.org.</li>
-            <li><a href="https://www.federalreserve.gov/publications/files/money-and-payments-20220120.pdf">Federal Reserve — Money and Payments (Jan 2022)</a>: Public money vs private digital money framing.</li>
-            <li><a href="https://www.dfs.ny.gov/industry_guidance/industry_letters/il20220608_issuance_stablecoins">NYDFS stablecoin guidance</a>: Issuer reserve/redemption expectations for regulated USD stablecoins.</li>
+          <li><a href="https://www.bis.org/publ/bisbull73.htm">Garratt &amp; Shin — Stablecoins versus tokenised deposits (BIS Bulletin 73, 11 Apr 2023)</a>: Supports bearer-instrument vs CB-money settlement distinction and singleness-of-money takeaways.</li>
+          <li><a href="https://www.bis.org/publ/bisbull73.pdf">BIS Bulletin 73 (PDF)</a>: Full text for transfer-process and liability framing used in the essay.</li>
+          <li><a href="https://www.bis.org/publ/arpdf/ar2025e3.htm">BIS Annual Economic Report 2025 — Chapter III</a>: Supports stablecoins’ weak performance on singleness, elasticity, and integrity as mainstay money.</li>
+          <li><a href="https://www.newyorkfed.org/research/staff_reports/sr1179.html">NY Fed Staff Report 1179 — Stablecoins vs. Tokenized Deposits (2026)</a>: Supports official-sector modeling of the narrow-banking tradeoff between the two designs.</li>
+          <li><a href="https://www.fsb.org/uploads/P221024-2.pdf">FSB — The Financial Stability Implications of Tokenisation (22 Oct 2024)</a>: Supports caution that transferable tokenised deposits can resemble bearer instruments depending on design.</li>
+          <li><a href="../ground/tokenized-deposits-vs-stablecoins-liability-design.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Start from the claim, not the token.</strong>
+        <p>Name the obligor, the redemption asset, the settlement asset between institutions, and the run tools. Choose technology after those answers are fixed.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Singleness is the policy test.</strong>
+        <p>BIS work treats stablecoins that float as bearer instruments as a threat to one-for-one exchange in the unit of account; deposit-style designs that settle in CB money fare better on that test.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

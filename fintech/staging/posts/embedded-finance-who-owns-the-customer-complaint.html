@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="When credit, accounts, or insurance sit inside a non-financial app, customers still experience one brand. Supervisors and courts care which legal entity failed.">
+  <meta name="description" content="Embedded finance unifies the brand on the screen and splits the legal duty underneath. When middleware ledgers and bank books diverge, the complaint has many owners and no owner.">
   <title>In embedded finance, the complaint has many owners | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
@@ -15,34 +15,99 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #17 · not public</div>
+      <div class="issue-kicker">Staging · enriched draft · queue #17 · not public</div>
       <h1>In embedded finance, the complaint has many owners</h1>
-      <p>When credit, accounts, or insurance sit inside a non-financial app, customers still experience one brand. Supervisors and courts care which legal entity failed. Complaint ownership is the product architecture.</p>
+      <p>When credit, accounts, or cards sit inside a non-financial app, customers still experience one brand. Supervisors and courts care which legal entity failed. Complaint ownership is the product architecture.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Embedded finance puts regulated products inside software surfaces that do not look like banks. That improves distribution. It also multiplies the number of firms between a user problem and a fix.</p>
-      <p>If your partnership diagram cannot answer who the customer calls — and who must answer regulators — you have a brand, not a durable product.</p>
-      <h2>Where duties live</h2>
-      <p>Bank partners, program managers, lenders, insurers, and the platform each hold pieces of KYC, underwriting, servicing, and marketing rules.</p>
-      <p>Consumer protection agencies care about unfair practices and error resolution regardless of which logo was largest on the screen.</p>
-      <h2>Contract design is UX</h2>
-      <p>Service-level agreements for dispute timelines, data access for investigations, and wind-down plans when a partner exits are user experience under another name.</p>
-      <p>Opaque waterfall complaint handling produces social media escalations and supervisory attention.</p>
-      <h2>What to do</h2>
-      <p>Write a complaint RACI before launch: first response owner, decision owner, regulator contact owner, and public comms owner.</p>
-      <p>Test the path with a real ticket, not a slide. Time it. Fix the gaps that only appear in operations.</p>
+      <p>NEW YORK — A consumer opens one app, sees one balance, and expects one place to call when the money freezes. The stack underneath is rarely that simple. A nonbank platform markets the product. Middleware may route deposits and keep a sub-ledger. A chartered bank holds funds for benefit of customers. Each firm has a different regulator, a different contract, and a different view of whose ticket it is.</p>
+
+      <p>Embedded finance sells that split as progress. Distribution improves when checkout, payroll, or a consumer app can offer banking surfaces without building a bank. The same split is the failure mode. When records diverge, support scripts point sideways. The brand on the screen is not the entity that can move the money.</p>
+
+      <blockquote>Complaint routing is the real design problem in embedded finance: UX unity without a single accountable owner is a product, not a durable system.</blockquote>
+
+      <h2>What Synapse made concrete</h2>
+      <p>Synapse Financial Technologies sat in the middle of that stack. According to the <a href="https://www.consumerfinance.gov/enforcement/actions/synapse-financial-technologies-inc/">Consumer Financial Protection Bureau’s enforcement action page</a>, Synapse provided technology and software that bridged nonbank fintech platforms offering banking services to consumers and traditional partner banks. On 22 April 2024, Synapse filed for chapter 11 bankruptcy protection.</p>
+
+      <p>The Bureau alleged that Synapse violated the Consumer Financial Protection Act by failing to maintain adequate records of where consumers’ funds were and by failing to keep those records matched to partner banks’ books. Partner banks determined that the total they held for consumers was less than the total reflected in Synapse’s records — a shortfall the Bureau put between <strong>$60 million and $90 million</strong>. Consumers had no access to funds for weeks or months while banks reconciled. Many did not receive the full amount of their recorded balance. On 21 August 2025 the Bureau filed a complaint and a proposed stipulated final judgment; the court entered the order on 12 September 2025, including injunctive relief and a $1 civil money penalty that opened a path to civil-penalty-fund redress.</p>
+
+      <p>That sequence is not a branding dispute. It is a ledger dispute with human consequences. The customer experience was one app. The legal path ran through a bankrupt middleware firm, several partner banks, bankruptcy trustees, and federal enforcement. Embedded finance had delivered a single interface. It had not delivered a single owner of the complaint.</p>
+
+      <h2>What supervisors already said about duty</h2>
+      <p>US bank supervisors did not invent third-party risk after Synapse. On 6 June 2023 the OCC, Federal Reserve Board, and FDIC issued <a href="https://www.govinfo.gov/content/pkg/FR-2023-06-09/pdf/2023-12340.pdf">interagency guidance on risk management for third-party relationships</a>. Effective contracts, the guidance says, typically specify whether the banking organization or the third party is responsible for responding to customer complaints or inquiries. If the fintech handles complaints, contracts should require timely response and enough usable data for the bank to analyze volume, nature, and trends. If the bank handles them, the fintech must notify the bank promptly. Either way, both sides are expected to monitor trends and remediation.</p>
+
+      <p>On 25 July 2024 the same three agencies issued a <a href="https://www.fdic.gov/news/financial-institution-letters/2024/agencies-issue-statement-bank-arrangements-third-parties">joint statement on bank arrangements with third parties to deliver deposit products</a>. The statement does not create new legal duties, the agencies said. It restates a hard line: a bank’s use of third parties to perform activities does not diminish the bank’s responsibility to comply with applicable laws and regulations. The same package included a request for information on bank-fintech arrangements spanning deposits, payments, and lending.</p>
+
+      <p>Those documents are the supervisory answer to the product pitch. The screen can be white-labeled. Liability for consumer protection, deposit recordkeeping, and complaint handling still attaches inside the regulated perimeter. Middleware failure does not convert a deposit arrangement into a pure software problem.</p>
+
+      <h2>Why the brand still loses first</h2>
+      <p>Customers escalate where they live. They open the app. They post the brand name. They file a CFPB complaint naming the company on the card. Banks and program managers may be correct that a contract allocated day-to-day support to another party. Correct allocation does not stop the first public blast radius from hitting the face brand — or stop examiners from treating complaint quality as a signal about the bank’s third-party program.</p>
+
+      <p>The operational gaps show up in ordinary tickets long before bankruptcy. A dispute needs transaction data the platform has and the bank does not, or bank core data the platform cannot query in real time. A fraud claim needs authority to freeze a card the issuer controls. A wind-down needs a sequence for moving balances when a partner exits. Those are complaint-path designs. They are also partnership designs. Teams that ship embedded products without a written path for first response, decision rights, regulator contact, and public communications discover the missing RACI only when volume spikes.</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Complaint ownership map" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Failure mode</th>
+              <th>What the customer sees</th>
+              <th>Who can actually clear it</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ledger mismatch</td>
+              <td>Balance frozen or wrong</td>
+              <td>Bank + middleware reconciling books</td>
+            </tr>
+            <tr>
+              <td>Card authorization error</td>
+              <td>Declines at checkout</td>
+              <td>Issuer processor + program manager</td>
+            </tr>
+            <tr>
+              <td>Marketing claim vs contract</td>
+              <td>“FDIC insured” confusion</td>
+              <td>Bank disclosures + platform copy owners</td>
+            </tr>
+            <tr>
+              <td>Partner exit / insolvency</td>
+              <td>App still branded, money stuck</td>
+              <td>Bank wind-down, bankruptcy court, agencies</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Embedded finance will keep growing because distribution is valuable. The durable products are the ones that treat complaint ownership as launch criteria. The brand on the glass can stay unified. The contracts, data feeds, and escalation trees still have to name who answers, who decides, who talks to supervisors, and who can move the money when the middleware is gone.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.consumerfinance.gov/">CFPB</a>: US consumer financial protection primary; complaint and rulemaking context.</li>
-            <li><a href="https://www.federalreserve.gov/supervisionreg.htm">Federal Reserve — Supervision &amp; Regulation</a>: Bank partner supervisory context for bank-fintech arrangements.</li>
-            <li><a href="https://www.occ.gov/">OCC</a>: National bank charter supervisory primary relevant to bank partnership models.</li>
-            <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2109c.htm">BIS fintech/big tech credit analyses</a>: Institutional secondary on platform finance structures.</li>
+          <li><a href="https://www.consumerfinance.gov/enforcement/actions/synapse-financial-technologies-inc/">CFPB — Synapse Financial Technologies, Inc. (enforcement action page)</a>: Establishes Synapse’s middleware role, 22 Apr 2024 chapter 11 filing, alleged CFPA recordkeeping failures, $60–90M shortfall, consumer access losses, and Aug–Sep 2025 judgment path.</li>
+          <li><a href="https://files.consumerfinance.gov/f/documents/cfpb_synapse-financial-technologies_complaint_2025-08.pdf">CFPB — Adversary Proceeding Complaint (Aug 2025)</a>: Primary complaint document for the Bureau’s allegations against Synapse.</li>
+          <li><a href="https://www.govinfo.gov/content/pkg/FR-2023-06-09/pdf/2023-12340.pdf">Interagency Guidance on Third-Party Relationships (Federal Register, 9 Jun 2023)</a>: Supports the claim that effective contracts allocate complaint response and require usable complaint data sharing.</li>
+          <li><a href="https://www.fdic.gov/news/financial-institution-letters/2024/agencies-issue-statement-bank-arrangements-third-parties">FDIC FIL-45-2024 — Agencies Issue Statement on Bank Arrangements with Third Parties (25 Jul 2024)</a>: Supports the claim that third-party use does not diminish bank responsibility; points to joint statement and RFI.</li>
+          <li><a href="https://www.fdic.gov/joint-statement-third-party-deposit-products.pdf">Joint Statement on Banks’ Arrangements with Third Parties to Deliver Bank Deposit Products and Services</a>: Primary joint-agency statement on deposit-delivery arrangements and risk-management examples.</li>
+          <li><a href="../ground/embedded-finance-who-owns-the-customer-complaint.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Who owns the ticket when the app is down?</strong>
+        <p>Before launch, name first response, decision rights, regulator contact, and public comms. Test one real ticket end to end across platform, middleware, and bank.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Supervisors still attach duty to the bank.</strong>
+        <p>2023 third-party guidance and the 2024 deposit-arrangement statement treat complaint handling and legal compliance as bank responsibilities even when fintechs run the screen.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

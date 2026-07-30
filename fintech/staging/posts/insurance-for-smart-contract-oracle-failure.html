@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Marketing &amp;quot;insured smart contracts&amp;quot; fails when policy wording excludes the actual failure mode. Map scenarios to triggers before you sell comfort.">
-  <title>Oracle failure is not automatically an insured event | Fintech staging</title>
+  <meta name="description" content="Cover for smart-contract and oracle failure only works when the trigger is explicit. Most DeFi policies are imperfect maps of economic loss.">
+  <title>Oracle cover needs an explicit trigger | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
 <body>
@@ -15,33 +15,102 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #27 · not public</div>
-      <h1>Oracle failure is not automatically an insured event</h1>
-      <p>Marketing &amp;quot;insured smart contracts&amp;quot; fails when policy wording excludes the actual failure mode. Map scenarios to triggers before you sell comfort.</p>
+      <div class="issue-kicker">Staging · enriched draft · queue #27 · not public</div>
+      <h1>Oracle cover needs an explicit trigger</h1>
+      <p>Smart-contract and oracle insurance only pays when the loss matches the wording. Economic pain without a defined event is basis risk, not a covered claim.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Smart-contract and oracle failures create loss events that look technical and feel financial. Insurance language often does not map cleanly onto those failure modes.</p>
-      <p>If your DeFi or tokenized product assumes someone else pays when the oracle breaks, read the exclusions.</p>
-      <h2>How to ground it</h2>
-      <p>Traditional cyber and crime policies may exclude blockchain consensus failures, economic design bugs, or oracle manipulation depending on wording.</p>
-      <p>Specialized cover exists in niches; capacity, claims history, and basis risk remain hard.</p>
-      <h2>Operator consequences</h2>
-      <p>Risk transfer is not risk removal. Controls on oracle design, circuit breakers, and pause authority still matter more than a PDF certificate.</p>
-      <h2>What to do</h2>
-      <p>Map loss scenarios to policy triggers with counsel and brokers before you market &quot;insured.&quot;</p>
-      <p>Prefer engineering mitigation for high-frequency failure modes; use insurance for residual tail risk if available.</p>
+      <p>LONDON — Decentralized finance protocols depend on code paths and on data paths. The code path is the smart contract. The data path is often an oracle that feeds prices, rates, or event outcomes into automated markets. When either path fails, users look for “insurance.” What they usually buy is a cover product with a finite list of loss events — not a promise that every underwater position will be made whole.</p>
+
+      <p>That gap is ordinary insurance design under a new label. Insurable products need a trigger, a measure of loss, exclusions, and a claims process. On-chain cover markets made those pieces explicit because mutual members vote or assess claims in public. Traditional specialty policies for digital assets do the same work behind broker forms. In both channels, oracle failure is only covered when the contract says so in words a claims assessor can apply.</p>
+
+      <blockquote>Most protocol cover is an imperfect map of DeFi risk. The map is useful only if the buyer knows which cells are blank.</blockquote>
+
+      <h2>What leading protocol cover actually lists</h2>
+      <p><a href="https://docs.nexusmutual.io/overview/cover-products/">Nexus Mutual’s documentation of cover products</a> describes Protocol Cover as protection against a defined range of loss events for assets deposited in a protocol. The listed classes include smart contract hacks and exploits, <strong>oracle manipulation or failure</strong>, severe liquidation failures, and governance takeovers. Product marketing pages on the mutual’s site make the same enumeration for protocol risk: exploits, oracle failures, liquidation failures, and related attack classes.</p>
+
+      <p>That wording matters more than the brand name of the cover. A liquidation cascade driven by a correctly reported market crash is a different event from a liquidation cascade driven by a manipulated or stale oracle feed. Cover that includes “oracle failure” and excludes pure market moves is drawing exactly that line. OpenCover’s product notes on Nexus cover, consistent with mutual materials, state that losses from market price movements are generally outside cover unless caused by oracle failure or manipulation as defined in the wording.</p>
+
+      <p>Nexus Mutual materials also report cumulative scale: more than <strong>$18.5 million</strong> in claims paid since 2019 and multi-billion dollars of historical cover capacity cited in mutual reports such as the <a href="https://nexusmutual.io/reports/crypto_insurance_2026_q1.pdf">State of Crypto Insurance</a> pack. Those figures establish that a claims market exists and has paid. They are not a rating of capital adequacy for any single future event. Buyers still need the trigger table for the specific product purchased.</p>
+
+      <h2>Discretionary mutuals versus regulated insurance</h2>
+      <p>The same State of Crypto Insurance materials draw a distinction operators should keep in risk committees. “Crypto insurance” as a market phrase covers both traditional regulated insurance underwritten by licensed carriers and discretionary mutuals that operate on-chain and are not regulated as insurers in the same way. Claims assessment, capital, and legal enforceability differ. A board that thinks it bought an admitted policy may have bought a mutual membership with discretionary claims governance.</p>
+
+      <p>That is not an argument against mutual cover. It is a product description. Explicit triggers and published claims history are strengths of the mutual model when they exist. The weakness is the same as any parametric or defined-event product: economic loss that feels like “the protocol failed me” may fall outside the listed event classes. Governance votes that re-parameterize a system without a “malicious takeover” fact pattern can be argued either way until the wording and claims precedents settle.</p>
+
+      <h2>Where oracle basis risk hides</h2>
+      <div class="article-table-wrap" role="region" aria-label="Oracle cover basis risk" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Loss story</th>
+              <th>Often covered if wording includes…</th>
+              <th>Often outside cover</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Oracle reports wrong price; liquidations fire</td>
+              <td>Oracle failure / manipulation as defined</td>
+              <td>Vague “protocol didn’t work”</td>
+            </tr>
+            <tr>
+              <td>Correct price crash; cascading liquidations</td>
+              <td>Sometimes severe liquidation failure if defined</td>
+              <td>Pure market move exclusions</td>
+            </tr>
+            <tr>
+              <td>Smart contract bug drains pool</td>
+              <td>Smart contract exploit / hack</td>
+              <td>Economic design that worked as coded but lost money</td>
+            </tr>
+            <tr>
+              <td>Governance passes malicious parameter change</td>
+              <td>Governance attack / takeover definitions</td>
+              <td>Ordinary governance users dislike after the fact</td>
+            </tr>
+            <tr>
+              <td>Custodian or CEX freeze</td>
+              <td>Separate custody / CeFi products</td>
+              <td>Protocol cover for on-chain vaults only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Oracles are a concentrated operational dependency. Lending markets, perpetual exchanges, and structured vaults that read a single feed inherit that feed’s failure modes. Cover that names oracle failure is an admission that the dependency is material. Cover that is silent on oracles leaves a hole the size of the protocol’s price path. Neither product removes the need for oracle design: multiple sources, freshness bounds, circuit breakers, and monitoring. Insurance is residual risk transfer. It is not a substitute for the control.</p>
+
+      <h2>How serious buyers read the form</h2>
+      <p>Treasury and risk teams that treat on-chain cover as real risk transfer do boring work. They map each protocol position to a cover product ID. They extract the event list and the exclusions. They check whether oracle failure requires a public post-mortem, a price deviation threshold, or a claims assessor vote. They compare the cover period to the planned holding period. They ask whether partial losses and gas costs are in or out. They record that discretionary mutual claims are not court-enforceable insurance in every jurisdiction.</p>
+
+      <p>Protocol teams on the other side of the market use cover availability as a distribution signal. Listings that include oracle and governance classes tell integrators the mutual has underwritten a broader threat model. That is useful marketing. It is still not a guarantee that every user loss will map to a paid claim. The fintech lesson is older than crypto. Insurance for operational failure works when the trigger is explicit. Most policies — mutual or admitted — are imperfect maps. The operators who survive oracle incidents are the ones who read the map before the price feed dies.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2112b.htm">BIS stablecoins/crypto risk materials</a>: Institutional crypto market risk framing.</li>
-            <li><a href="https://www.iaisweb.org/">IAIS</a>: International insurance supervisory association hub.</li>
-            <li><a href="https://www.nist.gov/cyberframework">NIST Cybersecurity Framework</a>: Control vocabulary useful when underwriting tech failure.</li>
-            <li><a href="https://www.sec.gov/">SEC</a>: When products touch securities/markets, disclosure of tech risk matters.</li>
+          <li><a href="https://docs.nexusmutual.io/overview/cover-products/">Nexus Mutual docs — Cover products</a>: Protocol Cover event classes include smart contract exploits, oracle manipulation/failure, liquidation failure, governance takeovers.</li>
+          <li><a href="https://nexusmutual.io/crypto-insurance">Nexus Mutual — Crypto insurance / protocol risk pages</a>: Product marketing that lists oracle failures among covered protocol risks; claims-paid scale cited by the mutual.</li>
+          <li><a href="https://nexusmutual.io/reports/crypto_insurance_2026_q1.pdf">Nexus Mutual — State of Crypto Insurance (report PDF)</a>: Distinguishes regulated insurance vs discretionary mutuals; aggregate claims and cover history figures attributed to the mutual.</li>
+          <li><a href="https://opencover.com/nexus-mutual/">OpenCover — Nexus Mutual cover overview</a>: Secondary product description noting market-move exclusions unless oracle failure/manipulation applies.</li>
+          <li><a href="../ground/insurance-for-smart-contract-oracle-failure.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Not insurance advice; cover wording controls.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Does the cover wording name oracle failure?</strong>
+        <p>If the position dies on a bad feed and the form only lists “smart contract bug,” the loss may be basis risk, not a claim.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>Protocol cover markets price named event classes.</strong>
+        <p>Mutual products that list oracle manipulation and failure make the data-path dependency underwritable — and make silence on oracles a visible hole.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>

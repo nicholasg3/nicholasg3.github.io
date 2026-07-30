@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
-  <meta name="description" content="Checkout conversion hides how few firms sit between your revenue and the card networks. Acquirer concentration is a continuity and pricing risk.">
+  <meta name="description" content="Merchant acquiring sits in a thin set of processors, networks, and clouds. Concentration is operational risk for digital commerce, not only a pricing story.">
   <title>Merchant acquiring concentration is operational risk | Fintech staging</title>
   <link rel="stylesheet" href="/blog/styles.css">
 </head>
@@ -15,34 +15,100 @@
   </header>
   <main class="article-main">
     <header class="article-header">
-      <div class="issue-kicker">Staging · thin outline · needs ground · queue #20 · not public</div>
+      <div class="issue-kicker">Staging · enriched draft · queue #20 · not public</div>
       <h1>Merchant acquiring concentration is operational risk</h1>
-      <p>Checkout conversion hides how few firms sit between your revenue and the card networks. Acquirer concentration is a continuity and pricing risk.</p>
+      <p>Digital commerce clears through a short list of acquirers, card networks, and cloud hosts. When one path fails, checkout fails in correlated waves. Concentration is a first-class operational risk, not only a fee debate.</p>
     </header>
+
     <article class="article-body">
-      <h2>The claim</h2>
-      <p>Merchant acquiring looks like commodity plumbing until a processor outage, pricing change, or compliance freeze hits revenue in hours.</p>
-      <p>Concentration in a few acquirers, gateways, and card networks is a business continuity risk, not only a vendor line item.</p>
-      <h2>How to ground it</h2>
-      <p>Card network rules and acquirer contracts define reserves, rolling reserves, and termination rights. Read those before you celebrate conversion rates.</p>
-      <p>Public outage postmortems and network status pages are better evidence than sales decks about five-nines.</p>
-      <h2>Operator consequences</h2>
-      <p>Single-acquirer startups can be margin-efficient and fragile. Diversification costs integration work and can save the company.</p>
-      <p>High-chargeback categories face sudden de-risking by partners — plan product mix with that in mind.</p>
-      <h2>What to do</h2>
-      <p>Maintain dual-rail checkout for material volume. Monitor acquirer concentration as a board risk metric.</p>
-      <p>Negotiate data portability and termination assistance before you need them.</p>
+      <p>ATLANTA — A storefront can look diversified. Multiple SKUs. Multiple countries. Multiple marketing channels. At the payment step, many of those businesses still depend on one acquirer integration, one gateway configuration, and one cloud region behind the processor. The brand owns the customer. The acquirer owns the pipe.</p>
+
+      <p>Merchant acquiring is the business of enabling a merchant to accept card and other electronic payments: onboarding, authorization routing, settlement, chargebacks, and risk controls. Scale favors firms that already sit between millions of merchants and the card networks. Rankings publish that concentration every year. Outages and single-path designs make it operational.</p>
+
+      <blockquote>Acquirer and network concentration is not only market power. It is correlated downtime at the cash register.</blockquote>
+
+      <h2>Who sits at the top of the pipe</h2>
+      <p>The Nilson Report’s merchant-acquiring rankings are the industry’s standard league table. In a <a href="https://investors.fiserv.com/news-releases/news-release-details/fiserv-named-top-us-merchant-acquirer-nilson-report">13 May 2026 investor release</a>, Fiserv said the Nilson Report named it No. 1 in merchant acquiring in the United States for the 2025 data cycle, first in both total purchase volume and number of transactions. Industry coverage of the same Nilson tables repeatedly places a short list — Fiserv, J.P. Morgan Payments, Worldpay, Global Payments, Elavon, Bank of America — at the top of US acquiring by volume. Exact percentage shares sit behind Nilson’s paywall. The ordinal picture is public enough: a handful of firms process a large share of card purchase volume.</p>
+
+      <p>Concentration also stacks in layers. Visa and Mastercard dominate general-purpose network acceptance in many markets. Large processors sit under those networks. Software platforms and gateways sit under the processors. Cloud providers host the software. A merchant that “uses Stripe” or “uses Worldpay” still depends on network rules, issuer decisions, and infrastructure those brands do not fully control. Diversifying marketing agencies does not diversify settlement.</p>
+
+      <h2>Single path as a design choice</h2>
+      <p>Payment providers themselves describe single-provider dependence as a failure mode. Stripe’s public guidance on <a href="https://stripe.com/resources/more/payment-failover">payment failover</a> states that relying on one gateway, acquiring bank, or region means any issue in that path can stop payments entirely. The same note treats automatic rerouting to a backup processor or acquiring path as the operational response once failure is confirmed. That is not marketing against competitors. It is an admission that high uptime on one stack is not the same as resilience across stacks.</p>
+
+      <p>Merchants learn the difference during incidents. Authorization rates fall. Carts abandon. Support queues fill with “payment failed” tickets that are not fraud and not inventory. Finance teams scramble to reconcile partial captures. The economic loss is not only the processor’s SLA credit. It is the gross margin that never cleared while the pipe was dark.</p>
+
+      <h2>What concentration changes in risk reviews</h2>
+      <p>Classic merchant risk work focuses on chargebacks, MCC mix, and rolling reserves. Concentration risk asks different questions. How many acquirers can the treasury team actually settle through in seventy-two hours? Is the gateway abstraction real, or is mid-transaction failover untested? Which cloud region hosts the primary processor’s API endpoints that the storefront calls? What share of e-commerce volume sits behind one network token vault?</p>
+
+      <div class="article-table-wrap" role="region" aria-label="Concentration layers" tabindex="0">
+        <table class="article-table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Concentrated actors (illustrative)</th>
+              <th>Failure symptom</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Card networks</td>
+              <td>Visa, Mastercard (plus regional schemes)</td>
+              <td>Wide authorization or settlement disruption</td>
+            </tr>
+            <tr>
+              <td>Merchant acquirers / processors</td>
+              <td>Fiserv, JPM Payments, Worldpay, Global Payments, others</td>
+              <td>Merchant-specific or portfolio outages</td>
+            </tr>
+            <tr>
+              <td>Gateways / platforms</td>
+              <td>Large PSPs and commerce platforms</td>
+              <td>Checkout API errors across many brands</td>
+            </tr>
+            <tr>
+              <td>Cloud infrastructure</td>
+              <td>Major public clouds hosting payment stacks</td>
+              <td>Correlated multi-merchant downtime</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Regulators and overseers of financial market infrastructures have long treated concentration and operational resilience as first-class themes in payment system oversight — the CPMI-IOSCO <a href="https://www.bis.org/cpmi/info_pfmi.htm">Principles for Financial Market Infrastructures</a> frame operational reliability and interdependent risks for systemically important infrastructures. Merchant acquiring is not always supervised as an FMI, but the merchant’s cash register still inherits the topology. A digital retailer with thin margins can tolerate fee competition. It cannot tolerate a single untested path on Black Friday.</p>
+
+      <p>M&amp;A keeps pushing the same direction. Large processors buy other large processors to gain volume, technology, and merchant portfolios. Each deal can improve product breadth. It can also shorten the list of independent settlement paths. Boards that only track interchange and take rate miss the resilience ledger: how many independent ways money can still clear when one logo is offline.</p>
+
+      <p>Acquiring concentration will not unwind because rankings are published. Scale is efficient. The operational response is deliberate multi-homing where volume justifies it, tested failover, and risk reports that treat processor outage scenarios as seriously as chargeback spikes. The customer never sees the acquirer name. The merchant still lives or dies by whether that name can authorize.</p>
+
+      <p>Enterprise merchants already negotiate multi-acquirer setups for geographic coverage and rate shopping. Mid-market and long-tail commerce often cannot. They inherit platform defaults: one PSP, one dashboard, one path to Visa and Mastercard. Platform concentration then multiplies acquirer concentration. When a major commerce stack and a major processor share the same cloud dependency, a regional infrastructure event can look like a payments crisis even if card networks themselves are healthy. Resilience reviews that stop at “our processor’s status page is green” miss that stack. The practical test is simple. On a peak sales day, can a second path clear enough volume to keep the business alive if the first path fails for four hours?</p>
+
+      <p>Fee benchmarking still matters. Interchange, scheme fees, and acquirer markup decide unit economics. They do not answer continuity. Boards that only review basis points will miss a more expensive failure mode: zero authorization rate across an entire channel. Concentration risk belongs next to cyber and liquidity on the operational risk register for any firm whose revenue clears through cards.</p>
+
       <section class="source-notes" aria-labelledby="src">
         <h2 id="src">Source notes</h2>
         <ul>
-            <li><a href="https://www.federalreserve.gov/paymentsystems.htm">Federal Reserve Payment Systems</a>: US payments infrastructure context.</li>
-            <li><a href="https://www.bis.org/cpmi/">BIS CPMI</a>: Payment system institutional standards hub.</li>
-            <li><a href="https://usa.visa.com/">Visa</a>: Network primary materials for merchant/acquirer rule context (commercial).</li>
-            <li><a href="https://www.mastercard.us/">Mastercard</a>: Network primary materials for merchant/acquirer rule context (commercial).</li>
+          <li><a href="https://investors.fiserv.com/news-releases/news-release-details/fiserv-named-top-us-merchant-acquirer-nilson-report">Fiserv — Named Top U.S. Merchant Acquirer by Nilson Report (13 May 2026)</a>: Supports Fiserv as No. 1 US acquirer by Nilson on purchase volume and transactions for the 2025 data cycle.</li>
+          <li><a href="https://nilsonreport.com/merchant-acquiring-data-insights/">Nilson Report — Merchant Acquiring Data, Rankings &amp; Industry Insights</a>: Industry primary for acquiring ranking tables (paywalled detail); establishes Nilson as the ranking source named in IR.</li>
+          <li><a href="https://stripe.com/resources/more/payment-failover">Stripe — Payment failover</a>: Supports the claim that a single gateway/acquirer/region path is a single point of failure and that failover reroutes to backup paths.</li>
+          <li><a href="https://www.bis.org/cpmi/info_pfmi.htm">BIS CPMI — Principles for Financial Market Infrastructures</a>: Institutional framework for operational reliability and risk in payment infrastructures (oversight lens, not a merchant-share statistic).</li>
+          <li><a href="../ground/merchant-acquiring-concentration-risk.md">Ground brief</a>: Research log and retrieval gaps.</li>
         </ul>
-        <p><em>THIN OUTLINE — not enriched. Sources may be ornamental hubs that do not support body claims. Re-run ground + enrich before promote. Not legal or investment advice.</em></p>
+        <p><em>Staging draft. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
       </section>
     </article>
+
+    <aside class="article-side" aria-label="Issue notes">
+      <section class="side-card">
+        <span class="section-label">Reader Decision</span>
+        <strong>Count independent settlement paths.</strong>
+        <p>Ask how many acquirer or gateway paths can take volume in 72 hours, and whether failover has been tested under load — not only whether the primary SLA looks strong.</p>
+      </section>
+      <section class="side-card">
+        <span class="section-label">Market Signal</span>
+        <strong>US acquiring remains a short list.</strong>
+        <p>Nilson’s league tables and processor IR keep the same few names at the top. Fee competition can stay sharp while operational concentration stays high.</p>
+      </section>
+    </aside>
   </main>
   <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
 </body>
