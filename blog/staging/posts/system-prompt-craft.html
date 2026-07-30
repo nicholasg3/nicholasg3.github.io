@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="System-prompt craft (authoring practice, not leak cosplay)">
+    <title>System prompts are product design | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #16 · not live</div>
+        <h1>System prompts are product design</h1>
+        <p>System-prompt craft (authoring practice, not leak cosplay)</p>
+        <p class="muted"><a href="https://x.com/lefthanddraft/status/2064420135042224247" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>System prompts matter as authoring craft, not as stolen magic. Behavior also lives in post-training, tools, and the environment around the model. Treat prompt structure as product design: versioned, owned, tested, and reviewed. Do not build culture around leak theater.</p>
+        <p>Leaks and screenshots can still be useful. They show what vendors are trying to instruct. They do not prove that a clause fully governs behavior, and they are a poor substitute for learning how to write instructions for your own systems.</p>
+        <h2>What the prompt actually is</h2>
+        <p>A system prompt is a policy surface written in prose. It sets defaults for tone, refusal, tool use, uncertainty, and how the model should treat the user. That makes it part product, part governance, part UX. When a vendor encodes judgment about “reasonable disagreement” or similar edge cases, the prose is doing institutional work, not decoration.</p>
+        <p>The same is true inside a company. Your agent’s system instructions encode who you think the user is, what success looks like, and which failures are unforgivable. If those instructions only exist in a chat history or a founder’s head, you do not have a product. You have a habit.</p>
+        <h2>Leak culture vs authoring culture</h2>
+        <p>Leak culture treats the frontier vendor prompt as treasure. The game becomes extraction, comparison, and status. Authoring culture treats prompts as artifacts you can improve: structure, specificity, examples, stop conditions, escalation paths, and tests for regressions after model changes.</p>
+        <p>Over-indexing on leaked text also misplaces the moat. Many sharp behaviors come from training and tools, not from a secret paragraph. Copying someone else’s system prompt into a weaker stack is cargo cult. Writing a clear, testable instruction layer for your stack is craft.</p>
+        <h2>What to do</h2>
+        <p>Document prompts as versioned artifacts with owners. Keep them next to the code and configs that load them. Review changes the way you review API contracts. Add a small eval set that fails when a rewrite softens a critical refusal or drops a required process step.</p>
+        <p>Prefer structure over mystique: role and scope, hard constraints, tool policy, output contracts, uncertainty policy, and handoff rules. Prefer shorter prompts that the team can understand over long secret scrolls. When you study public or leaked examples, steal structure and risk-handling patterns, not cosplay identity.</p>
+        <h2>Closing</h2>
+        <p>System prompts are product design written in natural language. Treat them like product: design them, own them, test them. Leave the archaeology of other people’s secrets for curiosity, not for your operating system of work.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>system-prompt-craft</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

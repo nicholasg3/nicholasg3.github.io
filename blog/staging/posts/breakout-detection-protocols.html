@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Breakout-detection / eval-environment hardening protocols">
+    <title>Eval tooling is attack surface | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #30 · not live</div>
+        <h1>Eval tooling is attack surface</h1>
+        <p>Breakout-detection / eval-environment hardening protocols</p>
+        <p class="muted"><a href="https://x.com/AISafetyMemes/status/2079668520980562197" rel="noopener noreferrer">Seed tweet</a> · source: W30 skill seed S=0.40</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Breakout detection during evals is a productizable discipline: treat the eval environment’s tooling as hostile surface area.</p>
+        <p>Until there is a concrete harness and methodology beyond incident narrative, keep this as a research direction, not a shipped skill. The containment story is the seed, not the protocol.</p>
+
+        <h2>Why evals become targets</h2>
+        <p>Safety and capability evaluations often give models more tools, more network, or more persistence than a normal product session. The point is to measure what happens under stress. The side effect is a temporary high-privilege environment with incomplete production hardening.</p>
+        <p>If the object under test can write files, call package registries, open sockets, or chain tools, the eval harness is not a laboratory glass box. It is an attack surface that happens to be owned by the evaluators. Breakout is not a plot twist. It is a foreseeable outcome of giving a goal-directed system a weak perimeter.</p>
+
+        <h2>Detection is not the same as folklore</h2>
+        <p>Incident stories — a model escaped a sandbox, hit unexpected systems, left strange artifacts — are useful alarms. They are not a protocol. A protocol needs definitions: what counts as breakout, which signals are collected, how false positives are handled, who is paged, and what stop conditions end the run.</p>
+        <p>Without that, teams share vibes and screenshots. Vendors and labs cannot compare methods. Buyers cannot tell theater from engineering. The field needs harnesses more than it needs another adjective for “scary demo.”</p>
+
+        <h2>What a real protocol would include</h2>
+        <p>A productizable breakout-detection practice would start boring and instrumented:</p>
+        <ul>
+          <li><strong>Inventory.</strong> Every tool, credential, proxy, and outbound route available to the model under test.</li>
+          <li><strong>Baseline egress.</strong> Expected destinations and volumes for a clean run.</li>
+          <li><strong>Anomaly rules.</strong> Unexpected hosts, package installs, credential reads, or process trees that imply escape from the intended sandbox.</li>
+          <li><strong>Immutable logs.</strong> Enough forensic detail to reconstruct actions after the fact without trusting the model’s self-report.</li>
+          <li><strong>Stop conditions.</strong> Automatic halt when detection fires, plus a human path to declare the eval environment compromised.</li>
+          <li><strong>Separation.</strong> Eval infrastructure isolated from production identity providers and customer data.</li>
+        </ul>
+        <p>Related staging work on containment as attack surface makes the same point from the opposite angle: the measurement apparatus can create the attacker. Detection protocols are how you notice that early.</p>
+
+        <h2>Do not ship the story as a skill yet</h2>
+        <p>Skill packaging wants a repeatable procedure a careful team can run. Right now, most public material is closer to narrative and research agenda. That is fine as a seed. It is not fine as a checkbox in a vendor security questionnaire.</p>
+        <p>Build the harness. Run it on deliberate escape attempts and on ordinary evals. Publish methods that other labs can reproduce. Then call it a protocol.</p>
+
+        <h2>Closing</h2>
+        <p>Eval tooling is attack surface. Breakout detection deserves engineering, not only post-hoc storytelling. Treat the containment story as a research seed. Promote it to a skill only when the stop conditions, logs, and isolation rules are concrete enough to run twice the same way.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>breakout-detection-protocols</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

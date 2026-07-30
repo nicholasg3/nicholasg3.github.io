@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Expertise migrates from the prompt to the environment (harness/folder config)">
+    <title>Performance is moving into the harness | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #1 · not live</div>
+        <h1>Performance is moving into the harness</h1>
+        <p>Expertise migrates from the prompt to the environment (harness/folder config)</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Performance with coding agents is migrating from clever chat into durable environment design. The people who keep winning are not the ones with the best one-off prompt. They are the ones who put the work into folders, skills, configs, and harnesses that the agent reuses every session.</p>
+        <p>The viral version of this story is often fake: a screenshot, a magic system prompt, a claim that one person is ten times faster because of vibes. The underlying shift is not fake. Tools now load project instructions, local skills, and structured context before the human types a word. Expertise that used to live only in a senior engineer’s head is being written into files the agent can read.</p>
+
+        <h2>What is actually moving</h2>
+        <p>Distributed cognition is an old idea: tools hold part of the thinking. What is new is how much of the loop can be automated once the tool is articulate. A good project instruction tree or agent skill library is not decoration. It is codified judgment about how this repo tests, ships, and refuses bad work.</p>
+        <p>That judgment used to show up as hallway advice, code review comments, and the quiet habits of people who had burned themselves once. Now it can live as default context: where secrets never go, which commands are safe, how to run the subset of tests that actually matter, when to stop and ask a human. The agent does not invent that judgment. It inherits it from whoever wrote the environment.</p>
+
+        <h2>Prompts fade; harnesses accumulate</h2>
+        <p>A prompt is disposable by design. You type it, the session ends, and the next person starts from zero unless something was saved. A harness accumulates. Folder conventions, CLAUDE.md or AGENTS.md style files, skill modules, lint gates, and scripted stop rules compound across sessions and across people.</p>
+        <p>That is why two developers can open the same model and look like different species of talent. One is chatting into an empty room. The other is working inside a room someone already furnished with maps, tools, and house rules. The model is the same. The room is not.</p>
+
+        <h2>The measurement problem</h2>
+        <p>When someone looks fast with agents, are you seeing model skill, human craft, or environment authorship? If you promote the person and ignore the folder, you may be promoting a setup that does not travel with them. If you hire for “AI-native talent” without looking at the harness they depend on, you will misread where the performance came from.</p>
+        <p>The same confusion shows up in demos. A polished walkthrough often includes a pre-loaded context pack that never appears in the video. Viewers copy the chat style and miss the infrastructure. Teams then underinvest in the boring layer that actually moved the needle.</p>
+
+        <h2>What a good environment holds</h2>
+        <p>A useful harness is not a wall of prose. It is decision-dense. It tells the agent how this codebase prefers to be changed, how to verify a change, and what “done” means for common tasks. It encodes refusal rules for irreversible actions. It points at the small set of commands that are trustworthy in CI and locally.</p>
+        <p>It also holds taste: naming, layering, when to write a test versus when to ask, how aggressive to be about refactors. Taste is hard to teach in a single chat. It is easy to re-load if it lives next to the code. The best environments feel less like documentation and more like a senior engineer who never leaves the repo.</p>
+
+        <h2>Ownership and portability</h2>
+        <p>Once performance lives in the harness, ownership becomes an organizational question. Who reviews the instruction layer when it drifts? Who decides that a skill is wrong for this team? What happens when the person who built the environment leaves with half of it still only in their head?</p>
+        <p>Version the harness like product code. Review it in pull requests. Prefer checked-in conventions over private chat lore. If a workflow only works on one laptop because of undocumented local state, it is not yet an environment in the useful sense. It is a private advantage dressed up as team capability.</p>
+
+        <h2>A practical test</h2>
+        <p>Hand the same model to two people on a clean repo and on your fully instrumented repo. If the gap collapses on the clean repo, you were mostly measuring environment, not raw agent skill. Run the reverse test too: give a strong engineer an empty folder and a weak engineer your best harness. Watch which variables actually move latency, rework, and defect rate.</p>
+        <p>Do not treat the result as a morality play. Some people are better at building environments, and that is a real skill. Just name it. Do not call it pure model mastery when it is mostly systems design for agents.</p>
+
+        <h2>Closing</h2>
+        <p>Treat environment design as a first-class artifact. Version it. Review it. Ask who owns the harness when the person leaves. Compare agent success with and without the project’s instruction layer before you rewrite your hiring story around “AI-native talent.” The prompt is still useful. The durable advantage is the room the model walks into every time it starts.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>expertise-to-environment</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

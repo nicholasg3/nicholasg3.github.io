@@ -76,3 +76,12 @@ Source docs (workspace / strategic-publishing):
 - [ ] Nick sign-off
 - [ ] Remove `noindex` + Draft catalogue label
 - [ ] Live on Pages without “Draft” kicker
+
+
+## Article staging (password-gated)
+
+- **URL:** https://nicholasg3.github.io/blog/staging/
+- **Password:** `nick-staging`
+- **Contents:** top-30 queue ideas as private draft essays under `blog/staging/posts/`
+- **Manifest:** `blog/staging/manifest.json`
+- Not in public catalogue. Promote only after enrichment + Nick sign-off.

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Analogy-as-authority (LLMs “implement HNSW”)">
+    <title>Analogy is not architecture | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #26 · not live</div>
+        <h1>Analogy is not architecture</h1>
+        <p>Analogy-as-authority (LLMs “implement HNSW”)</p>
+        <p class="muted"><a href="https://x.com/eric_alcaide/status/2070180569195901080" rel="noopener noreferrer">Seed tweet</a> · source: W26 epistemics thread</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Technical analogies can smuggle authority without measurement. “LLMs implement HNSW inside” sounds precise and may be untested storytelling.</p>
+        <p>Demand the measurement that would falsify the analogy. If none exists, file it as metaphor, not architecture.</p>
+
+        <h2>How analogy steals status</h2>
+        <p>Good analogies help people orient. Bad ones borrow the reputation of a real algorithm, data structure, or scientific field and attach it to a system that has not been shown to share the mechanism. The sentence structure does the work: name a respected technique, claim the model “is really doing” that technique, imply that further debate is for people who do not understand the depth.</p>
+        <p>HNSW — hierarchical navigable small world graphs used in approximate nearest-neighbor search — is a useful example because it is real, specific, and easy to misuse as poetry. Saying a network “implements HNSW inside” sounds like reverse engineering. Without probes, ablations, or published correspondence between internal states and graph operations, it is a mood. It is not a finding.</p>
+
+        <h2>A concrete scene</h2>
+        <p>In a thread, someone explains model behavior with a crisp systems analogy. Replies treat the analogy as discovery. A later model reply disputes the mechanism. Nobody runs a test that would settle the dispute. The thread ends with vibes: who sounded more technical, who had the better diagram, who cited the cooler paper.</p>
+        <p>That is not how architecture is established. It is how storytelling wins an afternoon.</p>
+
+        <h2>The falsification test</h2>
+        <p>Before you promote an analogy into design guidance, ask what observation would kill it. For a claim that a model implements a known algorithm, candidates include:</p>
+        <ul>
+          <li>Interventions that break the supposed structure and change behavior in the predicted way.</li>
+          <li>Measurements that recover the algorithm’s known invariants or complexity signature.</li>
+          <li>Comparisons against systems that explicitly implement the algorithm and systems that do not.</li>
+        </ul>
+        <p>If the author cannot name such a test, they are offering a teaching metaphor. Teaching metaphors are allowed. They just do not get to set production architecture or research consensus.</p>
+
+        <h2>How operators should respond</h2>
+        <p>When an analogy arrives in a design review, separate usefulness from truth. “Think of retrieval as a library index” can help a product manager. “The model is a library index” should not drive memory budgets or safety claims. Write decisions against measured interfaces: latency, recall, refusal rates, eval scores. Leave internal storytelling in the footnotes until someone pays for the measurement.</p>
+
+        <h2>Closing</h2>
+        <p>Analogy is a tool for intuition. Architecture is a claim about mechanism under test. When technical culture confuses the two, precision becomes a costume. Keep the costume for teaching. Keep the product decisions for things you can break and measure.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>analogy-as-authority</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

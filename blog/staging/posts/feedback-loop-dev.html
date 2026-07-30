@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Feedback-loop / iterative agent development workflow">
+    <title>Short verified cycles beat monologue coding | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #17 · not live</div>
+        <h1>Short verified cycles beat monologue coding</h1>
+        <p>Feedback-loop / iterative agent development workflow</p>
+        <p class="muted"><a href="https://x.com/seangeng/status/2064513457584541849" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Iterative feedback-driven development is the practical core of agentic coding. The winning pattern is short cycles with verifiable checks, not long monologues to a model. Require tests, diffs, and acceptance criteria in the loop. If the loop cannot fail a check, it cannot improve.</p>
+        <p>Builders keep rediscovering this under new names: plan optimizers, self-scoring skills, “build in loops.” The durable part is not the brand. It is the closed circuit between attempt and evidence.</p>
+        <h2>Why monologues fail</h2>
+        <p>A long single-shot request asks the model to invent architecture, implement, and self-bless in one breath. Errors compound. Context fills with confident partial work. By the time you read the end, you are debugging a novel rather than reviewing a change.</p>
+        <p>Short cycles reverse that. You force a smaller unit of work, force a check, then decide whether to continue. The human stays in the authority seat for “good enough,” even when the model does most of the typing. That is not romantic craft nostalgia. It is control design.</p>
+        <h2>Self-scoring is not verification</h2>
+        <p>A common failure mode is the self-referential loop: the same model rewrites a plan, scores its own rewrite, sees prior scores, and stops when it can no longer improve by its own metric. Convergence feels like quality. It may only be self-consistency.</p>
+        <p>External criteria matter. Prefer tests that already exist, linters, typechecks, acceptance scripts, or a second model that never saw the earlier self-scores. Prefer a human glance at a diff against a written definition of done. Endogenous stop rules package false confidence as best practice.</p>
+        <h2>What to operationalize</h2>
+        <p>Use a loop that a stranger could run from your repo:</p>
+        <ul>
+          <li>Write acceptance criteria before generation</li>
+          <li>Generate the smallest change that could meet them</li>
+          <li>Run checks the model did not invent for itself</li>
+          <li>Read the failing evidence, not only the model’s story about it</li>
+          <li>Repair with a max iteration count</li>
+          <li>Stop when criteria pass or when the stop budget is spent</li>
+        </ul>
+        <p>Package that as a skill or script if you want reuse. Do not package “keep iterating until it feels done.” The skill is valuable only if the failure path is real.</p>
+        <h2>Closing</h2>
+        <p>Agentic coding rewards people who shrink the cycle and harden the check. Monologue coding rewards people who enjoy watching tokens. Choose the first if you care about software that survives contact with a test runner.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>feedback-loop-dev</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

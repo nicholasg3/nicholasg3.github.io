@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Agentic-agent development best practices">
+    <title>Best practices need a repo | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #20 · not live</div>
+        <h1>Best practices need a repo</h1>
+        <p>Agentic-agent development best practices</p>
+        <p class="muted"><a href="https://x.com/Av1dlive/status/2062833437980184989" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Expert agent-development guidance is valuable when it is concrete about tools, reviews, and failure modes. Lectures without operating constraints become content, not practice.</p>
+        <p>Pair any best-practice memo with a repo that implements it. If it cannot be checked out, it is not yet a practice.</p>
+
+        <h2>Why advice dies on the slide</h2>
+        <p>Agent development advice spreads as threads, conference talks, and “how we work at X” decks. The useful parts are usually narrow: how they structure prompts, which tests gate a merge, what the agent is forbidden to touch, how they recover when a loop burns tokens and does nothing.</p>
+        <p>Those details do not survive a paraphrase. “Always add review” is not a practice. “Every agent PR needs a human who owns the merge and a CI job that runs the integration suite the agent cannot skip” is closer. The second sentence can be written as a branch protection rule. The first cannot.</p>
+        <p>When guidance is only spoken, each team invents its own half-implementation. People remember the vibe of senior craft and lose the harness that made craft reliable.</p>
+
+        <h2>A concrete scene</h2>
+        <p>Two teams watch the same senior engineer walk through agentic coding. Both leave with the same notes: small tasks, tight feedback loops, aggressive tests. Team A pastes the notes into a wiki. Team B opens a repository with a sample agent config, a Makefile target for the eval suite, a CODEOWNERS file that names who may approve agent-authored diffs, and a short failure log of three past loops that went wrong and how they were stopped.</p>
+        <p>Three months later Team A is still “adopting agents.” Team B is shipping with a known failure budget. The difference was not inspiration. It was a checkout path.</p>
+
+        <h2>What a practice repo must hold</h2>
+        <p>A useful companion repo is not a product demo. It is a living constraint set. At minimum it should make the following easy to inspect:</p>
+        <ul>
+          <li>How work is sliced into agent-sized units, including what is left human-only.</li>
+          <li>Which checks run before an agent change can land, and which ones the agent itself must not author.</li>
+          <li>How secrets, production credentials, and destructive tools are withheld.</li>
+          <li>What operators do when the agent is confidently wrong: stop conditions, rollback, and who gets paged.</li>
+        </ul>
+        <p>If a memo claims a “review culture” but the repo has no merge rule, treat the memo as aspiration. If it claims safety but the sample agent can exfiltrate env vars, treat the memo as marketing.</p>
+
+        <h2>How to use the lecture material</h2>
+        <p>Industry lectures from strong product teams are still worth watching. Use them as hypotheses, not as inherited process. Extract one constraint at a time. Encode it. Run it on a real task for a week. Keep only what still earns its keep under your load, not under theirs.</p>
+        <p>Reject the idea that best practices arrive as complete playbooks from companies with different risk, staffing, and compliance. Import mechanisms. Re-measure outcomes.</p>
+
+        <h2>Closing</h2>
+        <p>Best practices for agent development are not a genre of writing. They are a genre of infrastructure. If someone offers you the former without the latter, ask for the repo. If there is none, you have a talk. You do not yet have a practice.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>agentic-dev-best-practices</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

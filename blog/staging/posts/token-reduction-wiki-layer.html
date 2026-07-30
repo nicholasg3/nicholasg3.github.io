@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Token-reduction / wiki-layer memory systems">
+    <title>External memory beats re-sending the corpus | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #23 · not live</div>
+        <h1>External memory beats re-sending the corpus</h1>
+        <p>Token-reduction / wiki-layer memory systems</p>
+        <p class="muted"><a href="https://x.com/Asteri_eth/status/2060768042347372865" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Wiki-layer memory systems claim large token savings by turning raw notes into linked markdown. The idea is real: durable external memory beats re-sending a corpus every time.</p>
+        <p>Verify savings on your workload. Measure quality of links and update cost, not just token counts on a demo path.</p>
+
+        <h2>The problem they are solving</h2>
+        <p>Agents that must “remember” a project often do it the expensive way. Each session reloads the same long briefs, meeting notes, and design docs into context. The model re-reads what a filesystem already holds. Tokens climb. Attention spreads thin. Important constraints get truncated first.</p>
+        <p>A wiki layer inverts that pattern. Raw material is distilled into short, linked pages: decisions, owners, current state, open risks. The agent loads a map and a few pages, not the archive. Humans can also read and correct the map. That dual use is the point. External memory is not only a compression trick. It is a shared working surface.</p>
+
+        <h2>Where demos lie</h2>
+        <p>Token-reduction claims often measure an idealized path: a clean corpus, a single query style, a freshly built index. Your week is messier. Notes conflict. Names change. Two pages say opposite things about the same API. A 90% token cut on a demo path can become a 20% cut — or a quality loss — once the wiki falls behind the world.</p>
+        <p>The second lie is treating tokens as the only cost. Writing and maintaining the wiki takes human or agent time. Bad links cost more than the tokens they save when the agent acts on stale structure. A system that is cheap to query and expensive to keep true is not free. It has moved the bill to operations.</p>
+
+        <h2>What to measure</h2>
+        <p>Before packaging a wiki-layer technique as standard practice, run it against your real tasks for long enough that pages go stale.</p>
+        <ul>
+          <li><strong>Token use per completed task</strong> on your mix of work, not on a single showcase query.</li>
+          <li><strong>Answer quality under audit</strong> against source documents the wiki claims to summarize.</li>
+          <li><strong>Link integrity</strong>: broken, circular, and contradictory links found per week.</li>
+          <li><strong>Update cost</strong>: minutes to absorb a decision change into the right pages.</li>
+          <li><strong>Cold-start cost</strong>: how long a new agent or person needs before the wiki helps more than it confuses.</li>
+        </ul>
+        <p>If token counts fall while audit quality and update cost worsen, you have built a lossy cache with good marketing.</p>
+
+        <h2>Design rules that keep the idea honest</h2>
+        <p>Prefer short canonical pages over giant dumps. Put owners and “last verified” dates on pages that drive action. Make contradiction visible instead of averaging it away. Give the agent a retrieval path back to primary sources when the wiki is thin. Never let the wiki become the only place truth is allowed to live.</p>
+        <p>Compression without a path back to evidence is just confident amnesia.</p>
+
+        <h2>Closing</h2>
+        <p>External memory beats re-sending the corpus. That is sound systems thinking. Wiki-layer tools are one way to do it. Trust them after they survive your workload, your stale notes, and your update habits — not after a single chart of token savings on a polished path.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>token-reduction-wiki-layer</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

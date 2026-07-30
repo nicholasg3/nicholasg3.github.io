@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Metric-authorship paradox: completion metrics score who defines done">
+    <title>If success means task completion, the score may track who defines the task | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #4 · not live</div>
+        <h1>If success means task completion, the score may track who defines the task</h1>
+        <p>Metric-authorship paradox: completion metrics score who defines done</p>
+        <p class="muted"><a href="https://x.com/emollick/status/2067839690158268923" rel="noopener noreferrer">Seed tweet</a> · source: blog-shortlist #4 · active seed #1</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>When “good at AI coding” means verifiable completion of defined tasks, skill with the tool partly collapses into skill at defining what counts as done. The metric scores performance and, at the same time, selects a kind of hero. That is not a bug in the spreadsheet. It is how completion metrics work once someone has to write the definition of success.</p>
+        <p>A circulating finding says managers slightly outperform engineers on agentic coding completion in large session logs. Ethan Mollick framed it as early evidence that management is an AI superpower: specifying what you want, how to do it, and what good looks like. Before that becomes a hiring slogan, check what the scoreboard counts.</p>
+
+        <h2>What the scoreboard actually measures</h2>
+        <p>Completion metrics need a definition of done. Someone writes the prompt, the ticket, the evaluation setup, or the checklist. Specification skill is baked into the measurement apparatus. The person who carves a messy ambition into a crisp, testable unit is not merely “using the agent well.” They are authoring the conditions under which success can be scored at all.</p>
+        <p>This is close to the old lesson that when a measure becomes a target, it stops being a neutral description. In agentic coding the problem is sharper than usual. Setting up the agent to succeed is close to defining success. A crisp, verifiable task is both playing the game and designing the rules. Messy, partially specified work can look like failure even when it is harder and more valuable.</p>
+
+        <h2>A concrete scene</h2>
+        <p>Two people open the same agent. One pastes a ticket: add a feature flag, wire it to an existing config service, cover it with three integration tests that already exist. That run finishes. The other is debugging a race that only appears under production-like load, with partial logs and no agreed definition of “fixed.” On a completion dashboard, person one is the hero. Person two looks slow.</p>
+        <p>Nothing in that contrast requires fraud. Completion can be reported accurately and still hide what kind of work the dashboard can see. The first person authored a task the instrument can detect. The second is doing work the instrument was never designed to celebrate.</p>
+
+        <h2>Why managers can look like winners</h2>
+        <p>Managers spend their careers turning goals into assignments other people can execute. That habit transfers. Agents reward clear acceptance criteria, bounded scope, and feedback that steers the next attempt. If the metric is “did a defined task finish with verifiable evidence,” people who live in tickets and definitions of done have a structural head start.</p>
+        <p>Engineers often live closer to the residual mess: partial failures, flaky environments, integration edges, and work that has no pre-written checklist. Their craft may be exactly what the agent still needs after the crisp tasks are exhausted. A completion metric that only sees closed tickets will underrate that craft without ever being “wrong” about its own numbers.</p>
+
+        <h2>Goodhart in the agent loop</h2>
+        <p>Goodhart’s law is not a slogan here. It is the mechanism. Once completion becomes the target, the organization optimizes for tasks that complete. People will prefer work that closes cleanly. Agents will be aimed at work that closes cleanly. Hard problems that resist a tidy definition of done will migrate off the scoreboard, or get rewritten until they fit it.</p>
+        <p>The risk is not that managers are bad at agents. Many will be excellent. The risk is that a modest gap on a completion dashboard gets read as a general ranking of AI skill, then used to reorganize hiring, promotion, and who owns technical judgment. Specification skill is real. Craft that resists a clean checklist is real too. The dashboard only has eyes for the first.</p>
+
+        <h2>What would make the claim scientific</h2>
+        <p>To separate “good at agents” from “good at writing the score,” you need a design that breaks the confounds. Hold task definition constant across roles. Measure specification quality as its own variable. Score outcomes the tool user did not author. Or randomly assign the same pre-written tasks and see whether the occupational gap survives when authorship is removed.</p>
+        <p>Without that separation, manager-outperforms-engineer is partly a finding about who sits closer to the metric’s authorship. The Anthropic-style session logs can still be informative about how people use tools. They are weaker as a map of who should lead technical work once agents are in the loop.</p>
+
+        <h2>How teams misuse the headline</h2>
+        <p>The misuse is predictable. A leadership slide becomes “hire for management, not engineering depth.” Training budgets tilt toward prompt hygiene and ticket writing. Engineers who do ambiguous debugging look expensive relative to people who ship agent-completed stories. None of that follows from a modest completion gap on self-defined work.</p>
+        <p>A healthier reading keeps both skills in view. Specification is a force multiplier for agents. Domain judgment is still how you know the specification was the right one, and how you recover when the agent’s “done” is only locally true. Organizations that only reward the first will get faster throughput on easy tasks and a thinner bench for hard ones.</p>
+
+        <h2>Closing</h2>
+        <p>Before you reorganize a team around who is good at AI coding, ask who wrote the definition of good. When the same people look best on the scoreboard, the ranking is partly a self-portrait of the scoreboard’s authors. Treat completion metrics as useful and incomplete. Score specification separately. Score outcomes the user did not author. And leave room for work that is valuable precisely because it does not yet know what “done” means.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>metric-authorship</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

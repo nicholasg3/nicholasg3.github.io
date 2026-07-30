@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="AI unit economics: load-bearing or propped by subsidy?">
+    <title>Which AI usage survives unsubsidized prices? | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #8 · not live</div>
+        <h1>Which AI usage survives unsubsidized prices?</h1>
+        <p>AI unit economics: load-bearing or propped by subsidy?</p>
+        <p class="muted"><a href="https://x.com/burkov/status/2061523477765743090" rel="noopener noreferrer">Seed tweet</a> · source: blog-shortlist #8 · active seed</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Much “AI works for business” usage may only work while it is subsidized. If unit economics are propped by venture capital or temporary credits, observed adoption is not the same as a durable market. The honest piece does not pretend public numbers settle this. It asks a structural question: which workflows survive unsubsidized pricing?</p>
+        <p>Andriy Burkov put a hard version of the claim into circulation: LLMs only work for your business when they are subsidized, customers are anchored to unfairly cheap chatbots, and fair-priced products struggle until the subsidy era ends. You do not need to accept every edge of that argument to take the core seriously. Price anchors move behavior. Subsidies hide cost. Habits built on hidden cost can break when the mask comes off.</p>
+
+        <h2>Subsidy is not a moral failing</h2>
+        <p>Penetration pricing is normal. Cloud did it. Streaming did it. SaaS still does it. Lock-in is normal too. Vendors underprice early usage to build dependency, then raise effective prices through tiers, rate limits, or feature gates. None of that is unique to AI.</p>
+        <p>The mistake is treating today’s effective price as proof of intrinsic value. A workflow that only clears because someone else is eating the bill is a propped habit. It may still become a real business later if costs fall or willingness to pay rises. Until then, it is evidence of cheap access, not of a finished market.</p>
+
+        <h2>Separate the cost stories</h2>
+        <p>People blend training cost myths with serving cost reality. Training frontier models is expensive, but many business workflows are gated by inference, tooling overhead, and human review, not by the amortization story of a single pretraining run. Separate those ledgers.</p>
+        <p>Also separate demo usage from production volume. A weekly executive chat that costs little can look like product-market fit. A pipeline that calls a model on every ticket, every support email, or every code change can look like a tax. Gross time saved is not net value after review, rework, failure handling, and the opportunity cost of waiting on slow “thinking” modes.</p>
+
+        <h2>What customers are anchored to</h2>
+        <p>Consumer chatbots taught a generation of users that serious model time is a flat subscription or nearly free. That anchor is powerful. When a specialized product tries to charge for the real cost of long-context reasoning, multi-step agents, or high-volume API use, buyers compare it to the chatbot habit and flinch.</p>
+        <p>This is not only about sticker shock. It is about reference prices. If the public price of “AI help” is a few tens of dollars a month for unlimited-feeling chat, then a workflow that burns dollars per hard decision looks broken even when it is economically rational relative to a human expert. Subsidy does not just fund suppliers. It educates demand.</p>
+
+        <h2>Which usage is load-bearing</h2>
+        <p>Some uses clear unsubsidized prices today because the alternative is expensive human labor with clear failure costs: specialized analysis, high-stakes drafting with expert review, internal tools where speed compounds across a team. Other uses are convenience layers that disappear the moment the bill stops being cute.</p>
+        <p>A practical cut is willingness to pay after the discount ends. If a team would still buy the same volume at the unsubsidized rate because the workflow removes real headcount, latency, or error, you have load-bearing usage. If the same team would cut, cache, switch to a weaker local model, or stop, you had a propped habit. Both can coexist inside one company.</p>
+
+        <h2>How to reason without perfect data</h2>
+        <p>You will not get clean public unit economics for every vendor. You can still force the question inside your own stack. For each AI line item, write the price path: today’s effective cost, the unsubsidized cost if credits and promotional tiers vanish, and the workflow that still clears at the higher price.</p>
+        <p>Include the hidden human costs. A cheap model that needs constant babysitting is not cheap. An expensive model that finishes cleanly with light review can be a bargain. Outcome-based pricing sounds attractive until neither side can control token use or guarantee results the buyer will accept. Price design has to track who bears uncertainty.</p>
+
+        <h2>What builders and buyers should do</h2>
+        <p>Builders should know which product surfaces only exist because tokens are on sale. Those surfaces need either a cost curve that bends down fast, a customer segment with higher willingness to pay, or an honest plan to sunset them. Buyers should refuse to treat temporary credits as permanent budget.</p>
+        <p>Both sides should instrument volume by workflow, not by “AI spend” as one blob. The question is never only “are we using AI?” It is “which jobs would still be worth buying if the subsidy left next quarter?” That answer is usually uneven. That unevenness is the map.</p>
+
+        <h2>Closing</h2>
+        <p>Adoption under subsidy is real data and incomplete data. It tells you what people do when the bill is soft. It does not tell you what survives when the bill is hard. Write the price path for every serious AI line item. Keep the workflows that still clear. Treat the rest as experiments funded by someone else’s capital, not as proof that the market already arrived.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>ai-unit-economics</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

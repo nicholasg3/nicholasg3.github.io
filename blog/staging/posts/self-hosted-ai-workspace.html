@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Self-hosted AI workspace (local models, RAG, councils)">
+    <title>Self-hosting is a control strategy | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #21 · not live</div>
+        <h1>Self-hosting is a control strategy</h1>
+        <p>Self-hosted AI workspace (local models, RAG, councils)</p>
+        <p class="muted"><a href="https://x.com/Hesamation/status/2061239803610341837" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Self-hosting is a control strategy as much as a cost strategy: quantization, RAG, local councils, and swarm patterns trade convenience for ownership.</p>
+        <p>Be explicit about what you gain: privacy, egress control, cost tails, or independence from vendor refusal. If you cannot name the gain, you are collecting GPUs for theater.</p>
+
+        <h2>What self-hosting actually buys</h2>
+        <p>A local workspace can mean many different things. Running a quantized model on a workstation is not the same as running a retrieval stack with audit logs, and neither is the same as a multi-model “council” that votes on answers. Each layer buys a different control.</p>
+        <p>Privacy and data residency are the cleanest win. If sensitive text never leaves your network, you have reduced a class of contractual and regulatory risk that no prompt can fix. Egress control is next: you can decide which tools, hosts, and package registries an agent may touch. Cost tails matter when interactive usage is high and predictable; local inference can flatten bills that grow with every chat. Vendor independence matters when refusals, rate limits, or product changes block work that must continue.</p>
+        <p>Those gains are real. They are also expensive in operator time. Hardware, model updates, retrieval quality, and on-call for the stack itself do not disappear because the marketing slide said “own your stack.”</p>
+
+        <h2>A concrete scene</h2>
+        <p>A team moves internal drafting onto a local model because legal wants documents off third-party APIs. Six weeks later, quality complaints return. The model is fine for rewrite tasks. It is weak for research that needs current web state. Someone quietly reintroduces a hosted model for “just the hard cases,” then for “most cases,” then for everything with a deadline.</p>
+        <p>The self-hosted stack is still running. It is no longer the control plane. It is a museum of the policy that failed to name which workflows truly required local inference.</p>
+
+        <h2>Name the gain before you buy the kit</h2>
+        <p>Write the control objective in one sentence before you buy GPUs or follow a full workspace guide. Examples that pass:</p>
+        <ul>
+          <li>Client documents never leave this VPC.</li>
+          <li>Agent tool calls cannot reach the public internet except through an allowlisted proxy.</li>
+          <li>Nightly batch jobs must run at a fixed unit cost even if hosted prices rise.</li>
+        </ul>
+        <p>Examples that fail: “We should be more AI-sovereign.” “Local models are cooler.” “We want a council of models.” A council is a design pattern. It is not a control objective.</p>
+        <p>Then map each objective to the minimum stack that serves it. Many teams only need a private gateway in front of a hosted model. Others need full local inference. Conflating those is how you inherit operational burden without the privacy win.</p>
+
+        <h2>What to measure after you stand it up</h2>
+        <p>Track the control metrics that justified the build: data egress, refusal rates that blocked work, cost per completed task, and recovery time when the local stack breaks. Also track the hidden cost: hours spent updating models, fixing retrieval, and babysitting swarm orchestration.</p>
+        <p>If the control metrics do not move and the babysitting hours do, you have built a hobby rack. Shut parts down until the remaining system still earns its keep.</p>
+
+        <h2>Closing</h2>
+        <p>Self-hosting is not virtue. It is a set of tradeoffs with names. Quantization, RAG, councils, and swarms are tools for those tradeoffs. Choose the control you need. Build only the stack that buys it. Leave the rest of the GPU catalog on the shelf.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>self-hosted-ai-workspace</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>

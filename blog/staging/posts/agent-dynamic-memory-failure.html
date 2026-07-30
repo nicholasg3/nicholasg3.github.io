@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="Agent failure on dynamic memory tasks">
+    <title>Static demos hide dynamic memory failure | Staging</title>
+    <link rel="stylesheet" href="../../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Staging home">
+        <span class="brand-mark">SP</span>
+        <span>
+          <strong>Staging</strong>
+          <small>Private draft</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html">Staging index</a>
+        <a href="../../ideas-queue.html">Ideas queue</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">Staging draft · queue #29 · not live</div>
+        <h1>Static demos hide dynamic memory failure</h1>
+        <p>Agent failure on dynamic memory tasks</p>
+        
+      </header>
+
+      <article class="article-body">
+        <h2>The claim</h2>
+        <p>Agents that look competent in static demos can fail when memory is dynamic: goals change, tools change, prior beliefs expire.</p>
+        <p>Evaluate on tasks where the right answer depends on updating memory, not replaying a frozen plan. If your eval never invalidates old context, you are not testing agents. You are testing autocomplete.</p>
+
+        <h2>What “dynamic memory” means here</h2>
+        <p>Static demos give the agent a fixed brief and a fixed world. The ticket does not change. The API schema does not change. Yesterday’s “customer is on plan A” remains true. Success is pattern completion over a stable prompt.</p>
+        <p>Dynamic memory tasks break that stability on purpose. Midway through a run, the goal is revised. A tool returns a new error shape. A policy exception expires. A user corrects a fact the agent stored two steps ago. The correct next action depends on noticing the change and revising state, not on continuing the original plan with more confidence.</p>
+        <p>That is closer to production. Production is full of revised tickets, rotated credentials, and customers who change their mind after the agent has already “remembered” the wrong thing.</p>
+
+        <h2>Why demos look better than systems</h2>
+        <p>Demos optimize for a clean arc: problem, tools, solution, applause. The context window is curated. Failures that would require forgetting are edited out. Eval harnesses often reward final-answer match on fixed benchmarks. Nothing in the score asks whether the agent discarded a stale belief when the world moved.</p>
+        <p>So teams ship agents that ace frozen tasks and then surprise themselves in live ops. The gap is not always model size. It is often eval design that never made invalidation a first-class event.</p>
+
+        <h2>A concrete scene</h2>
+        <p>An agent is told to migrate a service using config version 3. Midway, an operator marks version 3 as deprecated and points to version 4. A strong dynamic agent reloads state, re-plans, and continues against version 4. A weak one finishes a beautiful migration to a dead target, citing the original brief with perfect fluency.</p>
+        <p>On a static eval, both might look fine if the harness never injects the deprecation. On a dynamic eval, only one is competent.</p>
+
+        <h2>How to evaluate properly</h2>
+        <p>Build tasks where success requires update, not recall alone:</p>
+        <ul>
+          <li>Inject goal changes after the agent has started acting.</li>
+          <li>Invalidate stored facts and score whether the agent stops using them.</li>
+          <li>Swap tool schemas mid-run and require re-discovery.</li>
+          <li>Reward correct abandonment of a plan, not only plan completion.</li>
+          <li>Log which memory entries were written, read, and superseded.</li>
+        </ul>
+        <p>If your dashboard never shows “agent correctly forgot X,” you are not measuring memory. You are measuring persistence of the first story the model told itself.</p>
+
+        <h2>Closing</h2>
+        <p>Static demos hide dynamic memory failure. Treat that as a product risk, not a footnote. Until your evals invalidate old context on purpose, you are grading autocomplete in a costume. Agents that must live in changing systems deserve harder tests — and less credit for smooth runs through a frozen world.</p>
+      </article>
+
+      <aside class="article-side" aria-label="Staging notes">
+        <section class="side-card">
+          <span class="section-label">Staging</span>
+          <strong>Not on the public catalogue.</strong>
+          <p>Slug <code>agent-dynamic-memory-failure</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Staging draft</span>
+      <a href="../index.html">Back to staging</a>
+    </footer>
+  </body>
+</html>
