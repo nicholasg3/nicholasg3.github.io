@@ -95,6 +95,9 @@ memo that says so** — or refuse to draft.
 - Stacked not-X-but-Y / “That is not a vibe complaint…” hedging
 - Meta lines: “The particular claim is narrow,” “This draft intentionally…”
 - Ornamental hub links that never appear as load-bearing evidence in the prose
+- **Second-person coaching** (“you should,” “put this table in your growth review,” “operating rule:”) — report in **AP-like third person**: what operators measure, what the data show, how the split appears at work
+
+**Voice:** closer to an **AP feature** than a strategy memo barked at the reader. Attribute numbers. Prefer “according to / shows / ranks” over imperatives.
 
 **Writer routing:** public essay body → **Grok**. Research/brief → any agent.
 
