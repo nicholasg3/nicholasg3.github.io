@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="When software agents can initiate payments, the hard design problem is who authorized what, for how long, with what limits, and how you revoke it. Model capabil">
+  <title>Agentic payments fail on authority first, not model IQ | Fintech staging</title>
+  <link rel="stylesheet" href="/blog/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../"><span class="brand-mark">N</span><span><strong>Fintech</strong><small>Private staging</small></span></a>
+    <nav class="nav"><a href="../">Hub</a><a href="../seeds.html">Seeds</a></nav>
+  </header>
+  <main class="article-main">
+    <header class="article-header">
+      <div class="issue-kicker">Staging · enriched draft · queue #11 · not public</div>
+      <h1>Agentic payments fail on authority first, not model IQ</h1>
+      <p>When software agents can initiate payments, the hard design problem is who authorized what, for how long, with what limits, and how you revoke it. Model capability is secondary to mandate design.</p>
+    </header>
+    <article class="article-body">
+      <h2>The claim</h2>
+      <p>Product teams are racing to let AI agents shop, book, and pay. The demos emphasize autonomy. Production systems will be judged on whether a human principal can bound and reverse machine spending.</p>
+      <p>If you cannot answer who is the merchant of record, who holds the mandate, and how a bad agent is frozen in minutes, you do not have agentic payments. You have a demo with a card-on-file.</p>
+      <h2>Authorization is the product surface</h2>
+      <p>Card networks and banks already have language for tokens, mandates, and recurring payments. Agentic flows will reuse those primitives under new UX names.</p>
+      <p>Design for: spend caps, category limits, time bounds, dual control for large amounts, immutable audit logs, and one-click revocation that actually propagates to processors.</p>
+      <h2>Fraud and dispute shape the economics</h2>
+      <p>Faster autonomous checkout without stronger authentication just accelerates authorized push-payment fraud patterns. Liability allocation between user, agent vendor, merchant, and issuer will decide which products can scale.</p>
+      <p>Regulators will not care that the agent was &quot;smart.&quot; They will care whether consent was meaningful and whether consumers can recover funds under existing payment rules.</p>
+      <h2>What to do</h2>
+      <p>Before shipping agent checkout, write the mandate object: principal identity, agent identity, merchant scope, amount rules, expiry, and revocation channel.</p>
+      <p>Instrument every agent payment like a privileged API call: least privilege by default, human-in-the-loop thresholds, and post-hoc forensic export.</p>
+      <section class="source-notes" aria-labelledby="src">
+        <h2 id="src">Source notes</h2>
+        <ul>
+            <li><a href="https://www.federalreserve.gov/paymentsystems.htm">Federal Reserve — Payment Systems</a>: US payments infrastructure primary hub (FedNow, settlement context).</li>
+            <li><a href="https://www.bis.org/cpmi/">BIS Committee on Payments and Market Infrastructures</a>: Institutional home for payment system standards and cross-border work.</li>
+            <li><a href="https://www.nist.gov/identity-access-management">NIST — Identity and access management</a>: Authorization/least-privilege design vocabulary useful for agent mandates.</li>
+            <li><a href="https://www.w3.org/TR/secure-payment-confirmation/">W3C — Secure Payment Confirmation</a>: Web payment authentication primitive; relevant when agents operate in browser contexts.</li>
+        </ul>
+        <p><em>Enriched staging draft. Not legal or investment advice. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "vertical": "us-asean-china",
-  "generated_at": "2026-07-30T17:08:40.192211+00:00",
+  "generated_at": "2026-07-30T17:22:48.570596+00:00",
   "sources": [
     {
       "handle": "ASEAN",
@@ -33,7 +33,7 @@
     {
       "handle": "CSIS",
       "name": "CSIS",
-      "role": "US\u2013China\u2013SEA geopolitics (secondary research)",
+      "role": "US–China–SEA geopolitics (secondary research)",
       "url": "https://www.csis.org/",
       "note": "Secondary; good for geo context when it hits business."
     },
@@ -68,9 +68,51 @@
     {
       "handle": "yahoolovesyou",
       "name": "yahoolovesyou (Nick, mixed personal)",
-      "role": "Mixed personal feed \u2014 harvest only, not curator",
+      "role": "Mixed personal feed — harvest only, not curator",
       "url": "https://x.com/yahoolovesyou",
       "note": "NOT a vertical curator. Use to discover original posters only."
+    },
+    {
+      "handle": "NLB",
+      "name": "National Library Board Singapore",
+      "role": "Historical primary hub",
+      "url": "https://www.nlb.gov.sg/",
+      "note": "Singapore historical collections."
+    },
+    {
+      "handle": "MPA",
+      "name": "MPA Singapore",
+      "role": "Port/maritime authority",
+      "url": "https://www.mpa.gov.sg/",
+      "note": "Port competition and maritime policy primary."
+    },
+    {
+      "handle": "BNM",
+      "name": "Bank Negara Malaysia",
+      "role": "Islamic finance + MY central bank",
+      "url": "https://www.bnm.gov.my/",
+      "note": "Primary for Malaysian Islamic finance framework."
+    },
+    {
+      "handle": "PDPC",
+      "name": "PDPC Singapore",
+      "role": "Data protection",
+      "url": "https://www.pdpc.gov.sg/",
+      "note": "PDPA primary."
+    },
+    {
+      "handle": "NIST_CHIPS",
+      "name": "NIST CHIPS",
+      "role": "US CHIPS Act implementation",
+      "url": "https://www.nist.gov/chips",
+      "note": "Industrial policy primary for semiconductors."
+    },
+    {
+      "handle": "ICA",
+      "name": "ICA Singapore",
+      "role": "Immigration",
+      "url": "https://www.ica.gov.sg/",
+      "note": "Visa/mobility primary entry."
     }
   ]
 }

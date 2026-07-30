@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~01:15 SGT |
-| **Last commit focus** | Promote-to-live rule: strip seed-tweet chrome; promote script |
+| **Last updated** | 2026-07-31 ~01:30 SGT |
+| **Last commit focus** | Multi-vertical: 30 sources-first enriched drafts each for fintech + us-asean-china |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -67,14 +67,15 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 ### P0 — multi-vertical enrichment (current priority)
 
-1. Continue **sources-first** drafts for `/fintech/` and `/us-asean-china/` (target 30 seeds each; drafts only when enriched).
-2. Grow canonical source lists from harvest original posters + doctrine-fit outlets.
-3. Do **not** mass-produce unenriched essays.
+1. **Done volume bar:** 30/30 enriched staging drafts with Source notes for `/fintech/` and `/us-asean-china/`.
+2. **Next quality bar:** Nick review pass; deepen thin pattern drafts with stronger primaries; free-style Grok polish only after sources hold.
+3. Grow canonical source lists from harvest original posters + doctrine-fit outlets.
+4. Do **not** mass-produce unenriched essays; do **not** promote vertical drafts public without Nick unlock + promote script.
 
 ### P0b — AI process integrity (deferred by Nick)
 
-1. **Enrich staging drafts before more volume**  
-   For each staged post (start with active seeds):  
+1. **Enrich AI staging drafts before more volume**  
+   For each staged post under `/blog/staging/` (start with active seeds):  
    - Read enriched + analyzed memos when present  
    - Add inline attribution + **Source notes** with worthy primary links  
    - Mark retrieval gaps honestly  
@@ -113,7 +114,9 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 | Tool | URL | Password (client-side only) | Data |
 |------|-----|-----------------------------|------|
 | Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `nick-blog-queue` | `blog/data/ideas-queue.json` |
-| Article staging | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*`, `manifest.json` |
+| Article staging (AI) | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*`, `manifest.json` |
+| Fintech vertical | https://nicholasg3.github.io/fintech/ | `nick-verticals` | `fintech/data/*`, `fintech/staging/` (30 drafts) |
+| US–ASEAN–China vertical | https://nicholasg3.github.io/us-asean-china/ | `nick-verticals` | `us-asean-china/data/*`, `us-asean-china/staging/` (30 drafts) |
 
 **Security note:** GitHub Pages has no server auth. These gates hide an internal backlog from casual visitors; they are not suitable for secrets.
 
@@ -218,6 +221,27 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 
 ## Session log (append-only)
 
+### 2026-07-31 (night) — multi-vertical 30/30 drafts
+
+**Done:**
+- Fintech: **30/30** enriched staging drafts with Source notes + manifests/seeds updated
+- US–ASEAN–China: **30/30** enriched staging drafts with Source notes + manifests/seeds updated
+- Sources lists grown (World Bank remittances, FATF, FedNow, NYDFS, NLB, MPA, BNM, PDPC, CHIPS/NIST, ICA, etc.)
+- Quality bar held: every draft has Source notes + primary/canonical links; thin seeds stated gaps / pattern zoom
+- Promote rule already in place: seed-tweet chrome staging-only; strip via `promote_staging_article.py` for live
+
+**Hubs (password `nick-verticals`):**
+- https://nicholasg3.github.io/fintech/
+- https://nicholasg3.github.io/us-asean-china/
+
+**Not done / next:**
+1. Nick review pass on vertical drafts (priority pick for deepen vs keep as pattern)
+2. Free-style Grok polish only after Nick flags which pieces
+3. AI `/blog/staging/` enrichment still deferred
+4. Dedicated curator accounts / continuous capture per vertical
+5. GH Actions workflow for ideas-queue still needs workflow-scoped token
+6. No public unlock of verticals without Nick
+
 ### 2026-07-31 (promote rule)
 
 - Nick: seed-tweet under title is good for **staging**, must be removed for **live**.
@@ -235,23 +259,11 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 - `@yahoolovesyou` = personal mixed feed, **not** vertical curator; use to discover original posters as canonical candidates; dedicated curator accounts later
 - **No draft without Source notes + primary/canonical links**; research claims, thread context, theory, anecdotes; fewer than 30 OK; if thin facts, zoom out to patterns; sources may be news **or** papers/lit
 
-**Done this block:**
-- Captured 189 posts from `@yahoolovesyou` (`mode=all`, 10 pages) → `Projects-for-agents/retweet-library-fintech/raw/yahoolovesyou_mix.md`
-- Scaffolded password hubs: `/fintech/`, `/us-asean-china/` (hub, seeds, sources, staging)
-- Built 30 seed slots + proposed canonical sources per vertical
-- Wrote **4 enriched staging drafts with Source notes** (2 fintech, 2 us-asean-china) — quality bar enforced; not 30 yet
+**Done in kickoff block (earlier same day):**
+- Captured 189 posts from `@yahoolovesyou` → raw harvest file under retweet-library-fintech
+- Scaffolded password hubs; 30 seed slots each; first enriched drafts
 
-**Not done:**
-- Full 30 enriched drafts per vertical
-- Dedicated curator accounts / continuous capture per vertical
-- AI staging enrichment (explicitly deferred)
-- Workflow file still may need workflow-scoped push
-
-**Next agent:**
-1. Enrich next fintech seeds (stablecoin privacy, PayPal distribution, SWIFT/sanctions rail) with primaries
-2. Enrich next us-asean-china seeds (Forest City, NS enclave, tech controls) with primary reporting
-3. Expand drafts only when Source notes are real
-4. Keep updating this PLAN
+**Superseded by night session:** full 30/30 drafts complete (see session entry above).
 
 
 

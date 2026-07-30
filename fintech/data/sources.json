@@ -1,6 +1,6 @@
 {
   "vertical": "fintech",
-  "generated_at": "2026-07-30T17:08:40.192211+00:00",
+  "generated_at": "2026-07-30T17:22:48.570596+00:00",
   "sources": [
     {
       "handle": "federalreserve",
@@ -71,6 +71,41 @@
       "role": "US crypto regulatory process seed",
       "url": "https://x.com/iampaulgrewal",
       "note": "Coinbase GC; secondary for SEC/FDIC process claims."
+    },
+    {
+      "handle": "WorldBank",
+      "name": "World Bank Remittance Prices",
+      "role": "Remittance corridor costs",
+      "url": "https://remittanceprices.worldbank.org/",
+      "note": "Primary public remittance price dataset."
+    },
+    {
+      "handle": "FATF",
+      "name": "FATF",
+      "role": "VA/VASP / Travel Rule standards",
+      "url": "https://www.fatf-gafi.org/",
+      "note": "International AML standards; national law implements."
+    },
+    {
+      "handle": "FedNow",
+      "name": "FedNow Service",
+      "role": "US realtime payments",
+      "url": "https://www.frbservices.org/financial-services/fednow",
+      "note": "Primary for FedNow participation/features."
+    },
+    {
+      "handle": "NYDFS",
+      "name": "NYDFS",
+      "role": "NY financial services / stablecoin guidance",
+      "url": "https://www.dfs.ny.gov/",
+      "note": "State supervisory primary for DFS-regulated issuers."
+    },
+    {
+      "handle": "BoE",
+      "name": "Bank of England",
+      "role": "Money creation education + UK payments",
+      "url": "https://www.bankofengland.co.uk/",
+      "note": "Money creation explainer; UK CBDC/payments context."
     }
   ]
 }

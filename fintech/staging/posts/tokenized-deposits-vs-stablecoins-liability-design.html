@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Both can move on shared ledgers. One is typically a bank deposit claim. The other is usually an issuer liability backed by reserves under a non-bank perimeter. ">
+  <title>Tokenized deposits and stablecoins are different liabilities | Fintech staging</title>
+  <link rel="stylesheet" href="/blog/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../"><span class="brand-mark">N</span><span><strong>Fintech</strong><small>Private staging</small></span></a>
+    <nav class="nav"><a href="../">Hub</a><a href="../seeds.html">Seeds</a></nav>
+  </header>
+  <main class="article-main">
+    <header class="article-header">
+      <div class="issue-kicker">Staging · enriched draft · queue #22 · not public</div>
+      <h1>Tokenized deposits and stablecoins are different liabilities</h1>
+      <p>Both can move on shared ledgers. One is typically a bank deposit claim. The other is usually an issuer liability backed by reserves under a non-bank perimeter. Confusing the UX for the balance sheet is how bad products get built.</p>
+    </header>
+    <article class="article-body">
+      <h2>The claim</h2>
+      <p>Tokenization can put different claims on similar rails. The legal claim is the product: who owes you, under what insolvency regime, and how redemption works.</p>
+      <p>Calling everything &quot;on-chain dollars&quot; erases the distinction supervisors care about.</p>
+      <h2>Deposit vs reserve-backed token</h2>
+      <p>A tokenized deposit remains a bank deposit if the structure preserves that claim — with deposit insurance rules and bank resolution regimes applying as designed.</p>
+      <p>A fiat stablecoin is usually a claim on an issuer or trust structure holding reserves. Run dynamics and supervisory tools differ.</p>
+      <h2>Why builders blur them</h2>
+      <p>Shared wallets and 24/7 transfer UX make the instruments feel identical to users. That is exactly when disclosure and naming matter.</p>
+      <p>Treasury and risk teams should not share models across instruments without adjusting for claim type.</p>
+      <h2>What to do</h2>
+      <p>In architecture docs, label instruments by liability type first, chain second.</p>
+      <p>In customer UX, do not imply deposit insurance on non-deposits. That error is both product and regulatory risk.</p>
+      <section class="source-notes" aria-labelledby="src">
+        <h2 id="src">Source notes</h2>
+        <ul>
+            <li><a href="https://www.bis.org/publ/qtrpdf/r_qt2112b.htm">BIS — Stablecoins: risks, potential and regulation</a>: Stablecoin liability and run framing.</li>
+            <li><a href="https://www.bis.org/publ/othp88.htm">BIS — Blueprints / tokenisation related publications hub entry</a>: Use BIS tokenisation papers for deposit token discussions; confirm exact title on bis.org.</li>
+            <li><a href="https://www.federalreserve.gov/publications/files/money-and-payments-20220120.pdf">Federal Reserve — Money and Payments (Jan 2022)</a>: Public money vs private digital money framing.</li>
+            <li><a href="https://www.dfs.ny.gov/industry_guidance/industry_letters/il20220608_issuance_stablecoins">NYDFS stablecoin guidance</a>: Issuer reserve/redemption expectations for regulated USD stablecoins.</li>
+        </ul>
+        <p><em>Enriched staging draft. Not legal or investment advice. Promote only after Nick sign-off. Run promote_staging_article.py before live publish to strip seed-tweet chrome.</em></p>
+      </section>
+    </article>
+  </main>
+  <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
+</body>
+</html>

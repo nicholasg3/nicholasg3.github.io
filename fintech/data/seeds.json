@@ -1,6 +1,6 @@
 {
   "vertical": "fintech",
-  "generated_at": "2026-07-30T17:08:40.192211+00:00",
+  "generated_at": "2026-07-30T17:26:58.502873+00:00",
   "password_note": "nick-verticals (shared)",
   "harvest": {
     "source": "@yahoolovesyou mode=all pages=10 (mixed personal feed, not curator)",
@@ -11,7 +11,7 @@
     {
       "rank": 1,
       "id": "zero-reserve-requirements",
-      "idea": "US banks at 0% reserve requirements since March 2020 \u2014 what that does and does not mean",
+      "idea": "US banks at 0% reserve requirements since March 2020 — what that does and does not mean",
       "thesis": "Zero required reserves changed the legal reserve ratio; it did not abolish credit constraints. The public debate confuses reserve requirements with capital, liquidity, and supervisory limits.",
       "status": "enriched-draft",
       "tweet_urls": [
@@ -28,7 +28,7 @@
       "id": "stablecoin-privacy-traceability",
       "idea": "Stablecoins as transparent ledgers: privacy nightmare or compliance feature?",
       "thesis": "Retail stablecoin rails make transaction graphs more legible to counterparties and analysts than cash. Whether that is a bug or a feature depends on the institutional use case.",
-      "status": "seed",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/StakeWithPride/status/1935094759401603212"
       ],
@@ -40,9 +40,9 @@
     {
       "rank": 3,
       "id": "paypal-stablecoin-distribution",
-      "idea": "PayPal stablecoin distribution across many countries \u2014 wallet power as market entry",
+      "idea": "PayPal stablecoin distribution across many countries — wallet power as market entry",
       "thesis": "Incumbent wallet distribution can move stablecoin access faster than crypto-native apps, but licensing and redemption design still decide whether the product is money or marketing.",
-      "status": "seed",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/FinanceLancelot/status/2033871023016124512"
       ],
@@ -56,7 +56,7 @@
       "id": "http-402-payment-required",
       "idea": "HTTP 402 'Payment Required' as a native internet money primitive that never shipped",
       "thesis": "The web reserved a payment status code in 1991; three decades later payments still sit outside the protocol. That gap explains why wallets and processors intermediate every online transaction.",
-      "status": "seed",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/0xSammy/status/2034334738853285899"
       ],
@@ -70,7 +70,7 @@
       "id": "swift-as-sanctions-rail",
       "idea": "SWIFT access as a foreign-policy instrument, not just a messaging utility",
       "thesis": "Threats to cut payment messaging access convert financial infrastructure into a geopolitical lever. Operators in small states must treat rail dependency as political risk.",
-      "status": "seed",
+      "status": "enriched-draft",
       "tweet_urls": [
         "https://x.com/KitKlarenberg/status/1945822612002599224"
       ],
@@ -84,8 +84,8 @@
       "rank": 6,
       "id": "mas-payments-licensing",
       "idea": "MAS licensing as a trust bridge for regional fintech",
-      "thesis": "Singapore licensing is often used as a credibility signal for regional expansion \u2014 but it is not a passport.",
-      "status": "queued",
+      "thesis": "Singapore licensing is often used as a credibility signal for regional expansion — but it is not a passport.",
+      "status": "enriched-draft",
       "tweet_urls": [],
       "primary_url": null,
       "vertical": "fintech",
@@ -96,234 +96,273 @@
       "id": "cross-border-remittance-cost",
       "idea": "Remittance cost compression and who captures the spread",
       "thesis": "Lower advertised FX fees hide spread and float; the real unit economics sit in corridor control.",
-      "status": "queued",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://remittanceprices.worldbank.org/",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Two-sided platforms; payment corridor economics; information asymmetry on FX"
     },
     {
       "rank": 8,
       "id": "cbdc-retail-vs-wholesale",
       "idea": "Retail CBDC vs wholesale settlement: different problems",
       "thesis": "Retail CBDC debates privacy; wholesale CBDC debates settlement finality among institutions.",
-      "status": "queued",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.bis.org/publ/othp33.htm",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Public money hierarchy; payment system design; two-tier banking"
     },
     {
       "rank": 9,
       "id": "stablecoin-reserves-attestation",
       "idea": "Reserve attestation quality as the real stablecoin product",
       "thesis": "The token is easy; the reserve, redemption, and attestation regime is the product.",
-      "status": "queued",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.dfs.ny.gov/",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Bank-run theory applied to money-like liabilities; disclosure as product quality"
     },
     {
       "rank": 10,
       "id": "open-banking-data-portability",
-      "idea": "Open banking as forced data portability \u2014 who owns the customer?",
+      "idea": "Open banking as forced data portability — who owns the customer?",
       "thesis": "APIs reallocate distribution power between banks and fintechs; customer ownership becomes a contract fight.",
-      "status": "queued",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.consumerfinance.gov/rules-policy/final-rules/required-rulemaking-on-personal-financial-data-rights/",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Data portability; multi-sided platforms; regulatory forced interoperability"
     },
     {
       "rank": 11,
       "id": "agentic-payments-authorization",
       "idea": "When AI agents can pay: authorization design before autonomy",
       "thesis": "Agentic commerce fails first on authority and revocation, not model IQ.",
-      "status": "queued",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.federalreserve.gov/paymentsystems.htm",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Principal–agent problem; payment authorization; least privilege"
     },
     {
       "rank": 12,
       "id": "credit-creation-not-fractional-reserve-slogan",
       "idea": "Credit creation banking vs the fractional-reserve slogan",
       "thesis": "Public education still uses 20th-century metaphors for 21st-century bank funding.",
-      "status": "queued",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.bankofengland.co.uk/quarterly-bulletin/2014/q1/money-creation-in-the-modern-economy",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Endogenous money; credit creation; Basel capital/liquidity"
     },
     {
       "rank": 13,
       "id": "idle-asset-escheat-crypto",
       "idea": "Idle crypto escheat / seizure rules on exchanges",
-      "thesis": "State unclaimed-property regimes meet exchange custody \u2014 a boring legal risk with balance-sheet teeth.",
-      "status": "queued",
+      "thesis": "State unclaimed-property regimes meet exchange custody — a boring legal risk with balance-sheet teeth.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.unclaimed.org/",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Property law; custody risk; institutional isomorphism"
     },
     {
       "rank": 14,
       "id": "cashless-policy-mexico-tolls",
       "idea": "Cashless mandates at physical points of sale",
       "thesis": "Forcing digital payment at tolls/gas stations is financial inclusion rhetoric with surveillance and outage risk.",
-      "status": "queued",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.banxico.org.mx/",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Payments as infrastructure; financial inclusion vs coercion; resilience"
     },
     {
       "rank": 15,
       "id": "venture-subsidy-fintech-unit-econ",
       "idea": "Fintech unit economics under cheap capital",
-      "thesis": "Many 'efficient' rails only clear while customer acquisition and float are subsidized.",
-      "status": "queued",
+      "thesis": "Many efficient rails only clear while customer acquisition and float are subsidized.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "primary_url": null,
+      "primary_url": "https://www.bis.org/publ/qtrpdf/r_qt2109c.htm",
       "vertical": "fintech",
-      "from_harvest": false
+      "from_harvest": false,
+      "theory": "Unit economics; predatory pricing vs learning; two-sided markets"
     },
     {
       "rank": 16,
       "id": "bank-fintech-partnership-as-distribution-rent",
       "idea": "Bank-fintech partnership as distribution rent",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Sponsor banks rent regulatory perimeter and trust; fintechs rent distribution and UX.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.occ.gov/",
+      "theory": "Regulatory perimeter; two-sided platforms; rent vs ownership"
     },
     {
       "rank": 17,
       "id": "embedded-finance-who-owns-the-customer-complaint",
       "idea": "Embedded finance: who owns the customer complaint?",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Embedded finance splits UX unity from legal duty; complaint routing is the real design problem.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.consumerfinance.gov/",
+      "theory": "Principal–agent; regulatory perimeter; platform liability"
     },
     {
       "rank": 18,
       "id": "bnpl-credit-quality-through-the-cycle",
       "idea": "BNPL credit quality through the cycle",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "BNPL is consumer credit with checkout UX; cycle risk is the product risk.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.consumerfinance.gov/",
+      "theory": "Consumer credit cycles; behavioral pricing"
     },
     {
       "rank": 19,
       "id": "realtime-payments-and-fraud-acceleration",
       "idea": "Realtime payments and fraud acceleration",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Realtime rails remove delay that used to function as a silent fraud brake.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.frbservices.org/financial-services/fednow",
+      "theory": "Payment finality vs dispute rights; authorized push payment fraud"
     },
     {
       "rank": 20,
       "id": "merchant-acquiring-concentration-risk",
       "idea": "Merchant acquiring concentration risk",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Acquirer/network concentration is a first-class operational risk for digital commerce.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.bis.org/cpmi/",
+      "theory": "Payment networks; counterparty concentration"
     },
     {
       "rank": 21,
       "id": "on-chain-fx-vs-traditional-nostro-networks",
       "idea": "On-chain FX vs traditional nostro networks",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "On-chain FX speed does not erase nostro, liquidity, and last-mile cash constraints.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.bis.org/cpmi/publ/d173.htm",
+      "theory": "Correspondent banking; liquidity fragmentation; payment chains"
     },
     {
       "rank": 22,
       "id": "tokenized-deposits-vs-stablecoins-liability-design",
       "idea": "Tokenized deposits vs stablecoins (liability design)",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Liability design — not chain choice — separates tokenized deposits from stablecoins.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.bis.org/publ/qtrpdf/r_qt2112b.htm",
+      "theory": "Money hierarchy; bank vs non-bank liabilities"
     },
     {
       "rank": 23,
       "id": "travel-rule-aml-for-vasps-as-market-structure",
       "idea": "Travel rule / AML for VASPs as market structure",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Travel Rule / AML for VASPs reallocates counterparty access and vendor power.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.fatf-gafi.org/en/publications/Fatfrecommendations/Guidance-rba-virtual-assets-2021.html",
+      "theory": "AML as non-tariff barrier; network effects in compliance"
     },
     {
       "rank": 24,
       "id": "card-network-messaging-vs-account-to-account-rails",
       "idea": "Card network messaging vs account-to-account rails",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Rail choice is liability choice, not only fee choice.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.frbservices.org/financial-services/fednow",
+      "theory": "Payment system design; consumer protection"
     },
     {
       "rank": 25,
       "id": "fintech-failure-resolution-and-ring-fencing",
       "idea": "Fintech failure resolution and ring-fencing",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Without ring-fencing and resolution plans, fintech failure becomes a political event.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.financialstabilityboard.org/",
+      "theory": "Resolution regimes; bankruptcy remoteness; consumer protection"
     },
     {
       "rank": 26,
       "id": "data-localization-vs-regional-payment-platforms",
       "idea": "Data localization vs regional payment platforms",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Data localization forces multi-region payment architecture.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.pdpc.gov.sg/",
+      "theory": "Data sovereignty; platform architecture"
     },
     {
       "rank": 27,
       "id": "insurance-for-smart-contract-oracle-failure",
       "idea": "Insurance for smart-contract / oracle failure",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Insurance for protocol failure needs explicit trigger design; most policies are imperfect maps.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.iaisweb.org/",
+      "theory": "Insurance basis risk; operational risk"
     },
     {
       "rank": 28,
       "id": "market-structure-after-zero-commissions-equities-c",
-      "idea": "Market structure after zero commissions (equities\u2192crypto)",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "idea": "Market structure after zero commissions (equities→crypto)",
+      "thesis": "Zero-commission brokerage is a revenue-stack redesign with policy risk.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.sec.gov/marketstructure",
+      "theory": "Market microstructure; two-sided platforms"
     },
     {
       "rank": 29,
       "id": "sovereign-wealth-as-lp-into-fintech-platforms",
       "idea": "Sovereign wealth as LP into fintech platforms",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "SWF capital is strategic capital with political externalities.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.ifswf.org/",
+      "theory": "State capitalism; political risk"
     },
     {
       "rank": 30,
       "id": "climate-risk-disclosure-in-bank-books-fintech-angl",
       "idea": "Climate risk disclosure in bank books (fintech angle)",
-      "thesis": "Pattern seed \u2014 needs claim + primary sources before draft.",
-      "status": "queued-pattern",
+      "thesis": "Climate risk disclosure becomes a fintech data and credit-access constraint through banks.",
+      "status": "enriched-draft",
       "tweet_urls": [],
-      "vertical": "fintech"
+      "vertical": "fintech",
+      "primary_url": "https://www.fsb-tcfd.org/",
+      "theory": "Climate finance; supervisory disclosure"
     }
   ],
   "notes": [

@@ -1,26 +1,306 @@
 {
   "vertical": "fintech",
-  "generated_at": "2026-07-30T17:10:01.666561+00:00",
+  "generated_at": "2026-07-30T17:26:58.502873+00:00",
   "articles": [
     {
       "rank": 1,
       "slug": "zero-reserve-requirements",
       "title": "Zero reserve requirements are not free money",
-      "idea": "US banks at 0% reserve requirements since March 2020 \u2014 what that does and does not mean",
+      "idea": "US required reserve ratios fell to zero in March 2020. That is a real legal change. It is not the same thing as unconstrained credit creation.",
       "status": "enriched-draft",
-      "source": "yahoolovesyou harvest + primary sources",
+      "source": "sources-first enrichment pass",
       "vertical": "fintech",
-      "updated_at": "2026-07-30"
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 2,
+      "slug": "stablecoin-privacy-traceability",
+      "title": "Stablecoin rails make money more legible",
+      "idea": "Public ledgers and wallet analytics turn retail payments into graphs. Whether that is a privacy failure or a compliance feature depends on the institution, not the slogan.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 3,
+      "slug": "paypal-stablecoin-distribution",
+      "title": "PayPal's stablecoin bet is a distribution story",
+      "idea": "When an incumbent wallet launches a dollar stablecoin, the hard question is not the token brand. It is who already holds the customer relationship — and what redemption and compliance make the token money rather than marketing.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
     },
     {
       "rank": 4,
       "slug": "http-402-payment-required",
       "title": "The web reserved a payment code in 1991. We still bolt money on later.",
-      "idea": "HTTP 402 'Payment Required' as a native internet money primitive that never shipped",
+      "idea": "HTTP 402 Payment Required still exists in the protocol. The fact that online commerce mostly ignores it is a story about path dependence in payment infrastructure.",
       "status": "enriched-draft",
-      "source": "yahoolovesyou harvest + primary sources",
+      "source": "sources-first enrichment pass",
       "vertical": "fintech",
-      "updated_at": "2026-07-30"
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 5,
+      "slug": "swift-as-sanctions-rail",
+      "title": "Payment messaging is foreign policy infrastructure",
+      "idea": "SWIFT is a messaging cooperative, not a central bank. Disconnect threats still turn financial plumbing into a geopolitical instrument — and force smaller states and firms to treat rail dependency as political risk.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 6,
+      "slug": "mas-payments-licensing",
+      "title": "A Singapore license is a trust bridge, not a regional passport",
+      "idea": "MAS payments and digital-token regimes are real institutional technology. Founders misuse them when they treat a Singapore approval as automatic permission to operate identically across ASEAN.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 7,
+      "slug": "cross-border-remittance-cost",
+      "title": "Remittance ads sell fees. The product is corridor control.",
+      "idea": "Lower advertised FX fees hide spread and float. The real unit economics sit in who controls the corridor, the last-mile cash-out, and the compliance fixed costs.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 8,
+      "slug": "cbdc-retail-vs-wholesale",
+      "title": "Retail CBDC and wholesale CBDC solve different problems",
+      "idea": "Retail CBDC debates privacy and public money access. Wholesale CBDC debates settlement finality among institutions. Collapsing them into one &quot;digital currency&quot; story confuses product design and politics.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 9,
+      "slug": "stablecoin-reserves-attestation",
+      "title": "The stablecoin product is the reserve regime",
+      "idea": "Issuing a token is easy. The product is what backs it, who can redeem, how often someone attests, and what happens in a run. Treat attestation quality as the core feature, not a compliance afterthought.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 10,
+      "slug": "open-banking-data-portability",
+      "title": "Open banking rewrites who owns the customer relationship",
+      "idea": "Forced account-data portability is not a neutral API story. It reallocates distribution power between banks, fintechs, and aggregators — and turns &quot;who owns the customer&quot; into a contract and liability fight.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 11,
+      "slug": "agentic-payments-authorization",
+      "title": "Agentic payments fail on authority first, not model IQ",
+      "idea": "When software agents can initiate payments, the hard design problem is who authorized what, for how long, with what limits, and how you revoke it. Model capability is secondary to mandate design.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 12,
+      "slug": "credit-creation-not-fractional-reserve-slogan",
+      "title": "Banks create credit. &quot;Fractional reserves&quot; is the wrong slogan.",
+      "idea": "Public debate still explains banking with a 20th-century reserve-ratio metaphor. Modern constraints are capital, liquidity, funding, and supervision. Teaching the wrong model produces the wrong fintech products.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 13,
+      "slug": "idle-asset-escheat-crypto",
+      "title": "Unclaimed-property law meets exchange custody",
+      "idea": "State escheat and unclaimed-property regimes were built for bank accounts and safe-deposit boxes. Exchange-held crypto inherits those rules awkwardly — and the risk shows up as a balance-sheet and customer-service problem, not a whitepaper problem.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 14,
+      "slug": "cashless-policy-mexico-tolls",
+      "title": "Cashless mandates are policy products with outage risk",
+      "idea": "Forcing digital payment at tolls, stations, or transit is often sold as inclusion and efficiency. It is also a reliability and surveillance design choice. Treat the mandate as infrastructure politics, not only UX modernization.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 15,
+      "slug": "venture-subsidy-fintech-unit-econ",
+      "title": "Cheap capital can fake efficient rails",
+      "idea": "Many fintech products look efficient while customer acquisition, rewards, and float are venture-subsidized. When funding costs rise, the rail did not get worse — the subsidy ended. Unit economics must separate transfer cost from growth spend.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 16,
+      "slug": "bank-fintech-partnership-as-distribution-rent",
+      "title": "Bank–fintech deals sell distribution, not just sponsorship",
+      "idea": "Banking-as-a-service and sponsor-bank models are often pitched as API access. The scarce asset is usually the bank's charter, balance sheet, and regulatory relationships — rented distribution of public trust.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 17,
+      "slug": "embedded-finance-who-owns-the-customer-complaint",
+      "title": "In embedded finance, the complaint has many owners",
+      "idea": "When credit, accounts, or insurance sit inside a non-financial app, customers still experience one brand. Supervisors and courts care which legal entity failed. Complaint ownership is the product architecture.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 18,
+      "slug": "bnpl-credit-quality-through-the-cycle",
+      "title": "BNPL looks free until the cycle turns",
+      "idea": "Buy-now-pay-later products market smoothness at checkout. Credit quality, late fees, and household leverage show up later. Underwrite BNPL like consumer credit through the cycle, not like a payments feature.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 19,
+      "slug": "realtime-payments-and-fraud-acceleration",
+      "title": "Realtime payments compress fraud response time to zero",
+      "idea": "Instant settlement is a user benefit and a fraud acceleration. When push payments clear in seconds, recall windows shrink. Product design must put controls before the send button, not after the loss.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 20,
+      "slug": "merchant-acquiring-concentration-risk",
+      "title": "Merchant acquiring concentration is operational risk",
+      "idea": "Checkout conversion hides how few firms sit between your revenue and the card networks. Acquirer concentration is a continuity and pricing risk.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 21,
+      "slug": "on-chain-fx-vs-traditional-nostro-networks",
+      "title": "On-chain FX still meets nostro reality",
+      "idea": "Atomic swaps and stablecoin corridors can move value quickly between wallets. Most real economy FX still settles through bank correspondent networks, liquidity providers, and local payout rails. Bridge design is the product.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 22,
+      "slug": "tokenized-deposits-vs-stablecoins-liability-design",
+      "title": "Tokenized deposits and stablecoins are different liabilities",
+      "idea": "Both can move on shared ledgers. One is typically a bank deposit claim. The other is usually an issuer liability backed by reserves under a non-bank perimeter. Confusing the UX for the balance sheet is how bad products get built.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 23,
+      "slug": "travel-rule-aml-for-vasps-as-market-structure",
+      "title": "The Travel Rule is market structure, not paperwork",
+      "idea": "FATF Travel Rule obligations for virtual asset service providers change who can transact with whom at scale. Compliance interoperability becomes a competitive moat and a fragmentation risk.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 24,
+      "slug": "card-network-messaging-vs-account-to-account-rails",
+      "title": "Cards and A2A rails price different liability models",
+      "idea": "A checkout button can hide whether you are on card messaging with dispute rights or account-to-account finality. Those are different products.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 25,
+      "slug": "fintech-failure-resolution-and-ring-fencing",
+      "title": "Fintech failure needs a resolution story before the outage",
+      "idea": "When a non-bank payments or crypto platform fails, customers discover whether funds were safeguarded, segregated, or merely promised. Resolution design is a product feature you write in peacetime.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 26,
+      "slug": "data-localization-vs-regional-payment-platforms",
+      "title": "Localization rules break single-region payment platforms",
+      "idea": "A regional payments product with one cloud region is often an illegal or unlicensable design. Localization is a platform topology problem.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 27,
+      "slug": "insurance-for-smart-contract-oracle-failure",
+      "title": "Oracle failure is not automatically an insured event",
+      "idea": "Marketing &quot;insured smart contracts&quot; fails when policy wording excludes the actual failure mode. Map scenarios to triggers before you sell comfort.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 28,
+      "slug": "market-structure-after-zero-commissions-equities-c",
+      "title": "Zero commissions relocated the bill, not deleted it",
+      "idea": "Zero retail trading commissions changed market structure and incentive conflicts. The fee did not disappear; it moved.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 29,
+      "slug": "sovereign-wealth-as-lp-into-fintech-platforms",
+      "title": "Sovereign LPs bring duration and politics",
+      "idea": "Sovereign wealth as LP can stabilize a fintech cap table and import geopolitical constraints. Read the mandate, not only the check size.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
+    },
+    {
+      "rank": 30,
+      "slug": "climate-risk-disclosure-in-bank-books-fintech-angl",
+      "title": "Climate disclosure lands on fintech via bank partners",
+      "idea": "Supervisors and investors push climate risk into bank books. Embedded and partner fintechs get the questionnaire next — often without the data model ready.",
+      "status": "enriched-draft",
+      "source": "sources-first enrichment pass",
+      "vertical": "fintech",
+      "updated_at": "2026-07-31"
     }
   ]
 }
