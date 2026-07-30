@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A plain permission sheet for AI agents: who they act as, what they may touch, and which actions still need a human.">
+    <meta name="description" content="A plain permission table for AI agents: who they act as, what they may touch, and which actions still need a human.">
     <title>What Agents Are Allowed To Do | Strategy Publisher</title>
     <link rel="stylesheet" href="../styles.css">
   </head>
@@ -28,13 +28,13 @@
         <div class="issue-kicker">Public memo / Issue 017</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=agents">Agents</a><a class="tag-chip" href="../index.html#topic=governance">Governance</a></div>
         <h1>What Agents Are Allowed To Do</h1>
-        <p>Agentic AI turns access into a strategic choice. Before an agent reads, decides, writes, spends, messages, or changes a system, executives need a tracking sheet that names the owner, the permission, the evidence trail, and the stop rule.</p>
+        <p>Agentic AI turns access into a strategic choice. Before an agent reads, decides, writes, spends, messages, or changes a system, executives need a tracking table that names the owner, the permission, the evidence trail, and the stop rule.</p>
       </header>
 
       <article class="article-body">
         <p>The old software permission question was mostly administrative. Administrators tracked which person could reach which system, which application could call which interface, and which manager could sign off on a change. Agentic AI makes the same question strategic. An agent can reason across context, call tools, produce artifacts, trigger workflows, pull data from other systems, and act before a manager reviews the sequence. Sparse access leaves the agent stuck as a demo. Broad access hands the company an operator that carries borrowed authority without direct oversight.</p>
 
-        <p>The permission sheet is the control point that actually matters. Prompts alone do not set authority.</p>
+        <p>The permission table is the control point that actually matters. Prompts alone do not set authority.</p>
 
         <blockquote>An agent's authority should stay inside the business decision it is allowed to improve.</blockquote>
 
@@ -46,15 +46,15 @@
         <p>If the company cannot separate the account from the actor, the first audit question has no answer: was this a human decision, an AI recommendation, an AI execution, or a machine step approved by a named human?</p>
 
         <h2>Six Permission Lines</h2>
-        <p>A practical agent permission sheet begins with six lines. Keep them plain so they can survive procurement, engineering, legal, security, finance, and operating review.</p>
+        <p>A practical agent permission table begins with six lines. Keep them plain so they can survive procurement, engineering, legal, security, finance, and operating review.</p>
 
-        <div class="article-table-wrap" role="region" aria-label="AI agent permission sheet" tabindex="0">
+        <div class="article-table-wrap" role="region" aria-label="AI agent permission table" tabindex="0">
           <table class="article-table">
             <thead>
               <tr>
-                <th>Permission Line</th>
-                <th>Executive Question</th>
-                <th>Failure Pattern</th>
+                <th>Permission</th>
+                <th>Question</th>
+                <th>Failure mode</th>
               </tr>
             </thead>
             <tbody>
@@ -97,10 +97,10 @@
         <h2>What The Agent Security Market Signals</h2>
         <p>The Open Web Application Security Project (OWASP) work on agentic AI security names risks that operators can otherwise sense but not govern. Its guidance covers prompt injection, tool abuse, privilege escalation, data exfiltration, memory poisoning, goal hijacking, excessive autonomy, high-impact action abuse, approval manipulation, cascading failures, wallet denial, sensitive-data exposure, and supply-chain compromise. The list is long, but the executive lesson is compact: agents collapse application risk, identity risk, data risk, operating risk, and cost risk into one delegated workflow.</p>
 
-        <p>Place the sheet above any single team. Security can define controls. Engineering can implement scopes and logs. Legal can define unacceptable external commitments. Finance can define cost thresholds. Business owners can define the task and the escalation rule. No one function can set the full permission scope alone, because that scope reflects all those risks together.</p>
+        <p>Place the table above any single team. Security can define controls. Engineering can implement scopes and logs. Legal can define unacceptable external commitments. Finance can define cost thresholds. Business owners can define the task and the escalation rule. No one function can set the full permission scope alone, because that scope reflects all those risks together.</p>
 
         <h2>Four Named Controls</h2>
-        <p>The permission sheet should force four controls before any agent moves from pilot to production.</p>
+        <p>The permission table should force four controls before any agent moves from pilot to production.</p>
 
         <h3>1. A named human owner</h3>
         <p>Every agent needs an owner who is responsible for the business outcome and the harm model. "The AI team" does not meet that test. The owner must know what the agent is allowed to optimize, what it must never do, and when it has to stop.</p>
@@ -115,14 +115,14 @@
         <p>Supervisory control is practical or it is empty. There must be a way to pause, disable, roll back, or downscope an agent when cost spikes, data exposure, behavior drift, policy conflict, or customer-impacting error appears. A stop rule that requires a committee meeting fails the test.</p>
 
         <h2>Buyer Questions</h2>
-        <p>Enterprise buyers should ask vendors for the permission sheet before they ask for another demo. The demo shows what the agent can do on a clear path. The sheet shows whether the company can live with what the agent is allowed to do when conditions turn. Buyers need to know whether they can restrict tool use by role, data class, workflow, geography, customer segment, or action type. Visibility into which agent touched which system matters, as does the ability to require human approval for high-impact steps. Draft, recommendation, execution, and learning phases should stay separable, and a permission should be revocable without breaking unrelated work.</p>
+        <p>Enterprise buyers should ask vendors for the permission table before they ask for another demo. The demo shows what the agent can do on a clear path. The table shows whether the company can live with what the agent is allowed to do when conditions turn. Buyers need to know whether they can restrict tool use by role, data class, workflow, geography, customer segment, or action type. Visibility into which agent touched which system matters, as does the ability to require human approval for high-impact steps. Draft, recommendation, execution, and learning phases should stay separable, and a permission should be revocable without breaking unrelated work.</p>
 
         <p>Those questions may look slower than rapid demos. In practice they speed adoption, because they let the buyer approve narrow autonomy instead of rejecting an opaque system.</p>
 
         <h2>Founder Version</h2>
         <p>Small companies need this even more, because their informal permissions are usually thinner. A founder may have access to everything. The first agent may run from the founder's laptop, email account, API key, or admin console. That feels efficient until the agent touches a customer, updates a Customer Relationship Management record, creates a support promise, spends credits, or exposes a private memo.</p>
 
-        <p>The founder version of the sheet can fit on one page:</p>
+        <p>The founder version of the table can fit on one page:</p>
 
         <ol>
           <li>Which business decision does this agent improve?</li>
@@ -137,7 +137,7 @@
         <p>If those answers are missing, keep the agent in assist mode. Let it draft, classify, search, summarize, or prepare options. Hold execution across systems until the permission scope is real.</p>
 
         <h2>Autonomy As Accounting</h2>
-        <p>Agent permission is best treated as control backed by accounting, not as a fear exercise. A well-scoped agent can cut response time, remove handoff friction, improve service consistency, monitor signals continuously, and free expert teams for judgment work. Every unit of autonomy still carries a balance sheet: it consumes data access, inference budget, tool authority, human review capacity, and institutional trust. The permission sheet is how the company decides whether that balance sheet is worth carrying.</p>
+        <p>Agent permission is best treated as control backed by accounting, not as a fear exercise. A well-scoped agent can cut response time, remove handoff friction, improve service consistency, monitor signals continuously, and free expert teams for judgment work. Every unit of autonomy still carries a balance sheet: it consumes data access, inference budget, tool authority, human review capacity, and institutional trust. The permission table is how the company decides whether that balance sheet is worth carrying.</p>
 
         <h2>Executive Test</h2>
         <p>Before expanding an agent's access, require seven answers.</p>
