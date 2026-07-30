@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>US–ASEAN–China entrepreneurship · seeds · private</title>
+<link rel="stylesheet" href="/blog/styles.css">
+<style>
+.wrap{max-width:1040px;margin:0 auto;padding:48px 24px 96px}
+.locked{max-width:420px;margin:72px auto;padding:24px;border:1px solid var(--line);background:var(--sheet)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+th{background:#f0ebe0;font-size:.78rem;text-transform:uppercase}
+.hidden{display:none!important}
+input[type=password]{width:100%;padding:10px;margin:8px 0 12px;font:inherit}
+button{padding:8px 14px;background:var(--ink);color:#fff;border:0;font:inherit;font-weight:700;cursor:pointer}
+a{color:var(--blue)}
+</style></head><body>
+<header class="site-header"><a class="brand" href="./"><span class="brand-mark">N</span><span><strong>US–ASEAN–China entrepreneurship</strong><small>Seeds</small></span></a></header>
+<main>
+<section id="gate" class="locked"><h1>Seeds · US–ASEAN–China entrepreneurship</h1>
+<p style="color:var(--muted)">Same password as the vertical hub.</p>
+<p id="err" style="color:var(--crimson)"></p>
+<input id="password" type="password" autofocus>
+<button id="go" type="button">Unlock</button></section>
+<section id="app" class="wrap hidden">
+<div class="issue-kicker">Private seed queue</div>
+<h1>US–ASEAN–China entrepreneurship seeds</h1>
+<p id="meta" style="color:var(--muted)">Loading…</p>
+<div style="overflow-x:auto;border:1px solid var(--line);background:var(--sheet)">
+<table><thead><tr><th>#</th><th>Idea</th><th>Status</th><th>Links</th><th>Enriched</th></tr></thead><tbody id="body"></tbody></table>
+</div>
+<p style="margin-top:16px"><a href="./">← Hub</a></p>
+</section></main>
+<script>
+const HASH="ff854ad6c0b6c6a80a22e03946c0a6fd8bcb3fe3636ebeccc1c11e7cee1edc08"; const KEY="sp-vertical-auth-v1";
+async function sha(t){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
+function show(ok){document.getElementById("gate").classList.toggle("hidden",ok);document.getElementById("app").classList.toggle("hidden",!ok)}
+async function load(){
+  const res=await fetch("data/seeds.json?t="+Date.now(),{cache:"no-store"});
+  if(!res.ok){document.getElementById("meta").textContent="No seeds.json yet.";return}
+  const data=await res.json();
+  document.getElementById("meta").textContent=(data.seeds||[]).length+" seeds · "+(data.generated_at||"");
+  document.getElementById("body").innerHTML=(data.seeds||[]).map(s=>`<tr>
+    <td>${s.rank}</td>
+    <td><strong>${s.idea||""}</strong><br><span style="color:var(--muted)">${s.thesis||""}</span></td>
+    <td>${s.status||""}</td>
+    <td>${(s.tweet_urls||[]).map(u=>`<a href="${u}" target="_blank" rel="noopener">tweet</a>`).join(" ")||"—"}
+      ${s.primary_url?` <a href="${s.primary_url}" target="_blank" rel="noopener">primary</a>`:""}</td>
+    <td>${s.enriched_path?(s.enriched_path.split("/").slice(-1)[0]):"—"}</td>
+  </tr>`).join("")||"<tr><td colspan=5>Empty</td></tr>";
+}
+document.getElementById("go").onclick=async()=>{
+  if(await sha(document.getElementById("password").value||"")!==HASH){document.getElementById("err").textContent="Wrong password.";return}
+  sessionStorage.setItem(KEY,"1");show(true);load();
+};
+if(sessionStorage.getItem(KEY)==="1"){show(true);load()}
+</script></body></html>

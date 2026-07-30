@@ -1,0 +1,76 @@
+{
+  "vertical": "fintech",
+  "generated_at": "2026-07-30T17:08:40.192211+00:00",
+  "sources": [
+    {
+      "handle": "federalreserve",
+      "name": "Federal Reserve Board",
+      "role": "Primary US monetary/banking authority",
+      "url": "https://www.federalreserve.gov/",
+      "note": "Primary for reserve requirements, payments policy, supervision."
+    },
+    {
+      "handle": "BIS_org",
+      "name": "Bank for International Settlements",
+      "role": "Cross-border payments / stablecoin research",
+      "url": "https://www.bis.org/",
+      "note": "Best primary for global payment rails and stablecoin monitoring."
+    },
+    {
+      "handle": "MAS_sg",
+      "name": "Monetary Authority of Singapore",
+      "role": "ASEAN fintech hub regulator",
+      "url": "https://www.mas.gov.sg/",
+      "note": "Primary for Singapore payments, digital assets, licensing."
+    },
+    {
+      "handle": "IMFNews",
+      "name": "IMF",
+      "role": "Macro + capital flows + CBDC surveys",
+      "url": "https://www.imf.org/",
+      "note": "Use for macro framing, not as sole claim support."
+    },
+    {
+      "handle": "FT",
+      "name": "Financial Times",
+      "role": "Quality secondary for markets/reg",
+      "url": "https://www.ft.com/",
+      "note": "Prefer primary when FT summarizes a regulator."
+    },
+    {
+      "handle": "Paypal",
+      "name": "PayPal Newsroom",
+      "role": "Stablecoin / wallet product primaries",
+      "url": "https://newsroom.paypal-corp.com/",
+      "note": "Company primary for PYUSD / stablecoin product claims."
+    },
+    {
+      "handle": "coinbureau",
+      "name": "Coin Bureau",
+      "role": "Retail crypto narrative (secondary)",
+      "url": "https://x.com/coinbureau",
+      "note": "From harvest; treat as secondary, not primary."
+    },
+    {
+      "handle": "BTCBreadMan",
+      "name": "BTCBreadMan",
+      "role": "Banking-structure discourse seed",
+      "url": "https://x.com/BTCBreadMan",
+      "note": "Seed handle from yahoolovesyou harvest; verify claims against Fed."
+    },
+    {
+      "handle": "StakeWithPride",
+      "name": "StakeWithPride",
+      "role": "Stablecoin privacy critique seed",
+      "url": "https://x.com/StakeWithPride",
+      "note": "Seed; pair with BIS/FATF primaries."
+    },
+    {
+      "handle": "iampaulgrewal",
+      "name": "Paul Grewal",
+      "role": "US crypto regulatory process seed",
+      "url": "https://x.com/iampaulgrewal",
+      "note": "Coinbase GC; secondary for SEC/FDIC process claims."
+    }
+  ]
+}

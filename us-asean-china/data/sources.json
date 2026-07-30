@@ -1,0 +1,76 @@
+{
+  "vertical": "us-asean-china",
+  "generated_at": "2026-07-30T17:08:40.192211+00:00",
+  "sources": [
+    {
+      "handle": "ASEAN",
+      "name": "ASEAN Secretariat",
+      "role": "Regional institutional primary",
+      "url": "https://asean.org/",
+      "note": "Primary for ASEAN digital / trade frameworks."
+    },
+    {
+      "handle": "MAS_sg",
+      "name": "Monetary Authority of Singapore",
+      "role": "SG fintech + market infrastructure",
+      "url": "https://www.mas.gov.sg/",
+      "note": "Cross-listed; SG as ASEAN operating base."
+    },
+    {
+      "handle": "IMDA_SG",
+      "name": "IMDA Singapore",
+      "role": "Digital economy policy",
+      "url": "https://www.imda.gov.sg/",
+      "note": "Digital economy / data."
+    },
+    {
+      "handle": "WorldBank",
+      "name": "World Bank",
+      "role": "SEA development / remittances / digital ID",
+      "url": "https://www.worldbank.org/",
+      "note": "Use for remittance and digital public infrastructure facts."
+    },
+    {
+      "handle": "CSIS",
+      "name": "CSIS",
+      "role": "US\u2013China\u2013SEA geopolitics (secondary research)",
+      "url": "https://www.csis.org/",
+      "note": "Secondary; good for geo context when it hits business."
+    },
+    {
+      "handle": "Zac_labs",
+      "name": "Zac_labs",
+      "role": "Singapore / Forest City / Network School discourse seed",
+      "url": "https://x.com/Zac_labs",
+      "note": "From harvest; verify history claims against primary reporting."
+    },
+    {
+      "handle": "katexbt",
+      "name": "katexbt",
+      "role": "Chinese diaspora / parallel economy seed",
+      "url": "https://x.com/katexbt",
+      "note": "Anecdotal/discourse; not statistical primary."
+    },
+    {
+      "handle": "juliusonchain",
+      "name": "juliusonchain",
+      "role": "SEA founder network seed",
+      "url": "https://x.com/juliusonchain",
+      "note": "Network signal only."
+    },
+    {
+      "handle": "StartupArchive_",
+      "name": "Startup Archive",
+      "role": "Founder operating doctrine (evergreen)",
+      "url": "https://x.com/StartupArchive_",
+      "note": "General entrepreneurship; use selectively."
+    },
+    {
+      "handle": "yahoolovesyou",
+      "name": "yahoolovesyou (Nick, mixed personal)",
+      "role": "Mixed personal feed \u2014 harvest only, not curator",
+      "url": "https://x.com/yahoolovesyou",
+      "note": "NOT a vertical curator. Use to discover original posters only."
+    }
+  ]
+}

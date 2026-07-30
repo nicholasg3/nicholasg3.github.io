@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~00:40 SGT |
-| **Last commit focus** | Cross-ref fixes (titles + links); staging drafts exist but **unenriched** |
+| **Last updated** | 2026-07-31 ~01:10 SGT |
+| **Last commit focus** | Multi-vertical program: /fintech/ + /us-asean-china/ private hubs; yahoolovesyou harvest; enriched drafts (sources-first) |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -65,7 +65,13 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 ## Now / next (ordered)
 
-### P0 — process integrity
+### P0 — multi-vertical enrichment (current priority)
+
+1. Continue **sources-first** drafts for `/fintech/` and `/us-asean-china/` (target 30 seeds each; drafts only when enriched).
+2. Grow canonical source lists from harvest original posters + doctrine-fit outlets.
+3. Do **not** mass-produce unenriched essays.
+
+### P0b — AI process integrity (deferred by Nick)
 
 1. **Enrich staging drafts before more volume**  
    For each staged post (start with active seeds):  
@@ -181,6 +187,37 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 ---
 
 ## Session log (append-only)
+
+### 2026-07-31 (later) — multi-vertical kickoff
+
+**Decisions locked (Nick):**
+- Pillars: AI (existing) + **Fintech** + **US–ASEAN–China entrepreneurship** (geo only when it hits that beat)
+- Paths: `/fintech/`, `/us-asean-china/`
+- Volume target: 30 seeds → enriched → drafts **per** new vertical
+- Mini-sites **password-only** until Nick unlocks
+- **Same password** for both vertical private pages: `nick-verticals`
+- `@yahoolovesyou` = personal mixed feed, **not** vertical curator; use to discover original posters as canonical candidates; dedicated curator accounts later
+- **No draft without Source notes + primary/canonical links**; research claims, thread context, theory, anecdotes; fewer than 30 OK; if thin facts, zoom out to patterns; sources may be news **or** papers/lit
+
+**Done this block:**
+- Captured 189 posts from `@yahoolovesyou` (`mode=all`, 10 pages) → `Projects-for-agents/retweet-library-fintech/raw/yahoolovesyou_mix.md`
+- Scaffolded password hubs: `/fintech/`, `/us-asean-china/` (hub, seeds, sources, staging)
+- Built 30 seed slots + proposed canonical sources per vertical
+- Wrote **4 enriched staging drafts with Source notes** (2 fintech, 2 us-asean-china) — quality bar enforced; not 30 yet
+
+**Not done:**
+- Full 30 enriched drafts per vertical
+- Dedicated curator accounts / continuous capture per vertical
+- AI staging enrichment (explicitly deferred)
+- Workflow file still may need workflow-scoped push
+
+**Next agent:**
+1. Enrich next fintech seeds (stablecoin privacy, PayPal distribution, SWIFT/sanctions rail) with primaries
+2. Enrich next us-asean-china seeds (Forest City, NS enclave, tech controls) with primary reporting
+3. Expand drafts only when Source notes are real
+4. Keep updating this PLAN
+
+
 
 ### 2026-07-31
 

@@ -1,0 +1,26 @@
+{
+  "vertical": "fintech",
+  "generated_at": "2026-07-30T17:10:01.666561+00:00",
+  "articles": [
+    {
+      "rank": 1,
+      "slug": "zero-reserve-requirements",
+      "title": "Zero reserve requirements are not free money",
+      "idea": "US banks at 0% reserve requirements since March 2020 \u2014 what that does and does not mean",
+      "status": "enriched-draft",
+      "source": "yahoolovesyou harvest + primary sources",
+      "vertical": "fintech",
+      "updated_at": "2026-07-30"
+    },
+    {
+      "rank": 4,
+      "slug": "http-402-payment-required",
+      "title": "The web reserved a payment code in 1991. We still bolt money on later.",
+      "idea": "HTTP 402 'Payment Required' as a native internet money primitive that never shipped",
+      "status": "enriched-draft",
+      "source": "yahoolovesyou harvest + primary sources",
+      "vertical": "fintech",
+      "updated_at": "2026-07-30"
+    }
+  ]
+}

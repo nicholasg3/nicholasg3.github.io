@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="HTTP 402 Payment Required still exists in the protocol. The fact that online commerce mostly ignores it is a story about path dependence in payment infrastructu">
+  <title>The web reserved a payment code in 1991. We still bolt money on later. | Fintech staging</title>
+  <link rel="stylesheet" href="/blog/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../"><span class="brand-mark">N</span><span><strong>Fintech</strong><small>Private staging</small></span></a>
+    <nav class="nav"><a href="../">Hub</a><a href="../seeds.html">Seeds</a></nav>
+  </header>
+  <main class="article-main">
+    <header class="article-header">
+      <div class="issue-kicker">Staging · enriched draft · queue #4 · not public</div>
+      <h1>The web reserved a payment code in 1991. We still bolt money on later.</h1>
+      <p>HTTP 402 Payment Required still exists in the protocol. The fact that online commerce mostly ignores it is a story about path dependence in payment infrastructure.</p>
+      <p><a href="https://x.com/0xSammy/status/2034334738853285899" rel="noopener noreferrer">Seed tweet</a></p>
+    </header>
+    <article class="article-body">
+      <h2>The claim</h2>
+      <p>HTTP defined status code 402 as “Payment Required.” It remains reserved for future use in current HTTP semantics. That is not a conspiracy. It is a fossil of an unfinished internet money design.</p>
+      <p>Every checkout that redirects to a processor, every wallet popup, every card form is evidence that value transfer never became a first-class browser primitive the way hyperlinks did.</p>
+      <h2>What the standard actually says</h2>
+      <p>RFC 9110 documents 402 Payment Required and notes it is reserved for future use. The protocol left a door. Industry did not walk through it in a standardized way.</p>
+      <p>Instead, payments evolved as application-layer products: card networks, banks, processors, and later wallets and crypto rails. Those products optimized for risk, chargebacks, identity, and regulation — problems a bare status code never solved.</p>
+      <h2>Why the fossil matters now</h2>
+      <p>Agentic commerce and machine-to-machine payments revive the old dream: machines that can request and settle value without a human filling a form. The protocol gap becomes a product opportunity again.</p>
+      <p>But the hard problems remain authorization, dispute, fraud, sanctions, and who is the customer of record. A 402 response does not answer those. Fintech founders who market “native internet money” without an authorization model are selling nostalgia for a missing standard.</p>
+      <h2>What to do</h2>
+      <p>If you design agentic payments, write the authorization and revocation path before the protocol romance. Who can spend, on what limits, with what audit trail, and how a human stops it.</p>
+      <p>Use 402 as a teaching artifact for path dependence — not as proof that a simple header will replace Visa.</p>
+      <section class="source-notes" aria-labelledby="src">
+        <h2 id="src">Source notes</h2>
+        <ul>
+            <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html#name-402-payment-required">RFC 9110 — HTTP Semantics, §15.5.3 402 Payment Required</a>: Primary protocol source.</li>
+            <li><a href="https://httpwg.org/specs/rfc9110.html#status.402">HTTP Working Group HTML rendering of RFC 9110 status 402</a>: Canonical readable form of the same standard.</li>
+            <li><a href="https://x.com/0xSammy/status/2034334738853285899">Seed tweet (0xSammy), reposted by @yahoolovesyou</a>: Discourse seed; historical narrative must be checked against RFC text.</li>
+        </ul>
+        <p><em>Enriched staging draft. Not legal or investment advice. Promote only after Nick sign-off.</em></p>
+      </section>
+    </article>
+    <aside class="article-side" aria-label="Staging">
+      <section class="side-card">
+        <span class="section-label">Gate</span>
+        <strong>Sources before promotion.</strong>
+        <p>This piece was written only after primary/canonical links were attached. Gaps are marked in the notes.</p>
+      </section>
+    </aside>
+  </main>
+  <footer class="site-footer"><span>Private staging</span><a href="../">Hub</a></footer>
+</body>
+</html>

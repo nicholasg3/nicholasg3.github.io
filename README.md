@@ -19,3 +19,12 @@ Detail tables: [`BLOG-QUEUE.md`](BLOG-QUEUE.md).
 
 - Home: https://nicholasg3.github.io/  
 - Blog: https://nicholasg3.github.io/blog/  
+
+## Private verticals (password-only until unlocked)
+
+| Vertical | Hub | Password |
+|----------|-----|----------|
+| Fintech | https://nicholasg3.github.io/fintech/ | `nick-verticals` |
+| US–ASEAN–China entrepreneurship | https://nicholasg3.github.io/us-asean-china/ | `nick-verticals` |
+
+Shared password. Client-side gate only. See `PLAN.md`.
