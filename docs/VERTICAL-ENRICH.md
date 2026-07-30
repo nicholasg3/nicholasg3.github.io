@@ -77,12 +77,26 @@ stats” without a table/report title and year.
 One claim. Cut ideas that do not serve it. If the seed is thin, write a **pattern
 memo that says so** — or refuse to draft.
 
-### 4. Draft (Grok voice; deep enough)
+### 4. Draft (Grok voice; match live public memos)
 
-- Rough bar: **≥800 words** of body for a full memo; shorter only if Nick asks for a brief.
+**Model form:** live posts such as
+[`asean-market-entry-test.html`](../blog/posts/asean-market-entry-test.html) and
+[`stablecoin-distribution-test.html`](../blog/posts/stablecoin-distribution-test.html).
+
+- Claim first; named institutions and numbers; optional blockquote test; useful-signal / false-positive table; close with procedure.
+- Rough bar: **≥800 words** of body for a full memo.
 - Integrate sources **in the body** (name + link + what they establish).
-- Source notes list the same documents, with one-line “supports: …” clauses.
+- Source notes: same documents, one line each on what they establish.
 - Staging may keep seed-tweet chrome; live must strip it (`promote_staging_article.py`).
+
+**Banned in body (Nick 2026-07-31):**
+
+- Sections titled “What this is not claiming” / “What this is not”
+- Stacked not-X-but-Y / “That is not a vibe complaint…” hedging
+- Meta lines: “The particular claim is narrow,” “This draft intentionally…”
+- Ornamental hub links that never appear as load-bearing evidence in the prose
+
+**Writer routing:** public essay body → **Grok**. Research/brief → any agent.
 
 ### 5. Status labels (honest)
 
