@@ -1,87 +1,76 @@
-# Blog queue & plan (nicholasg3.github.io)
+# Blog queue — detail tables
 
-Last updated: 2026-07-31
+**Running plan (session source of truth):** [`PLAN.md`](PLAN.md)  
 
-Tracking for open writing work. Site deploys from `master` (GitHub Pages).
-Issues for this site live on `nicholasg3/ai-agents-workspace` (this repo has issues disabled).
+Update `PLAN.md` every session. Keep this file for queue tables and tool pointers; do not let it drift ahead of `PLAN.md`.
 
-## Private live ideas database
+Last aligned with PLAN: **2026-07-31**
 
-- **Page (password-gated):** https://nicholasg3.github.io/blog/ideas-queue.html
-- **Default password:** `nick-blog-queue` (change hash in `blog/ideas-queue.html`)
-- **Data:** `blog/data/ideas-queue.json` (rebuilt by `scripts/build_ideas_queue.py`)
-- **Auto-update:** `.github/workflows/ideas-queue.yml` daily + on builder changes
-- Optional secret `WORKSPACE_REPO_TOKEN` (read access to `ai-agents-workspace`) attaches enriched/analyzed paths from the retweet library
+---
 
-GitHub Pages has no real server auth. This is a client-side password gate for an internal backlog, not high-security secrets.
+## Private tools
 
+| Tool | URL | Password | Data |
+|------|-----|----------|------|
+| Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `nick-blog-queue` | `blog/data/ideas-queue.json` |
+| Article staging | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*` |
+
+Client-side password only (GitHub Pages). See PLAN security note.
+
+Rebuild ideas JSON:
+```bash
+python3 scripts/build_ideas_queue.py
+```
+
+---
 
 ## Process (per post)
 
-1. Pick seed from shortlist / active seeds
-2. Ground (who argues it, primary sources, theory)
-3. Particular thesis
-4. **Grok default-voice** draft/rewrite (`humanify` skill = detect + free rewrite)
-5. Offline detector (diagnostic)
-6. Optional droplet adversary panel
-7. Nick sign-off
-8. Remove draft label → catalogue as final → push
+1. Pick seed  
+2. **Ground** (sources first — do not skip)  
+3. Particular thesis  
+4. Grok default-voice draft → **staging**  
+5. Detector (diagnostic)  
+6. Optional adversary panel  
+7. Nick sign-off  
+8. Promote to live catalogue  
 
-Canonical skills: `skill-library/creative/humanify`, `blog-review`.
+Skills: `blog-review`, `humanify` (detect with flags; rewrite in default Grok voice).
 
-## Active drafts on this repo
+---
 
-| File | Title | Status | Next |
-|------|-------|--------|------|
-| `blog/posts/metric-authorship-ai-coding.html` | If success means task completion, the score may track who defines the task | **Draft on GH** (catalogue card marked Draft; `noindex`) | Enrich evidence; real study citation if public; free-style Grok pass; Nick sign-off |
+## Active seeds
 
-## Seed queue (from shortlist 2026-07-21 / handoff 2026-07-22)
+| Pri | Shortlist # | Focus | Status | Paths |
+|-----|-------------|-------|--------|-------|
+| 1 | **#4** Metric-authorship | Completion metrics reward who defines done | Draft live + staging; **needs enrichment** | `blog/posts/metric-authorship-ai-coding.html`, `blog/staging/posts/metric-authorship.html` |
+| 2 | **#1** Expertise → environment | Performance → harness/folder | Staging only; unenriched | `blog/staging/posts/expertise-to-environment.html` |
+| 3 | **#6** Sovereignty without self-sufficiency | State-as-VC | Staging only; unenriched | `blog/staging/posts/sovereignty-without-self-sufficiency.html` |
+| 4 | **#8** AI unit economics | Load-bearing vs propped | Staging only; unenriched | `blog/staging/posts/ai-unit-economics.html` |
+| 5 | **#9** Discovered bias | Opacity vs reform | Staging only; unenriched | `blog/staging/posts/discovered-bias.html` |
 
-Priority order:
+Full top-10 shortlist + ranks 11–30: `blog/data/ideas-queue.json` and PLAN queue map.
 
-| Pri | Shortlist # | Focus | Status |
-|-----|-------------|-------|--------|
-| 1 | **#4** Metric-authorship paradox | Completion metrics reward who defines “done” | Draft HTML on GH; needs enrichment |
-| 2 | **#1** Expertise → environment | Performance migrates into harness/folder config | Queued — no draft |
-| 3 | **#6** Sovereignty without self-sufficiency | State “sovereignty” via VC amid interdependence | Queued |
-| 4 | **#8** AI unit economics | Load-bearing vs propped usage | Queued |
-| 5 | **#9** Discovered bias | Opacity vs reform when bias is admitted | Queued |
+---
 
-Source docs (workspace / strategic-publishing):
+## Staging (30 posts)
 
-- `signals/retweet-library/digests/blog-shortlist-2026-07-21.md`
-- `signals/retweet-library/digests/blog-seeds-active-2026-07-22.md`
-- Handoffs: `ai-agents-workspace/HANDOFF-blog-humanify-and-seeds-2026-07-22.md`
+All under `blog/staging/posts/`. **Status as of 2026-07-31: claim-first drafts without systematic Source notes.**  
 
-## Other open site work (GH issues on ai-agents-workspace)
+Do not promote until PLAN “enriched staging” checklist passes.
 
-- **#127** Cron: retweet-library → humanified blog post (human-gated drafts) — blocked on seed quality practice
-- **#128** Photos / Projects page
-- **#138** Shorts pipeline from blog/teaching content
-- Teaching series: workflow primer Part 2+ when outlines exist
+---
 
-## Recently done (2026-07-30)
+## Other open site work (ai-agents-workspace issues)
 
-- Sitewide default-Grok prose rewrite
-- Plain-English titles (drop ledger/boundary costume)
-- Table/section label cleanup
-- `humanify` skill = detect + default Grok rewrite (no doctrine checklist)
+- **#127** Cron: retweet → humanified draft (human-gated)  
+- **#128** Photos / Projects page  
+- **#138** Shorts pipeline  
+- Workflow primer Part 2+ when teaching outlines exist  
+- Ideas-queue GitHub Action: local workflow file may need workflow-scoped push  
 
-## Definition of done (draft → final)
+---
 
-- [ ] Particular claim still clear after enrichment
-- [ ] Sources are primary where possible (not only retweet dossier)
-- [ ] Free-style Grok rewrite (not choppy checklist prose)
-- [ ] Detector residual acceptable
-- [ ] Nick sign-off
-- [ ] Remove `noindex` + Draft catalogue label
-- [ ] Live on Pages without “Draft” kicker
+## Definition of done
 
-
-## Article staging (password-gated)
-
-- **URL:** https://nicholasg3.github.io/blog/staging/
-- **Password:** `nick-staging`
-- **Contents:** top-30 queue ideas as private draft essays under `blog/staging/posts/`
-- **Manifest:** `blog/staging/manifest.json`
-- Not in public catalogue. Promote only after enrichment + Nick sign-off.
+See **PLAN.md** (enriched staging + live catalogue checklists).
