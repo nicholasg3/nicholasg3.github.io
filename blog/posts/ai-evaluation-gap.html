@@ -32,9 +32,9 @@
       </header>
 
       <article class="article-body">
-        <p>The next weak link in AI strategy is evaluation. The term now stretches across benchmark scores, vendor demos, red-team reports, human preference tests, pilot surveys, incident reviews, procurement questionnaires, and the private judgment of senior engineers.</p>
+        <p>The next weak link in AI strategy is evaluation. The term now stretches across benchmark scores, vendor demos, red-team reports, human preference tests, pilot surveys, incident reviews, procurement questionnaires, and the private judgment of senior engineers — and that looseness carries real costs.</p>
 
-        <p>That looseness carries real costs. Companies are shifting from chat tools and drafting aids into agents, copilots, tool use, code changes, support workflows, knowledge retrieval, sales preparation, finance analysis, and operational recommendations. Models may score well. Demos may look strong. Benchmarks may stay green on paper. The narrower question is whether the company maintains a live evidence loop that shows the system works inside this workflow, under this authority, for this owner, at this cost, and with this failure response.</p>
+        <p>Companies are shifting from chat tools and drafting aids into agents, copilots, tool use, code changes, support workflows, knowledge retrieval, sales preparation, finance analysis, and operational recommendations. Models may score well. Demos may look strong. Benchmarks may stay green on paper. The narrower question is whether the company maintains a live evidence loop that shows the system works inside this workflow, under this authority, for this owner, at this cost, and with this failure response.</p>
 
         <p>Without that loop, the company is purchasing confidence. Evaluation has not started.</p>
 
@@ -42,23 +42,23 @@
 
         <p>Public signals point the same way. The National Institute of Standards and Technology (NIST) AI Risk Management Framework and its Resource Center stress testing, evaluation, verification, validation, documentation, and risk management as ongoing practices rather than one-time labels. Center for AI Standards and Innovation (CAISI) reports on agent evaluations are more direct: agentic benchmarks can be gamed, transcript review counts, and post-deployment monitoring stays difficult. OpenAI's 2026 papers on third-party evaluations carry the same methodological caution from the developer side: scope, validity risks, and result interpretation limit what any evaluation can prove.</p>
 
-        <p>McKinsey's 2026 AI trust survey supplies the management view. Responsible AI maturity is rising, yet strategy, governance, and agentic controls continue to trail. Security and risk concerns still rank high as barriers to scaling agentic systems, while clear accountability lines track with stronger maturity. Anthropic's Economic Index supplies a separate adoption signal: AI use breaks into distinct work primitives that vary by task, cadence, and delegation pattern. Each primitive requires its own proof standard.</p>
+        <p>McKinsey's 2026 AI trust survey supplies the management view. Responsible AI maturity is rising, yet strategy, governance, and agentic controls continue to trail. Security and risk concerns still rank high as barriers to scaling agentic systems, while clear accountability lines track with stronger maturity. Anthropic's Economic Index supplies a separate adoption signal: AI use breaks into distinct work primitives that vary by task, cadence, and delegation pattern, and each primitive requires its own proof standard.</p>
 
         <p>The implication for executives is direct. The evaluation stack has left the technical footnote. It shapes capital allocation.</p>
 
         <h2>The Benchmark Is Not The Workflow</h2>
-        <p>Benchmarks make capability legible. They show whether a model can handle coding tasks, answer questions, classify text, reason through examples, follow instructions, or produce work experts accept. They also supply shared language for tracking progress.</p>
+        <p>Benchmarks make capability legible. They show whether a model can handle coding tasks, answer questions, classify text, reason through examples, follow instructions, or produce work experts accept, and they supply shared language for tracking progress.</p>
 
         <p>A benchmark still differs from the actual workflow. Company data limits, exception paths, approval rituals, overloaded reviewers, customer commitments, regulatory exposure, and budget limits seldom appear on the scoreboard. Sales teams that treat a customer-relationship-management note as institutional memory, support groups that run informal exception cultures, finance teams that distrust the source spreadsheet, and legal teams that accept a drafted clause while refusing an autonomous send all stay outside the test setup.</p>
 
         <p>That difference explains why strong evaluation performance can still produce a weak business case. Another leaderboard will not close the gap. An evidence loop that ties model behavior to work behavior will.</p>
 
         <h2>Three Evaluation Traps</h2>
-        <p>The first trap is score substitution. A general benchmark score stands in for readiness in a specific workflow. The appeal is obvious: the number is clean, comparable, and slide-ready. High model quality still leaves open data quality, user adoption, permission scope, review cost, exception handling, and organizational trust.</p>
+        <p>The first trap is score substitution: a general benchmark score stands in for readiness in a specific workflow. The appeal is obvious — the number is clean, comparable, and slide-ready — but high model quality still leaves open data quality, user adoption, permission scope, review cost, exception handling, and organizational trust.</p>
 
         <p>Demo overfitting is the second trap. Pilots get tuned around the easy path: a strong prompt, clean input, cooperative user, narrow case, and expected answer. Week one looks good. Week two surfaces the real distribution of stale data, ambiguous requests, contradictory policy, missing context, edge customers, odd files, and impatient users.</p>
 
-        <p>Governance theatre is the third trap. Companies claim human review, logging, and red teaming while the controls stay disconnected from operating decisions. Reviewers see outputs without enough surrounding context. Logs exist but cannot reconstruct why the system acted. Red-team findings never alter permissions. Incidents stay anecdotes instead of feeding the test set.</p>
+        <p>Governance theatre is the third. Companies claim human review, logging, and red teaming while the controls stay disconnected from operating decisions. Reviewers see outputs without enough surrounding context. Logs exist but cannot reconstruct why the system acted. Red-team findings never alter permissions. Incidents stay anecdotes instead of feeding the test set.</p>
 
         <p>The shared error is treating evaluation as a certificate. In serious deployments, evaluation is a production habit.</p>
 
@@ -109,7 +109,7 @@
         <h2>Why Agents Make Evaluation Harder</h2>
         <p>Agentic AI changes the evaluation problem because the system no longer only produces an answer. It may browse, retrieve, rank, call tools, update records, send messages, write code, request approvals, and carry state across steps. The result is a chain of behavior rather than a single output.</p>
 
-        <p>CAISI work on cheating in agent evaluations applies beyond benchmark design. Capable agents can exploit gaps between task intent and test implementation. The same pattern appears in business workflows. An agent may meet a metric while violating the spirit of the work: closing a ticket without resolving the customer's issue, updating a record without preserving source uncertainty, passing a test by narrowing the case, or escalating so aggressively that the automation simply shifts work back to humans.</p>
+        <p>CAISI work on cheating in agent evaluations applies beyond benchmark design. Capable agents can exploit gaps between task intent and test implementation, and the same pattern appears in business workflows. An agent may meet a metric while violating the spirit of the work: closing a ticket without resolving the customer's issue, updating a record without preserving source uncertainty, passing a test by narrowing the case, or escalating so aggressively that the automation simply shifts work back to humans.</p>
 
         <p>Open Worldwide Application Security Project (OWASP) guidance on agentic security broadens the point. Agent risk appears in inputs, planning, memory, tool integrations, permissions, inter-agent messages, budget limits, and high-impact actions. An evaluation that measures only final output quality while ignoring these surfaces is checking the easiest part of the system.</p>
 
@@ -128,7 +128,7 @@
           <li><strong>Accountability:</strong> can the buyer reconstruct, govern, and stop the system when reliability fails?</li>
         </ol>
 
-        <p>A vendor may answer the first question well and the third poorly. Products can still be useful when that happens. Deployment scope must shrink.</p>
+        <p>A vendor may answer the first question well and the third poorly. Products can still be useful when that happens — but deployment scope must shrink.</p>
 
         <h2>The Founder Version</h2>
         <p>Small companies need a lighter instrument. They still cannot skip the discipline. Founder versions can fit on one sheet with one weekly review.</p>

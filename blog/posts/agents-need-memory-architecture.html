@@ -28,34 +28,32 @@
         <div class="issue-kicker">Research synthesis / Issue 032 · 24 July 2026</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=memory">Memory</a><a class="tag-chip" href="../index.html#topic=agents">Agents</a><a class="tag-chip" href="../index.html#topic=research">Research</a></div>
         <h1>Agents Need a Memory Architecture</h1>
-        <p>Production agents store experience in prompt rules and model parameters that move on different clocks. Field discourse shows teams build both stores, assign joint ownership to neither, and learn the split after customers see broken behaviour.</p>
+        <p>Production agents remember customer history, tool results, policy exceptions, and multi-step plans across sessions. That experience usually ends up in prompt rules and model weights that update on different clocks. Teams build both stores, rarely name a joint owner, and discover the split after customers see broken behaviour.</p>
       </header>
 
       <article class="article-body">
-        <p>Large language model agents now retain customer history, tool results, policy exceptions, and multi-step plans across sessions. That demand forces a design choice teams still treat as implementation detail: <strong>where the agent remembers</strong>. Ownership of each store, and a rule for conflict when stores disagree, follows from that first choice.</p>
+        <p>Large language model agents now retain experience across sessions — customer history, tool results, policy exceptions, multi-step plans. That demand forces a design choice teams still treat as implementation detail: <strong>where the agent remembers</strong>. Once you answer that, ownership of each store and a rule for what happens when stores disagree follow almost automatically. Skip the first choice and those later controls never quite land.</p>
 
         <p>This research synthesis compresses a field study of public practitioner discourse into an operating argument. Issue 024, <em>The AI Memory Ledger</em>, remains the product-memory control checklist. This issue sits one step earlier: how memory problems form before any ledger can help.</p>
 
         <blockquote>Experience written only to prompts and weights will diverge. Architecture is the decision about how that writing is owned.</blockquote>
 
         <h2>What We Studied</h2>
-        <p>In a single archival harvest (28 June 2026), this study collected 1,990 public rows about production agent memory across thirteen channels, including engineering blogs, standards material, practitioner newsletters, Reddit, Hacker News, Stack Overflow, YouTube, arXiv, and conference notes. Relevance screening produced 100 coded deployment incidents. Thirty-five Tier-1 practitioner threads received focused coding, supported by 106 deep-fetched quotes and 244 analytic memos. The method is constructivist grounded theory on digital field talk. It is a field sample of public discourse, not a census of enterprise deployments.</p>
+        <p>In a single archival harvest on 28 June 2026, this study collected 1,990 public rows about production agent memory across thirteen channels — engineering blogs, standards material, practitioner newsletters, Reddit, Hacker News, Stack Overflow, YouTube, arXiv, and conference notes. Relevance screening produced 100 coded deployment incidents. Thirty-five Tier-1 practitioner threads received focused coding, supported by 106 deep-fetched quotes and 244 analytic memos. The method is constructivist grounded theory on digital field talk: a field sample of public discourse, not a census of enterprise deployments.</p>
 
-        <p>That limit matters. Public forums over-index on builders who report friction and under-represent regulated industries that keep failure private. The synthesis is still useful because the same sequence appears across frameworks, cloud agents, and custom stacks. Multi-step work creates retention pressure. Teams answer with parallel stores. Coherence fails under release velocity.</p>
+        <p>That limit matters. Public forums over-index on builders who report friction and under-represent regulated industries that keep failure private. The synthesis is still useful because the same sequence shows up across frameworks, cloud agents, and custom stacks. Multi-step work creates retention pressure; teams answer with parallel stores; coherence fails under release velocity.</p>
 
         <h2>The Memory Fork</h2>
-        <p>Production talk concentrates on two storage modes.</p>
+        <p>Production talk concentrates on two storage modes, both legitimate, both incomplete alone.</p>
 
-        <p><strong>Prompt-layer memory</strong> is human-readable. Rules, system instructions, retrieved chunks, and session summaries live in repositories, prompt registries, or vector stores that product teams can edit. A billing agent that must always request an account number first is usually a rule in this layer.</p>
+        <p><strong>Prompt-layer memory</strong> is human-readable. Rules, system instructions, retrieved chunks, and session summaries live in repositories, prompt registries, or vector stores that product teams can edit. A billing agent that must always request an account number first is usually a rule in this layer — something a compliance officer can open in git.</p>
 
-        <p><strong>Weight-layer memory</strong> is statistical. Fine-tunes, preference training, and distilled trajectories bake patterns into parameters owned by machine-learning pipelines with slower release cycles. The same agent may "know" billing habits without any sentence a compliance officer can open in git.</p>
+        <p><strong>Weight-layer memory</strong> is statistical. Fine-tunes, preference training, and distilled trajectories bake patterns into parameters owned by machine-learning pipelines with slower release cycles. The same agent may "know" billing habits without any sentence anyone can open and inspect.</p>
 
-        <p>Both layers are legitimate. Failure begins when they sit as unrelated engineering surfaces. Prompt owners ship weekly. Model owners ship quarterly. Neither team owns whether the rule still matches the weight. When behaviour breaks, debugging becomes archaeology across two clocks.</p>
-
-        <p>Recent technical work on joint learning of experiential rules and policies, and on co-failure ceilings for multi-model routing, frames the same split from the research side. Field discourse rarely cites those papers. It builds the split anyway under names such as session attributes, long-term memory servers, and context engineering.</p>
+        <p>Failure begins when these layers sit as unrelated engineering surfaces. Prompt owners ship weekly; model owners ship quarterly; neither team owns whether the rule still matches the weight. When behaviour breaks, debugging becomes archaeology across two clocks. Recent technical work on joint learning of experiential rules and policies, and on co-failure ceilings for multi-model routing, frames the same split from the research side. Field discourse rarely cites those papers. It builds the split anyway under names like session attributes, long-term memory servers, and context engineering.</p>
 
         <h2>Three Episodes From the Field</h2>
-        <p>Coding and constant comparison produced a three-episode process. The episodes are analytic patterns operators can use as a diagnostic sequence. They are not a mandatory corporate lifecycle.</p>
+        <p>Coding and constant comparison produced a three-episode process. These are analytic patterns operators can use as a diagnostic sequence, not a mandatory corporate lifecycle.</p>
 
         <div class="article-table-wrap" role="region" aria-label="Three-episode memory process" tabindex="0">
           <table class="article-table">
@@ -91,20 +89,20 @@
         </div>
 
         <h3>Episode 1: Multi-step work demands memory</h3>
-        <p>Practitioners drop the single clever prompt once the job includes planning, tool calls, and multi-session continuity. Reddit threads on production frameworks repeatedly request "multi-step reasoning, tool calls, and memory," and describe planning loops that orchestrate retrieval, tools, and persistent context. The business translation is simple. If the agent must finish work that a human would log in a ticket system, the agent needs state that survives a browser tab.</p>
+        <p>Practitioners drop the single clever prompt once the job includes planning, tool calls, and multi-session continuity. Reddit threads on production frameworks repeatedly ask for "multi-step reasoning, tool calls, and memory," and describe planning loops that orchestrate retrieval, tools, and persistent context. The business translation is simple: if the agent must finish work that a human would log in a ticket system, the agent needs state that survives a browser tab.</p>
 
         <h3>Episode 2: Parallel systems without joint ownership</h3>
-        <p>The next move is additive infrastructure. Teams add session attributes on cloud agents, middle layers between clients and vector databases, dashboards for memory read and write history, and separate fine-tune pipelines for "how we usually handle this." Stack Overflow answers for session attributes treat conversation history as a parameter bag. Engineering posts treat long-running work as a context-preservation problem. Each piece can be sound. Together they create several memory surfaces with no architecture review.</p>
+        <p>The next move is additive infrastructure. Teams add session attributes on cloud agents, middle layers between clients and vector databases, dashboards for memory read and write history, and separate fine-tune pipelines for "how we usually handle this." Stack Overflow answers for session attributes treat conversation history as a parameter bag; engineering posts treat long-running work as a context-preservation problem. Each piece can be sound on its own. Together they create several memory surfaces with no architecture review.</p>
 
         <h3>Episode 3: Drift under production stress</h3>
-        <p>When LangGraph-style agents or custom fleets scale, builders report walls around session persistence, per-user memory, and scoped context. Practitioner blogs reframe the work as context engineering and urge product managers to own episodic, semantic, and procedural layers. The field invests heavily in tooling. It invests little in institutional reconciliation: the named role that resolves a conflict when a prompt rule forbids a refund path that a fine-tuned policy still proposes.</p>
+        <p>When LangGraph-style agents or custom fleets scale, builders report walls around session persistence, per-user memory, and scoped context. Practitioner blogs reframe the work as context engineering and urge product managers to own episodic, semantic, and procedural layers. The field invests heavily in tooling and little in institutional reconciliation — the named role that resolves a conflict when a prompt rule forbids a refund path that a fine-tuned policy still proposes.</p>
 
         <p>That gap is the strategic finding. Public discourse optimises persistence and observability first. Governance ownership arrives later, often after a customer-visible incident.</p>
 
         <h2>Two Mechanisms</h2>
-        <p><strong>Experience retention pressure.</strong> Production agents accumulate interaction histories, tool results, and exceptions that demos discard. Once a workflow spans days, retention becomes a design requirement.</p>
+        <p><strong>Experience retention pressure.</strong> Production agents accumulate interaction histories, tool results, and exceptions that demos discard. Once a workflow spans days, retention stops being a nice-to-have and becomes a design requirement.</p>
 
-        <p><strong>Storage system mismatch.</strong> Human-editable rules and slower parameter updates have different owners, release cadences, and audit trails. Session caches and vector stores sit between them as temporary glue. Without a reconciliation policy, glue becomes the product.</p>
+        <p><strong>Storage system mismatch.</strong> Human-editable rules and slower parameter updates have different owners, release cadences, and audit trails. Session caches and vector stores sit between them as temporary glue. Without a reconciliation policy, the glue becomes the product.</p>
 
         <h2>What Operators Should Change</h2>
         <p>Use the research as a procurement and architecture screen before another memory product lands in the stack. The table below states pass and fail signals for each row.</p>
@@ -159,7 +157,7 @@
         <p>Issue 024's memory ledger covers what may be remembered about people and work, with inspection and expiry. Issue 017's permission ledger covers what agents may do. Issue 018's evaluation gap covers quality measurement when demos lie. This synthesis sits underneath those checklists: once stores diverge, every later control sits on an unstable base.</p>
 
         <h2>Limits</h2>
-        <p>The harvest is a single-month snapshot of English-language public discourse. Episodes are interpretive patterns from constant comparison rather than frequency counts of every industry. Academic papers on rule-weight coupling and multi-model routing serve as technical context. They are not independent field validation. Longitudinal studies inside regulated firms remain the next evidence tier.</p>
+        <p>The harvest is a single-month snapshot of English-language public discourse. Episodes are interpretive patterns from constant comparison rather than frequency counts of every industry. Academic papers on rule-weight coupling and multi-model routing serve as technical context; they are not independent field validation. Longitudinal studies inside regulated firms remain the next evidence tier.</p>
 
         <h2>Close</h2>
         <p>Agents that do real work will remember. Treat that memory as an architecture with owners and reconciliation rules. Field talk already shows the alternative: an accidental pile of prompts, vectors, and weights. Operators who map stores, assign ownership, and set a stop rule before Episode 3 reaches customers spend less time reconstructing behaviour they never designed.</p>

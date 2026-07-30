@@ -28,24 +28,20 @@
         <div class="issue-kicker">Public memo / Issue 024</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=memory">Memory</a><a class="tag-chip" href="../index.html#topic=agents">Agents</a></div>
         <h1>The AI Memory Ledger</h1>
-        <p>AI memory makes software less forgetful. That same persistence makes it a control problem. Once an assistant keeps people, projects, preferences, and past work on file, context stops being a chat detail and starts acting like infrastructure.</p>
+        <p>AI memory makes software less forgetful — and that same persistence turns context into a control problem. Once an assistant keeps people, projects, preferences, and past work on file, context stops being a chat detail and starts acting like infrastructure.</p>
       </header>
 
       <article class="article-body">
-        <p>Enterprise AI first sold on answer quality. The harder question now is how systems keep and reuse context from earlier work. Chat products and office copilots already carry facts across sessions: preferences, roles, project notes, client history, attached files. Staff stop re-explaining the background every morning.</p>
+        <p>Enterprise AI first sold on answer quality. The harder question now is how systems keep and reuse context from earlier work. Chat products and office copilots already carry facts across sessions — preferences, roles, project notes, client history, attached files — so staff stop re-explaining the background every morning.</p>
 
-        <p>That convenience changes the control problem. A prompt dies when the session ends. A memory is a standing assumption. Weeks later it can still shape a draft, a recommendation, a customer reply, or a research path, long after anyone remembers who stored it. For a firm, memory starts to look like a lightweight operating database.</p>
-
-        <p>Many workflows gain from retention. Match each workflow to a memory class, name an approver, require a way to inspect what is stored, and set an expiry.</p>
+        <p>That convenience changes the control problem. A prompt dies when the session ends; a memory is a standing assumption. Weeks later it can still shape a draft, a recommendation, a customer reply, or a research path, long after anyone remembers who stored it. For a firm, memory starts to look like a lightweight operating database. Plenty of workflows gain from retention, but each one still needs a memory class, a named approver, a way to inspect what is stored, and an expiry.</p>
 
         <blockquote>Treating memory as personalization after it has become policy is the strategic mistake.</blockquote>
 
         <h2>The New Persistence Layer</h2>
         <p>OpenAI's ChatGPT memory controls describe two forms of persistence: saved memories and references to past conversations. Microsoft 365 Copilot Memory treats remembered details as context that keeps later responses aligned with a user's work. Anthropic's Claude memory announcement stresses professional context such as team processes, client needs, and project details. Google Gemini's privacy materials list a broad set of inputs that may be shared with Gemini — prompts, files, screens, browser page content, and imported chats.</p>
 
-        <p>Enterprise controls, defaults, admin settings, retention rules, and training policies still differ by product. The shared direction is clear: the assistant is becoming a system that carries context forward.</p>
-
-        <p>Memory is therefore a management layer. Leaders have to rank remembered facts by usefulness, sensitivity, freshness, and accuracy — and by how those facts would look under legal, security, or compliance review. "The assistant remembered it" is not a governance model.</p>
+        <p>Enterprise controls, defaults, admin settings, retention rules, and training policies still differ by product, but the shared direction is clear: the assistant is becoming a system that carries context forward. Memory is therefore a management layer. Leaders have to rank remembered facts by usefulness, sensitivity, freshness, and accuracy — and by how those facts would look under legal, security, or compliance review. "The assistant remembered it" is not a governance model.</p>
 
         <h2>The Ledger</h2>
         <p>A useful AI memory ledger sorts persistent context by operating risk. Product menus are the wrong axis.</p>
@@ -96,14 +92,12 @@
         </div>
 
         <h2>Why Memory Is Not Just History</h2>
-        <p>Chat history is evidence. Memory is instruction. A transcript can be searched later. A memory can reshape the next answer without the user noticing. If the system stores that a manager prefers aggressive sales language, that preference may show up in renewal emails, partner notes, and escalation drafts. If it stores that a client dislikes long implementation timelines, later plans may tilt toward optimistic schedules.</p>
+        <p>Chat history is evidence; memory is instruction. A transcript can be searched later. A memory can reshape the next answer without the user noticing. If the system stores that a manager prefers aggressive sales language, that preference may show up in renewal emails, partner notes, and escalation drafts. If it stores that a client dislikes long implementation timelines, later plans may tilt toward optimistic schedules.</p>
 
-        <p>Memory therefore needs provenance. Reviewers should be able to see where a fact came from, whether a person saved it or the system inferred it, how wide its scope is, whether anyone still treats it as true, which workflows may use it, whether the user can see it before it is applied, whether an admin can turn it off, and how a later audit can reconstruct the chain.</p>
-
-        <p>Without those answers, memory is soft automation. Nobody presses a final button. The work still bends before a human reviews it.</p>
+        <p>Memory therefore needs provenance. Reviewers should be able to see where a fact came from, whether a person saved it or the system inferred it, how wide its scope is, whether anyone still treats it as true, which workflows may use it, whether the user can see it before it is applied, whether an admin can turn it off, and how a later audit can reconstruct the chain. Without those answers, memory is soft automation: nobody presses a final button, yet the work still bends before a human reviews it.</p>
 
         <h2>The Personalization Trap</h2>
-        <p>Vendors sell memory as a productivity feature. Users save time when the assistant already knows their style, job, and current projects. That value is real. The trap is visibility: the better personalization feels, the harder the influence is to see.</p>
+        <p>Vendors sell memory as a productivity feature, and the value is real — users save time when the assistant already knows their style, job, and current projects. The trap is visibility: the better personalization feels, the harder the influence is to see.</p>
 
         <p>In consumer software, quiet personalization can be fine when controls are clear and harm is limited. In company workflows it collides with policy. Partner memos should follow firm doctrine, not one consultant's accumulated assistant memory. Support replies should reflect approved customer policy, not the habits of whoever trained the assistant most. Security reviews should inherit the current threat model, not a stale project note from six months ago.</p>
 
@@ -112,9 +106,7 @@
         <h2>The Privacy Boundary</h2>
         <p>Memory shifts the privacy question from what the user shared once to what the system keeps reusing. Google, Microsoft, OpenAI, and Anthropic each offer user controls; the details decide fitness for enterprise work. Controls that work for an individual often fail a firm that faces client confidentiality, regulated data, employee records, litigation holds, or cross-border limits.</p>
 
-        <p>A practical rule helps. A fact may be used in a session and then discarded. Another may stay with one person and never cross into a team space. High-value reference material belongs in a sanctioned knowledge base rather than a model's personalization layer. A short list of categories should never enter an assistant at all.</p>
-
-        <p>Operators need a table for data classes. List allowed retention by data type, tool, duration, review path, and named authority. Leave no class without an owner.</p>
+        <p>A practical rule helps. Some facts may be used in a session and then discarded. Others may stay with one person and never cross into a team space. High-value reference material belongs in a sanctioned knowledge base rather than a model's personalization layer. A short list of categories should never enter an assistant at all. Operators need a table for data classes — allowed retention by data type, tool, duration, review path, and named authority — with no class left without an owner.</p>
 
         <h2>The Governance Test</h2>
         <p>The U.S. National Institute of Standards and Technology (NIST) AI Risk Management Framework remains useful here. Memory is a clear case of governing, mapping, measuring, and managing. Before enabling persistent memory for serious work, executives should require seven controls.</p>

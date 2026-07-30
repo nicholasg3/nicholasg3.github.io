@@ -128,19 +128,15 @@
         <p class="meta">By <a href="https://nicholasgarcia.com">Nicholas MacGregor Garcia</a> · June 29, 2026</p>
     </header>
 
-    <p>Enterprise language-model agents now run long-horizon work: they retain customer context, correct errors mid-run, enforce policy, and improve across sessions.</p>
+    <p>Enterprise language-model agents now handle work that stretches across sessions. They keep customer context, fix mistakes mid-run, enforce policy, and get better over time. That accumulated experience has to live somewhere — and in practice it lives in three places, under two parties who do not fully see each other's writes. That split is the governance problem.</p>
 
-    <p>The experience those agents accumulate sits in three places, under two parties who do not fully see each other's writes. That split is the governance problem.</p>
+    <p>I call the resulting failure mode a <strong>memory fork</strong>. Prompt rules say one thing; model weights encode another; the agent does something neither side expected. Teams end up duplicating work, debugging without a clean trail, and arguing over who owns the residual risk.</p>
 
-    <p>I call the resulting failure mode a <strong>memory fork</strong>. Prompt rules say one thing. Model weights encode another. The agent behaves in ways neither side predicted. Teams duplicate work, debug without a clear trail, and argue over who owns the residual risk.</p>
-
-    <p>A formal game-theoretic model asks when this split custody stays stable and productive, and when it settles into a low-trust trap.</p>
-
-    <p>The trap is belief-driven, and contractible observability rights can select the better equilibrium.</p>
+    <p>A formal game-theoretic model asks when this split custody stays stable and useful, and when it settles into a low-trust trap. The trap is belief-driven. Contractible observability rights can push the game toward the better equilibrium.</p>
 
     <h2>Three Memory Tiers</h2>
 
-    <p>Modern language-model agents use three complementary memory layers:</p>
+    <p>Modern language-model agents typically stack three complementary memory layers:</p>
 
     <ul>
         <li><strong>Prompt rules and playbooks</strong> — fast, fully inspectable, controlled by application teams.</li>
@@ -148,19 +144,15 @@
         <li><strong>Model weights</strong> (fine-tunes, adapters, reinforcement-learning-from-human-feedback updates) — slow, mostly opaque, controlled by the vendor.</li>
     </ul>
 
-    <p>The technical design is clean. The organizational design is not.</p>
+    <p>On paper the technical design is clean. Organizationally it is a mess. Application owners govern the inspectable tiers; vendors control the weights and often see aggregate usage traces. Neither side has full real-time visibility into the other's memory writes. Prompt-visible rules drift out of sync with weight-encoded behavior, state gets duplicated across layers, attribution softens, and liability becomes hard to pin down.</p>
 
-    <p>In practice, custody splits. Application owners govern the inspectable tiers. Vendors control the weights and often observe aggregate usage traces. Neither side has full real-time visibility into the other's memory writes. Prompt-visible rules drift out of sync with weight-encoded behavior. State is duplicated across layers. Attribution goes soft. Liability becomes hard to assign.</p>
-
-    <p>Public issue trackers for LangChain, LangGraph, CrewAI, Mem0, and related frameworks show the same pattern: checkpoint corruption, manual pruning, painful rollbacks, and long threads about who changed what.</p>
+    <p>Public issue trackers for LangChain, LangGraph, CrewAI, Mem0, and related frameworks show the same pattern over and over: checkpoint corruption, manual pruning, painful rollbacks, and long threads about who changed what.</p>
 
     <h2>The Strategic Game</h2>
 
-    <p>Technical feasibility solves only half the problem. What remains is <strong>incentive compatibility</strong> under split custody.</p>
+    <p>Technical feasibility only gets you halfway. What remains is <strong>incentive compatibility</strong> under split custody.</p>
 
-    <p>We model a sequential game between two rational players: the <strong>application owner</strong> (who bears task performance and liability risk) and the <strong>model vendor</strong> (who hosts the base model and can fine-tune on usage traces).</p>
-
-    <p>The owner chooses the memory architecture: prompt-only, hybrid, or heavy vendor delegation. The vendor then chooses fine-tuning intensity. Payoffs cover task success, reconciliation costs, revenue, and liability under partial observability.</p>
+    <p>We model a sequential game between two rational players: the <strong>application owner</strong>, who bears task performance and liability risk, and the <strong>model vendor</strong>, who hosts the base model and can fine-tune on usage traces. The owner chooses the memory architecture — prompt-only, hybrid, or heavy vendor delegation. The vendor then chooses fine-tuning intensity. Payoffs cover task success, reconciliation costs, revenue, and liability under partial observability.</p>
 
     <p>We solve the game with subgame-perfect equilibrium under full information, and Perfect Bayesian Equilibrium when fine-tuning on leaked traces is unobserved.</p>
 
@@ -170,27 +162,25 @@
 
     <p>Even when prompt-only looks cheaper in the short run, hybrid architectures can be a stable equilibrium when deployers bear reactive governance costs and can moderate what the vendor learns (Proposition 1b). Hybrid is rational when governance cost stays below a surplus-to-labor ratio.</p>
 
-    <p><em>In practice:</em> Teams often respond to drift with manual pruning, new guardrails, or checkpoint migrations (common in LangGraph and CrewAI issues). When those reactive costs stay manageable, hybrid custody can capture vendor improvements without full surrender of control. When governance labor is cheap enough to moderate aggressive fine-tuning, the owner keeps improvement and retains a usable control surface.</p>
+    <p><em>In practice:</em> Teams often respond to drift with manual pruning, new guardrails, or checkpoint migrations — the sort of thing you see constantly in LangGraph and CrewAI issues. When those reactive costs stay manageable, hybrid custody can capture vendor improvements without handing over full control. When governance labor is cheap enough to moderate aggressive fine-tuning, the owner keeps the improvement and still has a usable control surface.</p>
 
     <h3>2. Observability and repair rights discipline the vendor</h3>
 
-    <p>Contractible rights to inspect, roll back, or reconfigure inspectable tiers act as credible off-path threats. When owner liability exceeds vendor liability, those rights curb aggressive fine-tuning and improve outcomes (Proposition 2). They also <strong>select</strong> the high-trust equilibrium when hidden fine-tuning would otherwise sustain a pessimistic trap (Proposition 3′).</p>
+    <p>Contractible rights to inspect, roll back, or reconfigure the inspectable tiers act as credible off-path threats. When owner liability exceeds vendor liability, those rights curb aggressive fine-tuning and improve outcomes (Proposition 2). They also <strong>select</strong> the high-trust equilibrium when hidden fine-tuning would otherwise sustain a pessimistic trap (Proposition 3′).</p>
 
-    <p><em>In practice:</em> A poisoned checkpoint or stale entity link can force a full process restart when no one has surgical access to the tier. Contractible observability (logging, trace spans, guarded checkpointers) turns those fires into ordinary incidents. Teams that negotiate these rights upfront avoid later disputes over who owns a given memory write.</p>
+    <p><em>In practice:</em> A poisoned checkpoint or a stale entity link can force a full process restart when no one has surgical access to the tier. Contractible observability — logging, trace spans, guarded checkpointers — turns those fires into ordinary incidents. Teams that negotiate these rights upfront avoid later fights over who owns a given memory write.</p>
 
     <h3>3. The low-trust trap is self-confirming</h3>
 
     <p>Under undisclosed fine-tuning on leaked traces, the game admits <strong>two Perfect Bayesian Equilibria</strong>: a high-trust hybrid equilibrium and a low-trust prompt-only trap (Proposition 3).</p>
 
-    <p>Bad parameters do not create the trap. Self-confirming owner pessimism sustains it. Expecting aggressive hidden behavior (for example, the vendor improving weights on traces the team cannot see), the owner stays prompt-only to avoid hybrid risk. That choice removes the observability that would have disciplined the vendor. The vendor then exploits leaked traces, which confirms the owner's pessimism.</p>
+    <p>Bad parameters do not create the trap. Self-confirming owner pessimism does. Expecting aggressive hidden behavior — for example, the vendor improving weights on traces the team cannot see — the owner stays prompt-only to avoid hybrid risk. That choice removes the observability that would have disciplined the vendor. The vendor then exploits leaked traces, which confirms the owner's pessimism. The loop closes.</p>
 
-    <p><em>In practice:</em> A team burned by unexplained policy drift defaults to prompt-only, even when hybrid would capture useful vendor improvements. The vendor, seeing less structured feedback, leans harder on whatever traces leak through. Drift worsens. Pessimism is validated. Both sides lose capability. Observability rights break the loop by making hidden behavior visible and correctable, so the high-trust equilibrium no longer depends on unbacked belief.</p>
-
-    <p>Contractible observability does more than threaten bad behavior. It <strong>selects</strong> the high-trust equilibrium by making pessimistic beliefs irrelevant. You audit; you do not need to trust.</p>
+    <p><em>In practice:</em> A team burned by unexplained policy drift defaults to prompt-only, even when hybrid would capture useful vendor improvements. The vendor, seeing less structured feedback, leans harder on whatever traces leak through. Drift gets worse. Pessimism looks justified. Both sides lose capability. Observability rights break the loop by making hidden behavior visible and correctable, so the high-trust equilibrium no longer depends on unbacked belief. You audit; you do not need to trust first.</p>
 
     <h2>What Teams and Vendors Should Do</h2>
 
-    <p>Memory governance is a strategic design problem at the intersection of architecture, contracting, and incentives — not a routing detail.</p>
+    <p>Memory governance sits at the intersection of architecture, contracting, and incentives. It is not a routing detail.</p>
 
     <p><strong>For application teams and architecture committees:</strong></p>
     <ul>
@@ -205,11 +195,11 @@
         <li>Offer inspectable adapter layers (customer-visible LoRA checkpoints and similar) so hybrid custody is both feasible and attractive.</li>
     </ul>
 
-    <p>Split memory custody need not stay a permanent source of friction. With clear design and contracting, organizations can move from fragile equilibria to durable, high-trust partnerships that use agentic systems without surrendering control of what the system remembers.</p>
+    <p>Split memory custody does not have to stay a permanent source of friction. With clear design and contracting, organizations can move from fragile equilibria toward durable partnerships that use agentic systems without surrendering control of what those systems remember.</p>
 
     <h2>Close</h2>
 
-    <p>Agent memory under split custody is a new but representative governance problem in information systems. The model shows the low-trust trap is avoidable. Teams and vendors that get observability, repair rights, and tiered permissions right ship more reliable agents and build systems that remain accountable under load.</p>
+    <p>Agent memory under split custody is a new problem, but a representative one for information systems. The model shows the low-trust trap is avoidable. Teams and vendors that get observability, repair rights, and tiered permissions right ship more reliable agents — and build systems that stay accountable when the load is real.</p>
 
     <hr>
 
@@ -217,7 +207,7 @@
 
     <div class="cta">
         <h3>Want the full working paper?</h3>
-        <p>The formal game-theoretic model (subgame-perfect equilibrium, Perfect Bayesian Equilibrium, proof appendix, and construct-check) is available as a PDF. <a href="mailto:nicholas@nicholasgarcia.com?subject=Memory+Governance+Working+Paper">Email me</a> and I will send it over.</p>
+        <p>The formal game-theoretic model — subgame-perfect equilibrium, Perfect Bayesian Equilibrium, proof appendix, and construct-check — is available as a PDF. <a href="mailto:nicholas@nicholasgarcia.com?subject=Memory+Governance+Working+Paper">Email me</a> and I will send it over.</p>
     </div>
 
     <footer>
