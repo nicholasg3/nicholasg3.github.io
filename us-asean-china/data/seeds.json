@@ -1,6 +1,6 @@
 {
   "vertical": "us-asean-china",
-  "generated_at": "2026-07-30T17:26:58.502873+00:00",
+  "generated_at": "2026-07-30T17:35:34.213338+00:00",
   "password_note": "nick-verticals (shared)",
   "harvest": {
     "source": "@yahoolovesyou mode=all pages=10 (mixed personal feed, not curator)",
@@ -13,21 +13,22 @@
       "id": "singapore-pre-lky-foundations",
       "idea": "Singapore’s foundations before the LKY myth — path dependence vs great-man story",
       "thesis": "Founder myths compress path dependence. Singapore's port, legal, and entrepôt roles predate independence; leadership mattered, but so did inherited infrastructure and geography.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [
         "https://x.com/Zac_labs/status/2080152254506782890"
       ],
       "primary_url": "https://www.nlb.gov.sg/",
       "theory": "Path dependence; developmental state; historical institutionalism",
       "vertical": "us-asean-china",
-      "from_harvest": true
+      "from_harvest": true,
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 2,
       "id": "forest-city-network-school",
       "idea": "Forest City and Network School: when master-planned cities meet imported subcultures",
       "thesis": "Mega-projects fail politically when tenant cultures and host-state legitimacy diverge. Forest City is a case of capital, immigration politics, and platform communities colliding.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [
         "https://x.com/Zac_labs/status/2079715177138897082"
       ],
@@ -35,28 +36,30 @@
       "theory": "Special economic zones; extra-territorial communities; state–capital bargains",
       "vertical": "us-asean-china",
       "from_harvest": true,
-      "note": "Use primary Malaysian/SG reporting; do not take tweet narrative as fact."
+      "note": "Use primary Malaysian/SG reporting; do not take tweet narrative as fact.",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 3,
       "id": "ns-silicon-valley-bubble-asean",
       "idea": "Network School as a Silicon Valley culture bubble in ASEAN",
       "thesis": "Importing SV norms into ASEAN sites creates value for some founders and friction for host politics. What looks like talent density can read as enclave from outside.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [
         "https://x.com/yahoolovesyou/status/2079871848939212815"
       ],
       "primary_url": null,
       "theory": "Institutional distance; cultural fit in market entry",
       "vertical": "us-asean-china",
-      "from_harvest": true
+      "from_harvest": true,
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 4,
       "id": "chinese-diaspora-parallel-economies",
       "idea": "Chinese diaspora parallel economies in host countries",
       "thesis": "Parallel commercial ecosystems can be both resilience and political flashpoint. Entrepreneurs must map formal vs informal rails before assuming a single national market.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [
         "https://x.com/katexbt/status/2029104166187188336"
       ],
@@ -64,306 +67,335 @@
       "theory": "Diaspora networks; dual embeddedness; informal institutions",
       "vertical": "us-asean-china",
       "from_harvest": true,
-      "note": "Anecdotal seed — ground with migration/econ literature, not the tweet alone."
+      "note": "Anecdotal seed — ground with migration/econ literature, not the tweet alone.",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 5,
       "id": "asean-not-one-market",
       "idea": "ASEAN is a portfolio of country tests, not one market",
       "thesis": "Regional rhetoric outruns operating reality. First-country choice is an experiment design problem: buyer, trust bridge, compliance, payments, reusable model.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "primary_url": "https://asean.org/",
       "theory": "Regional integration vs national implementation; portfolio entry",
       "vertical": "us-asean-china",
       "from_harvest": false,
-      "related_live": "/blog/posts/asean-market-entry-test.html"
+      "related_live": "/blog/posts/asean-market-entry-test.html",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 6,
       "id": "us-china-tech-controls-sea",
       "idea": "US–China tech controls as market-entry parameters for SEA founders",
       "thesis": "Export controls and model bans are not background noise; they are product and partnership constraints for firms operating between Washington and Beijing.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [
         "https://x.com/coinjoined/status/2080028271106769355"
       ],
       "primary_url": "https://www.bis.doc.gov/",
       "theory": "Weaponized interdependence; dual-use control",
       "vertical": "us-asean-china",
-      "from_harvest": true
+      "from_harvest": true,
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 7,
       "id": "k-shaped-lusotropicalism-us",
       "idea": "K-shaped economy and elite mobility narratives in the US",
       "thesis": "Elite cosmopolitan mobility stories can mask domestic distribution fights. Separate founder optionality from median household constraints.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [
         "https://x.com/yahoolovesyou/status/2081123632177348998"
       ],
       "primary_url": "https://www.census.gov/",
       "theory": "Inequality; dual economy; narrative economics",
       "vertical": "us-asean-china",
-      "from_harvest": true
+      "from_harvest": true,
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 8,
       "id": "remittance-corridors-sea",
       "idea": "Remittance corridors as the original SEA fintech product",
       "thesis": "Family remittance is still the demand that legitimizes many payment apps.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://remittanceprices.worldbank.org/",
-      "theory": "Migration-development nexus; corridor economics"
+      "theory": "Migration-development nexus; corridor economics",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 9,
       "id": "trust-bridge-market-entry",
       "idea": "Trust bridges: local partners as political risk insurance",
       "thesis": "The partner is often the product for first-country entry.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://asean.org/",
-      "theory": "Institutional voids; embeddedness; political risk"
+      "theory": "Institutional voids; embeddedness; political risk",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 10,
       "id": "data-localization-sea",
       "idea": "Data localization rules as non-tariff barriers",
       "thesis": "Where data must live changes architecture more than branding does.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.pdpc.gov.sg/",
-      "theory": "Data sovereignty; non-tariff barriers; platform architecture"
+      "theory": "Data sovereignty; non-tariff barriers; platform architecture",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 11,
       "id": "chinese-platform-soft-power",
       "idea": "Chinese super-apps as distribution templates in SEA",
       "thesis": "Copying WeChat-like bundling fails when payments and identity rails differ.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.tencent.com/",
-      "theory": "Platform envelopment; institutional complementarity"
+      "theory": "Platform envelopment; institutional complementarity",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 12,
       "id": "us-founder-visa-arbitrage",
       "idea": "Talent mobility between SG, US, and China",
       "thesis": "Visa and tax regimes are competitive strategy, not HR admin.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.ica.gov.sg/",
-      "theory": "Talent mobility; jurisdictional competition"
+      "theory": "Talent mobility; jurisdictional competition",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 13,
       "id": "industrial-policy-chips-sea",
       "idea": "Chips and industrial policy spillovers into SEA manufacturing",
       "thesis": "Friendshoring reallocates plants; it also reallocates political attention.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.nist.gov/chips",
-      "theory": "Industrial policy; global value chains; geopolitical risk"
+      "theory": "Industrial policy; global value chains; geopolitical risk",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 14,
       "id": "islamic-finance-sea",
       "idea": "Islamic finance as a market-access constraint and opportunity",
       "thesis": "Product design must fit religious compliance markets, not just English pitch decks.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.bnm.gov.my/",
-      "theory": "Institutional complementarity; religious compliance as market access"
+      "theory": "Institutional complementarity; religious compliance as market access",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 15,
       "id": "city-state-vs-archipelago",
       "idea": "City-state operating models fail in archipelagic markets",
       "thesis": "What works in Singapore density fails in Indonesia logistics without redesign.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.bps.go.id/",
-      "theory": "Economic geography; last-mile logistics; institutional scale"
+      "theory": "Economic geography; last-mile logistics; institutional scale",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 16,
       "id": "us-university-sea-startup-talent-pipelines",
       "idea": "US university–SEA startup talent pipelines",
       "thesis": "Transpacific talent pipelines are institutional, not accidental.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://ncses.nsf.gov/",
-      "theory": "Human capital; diaspora networks"
+      "theory": "Human capital; diaspora networks",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 17,
       "id": "family-office-capital-from-sea-into-us-tech",
       "idea": "Family office capital from SEA into US tech",
       "thesis": "SEA family capital into US tech is cross-border strategy, not anonymous LP money.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.mas.gov.sg/",
-      "theory": "Patient capital; cross-border investment"
+      "theory": "Patient capital; cross-border investment",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 18,
       "id": "chinese-ev-and-battery-supply-chains-in-sea",
       "idea": "Chinese EV and battery supply chains in SEA",
       "thesis": "Battery/EV FDI is a political bargain, not only a manufacturing footprint.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.iea.org/",
-      "theory": "Global value chains; industrial policy; resource nationalism"
+      "theory": "Global value chains; industrial policy; resource nationalism",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 19,
       "id": "digital-trade-agreements-defa-vs-bilateral-reality",
       "idea": "Digital trade agreements (DEFA) vs bilateral reality",
       "thesis": "Regional digital agreements lag national implementation; founders ship against the latter.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://asean.org/",
-      "theory": "Regionalism vs domestic politics; trade agreements as incomplete contracts"
+      "theory": "Regionalism vs domestic politics; trade agreements as incomplete contracts",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 20,
       "id": "english-language-founder-media-vs-local-language-c",
       "idea": "English-language founder media vs local-language customers",
-      "thesis": "Media language and customer language diverge; strategy must track both.",
+      "thesis": "English founder media samples a capital public; revenue in non-English-majority SEA markets samples another. Confusing them is a measurement error.",
       "status": "enriched-draft",
       "tweet_urls": [],
       "vertical": "us-asean-china",
-      "primary_url": "https://www.bps.go.id/",
-      "theory": "Public spheres; market orientation"
+      "primary_url": "https://www.constituteproject.org/constitution/Indonesia_2002",
+      "theory": "Public spheres; market orientation",
+      "quality_note": "Re-grounded 2026-07-31 with ground brief + body-integrated sources. Prior version was thin-outline debt.",
+      "ground_path": "us-asean-china/ground/english-language-founder-media-vs-local-language-c.md"
     },
     {
       "rank": 21,
       "id": "military-basing-politics-and-data-center-siting",
       "idea": "Military basing politics and data center siting",
       "thesis": "Security politics is a data-center site factor in SEA.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.imda.gov.sg/",
-      "theory": "Critical infrastructure; geopolitics"
+      "theory": "Critical infrastructure; geopolitics",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 22,
       "id": "sanctions-risk-for-dual-use-founders",
       "idea": "Sanctions risk for dual-use founders",
       "thesis": "Dual-use products require continuous sanctions/export screening as core ops.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://ofac.treasury.gov/",
-      "theory": "Weaponized interdependence; compliance as product"
+      "theory": "Weaponized interdependence; compliance as product",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 23,
       "id": "tourism-recovery-and-sme-digital-payments",
       "idea": "Tourism recovery and SME digital payments",
       "thesis": "Tourism-linked SME payments are seasonal credit and acquiring problems.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.unwto.org/",
-      "theory": "Seasonality; merchant acquiring"
+      "theory": "Seasonality; merchant acquiring",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 24,
       "id": "halal-certification-as-export-infrastructure",
       "idea": "Halal certification as export infrastructure",
       "thesis": "Halal compliance systems function as trade infrastructure for Muslim-majority markets.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.halal.gov.my/",
-      "theory": "Standards as market access; certification intermediaries"
+      "theory": "Standards as market access; certification intermediaries",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 25,
       "id": "climate-risk-and-agricultural-supply-chains",
       "idea": "Climate risk and agricultural supply chains",
       "thesis": "Physical climate risk is operational risk for ag trade and trade finance.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.fao.org/",
-      "theory": "Climate adaptation; supply chains"
+      "theory": "Climate adaptation; supply chains",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 26,
       "id": "port-competition-singapore-vs-regional-peers",
       "idea": "Port competition (Singapore vs regional peers)",
       "thesis": "Port competition reallocates trade routes and the services stacked on them.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.mpa.gov.sg/",
-      "theory": "Economic geography; entrepôt competition"
+      "theory": "Economic geography; entrepôt competition",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 27,
       "id": "diaspora-angel-networks-as-soft-capital-markets",
       "idea": "Diaspora angel networks as soft capital markets",
       "thesis": "Diaspora angel networks function as informal cross-border capital markets.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.worldbank.org/en/topic/migrationremittancesdiasporaissues",
-      "theory": "Social capital; diaspora finance"
+      "theory": "Social capital; diaspora finance",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 28,
       "id": "content-moderation-geopolitics-for-sea-platforms",
       "idea": "Content moderation geopolitics for SEA platforms",
       "thesis": "Platform moderation rules are a go-to-market and political risk surface in SEA.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.imda.gov.sg/",
-      "theory": "Platform governance; jurisdictional conflict"
+      "theory": "Platform governance; jurisdictional conflict",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 29,
       "id": "education-tech-export-from-sg-us-into-sea",
       "idea": "Education-tech export from SG/US into SEA",
       "thesis": "Edtech GTM is education-system design, not app localization only.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://www.moe.gov.sg/",
-      "theory": "Institutional fit; technology transfer"
+      "theory": "Institutional fit; technology transfer",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     },
     {
       "rank": 30,
       "id": "cross-border-e-commerce-returns-logistics",
       "idea": "Cross-border e-commerce returns logistics",
       "thesis": "Reverse logistics and customs dominate cross-border e-commerce margins.",
-      "status": "enriched-draft",
+      "status": "thin-outline",
       "tweet_urls": [],
       "vertical": "us-asean-china",
       "primary_url": "https://unctad.org/topic/ecommerce-and-digital-economy",
-      "theory": "Trade logistics; unit economics"
+      "theory": "Trade logistics; unit economics",
+      "quality_note": "Mass-produced outline without retweet Stage-2 enrich dossier, without blog-review ground brief, and with ornamental hub links. Do not treat as enriched. Re-ground before any promote."
     }
   ],
   "notes": [
     "No draft article without Source notes + primary/canonical links.",
     "yahoolovesyou is personal/mixed; original posters proposed as canonical candidates.",
     "Dedicated curator accounts TBD per vertical."
-  ]
+  ],
+  "quality_debt": "2026-07-31: all 30 seeds demoted from enriched-draft to thin-outline. Nick correctly flagged sources as non-supporting and articles as too thin. Pipeline required: (1) enrich.md retrieval dossier when seed is from harvest, (2) blog-review ground brief with claim-linked primaries, (3) full essay, (4) Source notes that support body sentences — not institutional home pages."
 }

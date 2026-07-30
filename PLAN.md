@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~01:30 SGT |
-| **Last commit focus** | Multi-vertical: 30 sources-first enriched drafts each for fintech + us-asean-china |
+| **Last updated** | 2026-07-31 ~01:40 SGT |
+| **Last commit focus** | Admit thin-outline debt; demote 59/60 “enriched” fakes; ship VERTICAL-ENRICH bar + 1 real rewrite |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -45,7 +45,8 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 | Debt | Why it matters | Owner next |
 |------|----------------|------------|
-| **Staging articles lack enrichment** | Built claim-first essays without systematic use of enriched/analyzed memos or primary sources. Skipped ground step of blog-review pipeline. | Re-ground before any promote-to-live |
+| **Vertical “30/30 enriched” was fake** | Mass outlines (~200–400 words) with ornamental hub links (ASEAN home, Statista stub) that support no body sentence. Skipped retweet Stage-2 enrich + blog-review ground. | Status demoted to `thin-outline`. Re-ground one-by-one per `docs/VERTICAL-ENRICH.md` |
+| **AI staging articles lack enrichment** | Same class of failure on `/blog/staging/` | Re-ground before any promote-to-live |
 | **GH Actions workflow for ideas-queue not on remote** | Push rejected: OAuth token lacks `workflow` scope. File may exist only locally under `.github/workflows/ideas-queue.yml` | Nick: push workflow with workflow-scoped token, or paste in GH UI |
 | **BLOG-QUEUE understated full funnel** | Only listed 5 seeds; retweet library has top-10 shortlist + large weekly R≥0.8 piles | Keep shortlist/top-30 in PLAN + ideas-queue.json |
 | **Shortlist markdown not in this repo** | Lives in git history / strategic-publishing extract | Optional: restore copy under `blog/data/` or link stable path |
@@ -67,10 +68,11 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 ### P0 — multi-vertical enrichment (current priority)
 
-1. **Done volume bar:** 30/30 enriched staging drafts with Source notes for `/fintech/` and `/us-asean-china/`.
-2. **Next quality bar:** Nick review pass; deepen thin pattern drafts with stronger primaries; free-style Grok polish only after sources hold.
-3. Grow canonical source lists from harvest original posters + doctrine-fit outlets.
-4. Do **not** mass-produce unenriched essays; do **not** promote vertical drafts public without Nick unlock + promote script.
+1. **Quality over volume.** Follow `docs/VERTICAL-ENRICH.md` (copies retweet `enrich.md` + blog-review ground). One real memo > thirty outlines.
+2. **Honest counts (2026-07-31 night):** fintech 30 `thin-outline`; us-asean-china 29 `thin-outline` + **1** true `enriched-draft` (`english-language-founder-media-vs-local-language-c` after rewrite).
+3. Next: pick Nick-priority seeds; write `ground/<slug>.md` first; only then full essay; Source notes must pass “supports which sentence?”
+4. Grow canonical sources from harvest **after** enrich dossiers exist.
+5. Do **not** re-label thin outlines as enriched; do **not** promote without Nick.
 
 ### P0b — AI process integrity (deferred by Nick)
 
@@ -115,8 +117,9 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 |------|-----|-----------------------------|------|
 | Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `nick-blog-queue` | `blog/data/ideas-queue.json` |
 | Article staging (AI) | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*`, `manifest.json` |
-| Fintech vertical | https://nicholasg3.github.io/fintech/ | `nick-verticals` | `fintech/data/*`, `fintech/staging/` (30 drafts) |
-| US–ASEAN–China vertical | https://nicholasg3.github.io/us-asean-china/ | `nick-verticals` | `us-asean-china/data/*`, `us-asean-china/staging/` (30 drafts) |
+| Fintech vertical | https://nicholasg3.github.io/fintech/ | `nick-verticals` | `fintech/data/*`, `fintech/staging/` (**30 thin-outline**; not enriched) |
+| US–ASEAN–China vertical | https://nicholasg3.github.io/us-asean-china/ | `nick-verticals` | `us-asean-china/data/*`, staging (**29 thin + 1 enriched**), `ground/` |
+| Vertical enrich bar | [`docs/VERTICAL-ENRICH.md`](docs/VERTICAL-ENRICH.md) | — | Mandatory process |
 
 **Security note:** GitHub Pages has no server auth. These gates hide an internal backlog from casual visitors; they are not suitable for secrets.
 
@@ -221,26 +224,30 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 
 ## Session log (append-only)
 
-### 2026-07-31 (night) — multi-vertical 30/30 drafts
+### 2026-07-31 (night+1) — quality correction (Nick review)
 
-**Done:**
-- Fintech: **30/30** enriched staging drafts with Source notes + manifests/seeds updated
-- US–ASEAN–China: **30/30** enriched staging drafts with Source notes + manifests/seeds updated
-- Sources lists grown (World Bank remittances, FATF, FedNow, NYDFS, NLB, MPA, BNM, PDPC, CHIPS/NIST, ICA, etc.)
-- Quality bar held: every draft has Source notes + primary/canonical links; thin seeds stated gaps / pattern zoom
-- Promote rule already in place: seed-tweet chrome staging-only; strip via `promote_staging_article.py` for live
+**Nick’s call (correct):** vertical “sources” were often BS hub links that did not support arguments; articles were too thin; agent skipped deep enrichment (retweet Stage-2 + blog-review ground) and mass-produced outlines.
 
-**Hubs (password `nick-verticals`):**
-- https://nicholasg3.github.io/fintech/
-- https://nicholasg3.github.io/us-asean-china/
+**Corrective actions:**
+- Demoted **59** seeds from `enriched-draft` → `thin-outline`; HTML kickers say “thin outline · needs ground”
+- Added [`docs/VERTICAL-ENRICH.md`](docs/VERTICAL-ENRICH.md): mandatory pipeline + “supports which sentence?” source test
+- Re-did **one** model piece properly: `english-language-founder-media-vs-local-language-c`
+  - Ground brief: `us-asean-china/ground/english-language-founder-media-vs-local-language-c.md`
+  - Body integrates Constitute Art. 36, DataReportal Digital 2024 Indonesia, EF EPI #80/471, Kirkpatrick ELF ASEAN, Tech in Asia as English media public
+  - ~1300 words; Source notes each name the claim they support
 
-**Not done / next:**
-1. Nick review pass on vertical drafts (priority pick for deepen vs keep as pattern)
-2. Free-style Grok polish only after Nick flags which pieces
-3. AI `/blog/staging/` enrichment still deferred
-4. Dedicated curator accounts / continuous capture per vertical
-5. GH Actions workflow for ideas-queue still needs workflow-scoped token
-6. No public unlock of verticals without Nick
+**Still true / next:**
+1. Do **not** treat the other 59 as enriched
+2. Nick picks priority slugs → ground brief → full rewrite (throughput: quality, not 30/session)
+3. Wire vertical harvest seeds through `retweet-library-*/pipeline/enrich.py` when tweet-backed
+4. AI staging enrichment still deferred
+5. No public unlock without Nick
+
+### 2026-07-31 (night) — multi-vertical volume push (**SUPERSEDED — quality fail**)
+
+**What shipped then:** 30 HTML files per vertical labeled enriched.  
+**What they actually were:** thin outlines + ornamental sources.  
+**Do not cite this session as done.** See night+1 correction above.
 
 ### 2026-07-31 (promote rule)
 
@@ -263,7 +270,7 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 - Captured 189 posts from `@yahoolovesyou` → raw harvest file under retweet-library-fintech
 - Scaffolded password hubs; 30 seed slots each; first enriched drafts
 
-**Superseded by night session:** full 30/30 drafts complete (see session entry above).
+**Later note:** night volume push was quality-failed; see night+1 correction.
 
 
 
