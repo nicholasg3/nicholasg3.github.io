@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~01:10 SGT |
-| **Last commit focus** | Multi-vertical program: /fintech/ + /us-asean-china/ private hubs; yahoolovesyou harvest; enriched drafts (sources-first) |
+| **Last updated** | 2026-07-31 ~01:15 SGT |
+| **Last commit focus** | Promote-to-live rule: strip seed-tweet chrome; promote script |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -137,9 +137,39 @@ python3 scripts/build_ideas_queue.py
 - [ ] Retrieval gaps stated when evidence thin  
 - [ ] Free-style Grok polish **after** sources, not instead of them  
 
+
+## Promote staging → live (hard rules)
+
+Staging may show **lab chrome** that is useful for review:
+
+- Kicker: `Staging draft · queue #N · not live`
+- Subtitle line: `Seed tweet · source: blog-shortlist #…`
+- Side card: “Not on the public catalogue”
+- Source notes labeled “Seed tweet (…), reposted by @yahoolovesyou”
+
+**When promoting to `blog/posts/` (or unlocking a vertical publicly), strip all of that.** Live pieces must look professional:
+
+| Keep | Remove |
+|------|--------|
+| Real claims and argument | “Seed tweet” subtitle under the H1 |
+| Worthy primary/canonical sources in Source notes | Queue numbers / “not live” kickers |
+| Title-linked internal memos | “reposted by @yahoolovesyou” lab notes |
+| Professional kicker (e.g. `Public memo`) | Staging asides / private branding |
+
+**Tool:** `scripts/promote_staging_article.py`  
+```bash
+python3 scripts/promote_staging_article.py \
+  --from blog/staging/posts/SLUG.html \
+  --to blog/posts/SLUG.html \
+  --kicker "Public memo"
+```
+Review the output before catalogue + push. If a tweet is truly evidence (not just the discovery seed), keep it in Source notes under a professional label (e.g. “Discourse source”), never as a title-deck “Seed tweet”.
+
+
 ### Enriched staging → live catalogue
 
 - [ ] Nick sign-off  
+- [ ] **Seed tweet chrome removed** (subtitle, queue kicker, yahoolovesyou lab notes)
 - [ ] Remove staging-only framing; fit public chrome  
 - [ ] No bare Issue NNN in body (title + href)  
 - [ ] External legal/tech refs linked in main text where cited  
@@ -187,6 +217,12 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 ---
 
 ## Session log (append-only)
+
+### 2026-07-31 (promote rule)
+
+- Nick: seed-tweet under title is good for **staging**, must be removed for **live**.
+- Documented in PLAN; added `scripts/promote_staging_article.py`.
+
 
 ### 2026-07-31 (later) — multi-vertical kickoff
 

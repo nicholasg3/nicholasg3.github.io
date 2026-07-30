@@ -4,6 +4,9 @@
 Usage:
   python3 scripts/write_staging_article.py --slug metric-authorship --title "..." --idea "..." ...
   Or import write_article() from a fleet runner.
+
+Staging may include a "Seed tweet" line under the title for review.
+When promoting to live, run scripts/promote_staging_article.py to strip that chrome.
 """
 from __future__ import annotations
 
