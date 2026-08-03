@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>Strategy Publisher</title>
+    <title>AI Strategy — Nicholas Garcia</title>
     <link>https://nicholasg3.github.io/blog/</link>
-    <description>Strategy briefing for founders, consultants, and C-suite operators.</description>
+    <description>AI Strategy is Nicholas Garcia's vertical on where AI should change coordination, judgment, learning speed, and commercial leverage — for founders, consultants, and C-suite operators.</description>
     <language>en-us</language>
     <item>
       <title>Agents Need a Memory Architecture</title>

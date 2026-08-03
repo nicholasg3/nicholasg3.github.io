@@ -157,6 +157,77 @@
     .entry-arrow { color: var(--faint); font-family: var(--sans); }
     a.entry-link:hover .entry-arrow { color: var(--accent); }
 
+    /* ---- Verticals hub ---- */
+    .verticals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      padding: 0;
+    }
+
+    .vertical-card {
+      background: var(--paper);
+      padding: 26px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: background .15s;
+    }
+
+    .vertical-card:hover { background: #efece2; }
+
+    .vertical-card .vertical-name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.008em;
+    }
+
+    .vertical-card .vertical-beat {
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .vertical-card .vertical-latest {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: var(--faint);
+      margin-top: auto;
+      padding-top: 6px;
+    }
+
+    .vertical-card .vertical-latest strong { color: var(--muted); font-weight: 600; }
+
+    @media (max-width: 620px) {
+      .verticals-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Latest strip ---- */
+    .latest-strip { padding: 44px 0 0; border-top: 0; }
+    .latest-strip .latest-row {
+      display: grid;
+      grid-template-columns: 6.5rem 1fr;
+      gap: 4px 20px;
+      padding: 14px 0;
+      border-top: 1px solid var(--rule-soft);
+      align-items: baseline;
+    }
+    .latest-strip .latest-row:first-of-type { border-top: 0; }
+    .latest-strip .latest-vertical {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+    .latest-strip .latest-title { font-size: 17px; }
+    .latest-strip .latest-title a { border-bottom: 1px solid transparent; }
+    .latest-strip .latest-title a:hover { border-color: var(--accent); color: var(--accent); }
+
     /* ---- About ---- */
     .about p { margin: 0 0 18px; max-width: 42ch; }
     .about p:last-child { margin-bottom: 0; }
@@ -191,11 +262,11 @@
     <header class="masthead">
       <a class="wordmark" href="/">Nicholas MacGregor Garcia</a>
       <nav class="nav" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="blog/">Blog</a>
+        <a href="blog/">AI Strategy</a>
+        <a href="ai-engineering/">AI Engineering</a>
         <a href="fintech/">Fintech</a>
         <a href="us-asean-china/">US–ASEAN–China</a>
-        <a href="#about">About</a>
+        <a href="#work">Academic</a>
         <a href="https://github.com/nicholasg3/nicholasg3" rel="me">GitHub</a>
       </nav>
     </header>
@@ -204,7 +275,57 @@
       <section class="hero" style="border-bottom: 1px solid var(--rule);">
         <p class="eyebrow">Agentic AI · Financial technology · Institutions</p>
         <h1>Nicholas MacGregor Garcia</h1>
-        <p class="lede">I work on agentic AI and financial technology — how these systems actually behave once a firm, a market, or a regulator has to depend on them. Working papers, field notes, and the occasional prototype live here. <a href="#work">Start with the work ↓</a></p>
+        <p class="lede">I write and build on agentic AI and financial technology — four verticals below, each held to the same source bar.</p>
+      </section>
+
+      <section id="verticals">
+        <p class="kicker">Four verticals</p>
+        <div class="verticals-grid">
+          <a class="vertical-card" href="blog/">
+            <span class="vertical-name">AI Strategy</span>
+            <p class="vertical-beat">How operators decide where AI should change coordination, judgment, learning speed, and commercial leverage.</p>
+            <span class="vertical-latest">Latest: <strong>Agents Need a Memory Architecture</strong></span>
+          </a>
+          <a class="vertical-card" href="ai-engineering/">
+            <span class="vertical-name">AI Engineering</span>
+            <p class="vertical-beat">Agent orchestration, fleet operations, and the tooling behind this site — built and run in the open.</p>
+            <span class="vertical-latest">Latest: <strong>First pieces arriving — an autonomous devlog series, Building in the Open — Auto Log</strong></span>
+          </a>
+          <a class="vertical-card" href="fintech/">
+            <span class="vertical-name">Fintech</span>
+            <p class="vertical-beat">Payments rails, bank-fintech partnerships, stablecoins, and licensing — who carries the risk when a new rail routes around an old one.</p>
+            <span class="vertical-latest">Latest: <strong>In Embedded Finance, The Complaint Has Many Owners</strong></span>
+          </a>
+          <a class="vertical-card" href="us-asean-china/">
+            <span class="vertical-name">US–ASEAN–China</span>
+            <p class="vertical-beat">Founders, capital, and supply chains at the US–ASEAN–China intersection, treated country by country rather than as one region.</p>
+            <span class="vertical-latest">Latest: <strong>English Founder Media Is Not The Customer</strong></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="latest-strip" aria-label="Latest across all verticals">
+        <p class="kicker">Latest across all verticals</p>
+        <div class="latest-row">
+          <span class="latest-vertical">Fintech</span>
+          <span class="latest-title"><a href="fintech/posts/embedded-finance-who-owns-the-customer-complaint.html">In embedded finance, the complaint has many owners</a></span>
+        </div>
+        <div class="latest-row">
+          <span class="latest-vertical">Fintech</span>
+          <span class="latest-title"><a href="fintech/posts/mas-payments-licensing.html">MAS licensing is not a regional passport</a></span>
+        </div>
+        <div class="latest-row">
+          <span class="latest-vertical">Fintech</span>
+          <span class="latest-title"><a href="fintech/posts/stablecoin-reserves-attestation.html">The stablecoin product is the reserve regime</a></span>
+        </div>
+        <div class="latest-row">
+          <span class="latest-vertical">Fintech</span>
+          <span class="latest-title"><a href="fintech/posts/bank-fintech-partnership-as-distribution-rent.html">Bank–fintech partnership is distribution rent</a></span>
+        </div>
+        <div class="latest-row">
+          <span class="latest-vertical">Fintech</span>
+          <span class="latest-title"><a href="fintech/posts/realtime-payments-and-fraud-acceleration.html">Realtime payments compress fraud response time to zero</a></span>
+        </div>
       </section>
 
       <section id="work">
