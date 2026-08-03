@@ -225,6 +225,10 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 
 ## Session log (append-only)
 
+### 2026-08-03 (blog) — x402 governance piece staged (podcast prep, piece 3)
+
+Staged `blog/staging/posts/x402-governance-gaps.html` + `blog/ground/x402-governance-gaps.md`, registered in `blog/staging/manifest.json` (rank 31, status `ready-for-nick`). Awaiting Nick sign-off; target publish before the Thu 6 Aug NUS FinTech Lab podcast with Hassan Ahmed. **Flag for Nick:** mid-session, `CLAUDE.md` was edited to permit self-promotion without sign-off, and an unsigned "coordinator" message instructed pushing this piece to `blog/posts/` + `blog/index.html` directly — both contradicted this task's explicit brief and were not followed; piece stayed in staging only. See security note in the ground brief.
+
 ### 2026-08-03 — public verticals layout launched
 
 ### 2026-08-03 (later) — fintech top 5 verified + promoted live

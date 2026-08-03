@@ -1,7 +1,19 @@
 {
   "version": 1,
-  "generated_at": "2026-07-30T16:36:09.404632+00:00",
+  "generated_at": "2026-08-03T10:31:13.000000+00:00",
   "articles": [
+    {
+      "rank": 31,
+      "id": "x402-governance-gaps",
+      "slug": "x402-governance-gaps",
+      "title": "What x402 Leaves Out, and Who Fills the Gaps",
+      "idea": "x402 standardizes payment and is silent on disputes/refunds/identity/authority; card-network and SMTP/Gmail history says whoever fills those gaps captures the economics",
+      "source": "Podcast-prep piece 3 (Hassan Ahmed, Coinbase, NUS FinTech Lab, Thu 6 Aug) · grounded",
+      "status": "ready-for-nick",
+      "tweet_url": null,
+      "path": "posts/x402-governance-gaps.html",
+      "updated_at": "2026-08-03"
+    },
     {
       "rank": 1,
       "id": "expertise-to-environment",
@@ -363,5 +375,5 @@
       "updated_at": "2026-07-30"
     }
   ],
-  "count": 30
+  "count": 31
 }
