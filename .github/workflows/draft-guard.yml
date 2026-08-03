@@ -1,0 +1,27 @@
+name: draft-guard
+# Fails the build if a draft ever lands in the live tree.
+# Live rule: blog/posts/ is LIVE the moment it is pushed — GitHub Pages has
+# no server-side staging. Drafts belong in blog/staging/posts/ only.
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  no-drafts-in-live:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No noindex/draft markers in live posts
+        run: |
+          set -e
+          fail=0
+          if grep -rl 'name="robots" content="noindex' blog/posts/ 2>/dev/null; then
+            echo "::error::noindex draft found in blog/posts/ — drafts go to blog/staging/posts/"
+            fail=1
+          fi
+          if grep -n 'Draft · seed\|<strong>Draft\.</strong>' blog/index.html; then
+            echo "::error::Draft card found in live catalogue blog/index.html"
+            fail=1
+          fi
+          exit $fail
