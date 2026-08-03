@@ -332,6 +332,28 @@
       "vertical": "fintech",
       "updated_at": "2026-07-31",
       "body_words": 929
+    },
+    {
+      "rank": 31,
+      "slug": "tokenized-bank-money-correspondent-banking",
+      "title": "Tokenization Speeds Settlement. It Does Not Replace Correspondent Banking.",
+      "idea": "Money stays a liability of whoever issued it. Moving value between issuers still needs a bilateral deal, a market maker, or the bank system underneath — a faster ledger changes none of that.",
+      "status": "enriched-draft",
+      "source": "podcast-prep fleet 2026-08-03 (Hassan Ahmed / Coinbase, NUS FinTech Lab, 6 Aug 2026)",
+      "vertical": "fintech",
+      "updated_at": "2026-08-03",
+      "body_words": 1454
+    },
+    {
+      "rank": 32,
+      "slug": "stablecoins-monetary-sovereignty-sea",
+      "title": "The Cross-Border Efficiency Case for Stablecoins Is the Dollarization Case",
+      "idea": "The event a stablecoin issuer counts as adoption — money enters a dollar token and stays there because it works better than the local rail — is structurally the same event a central banker counts as currency substitution. The exposure is not even across Southeast Asia.",
+      "status": "enriched-draft",
+      "source": "podcast-prep fleet 2026-08-03 (Hassan Ahmed / Coinbase, NUS FinTech Lab, 6 Aug 2026)",
+      "vertical": "fintech",
+      "updated_at": "2026-08-03",
+      "body_words": 1763
     }
   ]
 }

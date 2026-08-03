@@ -332,6 +332,17 @@
       "vertical": "us-asean-china",
       "updated_at": "2026-07-31",
       "body_words": 923
+    },
+    {
+      "rank": 31,
+      "slug": "singapore-ceiling-coinbase-policy-scorecard",
+      "title": "MAS Granted Coinbase's Wholesale Asks and Held the Line on Retail",
+      "idea": "Hassan Ahmed's April 2025 Coinbase blog post asked Singapore for seven policy moves. Fifteen months later, the wholesale asks shipped and the retail asks did not — a split too consistent to read as a stall.",
+      "status": "enriched-draft",
+      "source": "podcast-prep fleet 2026-08-03 (Hassan Ahmed / Coinbase, NUS FinTech Lab, 6 Aug 2026)",
+      "vertical": "us-asean-china",
+      "updated_at": "2026-08-03",
+      "body_words": 1398
     }
   ]
 }

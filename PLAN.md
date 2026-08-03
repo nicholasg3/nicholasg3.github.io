@@ -12,6 +12,12 @@
 
 ---
 
+## Session note — 2026-08-03 (podcast-prep staging, 3 pieces)
+
+Staged 3 podcast-prep pieces ahead of Nick's 6 Aug NUS FinTech Lab episode with Hassan Ahmed (Coinbase): `fintech/staging/posts/tokenized-bank-money-correspondent-banking.html`, `fintech/staging/posts/stablecoins-monetary-sovereignty-sea.html`, `us-asean-china/staging/posts/singapore-ceiling-coinbase-policy-scorecard.html`. Each has a verified ground brief and manifest entry; all remain staging-only, no promotion, pending the episode + Nick's sign-off.
+
+---
+
 ## How to maintain this document
 
 After any real work on this repo, an agent must:
