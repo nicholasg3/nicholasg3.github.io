@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-08-03 ~18:12 SGT |
-| **Last commit focus** | Public verticals layout launch — one verified piece live, rest stay gated |
+| **Last updated** | 2026-08-03 ~18:45 SGT |
+| **Last commit focus** | Fintech vertical: top 5 staged posts verified claim-by-claim and promoted live |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -226,6 +226,26 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 ## Session log (append-only)
 
 ### 2026-08-03 — public verticals layout launched
+
+### 2026-08-03 (later) — fintech top 5 verified + promoted live
+
+**Nick's call:** publish the top 5 fintech staging pieces after cleanup — sign-off given, each piece still had to clear the verification bar in `docs/VERTICAL-ENRICH.md` before going live.
+
+**Selection:** scored all 30 `fintech/staging/posts/*.html` on particularity, source quality, and topical strength (payments rails, bank-fintech partnerships, stablecoins, licensing). Top 5 by score, picked for topical spread across the vertical:
+
+1. `embedded-finance-who-owns-the-customer-complaint` — Synapse Financial Technologies' April 2024 collapse ($60–90M shortfall) as a live BaaS-failure case; strongest named-entity density of the 30.
+2. `mas-payments-licensing` — exact MAS PS Act thresholds (S$3M/S$6M/S$5M, S$100k base capital); high relevance for an SG-based readership.
+3. `stablecoin-reserves-attestation` — NYDFS 2022 guidance through the March 2023 SVB depeg ($3.3bn of USDC reserves trapped).
+4. `bank-fintech-partnership-as-distribution-rent` — June 2023 interagency third-party guidance + July 2024 joint statement on nonbank deposit-product arrangements.
+5. `realtime-payments-and-fraud-acceleration` — UK PSR's £85,000 APP-fraud reimbursement cap (from 7 Oct 2024) alongside the Senate PSI report on $206M+ in disputed Zelle scams (2023).
+
+**Verification (5 parallel fact-check passes, one per post):** every load-bearing named figure, date, and institution was checked against its primary source (MAS, NYDFS, Circle, OCC/Fed/FDIC, UK PSR, Senate PSI/Kansas City Fed) via WebFetch, falling back to WebSearch where the primary site bot-blocked direct fetch (MAS, some Senate/Fed PDFs). Outcome: **all claims in all 5 posts confirmed accurate — nothing had to be corrected or removed.** The only edits made during verification were mechanical: Source notes rewritten into the required `Exact title, org, date: Supports the claim that [sentence]` format (several notes were decorative hub-style descriptions before), one Richmond Fed citation title corrected to its exact published name, and two paragraphs rewritten out of second-person-coaching / bare-imperative phrasing into third-person AP voice (`bank-fintech-partnership-as-distribution-rent`, `stablecoin-reserves-attestation`). No candidate was demoted out of the top 5 during verification — all 5 top-ranked posts passed clean, so nothing from rank 6 (`swift-as-sanctions-rail`) was substituted in.
+
+**Promotion:** wrote `fintech/posts/<slug>.html` for each, stripping `noindex`, the `Staging · enriched draft · queue #N` kicker, the private-staging header/nav/footer chrome, and the staging sign-off note — following the exact live pattern of `us-asean-china/posts/english-language-founder-media-vs-local-language-c.html` (kept Source notes, `aside` side cards, and the `../ground/<slug>.md` link, which still resolves from the new `fintech/posts/` location). `fintech/staging/manifest.json` entries for all 5 marked `status: promoted-live`. `fintech/index.html` "pipeline" note replaced with 5 feature cards (title, dek, Reader Decision strip) in the scored rank order; pipeline note trimmed to the remaining 25 staged topics.
+
+**Verified:** no public page links into `*/staging/*` (checked `fintech/index.html`, `blog/index.html`, site `index.html`); all 5 live URLs served 200 locally via `python3 -m http.server`; staging copies left in place (still gated + noindex, harmless duplicates, same pattern as the earlier us-asean-china promotion). `draft-guard` CI only greps `blog/posts/` and `blog/index.html`, so it does not cover `fintech/`; no workflow file touched.
+
+**Not done / still true:** remaining 25 fintech posts stay `enriched-draft` in staging, not verified, no public link. Same for all 30 us-asean-china minus the 1 already promoted.
 
 **Nick's call:** launch the public layout with vertical sections in nav, but list only verified pieces. Everything else stays gated.
 

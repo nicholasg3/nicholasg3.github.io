@@ -4,7 +4,7 @@
 
 Update `PLAN.md` every session. Keep this file for queue tables and tool pointers; do not let it drift ahead of `PLAN.md`.
 
-Last aligned with PLAN: **2026-08-03**
+Last aligned with PLAN: **2026-08-03 (later)**
 
 ---
 
@@ -14,7 +14,7 @@ Last aligned with PLAN: **2026-08-03**
 |------|-----|----------|------|
 | Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `nick-blog-queue` | `blog/data/ideas-queue.json` |
 | Article staging | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*` |
-| Fintech staging (moved from `fintech/index.html`) | https://nicholasg3.github.io/fintech/staging/ | `nick-verticals` | `fintech/staging/posts/*`; public landing now `fintech/index.html` (0 verified) |
+| Fintech staging (moved from `fintech/index.html`) | https://nicholasg3.github.io/fintech/staging/ | `nick-verticals` | `fintech/staging/posts/*`; public landing now `fintech/index.html` (5 verified: `embedded-finance-who-owns-the-customer-complaint`, `mas-payments-licensing`, `stablecoin-reserves-attestation`, `bank-fintech-partnership-as-distribution-rent`, `realtime-payments-and-fraud-acceleration`) |
 | US–ASEAN–China staging (moved from `us-asean-china/index.html`) | https://nicholasg3.github.io/us-asean-china/staging/ | `nick-verticals` | `us-asean-china/staging/posts/*`; public landing now `us-asean-china/index.html` (1 verified: `english-language-founder-media-vs-local-language-c`) |
 
 Client-side password only (GitHub Pages). See PLAN security note.
