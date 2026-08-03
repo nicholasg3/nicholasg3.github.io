@@ -7,7 +7,7 @@
   --line: #cfc8b8;
   --blue: #1f6078;
   --crimson: #a83228;
-  --brass: #b48a34;
+  --brass: #85631c;
   --mist: #dce7e8;
   --shadow: 0 22px 70px rgba(16, 18, 20, 0.14);
 }
@@ -652,6 +652,24 @@ h2 {
   color: var(--graphite);
   font-size: 1.24rem;
   line-height: 1.52;
+}
+
+.byline,
+.article-header .byline,
+.hero .byline {
+  font-family: "Aptos", "Segoe UI", Verdana, sans-serif;
+  max-width: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.byline a {
+  color: var(--graphite);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .article-body {
