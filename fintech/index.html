@@ -3,132 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>Fintech · private</title>
+  <meta name="description" content="Fintech: payments rails, bank-fintech partnerships, stablecoins, and licensing, read for who carries the risk — not for the press release.">
+  <title>Fintech | Strategy Publisher</title>
   <link rel="stylesheet" href="/blog/styles.css">
-  <style>
-    .gate, .wrap { max-width: 1040px; margin: 0 auto; padding: 48px 24px 96px; }
-    .gate-card { max-width: 440px; margin: 72px auto 0; padding: 28px 24px; background: var(--sheet); border: 1px solid var(--line); box-shadow: var(--shadow); }
-    .gate-card h1 { margin: 0 0 8px; font-size: 1.55rem; line-height: 1.15; }
-    .gate-card p { color: var(--muted); margin: 0 0 14px; }
-    .gate-card input[type="password"] { width: 100%; padding: 10px 12px; border: 1px solid var(--line); font: inherit; margin-bottom: 12px; }
-    .gate-card button, .toolbar button { min-height: 40px; padding: 8px 14px; border: 1px solid var(--ink); background: var(--ink); color: #fff; font: inherit; font-weight: 700; cursor: pointer; }
-    .toolbar button.secondary { background: transparent; color: var(--ink); }
-    .gate-error { color: var(--crimson); min-height: 1.2em; }
-    .hidden { display: none !important; }
-    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; }
-    .toolbar input[type="search"] { flex: 1 1 220px; padding: 9px 12px; border: 1px solid var(--line); background: var(--sheet); font: inherit; }
-    .card-list { display: grid; gap: 14px; }
-    .stage-card { background: var(--sheet); border: 1px solid var(--line); padding: 18px; }
-    .stage-card h2 { margin: 0 0 8px; font-size: 1.2rem; line-height: 1.2; }
-    .stage-card h2 a { color: var(--blue); }
-    .meta { color: var(--muted); font-size: 0.9rem; }
-    .chip { display: inline-block; padding: 2px 8px; border: 1px solid #e0c36a; border-radius: 999px; font-size: 12px; font-weight: 700; background: #fff3d6; margin-right: 6px; }
-    .warn { margin-top: 22px; color: var(--muted); font-size: 0.9rem; }
-    .nav-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 22px; }
-    .nav-pills a { border: 1px solid var(--line); padding: 6px 12px; border-radius: 999px; text-decoration: none; font-size: 0.9rem; }
-  </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="Home"><span class="brand-mark">N</span><span><strong>Fintech</strong><small>Private vertical</small></span></a>
-    <nav class="nav" aria-label="Primary"><a href="/blog/">Public blog</a></nav>
+    <a class="brand" href="/" aria-label="Nicholas MacGregor Garcia home">
+      <span class="brand-mark">N</span>
+      <span><strong>Fintech</strong><small>Strategy Publisher vertical</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/blog/">Blog</a>
+      <a href="/us-asean-china/">US–ASEAN–China</a>
+      <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+    </nav>
   </header>
+
   <main>
-    <section id="gate" class="gate">
-      <div class="gate-card">
-        <h1>Fintech</h1>
-        <p>Private vertical — seeds, enrichment, staged drafts. Password-only until unlocked.</p>
-        <p class="gate-error" id="gate-error" role="status"></p>
-        <label for="password">Password</label>
-        <input id="password" type="password" autocomplete="current-password" autofocus>
-        <button type="button" id="unlock-btn">Unlock</button>
-      </div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="issue-kicker">Vertical · Fintech</div>
+      <h1 id="hero-title">Payments, rails, and who carries the risk</h1>
+      <p class="hero-copy">This vertical tracks payments infrastructure, bank-fintech partnerships, stablecoins, and licensing — with attention to who carries settlement risk, reserve backing, and compliance burden once a new rail promises to route around an old one. Every published piece cites primary filings, regulator guidance, or company disclosure, not press-release framing.</p>
     </section>
-    <section id="list" class="wrap hidden">
-      <div class="issue-kicker">Private · password-only until unlocked</div>
-      <h1 style="margin:0 0 8px;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.05;">Fintech</h1>
-      <p class="meta" id="meta">Loading…</p>
-      <div class="nav-pills">
-        <a href="seeds.html">Seeds queue</a>
-        <a href="#cards">Draft articles</a>
-        <a href="sources.html">Canonical sources</a>
-      </div>
-      <div class="toolbar">
-        <input id="filter" type="search" placeholder="Filter drafts…" aria-label="Filter">
-        <button type="button" class="secondary" id="reload-btn">Reload</button>
-        <button type="button" class="secondary" id="lock-btn">Lock</button>
-      </div>
-      <div class="card-list" id="cards"></div>
-      <p class="warn">Client-side password only. No draft without Source notes + primary/canonical links. Vertical stays private until Nick unlocks the mini-site.</p>
+
+    <section class="latest" aria-label="Fintech pieces">
+      <div class="section-label">Published pieces</div>
+      <p class="tag-filter-lead">Nothing has cleared the verified bar yet. Pieces move here from the research pipeline only after sources are checked line by line and Nick signs off.</p>
+      <p class="manual-cta">More pieces are in the pipeline — payments licensing, stablecoin reserves, embedded finance, and card-network competition are in active research. Check back for the first verified piece.</p>
     </section>
   </main>
-  <footer class="site-footer"><span>Fintech · private</span><a href="/">Home</a></footer>
-  <script>
 
-const PASSWORD_SHA256 = "ff854ad6c0b6c6a80a22e03946c0a6fd8bcb3fe3636ebeccc1c11e7cee1edc08";
-const SESSION_KEY = "sp-vertical-auth-v1";
-const MANIFEST_URL = "staging/manifest.json";
-const gate = document.getElementById("gate");
-const list = document.getElementById("list");
-const gateError = document.getElementById("gate-error");
-const passwordInput = document.getElementById("password");
-const cards = document.getElementById("cards");
-const meta = document.getElementById("meta");
-const filterInput = document.getElementById("filter");
-let cache = [];
-async function sha256Hex(text) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
-}
-function isAuthed() { return sessionStorage.getItem(SESSION_KEY) === "1"; }
-function setAuthed(ok) {
-  if (ok) sessionStorage.setItem(SESSION_KEY, "1");
-  else sessionStorage.removeItem(SESSION_KEY);
-}
-function show(ok) {
-  gate.classList.toggle("hidden", ok);
-  list.classList.toggle("hidden", !ok);
-}
-function esc(s) {
-  return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;");
-}
-function render() {
-  const q = (filterInput.value || "").toLowerCase().trim();
-  const rows = cache.filter(a => !q || [a.rank,a.title,a.idea,a.status,a.slug].join(" ").toLowerCase().includes(q));
-  cards.innerHTML = rows.map(a => `
-    <article class="stage-card">
-      <div class="meta"><span class="chip">${esc(a.status || "draft")}</span> #${esc(a.rank)}</div>
-      <h2><a href="staging/posts/${esc(a.slug)}.html">${esc(a.title)}</a></h2>
-      <p>${esc(a.idea || "")}</p>
-      <p class="meta">${esc(a.source || "")}</p>
-    </article>`).join("") || "<p class='meta'>No drafts yet. Seeds and enrichment come first.</p>";
-}
-async function load() {
-  meta.textContent = "Loading…";
-  const res = await fetch(MANIFEST_URL + "?t=" + Date.now(), { cache: "no-store" });
-  if (!res.ok) { meta.textContent = "No drafts yet (manifest empty or missing)."; cache = []; render(); return; }
-  const data = await res.json();
-  cache = data.articles || [];
-  meta.textContent = `${cache.length} staged drafts · ${data.generated_at ? new Date(data.generated_at).toLocaleString() : "unknown"}`;
-  render();
-}
-async function unlock() {
-  gateError.textContent = "";
-  if (await sha256Hex(passwordInput.value || "") !== PASSWORD_SHA256) {
-    gateError.textContent = "Wrong password."; return;
-  }
-  setAuthed(true); show(true); await load();
-}
-document.getElementById("unlock-btn").addEventListener("click", unlock);
-passwordInput.addEventListener("keydown", e => { if (e.key === "Enter") unlock(); });
-document.getElementById("lock-btn").addEventListener("click", () => {
-  setAuthed(false); passwordInput.value = ""; show(false); passwordInput.focus();
-});
-document.getElementById("reload-btn").addEventListener("click", () => load());
-filterInput.addEventListener("input", render);
-if (isAuthed()) { show(true); load(); }
-
-  </script>
+  <footer class="site-footer"><span>Strategy Publisher · Fintech</span><a href="/blog/">Blog</a></footer>
 </body>
 </html>

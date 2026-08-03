@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~02:41 SGT |
-| **Last commit focus** | Step 4b prose rewrite fleet + ban generic “operators” |
+| **Last updated** | 2026-08-03 ~18:12 SGT |
+| **Last commit focus** | Public verticals layout launch — one verified piece live, rest stay gated |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -116,8 +116,10 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 |------|-----|-----------------------------|------|
 | Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `nick-blog-queue` | `blog/data/ideas-queue.json` |
 | Article staging (AI) | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*`, `manifest.json` |
-| Fintech vertical | https://nicholasg3.github.io/fintech/ | `nick-verticals` | `fintech/data/*`, `fintech/staging/` (**30 thin-outline**; not enriched) |
-| US–ASEAN–China vertical | https://nicholasg3.github.io/us-asean-china/ | `nick-verticals` | `us-asean-china/data/*`, staging (**29 thin + 1 enriched**), `ground/` |
+| Fintech vertical (public landing) | https://nicholasg3.github.io/fintech/ | — (public) | Positioning + pipeline note; 0 verified pieces |
+| Fintech staging (moved) | https://nicholasg3.github.io/fintech/staging/ | `nick-verticals` | `fintech/data/*`, `fintech/staging/` (**30 thin-outline**; not enriched) |
+| US–ASEAN–China vertical (public landing) | https://nicholasg3.github.io/us-asean-china/ | — (public) | 1 verified piece live: `english-language-founder-media-vs-local-language-c` |
+| US–ASEAN–China staging (moved) | https://nicholasg3.github.io/us-asean-china/staging/ | `nick-verticals` | `us-asean-china/data/*`, staging (**29 thin + 1 promoted to live**), `ground/` |
 | Vertical enrich bar | [`docs/VERTICAL-ENRICH.md`](docs/VERTICAL-ENRICH.md) | — | Mandatory process |
 
 **Security note:** GitHub Pages has no server auth. These gates hide an internal backlog from casual visitors; they are not suitable for secrets.
@@ -222,6 +224,24 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 ---
 
 ## Session log (append-only)
+
+### 2026-08-03 — public verticals layout launched
+
+**Nick's call:** launch the public layout with vertical sections in nav, but list only verified pieces. Everything else stays gated.
+
+**Done:**
+- `fintech/index.html` and `us-asean-china/index.html` are now public landing pages (positioning line + pipeline note). The old password gate moved to `fintech/staging/index.html` / `us-asean-china/staging/index.html` (with `seeds.html` / `sources.html` moved alongside; data-fetch paths fixed). Staging stays `noindex`, password `nick-verticals`, unlinked from any public page.
+- Promoted the one verified piece — `english-language-founder-media-vs-local-language-c` — to `us-asean-china/posts/english-language-founder-media-vs-local-language-c.html`. Stripped `noindex`, staging kicker, and the staging sign-off note; kept the real Source notes and side cards. Ground brief stays at `us-asean-china/ground/…md`. Staging manifest entry marked `promoted-live`; staging copy left in place (still gated, harmless duplicate).
+- Fintech has zero verified pieces; landing page ships with positioning + pipeline note only, no cards.
+- Added both verticals to public nav: `blog/index.html` (nav links + a small "Verticals" section) and the site-home `index.html` nav.
+- Per Nick: renamed the trailing "nicholasg3.github.io" nav label to "Home" on `blog/index.html` and everywhere else this nav pattern was touched/added (both vertical landing pages, the promoted post).
+- Verified: no public page links into `*/staging/*`; draft-guard greps (`blog/posts/` noindex, `blog/index.html` Draft card) still pass clean.
+
+**Push mechanics:** one unpushed local commit (`52e398b`, draft-guard workflow) predates this session and can't push without `workflow` scope. Rebased this session's work onto `origin/master` with `git rebase --onto origin/master 52e398b~1 master` equivalent so draft-guard stays local-only; pushed only the verticals-launch commit.
+
+**Not done / still true:**
+- Remaining 59 staged posts (30 fintech + 29 us-asean-china) are still `thin-outline`/`enriched-draft`, not verified, stay staging-only.
+- No public unlock of any staging post without Nick sign-off + the enriched-staging checklist.
 
 ### 2026-07-31 (night+3) — mandatory prose rewrite pass
 

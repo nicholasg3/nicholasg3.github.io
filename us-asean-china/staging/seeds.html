@@ -36,7 +36,7 @@ const HASH="ff854ad6c0b6c6a80a22e03946c0a6fd8bcb3fe3636ebeccc1c11e7cee1edc08"; c
 async function sha(t){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("")}
 function show(ok){document.getElementById("gate").classList.toggle("hidden",ok);document.getElementById("app").classList.toggle("hidden",!ok)}
 async function load(){
-  const res=await fetch("data/seeds.json?t="+Date.now(),{cache:"no-store"});
+  const res=await fetch("../data/seeds.json?t="+Date.now(),{cache:"no-store"});
   if(!res.ok){document.getElementById("meta").textContent="No seeds.json yet.";return}
   const data=await res.json();
   document.getElementById("meta").textContent=(data.seeds||[]).length+" seeds · "+(data.generated_at||"");
