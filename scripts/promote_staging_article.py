@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Promote a staging draft to a professional live blog post.
 
+Reads the plaintext draft from the private staging source tree
+($STAGING_SRC/src). Only finished, signed-off work belongs in blog/posts/.
+
 Strips staging-only chrome that is useful in private review but wrong in public:
   - "Seed tweet" lines under the title
   - Staging kickers ("Staging draft · queue #N · not live")
@@ -14,7 +17,7 @@ to professional labels (e.g. "Discourse source (X post by @handle)").
 
 Usage:
   python3 scripts/promote_staging_article.py \\
-    --from blog/staging/posts/metric-authorship.html \\
+    --from "$STAGING_SRC/src/metric-authorship.html" \\
     --to blog/posts/metric-authorship-ai-coding.html \\
     --kicker "Public memo" \\
     --dry-run

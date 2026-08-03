@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "generated_at": "2026-08-03T08:53:27+00:00",
+  "count": 30,
+  "kdf": {
+    "name": "PBKDF2",
+    "hash": "SHA-256",
+    "iterations": 310000,
+    "salt": "IW2yVLLmCsY6UUYHiBW/hw=="
+  },
+  "cipher": "AES-GCM-256"
+}

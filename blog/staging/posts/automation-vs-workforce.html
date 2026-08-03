@@ -2,79 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Automation affordability vs workforce value">
-    <title>Automation without unit economics is a morality play | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #28 · not live</div>
-        <h1>Automation without unit economics is a morality play</h1>
-        <p>Automation affordability vs workforce value</p>
-        <p class="muted"><a href="https://x.com/GergelyOrosz/status/2061350086244725094" rel="noopener noreferrer">Seed tweet</a> · source: W26 watchlist</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Automation debates that skip unit economics become morality plays. The operational question is which tasks are cheaper to automate after quality and transition costs.</p>
-        <p>Track task-level cost, error cost, and redeployment paths. Layoff narratives without those numbers are politics with spreadsheets as props.</p>
-
-        <h2>Two stories that avoid the bill</h2>
-        <p>One story says automation is always progress and that resistance is nostalgia. Another says automation is always predation and that any efficiency is a moral failure. Both can be emotionally satisfying. Neither tells a manager whether this invoice-coding step should be automated this quarter.</p>
-        <p>The operational question is narrower and less flattering. After you pay for tools, integration, monitoring, exception handling, and the human time spent fixing model mistakes, is the task cheaper and better than the current workforce path? Sometimes yes. Sometimes no. Pretending the answer is always one way is ideology.</p>
-
-        <h2>What “cheaper” has to include</h2>
-        <p>Unit economics for automation is not license fee versus salary. A full comparison includes:</p>
-        <ul>
-          <li><strong>Task cost.</strong> Fully loaded human cost per completed task versus fully loaded automated cost per completed task.</li>
-          <li><strong>Error cost.</strong> Frequency of mistakes times the cost to detect and repair them, including customer harm and compliance exposure.</li>
-          <li><strong>Transition cost.</strong> Migration, training, dual-running old and new paths, and temporary quality dips.</li>
-          <li><strong>Redeployment path.</strong> What happens to the people who used to do the task: new roles, attrition, or idle payroll that erases the savings.</li>
-          <li><strong>Reversibility.</strong> How hard it is to put humans back on the path if the tool degrades or the vendor changes price.</li>
-        </ul>
-        <p>Skip error cost and you will automate the easy average case while bleeding on the tail. Skip redeployment and you will book phantom savings that never hit cash.</p>
-
-        <h2>A concrete scene</h2>
-        <p>A company automates first-line support with an agent. Ticket volume handled per hour looks excellent. Escalations rise. Refunds issued incorrectly rise. Senior agents spend their days undoing confident wrong answers. Headcount on the support team falls slightly. Headcount on “AI operations” appears. Customer satisfaction slips in a segment that used to be cheap to serve well.</p>
-        <p>On a slide titled “automation,” the program is a win. On a unit-economics sheet that includes error and redeployment, it may be a loss. The morality play will still rage in public. The spreadsheet is what the firm needed first.</p>
-
-        <h2>How to keep the debate honest</h2>
-        <p>Insist on task-level experiments before org-level narratives. Publish the cost model assumptions inside the company. Separate “we can automate this” from “we should, after quality and transition.” When layoffs are justified with AI, demand the same numbers that would be required for any other capital project.</p>
-        <p>Values still matter. Communities can decide that some roles should be protected even when automation is cheaper. That is a political choice. Make it as a political choice. Do not smuggle it through fake math, and do not smuggle the opposite through fake inevitability.</p>
-
-        <h2>Closing</h2>
-        <p>Automation without unit economics is a morality play. Put task cost, error cost, and redeployment on the table. Then argue values with clear eyes. Anything else is theater that happens to mention workers and machines.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>automation-vs-workforce</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

@@ -10,16 +10,22 @@ Last aligned with PLAN: **2026-07-31**
 
 ## Private tools
 
-| Tool | URL | Password | Data |
-|------|-----|----------|------|
-| Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `nick-blog-queue` | `blog/data/ideas-queue.json` |
-| Article staging | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*` |
+| Tool | URL | Data |
+|------|-----|------|
+| Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `blog/data/ideas-queue.enc` |
+| Article staging | https://nicholasg3.github.io/blog/staging/ | `blog/staging/posts/*`, `manifest.enc` |
 
-Client-side password only (GitHub Pages). See PLAN security note.
+One password for both, kept in Nick's password manager — never in this repo.
+Drafts are AES-256-GCM ciphertext on disk and decrypt in the browser, so a
+guessed URL discloses nothing. See the PLAN security note.
 
-Rebuild ideas JSON:
+Plaintext drafts live in the private repo at `ai-agents-workspace/blog-staging/`.
+Edit there, then republish:
 ```bash
+export STAGING_SRC=~/code/ai-agents-workspace/blog-staging
 python3 scripts/build_ideas_queue.py
+STAGING_PASSWORD='…' python3 scripts/lock_staging.py --src "$STAGING_SRC"
+python3 scripts/check_staging_locked.py
 ```
 
 ---
@@ -43,19 +49,19 @@ Skills: `blog-review`, `humanify` (detect with flags; rewrite in default Grok vo
 
 | Pri | Shortlist # | Focus | Status | Paths |
 |-----|-------------|-------|--------|-------|
-| 1 | **#4** Metric-authorship | Completion metrics reward who defines done | Draft live + staging; **needs enrichment** | `blog/posts/metric-authorship-ai-coding.html`, `blog/staging/posts/metric-authorship.html` |
-| 2 | **#1** Expertise → environment | Performance → harness/folder | Staging only; unenriched | `blog/staging/posts/expertise-to-environment.html` |
-| 3 | **#6** Sovereignty without self-sufficiency | State-as-VC | Staging only; unenriched | `blog/staging/posts/sovereignty-without-self-sufficiency.html` |
-| 4 | **#8** AI unit economics | Load-bearing vs propped | Staging only; unenriched | `blog/staging/posts/ai-unit-economics.html` |
-| 5 | **#9** Discovered bias | Opacity vs reform | Staging only; unenriched | `blog/staging/posts/discovered-bias.html` |
+| 1 | **#4** Metric-authorship | Completion metrics reward who defines done | Staging only; **needs enrichment** (unpublished from the public blog 2026-08-03) | `blog-staging/src/metric-authorship.html` (private) |
+| 2 | **#1** Expertise → environment | Performance → harness/folder | Staging only; unenriched | `blog-staging/src/expertise-to-environment.html` (private) |
+| 3 | **#6** Sovereignty without self-sufficiency | State-as-VC | Staging only; unenriched | `blog-staging/src/sovereignty-without-self-sufficiency.html` (private) |
+| 4 | **#8** AI unit economics | Load-bearing vs propped | Staging only; unenriched | `blog-staging/src/ai-unit-economics.html` (private) |
+| 5 | **#9** Discovered bias | Opacity vs reform | Staging only; unenriched | `blog-staging/src/discovered-bias.html` (private) |
 
-Full top-10 shortlist + ranks 11–30: `blog/data/ideas-queue.json` and PLAN queue map.
+Full top-10 shortlist + ranks 11–30: `blog-staging/ideas-queue.json` (private) and PLAN queue map.
 
 ---
 
 ## Staging (30 posts)
 
-All under `blog/staging/posts/`. **Status as of 2026-07-31: claim-first drafts without systematic Source notes.**  
+Plaintext under `ai-agents-workspace/blog-staging/src/` (private); encrypted copies under `blog/staging/posts/`. **Status as of 2026-07-31: claim-first drafts without systematic Source notes.**  
 
 Do not promote until PLAN “enriched staging” checklist passes.
 

@@ -12,12 +12,23 @@ from __future__ import annotations
 
 import argparse
 import html
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-STAGING_POSTS = ROOT / "blog" / "staging" / "posts"
+
+def staging_src() -> Path:
+    """Private staging root — plaintext drafts never live in this public repo."""
+    return Path(os.environ.get(
+        "STAGING_SRC", ROOT.parent / "ai-agents-workspace" / "blog-staging"
+    )).expanduser()
+
+
+def staging_posts() -> Path:
+    """Drafts are written here in the clear, then encrypted by lock_staging.py."""
+    return staging_src() / "src"
 
 
 def shell(title: str, idea: str, rank: int, slug: str, body_html: str, source: str = "", tweet: str = "") -> str:
@@ -83,8 +94,8 @@ def shell(title: str, idea: str, rank: int, slug: str, body_html: str, source: s
 
 
 def write_article(slug: str, title: str, idea: str, rank: int, body_html: str, source: str = "", tweet: str = "") -> Path:
-    STAGING_POSTS.mkdir(parents=True, exist_ok=True)
-    path = STAGING_POSTS / f"{slug}.html"
+    staging_posts().mkdir(parents=True, exist_ok=True)
+    path = staging_posts() / f"{slug}.html"
     path.write_text(shell(title, idea, rank, slug, body_html, source, tweet))
     return path
 

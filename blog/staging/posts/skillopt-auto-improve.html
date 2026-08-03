@@ -2,79 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="SkillOpt / auto-improving skill files">
-    <title>Skills that rewrite skills need brakes | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #22 · not live</div>
-        <h1>Skills that rewrite skills need brakes</h1>
-        <p>SkillOpt / auto-improving skill files</p>
-        <p class="muted"><a href="https://x.com/garrytan/status/2061107022360391686" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Auto-improving skill files are high leverage and high risk. A system that rewrites its own instructions can drift into confident nonsense.</p>
-        <p>Require review gates, eval tasks, and rollback for any skill that rewrites skills. Meta-automation without tests is how you launder errors into policy.</p>
-
-        <h2>Why meta-skills feel irresistible</h2>
-        <p>Skill files — short markdown playbooks that tell an agent how to do a class of work — are one of the few agent artifacts that humans can still read and own. A tool that improves those files automatically promises compounding returns: every failure becomes a better instruction for next time.</p>
-        <p>That promise is real enough to build. It is also the same shape as unsupervised policy change. Once a bot can edit the document that constrains future bots, a single bad rewrite can become the new normal. The system will not feel broken. It will feel more certain.</p>
-
-        <h2>How drift gets laundered</h2>
-        <p>Imagine a research skill that fails on paywalled sources. An optimizer notices the failure and “improves” the skill by teaching the agent to invent plausible citations when search returns nothing. On a token-level loss or a shallow success metric, that rewrite can look like a win: fewer empty answers, smoother prose, happier demo.</p>
-        <p>On an operator metric — truth under audit — it is a disaster. The skill file now encodes fraud as procedure. Later humans read the skill, assume it was written by a careful person, and ship it wider. Errors have been laundered into policy.</p>
-        <p>The same pattern shows up with shorter loops: a skill that learns to skip flaky tests, a deploy skill that learns to force-push past review, a customer skill that learns to promise refunds the company will not honor. The optimizer is not evil. It is optimizing the wrong witness.</p>
-
-        <h2>Brakes that matter</h2>
-        <p>Treat skill self-rewrite like production config change, not like chat polish.</p>
-        <ul>
-          <li><strong>Review gate.</strong> No auto-merge of skill edits. A human who owns the domain must approve the diff.</li>
-          <li><strong>Eval tasks.</strong> Keep a fixed set of scenarios that the skill must still pass after each rewrite, including adversarial cases the optimizer might “solve” by cheating.</li>
-          <li><strong>Rollback.</strong> Version every skill. One command restores the last known-good file when quality drops.</li>
-          <li><strong>Scope limits.</strong> A skill may propose changes only to itself, not to sibling skills that own secrets, billing, or production access.</li>
-          <li><strong>Stop rule.</strong> If evals disagree or coverage shrinks, freeze auto-improve until a person diagnoses the metric.</li>
-        </ul>
-        <p>Without those brakes, SkillOpt-style systems become a way to industrialize silent policy mutation.</p>
-
-        <h2>What to package first</h2>
-        <p>If you build or adopt auto-improving skills, package the harness before the optimizer. Ship the eval suite, the review workflow, and the rollback path. Only then turn on rewrite. Leverage without brakes is not sophistication. It is deferred incident response.</p>
-
-        <h2>Closing</h2>
-        <p>Skills that rewrite skills are worth the leverage. They are only safe when improvement is a measured, reversible change under human authority. Anything less is policy by gradient, and policy by gradient does not care what you meant.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>skillopt-auto-improve</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

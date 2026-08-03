@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build blog/data/ideas-queue.json for the password-gated ideas page.
+"""Build the ideas backlog for the password-gated ideas page.
 
 Sources (in order):
 1. Embedded shortlist + ranked seeds (always available)
@@ -10,7 +10,8 @@ Usage:
   python3 scripts/build_ideas_queue.py
   RETWEET_LIBRARY=/path/to/retweet-library python3 scripts/build_ideas_queue.py
 
-Writes: blog/data/ideas-queue.json
+Writes: $STAGING_SRC/ideas-queue.json (private repo).
+Publish it with: python3 scripts/lock_staging.py --src $STAGING_SRC
 """
 from __future__ import annotations
 
@@ -21,7 +22,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "blog" / "data" / "ideas-queue.json"
+
+def staging_src() -> Path:
+    """Private staging root — plaintext drafts never live in this public repo."""
+    return Path(os.environ.get(
+        "STAGING_SRC", ROOT.parent / "ai-agents-workspace" / "blog-staging"
+    )).expanduser()
+
+
+# Plaintext backlog: private repo only. lock_staging.py publishes the encrypted copy.
+OUT = staging_src() / "ideas-queue.json"
 
 # Ranked ideas — shortlist 1–10, then W26 skills / W30 high-signal.
 # Update ranks/claims here; tweet/memo links can be refreshed by scan.
@@ -72,7 +82,7 @@ SEED_IDEAS = [
         "tweet_urls": ["https://x.com/emollick/status/2067839690158268923"],
         "enriched": [],
         "analyzed": [],
-        "draft_post": "posts/metric-authorship-ai-coding.html",
+        "draft_post": "staging/posts/metric-authorship.html",
         "handles": ["emollick"],
     },
     {

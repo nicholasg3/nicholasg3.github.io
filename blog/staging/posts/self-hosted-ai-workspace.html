@@ -2,79 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Self-hosted AI workspace (local models, RAG, councils)">
-    <title>Self-hosting is a control strategy | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #21 · not live</div>
-        <h1>Self-hosting is a control strategy</h1>
-        <p>Self-hosted AI workspace (local models, RAG, councils)</p>
-        <p class="muted"><a href="https://x.com/Hesamation/status/2061239803610341837" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Self-hosting is a control strategy as much as a cost strategy: quantization, RAG, local councils, and swarm patterns trade convenience for ownership.</p>
-        <p>Be explicit about what you gain: privacy, egress control, cost tails, or independence from vendor refusal. If you cannot name the gain, you are collecting GPUs for theater.</p>
-
-        <h2>What self-hosting actually buys</h2>
-        <p>A local workspace can mean many different things. Running a quantized model on a workstation is not the same as running a retrieval stack with audit logs, and neither is the same as a multi-model “council” that votes on answers. Each layer buys a different control.</p>
-        <p>Privacy and data residency are the cleanest win. If sensitive text never leaves your network, you have reduced a class of contractual and regulatory risk that no prompt can fix. Egress control is next: you can decide which tools, hosts, and package registries an agent may touch. Cost tails matter when interactive usage is high and predictable; local inference can flatten bills that grow with every chat. Vendor independence matters when refusals, rate limits, or product changes block work that must continue.</p>
-        <p>Those gains are real. They are also expensive in operator time. Hardware, model updates, retrieval quality, and on-call for the stack itself do not disappear because the marketing slide said “own your stack.”</p>
-
-        <h2>A concrete scene</h2>
-        <p>A team moves internal drafting onto a local model because legal wants documents off third-party APIs. Six weeks later, quality complaints return. The model is fine for rewrite tasks. It is weak for research that needs current web state. Someone quietly reintroduces a hosted model for “just the hard cases,” then for “most cases,” then for everything with a deadline.</p>
-        <p>The self-hosted stack is still running. It is no longer the control plane. It is a museum of the policy that failed to name which workflows truly required local inference.</p>
-
-        <h2>Name the gain before you buy the kit</h2>
-        <p>Write the control objective in one sentence before you buy GPUs or follow a full workspace guide. Examples that pass:</p>
-        <ul>
-          <li>Client documents never leave this VPC.</li>
-          <li>Agent tool calls cannot reach the public internet except through an allowlisted proxy.</li>
-          <li>Nightly batch jobs must run at a fixed unit cost even if hosted prices rise.</li>
-        </ul>
-        <p>Examples that fail: “We should be more AI-sovereign.” “Local models are cooler.” “We want a council of models.” A council is a design pattern. It is not a control objective.</p>
-        <p>Then map each objective to the minimum stack that serves it. Many teams only need a private gateway in front of a hosted model. Others need full local inference. Conflating those is how you inherit operational burden without the privacy win.</p>
-
-        <h2>What to measure after you stand it up</h2>
-        <p>Track the control metrics that justified the build: data egress, refusal rates that blocked work, cost per completed task, and recovery time when the local stack breaks. Also track the hidden cost: hours spent updating models, fixing retrieval, and babysitting swarm orchestration.</p>
-        <p>If the control metrics do not move and the babysitting hours do, you have built a hobby rack. Shut parts down until the remaining system still earns its keep.</p>
-
-        <h2>Closing</h2>
-        <p>Self-hosting is not virtue. It is a set of tradeoffs with names. Quantization, RAG, councils, and swarms are tools for those tradeoffs. Choose the control you need. Build only the stack that buys it. Leave the rest of the GPU catalog on the shelf.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>self-hosted-ai-workspace</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

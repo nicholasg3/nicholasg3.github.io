@@ -2,64 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="System-prompt craft (authoring practice, not leak cosplay)">
-    <title>System prompts are product design | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #16 · not live</div>
-        <h1>System prompts are product design</h1>
-        <p>System-prompt craft (authoring practice, not leak cosplay)</p>
-        <p class="muted"><a href="https://x.com/lefthanddraft/status/2064420135042224247" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>System prompts matter as authoring craft, not as stolen magic. Behavior also lives in post-training, tools, and the environment around the model. Treat prompt structure as product design: versioned, owned, tested, and reviewed. Do not build culture around leak theater.</p>
-        <p>Leaks and screenshots can still be useful. They show what vendors are trying to instruct. They do not prove that a clause fully governs behavior, and they are a poor substitute for learning how to write instructions for your own systems.</p>
-        <h2>What the prompt actually is</h2>
-        <p>A system prompt is a policy surface written in prose. It sets defaults for tone, refusal, tool use, uncertainty, and how the model should treat the user. That makes it part product, part governance, part UX. When a vendor encodes judgment about “reasonable disagreement” or similar edge cases, the prose is doing institutional work, not decoration.</p>
-        <p>The same is true inside a company. Your agent’s system instructions encode who you think the user is, what success looks like, and which failures are unforgivable. If those instructions only exist in a chat history or a founder’s head, you do not have a product. You have a habit.</p>
-        <h2>Leak culture vs authoring culture</h2>
-        <p>Leak culture treats the frontier vendor prompt as treasure. The game becomes extraction, comparison, and status. Authoring culture treats prompts as artifacts you can improve: structure, specificity, examples, stop conditions, escalation paths, and tests for regressions after model changes.</p>
-        <p>Over-indexing on leaked text also misplaces the moat. Many sharp behaviors come from training and tools, not from a secret paragraph. Copying someone else’s system prompt into a weaker stack is cargo cult. Writing a clear, testable instruction layer for your stack is craft.</p>
-        <h2>What to do</h2>
-        <p>Document prompts as versioned artifacts with owners. Keep them next to the code and configs that load them. Review changes the way you review API contracts. Add a small eval set that fails when a rewrite softens a critical refusal or drops a required process step.</p>
-        <p>Prefer structure over mystique: role and scope, hard constraints, tool policy, output contracts, uncertainty policy, and handoff rules. Prefer shorter prompts that the team can understand over long secret scrolls. When you study public or leaked examples, steal structure and risk-handling patterns, not cosplay identity.</p>
-        <h2>Closing</h2>
-        <p>System prompts are product design written in natural language. Treat them like product: design them, own them, test them. Leave the archaeology of other people’s secrets for curiosity, not for your operating system of work.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>system-prompt-craft</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

@@ -2,79 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Agentic-agent development best practices">
-    <title>Best practices need a repo | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #20 · not live</div>
-        <h1>Best practices need a repo</h1>
-        <p>Agentic-agent development best practices</p>
-        <p class="muted"><a href="https://x.com/Av1dlive/status/2062833437980184989" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Expert agent-development guidance is valuable when it is concrete about tools, reviews, and failure modes. Lectures without operating constraints become content, not practice.</p>
-        <p>Pair any best-practice memo with a repo that implements it. If it cannot be checked out, it is not yet a practice.</p>
-
-        <h2>Why advice dies on the slide</h2>
-        <p>Agent development advice spreads as threads, conference talks, and “how we work at X” decks. The useful parts are usually narrow: how they structure prompts, which tests gate a merge, what the agent is forbidden to touch, how they recover when a loop burns tokens and does nothing.</p>
-        <p>Those details do not survive a paraphrase. “Always add review” is not a practice. “Every agent PR needs a human who owns the merge and a CI job that runs the integration suite the agent cannot skip” is closer. The second sentence can be written as a branch protection rule. The first cannot.</p>
-        <p>When guidance is only spoken, each team invents its own half-implementation. People remember the vibe of senior craft and lose the harness that made craft reliable.</p>
-
-        <h2>A concrete scene</h2>
-        <p>Two teams watch the same senior engineer walk through agentic coding. Both leave with the same notes: small tasks, tight feedback loops, aggressive tests. Team A pastes the notes into a wiki. Team B opens a repository with a sample agent config, a Makefile target for the eval suite, a CODEOWNERS file that names who may approve agent-authored diffs, and a short failure log of three past loops that went wrong and how they were stopped.</p>
-        <p>Three months later Team A is still “adopting agents.” Team B is shipping with a known failure budget. The difference was not inspiration. It was a checkout path.</p>
-
-        <h2>What a practice repo must hold</h2>
-        <p>A useful companion repo is not a product demo. It is a living constraint set. At minimum it should make the following easy to inspect:</p>
-        <ul>
-          <li>How work is sliced into agent-sized units, including what is left human-only.</li>
-          <li>Which checks run before an agent change can land, and which ones the agent itself must not author.</li>
-          <li>How secrets, production credentials, and destructive tools are withheld.</li>
-          <li>What operators do when the agent is confidently wrong: stop conditions, rollback, and who gets paged.</li>
-        </ul>
-        <p>If a memo claims a “review culture” but the repo has no merge rule, treat the memo as aspiration. If it claims safety but the sample agent can exfiltrate env vars, treat the memo as marketing.</p>
-
-        <h2>How to use the lecture material</h2>
-        <p>Industry lectures from strong product teams are still worth watching. Use them as hypotheses, not as inherited process. Extract one constraint at a time. Encode it. Run it on a real task for a week. Keep only what still earns its keep under your load, not under theirs.</p>
-        <p>Reject the idea that best practices arrive as complete playbooks from companies with different risk, staffing, and compliance. Import mechanisms. Re-measure outcomes.</p>
-
-        <h2>Closing</h2>
-        <p>Best practices for agent development are not a genre of writing. They are a genre of infrastructure. If someone offers you the former without the latter, ask for the repo. If there is none, you have a talk. You do not yet have a practice.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>agentic-dev-best-practices</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

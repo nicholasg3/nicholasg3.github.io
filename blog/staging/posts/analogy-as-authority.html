@@ -2,76 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Analogy-as-authority (LLMs “implement HNSW”)">
-    <title>Analogy is not architecture | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #26 · not live</div>
-        <h1>Analogy is not architecture</h1>
-        <p>Analogy-as-authority (LLMs “implement HNSW”)</p>
-        <p class="muted"><a href="https://x.com/eric_alcaide/status/2070180569195901080" rel="noopener noreferrer">Seed tweet</a> · source: W26 epistemics thread</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Technical analogies can smuggle authority without measurement. “LLMs implement HNSW inside” sounds precise and may be untested storytelling.</p>
-        <p>Demand the measurement that would falsify the analogy. If none exists, file it as metaphor, not architecture.</p>
-
-        <h2>How analogy steals status</h2>
-        <p>Good analogies help people orient. Bad ones borrow the reputation of a real algorithm, data structure, or scientific field and attach it to a system that has not been shown to share the mechanism. The sentence structure does the work: name a respected technique, claim the model “is really doing” that technique, imply that further debate is for people who do not understand the depth.</p>
-        <p>HNSW — hierarchical navigable small world graphs used in approximate nearest-neighbor search — is a useful example because it is real, specific, and easy to misuse as poetry. Saying a network “implements HNSW inside” sounds like reverse engineering. Without probes, ablations, or published correspondence between internal states and graph operations, it is a mood. It is not a finding.</p>
-
-        <h2>A concrete scene</h2>
-        <p>In a thread, someone explains model behavior with a crisp systems analogy. Replies treat the analogy as discovery. A later model reply disputes the mechanism. Nobody runs a test that would settle the dispute. The thread ends with vibes: who sounded more technical, who had the better diagram, who cited the cooler paper.</p>
-        <p>That is not how architecture is established. It is how storytelling wins an afternoon.</p>
-
-        <h2>The falsification test</h2>
-        <p>Before you promote an analogy into design guidance, ask what observation would kill it. For a claim that a model implements a known algorithm, candidates include:</p>
-        <ul>
-          <li>Interventions that break the supposed structure and change behavior in the predicted way.</li>
-          <li>Measurements that recover the algorithm’s known invariants or complexity signature.</li>
-          <li>Comparisons against systems that explicitly implement the algorithm and systems that do not.</li>
-        </ul>
-        <p>If the author cannot name such a test, they are offering a teaching metaphor. Teaching metaphors are allowed. They just do not get to set production architecture or research consensus.</p>
-
-        <h2>How operators should respond</h2>
-        <p>When an analogy arrives in a design review, separate usefulness from truth. “Think of retrieval as a library index” can help a product manager. “The model is a library index” should not drive memory budgets or safety claims. Write decisions against measured interfaces: latency, recall, refusal rates, eval scores. Leave internal storytelling in the footnotes until someone pays for the measurement.</p>
-
-        <h2>Closing</h2>
-        <p>Analogy is a tool for intuition. Architecture is a claim about mechanism under test. When technical culture confuses the two, precision becomes a costume. Keep the costume for teaching. Keep the product decisions for things you can break and measure.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>analogy-as-authority</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

@@ -177,7 +177,6 @@
         </div>
         <div class="toolbar">
           <input id="filter" type="search" placeholder="Filter ideas, status, source…" aria-label="Filter ideas">
-          <button type="button" class="secondary" id="reload-btn">Reload data</button>
           <button type="button" class="secondary" id="lock-btn">Lock</button>
         </div>
         <div class="table-wrap" role="region" aria-label="Ideas table" tabindex="0">
@@ -199,7 +198,10 @@
         <div class="notes">
           <strong>Notes</strong>
           <ul id="notes-list"></ul>
-          <p class="muted">GitHub Pages cannot do real server authentication. This page uses a client-side password check. Do not put secrets more sensitive than an internal backlog here.</p>
+          <p class="muted">GitHub Pages cannot authenticate anyone, so the backlog is
+            encrypted at rest (AES-256-GCM) and decrypted here in your browser. The
+            password is never published. Still not a place for credentials — it shares
+            one password with staging, and anyone holding that password reads everything.</p>
         </div>
       </section>
     </main>
@@ -209,39 +211,20 @@
       <a href="index.html">Blog</a>
     </footer>
 
+    <script src="staging/gate.js"></script>
     <script>
-      // SHA-256 of the password string (UTF-8). Change with:
-      //   python3 -c "import hashlib; print(hashlib.sha256(b'YOUR_PASSWORD').hexdigest())"
-      // Default password (change after first login if desired): nick-blog-queue
-      const PASSWORD_SHA256 = "e40dceae9fb12e8d5fd84e216df8741e8752ed3c3ea57c8e448eb17572763be6";
-      const SESSION_KEY = "sp-ideas-queue-auth-v1";
-      const DATA_URL = "data/ideas-queue.json";
+      // The backlog is encrypted at rest (see scripts/lock_staging.py) and shares
+      // the staging password, so one unlock covers drafts and the queue.
+      const DATA_URL = "data/ideas-queue.enc";
 
       const gate = document.getElementById("gate");
       const queue = document.getElementById("queue");
-      const gateError = document.getElementById("gate-error");
-      const passwordInput = document.getElementById("password");
       const ideasBody = document.getElementById("ideas-body");
       const queueMeta = document.getElementById("queue-meta");
       const notesList = document.getElementById("notes-list");
       const filterInput = document.getElementById("filter");
 
       let ideasCache = [];
-
-      async function sha256Hex(text) {
-        const data = new TextEncoder().encode(text);
-        const buf = await crypto.subtle.digest("SHA-256", data);
-        return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
-      }
-
-      function isAuthed() {
-        return sessionStorage.getItem(SESSION_KEY) === "1";
-      }
-
-      function setAuthed(ok) {
-        if (ok) sessionStorage.setItem(SESSION_KEY, "1");
-        else sessionStorage.removeItem(SESSION_KEY);
-      }
 
       function showQueue(show) {
         gate.classList.toggle("hidden", show);
@@ -318,11 +301,7 @@
           .replaceAll('"', "&quot;");
       }
 
-      async function loadData() {
-        queueMeta.textContent = "Loading…";
-        const res = await fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" });
-        if (!res.ok) throw new Error("Could not load ideas-queue.json (" + res.status + ")");
-        const data = await res.json();
+      function applyData(data) {
         ideasCache = data.ideas || [];
         const when = data.generated_at ? new Date(data.generated_at).toLocaleString() : "unknown";
         queueMeta.textContent = `${data.count || ideasCache.length} ideas · generated ${when}`;
@@ -330,46 +309,21 @@
         if (data.scanned_libraries && data.scanned_libraries.length) {
           notesList.innerHTML += `<li>Scanned libraries: ${data.scanned_libraries.map(escapeHtml).join("; ")}</li>`;
         }
+        showQueue(true);
         renderIdeas(ideasCache);
       }
 
-      async function tryUnlock() {
-        gateError.textContent = "";
-        const hex = await sha256Hex(passwordInput.value || "");
-        if (hex !== PASSWORD_SHA256) {
-          gateError.textContent = "Wrong password.";
-          return;
-        }
-        setAuthed(true);
-        showQueue(true);
-        try {
-          await loadData();
-        } catch (err) {
-          queueMeta.textContent = String(err.message || err);
-        }
-      }
+      stagingGate.mountDataPage({
+        lockUrl: "staging/lock.json",
+        dataUrl: DATA_URL,
+        onData: applyData
+      });
 
-      document.getElementById("unlock-btn").addEventListener("click", tryUnlock);
-      passwordInput.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") tryUnlock();
-      });
       document.getElementById("lock-btn").addEventListener("click", () => {
-        setAuthed(false);
-        passwordInput.value = "";
-        showQueue(false);
-        passwordInput.focus();
-      });
-      document.getElementById("reload-btn").addEventListener("click", () => {
-        loadData().catch(err => { queueMeta.textContent = String(err.message || err); });
+        stagingGate.forgetKey();
+        location.reload();
       });
       filterInput.addEventListener("input", () => renderIdeas(ideasCache));
-
-      (async function boot() {
-        if (!isAuthed()) return;
-        showQueue(true);
-        try { await loadData(); }
-        catch (err) { queueMeta.textContent = String(err.message || err); }
-      })();
     </script>
   </body>
 </html>

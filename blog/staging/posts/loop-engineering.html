@@ -2,72 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Loop engineering: design loops that prompt agents">
-    <title>Design loops, not prompts | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #15 · not live</div>
-        <h1>Design loops, not prompts</h1>
-        <p>Loop engineering: design loops that prompt agents</p>
-        <p class="muted"><a href="https://x.com/Hesamation/status/2063740195241906638" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>The scarce skill is no longer a clever one-shot prompt. It is a loop: generate, critique, test, repair, stop. People who design those loops outperform people who chat. “Loop engineering” is a good name for that craft when it means harness design, not buzzword cosplay.</p>
-        <p>Prompts still matter. They matter as components inside a process that can fail closed. Without structure, “agentic” means expensive freeform conversation with a model that never has to prove anything.</p>
-        <h2>Why loops beat monologues</h2>
-        <p>A monologue asks the model to be right the first time. A loop assumes partial failure and budgets for recovery. That matches how real engineering already works: compile, test, review, patch. The difference is that the loop can now include model steps as first-class stages, not as a human’s private thinking.</p>
-        <p>The people who look magically productive with agents usually own better loops. They have scripts, checklists, eval hooks, and file layouts that re-enter context every run. The chat transcript is the thin surface of a thicker process.</p>
-        <h2>The failure modes of “loop” talk</h2>
-        <p>Loops burn tokens. Without stop rules they can produce confident slop that still needs human cleanup. Without external checks they can converge on self-consistency rather than truth. Without ownership they become a fashion name for “keep regenerating until the vibes improve.”</p>
-        <p>There is also a labor story that is easy to smuggle in. Each new abstraction ladder — tools, prompts, meta-loops — can be sold as the next reason developers still matter, right until the ladder moves again. Treat loop design as real systems work. Do not treat it as a managed retreat narrative dressed as empowerment.</p>
-        <h2>What a real loop looks like</h2>
-        <p>Operationalize loops as harnesses, not slogans:</p>
-        <ul>
-          <li>Inputs: task brief, constraints, and acceptance criteria</li>
-          <li>Generate step with bounded scope</li>
-          <li>Critique step that can fail the candidate</li>
-          <li>Test or eval step outside the model’s self-score when possible</li>
-          <li>Repair step with a max iteration count</li>
-          <li>Stop rule that is explicit and logged</li>
-        </ul>
-        <p>If the loop cannot fail a check, it cannot improve. If it cannot stop, it is a spend curve, not a process. Prefer scripts and project configs over memory of “how we usually do it.”</p>
-        <h2>Closing</h2>
-        <p>Design loops that prompt agents. Do not collect prompts that pretend to be loops. The craft is process design with machine steps inside it: where generation starts, how judgment enters, what counts as done, and when the system must refuse to continue.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>loop-engineering</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

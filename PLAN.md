@@ -4,8 +4,8 @@
 
 | Field | Value |
 |-------|--------|
-| **Last updated** | 2026-07-31 ~02:41 SGT |
-| **Last commit focus** | Step 4b prose rewrite fleet + ban generic “operators” |
+| **Last updated** | 2026-08-03 ~16:40 SGT |
+| **Last commit focus** | Unpublished the unfinished draft; encrypted staging at rest |
 | **Owner** | Nick + agents |
 | **Deploy** | Push to `master` → GitHub Pages |
 | **Issues** | Repo has issues **disabled** — track durable work on `nicholasg3/ai-agents-workspace` |
@@ -88,7 +88,7 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 | Pri | Idea | Live draft | Staging | Next |
 |-----|------|------------|---------|------|
-| 1 | Metric-authorship paradox | `blog/posts/metric-authorship-ai-coding.html` (Draft) | `blog/staging/posts/metric-authorship.html` | Reconcile dual copies; enrich with Anthropic/session study + Mollick sources; Nick sign-off |
+| 1 | Metric-authorship paradox | — (unpublished 2026-08-03) | `metric-authorship.html` | Enrich with Anthropic/session study + Mollick sources; free-style rewrite; Nick sign-off; then promote |
 | 2 | Expertise → environment | — | `expertise-to-environment.html` | Find/fix seed tweet; ground; enrich staging |
 | 3 | Sovereignty without self-sufficiency | — | `sovereignty-without-self-sufficiency.html` | Use enriched aeronlaffere memo; primary policy sources |
 | 4 | AI unit economics | — | `ai-unit-economics.html` | Use burkov + related; no invented numbers |
@@ -112,21 +112,49 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 ## Private tools (this repo)
 
-| Tool | URL | Password (client-side only) | Data |
-|------|-----|-----------------------------|------|
-| Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | `nick-blog-queue` | `blog/data/ideas-queue.json` |
-| Article staging (AI) | https://nicholasg3.github.io/blog/staging/ | `nick-staging` | `blog/staging/posts/*`, `manifest.json` |
-| Fintech vertical | https://nicholasg3.github.io/fintech/ | `nick-verticals` | `fintech/data/*`, `fintech/staging/` (**30 thin-outline**; not enriched) |
-| US–ASEAN–China vertical | https://nicholasg3.github.io/us-asean-china/ | `nick-verticals` | `us-asean-china/data/*`, staging (**29 thin + 1 enriched**), `ground/` |
+| Tool | URL | Protection | Data |
+|------|-----|-----------|------|
+| Ideas queue | https://nicholasg3.github.io/blog/ideas-queue.html | **encrypted** | `blog/data/ideas-queue.enc` |
+| Article staging (AI) | https://nicholasg3.github.io/blog/staging/ | **encrypted** | `blog/staging/posts/*`, `manifest.enc` |
+| Fintech vertical | https://nicholasg3.github.io/fintech/ | markup-hiding only — **readable** | `fintech/data/*`, `fintech/staging/` (**30 thin-outline**; not enriched), `fintech/ground/*` |
+| US–ASEAN–China vertical | https://nicholasg3.github.io/us-asean-china/ | markup-hiding only — **readable** | `us-asean-china/data/*`, staging (**29 thin + 1 enriched**), `ground/` |
 | Vertical enrich bar | [`docs/VERTICAL-ENRICH.md`](docs/VERTICAL-ENRICH.md) | — | Mandatory process |
 
-**Security note:** GitHub Pages has no server auth. These gates hide an internal backlog from casual visitors; they are not suitable for secrets.
+Passwords live in Nick's password manager. Do not write one into this repo —
+the repo is what gets published.
 
-**Rebuild ideas JSON (local):**
+### Security model (2026-08-03)
+
+GitHub Pages cannot authenticate anyone. The old gates compared a published
+SHA-256 hash and then revealed markup that was already in the response, so a
+guessed URL — `blog/staging/posts/<slug>.html` — returned the whole draft, and
+`manifest.json` listed every slug worth asking for.
+
+The blog now encrypts instead of hides. `scripts/lock_staging.py` writes
+AES-256-GCM ciphertext (PBKDF2-SHA256, 310k iterations, site salt in
+`blog/staging/lock.json`, fresh IV per file); `blog/staging/gate.js` decrypts in
+the browser. No password hash is published, so a wrong password just fails the
+GCM auth tag. Plaintext drafts live only in the private `ai-agents-workspace`
+repo under `blog-staging/`.
+
+What that buys and does not buy: anyone holding the password reads everything,
+and the ciphertext is public, so the password must be long and random — the
+script refuses anything under 12 characters. Still not a place for credentials.
+
+**Open exposure — the two verticals.** They were not migrated. Their 60 drafts,
+60 `ground/*.md` briefs, and `data/*.json` are served in the clear, and
+`seeds.html` / `sources.html` have no gate at all. Fix is the same shape as the
+blog: move plaintext to `blog-staging/`, extend `lock_staging.py` to those
+sections, wire their pages to `gate.js`. Needs Nick's go-ahead.
+
+**Rebuild and publish (local):**
 ```bash
+export STAGING_SRC=~/code/ai-agents-workspace/blog-staging
 cd ~/code/nicholasg3.github.io
-python3 scripts/build_ideas_queue.py
+python3 scripts/build_ideas_queue.py            # writes $STAGING_SRC/ideas-queue.json
 # optional: RETWEET_LIBRARY=/path/to/retweet-library python3 scripts/build_ideas_queue.py
+STAGING_PASSWORD='…' python3 scripts/lock_staging.py --src "$STAGING_SRC"
+python3 scripts/check_staging_locked.py         # CI runs this on every push
 ```
 
 ---
@@ -164,10 +192,12 @@ Staging may show **lab chrome** that is useful for review:
 **Tool:** `scripts/promote_staging_article.py`  
 ```bash
 python3 scripts/promote_staging_article.py \
-  --from blog/staging/posts/SLUG.html \
+  --from "$STAGING_SRC/src/SLUG.html" \
   --to blog/posts/SLUG.html \
   --kicker "Public memo"
 ```
+Promotion is the *only* way a draft reaches a public directory, and only after
+Nick signs off. Everything else stays encrypted in `blog/staging/`.
 Review the output before catalogue + push. If a tweet is truly evidence (not just the discovery seed), keep it in Source notes under a professional label (e.g. “Discourse source”), never as a title-deck “Seed tweet”.
 
 
@@ -222,6 +252,15 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 ---
 
 ## Session log (append-only)
+
+### 2026-08-03
+
+- **Unfinished draft was live on the public blog.** `blog/posts/metric-authorship-ai-coding.html` was reachable and featured as "Latest Memo" on `blog/index.html` while labelled *needs enrichment · not final*. Deleted the page, removed the card, repointed `draft_post` at staging.
+- **The staging gate did not protect anything.** It compared a published SHA-256 hash and then unhid markup that was already in the response; `blog/staging/posts/*.html` and `manifest.json` were readable by direct URL. Same for `blog/data/ideas-queue.json` behind the ideas-queue gate.
+- **Drafts are now encrypted at rest** (AES-256-GCM, PBKDF2-SHA256 310k). New: `scripts/lock_staging.py`, `blog/staging/gate.js`, `gate.css`, `scripts/check_staging_locked.py` + CI workflow, `scripts/test_staging_gate.js` (14 browser checks, all passing).
+- **Plaintext moved out of this repo** to `ai-agents-workspace/blog-staging/`. Authoring scripts now read/write there via `$STAGING_SRC`.
+- **Rotate the password** — the old `nick-staging` / `nick-blog-queue` values were committed in this repo's docs and history.
+- **Next agent:** decide on the two verticals (still readable in the clear), then resume metric-authorship enrichment in staging.
 
 ### 2026-07-31 (night+3) — mandatory prose rewrite pass
 
@@ -301,7 +340,7 @@ Skills: `skill-library/creative/blog-review`, `skill-library/creative/humanify`
 - Nick flagged staging articles lack sources; agent acknowledged skipping ground step.  
 - Cross-ref fix shipped: titles + hyperlinks; Art. 50 + guidelines linked on disclosure posts.  
 - **Created/updated this running plan** as the session source of truth for the site project.  
-- **Next agent:** start P0 enrichment on metric-authorship (live draft + staging) with real Source notes, then remaining active seeds.  
+- **Next agent:** start P0 enrichment on metric-authorship (staging only since 2026-08-03) with real Source notes, then remaining active seeds.  
 
 ### 2026-07-30
 

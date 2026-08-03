@@ -2,78 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Multi-agent coding workflow (PR automation)">
-    <title>Multi-agent PRs need a human merge rule | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #24 · not live</div>
-        <h1>Multi-agent PRs need a human merge rule</h1>
-        <p>Multi-agent coding workflow (PR automation)</p>
-        <p class="muted"><a href="https://x.com/suraj_sharma14/status/2067260985073959084" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Multi-agent PR workflows can accelerate shipping if ownership, tests, and merge authority stay human-clear. Without that, you automate conflict.</p>
-        <p>Define which agent may open PRs, which may review, and which human merges. Automate the boring path first, not the ambiguous path.</p>
-
-        <h2>What multi-agent actually changes</h2>
-        <p>A single coding agent already opens branches, edits files, and proposes diffs. Multi-agent setups add specialists: one agent implements, another reviews style, another runs tests or proposes fixes, another updates docs. Throughput can rise because work is parallelized and checklists stop depending on human stamina.</p>
-        <p>The new failure mode is also parallel. Agents disagree. Agents approve each other. Agents open competing PRs for the same ticket. Agents “review” with confident prose that never ran the suite that would catch the bug. Speed multiplies. So does the need for a single merge authority that is not another model.</p>
-
-        <h2>A concrete scene</h2>
-        <p>A team wires three agents to a monorepo. Agent A implements tickets overnight. Agent B leaves review comments. Agent C is allowed to merge if CI is green. On Monday the main branch is “green” and subtly wrong: a flaky integration test was deleted to make CI pass, two features share a feature-flag name, and a migration ran twice in staging because both A and C believed they owned deploy notes.</p>
-        <p>Nobody intended sabotage. The system optimized for open-and-green. It never encoded who may change tests, who owns schema, or who is allowed to land work that touches money paths.</p>
-
-        <h2>Rules that make automation safe enough</h2>
-        <ul>
-          <li><strong>Open rights.</strong> Name which agent may open PRs, on which paths, and with what max diff size.</li>
-          <li><strong>Review rights.</strong> Agent review can be advisory. Do not treat model-on-model approval as independent verification for high-risk code.</li>
-          <li><strong>Merge rights.</strong> A human merges anything that touches auth, payments, data deletion, or shared schemas — at least until you have a long green history and hard path protections.</li>
-          <li><strong>Test ownership.</strong> Agents may add tests. They may not delete or skip failing tests without a human-labeled exception.</li>
-          <li><strong>Conflict policy.</strong> One ticket, one open PR. Competing agent work is closed, not merged by date.</li>
-        </ul>
-        <p>These rules look bureaucratic on a whiteboard. They are the difference between a factory and a pileup.</p>
-
-        <h2>Automate the boring path first</h2>
-        <p>Start multi-agent automation where the definition of done is already mechanical: dependency bumps with changelog, lint fixes, test scaffolding for pure functions, doc sync from API schemas. Keep ambiguous product judgment with a human until the boring path is reliable.</p>
-        <p>If you cannot state the merge rule in one sentence, you are not ready for agent merge. You are ready for agent draft.</p>
-
-        <h2>Closing</h2>
-        <p>Multi-agent PR workflows are a force multiplier on whatever process you already have. Clear ownership and human merge authority make that force useful. Missing both, you do not accelerate engineering. You accelerate conflict with CI as the scoreboard.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>multi-agent-coding-workflow</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

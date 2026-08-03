@@ -2,80 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Agent failure on dynamic memory tasks">
-    <title>Static demos hide dynamic memory failure | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #29 · not live</div>
-        <h1>Static demos hide dynamic memory failure</h1>
-        <p>Agent failure on dynamic memory tasks</p>
-        
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Agents that look competent in static demos can fail when memory is dynamic: goals change, tools change, prior beliefs expire.</p>
-        <p>Evaluate on tasks where the right answer depends on updating memory, not replaying a frozen plan. If your eval never invalidates old context, you are not testing agents. You are testing autocomplete.</p>
-
-        <h2>What “dynamic memory” means here</h2>
-        <p>Static demos give the agent a fixed brief and a fixed world. The ticket does not change. The API schema does not change. Yesterday’s “customer is on plan A” remains true. Success is pattern completion over a stable prompt.</p>
-        <p>Dynamic memory tasks break that stability on purpose. Midway through a run, the goal is revised. A tool returns a new error shape. A policy exception expires. A user corrects a fact the agent stored two steps ago. The correct next action depends on noticing the change and revising state, not on continuing the original plan with more confidence.</p>
-        <p>That is closer to production. Production is full of revised tickets, rotated credentials, and customers who change their mind after the agent has already “remembered” the wrong thing.</p>
-
-        <h2>Why demos look better than systems</h2>
-        <p>Demos optimize for a clean arc: problem, tools, solution, applause. The context window is curated. Failures that would require forgetting are edited out. Eval harnesses often reward final-answer match on fixed benchmarks. Nothing in the score asks whether the agent discarded a stale belief when the world moved.</p>
-        <p>So teams ship agents that ace frozen tasks and then surprise themselves in live ops. The gap is not always model size. It is often eval design that never made invalidation a first-class event.</p>
-
-        <h2>A concrete scene</h2>
-        <p>An agent is told to migrate a service using config version 3. Midway, an operator marks version 3 as deprecated and points to version 4. A strong dynamic agent reloads state, re-plans, and continues against version 4. A weak one finishes a beautiful migration to a dead target, citing the original brief with perfect fluency.</p>
-        <p>On a static eval, both might look fine if the harness never injects the deprecation. On a dynamic eval, only one is competent.</p>
-
-        <h2>How to evaluate properly</h2>
-        <p>Build tasks where success requires update, not recall alone:</p>
-        <ul>
-          <li>Inject goal changes after the agent has started acting.</li>
-          <li>Invalidate stored facts and score whether the agent stops using them.</li>
-          <li>Swap tool schemas mid-run and require re-discovery.</li>
-          <li>Reward correct abandonment of a plan, not only plan completion.</li>
-          <li>Log which memory entries were written, read, and superseded.</li>
-        </ul>
-        <p>If your dashboard never shows “agent correctly forgot X,” you are not measuring memory. You are measuring persistence of the first story the model told itself.</p>
-
-        <h2>Closing</h2>
-        <p>Static demos hide dynamic memory failure. Treat that as a product risk, not a footnote. Until your evals invalidate old context on purpose, you are grading autocomplete in a costume. Agents that must live in changing systems deserve harder tests — and less credit for smooth runs through a frozen world.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>agent-dynamic-memory-failure</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

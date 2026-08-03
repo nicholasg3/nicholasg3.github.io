@@ -1,0 +1,20 @@
+name: staging locked
+
+# GitHub Pages publishes whatever lands on the default branch. This job is the
+# last thing standing between an unfinished draft and the open web, so it runs
+# on every push and every pull request.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: No plaintext drafts or backlog in the published tree
+        run: python3 scripts/check_staging_locked.py

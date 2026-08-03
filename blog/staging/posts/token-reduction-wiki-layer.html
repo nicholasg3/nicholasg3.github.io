@@ -2,79 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Token-reduction / wiki-layer memory systems">
-    <title>External memory beats re-sending the corpus | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #23 · not live</div>
-        <h1>External memory beats re-sending the corpus</h1>
-        <p>Token-reduction / wiki-layer memory systems</p>
-        <p class="muted"><a href="https://x.com/Asteri_eth/status/2060768042347372865" rel="noopener noreferrer">Seed tweet</a> · source: W26 skill S=0.9</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Wiki-layer memory systems claim large token savings by turning raw notes into linked markdown. The idea is real: durable external memory beats re-sending a corpus every time.</p>
-        <p>Verify savings on your workload. Measure quality of links and update cost, not just token counts on a demo path.</p>
-
-        <h2>The problem they are solving</h2>
-        <p>Agents that must “remember” a project often do it the expensive way. Each session reloads the same long briefs, meeting notes, and design docs into context. The model re-reads what a filesystem already holds. Tokens climb. Attention spreads thin. Important constraints get truncated first.</p>
-        <p>A wiki layer inverts that pattern. Raw material is distilled into short, linked pages: decisions, owners, current state, open risks. The agent loads a map and a few pages, not the archive. Humans can also read and correct the map. That dual use is the point. External memory is not only a compression trick. It is a shared working surface.</p>
-
-        <h2>Where demos lie</h2>
-        <p>Token-reduction claims often measure an idealized path: a clean corpus, a single query style, a freshly built index. Your week is messier. Notes conflict. Names change. Two pages say opposite things about the same API. A 90% token cut on a demo path can become a 20% cut — or a quality loss — once the wiki falls behind the world.</p>
-        <p>The second lie is treating tokens as the only cost. Writing and maintaining the wiki takes human or agent time. Bad links cost more than the tokens they save when the agent acts on stale structure. A system that is cheap to query and expensive to keep true is not free. It has moved the bill to operations.</p>
-
-        <h2>What to measure</h2>
-        <p>Before packaging a wiki-layer technique as standard practice, run it against your real tasks for long enough that pages go stale.</p>
-        <ul>
-          <li><strong>Token use per completed task</strong> on your mix of work, not on a single showcase query.</li>
-          <li><strong>Answer quality under audit</strong> against source documents the wiki claims to summarize.</li>
-          <li><strong>Link integrity</strong>: broken, circular, and contradictory links found per week.</li>
-          <li><strong>Update cost</strong>: minutes to absorb a decision change into the right pages.</li>
-          <li><strong>Cold-start cost</strong>: how long a new agent or person needs before the wiki helps more than it confuses.</li>
-        </ul>
-        <p>If token counts fall while audit quality and update cost worsen, you have built a lossy cache with good marketing.</p>
-
-        <h2>Design rules that keep the idea honest</h2>
-        <p>Prefer short canonical pages over giant dumps. Put owners and “last verified” dates on pages that drive action. Make contradiction visible instead of averaging it away. Give the agent a retrieval path back to primary sources when the wiki is thin. Never let the wiki become the only place truth is allowed to live.</p>
-        <p>Compression without a path back to evidence is just confident amnesia.</p>
-
-        <h2>Closing</h2>
-        <p>External memory beats re-sending the corpus. That is sound systems thinking. Wiki-layer tools are one way to do it. Trust them after they survive your workload, your stale notes, and your update habits — not after a single chart of token savings on a polished path.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>token-reduction-wiki-layer</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>

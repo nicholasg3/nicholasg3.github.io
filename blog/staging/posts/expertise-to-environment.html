@@ -2,79 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow,noarchive">
-    <meta name="description" content="Expertise migrates from the prompt to the environment (harness/folder config)">
-    <title>Performance is moving into the harness | Staging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locked draft | Staging</title>
     <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../gate.css">
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="Staging home">
-        <span class="brand-mark">SP</span>
-        <span>
-          <strong>Staging</strong>
-          <small>Private draft</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="../index.html">Staging index</a>
-        <a href="../../ideas-queue.html">Ideas queue</a>
-      </nav>
-    </header>
-
-    <main class="article-main">
-      <header class="article-header">
-        <div class="issue-kicker">Staging draft · queue #1 · not live</div>
-        <h1>Performance is moving into the harness</h1>
-        <p>Expertise migrates from the prompt to the environment (harness/folder config)</p>
-      </header>
-
-      <article class="article-body">
-        <h2>The claim</h2>
-        <p>Performance with coding agents is migrating from clever chat into durable environment design. The people who keep winning are not the ones with the best one-off prompt. They are the ones who put the work into folders, skills, configs, and harnesses that the agent reuses every session.</p>
-        <p>The viral version of this story is often fake: a screenshot, a magic system prompt, a claim that one person is ten times faster because of vibes. The underlying shift is not fake. Tools now load project instructions, local skills, and structured context before the human types a word. Expertise that used to live only in a senior engineer’s head is being written into files the agent can read.</p>
-
-        <h2>What is actually moving</h2>
-        <p>Distributed cognition is an old idea: tools hold part of the thinking. What is new is how much of the loop can be automated once the tool is articulate. A good project instruction tree or agent skill library is not decoration. It is codified judgment about how this repo tests, ships, and refuses bad work.</p>
-        <p>That judgment used to show up as hallway advice, code review comments, and the quiet habits of people who had burned themselves once. Now it can live as default context: where secrets never go, which commands are safe, how to run the subset of tests that actually matter, when to stop and ask a human. The agent does not invent that judgment. It inherits it from whoever wrote the environment.</p>
-
-        <h2>Prompts fade; harnesses accumulate</h2>
-        <p>A prompt is disposable by design. You type it, the session ends, and the next person starts from zero unless something was saved. A harness accumulates. Folder conventions, CLAUDE.md or AGENTS.md style files, skill modules, lint gates, and scripted stop rules compound across sessions and across people.</p>
-        <p>That is why two developers can open the same model and look like different species of talent. One is chatting into an empty room. The other is working inside a room someone already furnished with maps, tools, and house rules. The model is the same. The room is not.</p>
-
-        <h2>The measurement problem</h2>
-        <p>When someone looks fast with agents, are you seeing model skill, human craft, or environment authorship? If you promote the person and ignore the folder, you may be promoting a setup that does not travel with them. If you hire for “AI-native talent” without looking at the harness they depend on, you will misread where the performance came from.</p>
-        <p>The same confusion shows up in demos. A polished walkthrough often includes a pre-loaded context pack that never appears in the video. Viewers copy the chat style and miss the infrastructure. Teams then underinvest in the boring layer that actually moved the needle.</p>
-
-        <h2>What a good environment holds</h2>
-        <p>A useful harness is not a wall of prose. It is decision-dense. It tells the agent how this codebase prefers to be changed, how to verify a change, and what “done” means for common tasks. It encodes refusal rules for irreversible actions. It points at the small set of commands that are trustworthy in CI and locally.</p>
-        <p>It also holds taste: naming, layering, when to write a test versus when to ask, how aggressive to be about refactors. Taste is hard to teach in a single chat. It is easy to re-load if it lives next to the code. The best environments feel less like documentation and more like a senior engineer who never leaves the repo.</p>
-
-        <h2>Ownership and portability</h2>
-        <p>Once performance lives in the harness, ownership becomes an organizational question. Who reviews the instruction layer when it drifts? Who decides that a skill is wrong for this team? What happens when the person who built the environment leaves with half of it still only in their head?</p>
-        <p>Version the harness like product code. Review it in pull requests. Prefer checked-in conventions over private chat lore. If a workflow only works on one laptop because of undocumented local state, it is not yet an environment in the useful sense. It is a private advantage dressed up as team capability.</p>
-
-        <h2>A practical test</h2>
-        <p>Hand the same model to two people on a clean repo and on your fully instrumented repo. If the gap collapses on the clean repo, you were mostly measuring environment, not raw agent skill. Run the reverse test too: give a strong engineer an empty folder and a weak engineer your best harness. Watch which variables actually move latency, rework, and defect rate.</p>
-        <p>Do not treat the result as a morality play. Some people are better at building environments, and that is a real skill. Just name it. Do not call it pure model mastery when it is mostly systems design for agents.</p>
-
-        <h2>Closing</h2>
-        <p>Treat environment design as a first-class artifact. Version it. Review it. Ask who owns the harness when the person leaves. Compare agent success with and without the project’s instruction layer before you rewrite your hiring story around “AI-native talent.” The prompt is still useful. The durable advantage is the room the model walks into every time it starts.</p>
-      </article>
-
-      <aside class="article-side" aria-label="Staging notes">
-        <section class="side-card">
-          <span class="section-label">Staging</span>
-          <strong>Not on the public catalogue.</strong>
-          <p>Slug <code>expertise-to-environment</code>. Promote only after enrichment, free-style polish, and Nick sign-off.</p>
-        </section>
-      </aside>
+    <main class="gate-main">
+      <section class="gate-card">
+        <h1>Locked draft</h1>
+        <p class="muted">This is an unfinished draft. It is encrypted; the
+          password decrypts it in your browser.</p>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" autofocus>
+        <button type="button" id="unlock-btn">Unlock</button>
+        <p class="gate-error" id="gate-error" role="alert"></p>
+        <p class="muted"><a href="../index.html">Back to staging index</a></p>
+      </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Staging draft</span>
-      <a href="../index.html">Back to staging</a>
-    </footer>
+    <script id="payload" type="application/octet-stream">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</script>
+    <script src="../gate.js"></script>
+    <script>
+      stagingGate.mountDraftPage({
+        lockUrl: "../lock.json",
+        payload: document.getElementById("payload").textContent.trim()
+      });
+    </script>
   </body>
 </html>
