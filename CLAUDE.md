@@ -10,8 +10,18 @@ metric-authorship; Nick had to order an emergency takedown.)
 
 - Drafts go to `blog/staging/posts/` ONLY (client-side password gate,
   unlisted, noindex). Register them in `blog/staging/manifest.json`.
-- Promotion to `blog/posts/` + catalogue happens ONLY after Nick's explicit
-  sign-off, via `scripts/promote_staging_article.py`.
+- Promotion to live (rule updated by Nick 2026-08-03): a post may go live
+  WITHOUT Nick's sign-off ONLY when the FULL pipeline is complete and
+  recorded — no step skipped:
+  1. Ground brief exists (`ground/<slug>.md`) mapping every load-bearing
+     claim to a verified source (each source checked, not assumed).
+  2. Particular thesis; named firms/documents; VERTICAL-ENRICH bar met.
+  3. Grok default-voice rewrite pass done (PLAN.md step 4/4b).
+  4. AI-style detector pass recorded (score + date).
+  5. A promotion checklist block appended to the ground brief listing
+     items 1-4 with dates. No checklist = no promotion.
+  Anything not meeting ALL of these still requires Nick's explicit
+  sign-off. When in doubt, stage and ask.
 - CI (`.github/workflows/draft-guard.yml`) fails any push that puts a
   noindex file in `blog/posts/` or a Draft card in `blog/index.html`.
   Do not weaken the guard; fix the content location instead.
