@@ -43,7 +43,7 @@ Skills: `blog-review`, `humanify` (detect with flags; rewrite in default Grok vo
 
 | Pri | Shortlist # | Focus | Status | Paths |
 |-----|-------------|-------|--------|-------|
-| 1 | **#4** Metric-authorship | Completion metrics reward who defines done | Draft live + staging; **needs enrichment** | `blog/posts/metric-authorship-ai-coding.html`, `blog/staging/posts/metric-authorship.html` |
+| 1 | **#4** Metric-authorship | Completion metrics reward who defines done | Staging only; **needs enrichment** (live copy removed 2026-08-03 — drafts must never enter `blog/posts/`) | `blog/staging/posts/metric-authorship.html` |
 | 2 | **#1** Expertise → environment | Performance → harness/folder | Staging only; unenriched | `blog/staging/posts/expertise-to-environment.html` |
 | 3 | **#6** Sovereignty without self-sufficiency | State-as-VC | Staging only; unenriched | `blog/staging/posts/sovereignty-without-self-sufficiency.html` |
 | 4 | **#8** AI unit economics | Load-bearing vs propped | Staging only; unenriched | `blog/staging/posts/ai-unit-economics.html` |

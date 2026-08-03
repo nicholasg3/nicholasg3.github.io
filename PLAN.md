@@ -88,7 +88,7 @@ Do **not** treat handoffs in `ai-agents-workspace` as fresher than this file whe
 
 | Pri | Idea | Live draft | Staging | Next |
 |-----|------|------------|---------|------|
-| 1 | Metric-authorship paradox | `blog/posts/metric-authorship-ai-coding.html` (Draft) | `blog/staging/posts/metric-authorship.html` | Reconcile dual copies; enrich with Anthropic/session study + Mollick sources; Nick sign-off |
+| 1 | Metric-authorship paradox | — (live copy removed 2026-08-03; retitled "Who writes the definition of done?") | `blog/staging/posts/metric-authorship.html` | Enrich with Anthropic/session study + Mollick sources; Nick sign-off |
 | 2 | Expertise → environment | — | `expertise-to-environment.html` | Find/fix seed tweet; ground; enrich staging |
 | 3 | Sovereignty without self-sufficiency | — | `sovereignty-without-self-sufficiency.html` | Use enriched aeronlaffere memo; primary policy sources |
 | 4 | AI unit economics | — | `ai-unit-economics.html` | Use burkov + related; no invented numbers |
