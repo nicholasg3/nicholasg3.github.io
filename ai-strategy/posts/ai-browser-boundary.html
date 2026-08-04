@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Set scope for browser-using agents: pages, accounts, purchases, and actions that stay human-only.">
+    <title>What Browser Agents Can Touch | AI Strategy — Nicholas Garcia</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Strategy</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">July 2026</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=agents">Agents</a><a class="tag-chip" href="../index.html#topic=governance">Governance</a></div>
+        <h1>What Browser Agents Can Touch</h1>
+        <p>Agentic browsers turn a familiar consumption tool into an execution surface with the user's credentials, tabs, and software-as-a-service sessions. Ordinary browser policy leaves prompt injection, silent data movement, and shadow automation sitting inside the ordinary workday.</p>
+      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </header>
+
+      <article class="article-body">
+        <p>For most of the web era, the browser was a place people looked. Users opened tabs, filled forms, copied text, and signed into applications. Security teams managed extensions, cookies, downloads, and phishing. The model assumed a human sat in the loop for each consequential click.</p>
+
+        <p>Agentic browsers break that assumption. Beyond answering questions in a sidebar, the product can read pages, follow links, fill forms, open authenticated sessions, summarize private dashboards, move data between systems, and finish multi-step tasks while the user watches — or walks away. The browser is becoming a high-privilege worker with the user's open sessions.</p>
+
+        <p>The debate is sharp for concrete reasons. Analysts have urged enterprises to block AI browsers until the risk model is clearer. Security researchers have shown that agentic browsing can be steered by hostile page content. Vendors keep shipping assistants on the same surface where employees already hold email and banking, code, payroll, and customer records. A full ban and an unmanaged free-for-all both leave the operating problem unsolved.</p>
+
+        <blockquote>Treating the AI browser as a smarter search box is the strategic error. The operating problem is a set of control points between reading the web and acting on the enterprise's behalf.</blockquote>
+
+        <h2>Why The Old Browser Model Fails</h2>
+        <p>Classic browser security was built for human attention. A phishing page had to fool a person. An extension had to be installed. A download had to be accepted. The attack surface was large, yet the attacker still needed the user to make a mistake at a visible moment.</p>
+
+        <p>An agentic browser changes the economics. The model can be instructed by text the user never meant as an order — text that may sit in a web page, an email preview, a document, a ticket comment, or a tool response. Indirect prompt injection is the natural consequence of giving a language model the power to act on whatever it reads.</p>
+
+        <p>The U.S. National Institute of Standards and Technology (NIST) adversarial-machine-learning work now covers autonomous-agent failure modes such as indirect prompt injection, memory poisoning, and tool-chain abuse. Its AI Agent Standards Initiative frames agents as systems that must be secure enough to act for users. The Open Worldwide Application Security Project (OWASP) agentic-security community makes the same point in practitioner language: once an agent can call tools, correctness of the answer is incomplete. Operators need a clear account of what the system can do with the credentials it already holds.</p>
+
+        <p>That is the browser problem in miniature. Credentials already exist. Sessions are already open. The agent needs no new virtual private network. It needs only a path through the tabs the employee already trusts.</p>
+
+        <h2>Six Control Points</h2>
+        <p>A blanket ban can work as a temporary risk control. It fails as lasting strategy. Employees will still want summarization and research, form-filling, and cross-app stitching; shadow tools will appear on unmanaged devices. Define named decisions on each control point instead.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI browser agent limits" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Control point</th>
+                <th>Question</th>
+                <th>Failure mode</th>
+                <th>Minimum control</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Session Privilege</td>
+                <td>Which authenticated sessions may an agentic browser touch?</td>
+                <td>The agent inherits every open corporate login and treats "help me finish this" as permission to act everywhere.</td>
+                <td>Separate research browsers from high-privilege work browsers; deny agent control over finance, identity, HR, and production admin sessions.</td>
+              </tr>
+              <tr>
+                <td>Instruction Channel</td>
+                <td>Which text can become an order?</td>
+                <td>A web page, email body, or ticket comment steers the agent into a transfer, export, or approval the user never intended.</td>
+                <td>Treat untrusted page content as data rather than instruction; require human confirmation for irreversible actions.</td>
+              </tr>
+              <tr>
+                <td>Tool Reach</td>
+                <td>What can the agent click, fill, download, upload, or send?</td>
+                <td>The product demo shows research help; production use quietly gains form submission, file movement, and payment flows.</td>
+                <td>Allowlist actions by workflow class; default to read-only until a named owner expands the scope.</td>
+              </tr>
+              <tr>
+                <td>Data Boundary</td>
+                <td>What may leave the tab, device, tenant, or company?</td>
+                <td>Customer lists, source code, board decks, and credentials are summarized into a vendor model or pasted into a third-party workspace.</td>
+                <td>Classify content before agent use; block outbound movement of regulated, privileged, or non-public material without explicit policy.</td>
+              </tr>
+              <tr>
+                <td>Work Class</td>
+                <td>Which jobs are allowed, watched, or forbidden?</td>
+                <td>The company debates "AI browsers" as one thing while sales research, invoice processing, and admin recovery all present different risk.</td>
+                <td>Inventory allowed work classes: public research, internal drafting, customer operations, finance actions, identity actions.</td>
+              </tr>
+              <tr>
+                <td>Incident Path</td>
+                <td>How do you detect, stop, and explain a bad agent run?</td>
+                <td>Nobody can reconstruct what the agent saw, clicked, exported, or decided after the damage is done.</td>
+                <td>Log prompts, page targets, actions, approvals, and outputs; name an owner who can revoke access quickly.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Ban, Bound, Or Approve</h2>
+        <p>Gartner's public recommendation that organizations block AI browsers was striking because it was blunt. Blunt advice helps when the default is reckless adoption. It falls short when the organization already depends on browser-based work and employees are one install away from an unmanaged assistant.</p>
+
+        <p>A durable doctrine uses three states — ban, bound, and approve — rather than a single company-wide yes or no.</p>
+
+        <p><strong>Ban</strong> covers work the company is not ready to supervise: production admin consoles and treasury, payroll changes, privileged identity actions, unrestricted customer-record export, or any workflow where a silent wrong action is expensive and hard to reverse. Ban is also right when the vendor cannot show action logs, human confirmation for irreversible steps, or a clear data-handling posture.</p>
+
+        <p><strong>Bound</strong> covers useful work with limited blast radius. Public-web research and competitive scanning fit. So do drafting from public sources, summarizing approved internal pages into a controlled workspace, or preparing a first pass that a human still owns. Bound means read-first defaults, no high-privilege sessions, no autonomous send or submit, and a clear owner.</p>
+
+        <p><strong>Approve</strong> covers a small set of named workflows with instrumentation. Approval should look like any other operational change: state the purpose and the owner, then data classes, allowed actions, stop rules, and a review date. "Everyone may try the new browser" is abdication under another name.</p>
+
+        <h2>What Operators Should Notice</h2>
+        <p>The market signal is that the browser has become a coordination layer for agents. Workplace agents and search agents already create permission and identity problems; coding agents do the same. The browser version is sharper because it sits on top of existing human logins rather than waiting for a clean service identity.</p>
+
+        <p>Accuracy of the model is an incomplete security question. Vendor fame is an incomplete procurement question. The operator standard is clearer: if this system can see what the employee can see and do what the employee can do, a named decision must already have accepted that scope for this workflow.</p>
+
+        <p>Joint guidance on securing agentic AI from major cyber agencies has stressed incremental adoption, strong governance, and human oversight for higher-risk tasks. The institute's agent work pushes the same direction on standards and identity, plus interoperability and security for systems that act. Everyday work collides with those abstractions first in the browser.</p>
+
+        <h2>The Strategy Publisher Lesson</h2>
+        <p>Earlier memos argued that agents need <a href="ai-agent-permission-ledger.html">clear permissions</a> and <a href="agent-identity-boundary.html">identity control points</a>, plus <a href="ai-disclosure-ledger.html">disclosure rules</a> and <a href="ai-control-gap-ledger.html">accountability gaps</a> that executives can manage. Browser policy is the consumer-facing edge of the same problem. Abstract agent governance becomes a concrete yes or no on a laptop.</p>
+
+        <p>Doctrine needs an operating surface, and an operating surface needs doctrine. Without the pair, teams get either empty policy theatre or accidental automation. The browser is now a distribution channel and a risk channel at once — treat both roles.</p>
+
+        <h2>The Executive Move</h2>
+        <p>Inventory the agentic browsers and browser agents already in use. Split them by device class and work class. For each class, decide ban, bound, or approve. Then fill the six-line table: session privilege and instruction channel, tool reach and data scope, work class, and incident path.</p>
+
+        <p>Skip the wait for a perfect enterprise browser. A consumer install is still consequential when the marketing page says "research assistant." The company already handles privileged access in finance systems and production environments. Apply the same seriousness to software that can click through those systems with a language model at the wheel.</p>
+
+        <p>The teams that win will explain, in one page, the browser agents allowed to act, the principal they serve, the credentials they hold, the stop rules in force, and the evidence left behind. First ban or first adopt is a weaker scorecard.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://www.gartner.com/en/documents/7211030">Gartner, "Cybersecurity Must Block AI Browsers for Now"</a></li>
+            <li><a href="https://www.computerworld.com/article/4102569/keep-ai-browsers-out-of-your-enterprise-warns-gartner.html">Computerworld report on Gartner's AI-browser guidance</a></li>
+            <li><a href="https://www.nist.gov/artificial-intelligence/ai-agent-standards-initiative">U.S. National Institute of Standards and Technology, AI Agent Standards Initiative</a></li>
+            <li><a href="https://www.nist.gov/itl/ai-risk-management-framework">U.S. National Institute of Standards and Technology, AI Risk Management Framework</a></li>
+            <li><a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/">Open Worldwide Application Security Project, Agentic AI threats and mitigations</a></li>
+            <li><a href="https://www.helpnetsecurity.com/2026/02/23/ai-agent-security-risks-enterprise/">Help Net Security, enterprise race to secure agentic AI deployments</a></li>
+            <li><a href="https://www.crowell.com/en/insights/client-alerts/american-and-allied-cyber-agencies-issue-first-joint-guidance-on-securing-agentic-ai">Crowell &amp; Moring summary of joint cyber-agency guidance on securing agentic AI</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Which browser agents may act with employee credentials?</strong>
+          <p>Audit agentic browsers and browser agents by work class, session privilege, and irreversible actions before convenience sets policy.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>The browser is becoming an execution surface.</strong>
+          <p>Analysts urge blocks; vendors ship agents; researchers show prompt-injection paths through ordinary web content.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Nicholas Garcia · AI Strategy</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

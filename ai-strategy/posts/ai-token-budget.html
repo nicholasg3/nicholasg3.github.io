@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A public Strategy Publisher memo on why inference costs and agentic AI adoption make token budgets a management control problem, not just an infrastructure metric.">
+    <title>How Much Inference a Workflow Deserves | AI Strategy — Nicholas Garcia</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Strategy</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">July 2026</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=capital">Capital</a><a class="tag-chip" href="../index.html#topic=productivity">Productivity</a></div>
+        <h1>How Much Inference a Workflow Deserves</h1>
+        <p>AI adoption is turning into a token-allocation problem. Winners will assign expensive inference only where it pays, use cheaper models for the rest, and name the owner when agents spend compute on behalf of the business.</p>
+      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </header>
+
+      <article class="article-body">
+        <p>The next serious fight over AI budgets will look dull on the surface. It starts with a line item for token consumption, not a debate over what intelligence means.</p>
+
+        <p>That shift is useful. For two years many executives treated tokens as a technical detail buried in a vendor bill or smoothed over by a flat license. Inference is where AI becomes an operating cost. Training creates capability; inference consumes it. Each prompt, tool call, retrieved document, planning loop, and agent retry turns strategy into spend.</p>
+
+        <p>The infrastructure debate therefore matters to operators. McKinsey's June 2026 analysis shows cost per token and energy per token becoming central measures of AI economics. Goldman Sachs Research projects agentic AI will drive a 24-fold rise in token consumption by 2030. Goldman Sachs Asset Management notes that enterprise token use is already diverging between heavy adopters and median firms. The National Institute of Standards and Technology (NIST) and the Center for AI Standards and Innovation are advancing agent standards and identity work because agents need access to real systems before they produce real value.</p>
+
+        <p>Management sits where these signals meet. Working agents raise token volume. Rising volume makes cost and energy discipline material. Agents that touch real systems make identity and authorization material. Engineering can no longer own the budget alone.</p>
+
+        <blockquote>Token budgets are where AI ambition meets operating discipline.</blockquote>
+
+        <h2>The Old Budget Was Easy</h2>
+        <p>Old AI budgets were mostly procurement questions: the model, the copilot, the seat count, the vendor contract. Spend looked like software, so it was governed like software.</p>
+
+        <p>That approach held while usage stayed light, experimental, or limited by human prompting. A team could buy a tool, run pilots, and accept a loose link between activity and value. The main question was whether people used it.</p>
+
+        <p>Agentic systems change the cost structure. A human requests an outcome, and behind that request the system may plan, call tools, search files, write drafts, check its work, query another model, and retry a failed path. Users see one answer. Budgets see a chain of inference events.</p>
+
+        <p>That gap creates managerial risk. An employee requested a task. Systems consumed budget. Vendors record usage. Finance receives a bill. Security sees a new actor touching systems. The business still has to decide whether the work was worth doing.</p>
+
+        <h2>The Unit Has Changed</h2>
+        <p>Seat pricing taught managers to think in users. Token pricing forces them to think in work.</p>
+
+        <p>Users can be cheap and wasteful or expensive and valuable. Tokens might buy a hallucinated summary, a useful code review, a low-value slide rewrite, fraud triage, or an agent loop that should have stopped five calls earlier. The unit that matters is the priced unit of judgment, coordination, generation, or action that the token makes possible.</p>
+
+        <p>Blanket AI rationing is therefore crude. Forcing every workflow onto a small model can erase the economic value that justified AI in the first place. Running frontier inference on work a smaller model, script, template, or human decision would handle wastes money the other way.</p>
+
+        <p>The goal is tokens that buy the right kind of advantage.</p>
+
+        <h2>The Budget Map</h2>
+        <p>Executives need a map before they need a dashboard. A useful token budget has five lines.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI token budget map" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Budget item</th>
+                <th>Question</th>
+                <th>Failure mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Model tier</td>
+                <td>Which tasks require frontier inference, and which can run on cheaper models or deterministic tools?</td>
+                <td>Using premium intelligence as a default setting.</td>
+              </tr>
+              <tr>
+                <td>Context budget</td>
+                <td>How much retrieved or pasted context is worth paying for before the marginal document adds noise?</td>
+                <td>Long prompts that feel thorough but inflate cost and error surface.</td>
+              </tr>
+              <tr>
+                <td>Agent loop</td>
+                <td>How many planning, tool-use, retry, and verification steps are allowed before escalation?</td>
+                <td>Autonomy that spends silently because nobody set a stop rule.</td>
+              </tr>
+              <tr>
+                <td>Value class</td>
+                <td>Is this inference buying revenue, risk reduction, cycle-time compression, learning speed, or convenience?</td>
+                <td>Counting every AI-assisted artifact as equally valuable.</td>
+              </tr>
+              <tr>
+                <td>Owner</td>
+                <td>Who owns the bill, the workflow outcome, the identity permissions, and the rollback trigger?</td>
+                <td>A shared budget with no responsible operator.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>This map turns token spend into a management artifact. Model tier separates expensive cognition from routine work. Context budget stops the organization from shoveling documents into prompts without relevance discipline. Agent loop makes autonomy accountable. Value class keeps convenience from counting as strategy. Owner keeps compute from becoming an orphan cost.</p>
+
+        <h2>The Cheap Token Trap</h2>
+        <p>Falling token costs raise the need for budgeting. They do not remove it.</p>
+
+        <p>McKinsey identifies model optimization, advanced packaging, custom silicon, and co-packaged optics as major levers for reducing inference cost over time. If those improvements arrive, more workflows become economically plausible. The familiar trap remains: when the unit gets cheaper, usage expands faster than discipline.</p>
+
+        <p>Cheap tokens still get wasted. Agent loops still touch the wrong system. Summaries still mislead decisions. Retrieval still exposes sensitive context. Workflows still dump review burden on humans who must inspect more machine output.</p>
+
+        <p>The lesson is discipline, not austerity. Cost decline should widen the test set. Judgment stays. As tokens get cheaper, the question shifts from whether a workflow can run to whether it should consume intelligence automatically.</p>
+
+        <h2>The Security Line</h2>
+        <p>The token budget also needs a security line. Agents act; they do more than answer.</p>
+
+        <p>The National Institute of Standards and Technology (NIST) AI Agent Standards Initiative frames adoption around trust, interoperability, security, and identity. Its Request for Information summary says respondents widely agreed that AI agents create novel security threats and that those concerns block adoption. That belongs in the budget discussion, not only in a security appendix.</p>
+
+        <p>Once an agent has permissions, spending tokens can mean spending authority. The agent may read a customer record, update a Customer Relationship Management field, trigger a support workflow, call an internal API, or query a privileged database. Each step has an inference cost and an authorization cost. Optimize both together.</p>
+
+        <p>For serious workflows, pair the token budget with identity controls: named human owner, scoped permissions, just-enough access, audit trail, step limit, exception path, and rollback rule. Otherwise the company is giving a probabilistic worker a company card.</p>
+
+        <h2>The Founder Version</h2>
+        <p>A founder needs no enterprise FinOps team to start. Three rules are enough.</p>
+
+        <ol>
+          <li>Put every AI workflow into a value class before scaling it: revenue, delivery, risk, learning, or convenience.</li>
+          <li>Set a maximum loop depth for agentic work: number of tool calls, retries, documents, or minutes before human review.</li>
+          <li>Review one weekly token spend review: top workflows by spend, output produced, human review burden, and stop-rule exceptions.</li>
+        </ol>
+
+        <p>Those rules block two founder mistakes: starving a valuable workflow because the bill feels new, and subsidizing an impressive workflow because the output feels magical. The test is simple. If a workflow cannot name the business metric that token spend improves, it stays experimental.</p>
+
+        <h2>The CFO Question</h2>
+        <p>A single AI cost number hides the decision. The CFO should refuse that summary.</p>
+
+        <p>Separate token spend into strategic work, operating throughput, employee convenience, and waste. Coding assistants that reduce review bottlenecks may deserve more expensive inference than presentation helpers. Fraud agents may justify heavy context retrieval if they reduce loss or escalation. Meeting-summary tools often need a hard ceiling because the upside is modest and the volume is large.</p>
+
+        <p>The CFO's job is to price autonomy correctly. Suppressing consumption is the wrong goal. The budget should reward high-value inference and force low-value workflows to simplify, downshift, cache, template, or stop.</p>
+
+        <h2>The Executive Test</h2>
+        <p>Before approving a large AI workflow, require six answers.</p>
+
+        <ol>
+          <li>Name the default model tier and the event that allows escalation.</li>
+          <li>State which context may enter the prompt or retrieval path.</li>
+          <li>Set the maximum agent steps before a human owns the decision.</li>
+          <li>Name the business value class that justifies the token spend.</li>
+          <li>Name the human who owns the bill, permissions, and rollback.</li>
+          <li>Define the weekly report that would expand, downshift, or kill the workflow.</li>
+        </ol>
+
+        <p>These questions make AI spending legible and strategy less theatrical. A company can approve more AI while still refusing unmanaged inference.</p>
+
+        <h2>The Better Argument</h2>
+        <p>The market argument will keep swinging between abundance and scarcity. One side will point to falling cost per token. The other will point to infrastructure strain, energy limits, chip shortages, and rising agent usage. Both can be right.</p>
+
+        <p>The operator's argument is narrower. AI will be cheap enough to enter many workflows and expensive enough to punish lazy design. That combination rewards companies that allocate tokens like capital: deliberately, observably, and with a theory of return.</p>
+
+        <p>Winners in the next phase will ask where intelligence should be spent, not only whether AI works.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://www.mckinsey.com/industries/semiconductors/our-insights/frontiers-of-compute-the-technologies-to-reduce-ai-inference-costs">McKinsey, "Frontiers of compute: The technologies to reduce AI inference costs"</a></li>
+            <li><a href="https://www.goldmansachs.com/insights/articles/ai-agents-forecast-to-boost-tech-cash-flow-as-usage-soars">Goldman Sachs, "AI Agents Forecast to Boost Tech Cash Flow as Usage Soars"</a></li>
+            <li><a href="https://www.goldmansachs.com/insights/articles/ai-investment-is-shifting-as-inference-enterprise-adoption-accelerate">Goldman Sachs, "AI Investment Is Shifting as Inference, Enterprise Adoption Accelerate"</a></li>
+            <li><a href="https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure">National Institute of Standards and Technology (NIST), "Announcing the AI Agent Standards Initiative"</a></li>
+            <li><a href="https://www.nist.gov/publications/summary-analysis-responses-request-information-regarding-security-considerations-ai">National Institute of Standards and Technology (NIST), "Summary Analysis of Responses to the Request for Information Regarding Security Considerations for AI Agents"</a></li>
+          </ul>
+        </section>
+      </article>
+
+
+
+            <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Where should intelligence be spent?</strong>
+          <p>Name the workflows that deserve premium inference, hard ceilings, cheaper models, or no AI at all.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>Token use is becoming strategy.</strong>
+          <p>Inference costs are falling, agent usage is rising, and identity standards are catching up. The budget now governs work, not only seats.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Nicholas Garcia · AI Strategy</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>

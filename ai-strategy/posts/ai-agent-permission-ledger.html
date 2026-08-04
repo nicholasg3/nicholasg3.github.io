@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A plain permission list for AI agents: who they act as, what they may touch, and which actions still need a human.">
+    <title>What Agents Are Allowed To Do | AI Strategy — Nicholas Garcia</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Strategy</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#latest">Latest</a>
+        <a href="../feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">July 2026</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=agents">Agents</a><a class="tag-chip" href="../index.html#topic=governance">Governance</a></div>
+        <h1>What Agents Are Allowed To Do</h1>
+        <p>Agentic AI turns access into a strategic choice. Before an agent reads, decides, writes, spends, messages, or changes a system, executives need a clear list of the owner, the permission, the evidence trail, and the stop rule.</p>
+      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </header>
+
+      <article class="article-body">
+        <p>The old software permission question was mostly administrative. Administrators tracked which person could reach which system, which application could call which interface, and which manager could sign off on a change. Agentic AI makes the same question strategic. An agent can reason across context, call tools, produce artifacts, trigger workflows, pull data from other systems, and act before a manager reviews the sequence. Sparse access leaves the agent stuck as a demo. Broad access hands the company an operator that carries borrowed authority without direct oversight.</p>
+
+        <p>The permission list is the control point that actually matters. Prompts alone do not set authority.</p>
+
+        <blockquote>An agent's authority should stay inside the business decision it is allowed to improve.</blockquote>
+
+        <p>The National Institute of Standards and Technology (NIST) summary of 2026 responses on AI agent security treats agent adoption as a security and trust problem rather than a simple productivity trend. Respondents agreed that AI agents bring new threats and that existing cybersecurity practices must adapt. McKinsey's 2026 analysis of agentic infrastructure reaches the same conclusion from the technology side: agent-ready systems need clear digital identity, ownership, logging, auditability, policy enforcement, and supervisory mechanisms that can pause or override automated behavior. That is the executive issue. Agentic AI can fail by carrying out an allowed action at the wrong time, for the wrong reason, with the wrong data, or at the wrong scale.</p>
+
+        <h2>Account Versus Actor</h2>
+        <p>Human access control assumes a person sits behind the account. A reviewer can still ask which person clicked, approved, knew the customer, understood the exception, or should have escalated. Agents blur that trail. Sales workflows may reuse a human's Customer Relationship Management access. Finance agents may inherit spreadsheet permissions. Support agents may draft from policy, retrieve account status, and prepare refund language. Coding agents may read repositories, run tests, open pull requests, and call third-party tools. In each case the access belongs to systems and people, yet the acting pattern belongs to the agent.</p>
+
+        <p>If the company cannot separate the account from the actor, the first audit question has no answer: was this a human decision, an AI recommendation, an AI execution, or a machine step approved by a named human?</p>
+
+        <h2>Six permissions</h2>
+        <p>A practical permission list begins with six lines. Keep them plain so they can survive procurement, engineering, legal, security, finance, and operating review.</p>
+
+        <div class="article-table-wrap" role="region" aria-label="AI agent permissions" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Permission</th>
+                <th>Question</th>
+                <th>Failure mode</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Read</td>
+                <td>What data can the agent see, and which sources are out of bounds?</td>
+                <td>The agent quietly joins customer, employee, financial, and private strategy context because retrieval felt harmless.</td>
+              </tr>
+              <tr>
+                <td>Reason</td>
+                <td>What assumptions, rankings, or classifications can the agent produce?</td>
+                <td>A score looks objective even though the source mix, objective function, or confidence threshold was never approved.</td>
+              </tr>
+              <tr>
+                <td>Write</td>
+                <td>Where can the agent create or update records?</td>
+                <td>Drafts become operating memory before anyone confirms they are accurate, sourced, and accountable.</td>
+              </tr>
+              <tr>
+                <td>Spend</td>
+                <td>What cost can the agent incur through inference, tools, credits, refunds, or external services?</td>
+                <td>A useful workflow becomes a budget leak because loops, context, and tool calls were not capped.</td>
+              </tr>
+              <tr>
+                <td>Message</td>
+                <td>Who can the agent contact, and under whose authority?</td>
+                <td>A machine sends a plausible but unauthorized promise to a customer, partner, candidate, regulator, or employee.</td>
+              </tr>
+              <tr>
+                <td>Change</td>
+                <td>Which systems, policies, code, configurations, or workflows can the agent alter?</td>
+                <td>A reversible-looking action becomes high impact when it fans out across production, finance, security, or customer trust.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>These lines are a capital-allocation map for autonomy. Each permission line changes how much trust the business places in the system.</p>
+
+        <h2>What The Agent Security Market Signals</h2>
+        <p>The Open Web Application Security Project (OWASP) work on agentic AI security names risks that operators can otherwise sense but not govern. Its guidance covers prompt injection, tool abuse, privilege escalation, data exfiltration, memory poisoning, goal hijacking, excessive autonomy, high-impact action abuse, approval manipulation, cascading failures, wallet denial, sensitive-data exposure, and supply-chain compromise. The list is long, but the executive lesson is compact: agents collapse application risk, identity risk, data risk, operating risk, and cost risk into one delegated workflow.</p>
+
+        <p>Place the table above any single team. Security can define controls. Engineering can implement scopes and logs. Legal can define unacceptable external commitments. Finance can define cost thresholds. Business owners can define the task and the escalation rule. No one function can set the full permission scope alone, because that scope reflects all those risks together.</p>
+
+        <h2>Four named controls</h2>
+        <p>The permission list should force four controls before any agent moves from pilot to production.</p>
+
+        <h3>1. A named human owner</h3>
+        <p>Every agent needs an owner who is responsible for the business outcome and the harm model. "The AI team" does not meet that test. The owner must know what the agent is allowed to optimize, what it must never do, and when it has to stop.</p>
+
+        <h3>2. Scoped credentials</h3>
+        <p>An agent should not inherit broad human authority by default. Give it the narrowest workable permission set for the task: read-only where possible, write-limited where needed, approval-gated for sensitive steps, time-bound for risky experiments, and separate from personal user accounts.</p>
+
+        <h3>3. Audit-grade logs</h3>
+        <p>Logs must reconstruct the data the agent saw, its inferences, the tools it called, the records it changed, the human who approved any high-impact step, and the result that followed. If the log cannot explain the workflow, the system is not ready for production trust.</p>
+
+        <h3>4. A kill right</h3>
+        <p>Supervisory control is practical or it is empty. There must be a way to pause, disable, roll back, or downscope an agent when cost spikes, data exposure, behavior drift, policy conflict, or customer-impacting error appears. A stop rule that requires a committee meeting fails the test.</p>
+
+        <h2>Buyer Questions</h2>
+        <p>Enterprise buyers should ask vendors for the permission list before they ask for another demo. The demo shows what the agent can do on a clear path. The table shows whether the company can live with what the agent is allowed to do when conditions turn. Buyers need to know whether they can restrict tool use by role, data class, workflow, geography, customer segment, or action type. Visibility into which agent touched which system matters, as does the ability to require human approval for high-impact steps. Draft, recommendation, execution, and learning phases should stay separable, and a permission should be revocable without breaking unrelated work.</p>
+
+        <p>Those questions may look slower than rapid demos. In practice they speed adoption, because they let the buyer approve narrow autonomy instead of rejecting an opaque system.</p>
+
+        <h2>Founder Version</h2>
+        <p>Small companies need this even more, because their informal permissions are usually thinner. A founder may have access to everything. The first agent may run from the founder's laptop, email account, API key, or admin console. That feels efficient until the agent touches a customer, updates a Customer Relationship Management record, creates a support promise, spends credits, or exposes a private memo.</p>
+
+        <p>The founder version of the table can fit on one page:</p>
+
+        <ol>
+          <li>Which business decision does this agent improve?</li>
+          <li>Narrowest data set required for the task.</li>
+          <li>Actions allowed without approval.</li>
+          <li>Actions that require explicit approval.</li>
+          <li>Cost ceiling that stops the workflow.</li>
+          <li>Customer, legal, security, or finance events that force escalation.</li>
+          <li>Person who can revoke the agent's access today.</li>
+        </ol>
+
+        <p>If those answers are missing, keep the agent in assist mode. Let it draft, classify, search, summarize, or prepare options. Hold execution across systems until the permission scope is real.</p>
+
+        <h2>Autonomy As Accounting</h2>
+        <p>Agent permission is best treated as control backed by accounting, not as a fear exercise. A well-scoped agent can cut response time, remove handoff friction, improve service consistency, monitor signals continuously, and free expert teams for judgment work. Every unit of autonomy still carries a balance sheet: it consumes data access, inference budget, tool authority, human review capacity, and institutional trust. The permission list is how the company decides whether that balance sheet is worth carrying.</p>
+
+        <h2>Executive Test</h2>
+        <p>Before expanding an agent's access, require seven answers.</p>
+
+        <ol>
+          <li>Who owns the agent's business outcome and harm model?</li>
+          <li>Which read, reason, write, spend, message, and change permissions does it have?</li>
+          <li>Which permissions are temporary, scoped, approval-gated, or prohibited?</li>
+          <li>What audit trail proves what the agent saw, inferred, called, changed, and escalated?</li>
+          <li>What cost, error, data, customer, or security event triggers a stop?</li>
+          <li>Who can revoke access immediately?</li>
+          <li>What business decision improves enough to justify the remaining risk?</li>
+        </ol>
+
+        <p>If the seventh answer is weak, keep the other six and use them to force a smaller pilot. Agentic AI will enter through support queues, sales workflows, coding tools, finance analysis, security operations, and personal productivity habits. Speed will come from companies that know exactly where permission creates value, where it creates liability, and where the machine must hand authority back. Blanket access is the slower path in practice.</p>
+
+        <section class="source-notes" aria-labelledby="source-notes-title">
+          <h2 id="source-notes-title">Source Notes</h2>
+          <ul>
+            <li><a href="https://www.nist.gov/publications/summary-analysis-responses-request-information-regarding-security-considerations-ai">NIST / Center for AI Standards and Innovation (CAISI), "Summary Analysis of Responses to the Request for Information Regarding Security Considerations for AI Agents"</a></li>
+            <li><a href="https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/reimagining-tech-infrastructure-for-and-with-agentic-ai">McKinsey, "Reimagining tech infrastructure for (and with) agentic AI"</a></li>
+            <li><a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era">McKinsey, "State of AI trust in 2026: Shifting to the agentic era"</a></li>
+            <li><a href="https://genai.owasp.org/2025/12/09/owasp-genai-security-project-releases-top-10-risks-and-mitigations-for-agentic-ai-security/">OWASP GenAI Security Project, "Top 10 Risks and Mitigations for Agentic AI Security"</a></li>
+            <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html">OWASP, "AI Agent Security Cheat Sheet"</a></li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="article-side" aria-label="Issue notes">
+        <section class="side-card">
+          <span class="section-label">Reader Decision</span>
+          <strong>Which permission line expands first?</strong>
+          <p>Pick one agent workflow and decide whether it is allowed to read, reason, write, spend, message, or change before scaling the pilot.</p>
+        </section>
+        <section class="side-card">
+          <span class="section-label">Market Signal</span>
+          <strong>Agent controls are becoming board controls.</strong>
+          <p>Standards bodies, security projects, and McKinsey signals all point toward identity, governance, logging, approval, and lifecycle control as prerequisites for scaled autonomy.</p>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>Nicholas Garcia · AI Strategy</span>
+      <a href="../index.html">Back to index</a>
+    </footer>
+  </body>
+</html>
