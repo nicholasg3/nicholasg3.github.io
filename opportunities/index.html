@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roles and programs Nicholas MacGregor Garcia is helping circulate. Listings expire automatically.">
+  <title>Opportunities — Nicholas MacGregor Garcia</title>
+  <style>
+    :root {
+      --paper: #f6f4ee;
+      --ink: #191713;
+      --muted: #6b665c;
+      --faint: #746e60;
+      --rule: rgba(25, 23, 19, 0.16);
+      --rule-soft: rgba(25, 23, 19, 0.09);
+      --accent: #8a3324;              /* single restrained oxblood */
+      --serif: "Charter", "Bitstream Charter", "Sitka Text", "Iowan Old Style", "Palatino Linotype", Cambria, Georgia, serif;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --measure: 44rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 19px;
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ---- Masthead ---- */
+    .masthead {
+      padding: 46px 0 22px;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 14px 28px;
+    }
+
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .nav {
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav a { padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color .15s, color .15s; }
+    .nav a:hover { color: var(--ink); border-color: var(--accent); }
+    .nav .current { color: var(--ink); padding-bottom: 2px; border-bottom: 1px solid var(--accent); }
+
+    /* ---- Hero ---- */
+    .hero { padding: 72px 0 48px; border-bottom: 1px solid var(--rule); }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 24px;
+      font-weight: 600;
+    }
+
+    h1 {
+      margin: 0;
+      font-weight: 600;
+      font-size: clamp(34px, 5.6vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.012em;
+      max-width: 22ch;
+    }
+
+    .lede {
+      margin: 30px 0 0;
+      font-size: clamp(19px, 2.1vw, 22px);
+      color: #35322b;
+      max-width: 44ch;
+    }
+
+    .lede a { border-bottom: 1px solid var(--accent); color: var(--ink); }
+    .lede a:hover { background: rgba(138, 51, 36, 0.08); }
+
+    /* ---- Section scaffolding ---- */
+    section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
+    section:last-of-type { border-bottom: 0; }
+
+    .kicker {
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .updated-line {
+      font-family: var(--sans);
+      font-size: 12.5px;
+      color: var(--faint);
+      margin: 0 0 34px;
+    }
+
+    .updated-line a { border-bottom: 1px solid var(--rule); }
+    .updated-line a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ---- Job entries: typographic rows, not cards ---- */
+    .job-entry {
+      padding: 30px 0;
+      border-top: 1px solid var(--rule-soft);
+    }
+    .job-entry:first-of-type { border-top: 0; padding-top: 0; }
+
+    .job-title {
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    .job-meta {
+      font-family: var(--sans);
+      font-size: 13.5px;
+      letter-spacing: 0.01em;
+      color: var(--faint);
+      margin: 10px 0 0;
+    }
+
+    .job-meta .sep { margin: 0 8px; color: var(--rule); }
+    .job-meta strong { color: var(--muted); font-weight: 600; }
+    .job-meta .soon { color: var(--accent); font-weight: 600; }
+
+    .job-meta a { color: var(--accent); border-bottom: 1px solid var(--accent); }
+    .job-meta a:hover { background: rgba(138, 51, 36, 0.08); }
+
+    .job-desc { margin: 16px 0 0; color: var(--muted); font-size: 17px; line-height: 1.55; max-width: 46ch; }
+
+    .job-list { margin: 16px 0 0; }
+    .job-list p {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+    .job-list ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 16px; line-height: 1.5; }
+    .job-list li { margin: 0 0 4px; }
+
+    .job-notes {
+      margin: 14px 0 0;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--faint);
+      max-width: 46ch;
+    }
+
+    .job-tags {
+      margin: 16px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .job-tag {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      background: rgba(25, 23, 19, 0.055);
+      border-radius: 3px;
+      padding: 4px 9px;
+    }
+
+    .board-status {
+      font-family: var(--sans);
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .board-status a { border-bottom: 1px solid var(--rule); }
+    .board-status a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ---- Footer ---- */
+    footer {
+      padding: 40px 0 64px;
+      font-family: var(--sans);
+      font-size: 13.5px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
+    footer a:hover { border-color: var(--accent); color: var(--ink); }
+
+    @media (max-width: 620px) {
+      body { font-size: 18px; }
+      .hero { padding: 52px 0 40px; }
+      .masthead { padding-top: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="wordmark" href="/">Nicholas MacGregor Garcia</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/ai-strategy/">AI Strategy</a>
+        <a href="/ai-engineering/">AI Engineering</a>
+        <a href="/fintech/">Fintech</a>
+        <a href="/us-asean-china/">US–ASEAN–China</a>
+        <a href="/#work">Academic</a>
+        <span class="current" aria-current="page">Opportunities</span>
+        <a href="https://github.com/nicholasg3/nicholasg3" rel="me">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Opportunities</p>
+        <h1>Roles and programs worth your time</h1>
+        <p class="lede">Roles and programs I am helping circulate. Listings expire automatically.</p>
+      </section>
+
+      <section id="listings">
+        <p class="kicker">Active listings</p>
+        <p class="updated-line" id="updated-line"></p>
+        <div id="board-body">
+          <p class="board-status" id="board-status">Loading current listings&hellip;</p>
+          <div id="board-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 Nicholas MacGregor Garcia</span>
+      <span><a href="https://github.com/nicholasg3/nicholasg3" rel="me">github.com/nicholasg3</a></span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var JOBS_URL = 'https://raw.githubusercontent.com/nicholasg3/nicholasg3/main/jobs.json';
+      var FALLBACK_URL = 'https://github.com/nicholasg3/nicholasg3/blob/main/jobs.md';
+
+      var statusEl = document.getElementById('board-status');
+      var listEl = document.getElementById('board-list');
+      var updatedEl = document.getElementById('updated-line');
+
+      function sgToday() {
+        // Compute "today" in Singapore time (UTC+8), as a local midnight Date.
+        var now = new Date();
+        var utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+        var sgt = new Date(utcMs + 8 * 3600000);
+        return new Date(sgt.getFullYear(), sgt.getMonth(), sgt.getDate());
+      }
+
+      function parseIsoDate(s) {
+        if (!s || typeof s !== 'string') return null;
+        var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s.trim());
+        if (!m) return null;
+        return new Date(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10));
+      }
+
+      function formatDate(d) {
+        return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+      }
+
+      function daysBetween(a, b) {
+        return Math.round((b.getTime() - a.getTime()) / 86400000);
+      }
+
+      function text(tag, className, content) {
+        var el = document.createElement(tag);
+        if (className) el.className = className;
+        if (content !== undefined && content !== null) el.textContent = content;
+        return el;
+      }
+
+      function buildMetaLine(job, today) {
+        var meta = text('p', 'job-meta');
+        var kind = (job.kind || 'job').toLowerCase();
+        var byLabel = kind === 'program' ? 'Express interest by' : 'Apply by';
+        var detailLabel = kind === 'program' ? 'Details' : 'Job description';
+
+        var parts = [];
+        if (job.location) {
+          parts.push(text('span', null, job.location));
+        }
+
+        var dl = parseIsoDate(job.deadline);
+        if (dl) {
+          var days = daysBetween(today, dl);
+          var dlWrap = document.createElement('span');
+          var label = document.createTextNode(byLabel + ' ');
+          dlWrap.appendChild(label);
+          var strong = text('strong', null, formatDate(dl));
+          dlWrap.appendChild(strong);
+          if (days <= 14) {
+            var suffix = days <= 0 ? ' (today)' : days === 1 ? ' (1 day left)' : ' (' + days + ' days left)';
+            var soon = text('span', 'soon', suffix);
+            dlWrap.appendChild(soon);
+          }
+          parts.push(dlWrap);
+        }
+
+        if (job.apply_url) {
+          var link = document.createElement('a');
+          link.href = job.apply_url;
+          link.rel = 'noopener';
+          link.target = '_blank';
+          link.textContent = detailLabel;
+          parts.push(link);
+        }
+
+        parts.forEach(function (part, i) {
+          if (i > 0) meta.appendChild(text('span', 'sep', '·'));
+          meta.appendChild(part);
+        });
+        return meta;
+      }
+
+      function buildList(labelText, items) {
+        if (!items || !items.length) return null;
+        var wrap = text('div', 'job-list');
+        wrap.appendChild(text('p', null, labelText));
+        var ul = document.createElement('ul');
+        items.forEach(function (item) {
+          ul.appendChild(text('li', null, item));
+        });
+        wrap.appendChild(ul);
+        return wrap;
+      }
+
+      function buildEntry(job, today) {
+        var entry = text('article', 'job-entry');
+        var heading = job.title && job.organization
+          ? job.title + ' — ' + job.organization
+          : (job.title || job.organization || 'Untitled');
+        entry.appendChild(text('h2', 'job-title', heading));
+        entry.appendChild(buildMetaLine(job, today));
+        if (job.summary) entry.appendChild(text('p', 'job-desc', job.summary));
+
+        var resp = buildList('Responsibilities', job.responsibilities);
+        if (resp) entry.appendChild(resp);
+
+        var reqs = buildList('Looking for', job.requirements);
+        if (reqs) entry.appendChild(reqs);
+
+        if (job.notes) entry.appendChild(text('p', 'job-notes', job.notes));
+
+        if (job.tags && job.tags.length) {
+          var tagsWrap = text('div', 'job-tags');
+          job.tags.forEach(function (t) {
+            tagsWrap.appendChild(text('span', 'job-tag', t));
+          });
+          entry.appendChild(tagsWrap);
+        }
+
+        return entry;
+      }
+
+      function render(data) {
+        var today = sgToday();
+        var jobs = Array.isArray(data.jobs) ? data.jobs : [];
+
+        // Belt-and-braces client-side expiry filter, even though the
+        // source jobs.json only contains already-active listings.
+        var active = jobs.filter(function (job) {
+          var dl = parseIsoDate(job.deadline);
+          return !dl || dl >= today;
+        });
+
+        if (data.updated) {
+          updatedEl.textContent = 'Updated ' + data.updated + '. Listings auto-remove after the application deadline.';
+        }
+
+        if (!active.length) {
+          statusEl.textContent = 'Nothing active right now — check back.';
+          return;
+        }
+
+        statusEl.remove();
+        active.forEach(function (job) {
+          listEl.appendChild(buildEntry(job, today));
+        });
+      }
+
+      fetch(JOBS_URL, { cache: 'no-store' })
+        .then(function (res) {
+          if (!res.ok) throw new Error('bad status ' + res.status);
+          return res.json();
+        })
+        .then(render)
+        .catch(function () {
+          statusEl.textContent = '';
+          var msg = document.createElement('span');
+          msg.textContent = 'Listings are temporarily unavailable — see the ';
+          var link = document.createElement('a');
+          link.href = FALLBACK_URL;
+          link.textContent = 'GitHub version';
+          msg.appendChild(link);
+          msg.appendChild(document.createTextNode('.'));
+          statusEl.appendChild(msg);
+        });
+    })();
+  </script>
+</body>
+</html>
