@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eleven scheduled agents with job titles, reporting lines, a CLI for asking your manager a question, and an escalation sweep that eventually lands on me.">
+    <title>I Gave My Agents an Org Chart | AI Engineering — Nicholas Garcia</title>
+    <link rel="stylesheet" href="/ai-strategy/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/ai-engineering/" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Engineering</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/ai-engineering/">AI Engineering</a>
+        <a href="/ai-strategy/">AI Strategy</a>
+        <a href="/ai-engineering/feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">September 2026</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="/ai-engineering/">Agents</a><a class="tag-chip" href="/ai-engineering/">Operations</a></div>
+        <h1>I Gave My Agents an Org Chart</h1>
+        <p>Eleven scheduled jobs, each with a job title and a manager, a CLI for asking a question upward, and a sweep that pushes anything unanswered for 48 hours one level up the chart until it reaches me.</p>
+      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </header>
+
+      <article class="article-body">
+        <p class="manual-cta">Part of <a href="automations-that-run-without-me.html">Sixteen Automations That Run Without Me</a>.</p>
+
+        <p>I did not set out to build an org chart. I built about ten scheduled jobs over a few months, and then hit the problem everyone with a few scheduled jobs hits: I could not tell which of them were healthy, which had opinions I should hear, and which had quietly stopped running in March.</p>
+
+        <p>The fix that worked was embarrassingly corporate. I gave each job a title, a manager and a charter, put the whole thing in a JSON file, and wrote a small CLI for the one interaction that turns out to matter most: an agent asking its manager a question.</p>
+
+        <h2>The chart</h2>
+
+        <p>It lives in <code>org.json</code>, it is version controlled, and it currently has twelve nodes — me plus eleven agents.</p>
+
+        <pre><code>nick                  CEO (human)
+└── co-ceo-engine     Chief of Staff
+    ├── auto-editor   Managing Editor
+    │   ├── auto-brand        Creative Director
+    │   ├── auto-chronicler   Chronicler
+    │   └── auto-librarian    Knowledge Gardener
+    ├── auto-qa       Staff QA Engineer
+    │   ├── auto-sre          Fleet Health Officer
+    │   └── auto-security     Security Auditor
+    ├── auto-controller       Cost Controller
+    ├── signal-watch          GTM Signal Watch
+    └── merge-warden          Release Gatekeeper</code></pre>
+
+        <p>Each node carries: who it reports to, the directory it owns, where its log lives, where its reports live and the glob that finds them, how often it must run, how many hours may pass before it counts as stale, and a one-sentence charter.</p>
+
+        <p>The charters are written as job descriptions, and I think that was the good decision. The Managing Editor's says it "holds the standard of excellence for everything the firm writes and returns work that is not good enough". The Creative Director's says it "keeps Nick's public output on voice and on brand". When I later argue with myself about whether a role should take on some new task, the charter settles it faster than any amount of architecture discussion.</p>
+
+        <p><code>orgctl chart</code> prints the tree live from the file. <code>orgctl validate</code> checks the chart's integrity and exits non-zero on any problem — an unknown manager, a cycle, a missing directory.</p>
+
+        <h2>Agents asking questions</h2>
+
+        <p>This is the part I would keep if I had to throw the rest away.</p>
+
+        <p>A role that hits a decision it cannot make files one ask and carries on. It does not block, and it does not go outside its own directory to resolve the problem itself.</p>
+
+        <pre><code>orgctl ask --from auto-brand \
+  --text "Should the Friday essay lead with the cost number?"
+
+orgctl ask --from auto-editor \
+  --text "Ship the draft as-is or hold it for a fact check?" \
+  --context "reports/brand-2026-08-08.md" \
+  --option "Ship it" --option "Hold for fact check"
+
+orgctl ask --from auto-sre --to nick \
+  --text "Disk is at 91 percent. Do I open a p1?"</code></pre>
+
+        <p><code>--to</code> defaults to your manager in the chart, so most calls do not specify it. The third example deliberately skips a level, which is allowed.</p>
+
+        <p>Three rules make this safe to call from a cron job:</p>
+
+        <ul>
+          <li><strong>Unknown node exits 2.</strong> You use the ids in the chart, not free text. A typo fails loudly at the source instead of creating an ask nobody owns.</li>
+          <li><strong>The text is one sentence, 400 characters maximum.</strong> Longer exits 2. This is the single most effective thing in the whole system for keeping the queue readable on a phone.</li>
+          <li><strong>Re-asking is safe.</strong> The same node asking a near-identical question — whitespace and case normalised — while the earlier one is still open and under 24 hours old prints the existing id and appends nothing.</li>
+        </ul>
+
+        <p>That last rule is what makes the mechanism usable at all. A daily role can call <code>ask</code> on every single run without flooding me. Without it, the first job I wired up would have sent me the same question 30 times in a month and I would have deleted the feature.</p>
+
+        <p>Reading and answering is the obvious set: <code>list --open</code>, <code>list --for nick --json</code>, <code>answer &lt;id&gt; --text ... --by nick</code>, <code>withdraw &lt;id&gt; --reason ...</code>, <code>status</code>.</p>
+
+        <p>The ledger is a JSONL file, append-only, never committed to git, and you are not allowed to hand-append a line to it. Answering, withdrawing and escalating all work by appending a new line that folds over the old state. Withdrawing twice is a no-op. A withdrawn ask stops counting as open, never escalates, and never blocks a later identical question.</p>
+
+        <h2>The escalation sweep</h2>
+
+        <p><code>orgctl escalate</code> runs twice a day. It sweeps the ledger and moves any ask that has sat unanswered longer than 48 hours one level up the chart.</p>
+
+        <ul>
+          <li><strong>One level per sweep</strong>, never two.</li>
+          <li><strong>Idempotent inside the window.</strong> The clock restarts at the last move, so running it twice in a day changes nothing.</li>
+          <li><strong>An ask held by me never escalates further.</strong> It stays open and the sweep prints an <code>at-root</code> line for it. There is nowhere above the CEO.</li>
+          <li><strong>When an ask lands on me, one Telegram line goes out.</strong> That is the only outward action in this whole component, and it is failure-tolerant: if the bridge is down the sweep logs it and still exits zero.</li>
+        </ul>
+
+        <p>The effect in practice is that the Creative Director's question about the Friday essay reaches the Managing Editor first, and only becomes my problem if the Editor has not dealt with it in two days. I get fewer questions than I would with a flat design, and the ones I get are the ones nobody else could answer.</p>
+
+        <h2>The bug that taught me the most</h2>
+
+        <p>There is a page that renders the chart with, per employee, a status card. Getting that card right took several attempts and one genuinely wrong version.</p>
+
+        <p>The status field is called <code>ok</code>, and the mistake I made was letting it mean two different things. <strong><code>ok</code> asks whether this run itself failed. It never asks what the run found.</strong></p>
+
+        <p>A role that finds problems is a role doing its job. The Fleet Health Officer reporting six services down is a <em>healthy</em> Fleet Health Officer — the health of the employee is not the health of the thing it watches. Conflating those two told me that seven of my ten employees were broken, which was false, and which destroyed the signal for the case where one of them really is.</p>
+
+        <p>The card now has three states:</p>
+
+        <div class="article-table-wrap" role="region" aria-label="Employee status states" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr><th>State</th><th>Meaning</th><th>Examples</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>green</td><td>The run completed.</td><td>Findings of any count, a FLAG verdict, a spend figure, duplicates skipped.</td></tr>
+              <tr><td>amber</td><td>It finished, in a reduced mode.</td><td>A cost cap that truncated the work, a source it could not reach, a model step that failed and was skipped, a git push deferred to the next run.</td></tr>
+              <tr><td>red</td><td>The run stopped partway.</td><td>No completion marker at all, a traceback, a push failure that ended the run.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Two rules keep red honest, and both exist because I had red cards sitting next to log lines that said <code>status=OK</code>:</p>
+
+        <ol>
+          <li><strong>A completion marker wins.</strong> If the role logged that it finished, the run finished by its own account and nothing may then call it failed. A hard error it logged becomes the amber reason instead.</li>
+          <li><strong>A deferred push is not a lost artifact.</strong> A push failure the role itself marks as retryable or left for the next run is a postponed step, not lost work — the content lands next run. A push failure it does <em>not</em> mark that way still ends the run and stays red.</li>
+        </ol>
+
+        <p>Most "failures" in a fleet like this are postponed steps rather than lost work, and if you do not encode that difference you will spend your mornings investigating things that already fixed themselves.</p>
+
+        <h2>Turning a log into something a human reads on a phone</h2>
+
+        <p>The other half of the status card is a digest of what the employee has been doing. The CLI owns all the extraction; the page renders what it is given and parses nothing itself. The rules, in order:</p>
+
+        <ol>
+          <li><strong>Continuation lines fold into their neighbour.</strong> A line with no timestamp belongs to an adjacent entry — forward when the next entry is a git line, backward otherwise. A line that cannot be dated is dropped, so nothing ever renders as "unknown".</li>
+          <li><strong>Consecutive repeats collapse</strong> into one entry with a count.</li>
+          <li><strong>Every entry gets classified</strong> as an outcome, a finding, an error, or plumbing. The default is plumbing, on the principle that being wrongly quiet beats being wrongly loud.</li>
+          <li><strong>Structured lines get mined.</strong> Several roles log JSON or Python dict reprs; issue URLs, titles and counts are lifted out into real entries and the raw blob never reaches the page. An unparseable blob degrades to one truncated plumbing entry rather than crashing.</li>
+          <li><strong>Capped at ten, newest first</strong> — with one guard. If the newest ten are all plumbing while the same run <em>did</em> find something, substantive entries take half the slots. The Fleet Health Officer ends every run with five dedup lines, a push and a ping; without that guard its six actual DOWN verdicts fall off the end and the panel says nothing at all.</li>
+        </ol>
+
+        <p>Two more rules that took real logs to discover. <strong>Dry runs never lead</strong> — a line carrying a dry-run marker is test residue, it can never be classified as an error, and it is excluded from every source the headline draws on. A role whose last run was a dry run reports nothing rather than presenting residue as work.</p>
+
+        <p>And <strong>a wrong summary is worse than no summary</strong>. Report headlines are extracted by a short list of ordered rules checked against real reports from every role. When none of them fits — the chronicle, the drift report, a diff — the headline is null and the page renders nothing there.</p>
+
+        <h2>Would I recommend it</h2>
+
+        <p>If you have three scheduled jobs, no. Put them in a list.</p>
+
+        <p>Somewhere around eight, three things start to hurt at once: you cannot remember what each one is for, you cannot tell a broken job from a job reporting bad news, and there is no way for a job to raise a question that is not "file an issue and hope". The org chart fixes all three with about 1,500 lines of stdlib Python and a JSON file.</p>
+
+        <p>The cost is that you now have a chart to keep accurate, which is why <code>validate</code> exists and why no role is allowed a schedule until it has a row in the chart. An org chart that has drifted from reality is worse than none — the same thing everyone learns about the human version.</p>
+
+        <p class="manual-cta">Read next: <a href="bot-that-reads-its-own-transcripts.html">The Bot That Reads Its Own Transcripts</a> — the one agent here that is allowed to change its own instructions.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer"><span>Nicholas Garcia · AI Engineering</span><a href="/ai-engineering/">Vertical</a></footer>
+  </body>
+</html>

@@ -35,71 +35,56 @@
         <article data-tags="agents operations productivity" class="feature-card">
           <div class="feature-meta">
             <span>Field inventory</span>
-            <span>14 min read</span>
+            <span>16 min read</span>
           </div>
           <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span><span class="tag-chip">Productivity</span></div>
-          <h2><a href="posts/automations-that-run-without-me.html">Fourteen Automations That Run Without Me</a></h2>
-          <p>A working inventory of scheduled agent jobs on one small server: what each one does, the eight rules that let them run unsupervised, and the four incidents that produced those rules.</p>
+          <h2><a href="posts/automations-that-run-without-me.html">Sixteen Automations That Run Without Me</a></h2>
+          <p>A working inventory of the scheduled agent jobs I run: what each one does, the eight rules that let them run unsupervised, and the four incidents that produced those rules.</p>
           <div class="decision-strip">
             <strong>Reader decision</strong>
             <span>For this task, is there a cheap mechanical check that proves the result? If not, the agent prepares the decision, it does not make it.</span>
           </div>
         </article>
 
-
-        <article data-tags="agents autonomy" class="feature-card">
+        <article data-tags="agents operations" class="feature-card">
           <div class="feature-meta">
-            <span>Design note</span>
-            <span>7 min read</span>
+            <span>Field note</span>
+            <span>9 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Autonomy</span></div>
-          <h2><a href="posts/the-mechanical-check-test.html">The Mechanical Check Test</a></h2>
-          <p>One question decides whether an agent may act alone: can a cheap mechanical check prove the result? The three-tier rule, the caps that matter more than the scoring, and why “never publish” is a missing capability rather than a blocked one.</p>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span></div>
+          <h2><a href="posts/agents-with-an-org-chart.html">I Gave My Agents an Org Chart</a></h2>
+          <p>Eleven scheduled jobs with job titles and reporting lines in a version-controlled file, a CLI for asking your manager a question, a 48-hour escalation sweep, and the status bug that told me seven of ten employees were broken when none of them were.</p>
           <div class="decision-strip">
             <strong>Reader decision</strong>
-            <span>Is there a command whose exit code proves this task worked? If not, the agent prepares your decision — it does not make it.</span>
+            <span>When one of your scheduled jobs reports bad news, can you tell that apart from the job itself being broken?</span>
           </div>
         </article>
 
-        <article data-tags="code-review agents operations" class="feature-card">
+        <article data-tags="agents self-improvement" class="feature-card">
           <div class="feature-meta">
-            <span>Design note</span>
-            <span>7 min read</span>
-          </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Code Review</span><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span></div>
-          <h2><a href="posts/review-what-actually-runs.html">Review What Actually Runs</a></h2>
-          <p>A nightly code reviewer is only useful if it reads the right three files. Build a census of what the machine actually executes, rank by usage times staleness, and let the fixer touch only what a verifier can judge.</p>
-          <div class="decision-strip">
-            <strong>Reader decision</strong>
-            <span>Which files does your scheduler actually execute, and when did anyone last read them?</span>
-          </div>
-        </article>
-
-        <article data-tags="security operations" class="feature-card">
-          <div class="feature-meta">
-            <span>Design note</span>
+            <span>Field note</span>
             <span>6 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Security</span><span class="tag-chip">Operations</span></div>
-          <h2><a href="posts/security-check-with-no-model.html">A Security Check With No Model In It</a></h2>
-          <p>Six deterministic checks, once a month, read-only, and a report that may never contain the secret it found. Why the dullest job in the fleet is the most trustworthy one.</p>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Self-Improvement</span></div>
+          <h2><a href="posts/bot-that-reads-its-own-transcripts.html">The Bot That Reads Its Own Transcripts</a></h2>
+          <p>A daily loop that mines friction out of my assistant's own session logs, proposes exactly one change, gates it on a runnable check, escalates anything that can reach another human, and halts itself when the changes stop helping.</p>
           <div class="decision-strip">
             <strong>Reader decision</strong>
-            <span>Which of your scheduled jobs would still be correct in a year with the API down?</span>
+            <span>Your agent already writes full transcripts to disk. What would you learn from reading last month's?</span>
           </div>
         </article>
 
-        <article data-tags="personal-data agents operations" class="feature-card">
+        <article data-tags="memory agents" class="feature-card">
           <div class="feature-meta">
-            <span>Design note</span>
+            <span>Field note</span>
             <span>6 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Personal Data</span><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span></div>
-          <h2><a href="posts/ship-the-read-only-report-first.html">Ship the Read-Only Report First</a></h2>
-          <p>How to automate data you care about — contacts, obligations — starting with a job that cannot write anything, then adding write access one tested phase at a time. Includes the one-in-three rejection rate that killed automatic matching.</p>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Memory</span><span class="tag-chip">Agents</span></div>
+          <h2><a href="posts/two-memory-stores.html">Two Memory Stores That Are Not Allowed to Overlap</a></h2>
+          <p>One store holds rules, the other holds episodes, and the write gate on the episodic one rejects rule-shaped input and points it at the other store. Keeping them apart is most of what makes either useful.</p>
           <div class="decision-strip">
             <strong>Reader decision</strong>
-            <span>Can your version one be described in one sentence and be incapable of damage?</span>
+            <span>Is the thing you are about to store a rule or an episode, and can you write one into the other by accident?</span>
           </div>
         </article>
 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>AI Engineering — Nicholas Garcia</title>
+    <link>https://nicholasg3.github.io/ai-engineering/</link>
+    <description>AI Engineering: agent orchestration, fleet operations, and the tooling behind this site.</description>
+    <language>en-us</language>
+    <item>
+      <title>I Gave My Agents an Org Chart</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/agents-with-an-org-chart.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/agents-with-an-org-chart.html</guid>
+      <description>Eleven scheduled jobs with job titles and reporting lines in a version-controlled file, a CLI for asking your manager a question, a 48-hour escalation sweep, and the status bug that told me seven of ten employees were broken when none of them were.</description>
+      <pubDate>Tue, 15 Sep 2026 16:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>The Bot That Reads Its Own Transcripts</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/bot-that-reads-its-own-transcripts.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/bot-that-reads-its-own-transcripts.html</guid>
+      <description>A daily loop that mines friction out of my assistant's own session logs, proposes exactly one change, gates it on a runnable check, escalates anything that can reach another human, and halts itself when the changes stop helping.</description>
+      <pubDate>Tue, 15 Sep 2026 16:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Two Memory Stores That Are Not Allowed to Overlap</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/two-memory-stores.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/two-memory-stores.html</guid>
+      <description>One store holds rules, the other holds episodes, and the write gate on the episodic one rejects rule-shaped input and points it at the other store. Keeping them apart is most of what makes either useful.</description>
+      <pubDate>Tue, 15 Sep 2026 16:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Sixteen Automations That Run Without Me</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</guid>
+      <description>A working inventory of the scheduled agent jobs I run: what each one does, the eight rules that let them run unsupervised, and the four incidents that produced those rules.</description>
+      <pubDate>Tue, 15 Sep 2026 10:30:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

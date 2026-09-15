@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A loop that mines friction out of my assistant's own session transcripts, proposes one change per cycle with a runnable check as the gate, and stops when it starts making things worse.">
+    <title>The Bot That Reads Its Own Transcripts | AI Engineering — Nicholas Garcia</title>
+    <link rel="stylesheet" href="/ai-strategy/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/ai-engineering/" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Engineering</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/ai-engineering/">AI Engineering</a>
+        <a href="/ai-strategy/">AI Strategy</a>
+        <a href="/ai-engineering/feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">September 2026</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="/ai-engineering/">Agents</a><a class="tag-chip" href="/ai-engineering/">Self-Improvement</a></div>
+        <h1>The Bot That Reads Its Own Transcripts</h1>
+        <p>My assistant runs a daily loop that mines friction out of its own session logs, proposes exactly one change, gates it on a runnable check, and halts itself when the changes stop helping.</p>
+      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </header>
+
+      <article class="article-body">
+        <p class="manual-cta">Part of <a href="automations-that-run-without-me.html">Sixteen Automations That Run Without Me</a>.</p>
+
+        <p>I have a personal assistant bot on Telegram. It is a coding agent with a chat front end, locked to my account, and it can read my mail, check my calendar, look things up and run things on the server.</p>
+
+        <p>Like every assistant, it was mediocre in specific, repeated ways. I would ask for something and get the wrong shape of answer. A tool would fail the same way three times in a week. I would correct the same misunderstanding on Monday and again on Thursday.</p>
+
+        <p>The obvious fix is to sit down and improve the instructions. I did that a few times and it did not stick, because by the time I sat down I could not remember what had annoyed me.</p>
+
+        <p>So I built a loop that remembers for me. Every day it reads the bot's own session transcripts, finds the friction, and proposes one improvement.</p>
+
+        <h2>Where the data comes from</h2>
+
+        <p>This is the part I like most, and it needed no new instrumentation at all.</p>
+
+        <p>The bot is a coding agent, and coding agents already write full session transcripts to disk as JSONL. Every message, every tool call, every error. A state file maps each chat to its session id. That is a complete record of every interaction I have ever had with the assistant, sitting there unused.</p>
+
+        <p>The mining step reads recent transcripts and extracts four kinds of friction signal:</p>
+
+        <ul>
+          <li><strong>Corrections</strong> — me telling it that what it just did was wrong.</li>
+          <li><strong>Tool errors</strong> — something it tried to call that failed.</li>
+          <li><strong>Unfulfilled requests</strong> — I asked, it did not deliver.</li>
+          <li><strong>Re-asks</strong> — me asking the same thing again, which is the strongest signal of all because it means the first answer was useless enough that I bothered to retype it.</li>
+        </ul>
+
+        <p>Candidates get scored and deduplicated by theme, so twenty instances of the same annoyance become one candidate with a high score rather than twenty low-value ones.</p>
+
+        <p>If transcript friction comes back empty — which happens on a quiet week — the cycle falls back to a second miner that reads the themes I have been writing and talking about, so there is usually something to work on. I am ambivalent about that fallback. Doing nothing is a perfectly good outcome for a self-improvement loop, and I have caught it working on something mildly useful when the honest answer was "nothing is wrong this week".</p>
+
+        <h2>One change per cycle</h2>
+
+        <p>The proposal step takes the top candidate and derives <strong>one</strong> concrete improvement plus a <strong>runnable check</strong> — a command that exits zero if the change did what it claimed.</p>
+
+        <p>One is a hard limit and it is doing real work. A loop that proposes five changes at once cannot attribute the result to any of them, which means the ledger below becomes noise and the halt condition never fires correctly.</p>
+
+        <p>This step is also the only place a model's judgement enters the loop. Everything else — mining, gating, the ledger — is deterministic Python, which means the self-test can run the whole cycle end to end with a stub in that one seam and no network access at all.</p>
+
+        <h2>The gate: what it may change alone</h2>
+
+        <p>The check runs. If it passes, the change is classified.</p>
+
+        <p><strong>Auto-applied, because it is safe and reversible:</strong></p>
+
+        <ul>
+          <li>Clarifications to the bot's instruction file, written into a marked block so I can see exactly which lines the loop wrote.</li>
+          <li>Proposals for new <em>read-only</em> tools.</li>
+          <li>Notes about skills and recurring errors.</li>
+        </ul>
+
+        <p>All of it lands as a git commit, so undoing anything is one revert.</p>
+
+        <p><strong>Escalated to me, never auto-applied:</strong></p>
+
+        <ul>
+          <li>Anything touching outbound email.</li>
+          <li>Calendar writes.</li>
+          <li>The allowlist of who may talk to the bot.</li>
+          <li>Anything destructive.</li>
+        </ul>
+
+        <p>Those get queued and pinged to me on Telegram for explicit approval. The boundary is not "is this a big change" — it is "can this reach another human or lose data". A one-line tweak to the mail-sending path is escalated; a substantial rewrite of a read-only summarisation prompt is not.</p>
+
+        <p>Two more constraints. Tool and skill ideas land in a proposals directory rather than blindly editing the live tools. And the loop <strong>never restarts or redeploys the running bot</strong>. Instruction changes are picked up on the next message anyway; anything needing a deploy waits for me. A self-improving system that can hot-restart itself can also hot-restart itself into a state where it cannot be fixed.</p>
+
+        <h2>The ledger, and knowing when to stop</h2>
+
+        <p>Every cycle appends to a ledger: what was changed, what the check returned, and — the important column — <strong>did the friction actually drop in the following period</strong>.</p>
+
+        <p>That third column is the entire difference between a self-improvement loop and a change-generation machine. Without it you have a system that is enthusiastically doing things, and no evidence that any of them helped.</p>
+
+        <p>The reflection step reads the ledger, finds the peak, flags regressions, and halts the loop after a run of cycles that made things worse. There is a command that just prints its verdict.</p>
+
+        <p>The halting condition matters more than I expected. The natural failure mode of a loop like this is not a catastrophic bad change — the gate catches most of those. It is slow accretion: a hundred small clarifications added to an instruction file over six months, each individually defensible, collectively turning a crisp set of instructions into a swamp. The loop is written so that it declines by <em>adding</em> — so the halt has to be explicit, measured against whether friction actually fell.</p>
+
+        <p>It converges in one of two ways. Either there is no friction left to absorb and a cycle comes back empty, or reflection halts it on decline.</p>
+
+        <h2>The self-test is the deliverable</h2>
+
+        <p>There is one command that runs the whole cycle end to end with no side effects and exits zero. No network, no git writes, no messages sent. It uses the deterministic stub in the judgement seam.</p>
+
+        <p>I treat that command, not the loop, as the thing I built. The loop is allowed to modify a live assistant's instructions on a daily schedule. I am not installing that on a timer on the strength of having read the code.</p>
+
+        <p>It runs daily, early in the morning, on the server, with its own log. I review the ledger and the escalation queue every few weeks.</p>
+
+        <h2>What I would tell someone copying this</h2>
+
+        <ol>
+          <li><strong>Your agent's transcripts are already the dataset.</strong> You probably do not need to instrument anything. Look at what your tooling writes to disk.</li>
+          <li><strong>Re-asks are the best signal.</strong> Corrections are noisy and tool errors are often environmental. Someone retyping a request means the first answer was worthless.</li>
+          <li><strong>One change per cycle</strong>, or you cannot attribute the outcome.</li>
+          <li><strong>Gate on a runnable check, not on confidence.</strong></li>
+          <li><strong>Split on reach, not on size.</strong> Can this touch another human, or destroy something? Escalate. Otherwise, let it commit and rely on revert.</li>
+          <li><strong>Record whether it actually helped, and let the loop stop itself.</strong> This is the step everyone skips, and it is the one that separates improvement from churn.</li>
+        </ol>
+
+        <p class="manual-cta">Read next: <a href="two-memory-stores.html">Two Memory Stores That Are Not Allowed to Overlap</a> — where the lessons from all of this actually get written down.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer"><span>Nicholas Garcia · AI Engineering</span><a href="/ai-engineering/">Vertical</a></footer>
+  </body>
+</html>
