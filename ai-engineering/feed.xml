@@ -6,32 +6,18 @@
     <description>AI Engineering: agent orchestration, fleet operations, and the tooling behind this site.</description>
     <language>en-us</language>
     <item>
-      <title>An org chart for 11 software agents</title>
-      <link>https://nicholasg3.github.io/ai-engineering/posts/agents-with-an-org-chart.html</link>
-      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/agents-with-an-org-chart.html</guid>
-      <description>Job titles and reporting lines in a version-controlled file, a command-line tool for asking a manager a question, a 48-hour escalation sweep and the status bug that misreported seven of 10 agents as broken.</description>
-      <pubDate>Tue, 15 Sep 2026 16:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>An assistant that mines its own transcripts</title>
-      <link>https://nicholasg3.github.io/ai-engineering/posts/bot-that-reads-its-own-transcripts.html</link>
-      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/bot-that-reads-its-own-transcripts.html</guid>
-      <description>A daily loop extracts four kinds of friction from an assistant's own session logs, proposes one change per cycle, gates it on a runnable check and halts when the changes stop helping.</description>
-      <pubDate>Tue, 15 Sep 2026 16:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>Two memory stores, kept apart by design</title>
-      <link>https://nicholasg3.github.io/ai-engineering/posts/two-memory-stores.html</link>
-      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/two-memory-stores.html</guid>
-      <description>One store holds rules and the other holds episodes. A write gate on the episodic store rejects rule-shaped entries and redirects them, which is what keeps either store useful.</description>
-      <pubDate>Tue, 15 Sep 2026 16:00:00 GMT</pubDate>
-    </item>
-    <item>
-      <title>16 scheduled jobs run without supervision</title>
+      <title>The hard part of running 11 AI agents was management</title>
       <link>https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</link>
       <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</guid>
-      <description>An inventory of the AI agents running on one small server and a Mac, the eight rules that govern them and the four failures that produced those rules.</description>
-      <pubDate>Tue, 15 Sep 2026 10:30:00 GMT</pubDate>
+      <description>A status board reported that seven of 10 agents had failed. All were working. Across a year of running a small autonomous fleet, the costly failures were organizational rather than technical, and the fixes were job descriptions, an escalation clock and a limit on how much any agent may say.</description>
+      <pubDate>Wed, 16 Sep 2026 02:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>What 11 AI agents are not allowed to do</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/what-the-agents-cannot-do.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/what-the-agents-cannot-do.html</guid>
+      <description>A code-merging agent has been built, tested and scheduled, and has never merged anything, because a file it requires can only be created by a person. Autonomy in this fleet is granted by proof and prohibitions are enforced as missing capabilities.</description>
+      <pubDate>Wed, 16 Sep 2026 02:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

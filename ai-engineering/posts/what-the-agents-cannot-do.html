@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Autonomy in an 11-agent fleet is granted by proof, not by trust. Forbidden actions are enforced as missing capabilities, and one agent stays disabled until a person creates a file by hand.">
+    <title>What 11 AI agents are not allowed to do | AI Engineering — Nicholas Garcia</title>
+    <link rel="stylesheet" href="/ai-strategy/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/ai-engineering/" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Engineering</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/ai-engineering/">AI Engineering</a>
+        <a href="/ai-strategy/">AI Strategy</a>
+        <a href="/ai-engineering/feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">September 2026</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="/ai-engineering/">Agents</a><a class="tag-chip" href="/ai-engineering/">Governance</a></div>
+        <h1>What 11 AI agents are not allowed to do</h1>
+        <p>A code-merging agent has been built, tested and scheduled. It has never merged anything, because a file it requires does not exist and only a person can create it.</p>
+      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </header>
+
+      <article class="article-body">
+        <p class="manual-cta"><strong>Disclosure:</strong> the systems described here belong to the author, who built and operates them. This account is drawn from their configuration files and design documents.</p>
+
+        <p>One agent in an 11-agent fleet is designed to merge approved code changes automatically each night. It has been written, tested and given a schedule. It has never merged anything.</p>
+
+        <p>The agent refuses to operate in live mode unless a file named LIVE-ENABLED exists in its own directory. Nothing in the system creates that file. The only way it appears is if the operator types a command that creates it.</p>
+
+        <p>Until then the agent runs in its default mode, which judges each change, records a verdict and makes no modifications at all. Its entry in the org chart is marked as disabled.</p>
+
+        <p>That arrangement summarizes how permission works across the fleet: an agent's authority is granted by evidence, withheld by default, and in the most consequential cases withheld behind a physical act by a person.</p>
+
+        <h2>Three tiers, one test</h2>
+
+        <p>A daemon proposes work for the fleet each morning. It sorts every proposal into one of three tiers, using a single question: is there a cheap mechanical check that proves the task worked?</p>
+
+        <div class="article-table-wrap" role="region" aria-label="Autonomy tiers" tabindex="0">
+          <table class="article-table">
+            <thead>
+              <tr><th>Tier</th><th>Action</th><th>Requirement</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>Runs unattended</td><td>A named command exists whose exit code proves the result.</td></tr>
+              <tr><td>B</td><td>Files an issue and sends one message</td><td>A person must judge the outcome.</td></tr>
+              <tr><td>C</td><td>Never runs</td><td>Publishing, sending mail, handling secrets, deleting data.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The test is deliberately not about importance or difficulty. A trivial task with no check is tier B. A consequential task with a real check can be tier A.</p>
+
+        <p>That framing has a practical consequence. Tasks are promoted to unattended operation by writing a check for them, not by developing confidence in the model. A summarization task cannot run alone today. It becomes eligible the moment someone can state a mechanical property the summary must satisfy: every input item appears in the output, no names appear that were not in the source, the length falls under a bound.</p>
+
+        <p>Writing that check is usually more valuable than improving the instructions, and it is the only route by which a task gains autonomy.</p>
+
+        <h2>Prohibitions as missing capabilities</h2>
+
+        <p>Tier C is not implemented as a list of forbidden actions checked at run time.</p>
+
+        <p>The daemon can propose only projects that exist as templates in its configuration file. No template in that file publishes, sends mail, handles credentials or deletes data. The prohibition is the absence of a template.</p>
+
+        <p>The distinction matters. A rule that is checked can be checked incorrectly, disabled during debugging or reasoned around by a system that has been given latitude. A capability that was never built cannot be invoked.</p>
+
+        <p>Several other components use the same approach. The read path into the fleet's episodic memory store never calls any modifying command, so it cannot write regardless of what it is asked to do. The security auditor is read-only by construction: it never changes a file permission, edits a configuration, installs a package or restarts a service, even though each of those would be a natural fix for something it reports.</p>
+
+        <p>That last restriction was a deliberate choice against the system's own logic. Repairing a file permission is a one-line change with an obvious verification step, which would qualify it for unattended operation under the tier test. It remains prohibited on the grounds that a process able to repair permissions is also able to destroy them, and the auditor is the one component whose failure would not be caught by anything else.</p>
+
+        <h2>The line is reach, not size</h2>
+
+        <p>One agent is permitted to modify its own operating instructions. It reads the transcripts of its own sessions each morning, identifies recurring friction and proposes one change.</p>
+
+        <p>Changes in three categories are applied automatically, because they are reversible: clarifications to its instruction file, written into a marked block; proposals for new read-only tools; and notes about recurring errors. Each becomes a version-control commit, so reversal is one command.</p>
+
+        <p>Four categories are escalated to a person and never applied automatically: anything affecting outbound email, calendar writes, the list of who may contact the assistant, and destructive operations.</p>
+
+        <p>The dividing line is reach rather than magnitude. A one-line change to a mail-sending path is escalated. A substantial rewrite of a read-only summarization prompt is not. The question is whether a mistake can touch another person or destroy data, not how much code changed.</p>
+
+        <p>The same agent is barred from restarting or redeploying the live service it improves. Instruction changes take effect on the next message; anything requiring deployment waits for a person. A self-modifying system able to restart itself is also able to restart itself into a state from which it cannot be recovered.</p>
+
+        <h2>The controls that apply to everything</h2>
+
+        <p>Four rules bind every agent in the fleet, regardless of tier.</p>
+
+        <p><strong>Observe and propose, do not act.</strong> An agent reads, analyzes and files findings. It does not edit code outside its own directory, send outward communication or spend money.</p>
+
+        <p><strong>Two kinds of output only.</strong> An issue and a report, capped at five new issues per run. An agent able to produce arbitrary output produces noise.</p>
+
+        <p><strong>One file stops everything.</strong> A file named STOPPED in an agent's directory causes every entry point to exit immediately and successfully. No flags, no configuration change, no redeployment. The mirror image of the LIVE-ENABLED file, and equally deliberate: both the most and least permissive states are set by a person creating or deleting a file.</p>
+
+        <p><strong>No schedule without a passing self-test.</strong> The test runs without model calls and without network writes. An agent that cannot demonstrate its own behavior in isolation does not get a schedule.</p>
+
+        <h2>The cost of the arrangement</h2>
+
+        <p>The fleet is substantially less useful than it could be. Four capabilities would expand its value immediately: publishing, sending mail, handling credentials and deleting data. All four are prohibited.</p>
+
+        <p>Those are also the four that would make a bad morning unrecoverable. Every automation the operator has regretted crossed one of those lines. Every one still running stays behind them.</p>
+
+        <p>A system that proposes work continuously and acts on a narrow portion of it is not a compromise between capability and safety. It is the configuration that survives its own mistakes, which is the only kind that accumulates value over a year.</p>
+
+        <p class="manual-cta">Related: <a href="automations-that-run-without-me.html">The hard part of running 11 AI agents was management</a> — the organizational failures that shaped these rules.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer"><span>Nicholas Garcia · AI Engineering</span><a href="/ai-engineering/">Vertical</a></footer>
+  </body>
+</html>
