@@ -58,11 +58,15 @@
 
         <p>A nightly job builds a census of every script the server truly executes. It reads the crontab and the service manager, follows one level of references from those entry points, and ranks files by how often they are on a live path. A second file records, per script, the last commit that was reviewed. A script needs review when it has commits newer than its last review. Priority is usage rank times staleness. The job reviews at most three files a night with one model call each and a fixed rubric: correctness bugs, unhandled failure paths, quoting and parsing hazards.</p>
 
-        <p>It does not fix anything. It files issues, which the nightly worker above may then fix. The transferable idea is attention allocation. You cannot review everything, and a language model reviewing random files is a waste. Rank by what runs, then by what changed.</p>
+        <p>It fixes only what it can prove. Where a file has a mechanical verifier — a syntax check, a nearby self-test, a dry-run mode — the job generates a minimal patch, applies it to a backup-protected copy, and runs the verifier. Pass, and it commits and closes the issue. Fail, and it reverts and files the finding instead, tagged as attempted. Everything else becomes an issue for the nightly worker or for me. The transferable idea is attention allocation. You cannot review everything, and a language model reviewing random files is a waste. Rank by what runs, then by what changed.</p>
+
+        <p><a href="review-what-actually-runs.html">Review What Actually Runs</a> sets out the census, the priority formula, the rubric, and the revert test in full.</p>
 
         <h3>3. A monthly security check with no model in it</h3>
 
         <p>Once a month a script checks five things: that credential files are readable only by their owner, that no secret-shaped string has entered the repository in the last month of commits, that every listening network port is on an allowlist, that the authenticated pages are still authenticated, and how many security updates are pending. It reports the file and line of a suspected secret and never the value.</p>
+
+        <p>The six checks, the redaction rule, and why SKIPPED is a first-class result are in <a href="security-check-with-no-model.html">A Security Check With No Model In It</a>.</p>
 
         <p>Two design choices are worth copying. First, zero model calls — every one of these checks is a regular expression or a system command, so it is free, fast, and deterministic. Second, monthly, not daily. The checks are stable, and the real failure mode of a security job is alert fatigue. A monthly report gets read. A daily one gets filtered into a folder.</p>
 
@@ -107,11 +111,15 @@
 
         <p>This tier test is the single most useful thing in this post. "Is there a cheap mechanical check that proves this worked?" answers the autonomy question for almost any task. If yes, let it run. If no, the agent's job is to prepare the decision, not to make it.</p>
 
+        <p>The loop, the caps, the done rule, and the reason Tier C is an absence rather than a deny-list are in <a href="the-mechanical-check-test.html">The Mechanical Check Test</a>.</p>
+
         <h3>6. A relationship database that starts as a read-only report</h3>
 
         <p>A local database links the people in my directory to their email addresses, phone numbers, and professional-network profiles, and to the threads I have actually had with them. It refreshes daily in the morning.</p>
 
         <p>The first version did exactly one thing: print how much of the directory has a linked contact channel, and where the gaps are. Read-only, no network writes, safe to run a hundred times. Everything else was built on top of that after it had been correct for a week. Ship the read-only report first. It is the cheapest way to find out that your data is worse than you thought, and it is the version you can leave running while you lose interest.</p>
+
+        <p>The phase gates, the acceptance tests written as prohibitions, and the one-in-three rejection rate that killed automatic matching are in <a href="ship-the-read-only-report-first.html">Ship the Read-Only Report First</a>.</p>
 
         <h3>7. A monitor for absence, not events</h3>
 
@@ -193,6 +201,17 @@
         </ol>
 
         <p>Then apply the tier test to everything else you are tempted to automate. If a cheap mechanical check can prove the result, let it run unattended. If not, the job is to prepare your decision and put it on your phone. Almost every bad automation I have built violated that one line, and almost every good one respects it.</p>
+
+        <h2>Four of these in depth</h2>
+
+        <p>Each of the following takes one item above and gives it the detail a reader would need to build their own version — the algorithm, the caps, the failure-mode table, and the tests.</p>
+
+        <ul>
+          <li><a href="the-mechanical-check-test.html"><strong>The Mechanical Check Test</strong></a> — the three-tier autonomy rule, the scoring caps, the done rule, and why "never publish" is implemented as a missing capability rather than a blocked one.</li>
+          <li><a href="review-what-actually-runs.html"><strong>Review What Actually Runs</strong></a> — building a census of executed code, ranking review by usage times staleness, the six-item rubric, the failure-scenario rule, and proving the auto-fix revert before scheduling it.</li>
+          <li><a href="security-check-with-no-model.html"><strong>A Security Check With No Model In It</strong></a> — six deterministic checks, why monthly beats daily, read-only always, and testing that an output does <em>not</em> contain a secret.</li>
+          <li><a href="ship-the-read-only-report-first.html"><strong>Ship the Read-Only Report First</strong></a> — phase gates with acceptance tests as prohibitions, deterministic-only linking with human review, provenance in the schema, and verifying a history purge from a fresh clone.</li>
+        </ul>
 
         <p><em>This piece describes systems the author runs personally. Details of client, employer, and pre-publication work are deliberately excluded.</em></p>
       </article>

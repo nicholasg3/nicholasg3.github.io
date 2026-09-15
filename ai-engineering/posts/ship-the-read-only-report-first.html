@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="How to automate something you care about — your contacts, your obligations — starting with a job that cannot write anything, and adding write access one proven phase at a time.">
+    <title>Ship the Read-Only Report First | AI Engineering — Nicholas Garcia</title>
+    <link rel="stylesheet" href="/ai-strategy/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/ai-engineering/" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Engineering</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/ai-engineering/">AI Engineering</a>
+        <a href="/ai-strategy/">AI Strategy</a>
+        <a href="/ai-engineering/feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
+
+    <main class="article-main">
+      <header class="article-header">
+        <div class="issue-kicker">September 2026</div>
+        <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="/ai-engineering/">Agents</a><a class="tag-chip" href="/ai-engineering/">Personal Data</a><a class="tag-chip" href="/ai-engineering/">Operations</a></div>
+        <h1>Ship the Read-Only Report First</h1>
+        <p>The first version of my relationship system did one thing: it printed how much of my contact directory had a usable channel, and where the gaps were. It could not write anything. That constraint is why the rest of it exists.</p>
+      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </header>
+
+      <article class="article-body">
+        <p class="manual-cta">Part of <a href="automations-that-run-without-me.html">Fourteen Automations That Run Without Me</a>.</p>
+
+        <p>Contacts are the hardest personal data to automate, and the reason is not technical. It is that the cost of a wrong write is asymmetric and delayed. A merge that combines two different people looks fine for months, until you send the wrong person a message that assumes a shared history. A fuzzy match that links a name to the wrong email address poisons every downstream decision quietly. You will not get an error. You will get a slowly degrading picture of your own life.</p>
+
+        <p>So the first version wrote nothing.</p>
+
+        <blockquote>The first slice should be the version you can leave running after you lose interest.</blockquote>
+
+        <h2>The first slice</h2>
+
+        <p>One command, read-only, no network writes, safe to run a hundred times in a row: print how much of the people directory has at least one linked channel — an email address, a phone number, a profile — and list exactly where the gaps are.</p>
+
+        <p>That is the whole of version one. It took an afternoon. It told me my directory had roughly two and a half percent channel coverage, which was both embarrassing and precisely the thing I needed to know before building anything that depended on the data being good. Every ambitious version of this system I had sketched previously assumed coverage I did not have.</p>
+
+        <p>Three properties made that first slice worth shipping on its own:</p>
+
+        <ul>
+          <li><strong>It was useful alone.</strong> Not a foundation for a future feature — a thing I could run and act on.</li>
+          <li><strong>It could not do damage.</strong> Read-only means the worst outcome is a wrong number on a screen.</li>
+          <li><strong>It made the data's real quality visible</strong> before any logic was built on top of it.</li>
+        </ul>
+
+        <p>If your version one cannot be described in one sentence and cannot damage anything, you have the right version one.</p>
+
+        <h2>Phases with acceptance tests, not a roadmap</h2>
+
+        <p>What followed was four phases, each of which ships alone, is useful alone, and carries written acceptance tests that must pass before the phase counts as done. Later phases — the ones that write to systems of record or add new data sources — each needed a separate explicit go-ahead, not a blanket approval of the design.</p>
+
+        <p>The acceptance tests are the interesting part, because they are written as properties rather than as features. A representative selection, in plain terms:</p>
+
+        <ul>
+          <li>The synchronisation from the system of record makes <strong>zero writes</strong> — verified against that system's own audit log, not against my code's intentions.</li>
+          <li><strong>Zero fuzzy automatic links.</strong> Every link between a person and a channel is either deterministic or comes from an explicit field. Probabilistic matches are never applied automatically; they go to a review list.</li>
+          <li><strong>Running the ingestion twice produces zero new rows.</strong> Idempotency, tested, not assumed.</li>
+          <li>On a replay of two weeks of real data, <strong>no thread where my own message was last</strong> is ever classified as awaiting my reply.</li>
+          <li>Threads ending in closing language are classified as naturally finished or as unclear — <strong>never as a lapse</strong>.</li>
+          <li>The same thread, run twice with no new inbound message, <strong>does not produce a second draft</strong>.</li>
+          <li>The version of the digest committed to the repository contains <strong>no message bodies and no draft bodies</strong>.</li>
+          <li>No outreach suggestion is ever made for someone marked as not wanting proactive contact, for a snoozed or archived record, or where the underlying date is simply missing — a missing date reports as <em>unknown</em>, never as <em>overdue</em>.</li>
+          <li>The pause command must stop the next scheduled run <strong>before any adapter starts</strong>.</li>
+        </ul>
+
+        <p>Read that list again as a design document, because that is what it is. Nearly every item is a prohibition, and each prohibition encodes a specific way the system could have quietly lied to me. "Missing data reports as unknown, never as overdue" is the difference between a tool that helps and a tool that manufactures guilt from an empty field.</p>
+
+        <h2>Humans do the linking that machines cannot prove</h2>
+
+        <p>Identity resolution is the part everyone wants to automate with a model, and it is the part I deliberately did not. Deterministic links — an exact name match, an explicit field in the directory — are applied automatically. Everything else becomes a suggestion in a review file.</p>
+
+        <p>I reviewed those suggestions in two sittings. Out of 118 partial matches I approved 80 and rejected 38. A rejection rate near one in three is the entire argument. Had those been applied automatically, roughly a third of them would have been wrong, and I would have had no idea which third. Coverage went from two and a half percent to thirty percent after the first deterministic pass, and past fifty percent after my review — real improvement, none of it guessed.</p>
+
+        <p>An approval also upgrades the record's stored method to "human confirmed", with full confidence. The database remembers not just what is linked but <em>how it came to be linked</em>, which means a future version can treat a human-confirmed link differently from an inferred one. Provenance in the schema is cheap at design time and impossible to retrofit honestly.</p>
+
+        <h2>Redaction, and the mistake I had to clean up</h2>
+
+        <p>The system writes a short memo into a repository as a record of each run. The first version of that memo contained message content. I noticed, decided it did not belong in version control, and rewrote the repository's history to purge it — then verified the purge by taking a fresh clone and searching it, rather than trusting the local result.</p>
+
+        <p>Two lessons. First, decide the redaction level of any artifact <em>before</em> the job starts writing it, and make the redacted-versus-full split a tested property, as in the acceptance list above. Second, when you clean up a leak in history, verify from a fresh clone. Your local copy is the one place where the old objects may still exist and where a search will happily reassure you.</p>
+
+        <h2>A kill switch and a boring schedule</h2>
+
+        <p>The whole thing runs once each morning, and it has a pause command whose only job is to make the next run exit before touching anything. The store lives outside any repository, with owner-only permissions, and it never syncs to a cloud folder.</p>
+
+        <p>That last detail sounds trivial and is not. A database being written by a background process, inside a folder being synchronised by a file-sync client, is a corrupted database in waiting. Keep live state out of synchronised folders. Back it up deliberately instead.</p>
+
+        <h2>The pattern, stated generally</h2>
+
+        <ol>
+          <li><strong>Version one is a read-only report</strong> that is useful by itself and cannot damage anything.</li>
+          <li><strong>Every phase has written acceptance tests, mostly phrased as prohibitions</strong>, and does not count as shipped until they pass.</li>
+          <li><strong>Automatic actions are limited to what is deterministic.</strong> Anything probabilistic becomes a suggestion for a human, and the human's decision is recorded as provenance.</li>
+          <li><strong>Redaction is designed before the first write</strong>, and the split between full and redacted output is a test.</li>
+          <li><strong>A pause command exists</strong> and is proven to stop the next run before any adapter starts.</li>
+        </ol>
+
+        <p>Applied to contacts this produced a system I trust with my relationships. The same five steps apply to your finances, your health records, your notes, or anything else where a silent wrong write costs more than a loud failure.</p>
+
+        <p class="manual-cta">Read next: <a href="the-mechanical-check-test.html">The Mechanical Check Test</a> — the rule that decides which of these steps an agent may ever perform alone.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer"><span>Nicholas Garcia · AI Engineering</span><a href="/ai-engineering/">Vertical</a></footer>
+  </body>
+</html>
