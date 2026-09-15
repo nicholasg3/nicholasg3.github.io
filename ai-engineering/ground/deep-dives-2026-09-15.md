@@ -91,10 +91,16 @@ harmless to publish — it restates the rule already published in the parent pie
 3. Default-voice rewrite pass — NOT RUN 2026-09-15. Droplet unreachable by SSH all session.
 4. AI-style detector pass — NOT RUN 2026-09-15 (same blocker).
 
-**Voice note.** All four pieces (parent + three) were rewritten on 2026-09-15 in a
-first-person build-log register — Simon Willison's blog as the reference voice — at Nick's
-instruction, replacing the operator-memo register of the first draft. No byline, name or
-branding other than Nick's appears on any page.
+**Voice note (revision 3, 2026-09-16).** Three registers were tried. The first draft used
+an operator-memo register; Nick rejected the tone. The second used a first-person build-log
+register (Simon Willison's blog as reference); Nick rejected that too. All four pieces are
+now written to **Associated Press style**: news register, inverted pyramid, third person,
+short paragraphs, no serial comma, AP numerals (spell out one through nine, figures for 10
+and above), AP time forms (2 a.m.), % with figures, down-style headlines. Titles were
+re-cast accordingly and the manifest, index cards and feed follow. Verified mechanically:
+zero serial commas, zero first-person pronouns outside quoted command examples, zero
+second-person address, zero dollar figures. No byline, name or branding other than Nick's
+appears on any page.
 
 **Promotion basis:** Nick's explicit instruction on 2026-09-15 to publish these and to
 update the parent page. Steps 3-4 remain outstanding for all four pieces; run them

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="One store holds rules, the other holds episodes, and the write gate on the episodic store rejects rule-shaped input and tells you where to put it instead.">
-    <title>Two Memory Stores That Are Not Allowed to Overlap | AI Engineering — Nicholas Garcia</title>
+    <meta name="description" content="One store holds rules and the other holds episodes. A write gate on the episodic store rejects rule-shaped entries and redirects them, which is what keeps either store useful.">
+    <title>Two memory stores, kept apart by design | AI Engineering — Nicholas Garcia</title>
     <link rel="stylesheet" href="/ai-strategy/styles.css">
   </head>
   <body>
@@ -28,21 +28,23 @@
       <header class="article-header">
         <div class="issue-kicker">September 2026</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="/ai-engineering/">Memory</a><a class="tag-chip" href="/ai-engineering/">Agents</a></div>
-        <h1>Two Memory Stores That Are Not Allowed to Overlap</h1>
-        <p>One store holds rules, the other holds episodes. The write gate on the episodic one rejects rule-shaped input and points it at the other store. Keeping them separate is most of what makes either of them useful.</p>
+        <h1>Two memory stores, kept apart by design</h1>
+        <p>One store holds rules. The other holds episodes. A write gate on the episodic store rejects rule-shaped entries and redirects them, and that separation is what keeps either store useful.</p>
       <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
       </header>
 
       <article class="article-body">
-        <p class="manual-cta">Part of <a href="automations-that-run-without-me.html">Sixteen Automations That Run Without Me</a>.</p>
+        <p class="manual-cta">Part of <a href="automations-that-run-without-me.html">16 scheduled jobs run without supervision</a>.</p>
 
-        <p>Every agent memory system I tried first was one big store. Write things into it, retrieve things out of it by similarity, inject the results into the prompt. They all degrade the same way: after a few months the retrieved context is a mix of "we decided to use the API rather than IMAP last August" and "never run <code>git add -A</code> in this repo", and the model treats both as equally binding facts about the present.</p>
+        <p>An agent fleet running on one server keeps its memory in two stores with separate write paths, separate lifecycles and a gate that prevents entries in one from reaching the other.</p>
 
-        <p>Those are different kinds of thing. One is a fact about what happened. The other is a rule that should govern what happens next. My fleet now keeps them in two stores with different lifecycles, different write paths and a gate that stops one leaking into the other.</p>
+        <p>Single-store designs degrade in a consistent way. After several months the retrieved context mixes statements of fact about past events with imperative rules about future behavior, and the model treats both as equally binding descriptions of the present.</p>
+
+        <p>Those are different kinds of information. One records what happened. The other governs what happens next.</p>
 
         <h2>The rules store</h2>
 
-        <p>One file per lesson. A kebab-case id matching the filename, a short frontmatter block, and an optional body for humans.</p>
+        <p>Each lesson is one file. The identifier matches the filename. A short structured header precedes an optional body written for people.</p>
 
         <pre><code>---
 id: git-add-own-files-only
@@ -56,63 +58,57 @@ last_applied: 2026-09-02
 
 Optional body: the incident that produced the rule.</code></pre>
 
-        <p>Six required fields, and every one of them earns its place.</p>
+        <p>Six fields are required, and each serves a purpose.</p>
 
-        <p><strong><code>trigger</code> separate from <code>rule</code></strong> is the design decision I would defend hardest. The trigger says when this applies; the rule says what to do. A store of imperatives with no triggers is a store of context-free commandments, and a model will apply them everywhere or nowhere.</p>
+        <p>Separating the trigger from the rule is the central decision. The trigger states when the rule applies; the rule states what to do. A store of imperatives without triggers is a set of context-free commands, and a model will apply them everywhere or nowhere.</p>
 
-        <p><strong><code>rule</code> is capped at two sentences.</strong> A lesson that needs a paragraph is not a lesson yet, it is an unfinished thought. The body exists for the paragraph, and the selector never reads the body.</p>
+        <p>The rule field is capped at two sentences. A lesson requiring a paragraph is not yet a lesson. The body exists for that paragraph, and the retrieval code never reads it.</p>
 
-        <p><strong><code>evidence</code> is required</strong> — an issue, a commit, a document. No anonymous folk wisdom. If nobody can point at what produced a rule, it should not be governing an agent's behaviour six months later.</p>
+        <p>Evidence is required: an issue, a commit or a document. Rules with no traceable origin should not govern agent behavior months later.</p>
 
-        <p><strong><code>last_applied</code></strong> is updated by the selector when a lesson is actually cited, which gives you a usage signal and, eventually, an eviction order.</p>
+        <p>The last-applied date is updated when a lesson is cited, which produces a usage signal and an eviction order.</p>
 
-        <h2>Four rules about curation</h2>
+        <h2>Four curation rules</h2>
 
-        <p>The store is a library, not a daemon. It has no schedule of its own; readers pull from it and writers propose to it.</p>
+        <p>The store is a library rather than a scheduled job. It has no schedule of its own. Readers pull from it and writers propose to it.</p>
 
-        <ol>
-          <li><strong>The active set is capped at 50 files.</strong> Hard cap. If promoting a new lesson would exceed it, the proposal must name what it would retire, defaulting to the least-recently-applied. A memory that grows forever is one whose retrieval quality falls forever.</li>
-          <li><strong>Writers never touch the active set.</strong> The emit path only ever writes to an inbox directory. This means any daemon can propose a lesson from a read-only reporting step without any risk to what the fleet currently believes.</li>
-          <li><strong>Promotion is manual.</strong> A human, or an interactive session — never a background daemon — moves a file from the inbox to active. The Knowledge Gardener role can propose; it cannot promote.</li>
-          <li><strong>Contradiction check before proposal.</strong> The gardener checks a candidate rule against the workspace's architecture map and decisions log for a direct contradiction and flags it in its report instead of proposing it. Two rules that contradict each other are worse than either one alone, because now the model picks.</li>
-        </ol>
+        <p>The active set is capped at 50 files. If promoting a candidate would exceed the cap, the proposal must name the file it would retire, defaulting to the least recently applied. A memory that grows without limit is one whose retrieval quality declines without limit.</p>
 
-        <p>Deduplication is by slug: the emit path refuses to write a candidate whose id already exists in either directory. You update the existing file by hand rather than accumulating near-duplicates. This is blunt and it works.</p>
+        <p>Writers never touch the active set. The write path only ever adds to an inbox directory. Any job can therefore propose a lesson from a read-only reporting step without affecting what the fleet currently treats as authoritative.</p>
 
-        <p>Reading is a selector call with tags, ranked by tag-match count then recency, token-bounded, active lessons only. There is a separate citation call that updates <code>last_applied</code> on the lessons you actually used — deliberately not the same call as selection, because selecting a lesson is not the same as applying one.</p>
+        <p>Promotion is manual. A person, or an interactive session, moves a file from the inbox to the active set. The knowledge gardener role proposes; it cannot promote.</p>
 
-        <p>The results get injected in three places: into spawned worker prompts, into the engine's per-cycle context, and into interactive sessions.</p>
+        <p>A contradiction check precedes any proposal. The gardener compares a candidate rule against the workspace's architecture map and decisions log, and flags a direct conflict in its report instead of proposing the rule. Two contradictory rules are worse than either alone, because the model then chooses between them.</p>
+
+        <p>Deduplication is by identifier. The write path refuses any candidate whose identifier already exists in either directory, so near-duplicates do not accumulate.</p>
+
+        <p>Retrieval ranks by tag-match count, then recency, and returns active lessons within a token limit. Citation is a separate call that updates the last-applied date on the lessons actually used, because selecting a lesson is not the same as applying one.</p>
+
+        <p>Results are injected in three places: into spawned worker prompts, into the engine's per-cycle context and into interactive sessions.</p>
 
         <h2>The episodic store</h2>
 
-        <p>The other store holds what happened, what was decided, and why. It has its own CLI, and my bridge to it never writes the store directly — it goes through that tool's own command, which means the store's format is never my problem.</p>
+        <p>The second store records what happened, what was decided and why. It has its own command-line tool, and the bridge to it never writes the store directly. All writes pass through that tool, so the storage format is not the bridge's concern.</p>
 
-        <p>The read path takes tags or a context string and returns a token-bounded, prompt-ready block. It is structurally incapable of writing: it never calls any of the mutating commands.</p>
+        <p>The read path accepts tags or a context string and returns a token-limited block ready for a prompt. It cannot write: it never calls any modifying command.</p>
 
-        <p>The write path is the interesting one, because it is mostly a quality gate. It accepts a memory only if it is:</p>
+        <p>The write path is primarily a quality gate. It accepts an entry only if the entry is an event or a decision accompanied by a reason, is not trivial, is not a near-duplicate of a recent entry and is not rule-shaped.</p>
 
-        <ul>
-          <li>an event or a decision <em>with a reason</em>,</li>
-          <li>not trivial,</li>
-          <li>not a near-duplicate of something recent,</li>
-          <li>and <strong>not rule-shaped</strong>.</li>
-        </ul>
+        <p>The final condition is the load-bearing one. An entry that is imperative and general — shaped like a rule rather than an event — is rejected, and the rejection points to the rules store's write path.</p>
 
-        <p>That last condition is the whole point of this post. If you try to save something imperative and general — the shape of a rule rather than the shape of an event — the gate rejects it and points you at the other store's emit path.</p>
+        <p>Without that gate the two stores converge within weeks. A rule gets written to the episodic store because the write is cheap and the store is available, and the same guidance then exists in two places under two lifecycles. The capped, curated, contradiction-checked store is no longer authoritative.</p>
 
-        <p>Without that gate, the two stores converge within weeks. Somebody writes a rule into the episodic store because it is right there and the write is cheap, and now the same guidance exists in two places with two lifecycles, and the capped, curated, contradiction-checked rules store is no longer the authority on anything.</p>
+        <h2>Capturing episodes automatically</h2>
 
-        <h2>Capturing episodes without remembering to</h2>
+        <p>The episodic store has a capture problem the rules store does not. Rules are written when something goes wrong, which is memorable. Episodes occur during ordinary work, which is not.</p>
 
-        <p>The episodic store has a capture problem the rules store does not. Rules get written when something goes wrong, which is memorable. Episodes need capturing during ordinary work, which nobody remembers to do.</p>
+        <p>Three mechanisms write to it. The engine saves at the end of every cycle, on both the memo-worthy and the not-memo-worthy paths, limited to a few saves a day through a lock-serialized counter.</p>
 
-        <p>Three things write to it. The engine saves at the end of every cycle, on both the memo-worthy and not-memo-worthy paths, rate-limited to a few saves a day through a lock-serialised counter.</p>
+        <p>Interactive sessions use a turn-end hook. An earlier design captured at session end, which does not work, because closing a laptop generates no event. A hook on every turn end with a time-based delay does work. The delay file is written the moment a checkpoint comes due, before the capture runs, so a failure during capture cannot produce a loop.</p>
 
-        <p>Interactive sessions use a turn-end hook. My first design captured at session end, which does not work: closing a laptop lid fires no event. A hook on every turn end with a time-based debounce does work, and the debounce file is touched the instant a checkpoint comes due — before the capture runs, not after — so a crash mid-capture cannot cause a loop.</p>
+        <p>A daily write cap applies, because the failure mode of automated capture is a store filled with routine entries of no value.</p>
 
-        <p>And there is a cap on writes per day, because the failure mode of automated capture is a store full of "ran the tests, they passed".</p>
-
-        <h2>The short version</h2>
+        <h2>Comparison</h2>
 
         <div class="article-table-wrap" role="region" aria-label="Comparison of the two stores" tabindex="0">
           <table class="article-table">
@@ -120,19 +116,19 @@ Optional body: the incident that produced the rule.</code></pre>
               <tr><th></th><th>Rules</th><th>Episodes</th></tr>
             </thead>
             <tbody>
-              <tr><td>Holds</td><td>What to do, and when</td><td>What happened, and why</td></tr>
-              <tr><td>Written by</td><td>Any daemon, to an inbox</td><td>Engine cycles and a turn-end hook</td></tr>
-              <tr><td>Promoted by</td><td>A human, manually</td><td>Nothing — it is all one tier</td></tr>
-              <tr><td>Size</td><td>Hard cap of 50 active</td><td>Rate-limited per day</td></tr>
+              <tr><td>Contents</td><td>What to do, and when</td><td>What happened, and why</td></tr>
+              <tr><td>Written by</td><td>Any job, to an inbox</td><td>Engine cycles and a turn-end hook</td></tr>
+              <tr><td>Promoted by</td><td>A person, manually</td><td>Not applicable — one tier</td></tr>
+              <tr><td>Size limit</td><td>50 active files</td><td>Daily write cap</td></tr>
               <tr><td>Quality control</td><td>Contradiction check before promotion</td><td>Write gate at save time</td></tr>
               <tr><td>Retrieval</td><td>Tag match, then recency</td><td>Keyword and tag, then recency</td></tr>
             </tbody>
           </table>
         </div>
 
-        <p>If you are building agent memory and you take one thing from this: decide whether each thing you are about to store is a rule or an episode, put them in different places, and make it <em>mechanically impossible</em> to write one into the other. Everything else about memory design is easier once those two are not fighting.</p>
+        <p>The operating principle is short. Determine whether each item is a rule or an episode, store them in separate places, and make writing one into the other mechanically impossible. The remaining design questions are easier once the two are not in conflict.</p>
 
-        <p class="manual-cta">Related, on the strategy side: <a href="/ai-strategy/posts/agents-need-memory-architecture.html">Agents Need a Memory Architecture</a>, a synthesis of what other people are hitting with the same problem.</p>
+        <p class="manual-cta">Related, on the strategy side: <a href="/ai-strategy/posts/agents-need-memory-architecture.html">Agents Need a Memory Architecture</a>, a synthesis of the same problem reported elsewhere.</p>
       </article>
     </main>
 

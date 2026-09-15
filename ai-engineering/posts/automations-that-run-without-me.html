@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="I have sixteen jobs running on a schedule with nobody watching them. Here is what each one does, the eight rules I wrote after they misbehaved, and the four times they broke.">
-    <title>Sixteen Automations That Run Without Me | AI Engineering — Nicholas Garcia</title>
+    <meta name="description" content="Sixteen scheduled jobs run on one server and a Mac without supervision. An inventory of what each does, the eight rules that govern them and the four failures that produced those rules.">
+    <title>16 scheduled jobs run without supervision | AI Engineering — Nicholas Garcia</title>
     <link rel="stylesheet" href="/ai-strategy/styles.css">
   </head>
   <body>
@@ -28,223 +28,221 @@
       <header class="article-header">
         <div class="issue-kicker">September 2026</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="/ai-engineering/">Agents</a><a class="tag-chip" href="/ai-engineering/">Operations</a><a class="tag-chip" href="/ai-engineering/">Productivity</a></div>
-        <h1>Sixteen Automations That Run Without Me</h1>
-        <p>I have sixteen jobs running on a schedule with nobody watching them. Here is what each one does, the eight rules I ended up writing after they misbehaved, and the four times they broke badly enough to change my mind about something.</p>
+        <h1>16 scheduled jobs run without supervision</h1>
+        <p>An inventory of the AI agents that run on one small server and a Mac, the eight rules that govern them and the four failures that produced those rules.</p>
       <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
       </header>
 
       <article class="article-body">
-        <p>Most posts about AI automation describe something the author did once, by hand, with a chat window open. This one is about things that ran last night and will run tonight whether or not I am paying attention.</p>
+        <p>Sixteen automated jobs now run on a schedule across one small cloud server and a Mac, with no person watching them. They review code, audit security, track costs, file issues, draft reports and escalate questions.</p>
 
-        <p>That turns out to be a completely different engineering problem. A prompt you type is a tool. A job on a schedule is a system, and a system needs a kill switch, a test, a budget and somebody to blame.</p>
+        <p>The infrastructure is ordinary. Most of the code is Python from the standard library. The scheduler is cron. A language model is called a few times a day. There is no platform team.</p>
 
-        <p>All of this runs on one small virtual server plus a Mac with some scheduled jobs. There is no platform team. Most of it is Python from the standard library, cron, and a model called a handful of times a day. I am writing it up because people keep asking me what to automate first, and my honest answer is much duller than the demos.</p>
+        <p>The engineering problem is not the model. A prompt typed into a chat window is a tool. A job on a schedule is a system, and a system needs a kill switch, a test, a spending limit and a defined owner.</p>
 
-        <h2>Why I moved it off my laptop</h2>
+        <p>This is the inventory, followed by the operating rules and the incidents behind them.</p>
 
-        <p>The first decision that mattered had nothing to do with models.</p>
+        <h2>The server decision came first</h2>
 
-        <p>I moved every scheduled job off my Mac and onto a small cloud server. Laptops are terrible hosts for automation: they sleep, they travel, they want you to unlock the screen before they will grant a permission, and mine had its disk synced by a file-sync client that will cheerfully corrupt a repository that a background process is halfway through writing.</p>
+        <p>Every scheduled job moved off the laptop to a cloud server early on. That decision had nothing to do with AI.</p>
 
-        <p>The server is cheap and never sleeps. The jobs that genuinely need my physical machine — the ones driving a browser I am already logged into — stayed on the Mac, and those are now the exceptions I have to think about.</p>
+        <p>Laptops sleep. They travel. They require a screen unlock before granting a system permission. The Mac's disk was also synchronized by a cloud file client, which can corrupt a repository that a background process is writing.</p>
 
-        <p>The second decision: the git repository is canonical, not the folder. My automation code used to live in a synced cloud folder. Two copies drifted, I edited both, and neither was right. Now the server holds the working copy, commits and pushes daily, and everything else pulls. I tarred up the old folder with a date in the filename and have not touched it since.</p>
+        <p>The server does not sleep and holds its own credentials. Jobs that require the physical machine stayed on the Mac. Those are the ones that drive a browser session that is already logged in.</p>
 
-        <h2>The sixteen jobs</h2>
+        <p>A second decision followed: the Git repository is authoritative, not the folder. Two copies of the automation code had drifted apart in a synchronized cloud folder, and neither was correct. The server now holds the working copy, commits and pushes daily, and every other machine pulls. The old folder was archived as a dated compressed file and is no longer edited.</p>
 
-        <h3>1. A nightly worker that turns issues into pull requests</h3>
+        <h2>The inventory</h2>
 
-        <p>Every night at 2am an agent reads my issue tracker, picks up the low-priority items I have labelled for automation, and works them into pull requests. It cannot push to the main branch.</p>
+        <h3>1. Issues to pull requests</h3>
 
-        <p>That last constraint is the whole design. The agent gets to write code; I merge it. The output is a diff I read over coffee, and the ones I do not like get closed at a cost of nothing but tokens.</p>
+        <p>An agent runs at 2 a.m. It reads the issue tracker, selects low-priority items labeled for automation and works them into pull requests. It cannot push to the main branch.</p>
 
-        <p>If you copy one thing from this post: give the agent a queue it does not control, and an output boundary it cannot cross. The queue is the backlog, the boundary is the pull request.</p>
+        <p>That restriction is the design. The agent writes code; a person merges it. Rejected work costs nothing but tokens.</p>
 
-        <h3>2. A code reviewer that reads what actually runs</h3>
+        <p>The pattern generalizes: give an agent a queue it does not control and an output boundary it cannot cross. The queue is the backlog. The boundary is the pull request.</p>
 
-        <p>A nightly job builds a census of the code my server really executes. It reads the crontab and the service manager, follows references one level deep from those entry points, and ranks the files by how many live paths reach them. A second file records, per script, the commit at which it was last reviewed.</p>
+        <h3>2. A code reviewer ranked by usage</h3>
 
-        <p>A file is due for review when it has commits newer than its last review. Priority is usage rank multiplied by staleness. The job reviews the top three files each night, one model call each, against a fixed rubric.</p>
+        <p>A nightly job builds a census of the code the server actually executes. It reads the crontab and the service manager, follows references one level deep from those entry points and ranks files by how many live paths reach them.</p>
 
-        <p>It fixes only what it can prove. If a file has a mechanical verifier — a syntax check, a nearby self-test, a dry-run mode — the job writes a minimal patch, applies it to a backup-protected copy and runs the verifier. If the verifier passes it commits and closes the issue. If it fails, the patch is reverted and the finding gets filed anyway, tagged as attempted. Everything else becomes an issue for the nightly worker in item 1, or for me.</p>
+        <p>A second file records the commit at which each script was last reviewed. A file is due when it has commits newer than that review. Priority is usage rank multiplied by staleness.</p>
 
-        <p>The interesting part is not the model, it is the ranking. I cannot review everything, and a model reading random files is a waste. Rank by what runs, then by what changed.</p>
+        <p>The job reviews the three highest-priority files each night, one model call each, against a fixed list of six defect categories.</p>
 
-        <h3>3. A monthly security check with no model in it</h3>
+        <p>It repairs only what it can verify. If a file has a mechanical check — a syntax test, a nearby self-test, a dry-run mode — the job writes a minimal patch, applies it to a backed-up copy and runs the check. A passing check produces a commit and a closed issue. A failing check reverts the patch and files the finding, marked as attempted.</p>
 
-        <p>Once a month a script checks six things: that my credential files are readable only by me, that nothing secret-shaped has landed in a commit in the last month, that every listening port is on an allowlist, that the pages behind authentication are still behind authentication, how many security updates are pending, and that password and root SSH logins are still off.</p>
+        <h3>3. A monthly security audit with no model</h3>
 
-        <p>Zero model calls. Every check is a regex or a system command, so it is free, fast and identical every time.</p>
+        <p>A script runs on the first of each month and checks six things: that credential files are readable only by their owner, that no secret-shaped string entered a commit in the past month, that every listening port appears on an approved list, that authenticated pages remain authenticated, how many security updates are pending, and that password and root remote logins are disabled.</p>
 
-        <p>I originally wrote it to run daily and that was a mistake. These checks barely change. A report that is identical thirty times a month stops being read, which means you skim the one that is different too. Monthly, it is an event, and I read it. The one test I care most about asserts that the report does <em>not</em> contain the token it found.</p>
+        <p>There are no model calls. Every check is a regular expression or a system command, so results are identical when nothing changes.</p>
 
-        <h3>4. A weekly chronicler that turns exhaust into a record</h3>
+        <p>The job originally ran daily. That was a mistake. The checks rarely change, and a report that is identical 30 times a month stops being read. Monthly, it gets read. A message reaches the operator's phone only when a check fails.</p>
 
-        <p>Sunday evening, a job collects the week's commits, run logs and memos into a durable record, then nominates the handful of things worth writing about later. It never publishes anything.</p>
+        <p>One rule governs the output: the report names a file and a line number, never the secret it found. A scanner that copies secrets into its own report creates a second, less protected copy of every secret on the machine.</p>
 
-        <p>The clever bit is capture, not synthesis. I can drop a <code>[chronicle]</code> marker into any commit message, and there is a one-line command that appends a note from wherever I am. Tagging costs two seconds at the moment something interesting happens. Synthesis happens on Sunday, by which point I would otherwise have forgotten all of it.</p>
+        <h3>4. A weekly record of operational exhaust</h3>
 
-        <p>I did this backwards for about a year, trying to remember on Friday what Tuesday had been about.</p>
+        <p>A job runs Sunday evening. It collects the week's commits, run logs and memos into a durable record, then nominates the few items worth writing about later. It publishes nothing.</p>
 
-        <h3>5. An orchestrator that proposes its own work</h3>
+        <p>Capture, not synthesis, is the working part. A marker dropped into any commit message tags an event as it happens, and a one-line command appends a note from anywhere. Tagging costs two seconds at the moment of interest. Synthesis waits for Sunday.</p>
 
-        <p>A daemon watches for signals — stale logs, open items in a citations file, issues waiting for an agent, escalations from other jobs — scores them, and proposes small bounded projects. Then it sorts each one into a tier.</p>
+        <h3>5. A daemon that proposes its own work</h3>
+
+        <p>A daemon watches for signals: stale logs, open items in a citation file, issues awaiting an agent, escalations from other jobs. It scores them, proposes small bounded projects and sorts each into a tier.</p>
 
         <div class="article-table-wrap" role="region" aria-label="Autonomy tiers" tabindex="0">
           <table class="article-table">
             <thead>
               <tr>
                 <th>Tier</th>
-                <th>What happens</th>
-                <th>How something lands here</th>
+                <th>Action</th>
+                <th>Admission test</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>A</td>
-                <td>It just runs</td>
-                <td>There is a command whose exit code proves it worked.</td>
+                <td>Runs unattended</td>
+                <td>A command exists whose exit code proves the result.</td>
               </tr>
               <tr>
                 <td>B</td>
-                <td>Opens an issue, sends one line to my phone</td>
-                <td>Someone has to judge it. No mechanical proof available.</td>
+                <td>Opens an issue and sends one message to a phone</td>
+                <td>A person must judge the outcome.</td>
               </tr>
               <tr>
                 <td>C</td>
-                <td>Never happens</td>
-                <td>Publishing, sending mail, touching secrets, deleting things.</td>
+                <td>Never runs</td>
+                <td>Publishing, sending mail, handling secrets, deleting data.</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p>I use that test constantly now, well beyond this daemon. "Is there a cheap mechanical check that proves this worked?" answers the autonomy question for almost anything. If yes, let it run. If no, the job is to prepare my decision, not to make it.</p>
+        <p>The tier test applies well beyond this daemon: is there a cheap mechanical check that proves the task worked? If so, the task can run unattended. If not, the task prepares a decision rather than making one.</p>
 
-        <p>Tier C is implemented as a missing capability rather than a blocked one: the daemon can only propose projects that exist in its config file, and no template there publishes, mails or deletes. A job cannot decide to do something it has no vocabulary for.</p>
+        <p>Tier C is enforced as a missing capability rather than a blocked one. The daemon can propose only projects that exist in its configuration file, and no template there publishes, mails or deletes. A job cannot choose to do something it has no vocabulary for.</p>
 
-        <h3>6. A contacts database that started as a read-only report</h3>
+        <h3>6. A contacts database that began read-only</h3>
 
-        <p>A local SQLite database links the people in my directory to their email addresses, phone numbers and profiles, and to the threads I have actually had with them. It refreshes every morning.</p>
+        <p>A local database links the people in a directory to their email addresses, phone numbers and profiles, and to the threads associated with them. It refreshes each morning.</p>
 
-        <p>Version one did exactly one thing: print how much of the directory had a usable channel, and where the gaps were. Read-only, no network writes, safe to run a hundred times. It told me my coverage was 2.5%, which was both embarrassing and precisely what I needed to know before building anything on top of that data.</p>
+        <p>The first version did one thing: report how much of the directory had a usable contact channel and where the gaps were. It made no writes. Coverage was 2.5%, a figure that had to be known before anything was built on that data.</p>
 
-        <p>Everything else got added afterwards, one tested phase at a time, with acceptance tests written mostly as prohibitions. Of 118 suggested matches I reviewed by hand, I rejected 38. That rejection rate is the reason nothing fuzzy is ever applied automatically.</p>
+        <p>Later phases each shipped with acceptance tests, most written as prohibitions. Of 118 suggested identity matches reviewed by hand, 38 were rejected. That rejection rate is why no probabilistic match is applied automatically.</p>
 
-        <h3>7. A monitor for things that stopped happening</h3>
+        <h3>7. A monitor for events that stopped</h3>
 
-        <p>One scheduled job flags email threads that have gone quiet — messages I received, did not answer, and have now aged past a threshold.</p>
+        <p>One job flags email threads that have gone quiet — messages received, not answered and now past a threshold.</p>
 
-        <p>Most alerting watches for events. The expensive failures in a personal system are absences: the reply you never sent, the job that silently stopped running, the invoice nobody chased. Watching for absence is harder to build and worth considerably more.</p>
+        <p>Most alerting watches for events. The costly failures in a personal system are absences: the reply never sent, the job that silently stopped, the invoice never chased. Monitoring for absence is harder to build and worth more.</p>
 
-        <h3>8. An offline mirror of my notes</h3>
+        <h3>8. An offline mirror of the notes system</h3>
 
-        <p>My notes and databases live in a hosted tool. A job mirrors the whole workspace to plain markdown on disk — roughly a thousand pages across a couple of dozen databases — so agents can read it cheaply without hammering an API.</p>
+        <p>Notes and databases live in a hosted tool. A job mirrors the workspace to plain text files on disk, roughly 1,000 pages across about two dozen databases, so agents can read it without repeatedly calling an interface.</p>
 
-        <p>I got burned by this once and now have a rule written down: the mirror is a snapshot, not the truth. When currency matters, go to the live API. A stale mirror that looks authoritative is worse than no mirror.</p>
+        <p>One rule governs the mirror: it is a snapshot, not the truth. When currency matters, the job queries the live service. A stale mirror that appears authoritative is worse than no mirror.</p>
 
-        <h3>9. My phone as the approval queue</h3>
+        <h3>9. The phone as approval queue</h3>
 
-        <p>Every job that needs a human decision sends one line to a private chat channel with the context and the options, and I answer there. The same channel is a bridge to a coding agent on the server, locked to my account, so I can drive the whole thing from a train.</p>
+        <p>Every job that requires a human decision sends one line to a private chat channel with the context and the options. The same channel bridges to a coding agent on the server and is restricted to a single account.</p>
 
-        <p>Put the decision where you already are. An approval queue on a dashboard nobody opens is not an approval queue, it is a backlog.</p>
+        <p>An approval queue on a dashboard nobody opens is not a queue. It is a backlog.</p>
 
-        <h3>10. A public page that expires its own contents</h3>
+        <h3>10. A public page that expires its own entries</h3>
 
-        <p>My public profile carries a list of opportunities I am circulating for other people. Each entry in a small YAML file has a deadline, and a daily scheduled action re-renders the page and drops anything past its date.</p>
+        <p>A public profile page lists opportunities circulated for other people. Each entry carries a deadline in a small data file. A daily scheduled action rebuilds the page and drops anything past its date.</p>
 
-        <p>I add an entry and forget about it. The system forgets it too, on time. Putting expiry in the data is the cheapest maintenance strategy I know.</p>
+        <p>Expiry stored in the data is the cheapest maintenance available. Anything published with a natural end date should carry that date in its record.</p>
 
         <h3>11. Automatic failover between model providers</h3>
 
-        <p>A small daemon watches my usage against my subscription's rate window. At 80% it routes through a metered provider instead, and when the window resets it switches back.</p>
+        <p>A daemon tracks usage against a subscription's rate window. At 80% it routes traffic through a metered provider. When the window resets it switches back.</p>
 
-        <p>I packaged this one up and put it on PyPI, because the problem is not remotely personal — anyone running agents on a subscription hits the same wall halfway through a task.</p>
+        <p>The tool was packaged and published to the Python package index, because the problem is general. Anyone running agents on a subscription reaches the same limit partway through a task.</p>
 
-        <p>The general pattern is graceful degradation: your automation should have a worse-but-working mode and should enter it by itself.</p>
+        <p>The pattern is graceful degradation. An automated system should have a reduced but working mode and should enter it on its own.</p>
 
-        <h3>12. A publishing gate that blocks my own agents</h3>
+        <h3>12. A publishing gate</h3>
 
-        <p>Nothing reaches this site until two artifacts exist: a grounding brief mapping every load-bearing claim to a source somebody actually checked, and a recorded score from a detector that flags machine-sounding prose. The checklist gets appended to the brief with dates. No checklist, no publication.</p>
+        <p>Nothing reaches this site until two documents exist: a grounding brief mapping every load-bearing claim to a verified source, and a recorded score from a detector that flags machine-sounding prose. A dated checklist is appended to the brief. Without the checklist, there is no publication.</p>
 
-        <p>If you let agents write under your name, the quality gate has to be mechanical and has to sit in front of the publish step. Good intentions afterwards do not work; I have the takedown to prove it (item 3 in the failures below).</p>
+        <p>When agents write under a person's name, the quality gate has to be mechanical and has to sit before the publishing step.</p>
 
         <h3>13. Heartbeats and backups</h3>
 
-        <p>A heartbeat job reports that each machine is alive. A backup bridge copies what matters off the machine holding it. Both are boring and both have caught real problems. The heartbeat has also produced spectacular false alarms, which is its own story below.</p>
+        <p>A heartbeat job confirms each machine is running. A backup bridge copies critical data off the machine that holds it. Both have caught real failures. The heartbeat has also produced false alarms, described below.</p>
 
-        <h3>14. An org chart, with an escalation path</h3>
+        <h3>14. An org chart with an escalation path</h3>
 
-        <p>Around job number eight I lost track of what everything was for. So each job now has a title, a manager and a one-sentence charter in a version-controlled JSON file: Chief of Staff, Managing Editor, Creative Director, Knowledge Gardener, Fleet Health Officer, Cost Controller and so on.</p>
+        <p>Each job carries a title, a manager and a one-sentence charter in a version-controlled file. The titles include chief of staff, managing editor, creative director, knowledge gardener, fleet health officer and cost controller.</p>
 
-        <p>The part that earns its keep is the asks ledger. A role that hits a decision it cannot make files one question — one sentence, 400 characters, addressed to its manager by default — and carries on without blocking. A sweep twice a day moves anything unanswered for 48 hours one level up the chart. When it reaches me, I get a Telegram line.</p>
+        <p>The mechanism that earns its place is the questions ledger. A role that reaches a decision it cannot make files one question — a single sentence, 400 characters, addressed to its manager by default — and continues working. A sweep twice a day moves anything unanswered for 48 hours one level up the chart. Questions that reach the top generate a phone message.</p>
 
-        <p>I get fewer questions than I would with a flat design, and the ones I get are the ones nobody else could answer. <a href="agents-with-an-org-chart.html">The chart, the CLI, and the status bug that told me seven of ten employees were broken</a> is its own post.</p>
+        <p>The result is fewer questions than a flat design produces, and the ones that arrive are the ones nobody else could answer. <a href="agents-with-an-org-chart.html">Full description of the chart, the command-line tool and the status bug it exposed.</a></p>
 
-        <h3>15. Two memory stores that may not overlap</h3>
+        <h3>15. Two memory stores kept separate</h3>
 
-        <p>One store holds rules: one file per lesson, a trigger and a rule and required evidence, capped at 50 active files, promoted only by a human. The other holds episodes — what happened, what was decided, why.</p>
+        <p>One store holds rules: one file per lesson, each with a trigger, a rule and required evidence, capped at 50 active files and promoted only by a person. The other holds episodes — what happened, what was decided and why.</p>
 
-        <p>The episodic store's write gate rejects rule-shaped input and points it at the other store. Without that gate the two converge within weeks and the curated one stops being the authority on anything. <a href="two-memory-stores.html">Longer version here</a>.</p>
+        <p>The episodic store's write gate rejects rule-shaped input and redirects it to the other store. Without that gate the two converge within weeks, and the curated store stops being authoritative. <a href="two-memory-stores.html">Full description.</a></p>
 
-        <h3>16. A weekly job that looks at the other jobs</h3>
+        <h3>16. A weekly review of the other jobs</h3>
 
-        <p>The last one exists only to read the others — their logs, their escalations, their skipped runs — and propose changes.</p>
+        <p>The last job reads the others — their logs, their escalations, their skipped runs — and proposes changes.</p>
 
-        <p>It also reads its own session transcripts, which is a trick worth stealing: coding agents already write every message, tool call and error to disk, so the friction log you need already exists. <a href="bot-that-reads-its-own-transcripts.html">That loop is written up separately</a> — one change per cycle, gated on a runnable check, and it halts itself when the changes stop helping.</p>
+        <p>It also reads its own session transcripts. Coding agents already write every message, tool call and error to disk, so the record of friction already exists. <a href="bot-that-reads-its-own-transcripts.html">That loop is described separately:</a> one change per cycle, gated on a runnable check, halting itself when the changes stop helping.</p>
 
-        <p>A fleet this size develops problems no individual job can see: two of them fighting over the same file, one that has silently skipped every run since a refactor, three sending nearly identical notifications at 8am.</p>
+        <p>A group of this size develops problems no single job can detect: two jobs contending for the same file, one that has skipped every run since a refactor, three sending nearly identical notifications at 8 a.m.</p>
 
-        <h2>Eight rules I wrote after things went wrong</h2>
+        <h2>Eight operating rules</h2>
 
-        <p>None of these are theory. Each one exists because something misbehaved, and they now apply to every scheduled job I add.</p>
-
-        <ol>
-          <li><strong>Observe and propose, never act.</strong> A job reads, analyses and files findings. It does not edit code outside its own directory, send outward communication, or spend money. Fixes go through the issue tracker where a human or the nightly worker picks them up.</li>
-          <li><strong>Exactly two kinds of output: an issue and a report.</strong> Capped at five new issues per run, with a duplicate search first. A job that can produce arbitrary output produces noise, and noise is how you stop reading your own system.</li>
-          <li><strong>The kill switch is one file.</strong> A file called <code>STOPPED</code> in the job's directory makes every entry point exit immediately and successfully. No flags, no config change, no redeploy. At midnight you want one command.</li>
-          <li><strong>A self-test has to pass before anything gets a schedule.</strong> Hermetic — no model calls, no network writes. If it cannot prove itself in a sandbox it does not get a cron line.</li>
-          <li><strong>Installers are idempotent and take a lock.</strong> Several jobs install their own schedules. Unlocked read-modify-write on a shared crontab loses entries, quietly. Use a file lock.</li>
-          <li><strong>No model call where parsing will do.</strong> The infrastructure checks have zero. The jobs that do use a model name it, carry a per-run cost cap and log what the run actually cost.</li>
-          <li><strong>Never <code>git add -A</code>.</strong> This is the single most dangerous line in an automated repository, because other daemons keep the working tree dirty. Each job commits only its own paths, rebases before pushing, retries once, then stops and logs.</li>
-          <li><strong>Write down state against signal.</strong> Every job carries a small table of failure modes. A signal arriving in a state nobody enumerated is how the first half-dozen bugs in my system happened: the message that came in during quiet hours, the directive that arrived while the queue was empty, the heartbeat that fired during a reboot.</li>
-        </ol>
-
-        <h2>Four things that broke</h2>
-
-        <p>An inventory with no failures in it is marketing. These are the four that changed my rules.</p>
-
-        <p><strong>A refactor deleted the scripts a running loop depended on.</strong> The loop did not stop. It crash-looped for about seven hours overnight, burning budget and filling the logs. Nothing checked that the thing it was about to execute still existed. The fix was not a smarter loop — it was a pre-flight existence check and a crash-loop counter that trips the kill switch.</p>
-
-        <p><strong>A scheduler starved its own priority work.</strong> Items I had explicitly marked as directives kept losing to routine scoring, so the urgent work never ran. The fix was an additive priority boost instead of a multiplicative one, plus a manual override that ignores quiet hours — in <em>both</em> the gate that checks the schedule and the gate that checks the cycle. I only fixed one of those the first time, which is a very ordinary way to ship half a fix.</p>
-
-        <p><strong>A draft went live because static hosts do not have staging.</strong> I published to GitHub Pages and assumed an unlisted page was a private page. It is not. Anyone with the URL can read it, and a catalogue link makes the URL public. I had to do an emergency takedown. There is now a CI check that fails any push putting a hidden page in the published directory, drafts live behind a gate in a different directory, and I am not allowed to weaken the check to make a build pass — only to move the content.</p>
-
-        <p><strong>A network change gave me 42 hours of false alarms.</strong> A routing redirect I had added for convenience started intercepting connections and hanging them. Every remote check timed out and my monitoring reported half my machines as down. They were fine the entire time. The redirect is gone and there is a note explaining why it must not come back. False negatives make you miss outages; false positives make you stop believing your monitors, which is worse.</p>
-
-        <h2>What I would build first</h2>
-
-        <p>If you want to start, the order matters more than the tooling.</p>
+        <p>Each rule followed an incident. All apply to every scheduled job.</p>
 
         <ol>
-          <li><strong>One read-only report, on a schedule, delivered where you already look.</strong> Coverage gaps in your contacts, unanswered messages older than a week, subscriptions renewing next month. No writes. It will be wrong at first, and finding that out is the point.</li>
-          <li><strong>One queue with a boundary.</strong> A list of small tasks the agent may work on and a place it has to stop — a pull request, a draft, an item in an inbox. Do not let your first automation both decide and act.</li>
-          <li><strong>One deterministic check, monthly.</strong> Permissions, expiries, backups, listening ports. No model. It will still be correct in a year, when the fashionable parts have been rewritten twice.</li>
+          <li><strong>Observe and propose, do not act.</strong> A job reads, analyzes and files findings. It does not edit code outside its own directory, send outward communication or spend money. Fixes move through the issue tracker.</li>
+          <li><strong>Two kinds of output only: an issue and a report.</strong> Capped at five new issues per run, with a duplicate search first. A job that can produce arbitrary output produces noise.</li>
+          <li><strong>The kill switch is one file.</strong> A file named STOPPED in a job's directory makes every entry point exit immediately and successfully. No flags, no configuration change, no redeployment.</li>
+          <li><strong>A self-test must pass before a job gets a schedule.</strong> No model calls, no network writes. A job that cannot verify itself in a sandbox does not get a cron entry.</li>
+          <li><strong>Installers are idempotent and take a lock.</strong> Several jobs install their own schedules. Unlocked edits to a shared crontab silently lose entries.</li>
+          <li><strong>No model call where parsing is sufficient.</strong> The infrastructure checks use none. Jobs that use a model name it, carry a per-run spending limit and log what the run cost.</li>
+          <li><strong>Never stage all changes at once.</strong> A blanket "add all" commit is the most dangerous line in an automated repository, because other jobs keep the working tree modified. Each job commits only its own paths.</li>
+          <li><strong>Document state against signal.</strong> Each job carries a table of failure modes. A signal arriving in an unlisted state produced the first several bugs in this system.</li>
         </ol>
 
-        <p>After that, apply the tier test to everything you are tempted to automate. If a cheap mechanical check can prove the result, let it run unattended. If not, have it prepare the decision and put it on your phone. Nearly every bad automation I have built broke that one line, and nearly every good one respects it.</p>
+        <h2>Four failures</h2>
 
-        <h2>Three of these in depth</h2>
+        <p><strong>A refactor deleted the scripts a running loop depended on.</strong> The loop did not stop. It crash-looped for about seven hours overnight, consuming budget and filling logs. Nothing verified that the target still existed. The fix was a pre-flight existence check and a crash-loop counter that triggers the kill switch.</p>
 
-        <p>Each of these takes one item above and goes into enough detail to build your own version — the data structures, the caps, the rules that took real failures to discover.</p>
+        <p><strong>A scheduler starved its own priority work.</strong> Items marked as directives lost to routine scoring, so urgent work never ran. The fix was an additive priority increase rather than a multiplicative one, plus a manual override that ignores quiet hours in both the schedule gate and the cycle gate. Only one gate was corrected on the first attempt.</p>
+
+        <p><strong>A draft page went live because static hosts have no staging.</strong> An unlisted page on a static host is not private. Anyone with the address can read it, and a catalog link makes the address public. An emergency removal followed. A continuous integration check now fails any change that places a hidden page in the published directory.</p>
+
+        <p><strong>A network change produced 42 hours of false alarms.</strong> A routing redirect began intercepting connections and holding them open. Remote checks timed out and the monitoring reported half the machines as down. All were running. The redirect was removed. False negatives hide outages. False positives destroy confidence in the monitor, which is worse.</p>
+
+        <h2>Where to start</h2>
+
+        <p>The order matters more than the tools.</p>
+
+        <ol>
+          <li><strong>One read-only report on a schedule,</strong> delivered where the operator already looks. Contact gaps, unanswered messages, renewals due next month. No writes.</li>
+          <li><strong>One queue with a boundary.</strong> A list of small tasks and a place the agent must stop. A first automation should not both decide and act.</li>
+          <li><strong>One deterministic check, monthly.</strong> Permissions, expiry dates, backups, open ports. No model. It will still be correct in a year.</li>
+        </ol>
+
+        <p>After that, the tier test applies. Where a cheap mechanical check proves the result, a task can run unattended. Where none exists, the task prepares a decision.</p>
+
+        <h2>Related coverage</h2>
 
         <ul>
-          <li><a href="agents-with-an-org-chart.html"><strong>I Gave My Agents an Org Chart</strong></a> — job titles and reporting lines in a JSON file, a CLI for asking your manager a question, the 48-hour escalation sweep, and why a role that finds problems is a role doing its job.</li>
-          <li><a href="bot-that-reads-its-own-transcripts.html"><strong>The Bot That Reads Its Own Transcripts</strong></a> — mining friction out of an assistant's own session logs, one change per cycle, gating on a runnable check, and a ledger that lets the loop halt itself.</li>
-          <li><a href="two-memory-stores.html"><strong>Two Memory Stores That Are Not Allowed to Overlap</strong></a> — rules versus episodes, a cap of 50, manual promotion, contradiction checks, and the write gate that keeps one out of the other.</li>
+          <li><a href="agents-with-an-org-chart.html"><strong>An org chart for 11 software agents</strong></a> — job titles and reporting lines in a version-controlled file, a tool for asking a manager a question, a 48-hour escalation sweep and the status bug that misreported seven of 10 agents as broken.</li>
+          <li><a href="bot-that-reads-its-own-transcripts.html"><strong>An assistant that mines its own transcripts</strong></a> — friction signals from session logs, one change per cycle, a runnable check as the gate and a ledger that halts the loop.</li>
+          <li><a href="two-memory-stores.html"><strong>Two memory stores, kept apart by design</strong></a> — rules against episodes, a cap of 50 active files, manual promotion and a write gate that rejects rule-shaped input.</li>
         </ul>
 
-        <p><em>Everything here is a system I run myself. I have left out anything touching my employer's mail, my finances, or work that has not shipped yet.</em></p>
+        <p><em>This account covers systems the author runs personally. Work involving an employer, client finances or unreleased ventures is excluded.</em></p>
       </article>
     </main>
 
