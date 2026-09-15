@@ -6,18 +6,39 @@
     <description>AI Engineering: agent orchestration, fleet operations, and the tooling behind this site.</description>
     <language>en-us</language>
     <item>
-      <title>The hard part of running 11 AI agents was management</title>
+      <title>Fourteen Automations That Run Without Me</title>
       <link>https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</link>
       <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</guid>
-      <description>A status board reported that seven of 10 agents had failed. All were working. Across a year of running a small autonomous fleet, the costly failures were organizational rather than technical, and the fixes were job descriptions, an escalation clock and a limit on how much any agent may say.</description>
-      <pubDate>Wed, 16 Sep 2026 02:30:00 GMT</pubDate>
+      <description>Fourteen automations that run on a schedule without supervision, the eight rules that keep them safe, and the four ways they broke.</description>
+      <pubDate>Tue, 15 Sep 2026 10:30:00 GMT</pubDate>
     </item>
     <item>
-      <title>What 11 AI agents are not allowed to do</title>
-      <link>https://nicholasg3.github.io/ai-engineering/posts/what-the-agents-cannot-do.html</link>
-      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/what-the-agents-cannot-do.html</guid>
-      <description>A code-merging agent has been built, tested and scheduled, and has never merged anything, because a file it requires can only be created by a person. Autonomy in this fleet is granted by proof and prohibitions are enforced as missing capabilities.</description>
-      <pubDate>Wed, 16 Sep 2026 02:00:00 GMT</pubDate>
+      <title>The Mechanical Check Test</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/the-mechanical-check-test.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/the-mechanical-check-test.html</guid>
+      <description>One question decides whether an agent may act alone: can a cheap mechanical check prove the result? Here is how that test is wired into a running daemon.</description>
+      <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Review What Actually Runs</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/review-what-actually-runs.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/review-what-actually-runs.html</guid>
+      <description>An agent that reviews code every night needs to know which code matters. Rank by what the machine actually executes, times how long since anyone looked.</description>
+      <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>A Security Check With No Model In It</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/security-check-with-no-model.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/security-check-with-no-model.html</guid>
+      <description>Six checks, once a month, no model calls, read-only, and never print the secret. The most reliable job in my fleet is the one with no intelligence in it.</description>
+      <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Ship the Read-Only Report First</title>
+      <link>https://nicholasg3.github.io/ai-engineering/posts/ship-the-read-only-report-first.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/ship-the-read-only-report-first.html</guid>
+      <description>How to automate something you care about — your contacts, your obligations — starting with a job that cannot write anything, and adding write access one proven phase at a time.</description>
+      <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>

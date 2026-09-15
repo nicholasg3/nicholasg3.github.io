@@ -24,7 +24,7 @@
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="issue-kicker">Vertical · AI Engineering</div>
-      <h1 id="hero-title">Agent orchestration, reported in the open</h1>
+      <h1 id="hero-title">Agent orchestration, run in the open</h1>
       <p class="hero-copy">This vertical covers agent orchestration, fleet operations, and the tooling behind this site — the build logs, failure modes, and operating decisions of running a small fleet of AI agents day to day. Every published piece describes something actually run, not a plan.</p>
       <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
     </section>
@@ -32,31 +32,73 @@
     <section class="latest" aria-label="AI Engineering pieces">
       <div class="section-label">Latest</div>
 
-        <article data-tags="agents management" class="feature-card">
+        <article data-tags="agents operations productivity" class="feature-card">
           <div class="feature-meta">
-            <span>Analysis</span>
-            <span>9 min read</span>
+            <span>Field inventory</span>
+            <span>15 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Management</span></div>
-          <h2><a href="posts/automations-that-run-without-me.html">The hard part of running 11 AI agents was management</a></h2>
-          <p>A status board reported that seven of 10 agents had failed. All were working. Across a year of running a small autonomous fleet, the costly failures were organizational rather than technical, and the fixes were job descriptions, an escalation clock and a limit on how much any agent may say.</p>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span><span class="tag-chip">Productivity</span></div>
+          <h2><a href="posts/automations-that-run-without-me.html">Fourteen Automations That Run Without Me</a></h2>
+          <p>Fourteen automations that run on a schedule without supervision, the eight rules that keep them safe, and the four ways they broke.</p>
           <div class="decision-strip">
             <strong>Reader decision</strong>
-            <span>Can the system tell a failing agent from an agent reporting failure?</span>
+            <span>For this task, is there a cheap mechanical check that proves the result? If not, the agent prepares the decision, it does not make it.</span>
           </div>
         </article>
 
-        <article data-tags="agents governance" class="feature-card">
+        <article data-tags="agents autonomy" class="feature-card">
           <div class="feature-meta">
-            <span>Analysis</span>
-            <span>6 min read</span>
+            <span>Design note</span>
+            <span>7 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Governance</span></div>
-          <h2><a href="posts/what-the-agents-cannot-do.html">What 11 AI agents are not allowed to do</a></h2>
-          <p>A code-merging agent has been built, tested and scheduled, and has never merged anything, because a file it requires can only be created by a person. Autonomy in this fleet is granted by proof and prohibitions are enforced as missing capabilities.</p>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Autonomy</span></div>
+          <h2><a href="posts/the-mechanical-check-test.html">The Mechanical Check Test</a></h2>
+          <p>One question decides whether an agent may act alone: can a cheap mechanical check prove the result? Here is how that test is wired into a running daemon.</p>
           <div class="decision-strip">
             <strong>Reader decision</strong>
-            <span>Is a forbidden action blocked by a rule that could be disabled, or absent as a capability?</span>
+            <span>Is there a command whose exit code proves this task worked? If not, the agent prepares your decision — it does not make it.</span>
+          </div>
+        </article>
+
+        <article data-tags="code-review agents operations" class="feature-card">
+          <div class="feature-meta">
+            <span>Design note</span>
+            <span>7 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Code Review</span><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span></div>
+          <h2><a href="posts/review-what-actually-runs.html">Review What Actually Runs</a></h2>
+          <p>An agent that reviews code every night needs to know which code matters. Rank by what the machine actually executes, times how long since anyone looked.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which files does your scheduler actually execute, and when did anyone last read them?</span>
+          </div>
+        </article>
+
+        <article data-tags="security operations" class="feature-card">
+          <div class="feature-meta">
+            <span>Design note</span>
+            <span>6 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Security</span><span class="tag-chip">Operations</span></div>
+          <h2><a href="posts/security-check-with-no-model.html">A Security Check With No Model In It</a></h2>
+          <p>Six checks, once a month, no model calls, read-only, and never print the secret. The most reliable job in my fleet is the one with no intelligence in it.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Which of your scheduled jobs would still be correct in a year with the API down?</span>
+          </div>
+        </article>
+
+        <article data-tags="personal-data agents operations" class="feature-card">
+          <div class="feature-meta">
+            <span>Design note</span>
+            <span>6 min read</span>
+          </div>
+          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Personal Data</span><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span></div>
+          <h2><a href="posts/ship-the-read-only-report-first.html">Ship the Read-Only Report First</a></h2>
+          <p>How to automate something you care about — your contacts, your obligations — starting with a job that cannot write anything, and adding write access one proven phase at a time.</p>
+          <div class="decision-strip">
+            <strong>Reader decision</strong>
+            <span>Can your version one be described in one sentence and be incapable of damage?</span>
           </div>
         </article>
 
