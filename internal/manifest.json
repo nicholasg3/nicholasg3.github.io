@@ -1,0 +1,13 @@
+{
+  "build": "2026-09-16",
+  "dashboards": [
+    "Retweet graph \u2014 queue top 20",
+    "CFP radar \u2014 deadline table",
+    "P4 \u2014 paper-trading fact sheet"
+  ],
+  "memos": 622,
+  "overflow_indexes": 1,
+  "pages": 627,
+  "password_sha256": "d763ee35fd1bb9c33be63ba5c66adbb702ff9a9f3a4369e910ffe664c7037c4a",
+  "salt": "383cfbefa289eb1f"
+}
