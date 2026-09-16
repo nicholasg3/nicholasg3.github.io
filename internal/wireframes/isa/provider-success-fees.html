@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISA wireframe — Success fees</title>
+<style>
+* { box-sizing: border-box; }
+body { font: 13px/1.45 ui-monospace, Menlo, Consolas, monospace;
+       background: #efefef; color: #222; margin: 0; padding: 24px; }
+.page { max-width: 960px; margin: 0 auto; }
+.crumb { font-size: 11px; color: #666; margin-bottom: 8px; }
+.crumb a { color: #666; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.q { font-size: 12px; color: #555; margin: 0 0 20px; font-style: normal; }
+.box { border: 1px dashed #999; background: #e2e2e2; padding: 10px 12px;
+       margin: 0 0 14px; }
+.box > .lbl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+       color: #555; margin-bottom: 8px; }
+.field { border: 1px solid #aaa; background: #f6f6f6; padding: 6px 8px;
+       margin: 0 0 6px; font-size: 12px; }
+.field .t { color: #777; font-size: 10px; float: right; }
+.btn { display: inline-block; border: 1px solid #555; background: #ccc;
+       padding: 5px 12px; margin: 4px 6px 0 0; font-size: 12px; }
+.btn.secondary { background: #e8e8e8; border-style: dotted; }
+table { width: 100%; border-collapse: collapse; background: #f6f6f6;
+       font-size: 12px; }
+th, td { border: 1px solid #aaa; padding: 5px 7px; text-align: left; }
+th { background: #dcdcdc; font-weight: normal; font-size: 11px; }
+td.stub { color: #888; }
+ul.items { margin: 0; padding-left: 18px; }
+ul.items li { margin: 0 0 4px; }
+.note { border-left: 3px solid #999; padding: 6px 10px; margin: 0 0 14px;
+       background: #e8e8e8; font-size: 12px; color: #444; }
+.cols { display: flex; gap: 14px; }
+.cols > * { flex: 1; }
+.tiles { display: flex; gap: 10px; flex-wrap: wrap; }
+.tile { border: 1px dashed #999; background: #e2e2e2; padding: 10px;
+       min-width: 150px; flex: 1; }
+.tile .k { font-size: 10px; text-transform: uppercase; color: #555; }
+.tile .v { font-size: 20px; color: #666; }
+footer { border-top: 1px solid #aaa; margin-top: 26px; padding-top: 10px;
+       font-size: 11px; color: #555; }
+footer b { font-weight: normal; background: #dcdcdc; padding: 1px 5px;
+       border: 1px solid #aaa; }
+</style>
+<div class="page">
+<div class="crumb"><a href="index.html">ISA production wireframes</a>
+ / Provider flow / Success fees</div>
+<h1>Success fees</h1>
+<p class="q">Question this page answers: What has the ISA book earned me, and when is it paid?</p>
+<div class="box"><div class="lbl">Status tiles — Earnings summary</div><div class="tiles"><div class="tile"><div class="k">Collections this period</div><div class="v">currency</div></div><div class="tile"><div class="k">Provider share</div><div class="v">currency</div></div><div class="tile"><div class="k">Funder share</div><div class="v">currency</div></div><div class="tile"><div class="k">Next payout date</div><div class="v">date</div></div></div></div>
+<div class="box"><div class="lbl">Data region — Fee events</div><table><tr><th>Event</th><th>Learner ref</th><th>Cohort</th><th>Collection</th><th>Provider %</th><th>Provider amount</th><th>State</th></tr><tr><td class="stub">Event row 1</td><td class="stub">Learner ref row 1</td><td class="stub">Cohort row 1</td><td class="stub">Collection row 1</td><td class="stub">Provider % row 1</td><td class="stub">Provider amount row 1</td><td class="stub">State row 1</td></tr><tr><td class="stub">Event row 2</td><td class="stub">Learner ref row 2</td><td class="stub">Cohort row 2</td><td class="stub">Collection row 2</td><td class="stub">Provider % row 2</td><td class="stub">Provider amount row 2</td><td class="stub">State row 2</td></tr><tr><td class="stub">Event row 3</td><td class="stub">Learner ref row 3</td><td class="stub">Cohort row 3</td><td class="stub">Collection row 3</td><td class="stub">Provider % row 3</td><td class="stub">Provider amount row 3</td><td class="stub">State row 3</td></tr><tr><td class="stub">Event row 4</td><td class="stub">Learner ref row 4</td><td class="stub">Cohort row 4</td><td class="stub">Collection row 4</td><td class="stub">Provider % row 4</td><td class="stub">Provider amount row 4</td><td class="stub">State row 4</td></tr><tr><td class="stub">Event row 5</td><td class="stub">Learner ref row 5</td><td class="stub">Cohort row 5</td><td class="stub">Collection row 5</td><td class="stub">Provider % row 5</td><td class="stub">Provider amount row 5</td><td class="stub">State row 5</td></tr></table></div>
+<div class="box"><div class="lbl">Data region — Payouts</div><table><tr><th>Payout</th><th>Period</th><th>Gross</th><th>Adjustments</th><th>Net</th><th>Paid on</th></tr><tr><td class="stub">Payout row 1</td><td class="stub">Period row 1</td><td class="stub">Gross row 1</td><td class="stub">Adjustments row 1</td><td class="stub">Net row 1</td><td class="stub">Paid on row 1</td></tr><tr><td class="stub">Payout row 2</td><td class="stub">Period row 2</td><td class="stub">Gross row 2</td><td class="stub">Adjustments row 2</td><td class="stub">Net row 2</td><td class="stub">Paid on row 2</td></tr><tr><td class="stub">Payout row 3</td><td class="stub">Period row 3</td><td class="stub">Gross row 3</td><td class="stub">Adjustments row 3</td><td class="stub">Net row 3</td><td class="stub">Paid on row 3</td></tr></table></div>
+<div class="box"><div class="lbl">Data region — Waterfall region — how a collection splits</div><ul class="items"><li>Collection received</li><li>Servicing cost deducted</li><li>Funder principal and return</li><li>Provider success share</li><li>Reserve contribution</li></ul></div>
+<div class="box"><div class="lbl">Form — Payout settings</div><div class="field">Bank account<span class="t">select</span></div><div class="field">Payout cadence<span class="t">select</span></div><div class="field">Minimum payout threshold<span class="t">currency</span></div></div>
+<div class="box"><div class="lbl">Actions</div><span class="btn">Download remittance advice</span><span class="btn secondary">Reconcile period</span><span class="btn secondary">Query a fee event</span></div>
+<div class="note">Provider share is derived from ledger collections only. No accrual view here — this page pays on cash received.</div>
+<footer>Wireframe only — greybox, no visual design.
+Backed by wave-2 module: <b>ledger</b> <b>reporting</b></footer>
+</div>
+</html>

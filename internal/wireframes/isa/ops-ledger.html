@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISA wireframe — Ledger view</title>
+<style>
+* { box-sizing: border-box; }
+body { font: 13px/1.45 ui-monospace, Menlo, Consolas, monospace;
+       background: #efefef; color: #222; margin: 0; padding: 24px; }
+.page { max-width: 960px; margin: 0 auto; }
+.crumb { font-size: 11px; color: #666; margin-bottom: 8px; }
+.crumb a { color: #666; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.q { font-size: 12px; color: #555; margin: 0 0 20px; font-style: normal; }
+.box { border: 1px dashed #999; background: #e2e2e2; padding: 10px 12px;
+       margin: 0 0 14px; }
+.box > .lbl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+       color: #555; margin-bottom: 8px; }
+.field { border: 1px solid #aaa; background: #f6f6f6; padding: 6px 8px;
+       margin: 0 0 6px; font-size: 12px; }
+.field .t { color: #777; font-size: 10px; float: right; }
+.btn { display: inline-block; border: 1px solid #555; background: #ccc;
+       padding: 5px 12px; margin: 4px 6px 0 0; font-size: 12px; }
+.btn.secondary { background: #e8e8e8; border-style: dotted; }
+table { width: 100%; border-collapse: collapse; background: #f6f6f6;
+       font-size: 12px; }
+th, td { border: 1px solid #aaa; padding: 5px 7px; text-align: left; }
+th { background: #dcdcdc; font-weight: normal; font-size: 11px; }
+td.stub { color: #888; }
+ul.items { margin: 0; padding-left: 18px; }
+ul.items li { margin: 0 0 4px; }
+.note { border-left: 3px solid #999; padding: 6px 10px; margin: 0 0 14px;
+       background: #e8e8e8; font-size: 12px; color: #444; }
+.cols { display: flex; gap: 14px; }
+.cols > * { flex: 1; }
+.tiles { display: flex; gap: 10px; flex-wrap: wrap; }
+.tile { border: 1px dashed #999; background: #e2e2e2; padding: 10px;
+       min-width: 150px; flex: 1; }
+.tile .k { font-size: 10px; text-transform: uppercase; color: #555; }
+.tile .v { font-size: 20px; color: #666; }
+footer { border-top: 1px solid #aaa; margin-top: 26px; padding-top: 10px;
+       font-size: 11px; color: #555; }
+footer b { font-weight: normal; background: #dcdcdc; padding: 1px 5px;
+       border: 1px solid #aaa; }
+</style>
+<div class="page">
+<div class="crumb"><a href="index.html">ISA production wireframes</a>
+ / Ops flow / Ledger view</div>
+<h1>Ledger view</h1>
+<p class="q">Question this page answers: Where did every pound come from and go, and does it balance?</p>
+<div class="box"><div class="lbl">Form — Ledger filters</div><div class="field">Account<span class="t">select — learner, provider, funder, employer, reserve</span></div><div class="field">Entry type<span class="t">multi-select — collection, fee, payout, adjustment</span></div><div class="field">Date range<span class="t">date range</span></div><div class="field">Entity<span class="t">search</span></div><div class="field">Show reversed entries<span class="t">toggle</span></div></div>
+<div class="box"><div class="lbl">Data region — Entries</div><table><tr><th>Entry id</th><th>Date</th><th>Type</th><th>Debit account</th><th>Credit account</th><th>Amount</th><th>Source event</th><th>State</th></tr><tr><td class="stub">Entry id row 1</td><td class="stub">Date row 1</td><td class="stub">Type row 1</td><td class="stub">Debit account row 1</td><td class="stub">Credit account row 1</td><td class="stub">Amount row 1</td><td class="stub">Source event row 1</td><td class="stub">State row 1</td></tr><tr><td class="stub">Entry id row 2</td><td class="stub">Date row 2</td><td class="stub">Type row 2</td><td class="stub">Debit account row 2</td><td class="stub">Credit account row 2</td><td class="stub">Amount row 2</td><td class="stub">Source event row 2</td><td class="stub">State row 2</td></tr><tr><td class="stub">Entry id row 3</td><td class="stub">Date row 3</td><td class="stub">Type row 3</td><td class="stub">Debit account row 3</td><td class="stub">Credit account row 3</td><td class="stub">Amount row 3</td><td class="stub">Source event row 3</td><td class="stub">State row 3</td></tr><tr><td class="stub">Entry id row 4</td><td class="stub">Date row 4</td><td class="stub">Type row 4</td><td class="stub">Debit account row 4</td><td class="stub">Credit account row 4</td><td class="stub">Amount row 4</td><td class="stub">Source event row 4</td><td class="stub">State row 4</td></tr><tr><td class="stub">Entry id row 5</td><td class="stub">Date row 5</td><td class="stub">Type row 5</td><td class="stub">Debit account row 5</td><td class="stub">Credit account row 5</td><td class="stub">Amount row 5</td><td class="stub">Source event row 5</td><td class="stub">State row 5</td></tr><tr><td class="stub">Entry id row 6</td><td class="stub">Date row 6</td><td class="stub">Type row 6</td><td class="stub">Debit account row 6</td><td class="stub">Credit account row 6</td><td class="stub">Amount row 6</td><td class="stub">Source event row 6</td><td class="stub">State row 6</td></tr></table></div>
+<div class="box"><div class="lbl">Status tiles — Balances</div><div class="tiles"><div class="tile"><div class="k">Collections to date</div><div class="v">currency</div></div><div class="tile"><div class="k">Funder payable</div><div class="v">currency</div></div><div class="tile"><div class="k">Provider payable</div><div class="v">currency</div></div><div class="tile"><div class="k">Unreconciled</div><div class="v">currency</div></div></div></div>
+<div class="box"><div class="lbl">Data region — Reconciliation region</div><ul class="items"><li>Bank statement import and match rate</li><li>Unmatched bank lines</li><li>Unmatched ledger entries</li><li>Break ageing and owner</li></ul></div>
+<div class="box"><div class="lbl">Data region — Entry detail region</div><ul class="items"><li>Immutable entry with source event id</li><li>Contract clause that authorised it</li><li>Reversal chain if corrected</li></ul></div>
+<div class="box"><div class="lbl">Actions</div><span class="btn">Post adjustment</span><span class="btn secondary">Import bank file</span><span class="btn secondary">Export period</span><span class="btn secondary">Lock period</span></div>
+<div class="note">Entries are append-only. Corrections post a reversal plus a new entry; nothing is edited in place.</div>
+<footer>Wireframe only — greybox, no visual design.
+Backed by wave-2 module: <b>ledger</b></footer>
+</div>
+</html>

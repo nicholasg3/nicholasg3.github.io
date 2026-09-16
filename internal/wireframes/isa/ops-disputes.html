@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISA wireframe — Dispute cases</title>
+<style>
+* { box-sizing: border-box; }
+body { font: 13px/1.45 ui-monospace, Menlo, Consolas, monospace;
+       background: #efefef; color: #222; margin: 0; padding: 24px; }
+.page { max-width: 960px; margin: 0 auto; }
+.crumb { font-size: 11px; color: #666; margin-bottom: 8px; }
+.crumb a { color: #666; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.q { font-size: 12px; color: #555; margin: 0 0 20px; font-style: normal; }
+.box { border: 1px dashed #999; background: #e2e2e2; padding: 10px 12px;
+       margin: 0 0 14px; }
+.box > .lbl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+       color: #555; margin-bottom: 8px; }
+.field { border: 1px solid #aaa; background: #f6f6f6; padding: 6px 8px;
+       margin: 0 0 6px; font-size: 12px; }
+.field .t { color: #777; font-size: 10px; float: right; }
+.btn { display: inline-block; border: 1px solid #555; background: #ccc;
+       padding: 5px 12px; margin: 4px 6px 0 0; font-size: 12px; }
+.btn.secondary { background: #e8e8e8; border-style: dotted; }
+table { width: 100%; border-collapse: collapse; background: #f6f6f6;
+       font-size: 12px; }
+th, td { border: 1px solid #aaa; padding: 5px 7px; text-align: left; }
+th { background: #dcdcdc; font-weight: normal; font-size: 11px; }
+td.stub { color: #888; }
+ul.items { margin: 0; padding-left: 18px; }
+ul.items li { margin: 0 0 4px; }
+.note { border-left: 3px solid #999; padding: 6px 10px; margin: 0 0 14px;
+       background: #e8e8e8; font-size: 12px; color: #444; }
+.cols { display: flex; gap: 14px; }
+.cols > * { flex: 1; }
+.tiles { display: flex; gap: 10px; flex-wrap: wrap; }
+.tile { border: 1px dashed #999; background: #e2e2e2; padding: 10px;
+       min-width: 150px; flex: 1; }
+.tile .k { font-size: 10px; text-transform: uppercase; color: #555; }
+.tile .v { font-size: 20px; color: #666; }
+footer { border-top: 1px solid #aaa; margin-top: 26px; padding-top: 10px;
+       font-size: 11px; color: #555; }
+footer b { font-weight: normal; background: #dcdcdc; padding: 1px 5px;
+       border: 1px solid #aaa; }
+</style>
+<div class="page">
+<div class="crumb"><a href="index.html">ISA production wireframes</a>
+ / Ops flow / Dispute cases</div>
+<h1>Dispute cases</h1>
+<p class="q">Question this page answers: What is contested, by whom, and what is the clock?</p>
+<div class="box"><div class="lbl">Status tiles — Dispute load</div><div class="tiles"><div class="tile"><div class="k">Open cases</div><div class="v">n</div></div><div class="tile"><div class="k">Breaching SLA</div><div class="v">n</div></div><div class="tile"><div class="k">Value at issue</div><div class="v">currency</div></div><div class="tile"><div class="k">Median days to close</div><div class="v">n</div></div></div></div>
+<div class="box"><div class="lbl">Data region — Case list</div><table><tr><th>Case</th><th>Raised by</th><th>Type</th><th>Counterparty</th><th>Value</th><th>Opened</th><th>SLA</th><th>Stage</th></tr><tr><td class="stub">Case row 1</td><td class="stub">Raised by row 1</td><td class="stub">Type row 1</td><td class="stub">Counterparty row 1</td><td class="stub">Value row 1</td><td class="stub">Opened row 1</td><td class="stub">SLA row 1</td><td class="stub">Stage row 1</td></tr><tr><td class="stub">Case row 2</td><td class="stub">Raised by row 2</td><td class="stub">Type row 2</td><td class="stub">Counterparty row 2</td><td class="stub">Value row 2</td><td class="stub">Opened row 2</td><td class="stub">SLA row 2</td><td class="stub">Stage row 2</td></tr><tr><td class="stub">Case row 3</td><td class="stub">Raised by row 3</td><td class="stub">Type row 3</td><td class="stub">Counterparty row 3</td><td class="stub">Value row 3</td><td class="stub">Opened row 3</td><td class="stub">SLA row 3</td><td class="stub">Stage row 3</td></tr><tr><td class="stub">Case row 4</td><td class="stub">Raised by row 4</td><td class="stub">Type row 4</td><td class="stub">Counterparty row 4</td><td class="stub">Value row 4</td><td class="stub">Opened row 4</td><td class="stub">SLA row 4</td><td class="stub">Stage row 4</td></tr><tr><td class="stub">Case row 5</td><td class="stub">Raised by row 5</td><td class="stub">Type row 5</td><td class="stub">Counterparty row 5</td><td class="stub">Value row 5</td><td class="stub">Opened row 5</td><td class="stub">SLA row 5</td><td class="stub">Stage row 5</td></tr></table></div>
+<div class="box"><div class="lbl">Data region — Case file region</div><ul class="items"><li>Claim statement and clause cited</li><li>Timeline — every message, decision, and deadline</li><li>Evidence from both sides</li><li>Linked ledger entries frozen pending outcome</li><li>Escalation path — internal review, external adjudicator</li></ul></div>
+<div class="box"><div class="lbl">Form — Case action</div><div class="field">Stage<span class="t">select — intake, investigation, decision, appeal, closed</span></div><div class="field">Determination<span class="t">select — upheld, partly upheld, rejected</span></div><div class="field">Ledger adjustment<span class="t">currency — writes a correcting entry</span></div><div class="field">Rationale<span class="t">textarea — disclosed to both parties</span></div><div class="field">Next deadline<span class="t">date</span></div></div>
+<div class="box"><div class="lbl">Actions</div><span class="btn">Record determination</span><span class="btn secondary">Message parties</span><span class="btn secondary">Freeze collections</span><span class="btn secondary">Close case</span></div>
+<footer>Wireframe only — greybox, no visual design.
+Backed by wave-2 module: <b>verification</b> <b>contracts</b> <b>ledger</b></footer>
+</div>
+</html>

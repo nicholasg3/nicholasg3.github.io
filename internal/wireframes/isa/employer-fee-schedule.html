@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISA wireframe — Milestone fee schedule</title>
+<style>
+* { box-sizing: border-box; }
+body { font: 13px/1.45 ui-monospace, Menlo, Consolas, monospace;
+       background: #efefef; color: #222; margin: 0; padding: 24px; }
+.page { max-width: 960px; margin: 0 auto; }
+.crumb { font-size: 11px; color: #666; margin-bottom: 8px; }
+.crumb a { color: #666; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.q { font-size: 12px; color: #555; margin: 0 0 20px; font-style: normal; }
+.box { border: 1px dashed #999; background: #e2e2e2; padding: 10px 12px;
+       margin: 0 0 14px; }
+.box > .lbl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+       color: #555; margin-bottom: 8px; }
+.field { border: 1px solid #aaa; background: #f6f6f6; padding: 6px 8px;
+       margin: 0 0 6px; font-size: 12px; }
+.field .t { color: #777; font-size: 10px; float: right; }
+.btn { display: inline-block; border: 1px solid #555; background: #ccc;
+       padding: 5px 12px; margin: 4px 6px 0 0; font-size: 12px; }
+.btn.secondary { background: #e8e8e8; border-style: dotted; }
+table { width: 100%; border-collapse: collapse; background: #f6f6f6;
+       font-size: 12px; }
+th, td { border: 1px solid #aaa; padding: 5px 7px; text-align: left; }
+th { background: #dcdcdc; font-weight: normal; font-size: 11px; }
+td.stub { color: #888; }
+ul.items { margin: 0; padding-left: 18px; }
+ul.items li { margin: 0 0 4px; }
+.note { border-left: 3px solid #999; padding: 6px 10px; margin: 0 0 14px;
+       background: #e8e8e8; font-size: 12px; color: #444; }
+.cols { display: flex; gap: 14px; }
+.cols > * { flex: 1; }
+.tiles { display: flex; gap: 10px; flex-wrap: wrap; }
+.tile { border: 1px dashed #999; background: #e2e2e2; padding: 10px;
+       min-width: 150px; flex: 1; }
+.tile .k { font-size: 10px; text-transform: uppercase; color: #555; }
+.tile .v { font-size: 20px; color: #666; }
+footer { border-top: 1px solid #aaa; margin-top: 26px; padding-top: 10px;
+       font-size: 11px; color: #555; }
+footer b { font-weight: normal; background: #dcdcdc; padding: 1px 5px;
+       border: 1px solid #aaa; }
+</style>
+<div class="page">
+<div class="crumb"><a href="index.html">ISA production wireframes</a>
+ / Employer flow / Milestone fee schedule</div>
+<h1>Milestone fee schedule</h1>
+<p class="q">Question this page answers: What do I owe, when, and what fired it?</p>
+<div class="box"><div class="lbl">Data region — Schedule header</div><ul class="items"><li>Employer, agreement id, effective date</li><li>Fee model — milestone percentages of first-year salary</li><li>Clawback window and terms</li></ul></div>
+<div class="box"><div class="lbl">Data region — Milestones</div><table><tr><th>Milestone</th><th>Trigger event</th><th>% of salary</th><th>Amount</th><th>Due date</th><th>State</th></tr><tr><td class="stub">Milestone row 1</td><td class="stub">Trigger event row 1</td><td class="stub">% of salary row 1</td><td class="stub">Amount row 1</td><td class="stub">Due date row 1</td><td class="stub">State row 1</td></tr><tr><td class="stub">Milestone row 2</td><td class="stub">Trigger event row 2</td><td class="stub">% of salary row 2</td><td class="stub">Amount row 2</td><td class="stub">Due date row 2</td><td class="stub">State row 2</td></tr><tr><td class="stub">Milestone row 3</td><td class="stub">Trigger event row 3</td><td class="stub">% of salary row 3</td><td class="stub">Amount row 3</td><td class="stub">Due date row 3</td><td class="stub">State row 3</td></tr><tr><td class="stub">Milestone row 4</td><td class="stub">Trigger event row 4</td><td class="stub">% of salary row 4</td><td class="stub">Amount row 4</td><td class="stub">Due date row 4</td><td class="stub">State row 4</td></tr></table></div>
+<div class="note">Milestones: offer accepted / start date reached / day-90 retained / day-180 retained. Each trigger is a ledger event, not a manual entry.</div>
+<div class="box"><div class="lbl">Data region — Invoices</div><table><tr><th>Invoice</th><th>Candidate</th><th>Milestone</th><th>Amount</th><th>Issued</th><th>Paid</th><th>State</th></tr><tr><td class="stub">Invoice row 1</td><td class="stub">Candidate row 1</td><td class="stub">Milestone row 1</td><td class="stub">Amount row 1</td><td class="stub">Issued row 1</td><td class="stub">Paid row 1</td><td class="stub">State row 1</td></tr><tr><td class="stub">Invoice row 2</td><td class="stub">Candidate row 2</td><td class="stub">Milestone row 2</td><td class="stub">Amount row 2</td><td class="stub">Issued row 2</td><td class="stub">Paid row 2</td><td class="stub">State row 2</td></tr><tr><td class="stub">Invoice row 3</td><td class="stub">Candidate row 3</td><td class="stub">Milestone row 3</td><td class="stub">Amount row 3</td><td class="stub">Issued row 3</td><td class="stub">Paid row 3</td><td class="stub">State row 3</td></tr><tr><td class="stub">Invoice row 4</td><td class="stub">Candidate row 4</td><td class="stub">Milestone row 4</td><td class="stub">Amount row 4</td><td class="stub">Issued row 4</td><td class="stub">Paid row 4</td><td class="stub">State row 4</td></tr></table></div>
+<div class="box"><div class="lbl">Status tiles — Balance</div><div class="tiles"><div class="tile"><div class="k">Invoiced to date</div><div class="v">currency</div></div><div class="tile"><div class="k">Paid</div><div class="v">currency</div></div><div class="tile"><div class="k">Outstanding</div><div class="v">currency</div></div><div class="tile"><div class="k">Overdue</div><div class="v">currency</div></div></div></div>
+<div class="box"><div class="lbl">Form — Dispute or adjustment</div><div class="field">Invoice<span class="t">select</span></div><div class="field">Reason<span class="t">select — no-show, early exit, wrong salary basis</span></div><div class="field">Evidence upload<span class="t">file</span></div><div class="field">Requested adjustment<span class="t">currency</span></div></div>
+<div class="box"><div class="lbl">Actions</div><span class="btn">Pay invoice</span><span class="btn secondary">Download statement</span><span class="btn secondary">Raise dispute</span><span class="btn secondary">Update billing contact</span></div>
+<footer>Wireframe only — greybox, no visual design.
+Backed by wave-2 module: <b>ledger</b> <b>contracts</b></footer>
+</div>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISA wireframe — Funder dashboard</title>
+<style>
+* { box-sizing: border-box; }
+body { font: 13px/1.45 ui-monospace, Menlo, Consolas, monospace;
+       background: #efefef; color: #222; margin: 0; padding: 24px; }
+.page { max-width: 960px; margin: 0 auto; }
+.crumb { font-size: 11px; color: #666; margin-bottom: 8px; }
+.crumb a { color: #666; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.q { font-size: 12px; color: #555; margin: 0 0 20px; font-style: normal; }
+.box { border: 1px dashed #999; background: #e2e2e2; padding: 10px 12px;
+       margin: 0 0 14px; }
+.box > .lbl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+       color: #555; margin-bottom: 8px; }
+.field { border: 1px solid #aaa; background: #f6f6f6; padding: 6px 8px;
+       margin: 0 0 6px; font-size: 12px; }
+.field .t { color: #777; font-size: 10px; float: right; }
+.btn { display: inline-block; border: 1px solid #555; background: #ccc;
+       padding: 5px 12px; margin: 4px 6px 0 0; font-size: 12px; }
+.btn.secondary { background: #e8e8e8; border-style: dotted; }
+table { width: 100%; border-collapse: collapse; background: #f6f6f6;
+       font-size: 12px; }
+th, td { border: 1px solid #aaa; padding: 5px 7px; text-align: left; }
+th { background: #dcdcdc; font-weight: normal; font-size: 11px; }
+td.stub { color: #888; }
+ul.items { margin: 0; padding-left: 18px; }
+ul.items li { margin: 0 0 4px; }
+.note { border-left: 3px solid #999; padding: 6px 10px; margin: 0 0 14px;
+       background: #e8e8e8; font-size: 12px; color: #444; }
+.cols { display: flex; gap: 14px; }
+.cols > * { flex: 1; }
+.tiles { display: flex; gap: 10px; flex-wrap: wrap; }
+.tile { border: 1px dashed #999; background: #e2e2e2; padding: 10px;
+       min-width: 150px; flex: 1; }
+.tile .k { font-size: 10px; text-transform: uppercase; color: #555; }
+.tile .v { font-size: 20px; color: #666; }
+footer { border-top: 1px solid #aaa; margin-top: 26px; padding-top: 10px;
+       font-size: 11px; color: #555; }
+footer b { font-weight: normal; background: #dcdcdc; padding: 1px 5px;
+       border: 1px solid #aaa; }
+</style>
+<div class="page">
+<div class="crumb"><a href="index.html">ISA production wireframes</a>
+ / Ops flow / Funder dashboard</div>
+<h1>Funder dashboard</h1>
+<p class="q">Question this page answers: Is the portfolio performing against what the funder was promised?</p>
+<div class="box"><div class="lbl">Status tiles — Portfolio</div><div class="tiles"><div class="tile"><div class="k">Capital deployed</div><div class="v">currency</div></div><div class="tile"><div class="k">Capital returned</div><div class="v">currency</div></div><div class="tile"><div class="k">Active contracts</div><div class="v">n</div></div><div class="tile"><div class="k">Weighted avg. term remaining</div><div class="v">months</div></div></div></div>
+<div class="box"><div class="lbl">Status tiles — Performance</div><div class="tiles"><div class="tile"><div class="k">Realised multiple</div><div class="v">x</div></div><div class="tile"><div class="k">Projected multiple</div><div class="v">x</div></div><div class="tile"><div class="k">Default rate</div><div class="v">%</div></div><div class="tile"><div class="k">Deferment rate</div><div class="v">%</div></div></div></div>
+<div class="box"><div class="lbl">Data region — Vintage performance</div><table><tr><th>Cohort vintage</th><th>Contracts</th><th>Deployed</th><th>Collected</th><th>Placement %</th><th>Multiple to date</th></tr><tr><td class="stub">Cohort vintage row 1</td><td class="stub">Contracts row 1</td><td class="stub">Deployed row 1</td><td class="stub">Collected row 1</td><td class="stub">Placement % row 1</td><td class="stub">Multiple to date row 1</td></tr><tr><td class="stub">Cohort vintage row 2</td><td class="stub">Contracts row 2</td><td class="stub">Deployed row 2</td><td class="stub">Collected row 2</td><td class="stub">Placement % row 2</td><td class="stub">Multiple to date row 2</td></tr><tr><td class="stub">Cohort vintage row 3</td><td class="stub">Contracts row 3</td><td class="stub">Deployed row 3</td><td class="stub">Collected row 3</td><td class="stub">Placement % row 3</td><td class="stub">Multiple to date row 3</td></tr><tr><td class="stub">Cohort vintage row 4</td><td class="stub">Contracts row 4</td><td class="stub">Deployed row 4</td><td class="stub">Collected row 4</td><td class="stub">Placement % row 4</td><td class="stub">Multiple to date row 4</td></tr><tr><td class="stub">Cohort vintage row 5</td><td class="stub">Contracts row 5</td><td class="stub">Deployed row 5</td><td class="stub">Collected row 5</td><td class="stub">Placement % row 5</td><td class="stub">Multiple to date row 5</td></tr></table></div>
+<div class="box"><div class="lbl">Data region — Chart region — SVG, no chart framework</div><ul class="items"><li>Collections by month — bar</li><li>Cumulative deployed vs. returned — line</li><li>Contract state mix over time — stacked bar</li></ul></div>
+<div class="box"><div class="lbl">Data region — Covenant region</div><ul class="items"><li>Covenant, threshold, current value, headroom, state</li><li>Breach history and cure actions</li></ul></div>
+<div class="box"><div class="lbl">Form — Capital call / drawdown</div><div class="field">Facility<span class="t">select</span></div><div class="field">Amount<span class="t">currency</span></div><div class="field">Allocation to cohorts<span class="t">multi-select</span></div><div class="field">Requested value date<span class="t">date</span></div></div>
+<div class="box"><div class="lbl">Actions</div><span class="btn">Issue capital call</span><span class="btn secondary">Export funder report</span><span class="btn secondary">Download loan tape</span><span class="btn secondary">Open ledger</span></div>
+<footer>Wireframe only — greybox, no visual design.
+Backed by wave-2 module: <b>reporting</b> <b>ledger</b></footer>
+</div>
+</html>

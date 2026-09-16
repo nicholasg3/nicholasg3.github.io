@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISA wireframe — Seat inventory</title>
+<style>
+* { box-sizing: border-box; }
+body { font: 13px/1.45 ui-monospace, Menlo, Consolas, monospace;
+       background: #efefef; color: #222; margin: 0; padding: 24px; }
+.page { max-width: 960px; margin: 0 auto; }
+.crumb { font-size: 11px; color: #666; margin-bottom: 8px; }
+.crumb a { color: #666; }
+h1 { font-size: 18px; margin: 0 0 4px; }
+.q { font-size: 12px; color: #555; margin: 0 0 20px; font-style: normal; }
+.box { border: 1px dashed #999; background: #e2e2e2; padding: 10px 12px;
+       margin: 0 0 14px; }
+.box > .lbl { font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+       color: #555; margin-bottom: 8px; }
+.field { border: 1px solid #aaa; background: #f6f6f6; padding: 6px 8px;
+       margin: 0 0 6px; font-size: 12px; }
+.field .t { color: #777; font-size: 10px; float: right; }
+.btn { display: inline-block; border: 1px solid #555; background: #ccc;
+       padding: 5px 12px; margin: 4px 6px 0 0; font-size: 12px; }
+.btn.secondary { background: #e8e8e8; border-style: dotted; }
+table { width: 100%; border-collapse: collapse; background: #f6f6f6;
+       font-size: 12px; }
+th, td { border: 1px solid #aaa; padding: 5px 7px; text-align: left; }
+th { background: #dcdcdc; font-weight: normal; font-size: 11px; }
+td.stub { color: #888; }
+ul.items { margin: 0; padding-left: 18px; }
+ul.items li { margin: 0 0 4px; }
+.note { border-left: 3px solid #999; padding: 6px 10px; margin: 0 0 14px;
+       background: #e8e8e8; font-size: 12px; color: #444; }
+.cols { display: flex; gap: 14px; }
+.cols > * { flex: 1; }
+.tiles { display: flex; gap: 10px; flex-wrap: wrap; }
+.tile { border: 1px dashed #999; background: #e2e2e2; padding: 10px;
+       min-width: 150px; flex: 1; }
+.tile .k { font-size: 10px; text-transform: uppercase; color: #555; }
+.tile .v { font-size: 20px; color: #666; }
+footer { border-top: 1px solid #aaa; margin-top: 26px; padding-top: 10px;
+       font-size: 11px; color: #555; }
+footer b { font-weight: normal; background: #dcdcdc; padding: 1px 5px;
+       border: 1px solid #aaa; }
+</style>
+<div class="page">
+<div class="crumb"><a href="index.html">ISA production wireframes</a>
+ / Provider flow / Seat inventory</div>
+<h1>Seat inventory</h1>
+<p class="q">Question this page answers: How many seats are sold, held, or at risk across my cohorts?</p>
+<div class="box"><div class="lbl">Status tiles — Inventory summary</div><div class="tiles"><div class="tile"><div class="k">Open seats</div><div class="v">n</div></div><div class="tile"><div class="k">Held seats</div><div class="v">n</div></div><div class="tile"><div class="k">Filled seats</div><div class="v">n</div></div><div class="tile"><div class="k">At-risk seats</div><div class="v">n</div></div></div></div>
+<div class="box"><div class="lbl">Data region — Seats by cohort</div><table><tr><th>Cohort</th><th>Start</th><th>Total</th><th>ISA-funded</th><th>Held</th><th>Filled</th><th>Open</th><th>Fill %</th></tr><tr><td class="stub">Cohort row 1</td><td class="stub">Start row 1</td><td class="stub">Total row 1</td><td class="stub">ISA-funded row 1</td><td class="stub">Held row 1</td><td class="stub">Filled row 1</td><td class="stub">Open row 1</td><td class="stub">Fill % row 1</td></tr><tr><td class="stub">Cohort row 2</td><td class="stub">Start row 2</td><td class="stub">Total row 2</td><td class="stub">ISA-funded row 2</td><td class="stub">Held row 2</td><td class="stub">Filled row 2</td><td class="stub">Open row 2</td><td class="stub">Fill % row 2</td></tr><tr><td class="stub">Cohort row 3</td><td class="stub">Start row 3</td><td class="stub">Total row 3</td><td class="stub">ISA-funded row 3</td><td class="stub">Held row 3</td><td class="stub">Filled row 3</td><td class="stub">Open row 3</td><td class="stub">Fill % row 3</td></tr><tr><td class="stub">Cohort row 4</td><td class="stub">Start row 4</td><td class="stub">Total row 4</td><td class="stub">ISA-funded row 4</td><td class="stub">Held row 4</td><td class="stub">Filled row 4</td><td class="stub">Open row 4</td><td class="stub">Fill % row 4</td></tr></table></div>
+<div class="box"><div class="lbl">Data region — Seat detail region — one row per seat</div><ul class="items"><li>Seat id and state — open, held, offered, signed, enrolled, released</li><li>Hold expiry timestamp</li><li>Learner ref once assigned</li><li>Funder allocation reference</li></ul></div>
+<div class="box"><div class="lbl">Form — Capacity adjustment</div><div class="field">Cohort<span class="t">select</span></div><div class="field">New total seats<span class="t">number</span></div><div class="field">New ISA-funded allocation<span class="t">number</span></div><div class="field">Reason<span class="t">textarea — audited</span></div></div>
+<div class="box"><div class="lbl">Actions</div><span class="btn">Release expired holds</span><span class="btn secondary">Adjust capacity</span><span class="btn secondary">Reopen cohort</span><span class="btn secondary">Export inventory</span></div>
+<div class="note">Hold expiry and release are ledger events — funder allocation must reconcile against seats sold.</div>
+<footer>Wireframe only — greybox, no visual design.
+Backed by wave-2 module: <b>matching</b> <b>ledger</b></footer>
+</div>
+</html>

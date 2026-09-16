@@ -1,13 +1,14 @@
 {
+  "broken_links": [],
   "build": "2026-09-16",
-  "dashboards": [
-    "Retweet graph \u2014 queue top 20",
-    "CFP radar \u2014 deadline table",
-    "P4 \u2014 paper-trading fact sheet"
-  ],
-  "memos": 622,
-  "overflow_indexes": 1,
-  "pages": 627,
+  "exhibits": 0,
+  "gate": true,
+  "memos_briefed": 1,
+  "memos_unbriefed": 0,
+  "open_decisions": 1,
+  "pages": 22,
   "password_sha256": "e0a0b8660d4dd7487d95327931805eefa154cc245f8ccfb91e36f2f1b52dff27",
-  "salt": "6f8a2420041b6e50"
+  "salt": "6f8a2420041b6e50",
+  "ventures": 1,
+  "wireframes": 18
 }
