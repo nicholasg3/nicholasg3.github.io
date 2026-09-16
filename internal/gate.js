@@ -2,8 +2,8 @@
    Page bodies below are base64, not encrypted: anyone can decode them from
    the page source without the password. Keep sensitive material out. */
 (function () {
-  var SALT = "383cfbefa289eb1f";
-  var HASH = "d763ee35fd1bb9c33be63ba5c66adbb702ff9a9f3a4369e910ffe664c7037c4a";
+  var SALT = "6f8a2420041b6e50";
+  var HASH = "e0a0b8660d4dd7487d95327931805eefa154cc245f8ccfb91e36f2f1b52dff27";
   var KEY = "portal-unlocked-2026-09-16";
 
   function hex(buf) {
