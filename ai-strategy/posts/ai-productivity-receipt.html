@@ -28,134 +28,195 @@
         <div class="issue-kicker">July 2026</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=productivity">Productivity</a></div>
         <h1>Proof That AI Changed the Work</h1>
-        <p>AI benchmarks keep getting better, while productivity studies remain mixed, moving, and hard to compare. The executive job is to demand proof: clear evidence of where model capability actually turned into business output.</p>
+        <p>AI benchmarks keep improving while productivity studies stay mixed, keep shifting and are hard to compare. Executives should ask for evidence of where model capability actually turned into business output in their own company, counted after the costs of running it.</p>
       <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
       </header>
 
       <article class="article-body">
-        <p>The most dangerous sentence in AI strategy today is also one of the mildest: "The benchmarks are getting better." The claim is true and important. On its own, it is often useless for management.</p>
+        <p>"The benchmarks are getting better" sounds harmless, and it is one of the more dangerous sentences in AI strategy. It is true, but on its own it tells a manager very little.</p>
 
-        <p>A benchmark can show that a model crossed a technical threshold. What it cannot show is whether a company changed how it actually works — whether a lawyer reviewed fewer bad drafts, an engineer shipped more reliable code, a support team resolved more cases without silent escalation, or a founder got back time that used to disappear into coordination. The benchmark is a capability signal. The business still needs proof.</p>
+        <p>A benchmark can show that a model crossed a technical threshold. It cannot show whether a company changed how it works: whether a lawyer reviewed fewer bad drafts, an engineer shipped more reliable code, or a support team resolved more cases without quietly escalating the hard ones. The benchmark is a signal about capability, and the business still has to find out what that capability did for it.</p>
 
-        <p>That distinction matters more now because the evidence picture has gotten messier. Stanford's Human-Centered AI (HAI) 2025 AI Index records sharp gains on demanding benchmarks and rising business adoption. OpenAI first helped popularise the Software Engineering benchmark (SWE-bench) Verified as a better test of real software tasks, then in 2026 argued that the same coding benchmark no longer measures frontier capability well enough and pointed people toward a harder Pro suite. Model Evaluation and Threat Research (METR), a lab that evaluates AI, ran an early-2025 randomized study that found experienced open-source developers took longer with AI tools; its 2026 update said newer measurement was biased because many developers no longer wanted to work without AI. Management Science published field experiments across Microsoft, Accenture, and a Fortune 100 company finding a meaningful increase in completed developer tasks, with larger gains for less experienced developers.</p>
+        <p>The evidence has become harder to read. Stanford's Human-Centered AI (HAI) 2025 AI Index records sharp gains on demanding benchmarks and rising business adoption. OpenAI first helped popularise the Software Engineering benchmark (SWE-bench) Verified as a better test of real software tasks, then in 2026 argued that the same coding benchmark no longer measures frontier capability well enough and pointed people toward a harder Pro suite. Model Evaluation and Threat Research (METR), a lab that evaluates AI, ran an early-2025 randomized study that found experienced open-source developers took longer with AI tools; its 2026 update said newer measurement was biased because many developers no longer wanted to work without AI. Management Science published field experiments across Microsoft, Accenture, and a Fortune 100 company finding a meaningful increase in completed developer tasks, with larger gains for less experienced developers.</p>
 
-        <p>The useful headline is accounting, not contradiction. AI can be technically stronger and economically valuable in some contexts while distracting in others, and measuring the effect with one universal yardstick remains hard. Executives therefore need a productivity proof.</p>
+        <p>Read together, these findings describe an accounting problem. AI can be technically stronger, economically valuable in some settings and a distraction in others, and no single yardstick measures the effect well. So executives need their own productivity proof.</p>
 
-        <blockquote>Benchmark progress is not business progress until the company can show the task changed, the workflow absorbed it, the economics improved, and the control burden stayed tolerable.</blockquote>
+        <blockquote>Benchmark progress counts as business progress only once the company can show the task changed, the workflow absorbed it, the economics improved and the control burden stayed tolerable.</blockquote>
 
-        <h2>Benchmark Trap</h2>
-        <p>The benchmark trap is not believing the scores. It is overextending them.</p>
+        <h2>Why benchmark scores get stretched too far</h2>
 
-        <p>Benchmarks are indispensable for model builders and useful for buyers. They create a common scoreboard, expose capability direction, and help separate serious systems from vapor. A coding benchmark can indicate whether an agent can repair repository issues; a reasoning benchmark can indicate whether a model handles harder formal tasks; multimodal scores can show whether a model can parse richer inputs. These are real signals.</p>
+        <p>The scores themselves are usually sound. The trouble starts when they are asked to answer questions they were never designed for.</p>
 
-        <p>But a benchmark is usually cleaner than a company. Tasks are bounded, answers can be scored, and the environment is controlled. Incentives push toward maximizing performance against a known test. Business work is messier. Requirements arrive half-formed. Answers can be socially correct but commercially wrong. Processes change when people know a tool is available. Cost may simply move from production time into review, integration, exception handling, data cleanup, or management oversight.</p>
+        <p>Benchmarks are indispensable for model builders and useful for buyers. They give everyone a common scoreboard, show which way capability is moving and help separate serious systems from vapor. A coding benchmark indicates whether an agent can repair repository issues; a reasoning benchmark, whether a model handles harder formal tasks; multimodal scores, whether it can parse richer inputs.</p>
 
-        <p>So benchmark gains often create boardroom overconfidence. They compress the messy question of what changed in the operating model into a cleaner one about whether the model score improved.</p>
+        <p>But a benchmark is usually cleaner than a company. Its tasks are bounded, its answers can be scored, its environment is controlled, and everyone involved is pushing to maximize performance against a known test. In a business, requirements arrive half-formed, an answer can be socially correct and commercially wrong, and processes shift once people know a tool is available. Cost may simply move out of production time and into review, integration, exception handling or data cleanup.</p>
 
-        <h2>Study Trap</h2>
-        <p>The mirror-image mistake is to treat one productivity study as a veto over the whole field.</p>
+        <p>In a boardroom, a rising score lets people swap a hard question about what changed in the operating model for an easy one about whether the model scored higher, and overconfidence follows.</p>
 
-        <p>METR's experienced-developer study was valuable precisely because it cut against easy hype. Researchers looked at real open-source tasks in familiar repositories and found slowdown in that setting. The managerial lesson is about conditions: AI productivity depends on task selection, user skill, repository context, tool maturity, and how you measure.</p>
+        <h2>Why one study should not settle the question</h2>
 
-        <p>Their later update makes the point stronger. Once AI tools become part of how developers normally work, randomized measurement gets harder. Developers may resist no-AI conditions, some may run multiple agents at once, and self-reported time becomes less reliable. The treatment changes the labor market being measured. That is the product, not a footnote.</p>
+        <p>The opposite mistake is to treat a single productivity study as a veto over the whole field.</p>
 
-        <p>The Management Science field experiments point the other way: across thousands of developers and enterprise contexts, AI coding assistance increased completed tasks on average, with less experienced developers benefiting more. That finding is commercially important. It still does not let a founder deposit an average effect size into their own profit and loss statement. Local measurement is required.</p>
+        <p>METR's experienced-developer study was valuable because it cut against easy hype. Researchers looked at real open-source tasks in repositories the developers knew and found a slowdown in that setting. What a manager should take from it is how much depends on conditions: task selection, user skill, repository context, tool maturity and the way you measure.</p>
+
+        <p>The later update strengthens that reading. Once AI tools are part of how developers normally work, randomized measurement gets harder, because developers resist working without AI, some run several agents at once and self-reported time becomes less reliable. The treatment changes the labor market being measured, and that difficulty is itself one of the findings.</p>
+
+        <p>The Management Science field experiments point the other way: across thousands of developers in enterprise settings, AI coding assistance increased completed tasks on average, and less experienced developers gained more. That result is commercially important. A founder still cannot deposit an average effect size into their own profit and loss statement, so the measurement has to be done locally.</p>
 
         <h2>What counts as proof</h2>
+
         <p>A useful AI productivity proof has five lines.</p>
 
         <div class="article-table-wrap" role="region" aria-label="AI productivity proof" tabindex="0">
-          <table class="article-table">
-            <thead>
-              <tr>
-                <th>Proof metric</th>
-                <th>Question</th>
-                <th>Bad substitute</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Benchmark delta</td>
-                <td>What external capability signal changed, and does it map to our task family?</td>
-                <td>A vendor slide with a leaderboard number and no task fit.</td>
-              </tr>
-              <tr>
-                <td>Task delta</td>
-                <td>What specific unit of work became faster, cheaper, better, or newly possible?</td>
-                <td>"People feel more productive" without observed output.</td>
-              </tr>
-              <tr>
-                <td>Workflow delta</td>
-                <td>Which handoff, review, approval, or exception path changed because of the tool?</td>
-                <td>A faster draft that still waits in the same queue.</td>
-              </tr>
-              <tr>
-                <td>Economic delta</td>
-                <td>What cost, revenue, cycle-time, risk, or capacity metric improved after all new costs?</td>
-                <td>Minutes saved before counting review, integration, license, and support burden.</td>
-              </tr>
-              <tr>
-                <td>Trust delta</td>
-                <td>Did the system remain auditable, reversible, and acceptable to the people who own the outcome?</td>
-                <td>More automation with no owner for failures.</td>
-              </tr>
-            </tbody>
-          </table>
+
+        <table class="article-table">
+
+        <thead>
+
+        <tr>
+
+        <th>Proof metric</th>
+
+        <th>Question</th>
+
+        <th>Bad substitute</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>Benchmark delta</td>
+
+        <td>What external capability signal changed, and does it map to our task family?</td>
+
+        <td>A vendor slide with a leaderboard number and no task fit.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Task delta</td>
+
+        <td>What specific unit of work became faster, cheaper, better, or newly possible?</td>
+
+        <td>"People feel more productive" without observed output.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Workflow delta</td>
+
+        <td>Which handoff, review, approval, or exception path changed because of the tool?</td>
+
+        <td>A faster draft that still waits in the same queue.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Economic delta</td>
+
+        <td>What cost, revenue, cycle-time, risk, or capacity metric improved after all new costs?</td>
+
+        <td>Minutes saved before counting review, integration, license, and support burden.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Trust delta</td>
+
+        <td>Did the system remain auditable, reversible, and acceptable to the people who own the outcome?</td>
+
+        <td>More automation with no owner for failures.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
         </div>
 
-        <p>These lines force a company to keep the technical claim and the operating claim separate. Benchmark delta checks whether model capability is even relevant; task delta, whether the worker's unit of output changed; workflow delta, whether the organization absorbed the change. Economic delta is about full cost accounting. Trust delta is about whether the company can live with the new failure mode.</p>
+        <p>Splitting it this way keeps the technical claim apart from the operating claim. Benchmark delta asks whether model capability is relevant to the work at all; task delta, whether the worker's unit of output changed; workflow delta, whether the organization absorbed the change. Economic delta requires full cost accounting, and trust delta asks whether the company can live with the new failure mode.</p>
 
-        <h2>Why Managers Miss It</h2>
-        <p>Managers miss the proof because AI often produces visible artifacts before it produces measurable advantage. Drafts, summaries, patches, and spreadsheet formulas appear quickly, and those outputs feel like progress because the blank page is gone. Businesses are paid for decisions, shipped work, risk reduction, customer trust, and capacity. Blank-page disappearance is intermediate.</p>
+        <h2>Why managers mistake fast output for gains</h2>
 
-        <p>The same tool can produce enthusiasm and disappointment inside one company. A junior analyst may get a real lift because the model scaffolds first drafts and teaches patterns. A senior engineer in a complex repository may slow down because review and correction eat the generation gains. Support teams may close easy cases faster while quietly moving hard cases onto a smaller group of overloaded experts. Founders may write more memos while making fewer decisions.</p>
+        <p>AI usually produces visible output well before it produces measurable advantage. Drafts, summaries, patches and spreadsheet formulas appear quickly, and they feel like progress because the blank page is gone. Businesses, though, are paid for decisions, shipped work, reduced risk and customer trust, and getting past the blank page is only an intermediate step towards any of those.</p>
 
-        <p>The problem is lazy aggregation. "AI productivity" is too broad a bucket. It hides the difference between task assistance, skill transfer, workflow compression, quality improvement, capacity release, and strategic substitution.</p>
+        <p>The same tool can produce enthusiasm and disappointment inside one company. A junior analyst may get a real lift because the model scaffolds first drafts and teaches patterns. A senior engineer in a complex repository may slow down because review and correction eat the time saved on generation. Support teams may close easy cases faster while pushing hard ones onto a smaller group of overloaded experts, and founders may write more memos while making fewer decisions.</p>
 
-        <h2>CFO Question</h2>
-        <p>The chief financial officer should ask which proof metric is expected to move and what evidence will count. Asking whether the company is "using AI" is now too cheap a question.</p>
+        <p>Folding all of that into one number called "AI productivity" hides the difference between task assistance, skill transfer, workflow compression, quality improvement, capacity release and strategic substitution.</p>
 
-        <p>On a coding assistant, the economic delta may be merged pull requests, escaped defects, review time, cycle time, or onboarding speed. Sales tools point toward qualified follow-ups, better account research, higher meeting quality, or lower rep admin time. A strategy desk might care about faster source digestion, better hypothesis generation, or higher-quality partner conversations. Customer-support agents live or die on containment rate adjusted for escalation quality and customer trust.</p>
+        <h2>What the CFO should ask</h2>
 
-        <p>The critical phrase is "adjusted for." Productivity claims that ignore adjustment are usually theatre. Count the output, then count the burden: licenses, prompt and workflow design, data governance, review, rework, audit, incident response, employee training, customer disclosure, and managerial attention. The net figure is the proof. The gross figure is advertising.</p>
+        <p>Whether the company is "using AI" is now too cheap a question. The chief financial officer should ask which proof metric is expected to move and what evidence will count.</p>
 
-        <h2>Founder Version</h2>
-        <p>Founders should use a smaller version of the same proof test. They rarely have enough data for formal experiments, but they do have enough discipline to define a before-and-after operating test.</p>
+        <p>For a coding assistant, the economic delta might be merged pull requests, escaped defects, review time or cycle time. For sales tools it might be qualified follow-ups or lower rep admin time, and a strategy desk might care about faster source digestion or higher-quality partner conversations. Customer-support agents live or die on containment rate, adjusted for escalation quality and customer trust.</p>
 
-        <p>Pick one repeated workflow. Define the current baseline in plain units — hours per memo, days from customer question to answer, sales accounts researched per week, bug-fix cycle time, support tickets resolved without founder involvement, or qualified article ideas turned into publishable drafts. Then run the AI-assisted version long enough to see the hidden costs. Skip counting the first dazzling session. Count the third, fifth, and tenth pass, when novelty has worn off and edge cases show up.</p>
+        <p>Most of the weight sits on "adjusted for." Count the output, then count the burden: licenses, prompt and workflow design, data governance, review and rework, audit, incident response, employee training, customer disclosure and managerial attention. Only the net figure, after all of those, belongs in the business case.</p>
 
-        <p>Write one paragraph next: "We will keep this tool in this workflow because it changes this unit of work, at this cost, with this owner, under this stop rule." If that paragraph cannot be written, the company is still experimenting. Experimentation is fine. Strategy requires the paragraph.</p>
+        <h2>A smaller version for founders</h2>
 
-        <h2>Executive Test</h2>
+        <p>Founders rarely have enough data for formal experiments, but they can still run a before-and-after test on their own operations.</p>
+
+        <p>Pick one repeated workflow and set a baseline in plain units, such as hours per memo, days from customer question to answer, bug-fix cycle time or support tickets resolved without founder involvement. Then run the AI-assisted version long enough for the hidden costs to show. Ignore the first dazzling session and count the third, fifth and tenth pass, when the novelty has worn off and edge cases start to appear.</p>
+
+        <p>Next, write one paragraph: "We will keep this tool in this workflow because it changes this unit of work, at this cost, with this owner, under this stop rule." A company that cannot write it is still experimenting, which is a reasonable stage, but the tool should not yet be described as part of its strategy.</p>
+
+        <h2>Five questions before approving a rollout</h2>
+
         <p>Before approving the next AI rollout, require five answers.</p>
 
         <ol>
-          <li>Which benchmark or external capability signal justifies testing this now?</li>
-          <li>Which internal task family is close enough to that signal to make the test meaningful?</li>
-          <li>Which workflow handoff changes if the tool works?</li>
-          <li>Which economic measure will improve after full operating costs are counted?</li>
-          <li>Who can stop or roll back the system if the trust delta is negative?</li>
+
+        <li>Which benchmark or external capability signal justifies testing this now?</li>
+
+        <li>Which internal task family is close enough to that signal to make the test meaningful?</li>
+
+        <li>Which workflow handoff changes if the tool works?</li>
+
+        <li>Which economic measure will improve after full operating costs are counted?</li>
+
+        <li>Who can stop or roll back the system if the trust delta is negative?</li>
+
         </ol>
 
-        <p>A vendor can help answer the first question. Only the buyer can answer the other four. That is the line executives should defend.</p>
+        <p>A vendor can help with the first question. Only the buyer can answer the other four, so executives should send back any business case that leaves them to the vendor.</p>
 
-        <h2>Better Argument</h2>
-        <p>The mature AI argument drops both slogans: "AI is overhyped" and "AI changes everything." Neither is tight enough for management.</p>
+        <h2>What to do instead of swinging between hype and backlash</h2>
 
-        <p>Capability is advancing fast enough to require repeated local tests, and uneven enough to punish companies that skip the accounting. Benchmarks tell executives where to look. Field studies tell them which effects are plausible. Their own local proofs tell them whether the operating model changed.</p>
+        <p>Neither "AI is overhyped" nor "AI changes everything" is precise enough to manage by.</p>
 
-        <p>A company that keeps local proofs can invest aggressively without becoming credulous. Without them, it will alternate between hype and backlash and mistake each mood swing for strategy.</p>
+        <p>Capability is advancing fast enough to require repeated local tests, and unevenly enough to punish companies that skip the accounting. Benchmarks show executives where to look and field studies show which effects are plausible, but only their own measurements show whether the operating model changed.</p>
+
+        <p>A company that keeps local proofs can invest aggressively without becoming credulous, because it knows which workflows have actually changed. Without them, it will alternate between hype and backlash and treat each swing as a change of strategy.</p>
 
         <section class="source-notes" aria-labelledby="source-notes-title">
-          <h2 id="source-notes-title">Source Notes</h2>
-          <ul>
-            <li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report?sf223786129=1">Stanford Human-Centered AI (HAI), "The 2025 AI Index Report"</a></li>
-            <li><a href="https://openai.com/index/introducing-swe-bench-verified/">OpenAI, "Introducing Software Engineering benchmark (SWE-bench) Verified"</a></li>
-            <li><a href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/">OpenAI, "Why SWE-bench (Software Engineering benchmark) Verified no longer measures frontier coding capabilities"</a></li>
-            <li><a href="https://metr.org/research/">Model Evaluation and Threat Research (METR), "Research"</a></li>
-            <li><a href="https://metr.org/blog/2026-02-24-uplift-update/">Model Evaluation and Threat Research (METR), "We are Changing our Developer Productivity Experiment Design"</a></li>
-            <li><a href="https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2025.00535">Management Science, "The Effects of Generative AI on High-Skilled Work"</a></li>
-          </ul>
+
+        <h2 id="source-notes-title">Source Notes</h2>
+
+        <ul>
+
+        <li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report?sf223786129=1">Stanford Human-Centered AI (HAI), "The 2025 AI Index Report"</a></li>
+
+        <li><a href="https://openai.com/index/introducing-swe-bench-verified/">OpenAI, "Introducing Software Engineering benchmark (SWE-bench) Verified"</a></li>
+
+        <li><a href="https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/">OpenAI, "Why SWE-bench (Software Engineering benchmark) Verified no longer measures frontier coding capabilities"</a></li>
+
+        <li><a href="https://metr.org/research/">Model Evaluation and Threat Research (METR), "Research"</a></li>
+
+        <li><a href="https://metr.org/blog/2026-02-24-uplift-update/">Model Evaluation and Threat Research (METR), "We are Changing our Developer Productivity Experiment Design"</a></li>
+
+        <li><a href="https://pubsonline.informs.org/doi/abs/10.1287/mnsc.2025.00535">Management Science, "The Effects of Generative AI on High-Skilled Work"</a></li>
+
+        </ul>
+
         </section>
       </article>
 

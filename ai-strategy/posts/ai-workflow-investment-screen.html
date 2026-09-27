@@ -28,279 +28,415 @@
         <div class="issue-kicker">July 2026</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=strategy">Strategy</a><a class="tag-chip" href="../index.html#topic=productivity">Productivity</a></div>
         <h1>The AI Pilot Trap</h1>
-        <p>Companies have plenty of AI use cases. The real shortage is managerial judgment: where autonomy should enter the business, where it should stop, and which workflows deserve redesign at all.</p>
+        <p>Most companies already have more AI use cases than they can use. What they lack is managerial judgment about where autonomy should enter the business, where it should stop, and which workflows are worth redesigning in the first place.</p>
       <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
       </header>
 
       <article class="article-body">
-        <p>The bad AI strategy meeting follows a familiar pattern. Someone presents several ideas that each seem reasonable on their own. Every one looks practical in isolation. The presentation rarely ranks them, and almost never names the existing process that would actually change.</p>
+        <p>A bad AI strategy meeting tends to run the same way. Someone presents several ideas, each of which looks practical on its own terms. The presentation rarely ranks them, and it almost never names the existing process that would have to change.</p>
 
-        <p>Tool adoption often passes for capital allocation. Founders feel prudent after approving experiments with AI. Consultants stay current by listing agents on the roadmap. Operators stay covered once each department runs a pilot. Model access was never the scarce resource. Attention, process change, review capacity, trust, and the patience to embed a new workflow always were.</p>
+        <p>Tool adoption often passes for capital allocation. Approving a few experiments lets founders feel prudent, listing agents on the roadmap keeps consultants current, and a pilot in every department keeps operators covered. Model access was never the scarce resource. What companies have always been short of is the capacity to change a process, people to review what the new one produces, and the patience to embed it.</p>
 
-        <p>Market data makes the gap more pressing. Stanford's Human-Centered Artificial Intelligence (HAI) 2026 AI Index reports organizational AI adoption at 88 percent in surveyed organizations. McKinsey's late-2025 State of AI survey found the same split: nearly nine in ten respondents reported using AI, and roughly two-thirds still had not scaled it across the enterprise. International Business Machines (IBM)'s 2025 CEO study added the boardroom view: only a minority of chief executives said recent AI initiatives had delivered expected return on investment (ROI) or reached enterprise scale.</p>
+        <p>The market data makes the gap harder to ignore. Stanford's Human-Centered Artificial Intelligence (HAI) 2026 AI Index reports organizational AI adoption at 88 percent in surveyed organizations. McKinsey's late-2025 State of AI survey found the same split: nearly nine in ten respondents reported using AI, while roughly two-thirds still had not scaled it across the enterprise. International Business Machines (IBM)'s 2025 CEO study gave the boardroom view, with only a minority of chief executives saying recent AI initiatives had delivered the expected return on investment (ROI) or reached enterprise scale.</p>
 
-        <p>So AI strategy is a capital-allocation discipline. Decide which workflows deserve automation, which deserve assistance, and which should wait until operating conditions improve. The unit of analysis is the business decision that could move faster, cost less, carry less risk, or gain better information once the surrounding workflow changes.</p>
+        <p>AI strategy is therefore a capital-allocation problem: deciding which workflows deserve automation, which deserve assistance, and which should wait until operating conditions improve. The unit of analysis is a business decision that could move faster, cost less or carry less risk once the workflow around it changes.</p>
 
         <blockquote>If the workflow is not worth redesigning, it is not worth automating.</blockquote>
 
-        <p>Automate-assist-ignore labels mark only the final call. The harder test is whether the proposed workflow carries enough strategic value, operational fit, proprietary context, and governance capacity to justify any change at all.</p>
+        <p>The automate, assist or ignore label only records the final call. Before anyone reaches it, the proposed workflow has to show enough strategic value, operational fit, proprietary context and governance capacity to justify changing it at all.</p>
 
-        <h2>What Current AI Changes, And What It Does Not</h2>
-        <p>The strongest frontier models have expanded the range of feasible work. They draft, classify, retrieve, compare, translate, summarize, follow narrow procedures, inspect documents, call tools, and coordinate multi-step tasks at a level that fits real operations. Anthropic's Economic Index shows business API usage leaning toward automation patterns. OpenAI's enterprise case library shows banks, pharmaceutical companies, and customer-service teams embedding models into repeated workflows. The old objection that the technology still needs years of improvement is weaker than it was two years ago.</p>
+        <h2>What current AI can do, and where it still fails</h2>
 
-        <p>Managerial judgment remains the bottleneck. Plausible sales briefs still leave open which accounts define a good market. Policy summaries still leave open when a loyal customer deserves an exception. Pricing evidence still leaves open whether the company should trade margin for adoption. In workflows that sit near identity, risk, trust, or scarce commercial judgment, "can AI perform this task alone?" is the wrong first question.</p>
+        <p>The strongest frontier models have widened the range of feasible work. They draft, classify, retrieve, call tools and coordinate multi-step tasks well enough to fit real operations. Anthropic's Economic Index shows business API usage leaning toward automation patterns, and OpenAI's enterprise case library shows banks, pharmaceutical companies and customer-service teams embedding models in repeated workflows. The old objection that the technology needs years more improvement is weaker than it was two years ago.</p>
 
-        <p>The hard limits are operational. Exception routing stays brittle when policies conflict with customer value. Audit trails often lag the confidence of a generated answer. Tacit company context lives in half-remembered deal reviews, Slack threads, and political agreements outside any retrieval corpus. Tool execution carries different risk from drafting. Feedback loops can improve a system or train it on the wrong signal. Outright failure is one risk; success at the wrong layer of responsibility is another.</p>
+        <p>Managerial judgment is still the bottleneck. A plausible sales brief does not settle which accounts define a good market, and a policy summary cannot tell anyone when a loyal customer deserves an exception, any more than a pile of pricing evidence decides whether to trade margin for adoption. In workflows close to identity, risk, trust or scarce commercial judgment, asking whether AI can perform the task alone is the wrong place to start.</p>
 
-        <p>Place the system in the chain of responsibility first. Automate when the output is bounded and the harm of error is low. Assist when judgment must remain visible. Wait when data is weak, the process is political, the owner is absent, or the decision itself remains confused — those conditions make automation premature.</p>
+        <p>The hard limits are operational. Exception routing stays brittle when policy conflicts with customer value, and audit trails often lag the confidence of a generated answer. Much of a company's tacit context lives in half-remembered deal reviews, Slack threads and political agreements that sit outside any retrieval corpus. Executing a tool call carries a different risk from drafting text, and a feedback loop can train a system on the wrong signal as easily as improve it. Beyond outright failure, a system can also succeed at the wrong layer of responsibility, which is harder to catch.</p>
 
-        <p>Named deployments point the same way. Morgan Stanley's wealth-management assistant stands out because it placed retrieval, summarization, evaluations, compliance controls, and advisor review around a high-frequency knowledge workflow — not because it made finance autonomous. Klarna's customer-service assistant shows the upside of narrow automation when the routine repeats, spans languages, and produces measurable results; it also shows why vendor and company numbers need a claim ceiling. Banco Bilbao Vizcaya Argentaria (BBVA)'s 2026 OpenAI case reads more like an operating change than a chatbot rollout: leadership training, security and legal alignment, and selected workflow efficiency gains. Amazon's operations updates supply the clearest caution. Project Eluna is framed as decision support for fulfillment teams. Blue Jay left operations after an update even though the underlying technology continued. Serious firms stage autonomy, measure fit, and keep the option to stop. That is the pattern worth copying, success or failure labels aside.</p>
+        <p>So place the system in the chain of responsibility first. Automate when the output is bounded and errors are cheap. Assist when judgment has to stay visible. Wait when the data is weak, the process is political, nobody owns it, or the decision itself is still confused, because any of those conditions makes automation premature.</p>
 
-        <p>The useful screen stays plain. Before approving an AI pilot, ask four non-overlapping questions.</p>
+        <p>The named deployments point the same way. Morgan Stanley's wealth-management assistant stands out for what the bank built around a high-frequency knowledge workflow: retrieval, summarization, evaluations, compliance controls and advisor review. Klarna's customer-service assistant shows the upside of narrow automation where the routine repeats, spans languages and produces measurable results, and it also shows why vendor and company figures need a ceiling on what they are taken to prove. Banco Bilbao Vizcaya Argentaria (BBVA)'s 2026 OpenAI case reads as an operating change, with leadership training, security and legal alignment, and efficiency gains in selected workflows. Amazon's operations updates supply the clearest caution: Project Eluna is framed as decision support for fulfillment teams, while Blue Jay left operations after an update even though the underlying technology continued. What these firms have in common is that they stage autonomy, measure fit and keep the option to stop, whatever label an individual project ends up with.</p>
+
+        <p>The screen itself can stay plain. Before approving an AI pilot, ask four questions that do not overlap.</p>
 
         <h2>1. Strategic Value</h2>
-        <p>Name the business outcome that improves if the workflow changes. The answer must point to a revenue, cost, risk, speed, or learning decision. "Productivity" is too loose. "Account executives prepare for enterprise calls in half the time and ask better second questions" comes closer to an investment thesis.</p>
 
-        <p>High-value workflows sit near decisions that compound — account pursuit, feature shipping, claim language, risk escalation, customer promises kept. Low-value workflows often produce more internal text without altering a commercial decision. The most deceptive cases are administratively painful and strategically sterile: they keep employees busy enough to want relief without justifying redesign.</p>
+        <p>Name the business outcome that improves if the workflow changes. The answer has to point to a revenue, cost, risk, speed or learning decision. "Productivity" is too loose; "account executives prepare for enterprise calls in half the time and ask better second questions" is much closer to an investment thesis.</p>
+
+        <p>High-value workflows sit near decisions that compound, such as which accounts to pursue or when to escalate a risk. Low-value workflows often produce more internal text without changing any commercial decision. The most deceptive cases are administratively painful and strategically sterile: they annoy employees enough that everyone wants relief, yet relief alone does not justify a redesign.</p>
 
         <h2>2. Workflow Suitability</h2>
-        <p>Some work fits AI intervention more readily than others. Strong candidates repeat, stay bounded, carry context, and allow review. Weak candidates appear rarely, stay ambiguous, carry political sensitivity, or remain so poorly understood that automation would only encode confusion.</p>
 
-        <p>The repeatability test matters because custom one-off work hides process debt. The reviewability test matters because AI systems fail fluently. A workflow that no responsible human can review is a liability with a nicer interface.</p>
+        <p>Some work suits AI far better than other work. Strong candidates repeat, stay bounded, carry context and allow review. Weak candidates come up rarely, stay ambiguous, carry political sensitivity, or are so poorly understood that automating them would only encode the confusion.</p>
+
+        <p>Repeatability matters because custom one-off work hides process debt. Reviewability matters because AI systems fail fluently, and in a workflow that no responsible human can review, a fluent error goes out uncaught.</p>
 
         <h2>3. Advantage Source</h2>
-        <p>Ask whether the output improves because it belongs to this company. If a generic model and public data can produce the same result, the project may still save time — it is unlikely to become a strategic asset.</p>
 
-        <p>Advantage can come from proprietary customer context, operating cadence, accumulated judgments, distribution, or a workflow that teaches the company faster than competitors can copy. Without one of those sources, the company is probably renting a commodity productivity gain. Price and govern that gain as a convenience. Do not mistake it for strategy.</p>
+        <p>Ask whether the output gets better because it belongs to this company. If a generic model and public data can produce the same result, the project may still save time, but it is unlikely to become a strategic asset.</p>
+
+        <p>Advantage can come from proprietary customer context, operating cadence, accumulated judgments, distribution, or a workflow that teaches the company faster than competitors can copy it. Without one of those, the company is probably renting a commodity productivity gain, and it should price and govern that gain as a convenience.</p>
 
         <h2>4. Governance And Adoption</h2>
-        <p>AI pilots fail for reasons that go well beyond model weakness. They fail when nobody owns the exception path, the review rule, the data scope, the user habit, or the kill rule. A pilot without governance becomes a demo that lingers in the stack.</p>
 
-        <p>Keep the adoption test concrete. Name the Tuesday-morning user, the allowed inputs, the actions they may take from the output, the reviewer, and the result that would force a stop.</p>
+        <p>AI pilots fail for reasons well beyond model weakness. They fail when nobody owns the exception path, the review rule, the data scope or the rule for shutting the thing down, and a pilot in that state becomes a demo that lingers in the stack.</p>
+
+        <p>Keep the adoption question concrete. Name the Tuesday-morning user, the inputs they may use, the actions they may take from the output, the reviewer, and the result that would force a stop.</p>
 
         <h2>Where The C-Suite Is Still Stuck</h2>
-        <p>In boardrooms and founder meetings, AI can already produce useful work. The open question is where that work should enter the company's operating system. Three questions keep coming back.</p>
+
+        <p>In boardrooms and founder meetings, the capability question is largely settled: AI can already produce useful work. What remains open is where that work should enter the company's operations. Three questions keep coming back.</p>
 
         <ol>
-          <li><strong>What counts as return on investment?</strong> A faster draft is visible. A better decision, avoided rework, or shorter sales cycle is harder to attribute. Many pilots never define the pre-AI baseline they claim to improve, so success becomes a mood rather than a measure.</li>
-          <li><strong>Who owns the changed workflow?</strong> Chief information officers can buy tools. Sales, finance, operations, legal, and product leaders own the habits that make those tools matter. Vague ownership turns adoption into optional enthusiasm.</li>
-          <li><strong>Where does autonomy stop?</strong> Leaders want capability and accountability together. Recommendation, execution, exception handling, and audit trail still lack a practical line.</li>
+
+        <li><strong>What counts as return on investment?</strong> A faster draft is easy to see. A better decision, avoided rework or a shorter sales cycle is harder to attribute, and many pilots never define the pre-AI baseline they claim to improve, so success becomes a mood rather than a measure.</li>
+
+        <li><strong>Who owns the changed workflow?</strong> Chief information officers can buy tools, but sales, finance, operations, legal and product leaders own the habits that make those tools matter. When ownership is vague, adoption becomes optional enthusiasm.</li>
+
+        <li><strong>Where does autonomy stop?</strong> Leaders want capability and accountability together, yet there is still no practical line between recommendation, execution, exception handling and audit trail.</li>
+
         </ol>
 
-        <p>Institutional friction is real. Procurement may sit with the chief information officer while the business unit absorbs process change. Legal and compliance own much of the downside. Finance wants a baseline that rarely exists. Strategic sacrifice lands with the chief executive when a workflow changes how customers, employees, or partners experience the firm. Slogans are plentiful. What is scarce is agreement on who owns measurement, exceptions, and failure before autonomy is approved.</p>
+        <p>The institutional friction is real. Procurement may sit with the chief information officer while the business unit absorbs the process change; legal and compliance own much of the downside; finance wants a baseline that rarely exists; and the strategic sacrifice lands with the chief executive whenever a workflow changes how customers, employees or partners experience the firm. What is scarce is agreement, before autonomy is approved, on who owns measurement, exceptions and failure.</p>
 
-        <p>The screen starts before tool selection. It forces the executive argument into the open. A serious AI pilot should sound like "we will reduce enterprise account qualification time from four hours to forty minutes, without letting the system invent relationship context or change pursuit priority without a human owner" — not like "we will use agents for sales."</p>
+        <p>The screen therefore has to run before tool selection, because it forces the executive argument into the open. A serious AI pilot sounds like "we will reduce enterprise account qualification time from four hours to forty minutes, without letting the system invent relationship context or change pursuit priority without a human owner". "We will use agents for sales" does not qualify.</p>
 
-        <h2>Four Named Patterns</h2>
-        <p>The public record is uneven. The cleanest numbers often come from vendor or company case studies; failures are less carefully documented. Four patterns remain useful enough for an executive screen.</p>
+        <h2>Four public cases</h2>
+
+        <p>The public record is uneven. The cleanest numbers tend to come from vendor or company case studies, and failures are documented less carefully. Four patterns are still useful for an executive screen.</p>
 
         <h3>Morgan Stanley: assist where trust and proprietary context matter</h3>
-        <p>Morgan Stanley is the anchor case for assistance. Its AI @ Morgan Stanley Assistant and Debrief products sit in wealth management, a domain where wrong answers can damage trust and compliance. Public OpenAI materials emphasize evaluations, retrieval over a large internal corpus, regression testing, expert feedback, advisor review, and high adoption among advisor teams.</p>
 
-        <p>Screen guidance here is to assist knowledge work inside a controlled advisory workflow. Automating financial advice is the wrong frame. Advisors spend less time searching and summarizing, and more time preparing for client conversations. Advantage comes from proprietary intellectual capital and relationship context. Governance runs through evaluation-led deployment with humans finalizing outputs. Founders should copy that model before chasing autonomous agents.</p>
+        <p>Morgan Stanley is the anchor case for assistance. Its AI @ Morgan Stanley Assistant and Debrief products sit in wealth management, where a wrong answer can damage trust and create compliance problems. OpenAI's public materials emphasize evaluations, retrieval over a large internal corpus, regression testing, expert feedback, advisor review and high adoption among advisor teams.</p>
+
+        <p>The screen's answer here is assistance for knowledge work inside a controlled advisory workflow; the advice itself stays with the advisor. Advisors spend less time searching and summarizing and more time preparing for client conversations. The advantage comes from proprietary intellectual capital and relationship context, and governance runs through evaluation-led deployment with humans finalizing the output. Founders should copy that model before chasing autonomous agents.</p>
 
         <h3>Klarna: automate only where the routine is measurable</h3>
-        <p>Klarna is the cleanest public support-automation case, and the one that most needs a source warning. Headline figures are company-reported through Klarna and OpenAI: millions of first-month conversations, a large full-time-agent workload equivalence, faster resolution, and a projected profit improvement. Treat those numbers as directional evidence without treating them as audited proof.</p>
 
-        <p>The executive lesson is still sharp. Customer support can be a candidate for narrow automation when intents are repeated, policies are retrievable, outcomes are measurable, and escalation rules are explicit. Leaders who treat containment as customer judgment create risk. The screen should pin down which promises the assistant may never make, which exceptions must escalate, and which quality signal would force a rollback.</p>
+        <p>Klarna is the cleanest public case of support automation, and the one that most needs a warning about sources. The headline figures are company-reported through Klarna and OpenAI: millions of conversations in the first month, a workload equivalent to a large number of full-time agents, faster resolution and a projected profit improvement. Read them as directional evidence, with their source in mind.</p>
+
+        <p>Customer support can still be a good candidate for narrow automation when intents repeat, policies can be retrieved, outcomes can be measured and escalation rules are explicit. Leaders who treat containment as a stand-in for customer judgment create risk. The screen should pin down which promises the assistant may never make, which exceptions must escalate, and which quality signal would force a rollback.</p>
 
         <h3>BBVA and Moderna: scale starts as workflow redesign</h3>
-        <p>BBVA and Moderna show the middle ground between personal productivity and autonomous execution. BBVA's 2026 OpenAI case describes a broad ChatGPT Enterprise rollout, senior-leader training, security, legal, and compliance alignment, and selected workflow efficiency gains. Moderna's enterprise case in OpenAI's 2025 report points to a narrower strategic workflow: Target Product Profile drafting and review, where AI helps extract facts and structure drafts so teams can pressure-test tradeoffs earlier.</p>
 
-        <p>Neither case treats software licenses as strategy on their own. Adoption becomes interesting when it attaches to named work, accountable teams, and decision quality. "Weekly active usage" is a weak executive metric by itself. Ask which meeting, handoff, risk review, or product decision changed.</p>
+        <p>BBVA and Moderna sit in the middle ground between personal productivity and autonomous execution. BBVA's 2026 OpenAI case describes a broad ChatGPT Enterprise rollout, training for senior leaders, alignment with security, legal and compliance, and efficiency gains in selected workflows. Moderna's enterprise case in OpenAI's 2025 report points to a narrower strategic workflow, Target Product Profile drafting and review, where AI helps extract facts and structure drafts so that teams can pressure-test tradeoffs earlier.</p>
+
+        <p>Neither case treats software licenses as a strategy in themselves. Adoption becomes interesting once it attaches to named work, accountable teams and the quality of decisions, so "weekly active usage" on its own is a weak executive metric. Ask which meeting, handoff, risk review or product decision actually changed.</p>
 
         <h3>Amazon: a stop rule is part of the strategy</h3>
-        <p>Amazon's operations examples sharpen the "ignore" and "stop" side of the screen. The company has announced AI forecasting, mapping, robotics, and agentic tools for fulfillment operations. Project Eluna is framed as an assistant that helps teams make better decisions from facility data. Blue Jay, a robotics system announced in 2025, later carried an update saying Amazon was no longer using it in operations, while continuing to use underlying technology.</p>
 
-        <p>That public stop is disciplined automation. Physical operations expose demo limits faster than slideware does. Safety, throughput, space, reliability, and human workflow all have to clear the bar at once. Founders should read the update as permission to include a kill rule. Costly pilots are the ones that linger because nobody defined failure. Stopped pilots are cheaper.</p>
+        <p>Amazon's operations examples sharpen the "ignore" and "stop" side of the screen. The company has announced AI forecasting, mapping, robotics and agentic tools for fulfillment operations. Project Eluna is framed as an assistant that helps teams make better decisions from facility data. Blue Jay, a robotics system announced in 2025, later carried an update saying Amazon was no longer using it in operations, while it continued to use the underlying technology.</p>
 
-        <h2>Three Composite Calls</h2>
-        <p>The following composites translate those named patterns into founder-scale decisions. Their value is in the contrast.</p>
+        <p>A public stop of that kind is what staged automation looks like in practice. Physical operations expose the limits of a demo faster than slides do, because safety, throughput, space, reliability and the human workflow all have to clear the bar at once. The costly pilots are the ones that linger because nobody defined failure. Founders should read the Blue Jay update as permission to write a kill rule into a pilot before it starts.</p>
+
+        <h2>Three composite founder decisions</h2>
+
+        <p>The composites below translate those public patterns into decisions at founder scale, and they are most useful read against each other.</p>
 
         <h3>Case 1: The B2B founder who wants an account-research agent</h3>
-        <p>The workflow looks attractive because it is repeated and painful. Before each sales call, the team gathers company news, funding history, executive changes, product signals, and likely pain points. A generic model can speed the work. Strategic value comes from joining public signals to the company's own win and loss notes and founder judgment.</p>
 
-        <p>Failure is subtle. Agents produce handsome briefs. Teams feel prepared. Nobody notices that the brief optimizes for visible facts over buying intent. Funding history, headcount growth, and executive quotes are easy to retrieve. Proprietary signal is harder — trigger events that led to closed revenue, objections that killed deals, founder-level hunches later confirmed.</p>
+        <p>The workflow looks attractive because it is repeated and painful. Before each sales call, the team gathers company news, funding history, executive changes and likely pain points. A generic model can speed that up, but the strategic value comes from joining public signals to the company's own win and loss notes and to founder judgment.</p>
 
-        <p>Assist is the right call. Let AI prepare a briefing, suggest hypotheses, and surface contradictions. Humans still choose the opening question and decide whether the account deserves pursuit. Measure whether discovery improves; research that only looks nicer is the wrong target. Advantage lives in the firm's accumulating map of what actually predicts a good customer.</p>
+        <p>The failure is subtle. The agent produces handsome briefs, the team feels prepared, and nobody notices that the brief optimizes for visible facts over buying intent. Funding history, headcount growth and executive quotes are easy to retrieve. The proprietary signal is harder to get at: the trigger events that led to closed revenue, the objections that killed deals, the founder's hunches that later proved right.</p>
+
+        <p>Assist is the right call. Let AI prepare the briefing, suggest hypotheses and surface contradictions, while humans choose the opening question and decide whether the account deserves pursuit. The advantage sits in the firm's growing record of what actually predicts a good customer, so the measure is whether discovery improves, however polished the research looks.</p>
 
         <h3>Case 2: The support leader who wants policy automation</h3>
-        <p>This workflow is more bounded. Customers ask repeated questions. Policies exist. Exceptions can be escalated. Improvising promises the company cannot keep is the obvious danger.</p>
 
-        <p>Exception handling is the hard part; the first answer is easy. Systems must separate "the policy says no" from "this customer is about to churn, the policy is silent, and a human should trade short-term concession for lifetime value." Support automation disappoints when it treats policy retrieval as the whole job.</p>
+        <p>This workflow is more bounded. Customers ask repeated questions, the policies exist and exceptions can be escalated. The obvious danger is an assistant improvising promises the company cannot keep.</p>
 
-        <p>Narrow automation is the right call. Let AI retrieve and draft from approved policy, and constrain the action scope. When the answer touches refund discretion, legal exposure, security, or an angry high-value account, hand off rather than perform confidence. Track first-contact resolution, escalation quality, and promise violations. Ticket deflection alone is a weak scorecard.</p>
+        <p>Getting the first answer right is easy. The hard part is exception handling, where the system has to tell "the policy says no" apart from "this customer is about to churn, the policy is silent, and a human should trade a short-term concession for lifetime value". Support automation disappoints when it treats policy retrieval as the whole job.</p>
+
+        <p>Narrow automation is the right call. Let AI retrieve and draft from approved policy, with a constrained scope for action. When an answer touches refund discretion, legal exposure, security or an angry high-value account, the system should hand off instead of performing confidence. Track first-contact resolution, escalation quality and promise violations, because ticket deflection alone is a weak scorecard.</p>
 
         <h3>Case 3: The CEO who wants pricing recommendations</h3>
-        <p>Pricing feels like a tempting executive AI use case because it is analytical, commercial, and high gain. The model can summarize competitors and customer segments. Pricing is still a promise about positioning, margin, sales motion, and willingness to lose certain customers.</p>
 
-        <p>State-of-the-art models help mostly upstream. Clustering objections from call notes, comparing packaging language, finding inconsistencies in the sales deck, and drafting sensitivity scenarios are all fair uses. Strategic sacrifice embedded in a price stays with executives. Low prices may buy adoption and weaken enterprise credibility. High prices may improve margin and slow the learning loop. Usage-based models may align value and complicate procurement.</p>
+        <p>Pricing tempts executives as an AI use case because it is analytical, commercial and high gain. A model can summarize competitors and customer segments, but a price is also a promise about positioning, margin, sales motion and which customers the company is willing to lose.</p>
 
-        <p>The right call is ignore or assist only. Use AI to assemble inputs and scenario ranges. Keep executive judgment on what kind of company the price is meant to create. The pilot is useful only if it makes the tradeoffs more legible.</p>
+        <p>Current models help mostly upstream: clustering objections from call notes, comparing packaging language, finding inconsistencies in the sales deck and drafting sensitivity scenarios. The strategic sacrifice embedded in a price stays with executives. Low prices may buy adoption at the cost of enterprise credibility. High prices may improve margin but slow the learning loop, and usage-based models can align price with value while complicating procurement.</p>
+
+        <p>The right call is ignore, or assist at most. Use AI to assemble inputs and scenario ranges, and keep executive judgment on what kind of company the price is meant to create. Run the pilot only if it leaves executives seeing those tradeoffs more clearly than before.</p>
 
         <h2>Control Points</h2>
-        <p>A useful executive screen separates four control points. The model may produce an output, recommend an action, execute an action, or learn from the result and change future behavior. Those are separate decisions.</p>
 
-        <p>Many companies jump from output to execution because the demo makes the path look continuous. Each control point changes the risk profile. Drafting a customer reply is one risk. Sending it is another. Applying a refund is another. Updating the policy because the refund worked is another again.</p>
+        <p>A useful executive screen separates four control points: the model may produce an output, recommend an action, execute an action, or learn from the result and change its future behavior. Each needs its own approval.</p>
+
+        <p>Many companies jump from output to execution because the demo makes the path look continuous, when each step changes the risk profile. Drafting a customer reply carries one risk, sending it another, applying a refund another, and updating the policy because the refund worked yet another.</p>
 
         <div class="article-table-wrap" role="region" aria-label="AI workflow control-point map" tabindex="0">
-          <table class="article-table">
-            <thead>
-              <tr>
-                <th>Control point</th>
-                <th>Question</th>
-                <th>Common control</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Output</td>
-                <td>Can AI draft, retrieve, classify, or compare safely?</td>
-                <td>Source citation, formatting rules, human review.</td>
-              </tr>
-              <tr>
-                <td>Recommendation</td>
-                <td>Can AI rank options without hiding the assumptions?</td>
-                <td>Confidence bands, counter-arguments, named owner.</td>
-              </tr>
-              <tr>
-                <td>Execution</td>
-                <td>Can AI act without creating unrecoverable harm?</td>
-                <td>Approval thresholds, escalation rules, audit trail.</td>
-              </tr>
-              <tr>
-                <td>Learning</td>
-                <td>Can the system improve without drifting from doctrine?</td>
-                <td>Feedback cadence, dataset review, kill rule.</td>
-              </tr>
-            </tbody>
-          </table>
+
+        <table class="article-table">
+
+        <thead>
+
+        <tr>
+
+        <th>Control point</th>
+
+        <th>Question</th>
+
+        <th>Common control</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>Output</td>
+
+        <td>Can AI draft, retrieve, classify, or compare safely?</td>
+
+        <td>Source citation, formatting rules, human review.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Recommendation</td>
+
+        <td>Can AI rank options without hiding the assumptions?</td>
+
+        <td>Confidence bands, counter-arguments, named owner.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Execution</td>
+
+        <td>Can AI act without creating unrecoverable harm?</td>
+
+        <td>Approval thresholds, escalation rules, audit trail.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Learning</td>
+
+        <td>Can the system improve without drifting from doctrine?</td>
+
+        <td>Feedback cadence, dataset review, kill rule.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
         </div>
 
-        <h2>The Three Calls</h2>
+        <h2>Automate, assist or ignore</h2>
+
         <p>The screen should force one of three decisions.</p>
 
         <ul>
-          <li><strong>Automate</strong> when the work is repeated, bounded, low-harm, easy to review, and owned by someone with authority to change the process.</li>
-          <li><strong>Assist</strong> when the workflow has high value and judgment, taste, risk, or relationship context must remain explicit.</li>
-          <li><strong>Ignore</strong> when context advantage is weak, the adoption path is poor, error is expensive, or no named business decision exists.</li>
+
+        <li><strong>Automate</strong> when the work is repeated, bounded, low-harm, easy to review, and owned by someone with authority to change the process.</li>
+
+        <li><strong>Assist</strong> when the workflow has high value and judgment, taste, risk or relationship context must remain explicit.</li>
+
+        <li><strong>Ignore</strong> when the context advantage is weak, the adoption path is poor, errors are expensive, or no named business decision exists.</li>
+
         </ul>
 
         <div class="article-table-wrap" role="region" aria-label="Example workflow calls" tabindex="0">
-          <table class="article-table">
-            <thead>
-              <tr>
-                <th>Workflow</th>
-                <th>Likely call</th>
-                <th>Reason</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Sales account research</td>
-                <td>Assist</td>
-                <td>It improves preparation speed, but a human still owns judgment and relationship context.</td>
-              </tr>
-              <tr>
-                <td>Customer support policy lookup</td>
-                <td>Automate narrowly</td>
-                <td>The work is repeated, bounded, reviewable, and can escalate exceptions.</td>
-              </tr>
-              <tr>
-                <td>Strategic pricing recommendation</td>
-                <td>Ignore or assist only</td>
-                <td>The consequence of a confident error is high and the context is commercially sensitive.</td>
-              </tr>
-            </tbody>
-          </table>
+
+        <table class="article-table">
+
+        <thead>
+
+        <tr>
+
+        <th>Workflow</th>
+
+        <th>Likely call</th>
+
+        <th>Reason</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>Sales account research</td>
+
+        <td>Assist</td>
+
+        <td>It improves preparation speed, but a human still owns judgment and relationship context.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Customer support policy lookup</td>
+
+        <td>Automate narrowly</td>
+
+        <td>The work is repeated, bounded, reviewable, and can escalate exceptions.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Strategic pricing recommendation</td>
+
+        <td>Ignore or assist only</td>
+
+        <td>The consequence of a confident error is high and the context is commercially sensitive.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
         </div>
 
-        <h2>A Public Worksheet Preview</h2>
-        <p>The lightweight version is enough to reject bad pilots. Score each factor from one to five: decision weight, workflow repeatability, context advantage, error tolerance, adoption path, and learning-loop quality. A high score is not automatic permission to automate. It means the workflow deserves a sharper pilot design.</p>
+        <h2>A simple scoring worksheet</h2>
 
-        <div class="worksheet-preview">
-          <div>
-            <span class="section-label">20-25</span>
-            <strong>Automate or run a tightly scoped assisted pilot.</strong>
-          </div>
-          <div>
-            <span class="section-label">14-19</span>
-            <strong>Assist only. Reduce scope and keep human review explicit.</strong>
-          </div>
-          <div>
-            <span class="section-label">13 or below</span>
-            <strong>Ignore for now. Improve process knowledge or data first.</strong>
-          </div>
-        </div>
+        <p>The lightweight version is enough to reject bad pilots. Score each factor from one to five: decision weight, workflow repeatability, context advantage, error tolerance, adoption path and learning-loop quality. A high score does not grant automatic permission to automate; it means the workflow deserves a sharper pilot design.</p>
 
-        <h2>A Worked Example</h2>
-        <p>Consider enterprise account research. On first pass it looks automatable: the inputs are public, the task repeats, and the output is easy to format. A lazy score might call it 22 out of 25 and approve an autonomous agent that researches, prioritizes, drafts outreach, and updates the customer relationship management system.</p>
+        <ul>
 
-        <p>The honest score is lower. Decision weight is high, because better qualification can change sales focus. Repeatability is high. Context advantage depends on whether the system can use proprietary win and loss evidence rather than generic firmographics. Error tolerance is middling because a bad brief wastes an executive conversation. Ownership is often weak because sales ops, account executives, and founders all touch the workflow. Learning-loop quality is poor unless the company records which hypotheses actually predicted revenue.</p>
+        <li><strong>20-25:</strong> Automate, or run a tightly scoped assisted pilot.</li>
+
+        <li><strong>14-19:</strong> Assist only. Reduce the scope and keep human review explicit.</li>
+
+        <li><strong>13 or below:</strong> Ignore for now. Improve process knowledge or data first.</li>
+
+        </ul>
+
+        <h2>Worked example: enterprise account research</h2>
+
+        <p>On a first pass, enterprise account research looks automatable: the inputs are public, the task repeats and the output is easy to format. A lazy score might put it at 22 out of 25 and approve an autonomous agent that researches accounts, prioritizes them, drafts outreach and updates the customer relationship management system.</p>
+
+        <p>The honest score is lower. Decision weight is high, because better qualification can change where the sales team spends its time, and repeatability is high too. Context advantage depends on whether the system can use proprietary win and loss evidence instead of generic firmographics. Error tolerance is middling, since a bad brief wastes an executive conversation. Ownership is often weak because sales ops, account executives and founders all touch the workflow, and learning-loop quality is poor unless the company records which hypotheses actually predicted revenue.</p>
 
         <div class="article-table-wrap" role="region" aria-label="Worked workflow scoring example" tabindex="0">
-          <table class="article-table">
-            <thead>
-              <tr>
-                <th>Factor</th>
-                <th>Naive score</th>
-                <th>Honest score</th>
-                <th>Why it changes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Decision leverage</td>
-                <td>5</td>
-                <td>5</td>
-                <td>Better qualification can change which accounts receive scarce founder or enterprise-sales attention.</td>
-              </tr>
-              <tr>
-                <td>Workflow repeatability</td>
-                <td>5</td>
-                <td>4</td>
-                <td>The research pattern repeats, but enterprise context varies by segment and buyer politics.</td>
-              </tr>
-              <tr>
-                <td>Context advantage</td>
-                <td>4</td>
-                <td>3</td>
-                <td>Public data is easy; proprietary buying-intent evidence may be sparse or unstructured.</td>
-              </tr>
-              <tr>
-                <td>Error tolerance</td>
-                <td>4</td>
-                <td>2</td>
-                <td>A confident but wrong brief can damage a high-value meeting.</td>
-              </tr>
-              <tr>
-                <td>Ownership and learning</td>
-                <td>4</td>
-                <td>2</td>
-                <td>Unless someone records outcomes and updates the rubric, the system learns little from reality.</td>
-              </tr>
-            </tbody>
-          </table>
+
+        <table class="article-table">
+
+        <thead>
+
+        <tr>
+
+        <th>Factor</th>
+
+        <th>Naive score</th>
+
+        <th>Honest score</th>
+
+        <th>Why it changes</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>Decision leverage</td>
+
+        <td>5</td>
+
+        <td>5</td>
+
+        <td>Better qualification can change which accounts receive scarce founder or enterprise-sales attention.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Workflow repeatability</td>
+
+        <td>5</td>
+
+        <td>4</td>
+
+        <td>The research pattern repeats, but enterprise context varies by segment and buyer politics.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Context advantage</td>
+
+        <td>4</td>
+
+        <td>3</td>
+
+        <td>Public data is easy; proprietary buying-intent evidence may be sparse or unstructured.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Error tolerance</td>
+
+        <td>4</td>
+
+        <td>2</td>
+
+        <td>A confident but wrong brief can damage a high-value meeting.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Ownership and learning</td>
+
+        <td>4</td>
+
+        <td>2</td>
+
+        <td>Unless someone records outcomes and updates the rubric, the system learns little from reality.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
         </div>
 
-        <p>The call changes from automate to assist. Let AI draft the brief, cite sources, surface contradictions, and propose opening questions. Keep account priority, personalized claims, and customer-relationship-management writes under human review until the team has proved that the generated signals predict better discovery. Workflows can still earn a pilot. Autonomous versions should wait until those proofs exist.</p>
+        <p>The call moves from automate to assist. Let AI draft the brief, cite sources, surface contradictions and propose opening questions. Keep account priority, personalized claims and writes to the customer relationship management system under human review until the team has shown that the generated signals predict better discovery. The workflow can earn a pilot now, with the autonomous version held back until that evidence exists.</p>
 
-        <p>Operator rule: name the business decision, accountable human, review control point, learning loop, and kill rule — or withhold pilot status.</p>
+        <p>The rule for operators: a proposal gets pilot status only once it names the business decision, the accountable human, the control point where review happens, the learning loop and the kill rule.</p>
 
-        <p>That rule can feel slower than approving a tool. It prevents a costlier delay: three months of scattered pilots that leave the company with more software, more demos, and no better theory of where AI should change the business.</p>
+        <p>That rule can feel slower than approving a tool. It prevents a costlier delay, the three months of scattered pilots that leave a company with more software, more demos and no better theory of where AI should change the business.</p>
 
         <section class="source-notes" aria-labelledby="source-notes-title">
-          <h2 id="source-notes-title">Source Notes</h2>
-          <ul>
-            <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report">Stanford HAI 2026 AI Index</a>: broad AI adoption raises the premium on deciding where AI should enter operations.</li>
-            <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey State of AI Global Survey 2025</a>: many organizations use AI, but scaling remains thinner than adoption.</li>
-            <li><a href="https://newsroom.ibm.com/2025-05-06-ibm-study-ceos-double-down-on-ai-while-navigating-enterprise-hurdles">IBM CEO Study 2025</a>: CEO-reported AI ambition sits beside return on investment, scaling, data quality, and leadership constraints.</li>
-            <li><a href="https://www.anthropic.com/research/anthropic-economic-index-september-2025-report">Anthropic Economic Index, September 2025</a>: enterprise API usage skews toward automation patterns, especially in specialized business tasks.</li>
-            <li><a href="https://openai.com/index/morgan-stanley/">OpenAI / Morgan Stanley case</a>: advisor-facing AI scaled through evals, retrieval, compliance controls, and human review.</li>
-            <li><a href="https://openai.com/index/klarna/">OpenAI / Klarna case</a>: customer-service automation figures are company-reported directional evidence without audited proof.</li>
-            <li><a href="https://openai.com/index/bbva/">OpenAI / BBVA case</a> and <a href="https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/">OpenAI Enterprise AI 2025 report</a>: broad adoption becomes strategically relevant when tied to governed workflow redesign.</li>
-            <li><a href="https://www.aboutamazon.com/news/operations/new-robots-amazon-fulfillment-agentic-ai">Amazon operations AI and robotics update</a>: agentic and robotics pilots show why stop rules belong in the investment screen.</li>
-          </ul>
+
+        <h2 id="source-notes-title">Source Notes</h2>
+
+        <ul>
+
+        <li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report">Stanford HAI 2026 AI Index</a>: broad AI adoption raises the premium on deciding where AI should enter operations.</li>
+
+        <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">McKinsey State of AI Global Survey 2025</a>: many organizations use AI, but scaling remains thinner than adoption.</li>
+
+        <li><a href="https://newsroom.ibm.com/2025-05-06-ibm-study-ceos-double-down-on-ai-while-navigating-enterprise-hurdles">IBM CEO Study 2025</a>: CEO-reported AI ambition sits beside return on investment, scaling, data quality, and leadership constraints.</li>
+
+        <li><a href="https://www.anthropic.com/research/anthropic-economic-index-september-2025-report">Anthropic Economic Index, September 2025</a>: enterprise API usage skews toward automation patterns, especially in specialized business tasks.</li>
+
+        <li><a href="https://openai.com/index/morgan-stanley/">OpenAI / Morgan Stanley case</a>: advisor-facing AI scaled through evals, retrieval, compliance controls, and human review.</li>
+
+        <li><a href="https://openai.com/index/klarna/">OpenAI / Klarna case</a>: customer-service automation figures are company-reported directional evidence without audited proof.</li>
+
+        <li><a href="https://openai.com/index/bbva/">OpenAI / BBVA case</a> and <a href="https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/">OpenAI Enterprise AI 2025 report</a>: broad adoption becomes strategically relevant when tied to governed workflow redesign.</li>
+
+        <li><a href="https://www.aboutamazon.com/news/operations/new-robots-amazon-fulfillment-agentic-ai">Amazon operations AI and robotics update</a>: agentic and robotics pilots show why stop rules belong in the investment screen.</li>
+
+        </ul>
+
         </section>
       </article>
 

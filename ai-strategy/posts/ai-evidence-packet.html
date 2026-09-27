@@ -28,127 +28,195 @@
         <div class="issue-kicker">July 2026</div>
         <div class="article-tags" aria-label="Topics"><a class="tag-chip" href="../index.html#topic=governance">Governance</a></div>
         <h1>Evidence an AI Project Must Produce</h1>
-        <p>AI procurement is shifting from demo judgment to evidence judgment. Before a company buys an agent, model, copilot, or automation layer, buyers should know which claims have proof, which risks have an owner, and which failures would force a rollback.</p>
+        <p>Before a company buys an AI agent, model, copilot or automation layer, its buyers should know which of the vendor's claims have proof, which risks have an owner, and which failures would force a rollback. A polished demo answers none of those questions, so procurement has to judge the evidence instead.</p>
       <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
       </header>
 
       <article class="article-body">
-        <p>The first wave of enterprise AI purchases rewarded quick answers and polished demos. Models replied fast, copilots produced text, and vendors showed workflows that looked simpler and cheaper. Early tests often stopped there. That bar is too low now that AI sits inside contracts, customer workflows, internal decisions, regulated files, security perimeters, and board materials. The useful procurement question is no longer whether a product impresses in a meeting. It is whether supporting evidence still stands after the meeting ends.</p>
+        <p>The first wave of enterprise AI purchases rewarded quick answers and polished demos. Vendors showed workflows that looked simpler and cheaper, and early tests often stopped there. That bar is too low now that AI sits inside contracts, customer workflows, regulated files and board materials. The procurement question worth asking is whether the evidence behind a product still stands once the meeting is over.</p>
 
-        <p>Ordinary software-as-a-service (SaaS) purchases already force clear terms on uptime, data handling, access rules, logs, support, pricing, and exit rights. AI purchases land the same teams on a less defined object — often an outside model, shifting prompts, a vector store, customer data, tool rights, human oversight, vendor monitoring, and output that changes over time.</p>
+        <p>Ordinary software-as-a-service (SaaS) purchases already force clear terms on uptime, data handling, access rules, logs, support, pricing and exit rights. AI purchases put the same teams in front of something less well defined: often an outside model, prompts that shift, a vector store, customer data, tool permissions, human oversight, vendor monitoring, and output that changes over time.</p>
 
-        <blockquote>Practical AI procurement asks whether the evidence checklist survives contact with the workflow, not whether the demo works once.</blockquote>
+        <blockquote>Practical AI procurement asks whether the evidence checklist still holds once the system is running inside the workflow, long after the demo has worked once.</blockquote>
 
-        <h2>The New Buyer Problem</h2>
-        <p>Standards groups have already described what serious oversight requires. The National Institute of Standards and Technology (NIST) AI Risk Management Framework structures the work around governance, mapping, measurement, and management. Its profile for generative systems adds concerns about synthetic content, data leaks, model behavior, misuse, and evaluation limits. European Commission guidance on the AI Act turns documentation, model limits, risk checks, incident reports, copyright rules, and security measures into obligations that reach both providers and users.</p>
+        <h2>Standards bodies and regulators have already set out what oversight requires</h2>
 
-        <p>Security directives move the same way. The Open Worldwide Application Security Project (OWASP) list of large language model risks covers prompt injection, unsafe output handling, supply chain gaps, excessive agency, disclosure of sensitive data, and overreliance. Guidance from the Cybersecurity and Infrastructure Security Agency (CISA) and the UK's National Cyber Security Centre (NCSC) stresses that security ownership, transparency, and secure design must apply to AI systems. NIST's 2026 request for information on agent security (under its CAISI program) highlights new exposure when model outputs connect to actions, credentials, external data, and live environments.</p>
+        <p>The National Institute of Standards and Technology (NIST) AI Risk Management Framework organizes the work around governance, mapping, measurement and management. Its profile for generative systems adds concerns about synthetic content, data leaks, model behavior, misuse and the limits of evaluation. European Commission guidance on the AI Act turns documentation, model limits, risk checks, incident reports, copyright rules and security measures into obligations that reach both providers and users.</p>
 
-        <p>Consumer rules add another layer. The Federal Trade Commission (FTC) treats AI claims like any other commercial claim: they need evidence, and calling a product "AI" does not erase liability for deception or unfair practices. Lines differ by sector; the operating rule does not. Refuse any vendor assertion the vendor could not defend before a regulator, insurer, customer, or board.</p>
+        <p>Security guidance points the same way. The Open Worldwide Application Security Project (OWASP) list of large language model risks covers prompt injection, unsafe output handling, supply chain gaps, excessive agency, disclosure of sensitive data and overreliance. Guidance from the Cybersecurity and Infrastructure Security Agency (CISA) and the UK's National Cyber Security Centre (NCSC) says security ownership, transparency and secure design must extend to AI systems. NIST's 2026 request for information on agent security, issued under its CAISI program, singles out the new exposure created when model outputs are connected to actions, credentials, external data and live environments.</p>
+
+        <p>Consumer rules add another layer. The Federal Trade Commission (FTC) treats AI claims like any other commercial claim: they need evidence, and calling a product "AI" does not remove liability for deception or unfair practices. The details differ by sector, but a buyer can apply one rule everywhere and refuse any vendor claim that the vendor could not defend in front of a regulator, an insurer, a customer or the board.</p>
 
         <h2>What the evidence must include</h2>
-        <p>The evidence checklist is a thin file, not a thick compliance dump. It is the smallest set of materials that lets an executive judge whether a system belongs in live operations rather than a scripted demonstration.</p>
+
+        <p>The checklist should be a thin file, holding the smallest set of materials that lets an executive judge whether a system can run in live operations, which a scripted demonstration cannot show.</p>
 
         <div class="article-table-wrap" role="region" aria-label="AI evidence checklist checklist" tabindex="0">
-          <table class="article-table">
-            <thead>
-              <tr>
-                <th>Evidence Layer</th>
-                <th>What The Buyer Needs</th>
-                <th>Weak Answer</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Claim evidence</td>
-                <td>The benchmark, eval, customer result, or controlled test behind each material product claim.</td>
-                <td>"Our model is state of the art" without saying for which task, population, constraint, or failure cost.</td>
-              </tr>
-              <tr>
-                <td>Workflow fit</td>
-                <td>The live process, user, data source, review step, and success metric the system is designed to change.</td>
-                <td>A generic productivity claim that never names the operating bottleneck.</td>
-              </tr>
-              <tr>
-                <td>Risk ownership</td>
-                <td>Which party owns privacy, security, hallucination, IP, regulatory, user-review, and incident duties.</td>
-                <td>"Shared responsibility" without a responsibility matrix.</td>
-              </tr>
-              <tr>
-                <td>Change control</td>
-                <td>How model, prompt, retrieval, policy, and tool-permission changes are logged, tested, and communicated.</td>
-                <td>Silent product changes that alter behavior inside a buyer's critical workflow.</td>
-              </tr>
-              <tr>
-                <td>Failure response</td>
-                <td>The escalation path, rollback rule, incident notice, audit trail, and human override for serious failures.</td>
-                <td>Support-language promises that do not tell the buyer what happens when the system causes damage.</td>
-              </tr>
-            </tbody>
-          </table>
+
+        <table class="article-table">
+
+        <thead>
+
+        <tr>
+
+        <th>Evidence Layer</th>
+
+        <th>What The Buyer Needs</th>
+
+        <th>Weak Answer</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>Claim evidence</td>
+
+        <td>The benchmark, eval, customer result, or controlled test behind each material product claim.</td>
+
+        <td>"Our model is state of the art" without saying for which task, population, constraint, or failure cost.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Workflow fit</td>
+
+        <td>The live process, user, data source, review step, and success metric the system is designed to change.</td>
+
+        <td>A generic productivity claim that never names the operating bottleneck.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Risk ownership</td>
+
+        <td>Which party owns privacy, security, hallucination, IP, regulatory, user-review, and incident duties.</td>
+
+        <td>"Shared responsibility" without a responsibility matrix.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Change control</td>
+
+        <td>How model, prompt, retrieval, policy, and tool-permission changes are logged, tested, and communicated.</td>
+
+        <td>Silent product changes that alter behavior inside a buyer's critical workflow.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Failure response</td>
+
+        <td>The escalation path, rollback rule, incident notice, audit trail, and human override for serious failures.</td>
+
+        <td>Support-language promises that do not tell the buyer what happens when the system causes damage.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
         </div>
 
-        <p>These layers split the work. The vendor supplies part of the packet; the buyer supplies the rest. Vendors can document model limits, security measures, change procedures, data practices, evaluation methods, and known failure points. Buyers still set workflow scope, the autonomy line, review steps, the performance measure, and the local cost of error.</p>
+        <p>Vendors can document model limits, security measures, change procedures, data practices, evaluation methods and known failure points. Buyers still have to set the workflow scope, how far the system may act on its own, the review steps, the performance measure and the local cost of an error.</p>
 
-        <p>Procurement therefore cannot hand AI decisions to legal or IT alone. Legal can shape contract terms. Security can examine controls. IT can assess architecture. Only the operating owner can say which errors would matter, who stays accountable, and whether the productivity gain justifies the added dependence.</p>
+        <p>So procurement cannot hand AI decisions to legal or IT alone. Legal shapes the contract terms, security examines the controls and IT assesses the architecture, but only the operating owner can say which errors would matter, who stays accountable, and whether the productivity gain is worth the added dependence.</p>
 
-        <h2>The Vendor Test</h2>
-        <p>A capable vendor treats the evidence checklist as part of the sales process, not as an obstacle. Strong suppliers know trust grows when implementation risks are stated in plain language. Before any move past a pilot, buyers should put six questions to the vendor:</p>
+        <h2>Six questions to put to the vendor</h2>
 
-        <ol>
-          <li>Which product claims rest on task-specific tests, and which remain directional or experimental?</li>
-          <li>What data enters the system, where does it reside, and how is it applied to training, improvement, monitoring, or support?</li>
-          <li>Which model, retrieval method, prompt, tool, or policy change can affect output quality after the contract is signed?</li>
-          <li>What controls address prompt injection, excessive agency, unsafe tool use, and sensitive data exposure?</li>
-          <li>What notice, logs, rollback options, and export paths exist if the workflow must halt?</li>
-          <li>Which duties stay with the buyer even when the product performs as specified?</li>
-        </ol>
-
-        <p>When answers are missing, the deal may still suit a narrow test. It should not move into production infrastructure. The practical response is usually a tighter scope, fewer permissions, more human review, or a contract that preserves flexibility instead of locking in dependence.</p>
-
-        <h2>The Buyer Test</h2>
-        <p>Buyers fail their half of the packet as often as vendors do. Teams press for evidence while producing none of their own: full model documentation without a named target workflow, low error rates without a definition of which errors count, indemnity without a named reviewer of outputs, governance dashboards without a person who can halt rollout. The buyer's packet needs five local details:</p>
+        <p>A capable vendor treats the checklist as part of selling, since buyers trust a supplier more when it states implementation risks in plain language. Before any move past a pilot, buyers should ask:</p>
 
         <ol>
-          <li>Workflow in scope: inputs, outputs, users, and escalation steps.</li>
-          <li>Autonomy limit: recommend, draft, rank, execute, or trigger external action.</li>
-          <li>Error budget: which mistakes are acceptable, which need review, and which are forbidden.</li>
-          <li>Business result sought: time saved, revenue protected, risk lowered, retention raised, or learning sped up.</li>
-          <li>Stop rule: metric, incident, cost change, quality drop, or adoption signal that ends the effort.</li>
+
+        <li>Which product claims rest on task-specific tests, and which are still directional or experimental?</li>
+
+        <li>What data enters the system, where does it reside, and how is it used for training, improvement, monitoring or support?</li>
+
+        <li>Which changes to the model, retrieval method, prompts, tools or policies could affect output quality after the contract is signed?</li>
+
+        <li>What controls address prompt injection, excessive agency, unsafe tool use and exposure of sensitive data?</li>
+
+        <li>What notice, logs, rollback options and export paths exist if the workflow has to stop?</li>
+
+        <li>Which duties stay with the buyer even when the product performs as specified?</li>
+
         </ol>
 
-        <p>This exercise looks formal only when people treat speed as a substitute for definition. A one-page packet can accelerate a deal by removing false certainty. Vendors know what to prove. Buyers know what to monitor. Finance sees the obligation. Security sees the control points. Sponsors see whether the project is an operational investment or a publicity exercise.</p>
+        <p>If the answers are missing, the deal may still suit a narrow test, but it should not move into production infrastructure. The usual remedy is a tighter scope, fewer permissions, more human review, or a contract that keeps the buyer free to change course.</p>
 
-        <h2>Why This Becomes Strategic</h2>
-        <p>The evidence checklist is risk control and strategy at once. Markets will favor organizations that adopt AI quickly without hidden weaknesses, and that edge comes from disciplined procurement, structured review, negotiating power with vendors, and the habit of turning unclear systems into controlled work.</p>
+        <h2>Five things the buyer has to define</h2>
 
-        <p>A company with a strong packet places sharper bets: accept a promising agent inside a defined workflow; decline a polished demo that hides excessive agency; lock change-notice rights before a vendor updates the product; separate suppliers with real operating maturity from those that offer polished language and weak control records.</p>
-
-        <p>The distinction matters because the AI market will keep moving faster than standard contract cycles. Model costs drop. Features converge. Rules tighten. Incidents rewrite insurance terms. Customers challenge automated decisions. Staff adopt tools without approval. A procurement record that captures evidence at the start gives the institution something to return to when conditions change.</p>
-
-        <h2>The Practical Move</h2>
-        <p>This week, take the next AI tool, agent, or workflow automation under consideration. Before another demo or pilot, request a two-page evidence checklist:</p>
+        <p>Buyers leave their half incomplete about as often as vendors do. Teams press for evidence while producing none of their own: they ask for full model documentation without naming the target workflow, low error rates without defining which errors count, indemnity without naming who reviews the outputs, and governance dashboards without anyone who can halt the rollout. The buyer's side needs five local details:</p>
 
         <ol>
-          <li>Page one from the vendor: material claims, limitations, data handling, security controls, change control, and incident response.</li>
-          <li>Page two from the buyer: workflow, autonomy limits, review owner, error budget, business proof, and stop rule.</li>
+
+        <li>Workflow in scope: inputs, outputs, users and escalation steps.</li>
+
+        <li>Autonomy limit: whether the system recommends, drafts, ranks, executes or triggers external action.</li>
+
+        <li>Error budget: which mistakes are acceptable, which need review and which are forbidden.</li>
+
+        <li>Business result sought: time saved, revenue protected, risk lowered, retention raised or learning sped up.</li>
+
+        <li>Stop rule: the metric, incident, cost change, quality drop or adoption signal that ends the effort.</li>
+
         </ol>
 
-        <p>Then decide. Clear pages on both sides support a bounded production pilot. A thin vendor page means narrow the scope or reopen terms. A thin buyer page means pause — the organization has not defined the task. Thin pages on both sides mean the demo is theatre.</p>
+        <p>The exercise only looks bureaucratic to people who treat speed as a substitute for definition. A one-page statement can shorten a deal by removing false certainty: the vendor knows what it has to prove, finance can see the obligation, security can see where the controls sit, and the sponsor can tell whether the project is an operational investment or a publicity exercise.</p>
 
-        <p>Winning firms will not be the ones with the loosest procurement. They will be the ones whose procurement learns fast enough to approve with discipline and decline without alarm. The evidence checklist is where that learning starts.</p>
+        <h2>Why the checklist is also a strategic tool</h2>
+
+        <p>Markets will favor organizations that adopt AI quickly without hidden weaknesses, and that advantage comes from careful procurement, structured review, bargaining power with vendors, and the habit of turning unclear systems into controlled work.</p>
+
+        <p>A company with a good file places sharper bets. It can accept a promising agent inside a defined workflow, decline a polished demo that hides excessive agency, secure change-notice rights before the vendor updates the product, and tell suppliers with real operating maturity apart from those with fluent language and weak control records.</p>
+
+        <p>The AI market will keep moving faster than standard contract cycles. Model costs will fall and features converge; rules will tighten, incidents will rewrite insurance terms, and staff will adopt tools without approval. A procurement record that captured evidence at the start gives the institution something to go back to when those conditions change.</p>
+
+        <h2>What to do with the next purchase</h2>
+
+        <p>This week, take the next AI tool, agent or workflow automation under consideration and, before another demo or pilot, ask for a two-page evidence checklist:</p>
+
+        <ol>
+
+        <li>Page one, from the vendor: the claims that matter, limitations, data handling, security controls, change control and incident response.</li>
+
+        <li>Page two, from the buyer: workflow, autonomy limits, review owner, error budget, business proof and stop rule.</li>
+
+        </ol>
+
+        <p>Then decide. If both pages are clear, a bounded production pilot is justified. A thin vendor page means narrowing the scope or reopening the terms. A thin buyer page means pausing, because the organization has not yet defined the task. If both pages are thin, the company has seen nothing beyond the demo and should not start a pilot.</p>
 
         <section class="source-notes" aria-labelledby="source-notes-title">
-          <h2 id="source-notes-title">Source Notes</h2>
-          <ul>
-            <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10">NIST, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)"</a></li>
-            <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST, "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile"</a></li>
-            <li><a href="https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act">European Commission, "General-purpose AI obligations under the AI Act"</a></li>
-            <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP, "Top 10 for Large Language Model Applications"</a></li>
-            <li><a href="https://www.cisa.gov/news-events/alerts/2023/11/26/cisa-and-uk-ncsc-unveil-joint-guidelines-secure-ai-system-development">CISA and UK NCSC, "Guidelines for Secure AI System Development"</a></li>
-            <li><a href="https://www.nist.gov/news-events/news/2026/01/caisi-issues-request-information-about-securing-ai-agent-systems">NIST CAISI, "Request for Information About Securing AI Agent Systems"</a></li>
-            <li><a href="https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes">FTC, "Crackdown on Deceptive AI Claims and Schemes"</a></li>
-          </ul>
+
+        <h2 id="source-notes-title">Source Notes</h2>
+
+        <ul>
+
+        <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10">NIST, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)"</a></li>
+
+        <li><a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence">NIST, "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile"</a></li>
+
+        <li><a href="https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act">European Commission, "General-purpose AI obligations under the AI Act"</a></li>
+
+        <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">OWASP, "Top 10 for Large Language Model Applications"</a></li>
+
+        <li><a href="https://www.cisa.gov/news-events/alerts/2023/11/26/cisa-and-uk-ncsc-unveil-joint-guidelines-secure-ai-system-development">CISA and UK NCSC, "Guidelines for Secure AI System Development"</a></li>
+
+        <li><a href="https://www.nist.gov/news-events/news/2026/01/caisi-issues-request-information-about-securing-ai-agent-systems">NIST CAISI, "Request for Information About Securing AI Agent Systems"</a></li>
+
+        <li><a href="https://www.ftc.gov/news-events/news/press-releases/2024/09/ftc-announces-crackdown-deceptive-ai-claims-schemes">FTC, "Crackdown on Deceptive AI Claims and Schemes"</a></li>
+
+        </ul>
+
         </section>
       </article>
 
