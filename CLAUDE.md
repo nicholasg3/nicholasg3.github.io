@@ -16,7 +16,7 @@ metric-authorship; Nick had to order an emergency takedown.)
   1. Ground brief exists (`ground/<slug>.md`) mapping every load-bearing
      claim to a verified source (each source checked, not assumed).
   2. Particular thesis; named firms/documents; VERTICAL-ENRICH bar met.
-  3. Grok default-voice rewrite pass done (PLAN.md step 4/4b).
+  3. Opus 5.5 (author.py) default-voice rewrite pass done (PLAN.md step 4/4b).
   4. AI-style detector pass recorded (score + date).
   5. A promotion checklist block appended to the ground brief listing
      items 1-4 with dates. No checklist = no promotion.
