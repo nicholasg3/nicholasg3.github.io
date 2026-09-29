@@ -170,14 +170,14 @@ p {
 h1 {
   max-width: 1050px;
   margin: 12px 0 20px;
-  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-size: clamp(3rem, 7.5vw, 5rem);
   line-height: 1.02;
   letter-spacing: 0;
 }
 
 h2 {
   margin-bottom: 12px;
-  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.6rem, 2.8vw, 1.9rem);
   line-height: 1.15;
   letter-spacing: 0;
 }
@@ -361,7 +361,7 @@ h2 {
 
 .path-item h2 {
   max-width: 920px;
-  font-size: clamp(1.3rem, 2.4vw, 1.6rem);
+  font-size: clamp(1.65rem, 3vw, 2rem);
 }
 
 .path-item h2 a {
@@ -425,7 +425,7 @@ h2 {
 }
 
 .archive-card h2 {
-  font-size: clamp(1.15rem, 2vw, 1.3rem);
+  font-size: clamp(1.45rem, 2.6vw, 1.65rem);
   line-height: 1.25;
 }
 
@@ -650,7 +650,7 @@ h2 {
 
 .article-header h1 {
   max-width: 900px;
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-size: clamp(2rem, 3.8vw, 2.7rem);
   line-height: 1.18;
 }
 
@@ -685,7 +685,7 @@ h2 {
 
 .article-body h2 {
   margin-top: 40px;
-  font-size: clamp(1.35rem, 2.4vw, 1.6rem);
+  font-size: clamp(1.7rem, 3vw, 2rem);
   line-height: 1.22;
 }
 
@@ -769,7 +769,7 @@ h2 {
 }
 
 .source-notes h2 {
-  font-size: clamp(1.35rem, 2.4vw, 1.6rem);
+  font-size: clamp(1.7rem, 3vw, 2rem);
 }
 
 .source-notes ul {
@@ -875,11 +875,11 @@ h2 {
   }
 
   h1 {
-    font-size: clamp(2rem, 10vw, 2.6rem);
+    font-size: clamp(2.5rem, 12vw, 3.2rem);
   }
 
   .article-header h1 {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   .feature-card,
