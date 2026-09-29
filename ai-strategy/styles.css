@@ -899,3 +899,19 @@ h2 {
     height: 58px;
   }
 }
+
+.article-body,
+.source-notes,
+.sources,
+.sources li,
+.sources a,
+.source-notes li,
+.source-notes a,
+sup.fn,
+.fn-backref,
+.article-body a,
+.article-body li,
+.article-body p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
