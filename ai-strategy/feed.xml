@@ -6,6 +6,13 @@
     <description>AI Strategy is Nicholas Garcia's vertical on where AI should change coordination, judgment, learning speed, and commercial leverage — for founders, consultants, and C-suite operators.</description>
     <language>en-us</language>
     <item>
+      <title>Reasoning models learn best when teacher guidance comes before reward training</title>
+      <link>https://nicholasg3.github.io/ai-strategy/posts/2026-10-11-sequential-beats-joint.html</link>
+      <guid>2026-10-11-sequential-beats-joint</guid>
+      <pubDate>Tue, 29 Sep 2026 14:28:47 GMT</pubDate>
+      <description>Distilling from a teacher first and rewarding answers second beats fusing the two; for post-training teams, step order and teacher access now matter more than prompt volume.</description>
+    </item>
+    <item>
       <title>Agents Need a Memory Architecture</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/agents-need-memory-architecture.html</link>
       <guid>strategy-publisher-issue-032-agents-need-memory-architecture</guid>
