@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 601" width="680" height="601" role="img" aria-labelledby="t d">
+<title id="t">GPU hours: OPD vs RL alone</title>
+<desc id="d">Horizontal bar chart. Reinforcement learning alone: 17,920 GPU hours, AIME&#x27;24 score 67.6%. On-policy distillation: 1,800 GPU hours, AIME&#x27;24 score 74.4%. The chart compares OPD with RL alone, not the sequential OPD-then-RL recipe.</desc>
+<style>
+text{font-family:Aptos, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.f-bg{fill:#fffefa} .k-bg{stroke:#fffefa}
+.f-ink{fill:#101214} .k-ink{stroke:#101214}
+.f-muted{fill:#5f6566} .k-muted{stroke:#5f6566}
+.f-rule{fill:#cfc8b8} .k-rule{stroke:#cfc8b8}
+.f-grid{fill:#e6e1d6} .k-grid{stroke:#e6e1d6}
+.f-s1{fill:#1f6078} .k-s1{stroke:#1f6078}
+.f-s2{fill:#85631c} .k-s2{stroke:#85631c}
+.f-s3{fill:#a83228} .k-s3{stroke:#a83228}
+.halo{stroke:#fffefa;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+@media (prefers-color-scheme: dark){
+.f-bg{fill:#15181a} .k-bg{stroke:#15181a}
+.f-ink{fill:#ecebe6} .k-ink{stroke:#ecebe6}
+.f-muted{fill:#a9aeaf} .k-muted{stroke:#a9aeaf}
+.f-rule{fill:#3a4044} .k-rule{stroke:#3a4044}
+.f-grid{fill:#262b2e} .k-grid{stroke:#262b2e}
+.f-s1{fill:#6fb6cf} .k-s1{stroke:#6fb6cf}
+.f-s2{fill:#d8b064} .k-s2{stroke:#d8b064}
+.f-s3{fill:#e58a80} .k-s3{stroke:#e58a80}
+.halo{stroke:#15181a;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+}
+</style>
+<rect x="0" y="0" width="680" height="601" rx="0" class="f-bg"/>
+<text x="32.0" y="60.0" font-size="34" class="f-ink" text-anchor="start" font-weight="700">GPU hours: OPD vs RL alone</text>
+<text x="32.0" y="104.0" font-size="22" class="f-muted" text-anchor="start">On-policy distillation scored higher on AIME&#x27;24 with</text>
+<text x="32.0" y="134.0" font-size="22" class="f-muted" text-anchor="start">about a tenth of the GPU hours that RL alone used.</text>
+<g transform="translate(0 182.0)">
+<text x="32.0" y="28.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">Reinforcement learning (RL) alone</text>
+<rect x="32" y="42" width="426.0" height="40" rx="4" class="f-s2"/>
+<text x="470.0" y="70.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">17,920 GPU hours</text>
+<text x="32.0" y="112.0" font-size="18" class="f-muted" text-anchor="start">AIME&#x27;24 score: 67.6%</text>
+<text x="32.0" y="162.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">On-policy distillation (OPD)</text>
+<rect x="32" y="176" width="42.8" height="40" rx="4" class="f-s1"/>
+<text x="86.8" y="204.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">1,800 GPU hours</text>
+<text x="32.0" y="246.0" font-size="18" class="f-muted" text-anchor="start">AIME&#x27;24 score: 74.4%</text>
+<text x="32.0" y="276.0" font-size="15" class="f-muted" text-anchor="start" font-style="italic">Compares OPD with RL alone. It does not test the sequential OPD-then-RL recipe.</text>
+</g>
+<line x1="32" y1="490.0" x2="648" y2="490.0" class="k-rule" stroke-width="1.5"/>
+<text x="32.0" y="518.0" font-size="17" class="f-muted" text-anchor="start">Source: Qwen3 technical report, Table 21, as</text>
+<text x="32.0" y="541.0" font-size="17" class="f-muted" text-anchor="start">reproduced by Thinking Machines, &quot;On-Policy</text>
+<text x="32.0" y="564.0" font-size="17" class="f-muted" text-anchor="start">Distillation&quot;.</text>
+<text x="648.0" y="518.0" font-size="17" class="f-ink" text-anchor="end" font-weight="700">nicholasg3.github.io</text>
+</svg>

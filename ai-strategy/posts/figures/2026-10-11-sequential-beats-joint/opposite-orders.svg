@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 670" width="680" height="670" role="img" aria-labelledby="t d">
+<title id="t">Opposite orders of control</title>
+<desc id="d">Diagram with two rows. Top row, outsourced software projects: outcome controls dominate at the start, then behaviour controls are added later, often after problems. Bottom row, the staged post-training recipe: process guidance from a teacher model (on-policy distillation) first, then an outcome reward (reinforcement learning) second. Outcome control and process control have their own colours, so the reversed order is visible. It is an analogy, not evidence about models.</desc>
+<style>
+text{font-family:Aptos, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.f-bg{fill:#fffefa} .k-bg{stroke:#fffefa}
+.f-ink{fill:#101214} .k-ink{stroke:#101214}
+.f-muted{fill:#5f6566} .k-muted{stroke:#5f6566}
+.f-rule{fill:#cfc8b8} .k-rule{stroke:#cfc8b8}
+.f-grid{fill:#e6e1d6} .k-grid{stroke:#e6e1d6}
+.f-s1{fill:#1f6078} .k-s1{stroke:#1f6078}
+.f-s2{fill:#85631c} .k-s2{stroke:#85631c}
+.f-s3{fill:#a83228} .k-s3{stroke:#a83228}
+.halo{stroke:#fffefa;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+@media (prefers-color-scheme: dark){
+.f-bg{fill:#15181a} .k-bg{stroke:#15181a}
+.f-ink{fill:#ecebe6} .k-ink{stroke:#ecebe6}
+.f-muted{fill:#a9aeaf} .k-muted{stroke:#a9aeaf}
+.f-rule{fill:#3a4044} .k-rule{stroke:#3a4044}
+.f-grid{fill:#262b2e} .k-grid{stroke:#262b2e}
+.f-s1{fill:#6fb6cf} .k-s1{stroke:#6fb6cf}
+.f-s2{fill:#d8b064} .k-s2{stroke:#d8b064}
+.f-s3{fill:#e58a80} .k-s3{stroke:#e58a80}
+.halo{stroke:#15181a;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+}
+</style>
+<rect x="0" y="0" width="680" height="670" rx="0" class="f-bg"/>
+<text x="32.0" y="60.0" font-size="34" class="f-ink" text-anchor="start" font-weight="700">Opposite orders of control</text>
+<text x="32.0" y="104.0" font-size="22" class="f-muted" text-anchor="start">Outsourced software projects start with outcome controls</text>
+<text x="32.0" y="134.0" font-size="22" class="f-muted" text-anchor="start">and add behaviour controls later. The staged recipe puts</text>
+<text x="32.0" y="164.0" font-size="22" class="f-muted" text-anchor="start">process guidance first.</text>
+<g transform="translate(0 212.0)">
+<rect x="32" y="6" width="34" height="16" rx="3" class="f-s2 k-s2" fill-opacity="0.22" stroke-width="2"/>
+<text x="76.0" y="20.0" font-size="15" class="f-muted" text-anchor="start">Outcome control</text>
+<rect x="218.5" y="6" width="34" height="16" rx="3" class="f-s1 k-s1" fill-opacity="0.22" stroke-width="2"/>
+<text x="262.5" y="20.0" font-size="15" class="f-muted" text-anchor="start">Process (behaviour) control</text>
+<text x="32.0" y="68.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">Outsourced software projects (IS research)</text>
+<rect x="32.0" y="86.0" width="276.0" height="70.0" rx="8" class="f-s2 k-s2" fill-opacity="0.18" stroke-width="2.5"/>
+<text x="170.0" y="115.0" font-size="18" class="f-ink" text-anchor="middle" font-weight="700">Outcome controls dominate at</text>
+<text x="170.0" y="137.0" font-size="18" class="f-ink" text-anchor="middle">the start</text>
+<line x1="316.0" y1="121.0" x2="364.0" y2="121.0" class="k-s3" stroke-width="3" stroke-linecap="round"/><path d="M 353.6 127.0 L 364.0 121.0 L 353.6 115.0" fill="none" class="k-s3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="344.0" y="109.0" font-size="15" class="f-s3" text-anchor="middle" font-weight="700">later</text>
+<rect x="372.0" y="86.0" width="276.0" height="70.0" rx="8" class="f-s1 k-s1" fill-opacity="0.18" stroke-width="2.5"/>
+<text x="510.0" y="115.0" font-size="18" class="f-ink" text-anchor="middle" font-weight="700">Behaviour controls added</text>
+<text x="510.0" y="137.0" font-size="18" class="f-ink" text-anchor="middle">later, often after problems</text>
+<text x="32.0" y="206.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">Staged post-training recipe (Li et al.)</text>
+<rect x="32.0" y="224.0" width="276.0" height="70.0" rx="8" class="f-s1 k-s1" fill-opacity="0.18" stroke-width="2.5"/>
+<text x="170.0" y="253.0" font-size="18" class="f-ink" text-anchor="middle" font-weight="700">Process guidance first:</text>
+<text x="170.0" y="275.0" font-size="18" class="f-ink" text-anchor="middle">distillation from a teacher</text>
+<line x1="316.0" y1="259.0" x2="364.0" y2="259.0" class="k-s3" stroke-width="3" stroke-linecap="round"/><path d="M 353.6 265.0 L 364.0 259.0 L 353.6 253.0" fill="none" class="k-s3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="344.0" y="247.0" font-size="15" class="f-s3" text-anchor="middle" font-weight="700">then</text>
+<rect x="372.0" y="224.0" width="276.0" height="70.0" rx="8" class="f-s2 k-s2" fill-opacity="0.18" stroke-width="2.5"/>
+<text x="510.0" y="253.0" font-size="18" class="f-ink" text-anchor="middle" font-weight="700">Outcome reward second:</text>
+<text x="510.0" y="275.0" font-size="18" class="f-ink" text-anchor="middle">reinforcement learning</text>
+</g>
+<line x1="32" y1="536.0" x2="648" y2="536.0" class="k-rule" stroke-width="1.5"/>
+<text x="32.0" y="564.0" font-size="17" class="f-muted" text-anchor="start">Sources: Choudhury and Sabherwal, Information</text>
+<text x="32.0" y="587.0" font-size="17" class="f-muted" text-anchor="start">Systems Research (2003); Li et al., arXiv</text>
+<text x="32.0" y="610.0" font-size="17" class="f-muted" text-anchor="start">2609.04108 (2026). An analogy drawn as a</text>
+<text x="32.0" y="633.0" font-size="17" class="f-muted" text-anchor="start">concept diagram, not data.</text>
+<text x="648.0" y="564.0" font-size="17" class="f-ink" text-anchor="end" font-weight="700">nicholasg3.github.io</text>
+</svg>

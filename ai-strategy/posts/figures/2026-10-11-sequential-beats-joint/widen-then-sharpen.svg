@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 883" width="680" height="883" role="img" aria-labelledby="t d">
+<title id="t">Widen first, then sharpen</title>
+<desc id="d">Diagram. Top row, sequential: a narrow student distribution sits inside a wider dashed range of teacher-supported solutions; an arrow labelled OPD widens leads to a wide distribution that fills that range; an arrow labelled RL sharpens leads to a tall, narrow peak inside it. Bottom row, fused: one distribution pulled outward and inward at once, labelled the signals interfere. OPD-then-RL beat every fused baseline on logic and math benchmarks.</desc>
+<style>
+text{font-family:Aptos, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.f-bg{fill:#fffefa} .k-bg{stroke:#fffefa}
+.f-ink{fill:#101214} .k-ink{stroke:#101214}
+.f-muted{fill:#5f6566} .k-muted{stroke:#5f6566}
+.f-rule{fill:#cfc8b8} .k-rule{stroke:#cfc8b8}
+.f-grid{fill:#e6e1d6} .k-grid{stroke:#e6e1d6}
+.f-s1{fill:#1f6078} .k-s1{stroke:#1f6078}
+.f-s2{fill:#85631c} .k-s2{stroke:#85631c}
+.f-s3{fill:#a83228} .k-s3{stroke:#a83228}
+.halo{stroke:#fffefa;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+@media (prefers-color-scheme: dark){
+.f-bg{fill:#15181a} .k-bg{stroke:#15181a}
+.f-ink{fill:#ecebe6} .k-ink{stroke:#ecebe6}
+.f-muted{fill:#a9aeaf} .k-muted{stroke:#a9aeaf}
+.f-rule{fill:#3a4044} .k-rule{stroke:#3a4044}
+.f-grid{fill:#262b2e} .k-grid{stroke:#262b2e}
+.f-s1{fill:#6fb6cf} .k-s1{stroke:#6fb6cf}
+.f-s2{fill:#d8b064} .k-s2{stroke:#d8b064}
+.f-s3{fill:#e58a80} .k-s3{stroke:#e58a80}
+.halo{stroke:#15181a;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+}
+</style>
+<rect x="0" y="0" width="680" height="883" rx="0" class="f-bg"/>
+<text x="32.0" y="60.0" font-size="34" class="f-ink" text-anchor="start" font-weight="700">Widen first, then sharpen</text>
+<text x="32.0" y="104.0" font-size="22" class="f-muted" text-anchor="start">On-policy distillation widens what the student model can</text>
+<text x="32.0" y="134.0" font-size="22" class="f-muted" text-anchor="start">do; RL then sharpens within that range. Fused in one</text>
+<text x="32.0" y="164.0" font-size="22" class="f-muted" text-anchor="start">step, the two signals interfere.</text>
+<g transform="translate(0 212.0)">
+<line x1="32" y1="14" x2="66" y2="14" class="k-muted" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="76.0" y="20.0" font-size="15" class="f-muted" text-anchor="start">Solutions the teacher supports</text>
+<rect x="331.0" y="6" width="34" height="16" rx="3" class="f-s1 k-s1" fill-opacity="0.28" stroke-width="2"/>
+<text x="375.0" y="20.0" font-size="15" class="f-muted" text-anchor="start">What the student model does</text>
+<text x="32.0" y="68.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">Sequential: OPD first, then RL</text>
+<line x1="32" y1="214" x2="192" y2="214" class="k-rule" stroke-width="2"/>
+<path d="M 32.0 213.0 L 34.5 212.7 L 37.0 212.3 L 39.5 211.9 L 42.0 211.3 L 44.5 210.6 L 47.0 209.7 L 49.5 208.7 L 52.0 207.5 L 54.5 206.0 L 57.0 204.4 L 59.5 202.4 L 62.0 200.3 L 64.5 197.8 L 67.0 195.1 L 69.5 192.1 L 72.0 188.8 L 74.5 185.2 L 77.0 181.5 L 79.5 177.6 L 82.0 173.5 L 84.5 169.4 L 87.0 165.2 L 89.5 161.2 L 92.0 157.2 L 94.5 153.5 L 97.0 150.1 L 99.5 147.1 L 102.0 144.5 L 104.5 142.4 L 107.0 140.8 L 109.5 139.9 L 112.0 139.6 L 114.5 139.9 L 117.0 140.8 L 119.5 142.4 L 122.0 144.5 L 124.5 147.1 L 127.0 150.1 L 129.5 153.5 L 132.0 157.2 L 134.5 161.2 L 137.0 165.2 L 139.5 169.4 L 142.0 173.5 L 144.5 177.6 L 147.0 181.5 L 149.5 185.2 L 152.0 188.8 L 154.5 192.1 L 157.0 195.1 L 159.5 197.8 L 162.0 200.3 L 164.5 202.4 L 167.0 204.4 L 169.5 206.0 L 172.0 207.5 L 174.5 208.7 L 177.0 209.7 L 179.5 210.6 L 182.0 211.3 L 184.5 211.9 L 187.0 212.3 L 189.5 212.7 L 192.0 213.0" fill="none" class="k-muted" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M 32.0 214.0 L 34.5 214.0 L 37.0 214.0 L 39.5 214.0 L 42.0 214.0 L 44.5 214.0 L 47.0 214.0 L 49.5 214.0 L 52.0 214.0 L 54.5 214.0 L 57.0 214.0 L 59.5 213.9 L 62.0 213.8 L 64.5 213.5 L 67.0 212.8 L 69.5 211.2 L 72.0 208.1 L 74.5 202.9 L 77.0 194.9 L 79.5 184.3 L 82.0 172.0 L 84.5 160.1 L 87.0 151.4 L 89.5 148.0 L 92.0 150.9 L 94.5 159.3 L 97.0 171.0 L 99.5 183.3 L 102.0 194.1 L 104.5 202.4 L 107.0 207.8 L 109.5 211.0 L 112.0 212.7 L 114.5 213.5 L 117.0 213.8 L 119.5 213.9 L 122.0 214.0 L 124.5 214.0 L 127.0 214.0 L 129.5 214.0 L 132.0 214.0 L 134.5 214.0 L 137.0 214.0 L 139.5 214.0 L 142.0 214.0 L 144.5 214.0 L 147.0 214.0 L 149.5 214.0 L 152.0 214.0 L 154.5 214.0 L 157.0 214.0 L 159.5 214.0 L 162.0 214.0 L 164.5 214.0 L 167.0 214.0 L 169.5 214.0 L 172.0 214.0 L 174.5 214.0 L 177.0 214.0 L 179.5 214.0 L 182.0 214.0 L 184.5 214.0 L 187.0 214.0 L 189.5 214.0 L 192.0 214.0 L 192.0 214.0 L 32.0 214.0 Z" class="f-s1 k-s1" fill-opacity="0.28" stroke-width="2.5"/>
+<text x="112.0" y="240.0" font-size="18" class="f-ink" text-anchor="middle">Student at the start</text>
+<line x1="202.0" y1="160.0" x2="250.0" y2="160.0" class="k-s3" stroke-width="3" stroke-linecap="round"/><path d="M 239.6 166.0 L 250.0 160.0 L 239.6 154.0" fill="none" class="k-s3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="231.0" y="127.0" font-size="15" class="f-s3" text-anchor="middle" font-weight="700">OPD</text>
+<text x="231.0" y="146.0" font-size="15" class="f-s3" text-anchor="middle" font-weight="700">widens</text>
+<line x1="260" y1="214" x2="420" y2="214" class="k-rule" stroke-width="2"/>
+<path d="M 260.0 213.0 L 262.5 212.7 L 265.0 212.3 L 267.5 211.9 L 270.0 211.3 L 272.5 210.6 L 275.0 209.7 L 277.5 208.7 L 280.0 207.5 L 282.5 206.0 L 285.0 204.4 L 287.5 202.4 L 290.0 200.3 L 292.5 197.8 L 295.0 195.1 L 297.5 192.1 L 300.0 188.8 L 302.5 185.2 L 305.0 181.5 L 307.5 177.6 L 310.0 173.5 L 312.5 169.4 L 315.0 165.2 L 317.5 161.2 L 320.0 157.2 L 322.5 153.5 L 325.0 150.1 L 327.5 147.1 L 330.0 144.5 L 332.5 142.4 L 335.0 140.8 L 337.5 139.9 L 340.0 139.6 L 342.5 139.9 L 345.0 140.8 L 347.5 142.4 L 350.0 144.5 L 352.5 147.1 L 355.0 150.1 L 357.5 153.5 L 360.0 157.2 L 362.5 161.2 L 365.0 165.2 L 367.5 169.4 L 370.0 173.5 L 372.5 177.6 L 375.0 181.5 L 377.5 185.2 L 380.0 188.8 L 382.5 192.1 L 385.0 195.1 L 387.5 197.8 L 390.0 200.3 L 392.5 202.4 L 395.0 204.4 L 397.5 206.0 L 400.0 207.5 L 402.5 208.7 L 405.0 209.7 L 407.5 210.6 L 410.0 211.3 L 412.5 211.9 L 415.0 212.3 L 417.5 212.7 L 420.0 213.0" fill="none" class="k-muted" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M 260.0 213.7 L 262.5 213.6 L 265.0 213.5 L 267.5 213.3 L 270.0 213.0 L 272.5 212.7 L 275.0 212.3 L 277.5 211.7 L 280.0 211.0 L 282.5 210.2 L 285.0 209.1 L 287.5 207.9 L 290.0 206.3 L 292.5 204.5 L 295.0 202.4 L 297.5 200.0 L 300.0 197.2 L 302.5 194.2 L 305.0 190.8 L 307.5 187.1 L 310.0 183.2 L 312.5 179.1 L 315.0 174.9 L 317.5 170.7 L 320.0 166.5 L 322.5 162.5 L 325.0 158.7 L 327.5 155.3 L 330.0 152.4 L 332.5 150.0 L 335.0 148.2 L 337.5 147.2 L 340.0 146.8 L 342.5 147.2 L 345.0 148.2 L 347.5 150.0 L 350.0 152.4 L 352.5 155.3 L 355.0 158.7 L 357.5 162.5 L 360.0 166.5 L 362.5 170.7 L 365.0 174.9 L 367.5 179.1 L 370.0 183.2 L 372.5 187.1 L 375.0 190.8 L 377.5 194.2 L 380.0 197.2 L 382.5 200.0 L 385.0 202.4 L 387.5 204.5 L 390.0 206.3 L 392.5 207.9 L 395.0 209.1 L 397.5 210.2 L 400.0 211.0 L 402.5 211.7 L 405.0 212.3 L 407.5 212.7 L 410.0 213.0 L 412.5 213.3 L 415.0 213.5 L 417.5 213.6 L 420.0 213.7 L 420.0 214.0 L 260.0 214.0 Z" class="f-s1 k-s1" fill-opacity="0.28" stroke-width="2.5"/>
+<text x="340.0" y="240.0" font-size="18" class="f-ink" text-anchor="middle">After OPD: wider</text>
+<text x="340.0" y="261.0" font-size="18" class="f-ink" text-anchor="middle">coverage</text>
+<line x1="430.0" y1="160.0" x2="478.0" y2="160.0" class="k-s3" stroke-width="3" stroke-linecap="round"/><path d="M 467.6 166.0 L 478.0 160.0 L 467.6 154.0" fill="none" class="k-s3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="459.0" y="127.0" font-size="15" class="f-s3" text-anchor="middle" font-weight="700">RL</text>
+<text x="459.0" y="146.0" font-size="15" class="f-s3" text-anchor="middle" font-weight="700">sharpens</text>
+<line x1="488" y1="214" x2="648" y2="214" class="k-rule" stroke-width="2"/>
+<path d="M 488.0 213.0 L 490.5 212.7 L 493.0 212.3 L 495.5 211.9 L 498.0 211.3 L 500.5 210.6 L 503.0 209.7 L 505.5 208.7 L 508.0 207.5 L 510.5 206.0 L 513.0 204.4 L 515.5 202.4 L 518.0 200.3 L 520.5 197.8 L 523.0 195.1 L 525.5 192.1 L 528.0 188.8 L 530.5 185.2 L 533.0 181.5 L 535.5 177.6 L 538.0 173.5 L 540.5 169.4 L 543.0 165.2 L 545.5 161.2 L 548.0 157.2 L 550.5 153.5 L 553.0 150.1 L 555.5 147.1 L 558.0 144.5 L 560.5 142.4 L 563.0 140.8 L 565.5 139.9 L 568.0 139.6 L 570.5 139.9 L 573.0 140.8 L 575.5 142.4 L 578.0 144.5 L 580.5 147.1 L 583.0 150.1 L 585.5 153.5 L 588.0 157.2 L 590.5 161.2 L 593.0 165.2 L 595.5 169.4 L 598.0 173.5 L 600.5 177.6 L 603.0 181.5 L 605.5 185.2 L 608.0 188.8 L 610.5 192.1 L 613.0 195.1 L 615.5 197.8 L 618.0 200.3 L 620.5 202.4 L 623.0 204.4 L 625.5 206.0 L 628.0 207.5 L 630.5 208.7 L 633.0 209.7 L 635.5 210.6 L 638.0 211.3 L 640.5 211.9 L 643.0 212.3 L 645.5 212.7 L 648.0 213.0" fill="none" class="k-muted" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M 488.0 214.0 L 490.5 214.0 L 493.0 214.0 L 495.5 214.0 L 498.0 214.0 L 500.5 214.0 L 503.0 214.0 L 505.5 214.0 L 508.0 214.0 L 510.5 214.0 L 513.0 214.0 L 515.5 214.0 L 518.0 214.0 L 520.5 214.0 L 523.0 214.0 L 525.5 214.0 L 528.0 214.0 L 530.5 214.0 L 533.0 214.0 L 535.5 214.0 L 538.0 214.0 L 540.5 214.0 L 543.0 214.0 L 545.5 214.0 L 548.0 213.9 L 550.5 213.8 L 553.0 213.3 L 555.5 211.9 L 558.0 208.7 L 560.5 202.2 L 563.0 190.5 L 565.5 172.6 L 568.0 149.3 L 570.5 124.4 L 573.0 104.0 L 575.5 94.3 L 578.0 98.5 L 580.5 115.3 L 583.0 139.2 L 585.5 163.7 L 588.0 184.1 L 590.5 198.2 L 593.0 206.6 L 595.5 210.9 L 598.0 212.9 L 600.5 213.6 L 603.0 213.9 L 605.5 214.0 L 608.0 214.0 L 610.5 214.0 L 613.0 214.0 L 615.5 214.0 L 618.0 214.0 L 620.5 214.0 L 623.0 214.0 L 625.5 214.0 L 628.0 214.0 L 630.5 214.0 L 633.0 214.0 L 635.5 214.0 L 638.0 214.0 L 640.5 214.0 L 643.0 214.0 L 645.5 214.0 L 648.0 214.0 L 648.0 214.0 L 488.0 214.0 Z" class="f-s1 k-s1" fill-opacity="0.28" stroke-width="2.5"/>
+<text x="568.0" y="240.0" font-size="18" class="f-ink" text-anchor="middle">After RL: sharper,</text>
+<text x="568.0" y="261.0" font-size="18" class="f-ink" text-anchor="middle">inside that range</text>
+<text x="32.0" y="324.0" font-size="20" class="f-ink" text-anchor="start" font-weight="700">Fused: both signals in one training step</text>
+<line x1="32" y1="470" x2="192" y2="470" class="k-rule" stroke-width="2"/>
+<path d="M 32.0 469.0 L 34.5 468.7 L 37.0 468.3 L 39.5 467.9 L 42.0 467.3 L 44.5 466.6 L 47.0 465.7 L 49.5 464.7 L 52.0 463.5 L 54.5 462.0 L 57.0 460.4 L 59.5 458.4 L 62.0 456.3 L 64.5 453.8 L 67.0 451.1 L 69.5 448.1 L 72.0 444.8 L 74.5 441.2 L 77.0 437.5 L 79.5 433.6 L 82.0 429.5 L 84.5 425.4 L 87.0 421.2 L 89.5 417.2 L 92.0 413.2 L 94.5 409.5 L 97.0 406.1 L 99.5 403.1 L 102.0 400.5 L 104.5 398.4 L 107.0 396.8 L 109.5 395.9 L 112.0 395.6 L 114.5 395.9 L 117.0 396.8 L 119.5 398.4 L 122.0 400.5 L 124.5 403.1 L 127.0 406.1 L 129.5 409.5 L 132.0 413.2 L 134.5 417.2 L 137.0 421.2 L 139.5 425.4 L 142.0 429.5 L 144.5 433.6 L 147.0 437.5 L 149.5 441.2 L 152.0 444.8 L 154.5 448.1 L 157.0 451.1 L 159.5 453.8 L 162.0 456.3 L 164.5 458.4 L 167.0 460.4 L 169.5 462.0 L 172.0 463.5 L 174.5 464.7 L 177.0 465.7 L 179.5 466.6 L 182.0 467.3 L 184.5 467.9 L 187.0 468.3 L 189.5 468.7 L 192.0 469.0" fill="none" class="k-muted" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M 32.0 470.0 L 34.5 470.0 L 37.0 470.0 L 39.5 470.0 L 42.0 470.0 L 44.5 470.0 L 47.0 470.0 L 49.5 470.0 L 52.0 469.9 L 54.5 469.9 L 57.0 469.8 L 59.5 469.6 L 62.0 469.3 L 64.5 468.8 L 67.0 468.0 L 69.5 466.9 L 72.0 465.3 L 74.5 463.0 L 77.0 460.0 L 79.5 456.1 L 82.0 451.2 L 84.5 445.4 L 87.0 438.7 L 89.5 431.5 L 92.0 423.9 L 94.5 416.5 L 97.0 409.8 L 99.5 404.2 L 102.0 400.2 L 104.5 398.2 L 107.0 398.3 L 109.5 400.6 L 112.0 404.8 L 114.5 410.5 L 117.0 417.4 L 119.5 424.8 L 122.0 432.4 L 124.5 439.6 L 127.0 446.1 L 129.5 451.8 L 132.0 456.6 L 134.5 460.4 L 137.0 463.3 L 139.5 465.5 L 142.0 467.0 L 144.5 468.1 L 147.0 468.8 L 149.5 469.3 L 152.0 469.6 L 154.5 469.8 L 157.0 469.9 L 159.5 469.9 L 162.0 470.0 L 164.5 470.0 L 167.0 470.0 L 169.5 470.0 L 172.0 470.0 L 174.5 470.0 L 177.0 470.0 L 179.5 470.0 L 182.0 470.0 L 184.5 470.0 L 187.0 470.0 L 189.5 470.0 L 192.0 470.0 L 192.0 470.0 L 32.0 470.0 Z" class="f-s2 k-s2" fill-opacity="0.28" stroke-width="2.5"/>
+<line x1="94.0" y1="356.0" x2="42.0" y2="356.0" class="k-s1" stroke-width="2.5" stroke-linecap="round"/><path d="M 52.4 350.0 L 42.0 356.0 L 52.4 362.0" fill="none" class="k-s1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="130.0" y1="356.0" x2="182.0" y2="356.0" class="k-s1" stroke-width="2.5" stroke-linecap="round"/><path d="M 171.6 362.0 L 182.0 356.0 L 171.6 350.0" fill="none" class="k-s1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="112.0" y="342.0" font-size="15" class="f-s1 halo" text-anchor="middle" font-weight="700">OPD: widen</text>
+<line x1="32.0" y1="428.0" x2="78.0" y2="428.0" class="k-s3" stroke-width="2.5" stroke-linecap="round"/><path d="M 67.6 434.0 L 78.0 428.0 L 67.6 422.0" fill="none" class="k-s3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="192.0" y1="428.0" x2="146.0" y2="428.0" class="k-s3" stroke-width="2.5" stroke-linecap="round"/><path d="M 156.4 422.0 L 146.0 428.0 L 156.4 434.0" fill="none" class="k-s3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="112.0" y="414.0" font-size="15" class="f-s3 halo" text-anchor="middle" font-weight="700">RL: sharpen</text>
+<text x="112.0" y="496.0" font-size="18" class="f-ink" text-anchor="middle">The two signals</text>
+<text x="112.0" y="517.0" font-size="18" class="f-ink" text-anchor="middle">interfere</text>
+<text x="270.0" y="390.0" font-size="20" class="f-ink" text-anchor="start">OPD-then-RL beat every fused baseline</text>
+<text x="270.0" y="417.0" font-size="20" class="f-ink" text-anchor="start">on logic and math benchmarks.</text>
+</g>
+<line x1="32" y1="772.0" x2="648" y2="772.0" class="k-rule" stroke-width="1.5"/>
+<text x="32.0" y="800.0" font-size="17" class="f-muted" text-anchor="start">Source: Li et al., arXiv 2609.04108 (Sep 2026).</text>
+<text x="32.0" y="823.0" font-size="17" class="f-muted" text-anchor="start">A schematic of the paper&#x27;s explanation, not</text>
+<text x="32.0" y="846.0" font-size="17" class="f-muted" text-anchor="start">data.</text>
+<text x="648.0" y="800.0" font-size="17" class="f-ink" text-anchor="end" font-weight="700">nicholasg3.github.io</text>
+</svg>
