@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 1025" width="680" height="1025" role="img" aria-labelledby="t d">
+<title id="t">Most paths lead to one agent thinking longer</title>
+<desc id="d">Decision guide with three questions. If one agent already succeeds a little under half the time or more, keep one agent. If the steps must happen in a fixed order, use one agent thinking longer. If the deadline does not matter more than the compute bill, use one agent thinking longer. Only when the work splits and the deadline dominates does a swarm pay, finishing sooner at about double the compute.</desc>
+<style>
+text{font-family:Aptos, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.f-bg{fill:#fffefa} .k-bg{stroke:#fffefa}
+.f-ink{fill:#101214} .k-ink{stroke:#101214}
+.f-muted{fill:#5f6566} .k-muted{stroke:#5f6566}
+.f-rule{fill:#cfc8b8} .k-rule{stroke:#cfc8b8}
+.f-grid{fill:#e6e1d6} .k-grid{stroke:#e6e1d6}
+.f-s1{fill:#1f6078} .k-s1{stroke:#1f6078}
+.f-s2{fill:#85631c} .k-s2{stroke:#85631c}
+.f-s3{fill:#a83228} .k-s3{stroke:#a83228}
+.halo{stroke:#fffefa;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+@media (prefers-color-scheme: dark){
+.f-bg{fill:#15181a} .k-bg{stroke:#15181a}
+.f-ink{fill:#ecebe6} .k-ink{stroke:#ecebe6}
+.f-muted{fill:#a9aeaf} .k-muted{stroke:#a9aeaf}
+.f-rule{fill:#3a4044} .k-rule{stroke:#3a4044}
+.f-grid{fill:#262b2e} .k-grid{stroke:#262b2e}
+.f-s1{fill:#6fb6cf} .k-s1{stroke:#6fb6cf}
+.f-s2{fill:#d8b064} .k-s2{stroke:#d8b064}
+.f-s3{fill:#e58a80} .k-s3{stroke:#e58a80}
+.halo{stroke:#15181a;stroke-width:6px;stroke-linejoin:round;paint-order:stroke}
+}
+</style>
+<rect x="0" y="0" width="680" height="1025" rx="0" class="f-bg"/>
+<text x="32.0" y="60.0" font-size="34" class="f-ink" text-anchor="start" font-weight="700">Most paths lead to one agent</text>
+<text x="32.0" y="102.0" font-size="34" class="f-ink" text-anchor="start" font-weight="700">thinking longer</text>
+<text x="32.0" y="146.0" font-size="22" class="f-muted" text-anchor="start">Pay for a swarm only when the work splits into</text>
+<text x="32.0" y="176.0" font-size="22" class="f-muted" text-anchor="start">independent pieces and time is worth more than compute.</text>
+<g transform="translate(0 224.0)">
+<rect x="32.0" y="6.0" width="34.0" height="16.0" rx="3" class="f-s1 k-s1" fill-opacity="0.22" stroke-width="2.2"/>
+<text x="76.0" y="20.0" font-size="15" class="f-muted" text-anchor="start">Buys efficiency</text>
+<rect x="218.5" y="6.0" width="34.0" height="16.0" rx="3" class="f-s2 k-s2" fill-opacity="0.22" stroke-width="2.2"/>
+<text x="262.5" y="20.0" font-size="15" class="f-muted" text-anchor="start">Buys speed</text>
+<rect x="32.0" y="48.0" width="292.0" height="98.0" rx="8" class="f-muted k-muted" fill-opacity="0.0" stroke-width="2"/>
+<text x="48.0" y="79.0" font-size="19" class="f-ink" text-anchor="start">Does one agent already</text>
+<text x="48.0" y="103.0" font-size="19" class="f-ink" text-anchor="start">succeed a little under half</text>
+<text x="48.0" y="127.0" font-size="19" class="f-ink" text-anchor="start">the time or more?</text>
+<rect x="388.0" y="48.0" width="260.0" height="98.0" rx="8" class="f-s1 k-s1" fill-opacity="0.16" stroke-width="2.2"/>
+<text x="402.0" y="81.0" font-size="18" class="f-s1" text-anchor="start" font-weight="700">Keep one agent</text>
+<text x="402.0" y="105.0" font-size="17" class="f-ink" text-anchor="start">More coordination adds cost</text>
+<text x="402.0" y="126.0" font-size="17" class="f-ink" text-anchor="start">for little or no gain.</text>
+<line x1="330.0" y1="97.0" x2="382.0" y2="97.0" class="k-ink" stroke-width="2.5" stroke-linecap="round"/><path d="M 371.6 103.0 L 382.0 97.0 L 371.6 91.0" fill="none" class="k-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356.0" y="87.0" font-size="16" class="f-ink" text-anchor="middle" font-weight="700">Yes</text>
+<line x1="178.0" y1="150.0" x2="178.0" y2="190.0" class="k-ink" stroke-width="2.5" stroke-linecap="round"/><path d="M 172.0 179.6 L 178.0 190.0 L 184.0 179.6" fill="none" class="k-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="192.0" y="176.0" font-size="16" class="f-ink" text-anchor="start" font-weight="700">No</text>
+<rect x="32.0" y="196.0" width="292.0" height="118.0" rx="8" class="f-muted k-muted" fill-opacity="0.0" stroke-width="2"/>
+<text x="48.0" y="249.0" font-size="19" class="f-ink" text-anchor="start">Must the steps happen in a</text>
+<text x="48.0" y="273.0" font-size="19" class="f-ink" text-anchor="start">fixed order?</text>
+<rect x="388.0" y="196.0" width="260.0" height="118.0" rx="8" class="f-s1 k-s1" fill-opacity="0.16" stroke-width="2.2"/>
+<text x="402.0" y="228.0" font-size="18" class="f-s1" text-anchor="start" font-weight="700">One agent, thinking</text>
+<text x="402.0" y="250.0" font-size="18" class="f-s1" text-anchor="start" font-weight="700">longer</text>
+<text x="402.0" y="274.0" font-size="17" class="f-ink" text-anchor="start">On step-by-step planning,</text>
+<text x="402.0" y="295.0" font-size="17" class="f-ink" text-anchor="start">every team did worse.</text>
+<line x1="330.0" y1="255.0" x2="382.0" y2="255.0" class="k-ink" stroke-width="2.5" stroke-linecap="round"/><path d="M 371.6 261.0 L 382.0 255.0 L 371.6 249.0" fill="none" class="k-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356.0" y="245.0" font-size="16" class="f-ink" text-anchor="middle" font-weight="700">Yes</text>
+<line x1="178.0" y1="318.0" x2="178.0" y2="358.0" class="k-ink" stroke-width="2.5" stroke-linecap="round"/><path d="M 172.0 347.6 L 178.0 358.0 L 184.0 347.6" fill="none" class="k-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="192.0" y="344.0" font-size="16" class="f-ink" text-anchor="start" font-weight="700">No, it splits</text>
+<rect x="32.0" y="364.0" width="292.0" height="118.0" rx="8" class="f-muted k-muted" fill-opacity="0.0" stroke-width="2"/>
+<text x="48.0" y="417.0" font-size="19" class="f-ink" text-anchor="start">Does the deadline matter</text>
+<text x="48.0" y="441.0" font-size="19" class="f-ink" text-anchor="start">more than the compute bill?</text>
+<rect x="388.0" y="364.0" width="260.0" height="118.0" rx="8" class="f-s1 k-s1" fill-opacity="0.16" stroke-width="2.2"/>
+<text x="402.0" y="396.0" font-size="18" class="f-s1" text-anchor="start" font-weight="700">One agent, thinking</text>
+<text x="402.0" y="418.0" font-size="18" class="f-s1" text-anchor="start" font-weight="700">longer</text>
+<text x="402.0" y="442.0" font-size="17" class="f-ink" text-anchor="start">The most efficient use of</text>
+<text x="402.0" y="463.0" font-size="17" class="f-ink" text-anchor="start">compute.</text>
+<line x1="330.0" y1="423.0" x2="382.0" y2="423.0" class="k-ink" stroke-width="2.5" stroke-linecap="round"/><path d="M 371.6 429.0 L 382.0 423.0 L 371.6 417.0" fill="none" class="k-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="356.0" y="413.0" font-size="16" class="f-ink" text-anchor="middle" font-weight="700">No</text>
+<line x1="178.0" y1="486.0" x2="178.0" y2="526.0" class="k-ink" stroke-width="2.5" stroke-linecap="round"/><path d="M 172.0 515.6 L 178.0 526.0 L 184.0 515.6" fill="none" class="k-ink" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="192.0" y="512.0" font-size="16" class="f-ink" text-anchor="start" font-weight="700">Yes</text>
+<rect x="32.0" y="532.0" width="616.0" height="70.0" rx="8" class="f-s2 k-s2" fill-opacity="0.2" stroke-width="2.2"/>
+<text x="48.0" y="562.0" font-size="19" class="f-s2" text-anchor="start" font-weight="700">A swarm of agents</text>
+<text x="48.0" y="587.0" font-size="17" class="f-ink" text-anchor="start">Finishes sooner, at about double the compute.</text>
+<text x="32.0" y="636.0" font-size="17" class="f-muted" text-anchor="start" font-style="italic">A separate lever: when answers are cheap to check, many independent</text>
+<text x="32.0" y="658.0" font-size="17" class="f-muted" text-anchor="start" font-style="italic">attempts at the same question make a strong baseline.</text>
+</g>
+<line x1="32" y1="914.0" x2="648" y2="914.0" class="k-rule" stroke-width="1.5"/>
+<text x="32.0" y="942.0" font-size="17" class="f-muted" text-anchor="start">Sources: Ord, “Swarm scaling” (2026); Kim et</text>
+<text x="32.0" y="965.0" font-size="17" class="f-muted" text-anchor="start">al. (2025), arXiv 2512.08296. The author’s</text>
+<text x="32.0" y="988.0" font-size="17" class="f-muted" text-anchor="start">synthesis, a guide, not measured data.</text>
+<text x="648.0" y="942.0" font-size="17" class="f-ink" text-anchor="end" font-weight="700">nicholasg3.github.io</text>
+</svg>

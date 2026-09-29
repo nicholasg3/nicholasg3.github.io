@@ -6,6 +6,13 @@
     <description>AI Strategy is Nicholas Garcia's vertical on where AI should change coordination, judgment, learning speed, and commercial leverage — for founders, consultants, and C-suite operators.</description>
     <language>en-us</language>
     <item>
+      <title>Is a 1,000-agent swarm just as 'smart' as a single agent that thinks 10 times longer?</title>
+      <link>https://nicholasg3.github.io/ai-strategy/posts/2026-10-04-swarm-scaling.html</link>
+      <guid>2026-10-04-swarm-scaling</guid>
+      <pubDate>Tue, 29 Sep 2026 22:48:40 GMT</pubDate>
+      <description>On Toby Ord's numbers, a 1,000-agent swarm can match far more than ten times one agent's thinking but burns vastly more compute, and it reaches a higher ceiling only where work splits cleanly, answers can be checked and handoffs are well designed.</description>
+    </item>
+    <item>
       <title>Reasoning models learn best when teacher guidance comes before reward training</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/2026-10-11-sequential-beats-joint.html</link>
       <guid>2026-10-11-sequential-beats-joint</guid>
