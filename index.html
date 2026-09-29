@@ -72,6 +72,10 @@
     .nav a { padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color .15s, color .15s; }
     .nav a:hover { color: var(--ink); border-color: var(--accent); }
 
+    @media (max-width: 620px) {
+      .nav { flex-wrap: wrap; gap: 6px 16px; }
+    }
+
     /* ---- Hero ---- */
     .hero { padding: 72px 0 68px; border-bottom: 1px solid var(--rule); }
 
