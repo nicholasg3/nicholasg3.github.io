@@ -6,13 +6,6 @@
     <description>AI Engineering: agent orchestration, fleet operations, and the tooling behind this site.</description>
     <language>en-us</language>
     <item>
-      <title>Fourteen Automations That Run Without Me</title>
-      <link>https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</link>
-      <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/automations-that-run-without-me.html</guid>
-      <description>Fourteen automations that run on a schedule without supervision, the eight rules that keep them safe, and the four ways they broke.</description>
-      <pubDate>Tue, 15 Sep 2026 10:30:00 GMT</pubDate>
-    </item>
-    <item>
       <title>The Mechanical Check Test</title>
       <link>https://nicholasg3.github.io/ai-engineering/posts/the-mechanical-check-test.html</link>
       <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/the-mechanical-check-test.html</guid>
