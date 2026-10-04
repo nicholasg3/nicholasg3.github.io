@@ -915,3 +915,51 @@ sup.fn,
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+/* Intro hero: short, not a full-screen promo. */
+.hero.intro {
+  min-height: 0;
+  padding: 40px 0 30px;
+}
+.hero.intro h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+/* Titles-only archive under the latest list. */
+.archive {
+  padding: 28px 0 40px;
+  border-top: 1px solid var(--line, #d8d2c4);
+}
+.archive summary {
+  cursor: pointer;
+}
+.archive-list {
+  columns: 2 280px;
+  column-gap: 32px;
+  margin: 16px 0 0;
+  padding-left: 18px;
+}
+.archive-list li {
+  margin: 0 0 8px;
+  break-inside: avoid;
+}
+
+/* Compact strip of the other sections, under the intro hero. */
+.bundle-map.sections-strip {
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 0 0 40px;
+  padding: 28px 0 0;
+  border-top: 0;
+}
+.sections-strip .map-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+.sections-strip .map-grid article {
+  min-height: 0;
+}
+@media (max-width: 760px) {
+  .sections-strip .map-grid {
+    grid-template-columns: 1fr;
+  }
+}

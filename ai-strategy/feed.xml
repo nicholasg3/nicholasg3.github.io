@@ -13,21 +13,21 @@
       <description>Researchers and information systems journals disagree on where machine-written papers belong. Whatever home they get, the thing to certify is a record of how their claims were checked, not who wrote them.</description>
     </item>
     <item>
-      <title>Is a 1,000-agent swarm just as 'smart' as a single agent that thinks 10 times longer?</title>
+      <title>Is a 1,000-Agent Swarm Just as 'Smart' as a Single Agent That Thinks 10 Times Longer?</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/2026-10-04-swarm-scaling.html</link>
       <guid>2026-10-04-swarm-scaling</guid>
       <pubDate>Tue, 29 Sep 2026 22:48:40 GMT</pubDate>
       <description>On Toby Ord's numbers, a 1,000-agent swarm can match far more than ten times one agent's thinking but burns vastly more compute, and it reaches a higher ceiling only where work splits cleanly, answers can be checked and handoffs are well designed.</description>
     </item>
     <item>
-      <title>Reasoning models learn best when teacher guidance comes before reward training</title>
+      <title>Reasoning Models Learn Best When Teacher Guidance Comes Before Reward Training</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/2026-10-11-sequential-beats-joint.html</link>
       <guid>2026-10-11-sequential-beats-joint</guid>
       <pubDate>Tue, 29 Sep 2026 14:28:47 GMT</pubDate>
       <description>Distilling from a teacher first and rewarding answers second beats fusing the two; for post-training teams, step order and teacher access now matter more than prompt volume.</description>
     </item>
     <item>
-      <title>Agents Need a Memory Architecture</title>
+      <title>Who Owns an AI Agent's Memory</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/agents-need-memory-architecture.html</link>
       <guid>strategy-publisher-issue-032-agents-need-memory-architecture</guid>
       <pubDate>Fri, 24 Jul 2026 14:00:00 GMT</pubDate>
@@ -76,7 +76,7 @@
       <description>AI search turns founder publishing into an audience ledger: crawl access, answer presence, referral quality, owned relationships, conversion rights, and proof loops.</description>
     </item>
     <item>
-      <title>The AI Slop Audit</title>
+      <title>How to Audit AI-Assisted Work for Slop</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/ai-slop-audit.html</link>
       <guid>strategy-publisher-issue-025-ai-slop-audit</guid>
       <pubDate>Wed, 22 Jul 2026 11:50:00 GMT</pubDate>
@@ -174,7 +174,7 @@
       <description>ASEAN digital integration should be treated as a market-entry test: first buyer, operating reuse, trust bridge, regulatory drag, and regional option value.</description>
     </item>
     <item>
-      <title>The Stablecoin Distribution Test</title>
+      <title>Should a Small Business Accept Stablecoins?</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/stablecoin-distribution-test.html</link>
       <guid>strategy-publisher-issue-011-stablecoin-distribution-test</guid>
       <pubDate>Wed, 22 Jul 2026 07:20:00 GMT</pubDate>
@@ -230,14 +230,14 @@
       <description>Enterprise AI is being folded into managed work, agent registries, observability logs, provenance rules, licensing, and transparency obligations.</description>
     </item>
     <item>
-      <title>AI agent security guidance is becoming a shared-responsibility model</title>
+      <title>Agent Security Is Becoming a Shared-Responsibility Model</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/ai-vendor-warning-label.html</link>
       <guid>strategy-publisher-issue-003-ai-vendor-warning-label</guid>
       <pubDate>Wed, 22 Jul 2026 00:20:00 GMT</pubDate>
       <description>Agent-security guidance is becoming the AI industry's shared-responsibility model: a practical safety manual today and a future control record after the first serious incident.</description>
     </item>
     <item>
-      <title>The AI Pilot Trap</title>
+      <title>How to Decide Which AI Pilots Deserve Funding</title>
       <link>https://nicholasg3.github.io/ai-strategy/posts/ai-workflow-investment-screen.html</link>
       <guid>strategy-publisher-issue-002-ai-workflow-investment-screen</guid>
       <pubDate>Tue, 21 Jul 2026 09:45:00 GMT</pubDate>
