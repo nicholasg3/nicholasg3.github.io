@@ -1,98 +1,94 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI Engineering: agent orchestration, fleet operations, and the tooling behind this site, built and documented in the open.">
-  <title>AI Engineering | Nicholas Garcia</title>
-  <link rel="stylesheet" href="/ai-strategy/styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="/" aria-label="Nicholas Garcia home">
-      <span class="brand-mark">N</span>
-      <span><strong>AI Engineering</strong><small>A vertical by Nicholas Garcia</small></span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="/ai-strategy/">AI Strategy</a>
-      <a href="/fintech/">Fintech</a>
-      <a href="/us-asean-china/">US–ASEAN–China</a>
-      <a href="https://nicholasg3.github.io/" rel="me">Home</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI Engineering by Nicholas Garcia: build logs from a small fleet of AI agents run every day.">
+    <title>AI Engineering | Nicholas Garcia</title>
+    <link rel="stylesheet" href="/ai-strategy/styles.css">
+    <link rel="alternate" type="application/rss+xml" title="AI Engineering — Nicholas Garcia" href="feed.xml">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="https://nicholasg3.github.io/" aria-label="Nicholas Garcia home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nicholas Garcia</strong>
+          <small>AI Engineering</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/ai-strategy/">AI Strategy</a>
+        <a href="/ai-engineering/" aria-current="page">AI Engineering</a>
+        <a href="/fintech/">Fintech</a>
+        <a href="feed.xml">RSS</a>
+        <a href="https://nicholasg3.github.io/" rel="me">Home</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="issue-kicker">Vertical · AI Engineering</div>
-      <h1 id="hero-title">Agent orchestration, run in the open</h1>
-      <p class="hero-copy">This vertical covers agent orchestration, fleet operations, and the tooling behind this site — the build logs, failure modes, and operating decisions of running a small fleet of AI agents day to day. Every published piece describes something actually run, not a plan.</p>
-      <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> — Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
-    </section>
+    <main>
+      <section class="hero intro" aria-labelledby="hero-title">
+        <div class="issue-kicker">AI Engineering</div>
+        <h1 id="hero-title">Build logs from a small fleet of AI agents.</h1>
+        <p class="hero-copy">I run a small fleet of AI agents for my teaching, my research and this site. These posts describe jobs that actually run: what each one does, the check that proves it worked, and the rules that keep it safe.</p>
+        <p class="byline">By <a href="https://nicholasg3.github.io/">Nicholas Garcia</a> · Lecturer, NUS School of Computing · Deputy Director, NUS FinTech Lab</p>
+      </section>
 
-    <section class="latest" aria-label="AI Engineering pieces">
-      <div class="section-label">Latest</div>
+      <section class="bundle-map sections-strip" aria-label="Other sections">
+        <div><div class="section-label">Other sections</div></div>
+        <div class="map-grid">
+          <article>
+            <strong><a href="/ai-strategy/">AI Strategy</a></strong>
+            <p>Research notes and memos on how AI changes the way firms decide, spend and take risk.</p>
+          </article>
+          <article>
+            <strong><a href="/fintech/">Fintech</a></strong>
+            <p>Payment rails, bank–fintech partnerships, stablecoins and licensing: who carries the risk when something fails.</p>
+          </article>
+        </div>
+      </section>
 
+      <section class="latest" id="latest">
+        <div class="section-label">Latest</div>
 
-        <article data-tags="agents autonomy" class="feature-card">
+        <article class="feature-card">
           <div class="feature-meta">
-            <span>Design note</span>
-            <span>7 min read</span>
+            <span><time datetime="2026-09-15">15 Sep 2026</time> · Build log</span>
+            <span>6 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Agents</span><span class="tag-chip">Autonomy</span></div>
           <h2><a href="posts/the-mechanical-check-test.html">The Mechanical Check Test</a></h2>
-          <p>One question decides whether an agent may act alone: can a cheap mechanical check prove the result? Here is how that test is wired into a running daemon.</p>
-          <div class="decision-strip">
-            <strong>Reader decision</strong>
-            <span>Is there a command whose exit code proves this task worked? If not, the agent prepares your decision — it does not make it.</span>
-          </div>
+          <p>One question decides whether an agent may act alone: can a cheap mechanical check prove the result? The post shows the test inside a running daemon.</p>
         </article>
-
-        <article data-tags="code-review agents operations" class="feature-card">
+        <article class="feature-card">
           <div class="feature-meta">
-            <span>Design note</span>
+            <span><time datetime="2026-09-15">15 Sep 2026</time> · Build log</span>
             <span>7 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Code Review</span><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span></div>
           <h2><a href="posts/review-what-actually-runs.html">Review What Actually Runs</a></h2>
-          <p>An agent that reviews code every night needs to know which code matters. Rank by what the machine actually executes, times how long since anyone looked.</p>
-          <div class="decision-strip">
-            <strong>Reader decision</strong>
-            <span>Which files does your scheduler actually execute, and when did anyone last read them?</span>
-          </div>
+          <p>A nightly code-review agent picks its files with a formula you can print: how often the machine runs a file, times how long since anyone read it.</p>
         </article>
-
-        <article data-tags="security operations" class="feature-card">
+        <article class="feature-card">
           <div class="feature-meta">
-            <span>Design note</span>
+            <span><time datetime="2026-09-15">15 Sep 2026</time> · Build log</span>
+            <span>5 min read</span>
+          </div>
+          <h2><a href="posts/security-check-with-no-model.html">A Security Check With No Model in It</a></h2>
+          <p>Six checks, once a month, read-only, with no model calls and no secret ever printed: the most reliable job in my fleet has no model in it.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-meta">
+            <span><time datetime="2026-09-15">15 Sep 2026</time> · Build log</span>
             <span>6 min read</span>
           </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Security</span><span class="tag-chip">Operations</span></div>
-          <h2><a href="posts/security-check-with-no-model.html">A Security Check With No Model In It</a></h2>
-          <p>Six checks, once a month, no model calls, read-only, and never print the secret. The most reliable job in my fleet is the one with no intelligence in it.</p>
-          <div class="decision-strip">
-            <strong>Reader decision</strong>
-            <span>Which of your scheduled jobs would still be correct in a year with the API down?</span>
-          </div>
-        </article>
-
-        <article data-tags="personal-data agents operations" class="feature-card">
-          <div class="feature-meta">
-            <span>Design note</span>
-            <span>6 min read</span>
-          </div>
-          <div class="card-tags" aria-label="Topics"><span class="tag-chip">Personal Data</span><span class="tag-chip">Agents</span><span class="tag-chip">Operations</span></div>
           <h2><a href="posts/ship-the-read-only-report-first.html">Ship the Read-Only Report First</a></h2>
-          <p>How to automate something you care about — your contacts, your obligations — starting with a job that cannot write anything, and adding write access one proven phase at a time.</p>
-          <div class="decision-strip">
-            <strong>Reader decision</strong>
-            <span>Can your version one be described in one sentence and be incapable of damage?</span>
-          </div>
+          <p>To automate your contacts and obligations, start with a job that cannot write anything, then add write access one tested phase at a time.</p>
         </article>
+      </section>
+    </main>
 
-        <p class="manual-cta">More pieces follow in the autonomous devlog series, <strong>Building in the Open — Auto Log</strong>, tracking the agent fleet that runs this site. This vertical publishes only after a piece clears the same source bar as the other three.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer"><span>Nicholas Garcia · AI Engineering</span><a href="/ai-strategy/">Blog</a></footer>
-</body>
+    <footer class="site-footer">
+      <span>Nicholas Garcia · AI Engineering</span>
+      <a href="feed.xml">RSS</a>
+    </footer>
+  </body>
 </html>

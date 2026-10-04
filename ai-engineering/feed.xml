@@ -3,34 +3,34 @@
   <channel>
     <title>AI Engineering — Nicholas Garcia</title>
     <link>https://nicholasg3.github.io/ai-engineering/</link>
-    <description>AI Engineering: agent orchestration, fleet operations, and the tooling behind this site.</description>
+    <description>Build logs from a small fleet of AI agents run every day.</description>
     <language>en-us</language>
     <item>
       <title>The Mechanical Check Test</title>
       <link>https://nicholasg3.github.io/ai-engineering/posts/the-mechanical-check-test.html</link>
       <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/the-mechanical-check-test.html</guid>
-      <description>One question decides whether an agent may act alone: can a cheap mechanical check prove the result? Here is how that test is wired into a running daemon.</description>
+      <description>One question decides whether an agent may act alone: can a cheap mechanical check prove the result? The post shows the test inside a running daemon.</description>
       <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Review What Actually Runs</title>
       <link>https://nicholasg3.github.io/ai-engineering/posts/review-what-actually-runs.html</link>
       <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/review-what-actually-runs.html</guid>
-      <description>An agent that reviews code every night needs to know which code matters. Rank by what the machine actually executes, times how long since anyone looked.</description>
+      <description>A nightly code-review agent picks its files with a formula you can print: how often the machine runs a file, times how long since anyone read it.</description>
       <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>A Security Check With No Model In It</title>
+      <title>A Security Check With No Model in It</title>
       <link>https://nicholasg3.github.io/ai-engineering/posts/security-check-with-no-model.html</link>
       <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/security-check-with-no-model.html</guid>
-      <description>Six checks, once a month, no model calls, read-only, and never print the secret. The most reliable job in my fleet is the one with no intelligence in it.</description>
+      <description>Six checks, once a month, read-only, with no model calls and no secret ever printed: the most reliable job in my fleet has no model in it.</description>
       <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
     </item>
     <item>
       <title>Ship the Read-Only Report First</title>
       <link>https://nicholasg3.github.io/ai-engineering/posts/ship-the-read-only-report-first.html</link>
       <guid isPermaLink="true">https://nicholasg3.github.io/ai-engineering/posts/ship-the-read-only-report-first.html</guid>
-      <description>How to automate something you care about — your contacts, your obligations — starting with a job that cannot write anything, and adding write access one proven phase at a time.</description>
+      <description>To automate your contacts and obligations, start with a job that cannot write anything, then add write access one tested phase at a time.</description>
       <pubDate>Tue, 15 Sep 2026 14:00:00 GMT</pubDate>
     </item>
   </channel>

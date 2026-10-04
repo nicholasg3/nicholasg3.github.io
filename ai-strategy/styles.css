@@ -953,7 +953,7 @@ sup.fn,
   border-top: 0;
 }
 .sections-strip .map-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 .sections-strip .map-grid article {
   min-height: 0;

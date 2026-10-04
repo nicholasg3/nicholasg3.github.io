@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Fintech — Nicholas Garcia</title>
+    <link>https://nicholasg3.github.io/fintech/</link>
+    <description>Payment rails, bank–fintech partnerships, stablecoins and licensing, and who carries the risk.</description>
+    <language>en-us</language>
+    <item>
+      <title>When an Embedded-Finance Middleman Fails, Who Answers for the Money?</title>
+      <link>https://nicholasg3.github.io/fintech/posts/embedded-finance-who-owns-the-customer-complaint.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/fintech/posts/embedded-finance-who-owns-the-customer-complaint.html</guid>
+      <description>Synapse&#x27;s April 2024 bankruptcy left a shortfall of $60 million to $90 million between partner-bank records and its own, and customers waited weeks or months for their funds.</description>
+      <pubDate>Fri, 31 Jul 2026 01:27:33 +0800</pubDate>
+    </item>
+    <item>
+      <title>An MAS Licence Covers Singapore Only</title>
+      <link>https://nicholasg3.github.io/fintech/posts/mas-payments-licensing.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/fintech/posts/mas-payments-licensing.html</guid>
+      <description>A licence under Singapore&#x27;s Payment Services Act settles whether a firm may offer payment services in Singapore; Jakarta, Bangkok and Manila each decide that for themselves.</description>
+      <pubDate>Fri, 31 Jul 2026 01:27:33 +0800</pubDate>
+    </item>
+    <item>
+      <title>What Backs a Stablecoin When Its Bank Fails</title>
+      <link>https://nicholasg3.github.io/fintech/posts/stablecoin-reserves-attestation.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/fintech/posts/stablecoin-reserves-attestation.html</guid>
+      <description>When SVB failed in March 2023, about $3.3 billion of USDC reserves, roughly 8 percent of the total, sat at the failed bank.</description>
+      <pubDate>Fri, 31 Jul 2026 01:27:33 +0800</pubDate>
+    </item>
+    <item>
+      <title>Sponsor Banks Keep the Compliance Risk for Their Fintech Partners</title>
+      <link>https://nicholasg3.github.io/fintech/posts/bank-fintech-partnership-as-distribution-rent.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/fintech/posts/bank-fintech-partnership-as-distribution-rent.html</guid>
+      <description>US interagency guidance from June 2023 and a July 2024 joint statement say the bank keeps the compliance liability, whoever owns the app.</description>
+      <pubDate>Fri, 31 Jul 2026 01:27:33 +0800</pubDate>
+    </item>
+    <item>
+      <title>Instant Payments Leave No Time to Stop Fraud</title>
+      <link>https://nicholasg3.github.io/fintech/posts/realtime-payments-and-fraud-acceleration.html</link>
+      <guid isPermaLink="true">https://nicholasg3.github.io/fintech/posts/realtime-payments-and-fraud-acceleration.html</guid>
+      <description>Since October 2024, UK payment firms must refund Faster Payments scam victims up to £85,000 per claim; in the US, Zelle victims bore more than 80 percent of 2023 scam losses.</description>
+      <pubDate>Fri, 31 Jul 2026 01:27:33 +0800</pubDate>
+    </item>
+  </channel>
+</rss>
